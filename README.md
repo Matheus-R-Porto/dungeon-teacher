@@ -1,81 +1,81 @@
 # Dungeon Teacher — Beta 0.1.0
 
-Entrega atual: **Iteração 08 — Variedade de combate e progressão**.
+Current build: **Iteration 08 — Combat variety and progression**.
 
-## Primeira expedição
+## First expedition
 
-1. Siga Primeiros passos: caminhe, teste a câmera e fale com o Armeiro usando F.
-2. Adquira uma arma gratuita, abra I e equipe. Você começa sem habilidades e sem Espaços de Habilidade.
-3. Use F no Portal, com arma equipada. A Torre gera três andares por seed.
-4. Clique nos Slimes para atacar; somente impactos hostis válidos provocam. Habilidades aprendidas usam 1–5. Eles vagam passivamente até sofrer dano e não reaparecem nesta expedição.
-5. Elimine os 3, 4 e 5 inimigos dos andares. O portal de cada andar libera a subida.
-6. No terceiro, o Slime Guardião aparece após dois segundos. Derrote-o, pegue o baú com F e volte pelo portal.
-7. Abra I no Refúgio, selecione o baú e clique Abrir. Espaço desacelera a roleta até o resultado. Receba equipamento e ouro.
-8. Inimigos concedem XP; cada nível concede 5 pontos de atributo e 1 Espaço de Habilidade. Em TAB, cada técnica custa 1 Espaço; as cinco são independentes. Abra C no Refúgio para distribuí-los sem gastar XP ou ouro. Você continua Novato.
-9. Equipe a recompensa em I e inicie outra expedição.
+1. Follow First Steps: walk around, try the camera and talk to the Armorer using F.
+2. Get a free weapon, open I and equip it. You start with no skills and no Skill Slots.
+3. Use F on the Portal with a weapon equipped. The Tower generates three floors per seed.
+4. Click Slimes to attack; only valid hostile hits provoke them. Learned skills use 1–5. They wander passively until they take damage and don't respawn during this expedition.
+5. Defeat the 3, 4 and 5 enemies on each floor. Each floor's portal unlocks once cleared.
+6. On the third floor, the Slime Guardian appears after two seconds. Defeat it, grab the chest with F, and head back through the portal.
+7. Open I at the Hub, select the chest and click Open. Space slows down the wheel until the result lands. You receive equipment and gold.
+8. Enemies grant XP; each level grants 5 attribute points and 1 Skill Slot. In TAB, each technique costs 1 Slot; all five are independent. Open C at the Hub to distribute points without spending XP or gold. You stay a Novice.
+9. Equip the reward in I and start another expedition.
 
-Morrer retorna ao Refúgio com HP/MP completos e encerra a run. Recursos e itens já recebidos permanecem. A interação perto da entrada permite abandonar. Recarregar também começa no Refúgio, sem restaurar uma expedição em andamento.
+Dying sends you back to the Hub with full HP/MP and ends the run. Resources and items already received are kept. Interacting near the entrance lets you abandon the run. Reloading also starts you at the Hub, without restoring an expedition in progress.
 
-Inventário, equipamentos, habilidades, atributos, XP, ouro, baús e onboarding persistem. Abrir painéis pausa a simulação. Equipamentos não podem ser trocados durante combate. O baú exige Refúgio e um espaço livre; a concessão e o consumo são salvos juntos.
+Inventory, equipment, skills, attributes, XP, gold, chests and onboarding all persist. Opening panels pauses the simulation. Equipment can't be swapped during combat. The chest requires the Hub and a free slot; the grant and its consumption are saved together.
 
-[Relatório da Iteração 08](docs/ITERACAO-08-RELATORIO.md) · [Prompt](docs/ITERACAO-08-PROMPT.md).
+[Iteration 08 report](docs/ITERACAO-08-RELATORIO.md) · [Prompt](docs/ITERACAO-08-PROMPT.md).
 
-A versão de progressão 4 reinicia os saves antigos uma única vez e grava a migração antes de abrir o jogo. Recarregar preserva o progresso novo. Espada e adaga atacam corpo a corpo; arco e cajado lançam projéteis físicos e mágicos. Slimes comuns, Saltadores e Mágicos compartilham a IA, com encontros variados por seed.
+Progression version 4 resets old saves once and logs the migration before the game opens. Reloading preserves the new progress. Sword and dagger attack in melee; bow and staff launch physical and magical projectiles. Common Slimes, Jumpers and Mages share the same AI, with varied encounters per seed.
 
-Para reproduzir mapas: ?debug=1&test=1&seed=42. Debug exibe seed da run, andar e seed derivada. O perfil test=1 é separado do normal. Sem seed explícita, cada expedição sorteia outra seed.
+To reproduce maps: `?debug=1&test=1&seed=42`. Debug shows the run's seed, floor and derived seed. The `test=1` profile is separate from the normal one. Without an explicit seed, each expedition rolls a new one.
 
-## Jogar
+## Play
 
-Com o servidor desta sessão ativo, abra **http://127.0.0.1:5173/**.
+With this session's server running, open **http://127.0.0.1:5173/**.
 
-Para abrir novamente no Windows, execute `INICIAR-JOGO.cmd`. Mantenha a janela do servidor aberta enquanto joga. Se a porta já estiver em uso pelo jogo, basta abrir o endereço acima.
+To open it again on Windows, run `INICIAR-JOGO.cmd`. Keep the server window open while playing. If the port is already in use by the game, just open the address above.
 
-Na primeira instalação em outra máquina: Node.js 22.12+ (ou 24+) e `npm ci`. Os pacotes são instalados pelo registro npm, e as versões exatas ficam no lockfile.
+On the first install on another machine: Node.js 22.12+ (or 24+) and `npm ci`. Packages are installed from the npm registry, and exact versions are pinned in the lockfile.
 
 ```sh
 npm ci
 npm run dev -- --port 5173 --strictPort
 ```
 
-Não abra `index.html` por duplo clique: os módulos precisam do servidor local. Não há conta, backend ou serviço remoto de jogo. Nenhum asset ou biblioteca é buscado de CDN durante a execução.
+Don't open `index.html` by double-clicking: the modules need the local server. There's no account, backend or remote game service. No asset or library is fetched from a CDN at runtime.
 
-## Controles
+## Controls
 
-| Ação | Controle |
+| Action | Control |
 |---|---|
-| Caminhar | WASD ou setas, em relação à câmera |
-| Encontrar caminho | Clique no chão |
-| Cancelar caminho | WASD ou Esc |
-| Girar câmera | Segure Q / E ou os botões inferiores; solte para parar no ângulo exato |
-| Orbitar pelo mouse | Segure o botão do meio e arraste horizontalmente |
-| Zoom | Roda do mouse, + / − ou botões inferiores |
-| Interação contextual | F ou botão da ação indicada; Portal e placa de boas-vindas usam o mesmo sistema |
-| Pausar | Esc sem caminho ativo, botão superior ou sair da janela |
-| Personagem e atributos | C ou botão Viajante na HUD |
-| Inventário e equipamentos | I ou botão Inventário |
-| Árvore de habilidades | TAB ou botão Habilidades |
-| Habilidades | Teclas 1–8 ou clique na hotbar |
-| Ajuda | H ou botão ? |
+| Walk | WASD or arrow keys, relative to the camera |
+| Pathfind | Click on the ground |
+| Cancel path | WASD or Esc |
+| Rotate camera | Hold Q / E or the bottom buttons; release to stop at the exact angle |
+| Orbit with mouse | Hold the middle button and drag horizontally |
+| Zoom | Mouse wheel, + / − or the bottom buttons |
+| Contextual interaction | F or the indicated action button; the Portal and the welcome sign use the same system |
+| Pause | Esc with no active path, the top button, or leaving the window |
+| Character and attributes | C or the Traveler button on the HUD |
+| Inventory and equipment | I or the Inventory button |
+| Skill tree | TAB or the Skills button |
+| Skills | Keys 1–8 or click on the hotbar |
+| Help | H or the ? button |
 
-## Incluído nesta entrega
+## Included in this build
 
-- Cenário 3D de baixa complexidade com iluminação quente, vegetação viva, flores, bandeiras, água turquesa e portal azul animado.
-- Personagem em sprite 2D original provisório, atlas de oito direções, Idle/Walk e marcação no chão.
-- Colisão circular contra árvores, pedras, ruínas, tenda, poço e limites da clareira.
-- A* em grade e suavização por segmentos livres; caminho e destino visíveis.
-- Câmera de órbita contínua, pivô no personagem, inclinação fixa e zoom suave limitado.
-- Árvores e estruturas registradas ficam translúcidas quando encobrem o personagem.
-- Minimap funcional, guia de exploração, ajuda e pausa.
-- Simulação em passos fixos, separada da renderização, da entrada e da interface.
-- Conteúdo e interações do refúgio em JSON validado e 231 testes automatizados de domínio, combate, áreas e persistência.
+- Low-complexity 3D scenery with warm lighting, living vegetation, flowers, banners, turquoise water and an animated blue portal.
+- Original placeholder 2D sprite character, eight-direction atlas, Idle/Walk and ground marker.
+- Circular collision against trees, rocks, ruins, tent, well and clearing boundaries.
+- Grid-based A* with smoothing across free segments; path and destination are visible.
+- Continuous orbit camera, pivoting on the character, fixed tilt and smooth, limited zoom.
+- Registered trees and structures turn translucent when they occlude the character.
+- Functional minimap, exploration guide, help and pause.
+- Fixed-step simulation, decoupled from rendering, input and UI.
+- Hub content and interactions in validated JSON, plus 231 automated tests covering domain, combat, areas and persistence.
 
-## Limites desta versão
+## Limits of this version
 
-São três andares procedurais controlados, um boss provisório e oito equipamentos de recompensa. Classes jogáveis, economia completa, perguntas educacionais, multiplayer e conteúdo além do terceiro andar não estão implementados. As seções abaixo documentam o histórico; as regras atuais acima prevalecem.
+There are three controlled procedural floors, one placeholder boss and eight reward items. Playable classes, a full economy, educational questions, multiplayer and content beyond the third floor are not implemented. The sections below document the history; the current rules above take precedence.
 
-Arte feita com geometria e efeitos locais, sem assets finais. Esta entrega não representa a qualidade visual final. WebGL 2 e aceleração gráfica são necessários. Mobile não foi alvo de validação.
+Art is made of plain geometry and local effects, with no final assets. This build does not represent final visual quality. WebGL 2 and graphics acceleration are required. Mobile has not been validated.
 
-## Desenvolvimento e verificação
+## Development and verification
 
 ```sh
 npm test
@@ -83,58 +83,56 @@ npm run build
 npm run preview -- --port 4173 --strictPort
 ```
 
-`?perf=1` mostra uma amostra de FPS e p95 do intervalo entre frames, sem habilitar debug. `node scripts/iteration08-performance.mjs` reproduz o benchmark sintético de simulação (5/20 inimigos), separado da medição gráfica.
+`?perf=1` shows a sample of FPS and p95 frame interval, without enabling debug. `node scripts/iteration08-performance.mjs` reproduces the synthetic simulation benchmark (5/20 enemies), separate from the graphics measurement.
 
-`npm test` usa o executor nativo do Node e não precisa abrir o navegador. O build estático é gerado em `dist/`. O aviso de tamanho do pacote gráfico não impede o build; medir e otimizar é parte dos próximos testes de desempenho.
+`npm test` uses Node's native test runner and doesn't need a browser. The static build is generated into `dist/`. The graphics bundle size warning doesn't block the build; measuring and optimizing it is part of upcoming performance work.
 
-Responsabilidades: `src/core/` contém configuração e validação; `src/world/`, colisão/navegação; `src/simulation/`, estado e movimento; `src/adapters/`, teclado/mouse e Three.js; `src/ui/`, HUD; `src/data/`, o mapa. Regras de combate e habilidades ficam no domínio e na simulação; o renderizador apenas as apresenta.
+Responsibilities: `src/core/` holds configuration and validation; `src/world/`, collision/navigation; `src/simulation/`, state and movement; `src/adapters/`, keyboard/mouse and Three.js; `src/ui/`, the HUD; `src/data/`, the map. Combat and skill rules live in the domain and simulation layers; the renderer only presents them.
 
-Documentação: plano completo em `docs/PLANO-TECNICO-BETA-0.1.0.md`, decisões desta entrega em `docs/DECISOES-FUNDACAO.md` e verificação em `docs/VERIFICACAO-FUNDACAO.md`. O texto original continua preservado em `docs/ESPECIFICACAO-ORIGINAL-BETA-0.1.0.txt`. Arquivos em `sources/` não são alterados.
+Documentation: full plan in `docs/PLANO-TECNICO-BETA-0.1.0.md`, this build's decisions in `docs/DECISOES-FUNDACAO.md`, and verification in `docs/VERIFICACAO-FUNDACAO.md`. The original spec text is preserved in `docs/ESPECIFICACAO-ORIGINAL-BETA-0.1.0.txt`. Files under `sources/` are never modified.
 
-**Registro da Iteração 02:** fundação de movimento, câmera, interação e visual híbrido. Attack/Skill/Hit/Death estão previstos no contrato de animação, mas não foram implementados. Ver `docs/ITERACAO-02.md` para decisões, arquivos e verificação. A especificação da Iteração 02 substitui as escolhas antigas de quatro orientações e personagem 3D; o restante do plano permanece como referência.
+**Iteration 02 log:** foundation for movement, camera, interaction and hybrid visuals. Attack/Skill/Hit/Death are planned in the animation contract but not yet implemented. See `docs/ITERACAO-02.md` for decisions, files and verification. The Iteration 02 spec supersedes the old four-direction and 3D-character choices; the rest of the plan remains as reference.
 
-Correção atual: oito poses de corpo inteiro, seleção estável por ângulo relativo e painel recolhível de depuração. Inspeção das poses em `http://127.0.0.1:5173/sprite-lab.html` (servidor de desenvolvimento). Detalhes em `docs/ITERACAO-02.1.md`.
+Current fix: eight full-body poses, stable selection by relative angle, and a collapsible debug panel. Inspect the poses at `http://127.0.0.1:5173/sprite-lab.html` (dev server). Details in `docs/ITERACAO-02.1.md`.
 
-## Personagem e persistência — Iteração 03
+## Character and persistence — Iteration 03
 
-Novato nível 1 com seis atributos em 5. Cada nível concede 5 pontos. C abre a ficha com prévia, Confirmar e Cancelar; fechar descarta alterações ainda não confirmadas. A distribuição exige o Hub seguro e ausência de combate. O painel pausa a exploração e a regeneração.
+Level 1 Novice with six attributes at 5. Each level grants 5 points. C opens the sheet with a preview, Confirm and Cancel; closing it discards unconfirmed changes. Distributing points requires being at the safe Hub and out of combat. The panel pauses exploration and regeneration.
 
-HP, MP, XP, nível e atributos são salvos em IndexedDB neste navegador e endereço. Alterações confirmadas e debug são salvos imediatamente; regeneração é consolidada a cada 2 segundos e ao sair da janela. Fechamento abrupto pode perder os últimos segundos de regeneração. Não há regeneração offline. O nível máximo técnico é 100 e a velocidade de ataque fica entre 0,25 e 4 ataques/s; números provisórios.
+HP, MP, XP, level and attributes are saved to IndexedDB, scoped to this browser and address. Confirmed changes and debug actions save immediately; regeneration is consolidated every 2 seconds and when leaving the window. An abrupt close can lose the last few seconds of regeneration. There's no offline regeneration. The technical level cap is 100, and attack speed ranges from 0.25 to 4 attacks/s; both are provisional numbers.
 
-Para testar sem alterar seu personagem, abra http://127.0.0.1:5173/?debug=1&test=1 e use C → Ferramentas de teste. Apenas ?debug=1 aplica os testes ao perfil normal. O perfil de teste usa uma chave separada no mesmo banco. A tela normal não oferece esses comandos.
+To test without altering your character, open `http://127.0.0.1:5173/?debug=1&test=1` and use C → Test tools. Only `?debug=1` applies test actions to the normal profile. The test profile uses a separate key in the same database. The normal screen doesn't expose these commands.
 
-O save contém a fonte dos dados, versão 0.1.0 e schema 1. Derivados são reconstruídos ao carregar. Campos ausentes recebem padrões; formatos inválidos ou futuros não são sobrescritos. Transações mantêm uma cópia anterior e rejeitam gravações concorrentes de abas com revisão desatualizada. Em erro, leia o aviso de salvamento; reabra a página para carregar a última confirmação. Não existe sincronização entre navegadores.
+The save contains the data source, version 0.1.0 and schema 1. Derived values are rebuilt on load. Missing fields fall back to defaults; invalid or future formats are never overwritten. Transactions keep a previous copy and reject concurrent writes from tabs with an outdated revision. On error, read the save warning; reopen the page to load the last confirmed state. There's no sync between browsers.
 
-Arquitetura e verificações: [relatório da Iteração 03](docs/ITERACAO-03-RELATORIO.md).
+Architecture and checks: [Iteration 03 report](docs/ITERACAO-03-RELATORIO.md).
 
-## Combate de treino — Iteração 04
+## Training combat — Iteration 04
 
-Clique diretamente no Slime de Treino: o personagem aproxima-se e inicia ataques automáticos. O círculo e a barra de HP indicam o alvo. WASD, clique no chão ou Esc interrompem a intenção automática; a seleção pode permanecer. F continua sendo interação contextual. Na Iteração 05, os Slimes detectam, perseguem e atacam dentro das próprias regras de percepção.
+Click directly on the Training Slime: the character approaches and starts auto-attacking. The circle and HP bar indicate the target. WASD, clicking the ground or Esc interrupt the auto intention; the selection may remain. F is still the contextual interaction. In Iteration 05, Slimes detect, chase and attack under their own perception rules.
 
-Ao ser derrotado, o personagem retorna ao início com HP/MP completos após 3 segundos. Cada Slime desaparece após a derrota e reaparece após 8 segundos, aguardando se a origem estiver ocupada. Nenhum XP ou loot é concedido.
+When defeated, the character returns to the start with full HP/MP after 3 seconds. Each Slime disappears after being defeated and respawns after 8 seconds, waiting if its spawn point is occupied. No XP or loot is granted.
 
-Em ?debug=1&test=1, abra Depuração do combate para observar estado, intervalo, alcance, estatísticas e último resultado; desmarque IA e ataques ativos para isolar o ataque do jogador. O perfil de teste é separado do normal.
+With `?debug=1&test=1`, open Combat Debug to watch state, interval, range, stats and the last result; uncheck AI and active attacks to isolate the player's attack. The test profile is separate from the normal one.
 
-[Relatório da Iteração 04](docs/ITERACAO-04-RELATORIO.md): arquivos, arquitetura, fórmulas, cancelamentos, limitações e testes. Esse relatório registra a entrega anterior; a Iteração 05 está descrita abaixo.
+[Iteration 04 report](docs/ITERACAO-04-RELATORIO.md): files, architecture, formulas, cancellations, limitations and tests. This report documents the previous build; Iteration 05 is described below.
 
-## Histórico: IA e grupos — Iteração 05
+## History: AI and groups — Iteration 05
 
-A região de treino agora possui seis Slimes com percepção individual, perseguição por navegação, retorno e respawn. Aproximar-se demais pode atrair todos os que enxergarem você. Não há limite artificial de aggro. Fugir além do território faz cada Slime voltar à origem, recuperando HP gradualmente. Durante esse retorno, ele fica temporariamente imune e não pode ser selecionado.
+The training area now has six Slimes with individual perception, pathfinding-based chase, return-to-origin and respawn. Getting too close can pull in every Slime that sees you. There's no artificial aggro cap. Fleeing far enough makes each Slime return to its origin, gradually healing. During that return, it's temporarily immune and can't be selected.
 
-O jogador pode deslocar corpos em contato, e os inimigos se separam localmente. Morte limpa o aggro e os ataques pendentes. Não há XP ou loot por inimigo. Câmera, atributos, regeneração e save seguem as regras anteriores.
+The player can push bodies they're in contact with, and enemies separate from each other locally. Death clears aggro and pending attacks. There's no XP or loot per enemy. Camera, attributes, regeneration and saving follow the previous rules.
 
-Teste de escala: http://127.0.0.1:5173/?debug=1&test=1&stress=1. O parâmetro stress requer debug=1 e seleciona vinte spawns. Em Depuração do combate, ative a visualização de visão, alcance, leash e rotas. O perfil test=1 preserva o personagem normal.
+Scale test: `http://127.0.0.1:5173/?debug=1&test=1&stress=1`. The `stress` parameter requires `debug=1` and spawns twenty enemies. In Combat Debug, enable the visualization for sight, range, leash and paths. The `test=1` profile preserves the normal character.
 
-[Relatório da Iteração 05](docs/ITERACAO-05-RELATORIO.md): arquivos, máquina de estados, parâmetros, testes, performance observada e limitações. A Iteração 06 está descrita abaixo.
+[Iteration 05 report](docs/ITERACAO-05-RELATORIO.md): files, state machine, parameters, tests, observed performance and limitations. Iteration 06 is described below.
 
-## Histórico: primeiro kit do Novato — Iteração 06
+## History: the Novice's first kit — Iteration 06
 
-A hotbar responde a clique e teclas 1–8: Golpe Poderoso (espada), Ataque Duplo (adaga), Tiro Duplo (arco), Bola de Energia (cajado), Regeneração (qualquer arma) e três slots vazios. Selecione um inimigo antes das técnicas ofensivas; o personagem se aproxima pelo alcance da habilidade. Regeneração recupera HP em seis pulsos.
+The hotbar responds to clicks and keys 1–8: Powerful Strike (sword), Double Attack (dagger), Double Shot (bow), Energy Ball (staff), Regeneration (any weapon) and three empty slots. Select an enemy before offensive techniques; the character closes in to the skill's range. Regeneration restores HP over six pulses.
 
-As técnicas incompatíveis ficam escurecidas. Passe o mouse para consultar arma, MP, cooldown e alcance. Uma única técnica pode ficar pendente; a intenção mais recente substitui a anterior. Custos começam na execução válida. Interromper uma técnica já iniciada não devolve MP ou cooldown. Pausa congela as habilidades.
+Incompatible techniques appear dimmed. Hover to check weapon, MP, cooldown and range. Only one technique can be pending at a time; the most recent intent replaces the previous one. Costs are applied on valid execution. Interrupting a technique already in progress doesn't refund MP or cooldown. Pausing freezes skills.
 
-Para experimentar as quatro armas, abra http://127.0.0.1:5173/?debug=1&test=1 → Depuração do combate → Arma provisória. A troca fica bloqueada durante a execução da habilidade. Esse perfil preserva o personagem normal. Arma e habilidades conhecidas são salvas; cooldowns e efeitos ativos reiniciam ao recarregar. O ataque automático ainda conserva o alcance físico curto anterior para todas as armas.
+To try all four weapons, open `http://127.0.0.1:5173/?debug=1&test=1` → Combat Debug → Provisional weapon. Switching is locked while a skill is executing. This profile preserves the normal character. Known weapon and skills are saved; cooldowns and active effects reset on reload. Auto-attack still keeps the previous short physical range for every weapon.
 
-[Relatório da Iteração 06](docs/ITERACAO-06-RELATORIO.md): arquitetura, parâmetros, regras, testes e limites. [Diretrizes de progressão](docs/DIRETRIZES-DE-PROGRESSAO.md): filosofia das 13 semanas. O personagem continua Novato; mudança de classe não foi iniciada.
-
-
+[Iteration 06 report](docs/ITERACAO-06-RELATORIO.md): architecture, parameters, rules, tests and limits. [Progression guidelines](docs/DIRETRIZES-DE-PROGRESSAO.md): the philosophy behind the 13 weeks. The character remains a Novice; class change hasn't started yet.
