@@ -1,6 +1,19 @@
 # Dungeon Teacher — Beta 0.1.0
 
+An action RPG dungeon-crawler built with **Three.js (3D)**, with an educational twist at its core: the long-term goal is to gamify learning by weaving questions and challenges into the same loop as combat, loot and character progression. That educational layer isn't built yet — this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence.
+
 Current build: **Iteration 08 — Combat variety and progression**.
+
+## Screenshots
+*(placeholder art — geometric shapes and default assets, not final visuals)*
+
+| Hub — Refúgio do Limiar | Boss fight |
+|---|---|
+| ![Hub town with portal, armorer and quest panel](screenshots/hub-refugio.webp) | ![Boss fight against the Slime Guardian](screenshots/boss-fight.png) |
+
+| Choosing a weapon/class | Skill tree |
+|---|---|
+| ![Weapon selection: sword, dagger, bow, staff](screenshots/weapon-selection.png) | ![Novice skill tree with five paths](screenshots/skill-tree.png) |
 
 ## First expedition
 
