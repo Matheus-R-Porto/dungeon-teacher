@@ -1,0 +1,162 @@
+[
+  {
+    "id": "slime-1",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 3,
+      "z": 0
+    }
+  },
+  {
+    "id": "slime-2",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 3,
+      "z": -3
+    }
+  },
+  {
+    "id": "slime-3",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 0,
+      "z": -2
+    }
+  },
+  {
+    "id": "slime-4",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -3,
+      "z": -2
+    }
+  },
+  {
+    "id": "slime-5",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -2,
+      "z": -8
+    }
+  },
+  {
+    "id": "slime-6",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 3,
+      "z": -7.8
+    }
+  },
+  {
+    "id": "stress-6",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -7,
+      "z": -8
+    }
+  },
+  {
+    "id": "stress-7",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -4.8,
+      "z": -8
+    }
+  },
+  {
+    "id": "stress-8",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -0.4,
+      "z": -8
+    }
+  },
+  {
+    "id": "stress-9",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 6.2,
+      "z": -8
+    }
+  },
+  {
+    "id": "stress-10",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -7,
+      "z": -5.8
+    }
+  },
+  {
+    "id": "stress-11",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -4.8,
+      "z": -5.8
+    }
+  },
+  {
+    "id": "stress-12",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -0.4,
+      "z": -5.8
+    }
+  },
+  {
+    "id": "stress-13",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 4,
+      "z": -5.8
+    }
+  },
+  {
+    "id": "stress-14",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 6.2,
+      "z": -5.8
+    }
+  },
+  {
+    "id": "stress-15",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -7,
+      "z": -3.6
+    }
+  },
+  {
+    "id": "stress-16",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -4.8,
+      "z": -3.6
+    }
+  },
+  {
+    "id": "stress-17",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -2.6,
+      "z": -3.6
+    }
+  },
+  {
+    "id": "stress-18",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -0.4,
+      "z": -3.6
+    }
+  },
+  {
+    "id": "stress-19",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -7,
+      "z": -1.4
+    }
+  }
+]

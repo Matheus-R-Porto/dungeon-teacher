@@ -1,0 +1,20 @@
+[
+  {
+    "enemies": 5,
+    "simulatedSeconds": 60,
+    "meanStepMs": 0.022002055555555733,
+    "p95StepMs": 0.046999999999997044,
+    "maxProjectiles": 0,
+    "paths": 81,
+    "fallbacks": 0
+  },
+  {
+    "enemies": 20,
+    "simulatedSeconds": 60,
+    "meanStepMs": 0.0734666111111104,
+    "p95StepMs": 0.17229999999995016,
+    "maxProjectiles": 1,
+    "paths": 324,
+    "fallbacks": 0
+  }
+]

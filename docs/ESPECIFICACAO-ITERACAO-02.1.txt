@@ -1,0 +1,491 @@
+# Dungeon Master — Beta 0.1.0
+## Iteração 02.1 — Correção do Sistema de Sprites Direcionais
+
+A implementação da câmera livre está correta e deve ser preservada.
+
+O Hub, a rotação contínua, Q/E, botão do meio + arrastar, zoom e sistema atual de câmera NÃO precisam ser refeitos.
+
+Existe, porém, um problema na implementação provisória do personagem.
+
+Atualmente o personagem aparenta utilizar diferentes orientações principalmente através da alteração da cabeça/rosto, enquanto o restante do corpo permanece praticamente na mesma orientação.
+
+Isso produz um resultado visual incorreto.
+
+Precisamos corrigir a arquitetura dos sprites direcionais antes de continuar.
+
+---
+
+# 1. PRINCÍPIO FUNDAMENTAL
+
+O personagem é um sprite 2D inserido em um mundo 3D.
+
+Porém:
+
+**cada direção visual representa o personagem INTEIRO visto daquela direção.**
+
+Não rotacionar apenas:
+
+- cabeça;
+- rosto;
+- cabelo;
+- olhos.
+
+Quando a direção visual mudar, devem mudar coerentemente:
+
+- cabeça;
+- tronco;
+- braços;
+- pernas;
+- pés;
+- arma;
+- escudo;
+- acessórios;
+- equipamentos visíveis;
+- animação correspondente.
+
+O personagem inteiro precisa parecer orientado naquela direção.
+
+---
+
+# 2. NÃO CRIAR UMA POSE PARA CADA ÂNGULO DA CÂMERA
+
+A câmera possui rotação horizontal contínua de 360°.
+
+Isso NÃO significa que precisamos criar centenas de sprites.
+
+Também NÃO significa que precisamos criar um sprite específico para cada posição da câmera.
+
+O sistema deve trabalhar com um conjunto discreto de direções visuais.
+
+Utilizar inicialmente 8 direções:
+
+- N
+- NE
+- E
+- SE
+- S
+- SO
+- O
+- NO
+
+Cada direção representa uma versão completa do personagem.
+
+---
+
+# 3. DIREÇÃO DO PERSONAGEM E DIREÇÃO DA CÂMERA SÃO COISAS DIFERENTES
+
+Separar explicitamente:
+
+## World Facing
+
+Direção para a qual o personagem está realmente orientado dentro do mundo.
+
+Exemplo:
+
+O personagem está olhando para o Norte.
+
+Essa informação NÃO muda simplesmente porque a câmera girou.
+
+---
+
+## Camera Yaw
+
+Ângulo horizontal atual da câmera.
+
+Exemplo:
+
+77.9°
+152.7°
+226.1°
+318.0°
+
+A câmera pode girar livremente.
+
+---
+
+## Visual Facing
+
+Direção do sprite que deve ser apresentada ao jogador considerando:
+
+**World Facing em relação ao Camera Yaw.**
+
+Conceitualmente:
+
+`visualFacing = função(worldFacing - cameraYaw)`
+
+Depois, o resultado angular é convertido para uma das 8 direções visuais disponíveis.
+
+---
+
+# 4. EXEMPLO IMPORTANTE
+
+Imagine que o personagem esteja parado olhando para o Norte do mundo.
+
+A câmera está atrás dele.
+
+O jogador vê as costas do personagem.
+
+Agora o jogador gira a câmera 180°.
+
+O PERSONAGEM NÃO GIROU.
+
+Ele continua olhando para o Norte.
+
+Porém agora a câmera está na frente dele.
+
+Portanto o sprite exibido deve mostrar a frente do personagem.
+
+Essa mudança aconteceu porque:
+
+**a câmera mudou de posição relativa ao personagem.**
+
+Não porque o personagem mudou sua direção lógica.
+
+---
+
+# 5. MOVIMENTO MUDA A DIREÇÃO LÓGICA
+
+Quando o jogador começa a caminhar em determinada direção, atualizar o `worldFacing` do personagem.
+
+Exemplo:
+
+andar para Nordeste:
+
+`worldFacing = NE`
+
+andar para Oeste:
+
+`worldFacing = O`
+
+andar para Sul:
+
+`worldFacing = S`
+
+Quando o personagem parar, ele deve continuar olhando para a última direção válida.
+
+Não fazer o personagem automaticamente olhar para a câmera.
+
+---
+
+# 6. SPRITE COMPLETO
+
+Para cada uma das 8 direções, utilizar uma representação COMPLETA.
+
+Mesmo que ainda sejam placeholders extremamente simples.
+
+Por exemplo:
+
+`idle_n`
+
+`idle_ne`
+
+`idle_e`
+
+`idle_se`
+
+`idle_s`
+
+`idle_sw`
+
+`idle_w`
+
+`idle_nw`
+
+Cada sprite deve possuir corpo inteiro coerente.
+
+Não construir o personagem como:
+
+`corpo frontal fixo + cabeça rotacionada`
+
+ou qualquer solução equivalente.
+
+---
+
+# 7. ANIMAÇÕES FUTURAS
+
+A arquitetura precisa suportar posteriormente:
+
+Idle:
+
+`idle_n`
+`idle_ne`
+`idle_e`
+`idle_se`
+`idle_s`
+`idle_sw`
+`idle_w`
+`idle_nw`
+
+Walk:
+
+`walk_n`
+`walk_ne`
+`walk_e`
+`walk_se`
+`walk_s`
+`walk_sw`
+`walk_w`
+`walk_nw`
+
+Attack:
+
+`attack_n`
+`attack_ne`
+`attack_e`
+`attack_se`
+`attack_s`
+`attack_sw`
+`attack_w`
+`attack_nw`
+
+E futuramente:
+
+- Skill
+- Hit
+- Death
+- Cast
+- outras animações.
+
+Não é necessário produzir todas agora.
+
+Queremos apenas que o sistema seja construído corretamente para recebê-las.
+
+---
+
+# 8. PERSONAGEM PROVISÓRIO
+
+O personagem atual é apenas um placeholder.
+
+NÃO investir tempo tentando criar arte definitiva.
+
+Pode substituí-lo por sprites direcionais provisórios muito simples.
+
+Entretanto, eles precisam deixar extremamente evidente a orientação do corpo.
+
+Por exemplo, o placeholder pode possuir:
+
+- capa;
+- mochila;
+- escudo;
+- cajado;
+- faixa;
+- diferença clara entre frente e costas.
+
+Isso facilitará verificar visualmente se o sistema está escolhendo a direção correta.
+
+---
+
+# 9. FRENTE E COSTAS PRECISAM SER VISUALMENTE DIFERENTES
+
+O personagem provisório atual possui mochila.
+
+Utilize isso como vantagem para testar.
+
+Quando visto por trás:
+
+**a mochila deve estar claramente visível.**
+
+Quando visto pela frente:
+
+**a mochila NÃO deve aparecer na frente do personagem.**
+
+Quando visto lateralmente:
+
+**a mochila deve aparecer parcialmente atrás do corpo.**
+
+O mesmo princípio vale para:
+
+- rosto;
+- cabelo;
+- braços;
+- arma;
+- roupa.
+
+Isso permitirá detectar imediatamente erros de orientação.
+
+---
+
+# 10. BILLBOARD
+
+O plano 2D que contém o personagem pode continuar orientado adequadamente para a câmera para evitar que o sprite seja visto "de lado" como uma folha de papel.
+
+Entretanto:
+
+**Billboard não significa que o personagem esteja sempre olhando para a câmera.**
+
+São conceitos diferentes.
+
+O plano onde a textura é renderizada pode acompanhar a câmera.
+
+A ARTE mostrada nesse plano deve ser selecionada através da relação entre:
+
+- orientação do personagem no mundo;
+- posição/ângulo da câmera.
+
+---
+
+# 11. CÂMERA CONTINUA TOTALMENTE LIVRE
+
+NÃO alterar a câmera para facilitar os sprites.
+
+Preservar:
+
+- rotação horizontal contínua;
+- qualquer ângulo;
+- Q/E;
+- botão do meio + arrastar;
+- zoom;
+- ausência de snapping.
+
+A solução dos sprites deve funcionar COM a câmera livre.
+
+Não limitar a câmera novamente para resolver o problema.
+
+---
+
+# 12. QUANTIZAÇÃO VISUAL
+
+Como temos 8 sprites direcionais e uma câmera de 360°, selecionar a direção visual mais próxima.
+
+Cada direção corresponde aproximadamente a uma faixa de 45°.
+
+Conceitualmente:
+
+360° / 8 = 45°
+
+Portanto o ângulo relativo é convertido para o setor visual correspondente.
+
+Centralize essa lógica em uma função/sistema próprio.
+
+Não espalhar condicionais de ângulo pelo código.
+
+---
+
+# 13. EVITAR FLICKERING
+
+Próximo das fronteiras entre duas direções, pequenas alterações da câmera podem fazer o sprite alternar rapidamente.
+
+Evitar esse comportamento.
+
+Se necessário, implementar uma pequena margem/histerese antes de trocar de direção visual.
+
+O objetivo é que a mudança pareça estável enquanto a câmera gira lentamente.
+
+---
+
+# 14. PREPARAR PARA EQUIPAMENTOS
+
+No futuro teremos equipamentos visualmente diferentes.
+
+Portanto não crie uma arquitetura que dependa de um único sprite indivisível e impossível de expandir.
+
+Entretanto, NÃO precisamos implementar agora um sistema complexo de equipamentos visuais em camadas.
+
+Apenas mantenha o sistema suficientemente modular para futuramente suportar variações de:
+
+- cabeça;
+- armadura;
+- arma;
+- acessórios visíveis;
+- classes.
+
+Não aumente o escopo desta correção.
+
+---
+
+# 15. TESTE OBRIGATÓRIO
+
+Crie um modo temporário de depuração ou indicador que mostre:
+
+- World Facing;
+- Camera Yaw;
+- Relative Angle;
+- Visual Facing;
+- Animation State.
+
+Exemplo:
+
+World Facing: N
+Camera Yaw: 77.9°
+Relative: 282.1°
+Visual Facing: W
+Animation: Idle
+
+Isso poderá ser removido ou escondido posteriormente.
+
+---
+
+# 16. TESTE DE 360°
+
+Com o personagem PARADO:
+
+1. escolha uma direção lógica;
+2. não mova o personagem;
+3. gire a câmera lentamente por 360°;
+4. observe o sprite.
+
+Durante a volta completa devem aparecer coerentemente:
+
+- frente;
+- diagonais;
+- laterais;
+- costas.
+
+O corpo inteiro deve mudar.
+
+A cabeça NÃO deve simplesmente girar independentemente.
+
+---
+
+# 17. TESTE DE MOVIMENTO
+
+Depois:
+
+1. coloque a câmera em um ângulo qualquer, como 77°;
+2. caminhe em diferentes direções;
+3. verifique se o personagem inteiro muda de orientação;
+4. pare;
+5. confirme que ele mantém sua última direção;
+6. gire a câmera;
+7. confirme que apenas a representação visual relativa muda, enquanto `worldFacing` permanece correto.
+
+---
+
+# 18. NÃO AVANÇAR O ESCOPO
+
+Não implementar ainda:
+
+- combate;
+- classes completas;
+- inimigos;
+- habilidades;
+- equipamentos visuais definitivos;
+- arte final;
+- Torre procedural.
+
+Esta é uma pequena correção estrutural.
+
+---
+
+# 19. CRITÉRIO DE CONCLUSÃO
+
+Esta correção estará concluída quando:
+
+1. o personagem possuir 8 representações direcionais completas;
+2. corpo e cabeça apontarem coerentemente para a mesma direção;
+3. a câmera continuar girando livremente em 360°;
+4. girar a câmera NÃO alterar o `worldFacing`;
+5. mover o personagem alterar corretamente o `worldFacing`;
+6. o sprite correto for escolhido através do ângulo relativo;
+7. frente, costas e laterais forem claramente distinguíveis;
+8. a mochila aparecer corretamente apenas onde deveria;
+9. não houver troca frenética de sprites nas fronteiras angulares;
+10. o sistema estiver preparado para animações direcionais futuras.
+
+## REGRA PRINCIPAL
+
+Não tente fazer o placeholder parecer bonito.
+
+Faça-o parecer **geometricamente e direcionalmente correto**.
+
+Arte definitiva virá depois.

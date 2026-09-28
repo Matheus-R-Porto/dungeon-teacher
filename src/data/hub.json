@@ -1,0 +1,273 @@
+{
+  "id": "refugio-do-limiar",
+  "bounds": {
+    "minX": -12,
+    "maxX": 12,
+    "minZ": -12,
+    "maxZ": 12
+  },
+  "spawn": {
+    "x": 0,
+    "z": 4.8
+  },
+  "portal": {
+    "x": 0,
+    "z": -5.8,
+    "interactRadius": 3.4
+  },
+  "obstacles": [
+    {
+      "id": "portal-left",
+      "shape": "circle",
+      "x": -1.8,
+      "z": -5.8,
+      "radius": 0.62,
+      "kind": "pillar"
+    },
+    {
+      "id": "portal-right",
+      "shape": "circle",
+      "x": 1.8,
+      "z": -5.8,
+      "radius": 0.62,
+      "kind": "pillar"
+    },
+    {
+      "id": "portal-back",
+      "shape": "rect",
+      "x": 0,
+      "z": -6.6,
+      "halfX": 2.3,
+      "halfZ": 0.3,
+      "kind": "wall"
+    },
+    {
+      "id": "well",
+      "shape": "circle",
+      "x": -4.7,
+      "z": 0.7,
+      "radius": 1.05,
+      "kind": "well"
+    },
+    {
+      "id": "camp",
+      "shape": "rect",
+      "x": 5.4,
+      "z": 1.7,
+      "halfX": 1.55,
+      "halfZ": 1.1,
+      "kind": "camp"
+    },
+    {
+      "id": "crates",
+      "shape": "rect",
+      "x": 4.4,
+      "z": 4.5,
+      "halfX": 0.9,
+      "halfZ": 0.65,
+      "kind": "crates"
+    },
+    {
+      "id": "ruin",
+      "shape": "rect",
+      "x": -5.2,
+      "z": -4.8,
+      "halfX": 1.65,
+      "halfZ": 0.45,
+      "kind": "ruin"
+    },
+    {
+      "id": "rock-a",
+      "shape": "circle",
+      "x": -6.8,
+      "z": 5.2,
+      "radius": 0.85,
+      "kind": "rock"
+    },
+    {
+      "id": "rock-b",
+      "shape": "circle",
+      "x": 6.7,
+      "z": -3.8,
+      "radius": 0.95,
+      "kind": "rock"
+    },
+    {
+      "id": "tree-1",
+      "shape": "circle",
+      "x": -8.4,
+      "z": -6.6,
+      "radius": 0.6,
+      "kind": "tree",
+      "height": 5.5
+    },
+    {
+      "id": "tree-2",
+      "shape": "circle",
+      "x": -4.4,
+      "z": -9.5,
+      "radius": 0.55,
+      "kind": "tree",
+      "height": 5
+    },
+    {
+      "id": "tree-3",
+      "shape": "circle",
+      "x": 4.6,
+      "z": -9,
+      "radius": 0.6,
+      "kind": "tree",
+      "height": 6
+    },
+    {
+      "id": "tree-4",
+      "shape": "circle",
+      "x": 9.3,
+      "z": -6,
+      "radius": 0.55,
+      "kind": "tree",
+      "height": 5.7
+    },
+    {
+      "id": "tree-5",
+      "shape": "circle",
+      "x": 9.3,
+      "z": 0.6,
+      "radius": 0.55,
+      "kind": "tree",
+      "height": 5.5
+    },
+    {
+      "id": "tree-6",
+      "shape": "circle",
+      "x": 8.4,
+      "z": 7.1,
+      "radius": 0.6,
+      "kind": "tree",
+      "height": 5
+    },
+    {
+      "id": "tree-7",
+      "shape": "circle",
+      "x": 2.8,
+      "z": 9.6,
+      "radius": 0.55,
+      "kind": "tree",
+      "height": 4.9
+    },
+    {
+      "id": "tree-8",
+      "shape": "circle",
+      "x": -3.4,
+      "z": 9.5,
+      "radius": 0.55,
+      "kind": "tree",
+      "height": 5.7
+    },
+    {
+      "id": "tree-9",
+      "shape": "circle",
+      "x": -9.2,
+      "z": 1.5,
+      "radius": 0.6,
+      "kind": "tree",
+      "height": 6
+    },
+    {
+      "id": "tree-10",
+      "shape": "circle",
+      "x": -10,
+      "z": 7.6,
+      "radius": 0.55,
+      "kind": "tree",
+      "height": 4.7
+    },
+    {
+      "id": "refuge-sign",
+      "shape": "circle",
+      "x": -2.8,
+      "z": 4.2,
+      "radius": 0.25,
+      "kind": "sign"
+    },
+    {
+      "id": "rest-bench",
+      "shape": "rect",
+      "x": -6.2,
+      "z": 2.8,
+      "halfX": 0.85,
+      "halfZ": 0.4,
+      "kind": "bench"
+    }
+  ],
+  "interactables": [
+    {
+      "id": "tower-portal",
+      "x": 0,
+      "z": -5.8,
+      "radius": 3.4,
+      "priority": 1,
+      "label": "Examinar o Portal da Torre",
+      "action": "examine",
+      "content": {
+        "eyebrow": "CAPÍTULO I · FLORESTA",
+        "title": "Além do limiar.",
+        "text": "A energia do portal pulsa entre as pedras. Do outro lado, raízes guardam caminhos que ninguém percorreu.",
+        "notice": "A Torre continua selada nesta etapa. Por enquanto, explore o refúgio e encontre seu melhor ponto de vista."
+      },
+      "highlightHeight": 0.285,
+      "highlightRadius": 2.4
+    },
+    {
+      "id": "refuge-sign",
+      "x": -2.8,
+      "z": 4.2,
+      "radius": 2.3,
+      "priority": 0,
+      "label": "Ler a placa do refúgio",
+      "action": "examine",
+      "ignoreObstacles": [
+        "refuge-sign"
+      ],
+      "content": {
+        "eyebrow": "BEM-VINDO AO REFÚGIO",
+        "title": "Toda jornada tem um começo.",
+        "text": "Siga as pedras douradas até o grande portal. A oeste, há um lugar para descansar; a leste, tendas aguardam os próximos viajantes.",
+        "notice": "Este refúgio cresce com a aventura. Áreas para comércio, armazém, estudo e treinamento estão reservadas; seus serviços ainda não estão disponíveis."
+      },
+      "highlightRadius": 0.55
+    }
+  ],
+  "zones": [
+    {
+      "id": "trade",
+      "x": 5.4,
+      "z": 1.7,
+      "label": "Futuro comerciante"
+    },
+    {
+      "id": "storage",
+      "x": 4.4,
+      "z": 4.5,
+      "label": "Futuro armazém"
+    },
+    {
+      "id": "study",
+      "x": -5.2,
+      "z": -4.8,
+      "label": "Baús e orientação de classe"
+    },
+    {
+      "id": "training",
+      "x": 6,
+      "z": -0.8,
+      "label": "Futuro treinamento"
+    },
+    {
+      "id": "rest",
+      "x": -4.7,
+      "z": 0.7,
+      "label": "Descanso e life skills"
+    }
+  ]
+}

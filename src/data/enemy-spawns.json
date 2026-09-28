@@ -1,0 +1,50 @@
+[
+  {
+    "id": "slime-1",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 3,
+      "z": 0
+    }
+  },
+  {
+    "id": "slime-2",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 3,
+      "z": -3
+    }
+  },
+  {
+    "id": "slime-3",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 0,
+      "z": -2
+    }
+  },
+  {
+    "id": "slime-4",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -3,
+      "z": -2
+    }
+  },
+  {
+    "id": "slime-5",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": -2,
+      "z": -8
+    }
+  },
+  {
+    "id": "slime-6",
+    "enemyType": "trainingSlime",
+    "position": {
+      "x": 3,
+      "z": -7.8
+    }
+  }
+]

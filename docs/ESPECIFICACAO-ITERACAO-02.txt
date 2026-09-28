@@ -1,0 +1,747 @@
+# DUNGEON MASTER — BETA 0.1.0
+## Iteração 02 — Fundação Visual, Câmera Livre e Sistema Universal de Interação
+
+Continue o desenvolvimento da versão atual de **Dungeon Master Beta 0.1.0**.
+
+IMPORTANTE:
+
+O projeto já possui uma primeira implementação funcional do Hub.
+
+NÃO recrie o projeto do zero.
+
+NÃO substitua desnecessariamente sistemas que já funcionam.
+
+Analise primeiro a implementação existente e trabalhe incrementalmente sobre ela.
+
+Atualmente já existem, pelo menos:
+
+- Hub inicial;
+- cenário em perspectiva isométrica;
+- movimentação por WASD;
+- câmera rotacionável;
+- zoom pela roda do mouse;
+- Portal da Torre;
+- interação com o Portal através da tecla F;
+- interface inicial;
+- estrutura visual básica do Refúgio do Limiar.
+
+Esta etapa existe para **refinar a fundação técnica e visual antes de avançarmos para combate, classes, inimigos e geração dos andares da Torre**.
+
+---
+
+# 1. DECISÃO VISUAL DEFINITIVA
+
+Dungeon Master utilizará uma abordagem:
+
+## 2.5D híbrida
+
+A composição será:
+
+**Cenário 3D + personagens/monstros/NPCs em sprites 2D.**
+
+Esta é uma decisão importante de direção artística e técnica.
+
+O objetivo NÃO é transformar Dungeon Master em um jogo completamente 3D.
+
+Também NÃO queremos transformar o cenário em um mapa puramente 2D.
+
+Queremos aproveitar as vantagens das duas abordagens.
+
+---
+
+# 2. CENÁRIO
+
+O mundo continuará sendo construído em espaço tridimensional.
+
+Elementos como:
+
+- terreno;
+- chão;
+- paredes;
+- construções;
+- pedras;
+- árvores;
+- pontes;
+- poços;
+- estruturas;
+- portal;
+- objetos ambientais;
+
+podem utilizar geometria 3D.
+
+Isso permite:
+
+- profundidade;
+- diferenças de altura;
+- sombras;
+- iluminação;
+- câmera rotacionável;
+- composição espacial;
+- melhor leitura dos ambientes.
+
+O cenário atual já segue aproximadamente essa filosofia e deve ser preservado/refinado.
+
+---
+
+# 3. PERSONAGENS SERÃO 2D
+
+Personagens NÃO devem ser modelos 3D.
+
+Isso inclui futuramente:
+
+- jogador;
+- NPCs;
+- monstros;
+- bosses.
+
+Esses atores serão representados através de **sprites 2D posicionados dentro do mundo 3D**.
+
+A arquitetura deve ser preparada desde agora para isso.
+
+Um personagem poderá possuir animações 2D como:
+
+- Idle
+- Walk
+- Attack
+- Skill
+- Hit
+- Death
+
+Não é necessário produzir todas essas animações nesta etapa.
+
+O importante agora é garantir que a arquitetura visual não dependa de personagens 3D.
+
+---
+
+# 4. SPRITES DIRECIONAIS
+
+Como a câmera poderá girar livremente, os sprites precisam futuramente suportar diferentes direções.
+
+Preparar o sistema para trabalhar idealmente com até 8 direções:
+
+- Norte
+- Nordeste
+- Leste
+- Sudeste
+- Sul
+- Sudoeste
+- Oeste
+- Noroeste
+
+Ou conceitualmente:
+
+N / NE / E / SE / S / SO / O / NO
+
+A direção visual exibida deve considerar a orientação do personagem em relação à câmera.
+
+Não é necessário criar agora sprites finais para todas essas direções.
+
+Entretanto, a arquitetura não deve assumir que existe apenas uma imagem frontal fixa.
+
+---
+
+# 5. CÂMERA
+
+A perspectiva atual está correta:
+
+**câmera elevada/isométrica olhando para o mundo.**
+
+Entretanto, a rotação atual precisa ser modificada.
+
+Atualmente a câmera trabalha com direções predeterminadas como:
+
+- NE
+- SE
+- SO
+- NO
+
+REMOVER essa limitação.
+
+A câmera não deve possuir apenas quatro posições possíveis.
+
+---
+
+# 6. ROTAÇÃO LIVRE DA CÂMERA
+
+A câmera deve poder girar continuamente em torno do personagem.
+
+Não utilizar snapping obrigatório.
+
+Não limitar a câmera a 90 graus.
+
+Não fazer a câmera retornar automaticamente para uma orientação padrão.
+
+O jogador escolhe o ângulo e a câmera permanece nele.
+
+---
+
+# 7. CONTROLE POR Q/E
+
+Manter:
+
+**Q = girar câmera para um lado**
+
+**E = girar câmera para o outro**
+
+Mas modificar o comportamento.
+
+Enquanto Q estiver pressionado:
+
+> a câmera gira continuamente.
+
+Enquanto E estiver pressionado:
+
+> a câmera gira continuamente na direção oposta.
+
+Ao soltar a tecla:
+
+> a câmera para imediatamente naquele ângulo.
+
+Exemplo:
+
+O jogador segura Q.
+
+A câmera começa a orbitar suavemente ao redor do personagem.
+
+O jogador solta Q quando estiver satisfeito.
+
+Se a câmera parou em 37°, 124°, 213° ou qualquer outro ângulo, ela permanece exatamente naquela orientação.
+
+NÃO encaixar automaticamente em:
+
+0° / 90° / 180° / 270°.
+
+---
+
+# 8. CONTROLE DA CÂMERA PELO MOUSE
+
+Adicionar uma segunda forma de controlar a câmera.
+
+## Botão do meio do mouse + arrastar horizontalmente
+
+O comportamento deve ser:
+
+1. jogador pressiona o botão do meio do mouse;
+2. mantém o botão pressionado;
+3. arrasta o mouse horizontalmente;
+4. a câmera orbita ao redor do personagem proporcionalmente ao movimento;
+5. soltar o botão encerra a rotação;
+6. a câmera permanece no novo ângulo.
+
+Exemplo:
+
+Arrastar para a direita:
+
+> câmera orbita para um lado.
+
+Arrastar para a esquerda:
+
+> câmera orbita para o lado oposto.
+
+A rotação deve ser:
+
+- contínua;
+- suave;
+- responsiva;
+- sem snapping.
+
+O movimento vertical do mouse enquanto o botão do meio estiver pressionado NÃO precisa alterar a inclinação da câmera nesta versão.
+
+Neste momento queremos controlar principalmente a **rotação horizontal ao redor do personagem**.
+
+---
+
+# 9. PIVÔ DA CÂMERA
+
+A câmera deve orbitar tendo o personagem como referência/pivô.
+
+Conceitualmente:
+
+                    câmera
+                       ↘
+                        \
+                         jogador
+                       /   |   \
+                    diferentes
+                  ângulos possíveis
+
+O personagem continua sendo aproximadamente o foco central da câmera.
+
+Rotacionar a câmera NÃO deve fazer o jogador desaparecer para outra região da tela.
+
+---
+
+# 10. ZOOM
+
+Manter a roda do mouse para zoom.
+
+Scroll em uma direção:
+
+> aproximar.
+
+Scroll na direção contrária:
+
+> afastar.
+
+Definir limites adequados de zoom.
+
+O jogador não deve conseguir:
+
+- entrar dentro do personagem;
+- atravessar o chão;
+- afastar tanto que prejudique completamente a jogabilidade.
+
+O zoom deve ser suave.
+
+---
+
+# 11. NÃO ALTERAR A INCLINAÇÃO LIVREMENTE
+
+Nesta etapa:
+
+**rotação horizontal = livre**
+
+**inclinação vertical = controlada pelo jogo**
+
+Não precisamos permitir que o jogador transforme a câmera isométrica em uma câmera completamente horizontal ou vista diretamente de cima.
+
+Preserve a identidade visual isométrica/2.5D.
+
+---
+
+# 12. CONTROLES RESULTANTES
+
+Ao final desta implementação:
+
+### Movimento
+
+WASD = movimentação
+
+Point-and-click = movimentação, caso já esteja implementado
+
+### Câmera
+
+Q = orbitar câmera continuamente em uma direção
+
+E = orbitar câmera continuamente na direção oposta
+
+Botão do meio + arrastar horizontalmente = orbitar câmera livremente
+
+Scroll = zoom
+
+### Interação
+
+F = interação contextual universal
+
+---
+
+# 13. F PASSA A SER O BOTÃO UNIVERSAL DE INTERAÇÃO
+
+Atualmente F é utilizado para interagir com o Portal.
+
+Essa implementação deve ser generalizada.
+
+F NÃO deve pertencer especificamente ao Portal.
+
+F será o botão padrão de interação de Dungeon Master.
+
+Criar um sistema genérico de:
+
+## Interactable
+
+ou equivalente adequado à arquitetura existente.
+
+---
+
+# 14. OBJETOS INTERAGÍVEIS
+
+Futuramente esse sistema será utilizado por:
+
+- Portal;
+- NPCs;
+- comerciantes;
+- armazém;
+- baús;
+- portas;
+- mecanismos;
+- placas;
+- pontos de pesca;
+- depósitos minerais;
+- recursos coletáveis;
+- objetos de quests;
+- outros elementos do mundo.
+
+O Portal atual deve passar a utilizar esse sistema genérico.
+
+---
+
+# 15. INTERAÇÃO CONTEXTUAL
+
+Quando o personagem estiver suficientemente próximo de um objeto interagível, mostrar uma indicação contextual.
+
+Exemplos:
+
+**[F] Entrar na Torre**
+
+**[F] Conversar**
+
+**[F] Abrir**
+
+**[F] Examinar**
+
+**[F] Pescar**
+
+**[F] Minerar**
+
+**[F] Coletar**
+
+O texto deve depender do objeto.
+
+Não mostrar apenas:
+
+**[F] Interagir**
+
+quando uma ação mais específica puder ser apresentada.
+
+---
+
+# 16. PRIORIDADE DE INTERAÇÃO
+
+Pode acontecer de dois ou mais objetos interagíveis estarem próximos.
+
+O sistema precisa possuir uma regra previsível para escolher o alvo da interação.
+
+Considere fatores como:
+
+- distância;
+- direção para a qual o personagem está olhando;
+- proximidade do cursor;
+- prioridade definida pelo objeto.
+
+Não criar comportamento aleatório.
+
+O objeto atualmente selecionado para interação deve possuir algum feedback visual discreto quando apropriado.
+
+---
+
+# 17. DIREÇÃO ARTÍSTICA DO HUB
+
+A estrutura atual do Refúgio do Limiar pode ser preservada.
+
+Entretanto, a atmosfera visual precisa mudar.
+
+O Hub atual está:
+
+- muito escuro;
+- muito dessaturado;
+- excessivamente verde/cinza;
+- com atmosfera um pouco melancólica.
+
+Isso não corresponde completamente à sensação desejada para Dungeon Master.
+
+---
+
+# 18. SENSAÇÃO DESEJADA
+
+O Hub é o lugar para onde o jogador sempre retorna.
+
+Ele deve transmitir:
+
+- segurança;
+- aventura;
+- descoberta;
+- energia;
+- curiosidade;
+- progresso;
+- recompensa;
+- vontade de continuar jogando.
+
+O jogador deve olhar para o Hub e pensar:
+
+> "Quero descobrir o que existe depois daquele portal."
+
+Não queremos uma atmosfera deprimente ou excessivamente sombria.
+
+---
+
+# 19. CORES
+
+Utilizar cores mais vivas e vibrantes.
+
+Isso NÃO significa:
+
+- cores neon por toda parte;
+- estética infantil;
+- saturação máxima;
+- poluição visual.
+
+Queremos uma fantasia medieval agradável e energética.
+
+Considere:
+
+- vegetação verde mais viva;
+- flores coloridas;
+- água azul/turquesa;
+- iluminação solar mais quente;
+- detalhes dourados;
+- madeira com tonalidade mais quente;
+- tecidos e bandeiras;
+- elementos mágicos;
+- contraste maior entre terreno e objetos;
+- portal com energia visual marcante.
+
+---
+
+# 20. PORTAL DA TORRE
+
+O Portal deve continuar sendo um dos principais pontos focais do Hub.
+
+Ele representa:
+
+- aventura;
+- perigo;
+- progressão;
+- mistério;
+- entrada na Torre.
+
+Melhorar sua presença visual.
+
+Pode utilizar:
+
+- luz;
+- partículas;
+- movimento;
+- energia;
+- brilho;
+- efeitos mágicos sutis.
+
+Ele deve ser fácil de localizar mesmo sem depender da interface.
+
+---
+
+# 21. HUB MAIS VIVO
+
+O Refúgio do Limiar não deve parecer apenas um cenário abandonado.
+
+Começar a construir a sensação de um lugar habitado.
+
+Não precisamos implementar todos os NPCs e sistemas agora.
+
+Entretanto, o cenário pode começar a possuir elementos como:
+
+- pequenas barracas;
+- caixas;
+- bancos;
+- lanternas;
+- placas;
+- bandeiras;
+- flores;
+- poço;
+- áreas de descanso;
+- caminhos;
+- objetos de comerciantes;
+- pequenos elementos ambientais.
+
+Também podem existir animações ambientais discretas como:
+
+- folhas;
+- partículas;
+- água;
+- bandeiras;
+- luzes;
+- pequenos animais ou pássaros futuramente.
+
+Não prejudicar performance apenas para adicionar decoração.
+
+---
+
+# 22. ORGANIZAÇÃO FUTURA DO HUB
+
+Reserve visualmente áreas que futuramente poderão receber:
+
+- comerciante;
+- armazém;
+- abertura de baús;
+- escolha/missões de classe;
+- treinamento;
+- equipamentos;
+- life skills;
+- outros NPCs.
+
+NÃO implementar esses sistemas nesta etapa.
+
+Apenas evitar criar um Hub cuja composição precise ser completamente refeita quando esses elementos forem adicionados.
+
+---
+
+# 23. LEGIBILIDADE
+
+Apesar das cores mais vibrantes, gameplay continua tendo prioridade.
+
+O jogador deve distinguir facilmente:
+
+- chão caminhável;
+- obstáculos;
+- objetos;
+- NPCs;
+- recursos;
+- Portal;
+- personagem;
+- inimigos futuramente.
+
+Evitar excesso de elementos decorativos que dificultem a leitura.
+
+---
+
+# 24. OCLUSÃO
+
+Como teremos:
+
+- cenário 3D;
+- câmera rotacionável;
+- personagens 2D;
+
+considere desde agora o problema de objetos grandes bloqueando a visão do personagem.
+
+Árvores, paredes ou estruturas podem ficar entre câmera e jogador.
+
+Não é necessário criar um sistema extremamente sofisticado agora, mas a arquitetura deve permitir soluções como:
+
+- transparência temporária;
+- fade;
+- ocultação parcial;
+- ajuste de materiais;
+
+quando um objeto importante bloquear a visão.
+
+Se for simples e seguro implementar uma primeira versão agora, pode fazê-lo.
+
+Caso contrário, documente como requisito técnico futuro.
+
+---
+
+# 25. NÃO AVANÇAR AINDA PARA COMBATE
+
+Esta etapa NÃO é sobre:
+
+- inimigos completos;
+- habilidades;
+- classes completas;
+- loot;
+- boss;
+- Torre procedural completa;
+- PvP;
+- multiplayer.
+
+Não utilizar esta solicitação como justificativa para aumentar o escopo.
+
+Primeiro queremos garantir que a fundação de:
+
+**movimento + câmera + interação + representação visual**
+
+esteja correta.
+
+---
+
+# 26. PRESERVAR FUNCIONALIDADES EXISTENTES
+
+Não quebrar:
+
+- WASD;
+- movimentação existente;
+- point-and-click existente;
+- zoom;
+- Portal;
+- interface funcional;
+- Hub;
+- estrutura atual do projeto.
+
+Caso seja necessário refatorar algum desses sistemas, preserve o comportamento funcional esperado.
+
+---
+
+# 27. EVITAR REESCRITA DESNECESSÁRIA
+
+Antes de modificar código:
+
+1. examine a implementação existente;
+2. identifique quais sistemas já podem ser reaproveitados;
+3. identifique dependências;
+4. faça alterações incrementais;
+5. preserve interfaces públicas quando possível;
+6. teste regressões.
+
+Não substituir módulos inteiros apenas porque outra implementação pareceria mais elegante.
+
+---
+
+# 28. PLACEHOLDERS
+
+Não precisamos de arte final nesta etapa.
+
+Se ainda não existirem sprites adequados para o personagem, utilize um placeholder 2D consistente.
+
+O importante é validar tecnicamente:
+
+**sprite 2D dentro do cenário 3D + câmera livre.**
+
+Não gastar tempo criando dezenas de assets antes de validar o sistema.
+
+---
+
+# 29. CRITÉRIOS DE CONCLUSÃO
+
+Esta iteração estará concluída quando for possível:
+
+1. abrir Dungeon Master normalmente;
+2. entrar no Refúgio do Limiar;
+3. movimentar o personagem com WASD;
+4. utilizar point-and-click caso já esteja disponível;
+5. observar um personagem representado adequadamente como elemento 2D no mundo 3D;
+6. segurar Q e rotacionar continuamente a câmera;
+7. segurar E e rotacionar continuamente para o outro lado;
+8. soltar Q/E em qualquer ângulo e a câmera permanecer exatamente ali;
+9. pressionar o botão do meio do mouse;
+10. arrastar horizontalmente;
+11. fazer a câmera orbitar suavemente ao redor do personagem;
+12. soltar o botão do meio e manter o ângulo escolhido;
+13. utilizar scroll para zoom;
+14. aproximar-se do Portal;
+15. visualizar uma indicação contextual como `[F] Entrar na Torre`;
+16. pressionar F e interagir;
+17. confirmar que o Portal utiliza um sistema genérico de interação;
+18. perceber uma direção artística mais viva e convidativa no Hub;
+19. manter boa legibilidade do cenário;
+20. não introduzir regressões importantes nas funcionalidades já existentes.
+
+---
+
+# 30. ANTES DE IMPLEMENTAR
+
+Primeiro analise o código atual.
+
+Depois apresente brevemente:
+
+1. quais sistemas existentes serão mantidos;
+2. quais precisarão ser modificados;
+3. como será implementada a câmera orbital;
+4. como será estruturado o sistema universal de interação;
+5. como sprites 2D serão integrados ao cenário 3D;
+6. quais alterações visuais serão feitas no Hub;
+7. quais arquivos precisarão ser alterados ou criados.
+
+Depois dessa análise, implemente as alterações incrementalmente.
+
+Ao terminar, informe:
+
+- arquivos modificados;
+- principais mudanças;
+- controles finais;
+- limitações conhecidas;
+- pontos preparados para as próximas etapas.
+
+## REGRA PRINCIPAL
+
+Não tente antecipar o restante de Dungeon Master.
+
+O objetivo desta iteração é fazer a **fundação da Beta 0.1.0 parecer e se comportar como a fundação correta do jogo que construiremos depois**.

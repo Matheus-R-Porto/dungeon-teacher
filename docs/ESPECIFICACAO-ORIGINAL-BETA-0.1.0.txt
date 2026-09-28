@@ -1,0 +1,1190 @@
+# DUNGEON MASTER — BETA 0.1.0
+## Prompt Mestre de Desenvolvimento — Vertical Slice
+
+Você atuará como **Game Designer, Game Systems Designer, Arquiteto de Software e Desenvolvedor Sênior de Jogos**, responsável por ajudar a construir a primeira versão jogável de **Dungeon Master**.
+
+Este documento representa a fonte principal de verdade para a **Beta 0.1.0**.
+
+Não tente construir todo o jogo definitivo de uma vez.
+
+O objetivo desta versão é criar uma **Vertical Slice pequena, funcional, divertida, testável e extensível**, validando o principal ciclo de gameplay antes da implementação de multiplayer e sistemas de maior escala.
+
+---
+
+# 1. VISÃO DO JOGO
+
+**Nome:** Dungeon Master  
+**Versão:** Beta 0.1.0  
+**Gênero:** Action RPG / Dungeon Crawler / RPG Educacional  
+**Plataforma principal:** Desktop e notebook  
+**Tecnologia pretendida:** HTML + CSS + JavaScript  
+**Perspectiva:** Top-down isométrica / 2.5D  
+**Estrutura:** Hub persistente + Torre procedural
+
+Dungeon Master combina elementos conceituais inspirados em:
+
+- Ragnarok Online
+- Tibia
+- Hades
+- Primeiro arco de Sword Art Online
+
+Essas referências devem servir apenas para comunicar ideias de design.
+
+Não copie personagens, mapas, nomes, habilidades, sprites, interfaces, músicas, história ou outros elementos protegidos dessas obras.
+
+Crie identidade própria para Dungeon Master.
+
+---
+
+# 2. OBJETIVO DA BETA 0.1.0
+
+A Beta 0.1.0 deve validar este ciclo:
+
+**Hub → Preparação → Entrada na Torre → Exploração → Combate → Coleta → Baús → Boss → Retorno ao Hub → Questões de Matemática → Recompensas → Equipamentos/Atributos → Nova Run**
+
+O jogador deve conseguir experimentar esse ciclo repetidamente.
+
+A versão deve priorizar:
+
+1. Jogabilidade funcional.
+2. Combate satisfatório.
+3. Progressão perceptível.
+4. Torre procedural funcional.
+5. Persistência dos andares descobertos.
+6. Sistema básico das cinco classes.
+7. Life skills básicas.
+8. Sistema educacional dos baús.
+9. Arquitetura preparada para expansão futura.
+
+Evite adicionar sistemas que não sejam necessários para validar esse ciclo.
+
+---
+
+# 3. ESCOPO DA BETA 0.1.0
+
+A Vertical Slice contém apenas o primeiro capítulo da torre:
+
+## Capítulo I — Floresta
+
+**Andares:** 1 ao 5
+
+Os cinco andares pertencem ao bioma Floresta, mas devem apresentar progressão ambiental.
+
+Exemplo conceitual:
+
+- Andar 1 — Floresta exterior
+- Andar 2 — Floresta fechada
+- Andar 3 — Floresta antiga
+- Andar 4 — Floresta profunda/perigosa
+- Andar 5 — território do Boss
+
+Os nomes e detalhes podem ser refinados durante o desenvolvimento.
+
+O quinto andar contém o primeiro Boss.
+
+Cada andar normal deve ter conteúdo suficiente para aproximadamente **8 minutos de exploração**, embora isso possa ser ajustado após testes.
+
+---
+
+# 4. NÃO FAZ PARTE DA BETA 0.1.0
+
+Não implementar nesta versão:
+
+- Multiplayer
+- Party
+- Arena PvP
+- Apostas PvP
+- Trocas entre jogadores
+- Servidor para 60 jogadores
+- Herança multiplayer de andares
+- Evoluções avançadas de classe
+- Andares 6–50
+- Caverna/Minas
+- Checkpoint do andar 20
+- Crafting
+- Forja
+- Caça
+- Sistemas educacionais de analytics
+- Dashboard do professor
+
+Entretanto, a arquitetura não deve tornar esses sistemas desnecessariamente difíceis de adicionar posteriormente.
+
+---
+
+# 5. HUB PRINCIPAL
+
+O Hub é a área segura e persistente do jogador.
+
+Deve possuir inicialmente os elementos necessários para:
+
+- acessar a Torre;
+- selecionar/realizar a missão de classe;
+- gerenciar equipamentos;
+- distribuir atributos;
+- acessar inventário;
+- acessar armazém;
+- comprar itens básicos;
+- abrir baús;
+- responder às questões matemáticas;
+- visualizar informações básicas do personagem.
+
+O Hub não precisa ser enorme.
+
+Prefira uma área compacta e funcional.
+
+O elemento visual mais importante deve ser o **grande portal de entrada da Torre**.
+
+---
+
+# 6. PERSONAGEM INICIAL
+
+Todo personagem começa como:
+
+## Novato
+
+Após uma pequena progressão inicial, o jogador poderá realizar uma pequena missão dentro do Hub para escolher permanentemente uma classe.
+
+Classes disponíveis:
+
+1. Guerreiro
+2. Arqueiro
+3. Feiticeiro
+4. Assassino
+5. Sacerdote
+
+A escolha é permanente para aquele personagem.
+
+Todas as cinco classes devem existir na Beta 0.1.0.
+
+---
+
+# 7. CLASSES
+
+Cada classe precisa possuir identidade própria.
+
+## Guerreiro
+
+Especialista em combate corpo a corpo, resistência e confronto direto.
+
+## Arqueiro
+
+Especialista em ataques físicos à distância, precisão e posicionamento.
+
+## Feiticeiro
+
+Especialista em magia, dano elemental e habilidades de área.
+
+## Assassino
+
+Especialista em velocidade, dano explosivo, mobilidade e ataques rápidos.
+
+## Sacerdote
+
+Especialista em suporte, cura, buffs e habilidades sagradas, mantendo capacidade suficiente para jogar sozinho.
+
+Nenhuma classe deve depender obrigatoriamente de multiplayer.
+
+---
+
+# 8. HABILIDADES
+
+Cada classe pode trabalhar com até:
+
+**8 habilidades equipadas.**
+
+Controles principais sugeridos:
+
+`1 2 3 4 5 6 7 8`
+
+As habilidades possuem:
+
+- custo;
+- cooldown;
+- alcance;
+- efeito;
+- animação/feedback;
+- regras específicas da classe.
+
+Dash NÃO é uma mecânica universal.
+
+Caso exista, deve ser uma habilidade específica de determinadas classes/builds.
+
+---
+
+# 9. MOVIMENTAÇÃO
+
+O jogo deve aceitar:
+
+- WASD;
+- Point-and-click.
+
+A câmera utiliza perspectiva isométrica/2.5D.
+
+A estrutura deve permitir câmera rotacionável para que o jogador consiga observar o ambiente de diferentes ângulos.
+
+A implementação deve preservar legibilidade do cenário, inimigos, objetos interativos e personagem.
+
+---
+
+# 10. SISTEMA DE COMBATE
+
+A principal referência conceitual de combate é um MMORPG clássico de ação/semi-automático.
+
+Ao clicar em um inimigo:
+
+1. o personagem seleciona o alvo;
+2. aproxima-se caso necessário;
+3. inicia ataques básicos;
+4. continua atacando automaticamente;
+5. encerra quando o inimigo morre, o jogador cancela a ação ou outra condição válida interrompe o combate.
+
+Se uma habilidade for utilizada durante o auto-attack:
+
+1. concluir a ação/ataque atualmente em execução;
+2. executar a habilidade solicitada;
+3. verificar se o alvo continua válido;
+4. retornar automaticamente ao ataque básico.
+
+Evite controles excessivamente frenéticos.
+
+O combate deve valorizar:
+
+- atributos;
+- equipamentos;
+- posicionamento;
+- escolha de alvo;
+- quantidade de inimigos atraídos;
+- habilidades;
+- cooldowns;
+- velocidade de ataque;
+- preparação.
+
+---
+
+# 11. AGGRO
+
+Inimigos possuem sistema de percepção/aggro.
+
+O jogador pode atrair vários inimigos simultaneamente.
+
+Cabe ao jogador administrar esse risco.
+
+Se atrair muitos inimigos, precisará lidar com as consequências utilizando posicionamento, resistência, controle ou habilidades de área.
+
+Não imponha artificialmente um limite extremamente baixo de inimigos agressivos.
+
+---
+
+# 12. VELOCIDADE DE ATAQUE
+
+Attack Speed deve ser um atributo relevante.
+
+Aumentar velocidade de ataque reduz o intervalo entre ataques básicos.
+
+Builds rápidas devem ser perceptivelmente diferentes de builds lentas.
+
+Entretanto, o sistema precisa ser projetado de maneira que velocidades extremas não quebrem completamente IA, animações ou combate.
+
+Separar conceitualmente:
+
+- velocidade do ataque;
+- tempo de animação;
+- possibilidade de interrupção/stagger;
+- cooldowns;
+- recuperação do inimigo.
+
+Não assumir automaticamente que todo ataque rápido causa stun.
+
+---
+
+# 13. ATRIBUTOS
+
+Utilizar sistema inspirado conceitualmente nos atributos clássicos de Ragnarok:
+
+- STR
+- AGI
+- VIT
+- INT
+- DEX
+- LUK
+
+Criar fórmulas próprias para Dungeon Master.
+
+Os atributos devem afetar elementos como:
+
+- dano físico;
+- dano mágico;
+- HP;
+- defesa;
+- velocidade de ataque;
+- precisão;
+- esquiva;
+- capacidade de inventário;
+- chances relacionadas à sorte;
+- outros efeitos coerentes.
+
+Evite fórmulas excessivamente complexas na Beta.
+
+As fórmulas devem ser centralizadas e fáceis de rebalancear.
+
+---
+
+# 14. EXPERIÊNCIA E PROGRESSÃO
+
+Durante uma run, o jogador acumula experiência.
+
+Ao retornar ao Hub, essa progressão pode ser utilizada para melhorar o personagem e distribuir pontos de atributos conforme as regras estabelecidas pelo sistema.
+
+O jogador deve sentir diferença perceptível após melhorar seus atributos.
+
+A Beta deve permitir testar diferentes distribuições.
+
+---
+
+# 15. EQUIPAMENTOS
+
+Slots principais:
+
+- Cabeça
+- Peitoral
+- Calças
+- Botas
+
+Acessórios:
+
+- 1 Anel
+- 1 Colar
+- 1 Talismã
+
+Além dos equipamentos adequados ao combate da classe, como armas.
+
+Equipamentos podem modificar:
+
+- atributos;
+- ataque;
+- defesa;
+- velocidade;
+- HP;
+- MP/recursos;
+- propriedades especiais.
+
+---
+
+# 16. RARIDADES
+
+Utilizar:
+
+1. Comum
+2. Incomum
+3. Raro
+4. Épico
+5. Lendário
+
+Quanto maior a raridade, menor a probabilidade básica de obtenção.
+
+Não transformar raridade apenas em "número maior".
+
+Quando possível, equipamentos raros devem futuramente permitir propriedades que alterem builds.
+
+Na Beta, versões simplificadas são aceitáveis.
+
+---
+
+# 17. INVENTÁRIO
+
+O inventário deve possuir limite.
+
+Entretanto:
+
+**não deve ser excessivamente punitivo.**
+
+O jogador deve possuir uma capacidade inicial confortável.
+
+A capacidade pode ser aumentada através de atributos/sistemas apropriados.
+
+Baús, equipamentos, consumíveis, ferramentas e recursos ocupam inventário conforme as regras estabelecidas.
+
+A interface deve deixar capacidade utilizada e restante claramente visíveis.
+
+---
+
+# 18. ARMAZÉM
+
+Existe um armazém no Hub.
+
+O jogador pode alugá-lo.
+
+O armazém possui capacidade consideravelmente maior que o inventário pessoal.
+
+A economia exata do aluguel pode ser ajustada durante os testes.
+
+---
+
+# 19. MOEDA
+
+Utilizar apenas **uma moeda principal**.
+
+Ela é utilizada para:
+
+- lojas;
+- consumíveis;
+- equipamentos;
+- ferramentas;
+- armazém;
+- serviços;
+- sistemas futuros.
+
+Evitar múltiplas moedas na Beta.
+
+---
+
+# 20. CONSUMÍVEIS
+
+Existem itens consumíveis, incluindo:
+
+- poções de cura;
+- buffs;
+- outros consumíveis básicos.
+
+Cada tipo de poção/consumível pode possuir seu próprio cooldown.
+
+Não criar inicialmente um único cooldown global para todos os consumíveis.
+
+---
+
+# 21. MORTE
+
+Quando o jogador morre:
+
+- retorna ao Hub;
+- perde uma porcentagem de suas moedas;
+- mantém os drops;
+- mantém os baús encontrados.
+
+A porcentagem perdida deve ser configurável para balanceamento.
+
+Morrer deve ter consequência, mas não deve destruir toda a progressão da run.
+
+---
+
+# 22. RETORNO VOLUNTÁRIO
+
+Ao concluir cada andar, o jogador recebe a escolha:
+
+**Continuar subindo**  
+ou  
+**Retornar ao Hub**
+
+Isso cria uma decisão de risco/recompensa.
+
+Não é necessário morrer para encerrar uma run.
+
+---
+
+# 23. TORRE PROCEDURAL
+
+Na primeira vez em que um jogador acessa determinado andar, seu mapa é gerado proceduralmente.
+
+Depois disso:
+
+**aquele andar deixa de ser regenerado.**
+
+O layout descoberto passa a fazer parte permanentemente da torre daquele personagem.
+
+Portanto:
+
+`primeira visita → geração procedural → salvar configuração/seed → visitas futuras reutilizam o mesmo andar`
+
+Preferir geração baseada em:
+
+- seed;
+- módulos;
+- salas;
+- corredores;
+- áreas naturais;
+- pontos de interesse;
+- regras de conexão;
+- distribuição controlada de inimigos;
+- recursos;
+- saída.
+
+Não gerar simplesmente ruído aleatório sem regras.
+
+---
+
+# 24. PERSISTÊNCIA DA TORRE
+
+A persistência dos andares é um sistema fundamental.
+
+Cada personagem possui conceitualmente sua própria versão da Torre.
+
+Na Beta single-player, isso significa que:
+
+- o andar 1 é gerado uma vez;
+- depois permanece;
+- o andar 2 é gerado quando descoberto;
+- depois permanece;
+- e assim sucessivamente.
+
+A arquitetura dos dados deve futuramente permitir a **herança de andares entre jogadores**, embora essa funcionalidade NÃO seja implementada na Beta 0.1.0.
+
+---
+
+# 25. FUTURA HERANÇA DE ANDARES
+
+Registrar como requisito futuro de arquitetura:
+
+Em multiplayer, quando jogadores explorarem juntos um andar ainda não descoberto por determinado membro da party, poderá ocorrer herança da versão do andar pertencente ao líder.
+
+Exemplo:
+
+Frodo possui o andar 4.
+
+Bilbo ainda não conquistou esse andar.
+
+Frodo lidera a party.
+
+Eles conquistam juntos o andar utilizando a versão de Frodo.
+
+A versão persistente de Frodo passa a ser também a versão daquele andar de Bilbo.
+
+Essa característica é central à futura identidade multiplayer do projeto.
+
+NÃO implementar agora.
+
+Apenas evitar decisões arquiteturais que inviabilizem isso.
+
+---
+
+# 26. ESTRUTURA DOS ANDARES
+
+Os mapas não possuem quests tradicionais.
+
+O foco é:
+
+- exploração;
+- combate;
+- recursos;
+- baús;
+- caminhos;
+- áreas opcionais;
+- saída;
+- coleta;
+- segredos simples.
+
+Os jogadores devem possuir motivos para retornar a andares antigos.
+
+---
+
+# 27. LIFE SKILLS
+
+Implementar inicialmente:
+
+## Pesca
+
+Permite coletar peixes e recursos relacionados em áreas apropriadas.
+
+## Mineração
+
+Permite extrair minérios e pedras de depósitos apropriados.
+
+## Coleta
+
+Permite coletar plantas, materiais naturais e outros recursos.
+
+Cada profissão possui:
+
+- nível próprio;
+- experiência própria;
+- ferramenta apropriada;
+- progressão.
+
+---
+
+# 28. FERRAMENTAS
+
+Life skills dependem de ferramentas.
+
+Exemplos:
+
+- vara de pesca;
+- picareta;
+- ferramenta/kit apropriado para coleta.
+
+Ferramentas melhores podem permitir:
+
+- coleta mais rápida;
+- materiais melhores;
+- áreas/recursos de nível superior;
+- eficiência maior.
+
+---
+
+# 29. PROGRESSÃO ALTERNATIVA
+
+Um objetivo importante de Dungeon Master é permitir que jogadores interessados em life skills consigam obter progressão/recompensas relevantes.
+
+Subir a Torre através do combate não deve ser a única atividade significativa.
+
+Jogadores podem:
+
+- lutar;
+- explorar;
+- pescar;
+- minerar;
+- coletar;
+- comercializar futuramente;
+- misturar essas atividades.
+
+Na Beta, validar principalmente se retornar aos andares antigos para coletar recursos possui algum valor.
+
+---
+
+# 30. BAÚS
+
+Monstros, exploração, bosses e outras atividades podem conceder:
+
+**Baús fechados.**
+
+O jogador NÃO abre esses baús imediatamente.
+
+Eles são levados até o Hub.
+
+Os baús são a principal ligação entre RPG e gamificação educacional.
+
+---
+
+# 31. ABERTURA EDUCACIONAL DOS BAÚS
+
+Para abrir um baú, o jogador responde uma sequência de questões de matemática.
+
+As perguntas vêm inicialmente de um banco JSON.
+
+Cada questão deve possuir estrutura de dados clara, como:
+
+- ID;
+- enunciado;
+- tipo;
+- alternativas, quando aplicável;
+- resposta correta;
+- dificuldade;
+- categoria/tema matemático.
+
+Não criar analytics educacional nesta versão.
+
+---
+
+# 32. REGRA PEDAGÓGICA FUNDAMENTAL
+
+**Errar não remove a recompensa.**
+
+Se o jogador errar todas as perguntas:
+
+o baú ainda abre utilizando sua sorte/probabilidade básica.
+
+Acertos funcionam como **bônus positivo**.
+
+Quanto melhor o desempenho, maior a influência positiva sobre a rolagem de recompensa.
+
+Portanto:
+
+`recompensa básica + aleatoriedade + bônus de desempenho`
+
+e NÃO:
+
+`errou = perdeu o prêmio`
+
+O objetivo é fazer conhecimento melhorar oportunidades sem transformar erro matemático em punição severa dentro do RPG.
+
+---
+
+# 33. SORTE DOS BAÚS
+
+O resultado continua sendo aleatório.
+
+Acertar todas as questões NÃO deve necessariamente garantir um item lendário.
+
+Em vez disso, os acertos melhoram as probabilidades.
+
+Exemplo conceitual:
+
+Baú possui tabela base.
+
+O desempenho matemático modifica pesos probabilísticos.
+
+Atributos relacionados à sorte podem futuramente participar da fórmula.
+
+Todas essas probabilidades devem ficar centralizadas/configuráveis para permitir balanceamento.
+
+---
+
+# 34. BOSS DO ANDAR 5
+
+O andar 5 contém o primeiro Boss.
+
+O Boss deve representar um teste do que o jogador aprendeu nos quatro primeiros andares:
+
+- movimentação;
+- posicionamento;
+- gerenciamento de recursos;
+- habilidades;
+- leitura de ataques;
+- preparação;
+- build.
+
+Ele deve possuir identidade visual e mecânica relacionada ao bioma Floresta.
+
+Derrotá-lo representa a conclusão da Vertical Slice principal.
+
+A vitória deve gerar uma recompensa perceptivelmente relevante.
+
+---
+
+# 35. RESPAWN DOS ANDARES
+
+Depois de descobertos, os mapas permanecem iguais.
+
+Entretanto, isso NÃO significa que ficam vazios.
+
+Inimigos e recursos podem reaparecer segundo regras próprias.
+
+Separar:
+
+**geometria persistente**
+
+de
+
+**estado dinâmico de criaturas/recursos.**
+
+Isso permite retornar aos mapas para combate, farming e life skills.
+
+---
+
+# 36. SAVE
+
+A Beta precisa possuir persistência local confiável.
+
+Salvar pelo menos:
+
+- personagem;
+- classe;
+- nível;
+- XP;
+- atributos;
+- equipamentos;
+- inventário;
+- armazém;
+- moeda;
+- life skills;
+- ferramentas;
+- baús;
+- andares descobertos;
+- seeds/configurações dos mapas;
+- progressão;
+- configurações relevantes.
+
+Criar versionamento do formato de save desde cedo.
+
+Exemplo conceitual:
+
+`saveVersion: "0.1.0"`
+
+Isso facilitará migrações futuras.
+
+---
+
+# 37. ARQUITETURA
+
+Embora a Beta seja single-player, não construir toda a lógica como um bloco monolítico preso à interface.
+
+Separar responsabilidades.
+
+Uma organização conceitual possível:
+
+- Core
+- Game State
+- Player
+- Character Stats
+- Classes
+- Skills
+- Combat
+- AI
+- Items
+- Equipment
+- Inventory
+- Loot
+- Chest System
+- Education/Math System
+- Procedural Generation
+- Floor State
+- Life Skills
+- Economy
+- Save/Persistence
+- UI
+- Input
+- Rendering
+- Audio
+- Configuration
+
+Não é obrigatório usar exatamente esses nomes.
+
+O importante é manter responsabilidades claras.
+
+---
+
+# 38. DATA-DRIVEN DESIGN
+
+Sempre que possível, conteúdo deve ser definido através de dados/configuração e não enterrado diretamente na lógica.
+
+Isso vale especialmente para:
+
+- inimigos;
+- atributos;
+- habilidades;
+- equipamentos;
+- raridades;
+- loot tables;
+- questões matemáticas;
+- classes;
+- consumíveis;
+- recursos;
+- profissões;
+- bosses.
+
+Isso permitirá expandir Dungeon Master sem reescrever sistemas centrais.
+
+---
+
+# 39. BALANCEAMENTO
+
+Evitar números mágicos espalhados pelo código.
+
+Centralizar parâmetros como:
+
+- XP;
+- HP;
+- dano;
+- defesa;
+- Attack Speed;
+- cooldown;
+- drop rate;
+- raridade;
+- preço;
+- perda de moedas;
+- progressão;
+- dificuldade;
+- bônus das questões matemáticas.
+
+A Beta existe para permitir que esses números sejam testados e modificados rapidamente.
+
+---
+
+# 40. INTERFACE
+
+A UI deve priorizar legibilidade.
+
+Elementos importantes:
+
+- HP;
+- recurso da classe/MP;
+- alvo atual;
+- barra de habilidades 1–8;
+- cooldowns;
+- buffs/debuffs;
+- nível;
+- XP;
+- minimapa/mapa quando apropriado;
+- inventário;
+- equipamento;
+- atributos;
+- informações do item;
+- interação;
+- moedas.
+
+Não sobrecarregar a tela.
+
+---
+
+# 41. CONTROLES
+
+Desktop/notebook é a plataforma principal.
+
+Não comprometer o design da interface tentando transformá-lo em mobile-first.
+
+Priorizar:
+
+- teclado;
+- mouse;
+- WASD;
+- point-and-click;
+- teclas numéricas;
+- atalhos configuráveis futuramente.
+
+Mobile poderá ser usado apenas para testes experimentais e não precisa orientar as decisões de UX da Beta 0.1.0.
+
+---
+
+# 42. DIREÇÃO VISUAL
+
+O jogo deve comunicar claramente:
+
+- terreno;
+- obstáculos;
+- inimigos;
+- ataques;
+- áreas perigosas;
+- loot;
+- recursos coletáveis;
+- NPCs;
+- objetos interativos.
+
+A câmera isométrica rotacionável não pode prejudicar essa leitura.
+
+Na ausência de assets definitivos, utilizar placeholders consistentes.
+
+Não interromper desenvolvimento de sistemas essenciais por falta de arte final.
+
+---
+
+# 43. PRIORIDADE DE DESENVOLVIMENTO
+
+Não implementar tudo simultaneamente.
+
+Utilizar desenvolvimento incremental.
+
+Ordem sugerida:
+
+### Marco 1 — Fundação
+
+- projeto executável;
+- loop principal;
+- renderização;
+- input;
+- personagem;
+- câmera;
+- movimentação WASD;
+- point-and-click.
+
+### Marco 2 — Combate
+
+- inimigo simples;
+- target;
+- auto-attack;
+- HP;
+- dano;
+- morte;
+- aggro;
+- Attack Speed;
+- habilidades.
+
+### Marco 3 — RPG
+
+- atributos;
+- XP;
+- níveis;
+- classes;
+- equipamentos;
+- itens;
+- inventário;
+- consumíveis.
+
+### Marco 4 — Hub
+
+- Hub;
+- NPCs essenciais;
+- portal;
+- classe;
+- lojas;
+- atributos;
+- armazém.
+
+### Marco 5 — Torre
+
+- geração procedural;
+- seeds;
+- persistência;
+- Floresta;
+- andares 1–4;
+- respawn;
+- retorno ao Hub.
+
+### Marco 6 — Life Skills
+
+- pesca;
+- mineração;
+- coleta;
+- níveis;
+- ferramentas;
+- recursos.
+
+### Marco 7 — Educação
+
+- baús;
+- banco JSON;
+- questões matemáticas;
+- avaliação;
+- modificadores probabilísticos;
+- loot.
+
+### Marco 8 — Boss
+
+- andar 5;
+- Boss;
+- padrões;
+- recompensa;
+- conclusão da Vertical Slice.
+
+### Marco 9 — Polimento
+
+- UI;
+- feedback;
+- áudio;
+- partículas;
+- correções;
+- balanceamento;
+- testes;
+- performance;
+- save;
+- tratamento de erros.
+
+---
+
+# 44. REGRA DE IMPLEMENTAÇÃO
+
+Antes de implementar um grande sistema:
+
+1. identificar dependências;
+2. definir responsabilidade;
+3. definir dados necessários;
+4. verificar interação com sistemas existentes;
+5. implementar a menor versão funcional;
+6. testar;
+7. somente então expandir.
+
+Não criar sistemas gigantes antecipadamente.
+
+Não adicionar funcionalidades fora do escopo apenas porque "seriam legais".
+
+---
+
+# 45. CRITÉRIO DE SUCESSO DA BETA 0.1.0
+
+A Beta 0.1.0 será considerada funcional quando um jogador puder:
+
+1. iniciar o jogo;
+2. entrar no Hub;
+3. controlar seu personagem;
+4. tornar-se uma das cinco classes;
+5. distribuir atributos;
+6. equipar itens;
+7. entrar na Torre;
+8. receber um andar procedural;
+9. explorar;
+10. combater inimigos;
+11. usar habilidades;
+12. receber baús;
+13. coletar recursos;
+14. terminar o andar;
+15. decidir continuar ou retornar;
+16. retornar posteriormente ao mesmo layout;
+17. progredir até o andar 5;
+18. derrotar o Boss;
+19. retornar ao Hub;
+20. responder questões matemáticas;
+21. abrir seus baús;
+22. receber recompensas influenciadas pelos acertos;
+23. melhorar personagem/equipamentos;
+24. iniciar uma nova run;
+25. perceber progressão real entre as runs.
+
+Se esse ciclo for funcional e divertido, a Vertical Slice cumpriu sua função.
+
+---
+
+# 46. VISÃO FUTURA — NÃO IMPLEMENTAR AGORA
+
+A arquitetura deve considerar que Dungeon Master poderá posteriormente crescer para:
+
+- 50 andares;
+- capítulos de cinco andares;
+- diferentes biomas;
+- Boss a cada cinco andares;
+- checkpoints a cada 20 andares;
+- evoluções de classe;
+- pelo menos dois caminhos evolutivos por classe;
+- multiplayer;
+- aproximadamente 60 jogadores simultâneos;
+- party;
+- torres compartilhadas durante party;
+- herança permanente de andares;
+- ressurreição por Sacerdote;
+- item raro de ressurreição;
+- trocas;
+- Arena 1v1;
+- apostas mínimas de 50 moedas;
+- torneios/eventos;
+- Caverna/Minas;
+- crafting;
+- forja;
+- caça;
+- outras life skills;
+- novos equipamentos;
+- novos bosses;
+- novos conteúdos educacionais.
+
+Esses sistemas devem influenciar decisões arquiteturais quando relevante, mas NÃO devem aumentar desnecessariamente o escopo da Beta 0.1.0.
+
+---
+
+# 47. FILOSOFIA DO PROJETO
+
+Dungeon Master não deve parecer:
+
+> "um exercício de matemática disfarçado de jogo."
+
+Deve parecer primeiro um RPG que o jogador realmente deseja jogar.
+
+A matemática participa organicamente do sistema de recompensas.
+
+O jogador explora porque quer descobrir.
+
+Luta porque quer progredir.
+
+Volta porque quer equipamentos melhores.
+
+Desenvolve profissões porque encontra valor nelas.
+
+Abre baús porque está curioso sobre o conteúdo.
+
+E, nesse momento, conhecimento matemático torna-se uma vantagem dentro da aventura.
+
+---
+
+# 48. COMO TRABALHAR A PARTIR DESTE PROMPT
+
+Não responda tentando implementar Dungeon Master inteiro imediatamente.
+
+Primeiro:
+
+1. Analise todos os requisitos.
+2. Identifique contradições, dependências técnicas e riscos.
+3. Separe claramente requisito obrigatório, decisão de implementação e sugestão.
+4. Proponha uma arquitetura adequada para HTML/CSS/JavaScript.
+5. Defina estrutura de diretórios e responsabilidades.
+6. Defina os principais modelos de dados.
+7. Defina como renderização isométrica, rotação de câmera, pathfinding, geração procedural e persistência serão abordados.
+8. Defina uma estratégia que permita multiplayer futuro sem implementar multiplayer agora.
+9. Divida a Beta 0.1.0 em marcos pequenos e verificáveis.
+10. Para cada marco, estabeleça critérios objetivos de conclusão.
+11. Identifique quais decisões precisam ser tomadas antes de começar a implementação.
+12. Somente depois disso proponha o primeiro passo de implementação.
+
+Caso exista uma decisão técnica com múltiplas alternativas razoáveis, apresente as alternativas e seus trade-offs antes de assumir silenciosamente uma delas.
+
+Durante o desenvolvimento, preserve este documento como **fonte de verdade de produto**.
+
+Quando uma implementação técnica entrar em conflito com um requisito de design, sinalize o conflito antes de modificar o comportamento do jogo.
+
+## Objetivo imediato
+
+Transformar esta especificação em um **plano técnico executável para Dungeon Master Beta 0.1.0**, mantendo o escopo controlado e preparando uma base suficientemente modular para as versões futuras.
