@@ -1,6 +1,8 @@
 # Dungeon Teacher — Beta 0.1.0
 
-An action RPG dungeon-crawler built with **Three.js (3D)**, with an educational twist at its core: the long-term goal is to gamify learning by weaving questions and challenges into the same loop as combat, loot and character progression. That educational layer isn't built yet — this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence.
+A roguelite-ish tower climber (in quotes because it's not quite a traditional roguelike) built with **Three.js (3D)**, inspired by Ragnarok Online's dungeon loop and general Sword Art Online vibes. Pick a weapon, climb the procedural tower fighting for drops and boss chests, then return to the hub — or die trying — to level up, learn skills and gear up before heading back in stronger.
+
+The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Planned life-skill systems (also not implemented) will add fishing and mining floors, feeding a Black Desert-style forging/upgrading system.
 
 Current build: **Iteration 08 — Combat variety and progression**.
 
