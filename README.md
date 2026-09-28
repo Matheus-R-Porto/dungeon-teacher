@@ -4,7 +4,7 @@ A roguelite-ish tower climber (in quotes because it's not quite a traditional ro
 
 The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Planned life-skill systems (also not implemented) will add fishing and mining floors, feeding a Black Desert-style forging/upgrading system.
 
-Current build: **Iteration 08 — Combat variety and progression**.
+**Status: actively in development**, worked on weekly. Current build: **Iteration 08 — Combat variety and progression**.
 
 ## Screenshots
 *(placeholder art — geometric shapes and default assets, not final visuals)*
