@@ -2,19 +2,21 @@
   {
     "enemies": 5,
     "simulatedSeconds": 60,
-    "meanStepMs": 0.022002055555555733,
-    "p95StepMs": 0.046999999999997044,
-    "maxProjectiles": 0,
-    "paths": 81,
+    "meanStepMs": 0.01852597222222227,
+    "p95StepMs": 0.04529999999999745,
+    "maxProjectiles": 2,
+    "activeProjectileSteps": 2512,
+    "paths": 4,
     "fallbacks": 0
   },
   {
     "enemies": 20,
     "simulatedSeconds": 60,
-    "meanStepMs": 0.0734666111111104,
-    "p95StepMs": 0.17229999999995016,
-    "maxProjectiles": 1,
-    "paths": 324,
+    "meanStepMs": 0.13019125000000006,
+    "p95StepMs": 0.3177000000000021,
+    "maxProjectiles": 7,
+    "activeProjectileSteps": 2529,
+    "paths": 778,
     "fallbacks": 0
   }
 ]

@@ -10,6 +10,8 @@ export function generateFloor(runSeed,floor,hubId){
   const world={id:'tower-floor-'+floor,name:'Torre · Andar '+floor,safe:false,floorId:floor,seed,runSeed,environment:'dungeon',bounds:{minX:-extent,maxX:extent,minZ:-extent,maxZ:extent},spawn:{x:0,z:extent-4},portal:{x:0,z:-extent+3,interactRadius:2.6},npcs:[],zones:[],obstacles:[],enemySpawns:[],interactables:[]};
   // Disjoint modules keep a wide central avenue and transverse routes open.
   for(const x of [-extent+4,extent-4])for(const z of [-extent+5,0,extent-5])if(random()>.25)world.obstacles.push({id:`module-${x}-${z}`,shape:'rect',x,z,halfX:.6+random()*.65,halfZ:.5+random()*.6,kind:'wall'});
+  // Every encounter retains real cover, even for seeds that omit random modules.
+  for(const x of [-extent+4,extent-4]){if(world.obstacles.length>=2)break;const id='module-'+x+'-0';if(!world.obstacles.some(o=>o.id===id))world.obstacles.push({id,shape:'rect',x,z:0,halfX:.9,halfZ:.8,kind:'wall'});}
   const candidates=[];
   for(let z=extent-7;z>=-extent+6;z-=4)for(const x of [-5,0,5])if(canStand(world,x,z,.8)&&findPath(world,world.spawn,{x,z},.85))candidates.push({x,z});
   // Fisher-Yates keeps sampling bounded and reproducible.

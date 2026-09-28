@@ -1,24 +1,26 @@
 # Dungeon Teacher — Beta 0.1.0
 
-Entrega atual: **Iteração 07 — Primeiro loop completo de jogatina**.
+Entrega atual: **Iteração 08 — Variedade de combate e progressão**.
 
 ## Primeira expedição
 
 1. Siga Primeiros passos: caminhe, teste a câmera e fale com o Armeiro usando F.
-2. Adquira uma arma gratuita, abra I e equipe. Abra TAB e aprenda técnicas.
+2. Adquira uma arma gratuita, abra I e equipe. Você começa sem habilidades e sem Espaços de Habilidade.
 3. Use F no Portal, com arma equipada. A Torre gera três andares por seed.
-4. Clique nos Slimes para provocar e atacar; habilidades usam 1–5. Eles vagam passivamente até sofrer dano e não reaparecem nesta expedição.
+4. Clique nos Slimes para atacar; somente impactos hostis válidos provocam. Habilidades aprendidas usam 1–5. Eles vagam passivamente até sofrer dano e não reaparecem nesta expedição.
 5. Elimine os 3, 4 e 5 inimigos dos andares. O portal de cada andar libera a subida.
 6. No terceiro, o Slime Guardião aparece após dois segundos. Derrote-o, pegue o baú com F e volte pelo portal.
 7. Abra I no Refúgio, selecione o baú e clique Abrir. Espaço desacelera a roleta até o resultado. Receba equipamento e ouro.
-8. Inimigos concedem XP; subir de nível concede pontos de atributo. Abra C no Refúgio para distribuí-los sem gastar XP ou ouro. Você continua Novato.
+8. Inimigos concedem XP; cada nível concede 5 pontos de atributo e 1 Espaço de Habilidade. Em TAB, cada técnica custa 1 Espaço; as cinco são independentes. Abra C no Refúgio para distribuí-los sem gastar XP ou ouro. Você continua Novato.
 9. Equipe a recompensa em I e inicie outra expedição.
 
 Morrer retorna ao Refúgio com HP/MP completos e encerra a run. Recursos e itens já recebidos permanecem. A interação perto da entrada permite abandonar. Recarregar também começa no Refúgio, sem restaurar uma expedição em andamento.
 
 Inventário, equipamentos, habilidades, atributos, XP, ouro, baús e onboarding persistem. Abrir painéis pausa a simulação. Equipamentos não podem ser trocados durante combate. O baú exige Refúgio e um espaço livre; a concessão e o consumo são salvos juntos.
 
-[Relatório da Iteração 07](docs/ITERACAO-07-RELATORIO.md) · [Prompt](docs/ITERACAO-07-PROMPT.md).
+[Relatório da Iteração 08](docs/ITERACAO-08-RELATORIO.md) · [Prompt](docs/ITERACAO-08-PROMPT.md).
+
+A versão de progressão 4 reinicia os saves antigos uma única vez e grava a migração antes de abrir o jogo. Recarregar preserva o progresso novo. Espada e adaga atacam corpo a corpo; arco e cajado lançam projéteis físicos e mágicos. Slimes comuns, Saltadores e Mágicos compartilham a IA, com encontros variados por seed.
 
 Para reproduzir mapas: ?debug=1&test=1&seed=42. Debug exibe seed da run, andar e seed derivada. O perfil test=1 é separado do normal. Sem seed explícita, cada expedição sorteia outra seed.
 
@@ -65,11 +67,11 @@ Não abra `index.html` por duplo clique: os módulos precisam do servidor local.
 - Árvores e estruturas registradas ficam translúcidas quando encobrem o personagem.
 - Minimap funcional, guia de exploração, ajuda e pausa.
 - Simulação em passos fixos, separada da renderização, da entrada e da interface.
-- Conteúdo e interações do refúgio em JSON validado e 194 testes automatizados de domínio, combate, áreas e persistência.
+- Conteúdo e interações do refúgio em JSON validado e 231 testes automatizados de domínio, combate, áreas e persistência.
 
 ## Limites desta versão
 
-São três andares procedurais controlados, um boss provisório e quatro equipamentos de recompensa. Classes jogáveis, economia completa, perguntas educacionais, multiplayer e conteúdo além do terceiro andar não estão implementados. As seções abaixo documentam o histórico; as regras atuais acima prevalecem.
+São três andares procedurais controlados, um boss provisório e oito equipamentos de recompensa. Classes jogáveis, economia completa, perguntas educacionais, multiplayer e conteúdo além do terceiro andar não estão implementados. As seções abaixo documentam o histórico; as regras atuais acima prevalecem.
 
 Arte feita com geometria e efeitos locais, sem assets finais. Esta entrega não representa a qualidade visual final. WebGL 2 e aceleração gráfica são necessários. Mobile não foi alvo de validação.
 
@@ -80,6 +82,8 @@ npm test
 npm run build
 npm run preview -- --port 4173 --strictPort
 ```
+
+`?perf=1` mostra uma amostra de FPS e p95 do intervalo entre frames, sem habilitar debug. `node scripts/iteration08-performance.mjs` reproduz o benchmark sintético de simulação (5/20 inimigos), separado da medição gráfica.
 
 `npm test` usa o executor nativo do Node e não precisa abrir o navegador. O build estático é gerado em `dist/`. O aviso de tamanho do pacote gráfico não impede o build; medir e otimizar é parte dos próximos testes de desempenho.
 

@@ -9,14 +9,14 @@ const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
 const engaged=new Set(['alert','chasing','attacking']);
 export class EnemyAI {
   constructor(combat){this.combat=combat;this.world=combat.game.world;this.metrics={paths:0,fallbacks:0,updates:0};this.debug=false;
-    combat.enemies.forEach((e,i)=>{e.ai={perception:i*A.perceptionInterval/combat.enemies.length,repath:i*0.025,alert:0,outside:0,stuck:0,returnTime:0,...(e.noRespawn?{}:{respawnRetry:0}),lastTarget:null,ambientTimer:.5+i*.43,ambientPhase:'idle',random:seeded(e.ambientSeed??i+1)};});
+    combat.enemies.forEach((e,i)=>{e.ai={perception:i*A.perceptionInterval/combat.enemies.length,repath:i*0.025,alert:0,outside:0,stuck:0,returnTime:0,...(e.noRespawn?{}:{respawnRetry:0}),lastTarget:null,ambientTimer:.5+i*.43,ambientPhase:'idle',retreatRemaining:0,retreatCooldown:0,random:seeded(e.ambientSeed??i+1)};});
   }
   resolveTarget(id){const c=this.combat;return id===c.character.data.id&&c.character.isAlive&&c.state!=='dead'?c.game.player:null;}
   acquire(e,targetId,reason){if(!e.alive||e.state==='returning'||!this.resolveTarget(targetId))return;e.targetId=targetId;e.aggroReason=reason;e.state='alert';e.ai.alert=A.alertDuration;e.ai.outside=0;e.ai.repath=0;e.ai.stuck=0;e.path=[];}
   onDamaged(e,attackerId){if(!e.targetId)this.acquire(e,attackerId,'damage');}
   returning(e,reason){if(!e.alive||e.state==='returning')return;e.state='returning';e.targetId=null;e.aggroReason=reason;e.path=[];e.ai.repath=0;e.ai.returnTime=0;e.ai.stuck=0;this.combat.enemyCycles.get(e.id)?.cancel();}
   playerDied(){for(const e of this.combat.enemies){if(engaged.has(e.state))this.returning(e,'target-dead');e.targetId=null;this.combat.enemyCycles.get(e.id)?.cancel();}}
-  reset(e){Object.assign(e,e.spawnPosition);e.heading=e.spawnHeading;e.hp=e.stats.maxHP;e.state='idle';e.targetId=null;e.aggroReason=null;e.path=[];e.deathTime=0;e.generation++;Object.assign(e.ai,{perception:A.perceptionInterval,repath:0,alert:0,outside:0,stuck:0,returnTime:0,lastTarget:null,ambientPhase:'idle',ambientTimer:.5});this.combat.enemyCycles.delete(e.id);}
+  reset(e){Object.assign(e,e.spawnPosition);e.heading=e.spawnHeading;e.hp=e.stats.maxHP;e.state='idle';e.targetId=null;e.aggroReason=null;e.path=[];e.deathTime=0;e.generation++;Object.assign(e.ai,{perception:A.perceptionInterval,repath:0,alert:0,outside:0,stuck:0,returnTime:0,lastTarget:null,retreatRemaining:0,retreatCooldown:0,ambientPhase:'idle',ambientTimer:.5});this.combat.enemyCycles.delete(e.id);}
   plan(e,destination){this.metrics.paths++;e.path=findPath(this.world,e,destination,e.radius,CONFIG.navigationCell)??[];e.ai.repath=A.repathInterval;e.ai.lastTarget={...destination};return e.path.length>0;}
   approach(e,target,index){
     const start=Math.atan2(e.x-target.x,e.z-target.z),radius=e.stats.attackRange-0.15;
@@ -34,7 +34,10 @@ export class EnemyAI {
   }
   ambient(e,dt){const a=e.ai;a.ambientTimer-=dt;if(a.ambientPhase==='wander'){this.move(e,dt,.65);if(!e.path.length){a.ambientPhase='pause';a.ambientTimer=.8+a.random()*1.2;}}if(a.ambientTimer>0)return;if(a.ambientPhase==='pause'){a.ambientPhase='turn';e.heading=a.random()*Math.PI*2;a.ambientTimer=.5+a.random();return;}if(a.ambientPhase==='wander'){e.path=[];a.ambientPhase='pause';a.ambientTimer=1+a.random();return;}const angle=a.random()*Math.PI*2,r=.7+a.random()*.8,destination={x:e.spawnPosition.x+Math.sin(angle)*r,z:e.spawnPosition.z+Math.cos(angle)*r};a.ambientPhase=this.plan(e,destination)?'wander':'idle';a.ambientTimer=2+a.random()*2;}
   reposition(e,target,dt){
-    const a=e.ai,c=this.combat;if(e.behaviorType!=='ranged'||distance(e,target)>=e.retreatDistance)return false;
+    const a=e.ai,c=this.combat;if(e.behaviorType!=='ranged')return false;
+    a.retreatCooldown=Math.max(0,a.retreatCooldown-dt);
+    if(a.retreatRemaining<=0){if(distance(e,target)>=e.retreatDistance||a.retreatCooldown>0)return false;a.retreatRemaining=e.retreatDuration;a.retreatCooldown=e.retreatCooldown;a.repath=0;}
+    a.retreatRemaining=Math.max(0,a.retreatRemaining-dt);
     if(a.repath<=0){const angle=Math.atan2(e.x-target.x,e.z-target.z);for(const offset of [0,.7,-.7,1.4,-1.4]){const p={x:target.x+Math.sin(angle+offset)*e.preferredDistance,z:target.z+Math.cos(angle+offset)*e.preferredDistance};if(distance(p,e.spawnPosition)>e.leashRange||!clearSegment(this.world,p,target,.05))continue;if(this.plan(e,p))break;}}
     if(!e.path.length)return false;e.state='chasing';c.enemyCycles.get(e.id)?.cancel();this.move(e,dt,e.chaseSpeed);return true;
   }
