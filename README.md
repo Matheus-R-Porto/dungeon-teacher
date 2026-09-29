@@ -4,7 +4,7 @@ A roguelite-ish tower climber (in quotes because it's not quite a traditional ro
 
 The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Planned life-skill systems (also not implemented) will add fishing and mining floors, feeding a Black Desert-style forging/upgrading system.
 
-**Status: actively in development**, worked on weekly. Current build: **Iteration 08 — Combat variety and progression**.
+**Status: actively in development**, worked on weekly. Current build: **Iteration 09 — Forest exploration** (manual acceptance in progress).
 
 ## Screenshots
 *(placeholder art — geometric shapes and default assets, not final visuals)*
@@ -23,8 +23,8 @@ The educational hook: chests have rarities, and opening one triggers an educatio
 2. Get a free weapon, open I and equip it. You start with no skills and no Skill Slots.
 3. Use F on the Portal with a weapon equipped. The Tower generates three floors per seed.
 4. Click Slimes to attack; only valid hostile hits provoke them. Learned skills use 1–5. They wander passively until they take damage and don't respawn during this expedition.
-5. Defeat the 3, 4 and 5 enemies on each floor. Each floor's portal unlocks once cleared.
-6. On the third floor, the Slime Guardian appears after two seconds. Defeat it, grab the chest with F, and head back through the portal.
+5. Follow the golden trail through forest regions. Two required encounters release their local root barriers. Optional detours grant extra XP and can be skipped. Find the exit physically.
+6. On the third floor, reach the Guardian clearing after releasing the required passages; the boss then appears after two seconds. Defeat it, grab the chest with F, and head back through the portal.
 7. Open I at the Hub, select the chest and click Open. Space slows down the wheel until the result lands. You receive equipment and gold.
 8. Enemies grant XP; each level grants 5 attribute points and 1 Skill Slot. In TAB, each technique costs 1 Slot; all five are independent. Open C at the Hub to distribute points without spending XP or gold. You stay a Novice.
 9. Equip the reward in I and start another expedition.
@@ -33,7 +33,7 @@ Dying sends you back to the Hub with full HP/MP and ends the run. Resources and 
 
 Inventory, equipment, skills, attributes, XP, gold, chests and onboarding all persist. Opening panels pauses the simulation. Equipment can't be swapped during combat. The chest requires the Hub and a free slot; the grant and its consumption are saved together.
 
-[Iteration 08 report](docs/ITERACAO-08-RELATORIO.md) · [Prompt](docs/ITERACAO-08-PROMPT.md).
+Iteration 09 report: not written yet (manual acceptance still in progress). · [Prompt](docs/ITERACAO-09-PROMPT.md) · [CPU measurements](docs/ITERACAO-09-PERFORMANCE.json).
 
 Progression version 4 resets old saves once and logs the migration before the game opens. Reloading preserves the new progress. Sword and dagger attack in melee; bow and staff launch physical and magical projectiles. Common Slimes, Jumpers and Mages share the same AI, with varied encounters per seed.
 
@@ -80,9 +80,9 @@ Don't open `index.html` by double-clicking: the modules need the local server. T
 - Grid-based A* with smoothing across free segments; path and destination are visible.
 - Continuous orbit camera, pivoting on the character, fixed tilt and smooth, limited zoom.
 - Registered trees and structures turn translucent when they occlude the character.
-- Functional minimap, exploration guide, help and pause.
+- Hub minimap; forest landmarks, golden trail markers, optional detour signs, help and pause.
 - Fixed-step simulation, decoupled from rendering, input and UI.
-- Hub content and interactions in validated JSON, plus 231 automated tests covering domain, combat, areas and persistence.
+- Hub content and interactions in validated JSON, plus 245 automated tests covering domain, combat, areas and persistence.
 
 ## Limits of this version
 
@@ -151,3 +151,4 @@ Incompatible techniques appear dimmed. Hover to check weapon, MP, cooldown and r
 To try all four weapons, open `http://127.0.0.1:5173/?debug=1&test=1` → Combat Debug → Provisional weapon. Switching is locked while a skill is executing. This profile preserves the normal character. Known weapon and skills are saved; cooldowns and active effects reset on reload. Auto-attack still keeps the previous short physical range for every weapon.
 
 [Iteration 06 report](docs/ITERACAO-06-RELATORIO.md): architecture, parameters, rules, tests and limits. [Progression guidelines](docs/DIRETRIZES-DE-PROGRESSAO.md): the philosophy behind the 13 weeks. The character remains a Novice; class change hasn't started yet.
+

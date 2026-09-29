@@ -114,7 +114,7 @@ try {
   let last = performance.now(), accumulator = 0, uiElapsed = 0;
   const animate = now => {
     try {
-      if(perf&&!game.paused&&now>last){frameSamples.push(now-last);if(frameSamples.length>=120){const sorted=[...frameSamples].sort((a,b)=>a-b),mean=frameSamples.reduce((a,b)=>a+b,0)/frameSamples.length;perf.textContent='FPS '+(1000/mean).toFixed(1)+' · frame p95 '+sorted[Math.floor(sorted.length*.95)].toFixed(1)+' ms · projéteis '+combat.projectiles.items.length;frameSamples=[];}}else if(game.paused)frameSamples=[];
+      if(perf&&!game.paused&&now>last){frameSamples.push(now-last);if(frameSamples.length>=120){const sorted=[...frameSamples].sort((a,b)=>a-b),mean=frameSamples.reduce((a,b)=>a+b,0)/frameSamples.length;perf.textContent='FPS '+(1000/mean).toFixed(1)+' · frame p95 '+sorted[Math.floor(sorted.length*.95)].toFixed(1)+' ms · projéteis '+combat.projectiles.items.length+' · draws '+view.renderer.info.render.calls+' · tri '+view.renderer.info.render.triangles+'\n'+(session.run?'Andar '+session.run.floor+' · '+(game.elapsed-session.run.floorTimeStart).toFixed(0)+'s · '+(game.distance-session.run.floorDistanceStart).toFixed(0)+'m · regiões '+session.run.visitedRegions.length+' · '+(session.currentRegion?.name??'trilha'):'Última run: '+JSON.stringify(session.lastRun?.exploration??[]));perf.style.whiteSpace='pre-wrap';perf.style.maxWidth='430px';frameSamples=[];}}else if(game.paused)frameSamples=[];
       const dt = Math.min((now - last) / 1000, CONFIG.tick * CONFIG.maxCatchUpTicks); last = now;
       if (!game.paused) {
         view.orbit.update(dt, input.orbitAxis, reducedMotion.matches);

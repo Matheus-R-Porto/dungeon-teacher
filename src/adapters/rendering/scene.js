@@ -1,3 +1,4 @@
+import {buildForest} from './forest.js';
 import * as THREE from 'three';
 import { CONFIG } from '../../core/config.js';
 import { OrbitState } from '../../core/orbit.js';
@@ -33,7 +34,7 @@ export class SceneView {
     sun.shadow.mapSize.set(2048, 2048); sun.shadow.normalBias = 0.04;
     this.scene.add(sun);
     const rim = new THREE.DirectionalLight(0xb9e6f1, 1.0); rim.position.set(10, 6, -12); this.scene.add(rim);
-    this.flags=[]; if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
+    this.flags=[]; if(world.environment==='forest')buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
     this.registerStructureOcclusion();
     this.interactionRing = this.mesh(new THREE.RingGeometry(0.8, 0.86, 48), new THREE.MeshBasicMaterial({ color: 0xffdf88, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.25, 0);
     this.interactionRing.rotation.x = -Math.PI / 2; this.interactionRing.visible = false; this.interactionRing.castShadow = false;
@@ -294,7 +295,8 @@ export class SceneView {
     if (selected) { this.interactionRing.position.set(selected.x, selected.highlightHeight ?? 0.06, selected.z); this.interactionRing.scale.setScalar((selected.highlightRadius ?? 0.6) / 0.83); }
     this.flags.forEach((flag,i) => { flag.rotation.y = reducedMotion ? 0 : Math.sin(time*1.8+i)*0.08; });
     if (this.water) this.water.material.emissiveIntensity = 0.3 + (reducedMotion ? 0 : Math.sin(time*1.5)*0.08);
-    if(this.world.environment==='dungeon'){if(!this.chestModel){this.chestModel=new THREE.Group();this.box(this.chestModel,1,.7,.7,0,.4,0,this.mats.bark);this.box(this.chestModel,1.05,.15,.75,0,.8,0,this.mats.gold);this.scene.add(this.chestModel);}const drop=this.world.interactables.find(i=>i.id==='boss-chest'&&i.enabled);this.chestModel.visible=!!drop;if(drop)this.chestModel.position.set(drop.x,0,drop.z);}
+    for(const entry of this.forestGates??[])entry.group.visible=!entry.gate.open;
+    if(this.world.safe===false){if(!this.chestModel){this.chestModel=new THREE.Group();this.box(this.chestModel,1,.7,.7,0,.4,0,this.mats.bark);this.box(this.chestModel,1.05,.15,.75,0,.8,0,this.mats.gold);this.scene.add(this.chestModel);}const drop=this.world.interactables.find(i=>i.id==='boss-chest'&&i.enabled);this.chestModel.visible=!!drop;if(drop)this.chestModel.position.set(drop.x,0,drop.z);}
     this.combatVisual?.update();
     this.renderer.render(this.scene, this.camera);
   }
