@@ -15,14 +15,14 @@ export class Combat {
     this.enemies=enemies??[new Enemy()];this.currentTarget=null;this.state=S.IDLE;this.playerCycle=new AttackCycle();
     this.projectiles=new Projectiles();this.enemyCycles=new Map();this.retaliation=true;this.events=[];this.lastResult='—';this.deathTime=0;this.attackRange=COMBAT.playerRange;this.pursuitRepath=0;this.pursuitPoint=null;
   }
-  get canAttack(){return !!equippedDefinition(this.character.data);}
+  get canAttack(){return !this.game.activity?.busy&&!!equippedDefinition(this.character.data);}
   get target(){return this.enemies.find(e=>e.id===this.currentTarget&&e.alive&&e.state!=='returning')??null;}
   distance(enemy){return Math.hypot(enemy.x-this.game.player.x,enemy.z-this.game.player.z);}
   inRange(enemy,range=this.attackRange){return enemy.alive&&this.distance(enemy)<=range&&clearSegment(this.game.world,this.game.player,enemy,0.05);}
   emit(event){this.events.push({...event,time:this.game.elapsed});if(this.events.length>30)this.events.shift();this.lastResult=event.text;}
   cancel(clear=false){this.abilities?.interrupt();this.playerCycle.cancel();this.game.cancel();if(clear)this.currentTarget=null;if(this.state!==S.DEAD)this.state=S.IDLE;}
-  select(id){if(!this.character.isAlive||this.state===S.DEAD)return false;if(!this.canAttack){this.abilities?.feedback('Equipe uma arma em I para atacar.');return false;}const target=this.enemies.find(e=>e.id===id&&e.alive&&e.state!=='returning');if(!target)return false;this.cancel();this.currentTarget=id;this.state=S.CHASING;this.pursuitPoint=null;this.pursuitRepath=0;return true;}
-  moveTo(point){if(this.state===S.DEAD||!this.character.isAlive)return false;this.cancel();const success=this.game.moveTo(point);this.state=success?S.MOVING:S.IDLE;return success;}
+  select(id){if(this.game.activity?.busy)return false;if(!this.character.isAlive||this.state===S.DEAD)return false;if(!this.canAttack){this.abilities?.feedback('Equipe uma arma em I para atacar.');return false;}const target=this.enemies.find(e=>e.id===id&&e.alive&&e.state!=='returning');if(!target)return false;this.cancel();this.currentTarget=id;this.state=S.CHASING;this.pursuitPoint=null;this.pursuitRepath=0;return true;}
+  moveTo(point){if(this.game.activity?.busy)return false;if(this.state===S.DEAD||!this.character.isAlive)return false;this.cancel();const success=this.game.moveTo(point);this.state=success?S.MOVING:S.IDLE;return success;}
   interact(){if(this.state===S.DEAD)return;this.cancel();this.state=S.INTERACTING;}
   approach(target,range=this.attackRange){
     const game=this.game,r=range-COMBAT.approachMargin;
@@ -52,16 +52,16 @@ export class Combat {
     },target,source);
     const event=this.events.at(-1);if(event){event.impact=profile.impact;event.damageType=profile.damageType;}
     if(enemy&&!target.alive){this.emit({x:target.x,z:target.z,text:target.name+' derrotado',death:true});if(this.currentTarget===target.id)this.cancel(true);}
-    if(!enemy){this.onResourceChange();if(!this.character.isAlive)this.die();}
+    if(!enemy){if(event?.hit)this.onHostileImpact?.();this.onResourceChange();if(!this.character.isAlive)this.die();}
   }
   basicAttack(profile,stats,target,source,owner){
     if(profile.delivery==='projectile')this.projectiles.launch({x:owner.x,z:owner.z,target:{id:source==='player'?target.id:this.character.data.id,generation:target.generation??0},owner:source==='enemy'?{id:owner.id,generation:owner.generation??0}:null,speed:profile.projectileSpeed,lifetime:ABILITY_CONFIG.projectileLifetime,effect:{...profile,power:profile.power??1},stats:{...stats},source});
     else this.basicImpact(profile,stats,target,source);
   }
-  die(){if(this.state===S.DEAD)return;this.cancel(true);this.state=S.DEAD;this.deathTime=0;this.projectiles.clear();this.ai?.playerDied();this.abilities?.interrupt('death');for(const cycle of this.enemyCycles.values())cycle.cancel();this.emit({x:this.game.player.x,z:this.game.player.z,text:'Você caiu · retornando ao Refúgio',death:true});this.onResourceChange();}
+  die(){this.game.activity?.cancel('Pesca interrompida.');if(this.state===S.DEAD)return;this.cancel(true);this.state=S.DEAD;this.deathTime=0;this.projectiles.clear();this.ai?.playerDied();this.abilities?.interrupt('death');for(const cycle of this.enemyCycles.values())cycle.cancel();this.emit({x:this.game.player.x,z:this.game.player.z,text:'Você caiu · retornando ao Refúgio',death:true});this.onResourceChange();}
   update(dt,axis,azimuth){
     if(this.game.paused)return;
-    const g=this.game,c=this.character;this.attackRange=equippedDefinition(c.data)?.basicAttack.attackRange??this.abilities?.autoRange??COMBAT.playerRange;
+    const g=this.game,c=this.character;if(g.activity?.busy){axis={x:0,z:0};g.cancel();}this.attackRange=equippedDefinition(c.data)?.basicAttack.attackRange??this.abilities?.autoRange??COMBAT.playerRange;
     if(!this.ai)this.enemies.forEach(e=>e.update(dt));
     this.pursuitRepath=Math.max(0,this.pursuitRepath-dt);
     if(!c.isAlive)this.die();

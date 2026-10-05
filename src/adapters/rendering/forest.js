@@ -24,7 +24,7 @@ export function buildForest(v){
  for(const p of w.pois.filter(p=>p.type!=='futureResource')){const group=new THREE.Group();group.position.set(p.x,0,p.z);v.scene.add(group);group.userData.kind='ruin';
   if(p.kind===0){v.buildTree(group,5.5);v.mesh(new THREE.TorusGeometry(1.3,.08,5,20),v.mats.gold,group,0,1,0).rotation.x=Math.PI/2;}
   if(p.kind===1){v.mesh(new THREE.OctahedronGeometry(1.3),v.mats.darkStone,group,0,1.3,0);v.mesh(new THREE.OctahedronGeometry(.32),mat(0x72d3bc,{emissive:0x48bbaa,emissiveIntensity:.7}),group,0,2.6,0);}
-  if(p.kind===2){const lake=v.mesh(disk,mat(0x428f92,{metalness:.2,roughness:.25}),group,0,.05,0);lake.scale.set(2.5,1,1.8);for(let i=0;i<5;i++)v.mesh(new THREE.OctahedronGeometry(.12),v.mats.gold,group,Math.cos(i)*2,.5,Math.sin(i)*1.5);}
+  if(p.kind===2){const lake=v.mesh(disk,mat(0x428f92,{metalness:.2,roughness:.25}),group,0,.05,0);const water=w.waterFeatures?.find(w=>w.regionId===p.regionId);lake.scale.set(water?.waterBounds.radiusX??2.5,1,water?.waterBounds.radiusZ??1.8);for(let i=0;i<5;i++)v.mesh(new THREE.OctahedronGeometry(.12),v.mats.gold,group,Math.cos(i)*2,.5,Math.sin(i)*1.5);}
   if(p.kind===3){for(const x of [-1.5,1.5])v.box(group,.8,2.5,.8,x,1.25,0,v.mats.stone);v.box(group,3.8,.45,.9,0,2.5,0,v.mats.stoneLight);}
   if(p.kind===4){const log=v.mesh(new THREE.CylinderGeometry(.55,.8,4,7),v.mats.bark,group,0,.65,0);log.rotation.z=Math.PI/2;}
  }

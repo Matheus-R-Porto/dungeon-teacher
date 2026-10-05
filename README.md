@@ -2,9 +2,9 @@
 
 A roguelite-ish tower climber (in quotes because it's not quite a traditional roguelike) built with **Three.js (3D)**, inspired by Ragnarok Online's dungeon loop and general Sword Art Online vibes. Pick a weapon, climb the procedural tower fighting for drops and boss chests, then return to the hub — or die trying — to level up, learn skills and gear up before heading back in stronger.
 
-The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Planned life-skill systems (also not implemented) will add fishing and mining floors, feeding a Black Desert-style forging/upgrading system.
+The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Fishing is implemented as an optional activity at existing lakes, with its own levels, five species and persistent ingredient stacks. Cooking now adds six recipes, consumable fish and dishes, four temporary food buffs, and a local ingredient shop/buyback economy. Mining and smithing remain future work.
 
-**Status: actively in development**, worked on weekly. Current build: **Iteration 09 — Forest exploration** (manual acceptance in progress).
+**Status: actively in development**, worked on weekly. Current build: **Iteration 11 — Cooking, Consumables + Local Economy**. 331 tests pass. Representative floor and fishing UI checks replace repeated full-loop runs, as requested. See the [Iteration 11 report](docs/ITERACAO-11-RELATORIO.md).
 
 ## Screenshots
 *(placeholder art — geometric shapes and default assets, not final visuals)*
@@ -33,7 +33,7 @@ Dying sends you back to the Hub with full HP/MP and ends the run. Resources and 
 
 Inventory, equipment, skills, attributes, XP, gold, chests and onboarding all persist. Opening panels pauses the simulation. Equipment can't be swapped during combat. The chest requires the Hub and a free slot; the grant and its consumption are saved together.
 
-Iteration 09 report: not written yet (manual acceptance still in progress). · [Prompt](docs/ITERACAO-09-PROMPT.md) · [CPU measurements](docs/ITERACAO-09-PERFORMANCE.json).
+[Iteration 09 report](docs/ITERACAO-09-RELATORIO.md) · [Prompt](docs/ITERACAO-09-PROMPT.md) · [CPU measurements](docs/ITERACAO-09-PERFORMANCE.json).
 
 Progression version 4 resets old saves once and logs the migration before the game opens. Reloading preserves the new progress. Sword and dagger attack in melee; bow and staff launch physical and magical projectiles. Common Slimes, Jumpers and Mages share the same AI, with varied encounters per seed.
 
@@ -82,7 +82,7 @@ Don't open `index.html` by double-clicking: the modules need the local server. T
 - Registered trees and structures turn translucent when they occlude the character.
 - Hub minimap; forest landmarks, golden trail markers, optional detour signs, help and pause.
 - Fixed-step simulation, decoupled from rendering, input and UI.
-- Hub content and interactions in validated JSON, plus 245 automated tests covering domain, combat, areas and persistence.
+- Hub content and interactions in validated JSON, plus 247 automated tests covering domain, combat, areas and persistence.
 
 ## Limits of this version
 
@@ -152,3 +152,42 @@ To try all four weapons, open `http://127.0.0.1:5173/?debug=1&test=1` → Combat
 
 [Iteration 06 report](docs/ITERACAO-06-RELATORIO.md): architecture, parameters, rules, tests and limits. [Progression guidelines](docs/DIRETRIZES-DE-PROGRESSAO.md): the philosophy behind the 13 weeks. The character remains a Novice; class change hasn't started yet.
 
+
+
+## Cooking and food (Iteration 11)
+
+Visit Mira or the stove in the Refuge and press F. Buy ingredients, choose a recipe and press F/Space in the green or gold timing zone. Cooking gains its own XP; even a missed timing produces the normal dish with less XP. Open I to eat fish or dishes outside combat. Food shares an 8-second cooldown; one 5-minute food buff can be active at a time. Sell fish or dishes to Mira for gold. Buff deadlines, cooldowns, items, gold and profession progress survive reload.
+
+## Windows — Desktop Build 01
+
+The same web game is packaged with Electron 44.5.1 and electron-builder 26.15.3.
+
+- `npm run desktop:dev`: builds and opens the development shell.
+- `npm run desktop:build`: generates the shared production assets.
+- `npm run desktop:package`: prepares the official runtime and generates an NSIS installer and a Portable Windows x64 build in `release/desktop-01`.
+- Close any executable open from that folder before packaging again. To keep it running, use `npm run desktop:package -- --config.directories.output=release/desktop-01-final`.
+- The runtime installer is run explicitly, and `electronDist` uses its extracted folder. This avoids the EPERM rename failure seen in the packager's default extractor in this environment.
+- The dev machine needs Node/dependencies and network access for the initial downloads. The playtester only receives the Setup or Portable build and doesn't need any of those tools.
+
+The renderer loads `dungeon://game/index.html` from inside the ASAR, with no HTTP server. IndexedDB uses `%APPDATA%\Dungeon Master` and doesn't import the web save. Installer and Portable share the same Windows user profile. The domain stays shared; a restricted bridge flushes the save on close.
+
+[Desktop 01 report](docs/DESKTOP-01-RELATORIO.md) and [playtest instructions](desktop/LEIA-ME.txt). Visual validation of the executable and a close/reopen pass are still pending, since native window control wasn't available in this session — don't treat the build as fully verified yet.
+
+## Multiplayer 01 — shared Hub
+
+The Node/WebSocket server lives separately in `server/`; the shared protocol is in `shared/multiplayer.js`. The client only connects on player action, sending UUID, name and movement state at up to 15 Hz. Remote players use 100 ms interpolation, with orientation computed from the observer's own camera. Entering the Tower ends your presence; returning to the Hub reconnects. Save, inventory and gameplay all stay local.
+
+Additional commands:
+
+- `npm run server:install`: installs only the server's dependency.
+- `npm run server:start`: starts the local backend.
+- `npm run test:multiplayer`: protocol, server, client and security tests.
+- `npm run multiplayer:configure -- wss://YOUR-REAL-DOMAIN/hub`: configures the next build's endpoint, for both the renderer and the allowlist/CSP.
+- `npm run desktop:package:playtest`: requires WSS to be configured before generating a distribution for two PCs.
+- `npm run desktop:package`: can also generate an offline candidate, explicitly with no server configured.
+
+Artifacts currently land in `release/multiplayer-01`. Desktop01 is preserved as-is. This build is identified as Multiplayer01 / Windows 0.1.0.2, keeping the same appId and `%APPDATA%\Dungeon Master` profile.
+
+**Pending for an external playtest:** hosting the backend and baking its public endpoint into a new build. The shipped config never invents a domain or points the build at localhost. The offline candidate shows a warning when it tries to connect. The playtester shouldn't edit any configuration: whoever owns the deploy generates the same final build for both PCs afterward.
+
+[Exact backend deploy steps](server/DEPLOY.md), [report](docs/MULTIPLAYER-01-RELATORIO.md) and [two-PC walkthrough](desktop/TESTE-MULTIPLAYER-01.txt).

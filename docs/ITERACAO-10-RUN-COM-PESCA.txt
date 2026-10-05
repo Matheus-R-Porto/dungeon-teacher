@@ -1,0 +1,2 @@
+FPS 77.3 · frame p95 25.0 ms · projéteis 0 · draws 798 · tri 23618
+Última run: [{"floor":1,"seconds":606.7333333334142,"distance":352.0268921514531,"regions":["main-0","main-1","main-2","main-3","optional-0","main-4","main-5","main-6","main-7","main-8"],"completed":["enc-main-2","enc-main-6"],"optionalAlive":2},{"floor":2,"seconds":12.399999999988722,"distance":0,"regions":["main-0"],"completed":[],"optionalAlive":4}]

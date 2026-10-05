@@ -14,6 +14,7 @@ export class AbilityRuntime {
   target(ref){return ref?this.combat.enemies.find(e=>e.id===ref.id&&(e.generation??0)===ref.generation&&e.alive&&e.state!=='returning')??null:null;}
   targetRef(){const e=this.combat.target;return e?{id:e.id,generation:e.generation??0}:null;}
   reason(a,ref,{buffer=false}={}){
+    if(this.combat.game.activity?.busy)return 'Encerre a pesca para usar habilidades';
     if(!a||!(this.character.data.knownAbilities??[]).includes(a.id))return 'Aprenda esta habilidade com TAB';
     if(!this.character.isAlive||this.combat.state==='dead')return 'Você não pode agir agora';
     if(a.weaponRequirements.length&&!a.weaponRequirements.includes(this.weapon))return 'Requer '+a.weaponRequirements.map(w=>WEAPONS[w].name).join(' / ');

@@ -1,0 +1,38 @@
+appId: com.dungeonmaster.playtest
+productName: Dungeon Master
+buildVersion: 0.1.0.2
+asar: true
+directories:
+  output: release/multiplayer-01
+files:
+  - dist/**/*
+  - desktop/*.cjs
+  - config/multiplayer.json
+  - package.json
+  - '!node_modules/**/*'
+extraResources:
+  - from: desktop/LEIA-ME.txt
+    to: LEIA-ME.txt
+  - from: desktop/TESTE-MULTIPLAYER-01.txt
+    to: TESTE-MULTIPLAYER-01.txt
+win:
+  executableName: DungeonMaster
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+nsis:
+  artifactName: DungeonMaster-Beta-${version}-Multiplayer01-Setup.${ext}
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: true
+  shortcutName: Dungeon Master
+portable:
+  artifactName: DungeonMaster-Beta-${version}-Multiplayer01-Portable.${ext}
+publish: null
+
+electronDist: node_modules/electron/dist

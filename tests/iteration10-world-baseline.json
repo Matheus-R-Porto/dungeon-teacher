@@ -1,0 +1,182 @@
+[
+  {
+    "seed": 0,
+    "floor": 1,
+    "hash": "0dc053cb3542b2512c56b35b4c4bc6dfe1a7df2fda9f473c9b9cd704804fe2aa"
+  },
+  {
+    "seed": 0,
+    "floor": 2,
+    "hash": "c83bf8e98bc384339d5604939340dd0019671c481830b62ffdc2427925249ed8"
+  },
+  {
+    "seed": 0,
+    "floor": 3,
+    "hash": "e6cf5755bd7c7c098572943b04a3e49d657bdafc4956fcc21a5feead1dc88390"
+  },
+  {
+    "seed": 1,
+    "floor": 1,
+    "hash": "3b75d98ed85130ddd6900cd52fadc8f1aad60c2e9ba378a134938e8992157395"
+  },
+  {
+    "seed": 1,
+    "floor": 2,
+    "hash": "cce0a26ac115ace691253bbd3ab3639fb2d019afc8a4d431134fe3b38f9838c6"
+  },
+  {
+    "seed": 1,
+    "floor": 3,
+    "hash": "a447568f81203108375dc61de9bdad5b556b874bb5610268d027dfdcdebc7f55"
+  },
+  {
+    "seed": 2,
+    "floor": 1,
+    "hash": "3112cc5d15c0d6e552920af3202912ed641dc68338263703792878f9a4cf7ad5"
+  },
+  {
+    "seed": 2,
+    "floor": 2,
+    "hash": "a892aca6ec122b81dfb40783700aaf2641e88b3753cb5ad4283dc56d9ea71530"
+  },
+  {
+    "seed": 2,
+    "floor": 3,
+    "hash": "9ba098202c3c617452eae54b56d4b7ec8a123747a11c78931dfc3b8d98df644c"
+  },
+  {
+    "seed": 3,
+    "floor": 1,
+    "hash": "97d287e7a0c76f6e04f5cee8b18e80bea5e72d1ae5f37cf590ba09e319c59e29"
+  },
+  {
+    "seed": 3,
+    "floor": 2,
+    "hash": "c67e86c622ba3ba9aa0adf425c04f2d07beb58645e9692746122cdeda366d076"
+  },
+  {
+    "seed": 3,
+    "floor": 3,
+    "hash": "3dbc06c801144762498733bb7a5a6ff671b920f4ac258d4560bd1f0b84940816"
+  },
+  {
+    "seed": 4,
+    "floor": 1,
+    "hash": "c78afb0a59474c53635033a621d6947050873aecb4b834a2e3388c9da36f140f"
+  },
+  {
+    "seed": 4,
+    "floor": 2,
+    "hash": "e200ff7a8a3db37d5f174a4751b0e2ecaa9cf3a5d92f4e6a74fb9b1d83b68d85"
+  },
+  {
+    "seed": 4,
+    "floor": 3,
+    "hash": "e5c752de8934bf2ef48872d88f5bbad435c8bca3c1afc119a7fe1fe441c1a8e1"
+  },
+  {
+    "seed": 5,
+    "floor": 1,
+    "hash": "e1a7ed771f186838460ecaf3f3197b6167713ad8ebf60ca9a30e8ebde5df93db"
+  },
+  {
+    "seed": 5,
+    "floor": 2,
+    "hash": "ec4b2216bb26524ea3ee02b037534091d31854d8ad05e2c93b475aa057924bd7"
+  },
+  {
+    "seed": 5,
+    "floor": 3,
+    "hash": "83fdfb2eb65d8f0031f93eb2c5c59c3d93bec6994b51c13fb9f64411e7809e34"
+  },
+  {
+    "seed": 6,
+    "floor": 1,
+    "hash": "867909518978a226bc44d15f9ab4a5ba0c79905f2613c0f5024d8db41e23301e"
+  },
+  {
+    "seed": 6,
+    "floor": 2,
+    "hash": "555861a564dda98ecb77884be172085c0a85ea5097c2a3442f445d4095e2b7bf"
+  },
+  {
+    "seed": 6,
+    "floor": 3,
+    "hash": "bf680d520cb3da83d7be4c0b8de45887b4ece921e1a6ed7d8ad7d3a1ea063ef8"
+  },
+  {
+    "seed": 7,
+    "floor": 1,
+    "hash": "2d51eb3e9022e87d57acb2ccf8f031bcd1cf44ec0a3a2dc691b2af11353ff3eb"
+  },
+  {
+    "seed": 7,
+    "floor": 2,
+    "hash": "c914dbb79c827203ca35250019baa865caa21d0876e6e78b40121d2729f73505"
+  },
+  {
+    "seed": 7,
+    "floor": 3,
+    "hash": "1d1227ba392321be7e9dbd74e1b14c144a7b401b45a47d08c1136a6a570aa73d"
+  },
+  {
+    "seed": 8,
+    "floor": 1,
+    "hash": "8686feecdedcefa6d8a07102503646b87ffd5504e0414d9accdb1248e20e3198"
+  },
+  {
+    "seed": 8,
+    "floor": 2,
+    "hash": "e9519d8bdec7f7ec64f05aa268560911796b7a41672d6ffbed6e934c988e639a"
+  },
+  {
+    "seed": 8,
+    "floor": 3,
+    "hash": "44095c60afc2e14d2d60065ed0e7576acb6474388fd4c24b93fb729d0ca92b20"
+  },
+  {
+    "seed": 9,
+    "floor": 1,
+    "hash": "5926dcd6cb8ed32d5ae14dae25dd02e49817987e3226140b785f8dece20852db"
+  },
+  {
+    "seed": 9,
+    "floor": 2,
+    "hash": "a2de52749fff85e356f2d8a42c4ed737a068d565e2a6225456c24f601c5924ff"
+  },
+  {
+    "seed": 9,
+    "floor": 3,
+    "hash": "c6eb73c9c611599e42284ca164b761eb256b9f698f1a9b52354a00a9b0ec1f03"
+  },
+  {
+    "seed": 10,
+    "floor": 1,
+    "hash": "b5029d00575fb6ec05ff8b62505ed467c0f42e835429d4351969003157630705"
+  },
+  {
+    "seed": 10,
+    "floor": 2,
+    "hash": "1d46e76923eef7261973d0f9d37c87b045e577048e4df689864f917132f686f4"
+  },
+  {
+    "seed": 10,
+    "floor": 3,
+    "hash": "07ccaa037e094e2b3c2d2ea75145951bc4987976d4022d131ff877c33bdf329f"
+  },
+  {
+    "seed": 11,
+    "floor": 1,
+    "hash": "b51848ff115a8606e93a5221b96fb31b72d76fb51e6c5f6c93a9d0968f59a481"
+  },
+  {
+    "seed": 11,
+    "floor": 2,
+    "hash": "faeb6251277e0205bae984382b8d090086eddd1e151f9fdba79a1b4599e35d54"
+  },
+  {
+    "seed": 11,
+    "floor": 3,
+    "hash": "82000a9ce48e4d95c1d0ab228d5b618d115fbb590358c1c81cae02934c758a79"
+  }
+]

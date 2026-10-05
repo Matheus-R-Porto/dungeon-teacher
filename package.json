@@ -3,13 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "desktop:dev": "npm run desktop:build && electron .",
+    "desktop:build": "vite build",
+    "desktop:package": "npm run desktop:build && node node_modules/electron/install.js && electron-builder --win --x64 --publish never",
+    "server:start": "node server/index.js",
+    "server:install": "npm ci --prefix server --ignore-scripts",
+    "test:multiplayer": "node --test tests/multiplayer*.test.js",
+    "multiplayer:configure": "node scripts/configure-multiplayer.cjs",
+    "desktop:package:playtest": "node scripts/verify-multiplayer.cjs && npm run desktop:package"
   },
-  "dependencies": { "three": "0.186.1" },
-  "devDependencies": { "vite": "8.3.1" }
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3",
+    "vite": "8.3.1"
+  },
+  "description": "Dungeon Master — Beta single-player para playtest Windows",
+  "author": "Dungeon Master",
+  "main": "desktop/main.cjs"
 }

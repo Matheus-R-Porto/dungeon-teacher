@@ -1,9 +1,10 @@
+import {foodStats} from '../food.js';
 import {equipmentStats} from '../items/inventory.js';
 import { ATTRIBUTES, BALANCE, CLASS_DEFINITIONS } from './balance.js';
 export const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
-export function calculateStats(data, sources = {}) {
+export function calculateStats(data, sources = {}, now=Date.now()) {
   const a={...data.attributes}, bonuses={};
-  const layers=[equipmentStats(data),CLASS_DEFINITIONS[data.classId]?.modifiers??{},sources.equipment??{},sources.buffs??{},sources.other??{}];
+  const layers=[equipmentStats(data),foodStats(data,now),CLASS_DEFINITIONS[data.classId]?.modifiers??{},sources.equipment??{},sources.buffs??{},sources.other??{}];
   for(const layer of layers){
     for(const [key,value] of Object.entries(layer.attributes??{})){if(!(Object.hasOwn(ATTRIBUTES,key))||!Number.isFinite(value))throw Error('Modificador de atributo inválido.');a[key]+=value;}
     for(const [key,value] of Object.entries(layer.stats??{})){if(!(Object.hasOwn(BALANCE.base,key))||!Number.isFinite(value))throw Error('Modificador de estatística inválido.');bonuses[key]=(bonuses[key]??0)+value;}

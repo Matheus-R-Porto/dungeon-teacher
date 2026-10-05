@@ -1,0 +1,42 @@
+
+> dungeon-teacher-beta@0.1.0 desktop:package
+> npm run desktop:build && node node_modules/electron/install.js && electron-builder --win --x64 --publish never --config.directories.output=release/desktop-01-final
+
+
+> dungeon-teacher-beta@0.1.0 desktop:build
+> vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 65 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   7.80 kB │ gzip:   3.09 kB
+dist/assets/index-DHu_0F62.css   24.63 kB │ gzip:   6.70 kB
+dist/assets/index-CPsXBXsM.js   739.52 kB │ gzip: 201.30 kB
+
+✓ built in 1.21s
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+  • electron-builder  version=26.15.3 os=10.0.26300
+  • loaded configuration  file=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\electron-builder.yml
+  • executing @electron/rebuild  electronVersion=44.5.1 arch=x64 buildFromSource=false workspaceRoot=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536 projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=win32 arch=x64 electron=44.5.1 appOutDir=release\desktop-01-final\win-unpacked
+  • using custom unpacked Electron distribution  electronDist=node_modules\electron\dist
+  • copying unpacked Electron  source=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\node_modules\electron\dist destination=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\release\desktop-01-final\win-unpacked
+  • searching for node modules  pm=npm searchDir=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536
+  • updating asar integrity executable resource  executablePath=release\desktop-01-final\win-unpacked\DungeonMaster.exe
+  • default Electron icon is used  reason=application icon is not set
+  • signing with signtool.exe  path=release\desktop-01-final\win-unpacked\DungeonMaster.exe
+  • building        target=nsis file=release\desktop-01-final\DungeonMaster-Beta-0.1.0-Desktop01-Setup.exe archs=x64 oneClick=false perMachine=false
+  • signing with signtool.exe  path=release\desktop-01-final\win-unpacked\resources\elevate.exe
+  • signing with signtool.exe  path=release\desktop-01-final\DungeonMaster-Beta-0.1.0-Desktop01-Setup.__uninstaller.exe
+  • signing with signtool.exe  path=release\desktop-01-final\DungeonMaster-Beta-0.1.0-Desktop01-Setup.exe
+  • building block map  blockMapFile=release\desktop-01-final\DungeonMaster-Beta-0.1.0-Desktop01-Setup.exe.blockmap
+  • building        target=portable file=release\desktop-01-final\DungeonMaster-Beta-0.1.0-Desktop01-Portable.exe archs=x64
+  • signing with signtool.exe  path=release\desktop-01-final\DungeonMaster-Beta-0.1.0-Desktop01-Portable.exe

@@ -1,0 +1,38 @@
+TESTE MULTIPLAYER 01 — DOIS COMPUTADORES WINDOWS
+
+Preparação do organizador: servidor público ativo e a mesma build com esse
+endereço já incluído. Um endpoint apenas local não atende este teste.
+Se a build disser que o servidor ainda não foi configurado, pare o teste
+multiplayer e solicite a versão final ao organizador. O individual funciona.
+
+1. Instale a mesma build Multiplayer01 nos computadores A e B.
+2. Abra Dungeon Master nos dois.
+3. No Refúgio, clique Multiplayer em A; use o nome Gandalf e Conectar.
+4. Em B, use Bilbo e Conectar.
+5. Confira Online e 2 jogadores nos dois.
+6. Confira Bilbo na tela de A e Gandalf na tela de B.
+7. Ande em A e observe o movimento em B.
+8. Ande em B e observe o movimento em A.
+9. Mude a direção e gire a câmera; cada um controla sua própria câmera.
+10. Feche B normalmente. A deve continuar e Bilbo deve desaparecer.
+11. Reabra B, clique Multiplayer e Conectar. Bilbo deve reaparecer em A.
+12. Entre na Torre com A (precisa de arma equipada).
+13. Gandalf deve desaparecer do Refúgio de B. A Torre de A é individual.
+14. Volte ao Refúgio com A. Gandalf deve reaparecer automaticamente.
+15. Confira que os saves dos dois foram preservados.
+
+Anote:
+[ ] Ambos conectaram; tempo aproximado: ____ segundos.
+[ ] Movimento nos dois sentidos; atraso aproximado: ____.
+[ ] Movimento suave; nenhum teleporte inesperado.
+[ ] Direção visual correta, inclusive ao girar câmera.
+[ ] Sem jogador fantasma após fechar.
+[ ] Reconexão funcionou.
+[ ] Entrar na Torre removeu a presença; retornar restaurou.
+[ ] Individual, Fishing e Cooking continuam disponíveis.
+[ ] Nenhum crash nem save perdido.
+
+Se algo falhar: informe o computador, o passo acima, o que aconteceu,
+Windows, Setup/Portable e inclua captura de tela se possível.
+É um teste somente de presença no Refúgio. Não há Party, chat, trocas,
+combate compartilhado ou Torre multiplayer nesta versão.

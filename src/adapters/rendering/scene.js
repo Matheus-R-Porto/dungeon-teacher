@@ -1,3 +1,4 @@
+import {FishingVisual} from './fishing-visual.js';
 import {buildForest} from './forest.js';
 import * as THREE from 'three';
 import { CONFIG } from '../../core/config.js';
@@ -35,7 +36,7 @@ export class SceneView {
     this.scene.add(sun);
     const rim = new THREE.DirectionalLight(0xb9e6f1, 1.0); rim.position.set(10, 6, -12); this.scene.add(rim);
     this.flags=[]; if(world.environment==='forest')buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
-    this.registerStructureOcclusion();
+    this.fishingVisual=new FishingVisual(this);this.registerStructureOcclusion();
     this.interactionRing = this.mesh(new THREE.RingGeometry(0.8, 0.86, 48), new THREE.MeshBasicMaterial({ color: 0xffdf88, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.25, 0);
     this.interactionRing.rotation.x = -Math.PI / 2; this.interactionRing.visible = false; this.interactionRing.castShadow = false;
     this.destination = this.mesh(new THREE.RingGeometry(0.28, 0.35, 32), new THREE.MeshBasicMaterial({ color: palette.gold, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.045, 0);
@@ -60,7 +61,7 @@ export class SceneView {
     for(const o of this.world.obstacles)this.box(this.scene,o.halfX*2,2.5,o.halfZ*2,o.x,1.25,o.z,this.mats.stone);
     for(const [x,z] of [[-10,-9],[10,-9],[-10,8],[10,8]])this.buildLantern(x,z);
   }
-  buildNpcs(){for(const npc of this.world.npcs??[]){const group=new THREE.Group();group.position.set(npc.x,0,npc.z);this.scene.add(group);this.box(group,.55,.85,.4,0,.8,0,material(0x926f49));this.mesh(new THREE.SphereGeometry(.25,8,6),material(0xddb890),group,0,1.48,0);for(const x of [-.17,.17])this.box(group,.17,.4,.2,x,.23,0,this.mats.darkStone);this.box(group,.7,.1,.55,0,1.7,0,this.mats.darkStone);this.mesh(new THREE.OctahedronGeometry(.18),this.mats.gold,group,0,2.05,0);}}
+  buildNpcs(){for(const npc of this.world.npcs??[]){const group=new THREE.Group();group.position.set(npc.x,0,npc.z);this.scene.add(group);this.box(group,.55,.85,.4,0,.8,0,material(0x926f49));this.mesh(new THREE.SphereGeometry(.25,8,6),material(0xddb890),group,0,1.48,0);for(const x of [-.17,.17])this.box(group,.17,.4,.2,x,.23,0,this.mats.darkStone);this.box(group,.7,npc.id==='cook'?.35:.1,.55,0,1.7,0,npc.id==='cook'?this.mats.stoneLight:this.mats.darkStone);if(npc.id==='cook'){this.box(group,.42,.6,.1,0,.8,.25,this.mats.stoneLight);const station=this.world.obstacles.find(o=>o.id==='cooking-station');this.box(this.scene,1.2,.6,1.2,station.x,.3,station.z,this.mats.darkStone);this.mesh(new THREE.CylinderGeometry(.45,.35,.4,12),this.mats.darkStone,this.scene,station.x,.85,station.z);this.mesh(new THREE.CylinderGeometry(.33,.33,.02,12),material(0xd2a85b),this.scene,station.x,1.06,station.z);}this.mesh(new THREE.OctahedronGeometry(.18),this.mats.gold,group,0,2.05,0);}}
   buildGround() {
     this.box(this.scene, 26, 1.5, 26, 0, -0.8, 0, this.mats.darkStone);
     this.box(this.scene, 25.6, 0.28, 25.6, 0, -0.15, 0, material(0x78a84e));
@@ -297,10 +298,12 @@ export class SceneView {
     if (this.water) this.water.material.emissiveIntensity = 0.3 + (reducedMotion ? 0 : Math.sin(time*1.5)*0.08);
     for(const entry of this.forestGates??[])entry.group.visible=!entry.gate.open;
     if(this.world.safe===false){if(!this.chestModel){this.chestModel=new THREE.Group();this.box(this.chestModel,1,.7,.7,0,.4,0,this.mats.bark);this.box(this.chestModel,1.05,.15,.75,0,.8,0,this.mats.gold);this.scene.add(this.chestModel);}const drop=this.world.interactables.find(i=>i.id==='boss-chest'&&i.enabled);this.chestModel.visible=!!drop;if(drop)this.chestModel.position.set(drop.x,0,drop.z);}
-    this.combatVisual?.update();
+    this.combatVisual?.update();this.fishingVisual.update(game);
+    this.remotePlayers?.update(reducedMotion);
     this.renderer.render(this.scene, this.camera);
   }
   dispose() {
+    this.remotePlayers?.dispose();
     const geometries = new Set(), materials = new Set();
     this.scene.traverse(object => { if (object.geometry) geometries.add(object.geometry); if (object.material) for (const m of Array.isArray(object.material) ? object.material : [object.material]) materials.add(m); });
     this.combatVisual?.dispose();

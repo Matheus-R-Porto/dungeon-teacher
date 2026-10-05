@@ -15,6 +15,7 @@ export class InputController {
       if (event.repeat) return;
       if (['q', 'e', 'f', 'h', 'escape', '+', '=', '-'].includes(key)) event.preventDefault();
       if (key === 'f') actions.interact();
+      if (key === ' ') { event.preventDefault(); actions.pull?.(); }
       if (key === 'h') actions.help();
       if (key === 'escape') actions.escape();
       if (key === '+' || key === '=') actions.zoom(-2);

@@ -1,3 +1,4 @@
+import {addWaterFeatures} from './water-features.js';
 import {generateEncounter} from '../domain/enemies/encounters.js';
 import {seedOf,seeded,EXPEDITION as E} from '../domain/expedition.js';
 import {validateHub} from '../core/config.js';
@@ -17,6 +18,7 @@ function materializeFloor(runSeed,floor,hubId){
  for(const r of graph.regions.filter(r=>r.type==='encounter'||r.type==='ruins'))for(const side of [-1,1])world.obstacles.push({id:'cover-'+r.id+'-'+side,shape:'rect',kind:floor===3?'ruin':'rock',x:r.x+side*5,z:r.z+2,halfX:.9,halfZ:.8});
  if(floor===3)world.enemySpawns.push({id:'tower-boss',enemyType:'trainingSlime',position:{x:exit.x,z:exit.z},overrides:{name:'Slime Guardião',boss:true,dormant:true,noRespawn:true,aggressive:true,radius:.85,scale:2,detectionRange:100,leashRange:100,rewardXP:E.bossXP,rewardGold:0,stats:{maxHP:E.bossHP,physicalAttack:E.bossAttack,attackSpeed:.65,attackRange:1.8}}});
  world.interactables=[{id:'return-portal',...world.portal,radius:2.6,priority:1,label:'Siga a trilha e libere as passagens',action:'travel',content:{areaId:floor===3?hubId:'tower-floor-'+(floor+1),requiresCompletion:true},highlightRadius:2.4},{id:'abandon-run',...world.spawn,radius:2,priority:0,label:'Abandonar expedição · voltar ao Refúgio',action:'travel',content:{areaId:hubId,abandon:true},highlightRadius:.7}];world.exits=world.interactables.map(i=>({interactionId:i.id,...i.content}));
+ addWaterFeatures(world);
  validateHub(world);const materializationMs=performance.now()-start-topologyMs,validationStart=performance.now();
  // Validate every physical graph edge locally. Their union proves global connectivity.
  for(const t of world.trails)for(let i=1;i<t.points.length;i++)if(!findPath(world,t.points[i-1],t.points[i],.85))throw Error('Trilha inacessível.');

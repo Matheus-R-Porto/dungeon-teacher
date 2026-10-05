@@ -1,0 +1,57 @@
+DUNGEON MASTER — BETA 0.1.0 — MULTIPLAYER 01
+Windows x64. Versão de playtest; arte e balanceamento provisórios.
+
+COMO ABRIR
+Abra DungeonMaster-Beta-0.1.0-Multiplayer01-Setup.exe e siga o assistente.
+Depois, abra pelo atalho Dungeon Master. Alternativa sem instalação:
+DungeonMaster-Beta-0.1.0-Multiplayer01-Portable.exe.
+Não precisa de Node, npm, terminal ou servidor no seu computador.
+
+REFÚGIO COMPARTILHADO
+Os dois computadores precisam da mesma build e de internet para alcançar o
+servidor preparado pelo organizador. Abra Multiplayer, escolha seu nome e
+clique Conectar. O indicador mostra Online e o número de jogadores.
+O nome aparece para os demais viajantes. A conexão não é automática ao abrir.
+Entre na Torre para jogar individualmente; sua presença sai do Refúgio.
+Ao voltar, a conexão é retomada. Desconectar encerra essa participação.
+Somente nome, identidade local e movimento são compartilhados.
+Inventário, ouro, combate, pesca, culinária e progresso permanecem locais.
+Consulte TESTE-MULTIPLAYER-01.txt para o teste em dois computadores.
+Se aparecer "Servidor de playtest ainda não configurado", solicite ao
+organizador o instalador final com o servidor preparado. Não edite arquivos.
+
+MODO INDIVIDUAL
+Continua funcionando sem internet e sem conectar ao multiplayer.
+
+CONTROLES
+WASD/setas ou clique no chão: caminhar. Q/E: girar câmera.
+Roda do mouse: zoom. F: conversar, portal ou pescar.
+Clique no inimigo: ataque automático. 1–8: habilidades aprendidas.
+I: inventário/equipamentos/comida. C: personagem. Tab: habilidades.
+F/Espaço: fisgar quando aparecer AGORA ou retirar o preparo do fogo.
+Esc: cancelar/fechar painel/pausar. H: ajuda. F11: tela cheia.
+
+PRIMEIROS PASSOS
+Converse com o Armeiro, obtenha uma arma e equipe em I. Pegue também a vara.
+Entre na Torre com F. Explore os desvios para encontrar o lago e pescar.
+Mira compra peixes/pratos e vende ingredientes. Cozinhe no fogão do Refúgio.
+
+PROGRESSO
+O save da Desktop01 é preservado em %APPDATA%\Dungeon Master.
+Instalador e Portable compartilham esse perfil no mesmo usuário Windows.
+Não importa automaticamente o save do navegador. "Portable" não significa
+que o save viaja com o executável no pendrive. Não apague a pasta do perfil.
+Feche normalmente e aguarde a janela sair. A expedição não é retomada:
+ao abrir você retorna ao Refúgio, mantendo progresso e itens.
+Buffs e recarga de comida continuam contando o tempo com o jogo fechado.
+
+AVISO DO WINDOWS
+Esta Beta não tem assinatura digital. Pode aparecer aviso de aplicativo
+desconhecido. Confirme a origem com o organizador. Não desative antivírus
+ou outras proteções do Windows.
+
+PROBLEMAS
+Informe "Beta 0.1.0 / Multiplayer01", Windows, Setup ou Portable,
+passos, resultado esperado e observado. Inclua captura quando possível.
+Na conexão, informe se ambos ficaram Online, atraso, teleportes, direção
+incorreta ou personagem que permaneceu visível depois de sair.

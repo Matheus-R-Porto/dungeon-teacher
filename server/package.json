@@ -1,0 +1,9 @@
+{
+  "name": "dungeon-master-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22.12.0"},
+  "scripts": {"start": "node index.js"},
+  "dependencies": {"ws": "8.22.0"}
+}
