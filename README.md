@@ -17,6 +17,10 @@ The educational hook: chests have rarities, and opening one triggers an educatio
 |---|---|
 | ![Weapon selection: sword, dagger, bow, staff](screenshots/weapon-selection.png) | ![Novice skill tree with five paths](screenshots/skill-tree.png) |
 
+| Cooking minigame | Multiplayer (2 players in the Hub) |
+|---|---|
+| ![Timing-based cooking minigame](screenshots/iteration11-cooking-minigame.png) | ![Two players sharing the Hub, one controlled remotely](screenshots/multiplayer-01-two-clients.png) |
+
 ## First expedition
 
 1. Follow First Steps: walk around, try the camera and talk to the Armorer using F.
