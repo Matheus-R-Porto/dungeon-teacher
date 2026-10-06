@@ -90,7 +90,7 @@ Don't open `index.html` by double-clicking: the modules need the local server. T
 
 ## Limits of this version
 
-There are three controlled procedural floors, one placeholder boss and eight reward items. Playable classes, a full economy, educational questions, multiplayer and content beyond the third floor are not implemented. The sections below document the history; the current rules above take precedence.
+There are three controlled procedural floors, one placeholder boss and eight reward items. Fishing and cooking are implemented; mining and smithing are not yet. Multiplayer covers shared Hub presence only — no PvP, no shared tower runs. The Forest and Cave biomes are literal templates: current shape, size and enemies are placeholders and will change as the biome system matures. Playable classes, a full economy and educational questions are not implemented. The sections below document the history; the current rules above take precedence.
 
 Art is made of plain geometry and local effects, with no final assets. This build does not represent final visual quality. WebGL 2 and graphics acceleration are required. Mobile has not been validated.
 
