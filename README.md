@@ -192,7 +192,7 @@ Additional commands:
 
 Artifacts currently land in `release/multiplayer-01`. Desktop01 is preserved as-is. This build is identified as Multiplayer01 / Windows 0.1.0.2, keeping the same appId and `%APPDATA%\Dungeon Master` profile.
 
-**Pending for an external playtest:** hosting the backend and baking its public endpoint into a new build. The shipped config never invents a domain or points the build at localhost. The offline candidate shows a warning when it tries to connect. The playtester shouldn't edit any configuration: whoever owns the deploy generates the same final build for both PCs afterward.
+**Validated (Multiplayer 01.1):** the backend is hosted publicly on Render and baked into the distributed build's config. Two-client tests passed with low latency (~150 ms ping) end to end — connect, move sync, disconnect, reconnect. PvP is planned for later, so this will need another latency/security pass before that lands; for now, shared presence in the Hub is solid.
 
 [Exact backend deploy steps](server/DEPLOY.md), [report](docs/MULTIPLAYER-01-RELATORIO.md) and [two-PC walkthrough](desktop/TESTE-MULTIPLAYER-01.txt).
 
