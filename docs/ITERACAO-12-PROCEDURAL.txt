@@ -1,0 +1,17 @@
+✔ 100 seeds x 50 floors: legal transitions, dwell bounds, determinism and complete graph generation (363.5366ms)
+✔ invalid environmental jumps, premature transitions and excessive dwell are rejected (0.4576ms)
+✔ FOREST: 10 materialized seeds have usable spawns, gates, enemies, detours and exits (716.8206ms)
+✔ FOREST_TO_CAVE: 10 materialized seeds have usable spawns, gates, enemies, detours and exits (727.2514ms)
+✔ CAVE: 10 materialized seeds have usable spawns, gates, enemies, detours and exits (472.4914ms)
+✔ CAVE_TO_FOREST: 10 materialized seeds have usable spawns, gates, enemies, detours and exits (677.0892ms)
+✔ boss role is independent of cave and transitions, with original reward and return route (134.2895ms)
+✔ actual movement traverses a cave and both directed transitions (148.6048ms)
+✔ playtest starts at a real sequence location and ascends without floor-three boss coupling (189.0066ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3569.405

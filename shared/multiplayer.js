@@ -1,5 +1,5 @@
 // Presence only: never serialize a Character or camera into this protocol.
-export const NET = Object.freeze({version:1,room:'hub-01',updateHz:15,interpolationMs:100,maxPayload:8192,maxPlayers:32,pingMs:5000,timeoutMs:16000,retryMs:2000,maxRetryMs:10000});
+export const NET = Object.freeze({version:1,room:'hub-01',updateHz:15,interpolationMs:100,maxPayload:8192,maxPlayers:32,pingMs:5000,timeoutMs:16000,connectTimeoutMs:90000,retryMs:2000,maxRetryMs:10000});
 export const TYPE = Object.freeze({hello:'client:hello',welcome:'server:welcome',join:'player:join',leave:'player:leave',state:'player:state',snapshot:'room:snapshot',ping:'ping',pong:'pong',error:'server:error'});
 export const validId = value => typeof value==='string' && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
 export const validName = value => typeof value==='string' && value===value.trim() && value.length>=2 && value.length<=24 && /^[\p{L}\p{N} _.\-]+$/u.test(value);

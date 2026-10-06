@@ -1,4 +1,4 @@
 {
-  "serverUrl": "",
-  "build": "Multiplayer01"
+  "serverUrl": "wss://dungeon-master-hub-u40z.onrender.com/hub",
+  "build": "Multiplayer01.1"
 }

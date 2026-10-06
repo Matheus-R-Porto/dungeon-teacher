@@ -1,3 +1,4 @@
+import {biomeSequence} from '../world/biomes.js';
 import {FishingRuntime} from './fishing.js';
 import {BALANCE} from '../domain/character/balance.js';
 import {canStand} from '../world/collision.js';
@@ -38,13 +39,22 @@ export class AreaSession {
   }
   get area(){return this.game.world;}
   get normalsCleared(){return !this.area.safe&&this.objectiveIds.size>0&&[...this.objectiveIds].every(id=>this.defeated.has(id));}
-  get complete(){return this.normalsCleared&&(this.area.floorId<3||!!this.run?.bossDefeated);}
+  get complete(){return this.normalsCleared&&(this.area.floorRole!=='boss'||!!this.run?.bossDefeated);}
   get boss(){return this.combat.enemies.find(e=>e.boss);}
   startRun(){const seed=this.seedOverride??Math.floor(Math.random()*4294967296);const floors=[1,2,3].map(n=>generateFloor(seed,n,this.hubId));for(const floor of floors)this.areas[floor.id]=floor;this.run={seed,floor:1,floors:floors.map(f=>f.seed),encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};this.fishing.reset(seed);this.enter('tower-floor-1');this.notify('Expedição iniciada · Andar 1');}
+  startBiomePlaytest(type){
+    if(!this.area.safe)throw Error('Volte ao Refúgio antes de escolher um bioma.');
+    if(!equippedDefinition(this.combat.character.data))throw Error('Equipe uma arma em I para explorar.');
+    const seed=this.seedOverride??Math.floor(Math.random()*4294967296),sequence=biomeSequence(seed,50),record=sequence.find(r=>r.environment.type===type);
+    if(!record)throw Error('Ambiente não encontrado.');
+    const world=generateFloor(seed,record.floorNumber,this.hubId,{floorRole:'normal'});
+    this.areas[world.id]=world;this.run={seed,mode:'biome-playtest',sequence,currentBiome:record.before.currentBiome,floor:record.floorNumber,floors:[world.seed],encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};
+    this.fishing.reset(seed);this.enter(world.id);this.notify('Exploração de biomas · volte pelo portal de entrada quando quiser.');
+  }
   endRun(result='abandoned'){this.recordExploration();this.lastRun=this.run?{...this.run,result}:null;this.run=null;this.enter(this.hubId,{returning:true});this.notify(result==='success'?'Expedição concluída! Abra o baú em I e evolua em C.':result==='failure'?'Você voltou ao Refúgio. Recursos e itens preservados.':'Expedição encerrada. Prepare uma nova tentativa.');}
   async collectChest(save){if(this.collecting)return;const drop=this.area.interactables.find(i=>i.id==='boss-chest');if(!this.run?.bossDefeated||this.run.rewardCollected||!drop?.enabled)throw Error('Baú indisponível.');const p=this.game.player;if(Math.hypot(p.x-drop.x,p.z-drop.z)>drop.radius)throw Error('Aproxime-se do baú.');const before=this.combat.character.snapshot();this.collecting=true;this.game.paused=true;try{new Inventory(this.combat.character).acquire('expeditionChest',{rewardSeed:seedOf(this.run.seed+':chest')});await save();this.run.rewardCollected=true;drop.enabled=false;this.notify('BAÚ OBTIDO · Volte ao Refúgio para abrir em I.');}catch(error){this.combat.character.data=before;this.combat.character.recalculate();throw error;}finally{this.collecting=false;this.game.paused=false;}}
   get currentRegion(){return this.area.graph?.regions.find(r=>Math.hypot(this.game.player.x-r.x,this.game.player.z-r.z)<r.radius);}
-  get objectiveText(){if(this.area.safe)return '';const r=this.currentRegion,enc=this.run?.encounters.find(e=>e.regionId===r?.id&&e.state!=='completed');if(this.run?.bossStarted&&!this.run.bossDefeated)return 'Clareira do Guardião · derrote o Guardião';if(this.run?.bossDefeated)return this.run.rewardCollected?'Baú obtido · volte pelo portal':'Vitória! Pegue o baú com F';if(enc?.required)return r.name+' · ENCONTRO · '+enc.enemyIds.filter(id=>!this.defeated.has(id)).length+' restantes · a passagem adiante está selada';if(enc)return r.name+' · Encontro opcional · lute por XP ou retorne à trilha';return (r?.name??'Trilha da floresta')+' · '+(this.complete?'Encontre o arco de saída':this.normalsCleared&&this.area.floorId===3?'Siga até a clareira do Guardião':'Atravesse a floresta · siga as pedras douradas');}
+  get objectiveText(){if(this.area.safe)return '';const r=this.currentRegion,enc=this.run?.encounters.find(e=>e.regionId===r?.id&&e.state!=='completed');if(this.run?.bossStarted&&!this.run.bossDefeated)return 'Clareira do Guardião · derrote o Guardião';if(this.run?.bossDefeated)return this.run.rewardCollected?'Baú obtido · volte pelo portal':'Vitória! Pegue o baú com F';if(enc?.required)return r.name+' · ENCONTRO · '+enc.enemyIds.filter(id=>!this.defeated.has(id)).length+' restantes · a passagem adiante está selada';if(enc)return r.name+' · Encontro opcional · lute por XP ou retorne à trilha';return (r?.name??'Trilha da Torre')+' · '+(this.complete?'Encontre o arco de saída':this.normalsCleared&&this.area.floorRole==='boss'?'Siga até a clareira do Guardião':'Explore o andar · siga as pedras douradas');}
   enter(id,{initial=false,returning=false}={}){
     if(this.transitioning)throw Error('Transição em andamento.');this.fishing?.cancel('Pesca encerrada pela troca de área.');const definition=this.areas[id];if(!definition)throw Error('Área desconhecida.');
     // Construct and validate the destination before releasing the current context.
@@ -63,7 +73,12 @@ export class AreaSession {
     if(this.area.safe){if(!equippedDefinition(this.combat.character.data))throw Error('Equipe uma arma em I para entrar na Torre.');this.startRun();return;}
     if(exit.abandon){this.endRun();return;}
     if(exit.requiresCompletion&&!this.complete)throw Error('Resolva os encontros obrigatórios para liberar a passagem.');
-    if(this.area.floorId===3){if(!this.run?.rewardCollected)throw Error('Pegue o baú antes de voltar.');this.endRun('success');return;}
+    if(this.area.floorRole==='boss'){if(!this.run?.rewardCollected)throw Error('Pegue o baú antes de voltar.');this.endRun('success');return;}
+    if(this.run?.mode==='biome-playtest'){
+      const next=this.area.floorId+1;if(next>50){this.endRun();return;}
+      const world=generateFloor(this.run.seed,next,this.hubId,{floorRole:'normal'});this.areas[world.id]=world;
+      this.run.currentBiome=this.area.floorEnvironment.to;this.run.floors.push(world.seed);
+    }
     this.recordExploration();this.enter(exit.areaId);this.notify('Você chegou ao Andar '+this.area.floorId);
   }
   recordExploration(){if(this.run&&!this.area.safe)this.run.exploration.push({floor:this.area.floorId,seconds:this.game.elapsed-this.run.floorTimeStart,distance:this.game.distance-this.run.floorDistanceStart,regions:[...this.run.visitedRegions],completed:[...this.run.completedEncounters],optionalAlive:this.combat.enemies.filter(e=>e.optional&&e.alive).length});}
@@ -77,10 +92,10 @@ export class AreaSession {
     }
     if(this.run){const region=this.currentRegion;if(region&&!this.run.visitedRegions.includes(region.id)){this.run.visitedRegions.push(region.id);this.notify(region.name+(region.optional?' · desvio opcional':''));}
       for(const encounter of this.run.encounters){if(encounter.state==='completed')continue;if(encounter.regionId===region?.id)encounter.state='active';if(encounter.enemyIds.every(id=>this.defeated.has(id))){encounter.state='completed';this.run.completedEncounters.push(encounter.id);const gate=this.area.gates?.find(g=>g.id===encounter.gateId);if(gate){gate.open=true;this.area.navRevision++;this.notify('CAMINHO LIBERADO · siga a trilha');}}}
-      if(this.normalsCleared&&this.area.floorId===3&&!this.run.bossStarted&&this.currentRegion?.type==='boss'){this.run.bossTimer+=dt;if(this.run.bossTimer>=E.bossDelay){const boss=this.boss;boss.dormant=false;boss.hp=boss.stats.maxHP;boss.state='idle';this.run.bossStarted=true;this.combat.ai.acquire(boss,this.combat.character.data.id,'boss-encounter');this.notify('O Slime Guardião apareceu!');}}
+      if(this.normalsCleared&&this.area.floorRole==='boss'&&!this.run.bossStarted&&this.currentRegion?.type==='boss'){this.run.bossTimer+=dt;if(this.run.bossTimer>=E.bossDelay){const boss=this.boss;boss.dormant=false;boss.hp=boss.stats.maxHP;boss.state='idle';this.run.bossStarted=true;this.combat.ai.acquire(boss,this.combat.character.data.id,'boss-encounter');this.notify('O Slime Guardião apareceu!');}}
     }
-    if(this.complete&&!this.floorAnnounced){this.floorAnnounced=true;this.notify(this.area.floorId===3?'Vitória! Pegue o baú e volte ao Refúgio.':'Passagens liberadas · explore ou siga até a saída');}
-    if(this.returnInteraction)this.returnInteraction.label=this.complete?(this.area.floorId<3?'Subir para o Andar '+(this.area.floorId+1):'Voltar ao Refúgio'):'Passagem selada · resolva os encontros da trilha';
+    if(this.complete&&!this.floorAnnounced){this.floorAnnounced=true;this.notify(this.area.floorRole==='boss'?'Vitória! Pegue o baú e volte ao Refúgio.':'Passagens liberadas · explore ou siga até a saída');}
+    if(this.returnInteraction)this.returnInteraction.label=this.complete?(this.area.floorRole!=='boss'?'Subir para o Andar '+(this.area.floorId+1):'Voltar ao Refúgio'):'Passagem selada · resolva os encontros da trilha';
     const entrance=this.area.interactables.find(i=>i.id==='tower-portal');if(entrance)entrance.label=equippedDefinition(this.combat.character.data)?'Entrar na Torre · nova expedição':'Portal bloqueado · equipe uma arma (I)';this.quest.sync(this);
   }
 }

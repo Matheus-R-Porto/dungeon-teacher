@@ -11,10 +11,10 @@ export class Hud {
   toast(message) { this.nodes.toast.textContent = message; this.nodes.toast.hidden = false; this.toastUntil = performance.now() + 3500; }
   update() {
     const g = this.game, n = this.nodes;
-    $('#app').classList.toggle('in-tower',g.world.safe===false);$('.location .eyebrow').textContent=g.world.safe===false?'TORRE · FLORESTA':'UM LUGAR ENTRE JORNADAS';$('.chapter-tag').hidden=g.world.safe===false;$('#world').setAttribute('aria-label',(g.world.name??'Refúgio')+'. Use WASD ou clique no chão para caminhar; Q e E giram a câmera.');
+    $('#app').classList.toggle('in-tower',g.world.safe===false);$('.location .eyebrow').textContent=g.world.safe===false?'TORRE · '+(g.world.floorEnvironment?.name??'Floresta').toUpperCase():'UM LUGAR ENTRE JORNADAS';$('.chapter-tag').hidden=g.world.safe===false;$('#world').setAttribute('aria-label',(g.world.name??'Refúgio')+'. Use WASD ou clique no chão para caminhar; Q e E giram a câmera.');
     $('.location h1').textContent=g.world.name??'Refúgio do Limiar';$('.location-state').textContent=g.world.safe===false?'ÁREA DE COMBATE · ANDAR '+g.world.floorId:'ÁREA SEGURA';
     $('.map-panel .section-label span').textContent=g.world.safe===false?'ANDAR '+g.world.floorId:'REFÚGIO';
-    $('.journey').hidden=false;n['landmark-label'].querySelector('strong').textContent=g.world.safe===false?(g.world.floorId<3?'Portal de subida':'Portal de retorno'):'Portal da Torre';
+    $('.journey').hidden=false;n['landmark-label'].querySelector('strong').textContent=g.world.safe===false?(g.world.floorRole!=='boss'?'Portal de subida':'Portal de retorno'):'Portal da Torre';
     const npc=g.world.npcs?.[0],label=$('#npc-label');if(label){label.hidden=!npc||g.paused;if(npc){const p=this.view.screenPoint(npc.x,2.4,npc.z);label.hidden=!p.visible||g.paused;label.style.left=p.x+'px';label.style.top=p.y+'px';}}
 
     if(this.session){const quest=this.session.quest,description=quest.describe(this.session);$('#quest-current').textContent=description.title;$('#quest-hint').textContent=description.hint;$('#quest-count').textContent=Object.values(quest.state).filter(Boolean).length+' / '+Object.keys(quest.state).length;

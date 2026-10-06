@@ -1,24 +1,25 @@
-DUNGEON MASTER — BETA 0.1.0 — MULTIPLAYER 01
+DUNGEON MASTER — BETA 0.1.2 — CAVE BIOME
 Windows x64. Versão de playtest; arte e balanceamento provisórios.
 
 COMO ABRIR
-Abra DungeonMaster-Beta-0.1.0-Multiplayer01-Setup.exe e siga o assistente.
+Abra DungeonMaster-Beta-0.1.2-CaveBiome-Setup.exe e siga o assistente.
 Depois, abra pelo atalho Dungeon Master. Alternativa sem instalação:
-DungeonMaster-Beta-0.1.0-Multiplayer01-Portable.exe.
+DungeonMaster-Beta-0.1.2-CaveBiome-Portable.exe.
 Não precisa de Node, npm, terminal ou servidor no seu computador.
 
 REFÚGIO COMPARTILHADO
-Os dois computadores precisam da mesma build e de internet para alcançar o
-servidor preparado pelo organizador. Abra Multiplayer, escolha seu nome e
+Os dois computadores precisam deste MESMO instalador e de internet.
+O servidor público já está configurado: não informe URL, IP ou porta.
+Na primeira conexão, aguarde: o serviço gratuito pode levar cerca de um
+minuto para iniciar. O jogo continua tentando com pausas entre tentativas.
+Abra Multiplayer, escolha seu nome e
 clique Conectar. O indicador mostra Online e o número de jogadores.
 O nome aparece para os demais viajantes. A conexão não é automática ao abrir.
 Entre na Torre para jogar individualmente; sua presença sai do Refúgio.
 Ao voltar, a conexão é retomada. Desconectar encerra essa participação.
 Somente nome, identidade local e movimento são compartilhados.
 Inventário, ouro, combate, pesca, culinária e progresso permanecem locais.
-Consulte TESTE-MULTIPLAYER-01.txt para o teste em dois computadores.
-Se aparecer "Servidor de playtest ainda não configurado", solicite ao
-organizador o instalador final com o servidor preparado. Não edite arquivos.
+Consulte CHECKLIST-CAVE-BIOME.txt para o playtest desta versão.
 
 MODO INDIVIDUAL
 Continua funcionando sem internet e sem conectar ao multiplayer.
@@ -51,7 +52,18 @@ desconhecido. Confirme a origem com o organizador. Não desative antivírus
 ou outras proteções do Windows.
 
 PROBLEMAS
-Informe "Beta 0.1.0 / Multiplayer01", Windows, Setup ou Portable,
+Informe "Beta 0.1.2 / CaveBiome", Windows, Setup ou Portable,
 passos, resultado esperado e observado. Inclua captura quando possível.
 Na conexão, informe se ambos ficaram Online, atraso, teleportes, direção
 incorreta ou personagem que permaneceu visível depois de sair.
+
+EXPLORAR CAVERNA E TRANSIÇÕES
+No Refúgio, equipe uma arma e clique em Explorar biomas. Escolha Floresta,
+Caverna, Floresta → Caverna ou Caverna → Floresta. O início salta para o
+primeiro andar desse ambiente na sequência da nova seed; as próximas
+saídas seguem a sequência procedural normal. Resolva os encontros para subir.
+Volte pelo portal na entrada do andar quando quiser encerrar a exploração.
+Essa rota de playtest tem até 50 andares gerados sob demanda, sem novo boss
+ou baú final. XP e itens obtidos são mantidos. O portal normal preserva
+a expedição de três andares com o Guardião. Não há Mining nem Smithing.
+Consulte CHECKLIST-CAVE-BIOME.txt.

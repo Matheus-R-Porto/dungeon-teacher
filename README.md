@@ -1,10 +1,10 @@
-# Dungeon Teacher — Beta 0.1.0
+# Dungeon Teacher — Beta 0.1.2
 
 A roguelite-ish tower climber (in quotes because it's not quite a traditional roguelike) built with **Three.js (3D)**, inspired by Ragnarok Online's dungeon loop and general Sword Art Online vibes. Pick a weapon, climb the procedural tower fighting for drops and boss chests, then return to the hub — or die trying — to level up, learn skills and gear up before heading back in stronger.
 
 The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Fishing is implemented as an optional activity at existing lakes, with its own levels, five species and persistent ingredient stacks. Cooking now adds six recipes, consumable fish and dishes, four temporary food buffs, and a local ingredient shop/buyback economy. Mining and smithing remain future work.
 
-**Status: actively in development**, worked on weekly. Current build: **Iteration 11 — Cooking, Consumables + Local Economy**. 331 tests pass. Representative floor and fishing UI checks replace repeated full-loop runs, as requested. See the [Iteration 11 report](docs/ITERACAO-11-RELATORIO.md).
+**Current distribution: Beta 0.1.2 / CaveBiome.** Forest, Cave and directional transitions are ready for visual playtest. 373 tests pass. Install the Setup in `release/cave-biome-playtest/`, equip a weapon at the Hub and choose **Explorar biomas**. The normal portal retains the original three-floor adventure. Existing saves and public Hub multiplayer are preserved. See the [Iteration 12 report](docs/ITERACAO-12-RELATORIO.md) and [checklist](release/cave-biome-playtest/CHECKLIST-CAVE-BIOME.txt). Earlier delivery notes below are historical.
 
 ## Screenshots
 *(placeholder art — geometric shapes and default assets, not final visuals)*
@@ -195,3 +195,4 @@ Artifacts currently land in `release/multiplayer-01`. Desktop01 is preserved as-
 **Pending for an external playtest:** hosting the backend and baking its public endpoint into a new build. The shipped config never invents a domain or points the build at localhost. The offline candidate shows a warning when it tries to connect. The playtester shouldn't edit any configuration: whoever owns the deploy generates the same final build for both PCs afterward.
 
 [Exact backend deploy steps](server/DEPLOY.md), [report](docs/MULTIPLAYER-01-RELATORIO.md) and [two-PC walkthrough](desktop/TESTE-MULTIPLAYER-01.txt).
+

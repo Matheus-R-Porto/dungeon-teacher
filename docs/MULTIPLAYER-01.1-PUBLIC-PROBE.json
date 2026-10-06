@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-05T16:45:59.400Z",
+  "electron": "44.5.1",
+  "endpoint": "wss://dungeon-master-hub-u40z.onrender.com/hub",
+  "shellRoot": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\release\\multiplayer-01-1-build\\win-unpacked\\resources\\app.asar",
+  "elapsedMs": 8322,
+  "origins": [
+    "dungeon://game"
+  ],
+  "ok": true,
+  "checks": [
+    "TLS/handshake/hello A accepted",
+    "late snapshot and join",
+    "state A to B",
+    "state B to A with facing",
+    "ping/pong",
+    "disconnect removes A",
+    "reconnect and fresh snapshot",
+    "Tower removes presence",
+    "return rejoins room"
+  ],
+  "pingMs": {
+    "a": 146,
+    "b": 152
+  },
+  "locationOrigin": "dungeon://game"
+}

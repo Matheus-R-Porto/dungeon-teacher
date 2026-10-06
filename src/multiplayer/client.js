@@ -18,7 +18,7 @@ export class HubClient {
   open(){
     this.stop();if(!this.desired||!this.inHub)return;
     if(!this.url){this.desired=false;this.changed('Erro','Servidor de playtest ainda não configurado nesta build. O modo individual continua disponível.');return;}
-    this.changed(this.attempt?'Reconectando…':'Conectando…','');
+    this.changed(this.attempt?'Reconectando…':'Conectando…','A primeira conexão pode levar cerca de um minuto enquanto o servidor inicia. Você pode continuar no modo individual.');
     let ws;try{ws=new this.Socket(this.url);}catch{this.failed('Não foi possível abrir a conexão.');return;}
     this.socket=ws;this.lastReceived=this.now();this.lastPing=this.now();this.pingSent=null;this.nextSend=0;this.nextNonce=0;
     const active=()=>this.socket===ws;
@@ -47,7 +47,7 @@ export class HubClient {
   send(m){if(this.socket?.readyState!==1)return;try{if(this.socket.bufferedAmount>65536){this.failed('Conexão lenta. Reconectando…');return;}this.socket.send(encode(m));}catch{this.failed('Falha na conexão. Tentando novamente…');}}
   tick(){
     const now=this.now();
-    if(now-this.lastReceived>this.timing.timeoutMs){this.failed('Servidor sem resposta. Tentando novamente…');return;}
+    if(now-this.lastReceived>(this.status==='Online'?this.timing.timeoutMs:this.timing.connectTimeoutMs)){this.failed('Servidor sem resposta. Tentando novamente…');return;}
     if(this.status!=='Online')return;
     // Timer independent of rendered FPS, with no catch-up burst after backgrounding.
     if(now>=this.nextSend){this.nextSend=now+1000/this.timing.updateHz;this.send(message(TYPE.state,{state:presenceState(this.getPlayer(),this.isPaused())}));}

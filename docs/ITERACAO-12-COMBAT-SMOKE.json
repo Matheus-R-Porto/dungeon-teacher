@@ -1,0 +1,16 @@
+[
+  {
+    "weapon": "trainingSword",
+    "startHP": 120,
+    "endHP": 83,
+    "playerAlive": true,
+    "enemyState": "attacking"
+  },
+  {
+    "weapon": "trainingStaff",
+    "startHP": 120,
+    "endHP": 63,
+    "playerAlive": true,
+    "enemyState": "attacking"
+  }
+]

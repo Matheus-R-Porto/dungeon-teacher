@@ -28,14 +28,14 @@ export class SceneView {
     this.floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
     this.occluders = [];
     this.mats = Object.fromEntries(Object.entries(palette).map(([name, color]) => [name, material(color)]));
-    this.scene.add(new THREE.HemisphereLight(0xe3f3ff, 0x718b45, 1.8));
+    this.hemisphere=new THREE.HemisphereLight(0xe3f3ff, 0x718b45, 1.8);this.scene.add(this.hemisphere);
     const sun = new THREE.DirectionalLight(0xffe6b7, 2.6);
     sun.position.set(-8, 18, 8); sun.castShadow = true;
     Object.assign(sun.shadow.camera, { left: -19, right: 19, top: 19, bottom: -19, near: 1, far: 50 });
     sun.shadow.mapSize.set(2048, 2048); sun.shadow.normalBias = 0.04;
-    this.scene.add(sun);
+    this.sun=sun;this.scene.add(sun);
     const rim = new THREE.DirectionalLight(0xb9e6f1, 1.0); rim.position.set(10, 6, -12); this.scene.add(rim);
-    this.flags=[]; if(world.environment==='forest')buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
+    this.flags=[]; if(['forest','biome'].includes(world.environment))buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
     this.fishingVisual=new FishingVisual(this);this.registerStructureOcclusion();
     this.interactionRing = this.mesh(new THREE.RingGeometry(0.8, 0.86, 48), new THREE.MeshBasicMaterial({ color: 0xffdf88, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.25, 0);
     this.interactionRing.rotation.x = -Math.PI / 2; this.interactionRing.visible = false; this.interactionRing.castShadow = false;
@@ -257,7 +257,7 @@ export class SceneView {
     return { x: (point.x * 0.5 + 0.5) * this.canvas.clientWidth, y: (-point.y * 0.5 + 0.5) * this.canvas.clientHeight, visible: Math.abs(point.x) < 0.92 && Math.abs(point.y) < 0.92 && point.z < 1 };
   }
   update(game, alpha, dt, reducedMotion = false) {
-    const time = game.elapsed;
+    const time = game.elapsed;this.updateBiomeAtmosphere?.(game.player.z);
     const x = THREE.MathUtils.lerp(game.previous.x, game.player.x, alpha), z = THREE.MathUtils.lerp(game.previous.z, game.player.z, alpha);
     this.selection.position.set(x, 0.06, z);
     this.actor.update({ ...game.player, x, z }, this.azimuth, time, reducedMotion);

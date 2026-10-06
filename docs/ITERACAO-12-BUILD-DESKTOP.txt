@@ -1,0 +1,19 @@
+  • electron-builder  version=26.15.3 os=10.0.26300
+  • loaded configuration  file=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\electron-builder.yml
+  • executing @electron/rebuild  electronVersion=44.5.1 arch=x64 buildFromSource=false workspaceRoot=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536 projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=win32 arch=x64 electron=44.5.1 appOutDir=release\cave-biome-build\win-unpacked
+  • using custom unpacked Electron distribution  electronDist=node_modules\electron\dist
+  • copying unpacked Electron  source=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\node_modules\electron\dist destination=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\release\cave-biome-build\win-unpacked
+  • searching for node modules  pm=npm searchDir=C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536
+  • updating asar integrity executable resource  executablePath=release\cave-biome-build\win-unpacked\DungeonMaster.exe
+  • default Electron icon is used  reason=application icon is not set
+  • signing with signtool.exe  path=release\cave-biome-build\win-unpacked\DungeonMaster.exe
+  • building        target=nsis file=release\cave-biome-build\DungeonMaster-Beta-0.1.2-CaveBiome-Setup.exe archs=x64 oneClick=false perMachine=false
+  • signing with signtool.exe  path=release\cave-biome-build\win-unpacked\resources\elevate.exe
+  • signing with signtool.exe  path=release\cave-biome-build\DungeonMaster-Beta-0.1.2-CaveBiome-Setup.__uninstaller.exe
+  • signing with signtool.exe  path=release\cave-biome-build\DungeonMaster-Beta-0.1.2-CaveBiome-Setup.exe
+  • building block map  blockMapFile=release\cave-biome-build\DungeonMaster-Beta-0.1.2-CaveBiome-Setup.exe.blockmap
+  • building        target=portable file=release\cave-biome-build\DungeonMaster-Beta-0.1.2-CaveBiome-Portable.exe archs=x64
+  • signing with signtool.exe  path=release\cave-biome-build\DungeonMaster-Beta-0.1.2-CaveBiome-Portable.exe

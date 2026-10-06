@@ -1,11 +1,10 @@
-TESTE MULTIPLAYER 01 — DOIS COMPUTADORES WINDOWS
+TESTE MULTIPLAYER 01.1 — DOIS COMPUTADORES WINDOWS
 
-Preparação do organizador: servidor público ativo e a mesma build com esse
-endereço já incluído. Um endpoint apenas local não atende este teste.
-Se a build disser que o servidor ainda não foi configurado, pare o teste
-multiplayer e solicite a versão final ao organizador. O individual funciona.
+O servidor público já está configurado nesta build. Não é necessário
+informar endereço nem executar servidor. A primeira conexão pode demorar
+enquanto o serviço gratuito inicia; aguarde a reconexão automática.
 
-1. Instale a mesma build Multiplayer01 nos computadores A e B.
+1. Instale a mesma build Multiplayer01.1 nos computadores A e B.
 2. Abra Dungeon Master nos dois.
 3. No Refúgio, clique Multiplayer em A; use o nome Gandalf e Conectar.
 4. Em B, use Bilbo e Conectar.

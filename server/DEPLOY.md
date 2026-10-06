@@ -22,7 +22,7 @@ Essa configuração é exclusivamente local. Ela não serve para distribuir a do
 
 ## Hospedagem pública com TLS
 
-Opção concreta: um Web Service Node no Render. Não foi criado um serviço remoto nesta entrega; falta uma conta/projeto de hospedagem fornecido pelo responsável. Não há credenciais embutidas nem URL pública inventada.
+Estado em 05/10/2026 (Multiplayer01.1): o responsável já publicou o serviço Render em https://dungeon-master-hub-u40z.onrender.com. Health e dois clientes WSS foram validados. A configuração distribuída aponta para wss://dungeon-master-hub-u40z.onrender.com/hub, com Origin dungeon://game. Não houve novo deploy remoto nesta integração. O roteiro abaixo serve para recriar a hospedagem, se necessário.
 
 1. Disponibilize no seu repositório Git as pastas `server` e `shared`, incluindo `server/package-lock.json`. Não envie `node_modules`, saves ou artefatos desktop.
 2. No painel Render, escolha **New → Web Service**, conecte esse repositório e selecione a versão que contém Multiplayer 01.
@@ -63,3 +63,4 @@ Atrás de proxy o limite por IP pode agrupar usuários. Não confiar automaticam
 Payload máximo 8 KiB; hello em até 5 s; limites de posição ±12 e orientação ±π. JSON, tipos, nomes e campos extras são validados. Upgrade limitado a 20 tentativas por 10 s por socket-IP, com memória limitada. Logs contêm eventos, id temporário e contagens, sem inventário ou save. SIGINT/SIGTERM encerra o serviço; após reinício os clientes refazem hello e snapshot.
 
 Referências oficiais consultadas: [ws](https://github.com/websockets/ws), [Web Services](https://render.com/docs/web-services), [WebSocket no Render](https://render.com/docs/websocket).
+

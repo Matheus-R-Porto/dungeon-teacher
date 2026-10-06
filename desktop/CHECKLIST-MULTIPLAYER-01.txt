@@ -1,0 +1,40 @@
+DUNGEON MASTER — MULTIPLAYER 01.1 / BETA 0.1.1
+
+PC A:
+Windows:
+Nome multiplayer:
+
+PC B:
+Windows:
+Nome multiplayer:
+
+Use EXATAMENTE o mesmo Setup nos dois PCs. O endereço público já está
+incluído. Não há servidor local nem configuração para o jogador.
+A primeira conexão pode levar cerca de um minuto enquanto o Render inicia.
+
+TESTE
+[ ] PC A instalou e abriu.
+[ ] PC B instalou e abriu.
+[ ] Ambos carregaram personagens.
+[ ] PC A conectou.
+[ ] PC B conectou.
+[ ] A vê B.
+[ ] B vê A.
+[ ] Movimento A → B funciona.
+[ ] Movimento B → A funciona.
+[ ] Orientação remota funciona.
+[ ] Animação remota funciona.
+[ ] Entrada tardia funciona.
+[ ] Fechar um cliente remove sua presença.
+[ ] Reconectar funciona.
+[ ] Entrar/sair da Torre não quebra o Hub.
+[ ] Save local continua funcionando.
+[ ] Fishing continua funcionando.
+[ ] Cooking continua funcionando.
+[ ] Nenhum crash crítico.
+
+Tempo até conectar:
+Latência percebida:
+Problemas observados:
+Passos para reproduzir:
+Observações:

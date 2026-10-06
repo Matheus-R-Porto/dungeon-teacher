@@ -1,9 +1,9 @@
 appId: com.dungeonmaster.playtest
 productName: Dungeon Master
-buildVersion: 0.1.0.2
+buildVersion: 0.1.2.1
 asar: true
 directories:
-  output: release/multiplayer-01
+  output: release/cave-biome-build
 files:
   - dist/**/*
   - desktop/*.cjs
@@ -13,8 +13,8 @@ files:
 extraResources:
   - from: desktop/LEIA-ME.txt
     to: LEIA-ME.txt
-  - from: desktop/TESTE-MULTIPLAYER-01.txt
-    to: TESTE-MULTIPLAYER-01.txt
+  - from: desktop/CHECKLIST-CAVE-BIOME.txt
+    to: CHECKLIST-CAVE-BIOME.txt
 win:
   executableName: DungeonMaster
   target:
@@ -23,7 +23,7 @@ win:
     - target: portable
       arch: [x64]
 nsis:
-  artifactName: DungeonMaster-Beta-${version}-Multiplayer01-Setup.${ext}
+  artifactName: DungeonMaster-Beta-${version}-CaveBiome-Setup.${ext}
   oneClick: false
   perMachine: false
   allowElevation: false
@@ -32,7 +32,7 @@ nsis:
   createDesktopShortcut: true
   shortcutName: Dungeon Master
 portable:
-  artifactName: DungeonMaster-Beta-${version}-Multiplayer01-Portable.${ext}
+  artifactName: DungeonMaster-Beta-${version}-CaveBiome-Portable.${ext}
 publish: null
 
 electronDist: node_modules/electron/dist

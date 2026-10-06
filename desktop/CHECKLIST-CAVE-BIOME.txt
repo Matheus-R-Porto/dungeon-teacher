@@ -1,0 +1,43 @@
+DUNGEON MASTER — CAVE BIOME PLAYTEST
+Beta 0.1.2 / CaveBiome — Windows x64
+
+Feche normalmente a versão anterior antes de instalar a nova.
+No Refúgio, equipe uma arma e clique em Explorar biomas.
+Escolha o ambiente desejado. Use o portal de entrada para voltar.
+As saídas seguintes respeitam a sequência procedural da seed.
+O portal normal mantém a aventura original de três andares com boss.
+
+[ ] Jogo instala.
+[ ] Jogo abre.
+[ ] Save anterior carrega.
+[ ] Refúgio continua funcionando.
+[ ] Forest continua funcionando.
+[ ] Forest possui identidade visual preservada.
+[ ] ForestToCave foi encontrado/testado.
+[ ] ForestToCave começa como Floresta.
+[ ] ForestToCave termina como Caverna.
+[ ] Cave foi encontrado/testado.
+[ ] Cave possui identidade visual própria.
+[ ] Cave possui geometria jogável.
+[ ] Combate funciona na Cave.
+[ ] Inimigos navegam corretamente na Cave.
+[ ] Saída da Cave funciona.
+[ ] CaveToForest foi encontrado/testado.
+[ ] CaveToForest começa como Caverna.
+[ ] CaveToForest termina como Floresta.
+[ ] Retorno para Forest funciona.
+[ ] Nenhuma transição apareceu invertida.
+[ ] Nenhuma saída ficou bloqueada.
+[ ] Não encontrei área crítica inacessível.
+[ ] Fishing continua funcionando.
+[ ] Cooking continua funcionando.
+[ ] Inventário continua funcionando.
+[ ] Save continua funcionando após fechar/reabrir.
+[ ] Multiplayer do Refúgio continua conectando.
+[ ] Nenhum crash crítico.
+
+Seed utilizada:
+Sequência observada:
+Problemas:
+Passos para reproduzir:
+Observações:

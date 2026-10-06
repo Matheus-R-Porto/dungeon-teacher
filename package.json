@@ -1,6 +1,6 @@
 {
   "name": "dungeon-teacher-beta",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "type": "module",
   "engines": {
@@ -18,7 +18,8 @@
     "server:install": "npm ci --prefix server --ignore-scripts",
     "test:multiplayer": "node --test tests/multiplayer*.test.js",
     "multiplayer:configure": "node scripts/configure-multiplayer.cjs",
-    "desktop:package:playtest": "node scripts/verify-multiplayer.cjs && npm run desktop:package"
+    "desktop:package:playtest": "node scripts/verify-multiplayer.cjs && npm run desktop:package",
+    "test:public-hub": "electron scripts/public-hub-probe.cjs"
   },
   "dependencies": {
     "three": "0.186.1"
@@ -28,7 +29,7 @@
     "electron-builder": "26.15.3",
     "vite": "8.3.1"
   },
-  "description": "Dungeon Master — Beta single-player para playtest Windows",
+  "description": "Dungeon Master — Beta para playtest Windows e Refúgio compartilhado",
   "author": "Dungeon Master",
   "main": "desktop/main.cjs"
 }

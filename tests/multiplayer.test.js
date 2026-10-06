@@ -80,3 +80,19 @@ test('desktop CSP permits configured endpoint only and rejects host directive in
   assert.equal(response.status,200);assert.match(response.headers.get('content-security-policy'),/connect-src 'self' wss:\/\/example.org\/hub;/);
   assert.throws(()=>network.endpoint('wss://example.org;unsafe/hub'));assert.throws(()=>network.endpoint("wss://example.org'unsafe/hub"));
 });
+
+test('Multiplayer01.1 production configuration allows its exact public WSS and rejects other destinations',async()=>{
+  const {readFile}=await import('node:fs/promises');const config=JSON.parse(await readFile(new URL('../config/multiplayer.json',import.meta.url),'utf8'));
+  const url=new URL(config.serverUrl);assert.equal(url.protocol,'wss:');assert.equal(url.pathname,'/hub');assert.equal(config.build,'Multiplayer01.1');assert.equal(network.networkAllowed(config.serverUrl,config.serverUrl),true);
+  for(const rejected of ['https://'+url.host+'/health','wss://'+url.host+'/other','wss://elsewhere.invalid/hub','ws://127.0.0.1:8787/hub'])assert.equal(network.networkAllowed(rejected,config.serverUrl),false);
+});
+test('Render cold start retains connection attempt beyond the online timeout',()=>{
+  let now=0;class WaitingSocket{constructor(){this.readyState=0;}addEventListener(){}close(){this.readyState=3;}}
+  const client=new HubClient({url:'wss://test.invalid/hub',identity:{id:randomUUID(),name:'Teste'},getPlayer:()=>state,Socket:WaitingSocket,now:()=>now});
+  try{client.connect();now=60000;client.tick();assert.equal(client.status,'Conectando…');assert.equal(client.desired,true);now=91000;client.tick();assert.equal(client.status,'Reconectando…');assert.equal(client.desired,true);assert.equal(client.socket,null);}finally{client.dispose();}
+});
+test('cold start grace does not prolong detection of an already-online dead connection',()=>{
+  let now=0;class WaitingSocket{constructor(){this.readyState=0;}addEventListener(){}close(){this.readyState=3;}}
+  const client=new HubClient({url:'wss://test.invalid/hub',identity:{id:randomUUID(),name:'Teste'},getPlayer:()=>state,Socket:WaitingSocket,now:()=>now});
+  try{client.connect();client.status='Online';now=17000;client.tick();assert.equal(client.status,'Reconectando…');}finally{client.dispose();}
+});

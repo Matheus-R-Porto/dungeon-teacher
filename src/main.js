@@ -1,3 +1,4 @@
+import {BiomePanel} from './ui/biome-panel.js';
 import {saveBeforeClose} from './adapters/desktop/lifecycle.js';
 import multiplayerConfig from '../config/multiplayer.json';
 import {loadIdentity} from './multiplayer/identity.js';
@@ -77,6 +78,7 @@ try {
   multiplayerPanel=new MultiplayerPanel({client:multiplayer,identityStore,open:id=>{if(!isBlocked())openDialog(id);},debug:params.get('debug')==='1'});
   if(identityError){multiplayer.changed('Erro',identityError);multiplayerPanel.connectButton.disabled=true;}
   view.remotePlayers=new RemotePlayers(view,multiplayer);
+  const biomePanel=new BiomePanel({session,debug:testProfile&&params.get('debug')==='1',open:id=>{if(!isBlocked())openDialog(id);},notify});
   const dialogs = [...document.querySelectorAll('dialog')];
   const isBlocked = () => !!session.fishing.pending || session.collecting || dialogs.some(dialog => dialog.open) || !$('fatal').hidden;
   const openDialog = id => { if(session.fishing.busy){hud.toast('Encerre a pesca com Esc antes de abrir painéis.');return;}input?.clear(); game.paused = true; game.previous = { ...game.player }; $(id).showModal(); };
@@ -159,9 +161,9 @@ try {
       game.interactionTarget = session.interactions.update(game.player, game.paused||session.fishing.busy);
       view.update(game, game.paused ? 1 : accumulator / CONFIG.tick, dt, reducedMotion.matches);
       if(!food.busy)dirty=character.updateFoodTime()||dirty;
-      kitchen.update(view);panels.updateFoodUI();combatHud.update();abilityHud.update();fishingHud.update(view);session.quest.observe(game,view.orbit);
+      biomePanel.update();kitchen.update(view);panels.updateFoodUI();combatHud.update();abilityHud.update();fishingHud.update(view);session.quest.observe(game,view.orbit);
       const boss=session.boss;$('boss-health').hidden=!boss||boss.dormant||!boss.alive;if(boss){$('boss-health-label').textContent=`BOSS · Slime Guardião · ${Math.ceil(boss.hp)} / ${boss.stats.maxHP}`;$('boss-health-bar').max=boss.stats.maxHP;$('boss-health-bar').value=boss.hp;}
-      $('run-debug').hidden=params.get('debug')!=='1'||!session.run;if(session.run)$('run-debug').textContent=`Run ${session.run.seed} · Andar ${session.area.floorId} · Seed ${session.area.seed}`;
+      $('run-debug').hidden=params.get('debug')!=='1'||!session.run;if(session.run)$('run-debug').textContent=`Run ${session.run.seed} · Andar ${session.area.floorId} · Seed ${session.area.seed} · ${session.area.floorEnvironment?.type}`;
       $('floor-objective').hidden=session.area.safe;$('floor-objective').textContent=session.objectiveText;
       saveElapsed+=dt;if(saveElapsed>=2){flush();saveElapsed=0;}
       uiElapsed += dt; if (uiElapsed >= 0.05) { hud.update(); characterPanel.updateHUD(); uiElapsed = 0; }
@@ -170,7 +172,7 @@ try {
   };
   view.update(game, 1, 1, reducedMotion.matches); hud.update();
   $('loading').hidden = true; frameId = requestAnimationFrame(animate); focusWorld();
-  if (import.meta.hot) import.meta.hot.dispose(() => { multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();fishingHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
+  if (import.meta.hot) import.meta.hot.dispose(() => { biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();fishingHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
 } catch (error) { fatal(error); }
 
 }
