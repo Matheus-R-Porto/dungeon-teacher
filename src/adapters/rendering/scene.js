@@ -61,6 +61,16 @@ export class SceneView {
     for(const o of this.world.obstacles)this.box(this.scene,o.halfX*2,2.5,o.halfZ*2,o.x,1.25,o.z,this.mats.stone);
     for(const [x,z] of [[-10,-9],[10,-9],[-10,8],[10,8]])this.buildLantern(x,z);
   }
+  buildForge(group){
+    const iron=material(0x3d4048),coal=material(0xff7a2a,{emissive:0xff5a10,emissiveIntensity:1.1});
+    this.box(group,.5,.42,.5,.18,.21,0,this.mats.darkStone);
+    this.box(group,.9,.2,.36,.18,.52,0,iron);
+    this.box(group,.5,.14,.28,.18,.69,0,iron);
+    const horn=this.mesh(new THREE.ConeGeometry(.15,.38,5),iron,group,.7,.55,0);horn.rotation.z=-Math.PI/2;
+    this.mesh(new THREE.CylinderGeometry(.3,.26,.46,10),this.mats.stone,group,-.42,.23,0);
+    this.mesh(new THREE.CylinderGeometry(.24,.24,.05,10),coal,group,-.42,.47,0);
+    this.forgeCoal=coal;
+  }
   buildNpcs(){for(const npc of this.world.npcs??[]){const group=new THREE.Group();group.position.set(npc.x,0,npc.z);this.scene.add(group);this.box(group,.55,.85,.4,0,.8,0,material(0x926f49));this.mesh(new THREE.SphereGeometry(.25,8,6),material(0xddb890),group,0,1.48,0);for(const x of [-.17,.17])this.box(group,.17,.4,.2,x,.23,0,this.mats.darkStone);this.box(group,.7,npc.id==='cook'?.35:.1,.55,0,1.7,0,npc.id==='cook'?this.mats.stoneLight:this.mats.darkStone);if(npc.id==='cook'){this.box(group,.42,.6,.1,0,.8,.25,this.mats.stoneLight);const station=this.world.obstacles.find(o=>o.id==='cooking-station');this.box(this.scene,1.2,.6,1.2,station.x,.3,station.z,this.mats.darkStone);this.mesh(new THREE.CylinderGeometry(.45,.35,.4,12),this.mats.darkStone,this.scene,station.x,.85,station.z);this.mesh(new THREE.CylinderGeometry(.33,.33,.02,12),material(0xd2a85b),this.scene,station.x,1.06,station.z);}this.mesh(new THREE.OctahedronGeometry(.18),this.mats.gold,group,0,2.05,0);}}
   buildGround() {
     this.box(this.scene, 26, 1.5, 26, 0, -0.8, 0, this.mats.darkStone);
@@ -112,6 +122,7 @@ export class SceneView {
       const group = new THREE.Group(); group.position.set(o.x, 0, o.z); group.userData.kind = o.kind; this.scene.add(group);
       if (o.kind === 'sign') { this.box(group, 0.15, 1.5, 0.15, 0, 0.75, 0, this.mats.bark); this.box(group, 1.05, 0.55, 0.12, 0, 1.3, 0, material(0xb58751)); for (let i=0;i<3;i++) this.box(group, 0.63-i*0.1, 0.035, 0.015, 0, 1.45-i*0.13, 0.069, this.mats.gold); }
       if (o.kind === 'tree') this.buildTree(group, o.height);
+      if (o.kind === 'forge') this.buildForge(group);
       if (o.kind === 'rock') { const rock = this.mesh(new THREE.DodecahedronGeometry(o.radius, 0), this.mats.stone, group, 0, o.radius * 0.45, 0); rock.scale.y = 0.85; rock.rotation.set(0.2, o.x, 0.4); this.mesh(new THREE.DodecahedronGeometry(o.radius * 0.7, 0), this.mats.moss, group, 0.1, o.radius * 0.8, 0.1).scale.y = 0.2; }
       if (o.kind === 'well') {
         this.mesh(new THREE.CylinderGeometry(1.04, 1.08, 0.18, 10), this.mats.darkStone, group, 0, 0.1, 0);
@@ -271,6 +282,7 @@ export class SceneView {
     this.camera.lookAt(this.lookAt); this.camera.updateMatrixWorld();
     this.portalSurface.uniforms.time.value = reducedMotion ? 0 : time;
     this.portalCore.rotation.y = reducedMotion ? 0 : time * 0.5;
+    if (this.forgeCoal) this.forgeCoal.emissiveIntensity = 1 + (reducedMotion ? 0 : Math.sin(time * 4) * 0.25);
     this.portalCore.position.y = 2.08 + (reducedMotion ? 0 : Math.sin(time * 1.3) * 0.1);
     this.destination.visible = game.path.length > 0;
     if (game.path.length) { const dest = game.path.at(-1); this.destination.position.set(dest.x, 0.08, dest.z); this.destination.scale.setScalar(1 + Math.sin(time * 5) * 0.07); }

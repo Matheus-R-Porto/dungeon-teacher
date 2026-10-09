@@ -1,0 +1,47 @@
+DUNGEON MASTER — ITERAÇÃO 14
+Beta 0.1.4 / TowerProgression — Windows x64
+
+Feche normalmente a versão anterior antes de instalar a nova. O save é preservado.
+Como testar:
+  1. Equipe uma arma e entre pelo Portal da Torre (F). Andares 1 e 2 são Floresta.
+  2. Resolva os encontros de cada andar para liberar a saída. O andar 3 tem o Guardião.
+  3. Derrote o Guardião, pegue o baú (F) e escolha: portal de SUBIDA (andar 4)
+     ou portal de RETORNO ao Refúgio. Nada começa sozinho.
+  4. Siga subindo: a primeira Caverna aparece entre os andares 3 e 5.
+     Compre a Picareta Simples com o Armeiro (30 ouro) para minerar os veios.
+  5. Volte ao Refúgio (portal de retorno do Guardião, ou o ponto de entrada de
+     qualquer andar) e entre de novo: os andares concluídos estão com os portões
+     abertos, mas os inimigos continuam lá. "Maior andar concluído" fica em C.
+Explorar biomas continua existindo só para teste e NÃO altera esse progresso.
+
+[ ] Setup instala.
+[ ] Jogo abre.
+[ ] Save anterior carrega.
+[ ] Andar 1 é Floresta.
+[ ] Andar 2 é Floresta.
+[ ] Andar 3 respeita a nova regra ambiental.
+[ ] Boss do andar 3 funciona.
+[ ] Posso retornar ao Refúgio após o boss.
+[ ] Posso continuar ao andar 4 após o boss.
+[ ] Campanha alcança a Caverna naturalmente.
+[ ] Mining funciona na campanha normal.
+[ ] Posso retornar ao Refúgio.
+[ ] Andares concluídos ficam registrados.
+[ ] Portões anteriores não bloqueiam revisitas.
+[ ] Inimigos continuam presentes.
+[ ] Andares novos continuam exigindo desafios.
+[ ] Boss não duplica recompensa principal.
+[ ] Explorar biomas não altera progresso de campanha.
+[ ] Fishing funciona.
+[ ] Cooking funciona.
+[ ] Mining funciona.
+[ ] Save persiste ao fechar e reabrir.
+[ ] Multiplayer do Refúgio continua conectando.
+[ ] Nenhum crash crítico.
+
+Seed:
+Andar alcançado:
+Maior andar concluído:
+Problemas:
+Passos para reproduzir:
+Observações:

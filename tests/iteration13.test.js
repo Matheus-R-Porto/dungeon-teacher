@@ -73,12 +73,12 @@ test('Mining is an active independent life skill and old saves receive it withou
   const c=new Character();c.data.gold=33;c.data.lifeSkills.fishing={level:3,xp:10};c.data.lifeSkills.cooking={level:2,xp:5};
   const old=c.snapshot();delete old.lifeSkills.mining;
   const loaded=decodeSave(encodeSave(old,1));
-  assert.equal(loaded.gold,33);assert.deepEqual(loaded.lifeSkills,{fishing:{level:3,xp:10},cooking:{level:2,xp:5},mining:{level:1,xp:0}});
+  assert.equal(loaded.gold,33);assert.deepEqual(loaded.lifeSkills,{fishing:{level:3,xp:10},cooking:{level:2,xp:5},mining:{level:1,xp:0},smithing:{level:1,xp:0}});
   const older=c.snapshot();delete older.lifeSkills;assert.deepEqual(decodeSave(encodeSave(older,1)).lifeSkills,emptyLifeSkills());
   const mixed=c.snapshot();mixed.lifeSkills.mining={level:4,xp:20};assert.deepEqual(decodeSave(encodeSave(mixed,1)).lifeSkills.mining,{level:4,xp:20});
   for(const bad of [{level:0,xp:0},{level:1,xp:30},{level:1,xp:-1}])assert.throws(()=>decodeLifeSkills({fishing:{level:1,xp:0},cooking:{level:1,xp:0},mining:bad}));
-  assert.throws(()=>decodeLifeSkills({fishing:{level:1,xp:0},smithing:{level:1,xp:0}}));
-  assert.throws(()=>gainLifeXP(new Character().data,'smithing',1));
+  assert.throws(()=>decodeLifeSkills({fishing:{level:1,xp:0},alchemy:{level:1,xp:0}}));
+  assert.throws(()=>gainLifeXP(new Character().data,'alchemy',1));
 });
 test('Mining XP follows the shared curve, handles exact thresholds and never touches combat or other professions',()=>{
   const c=new Character(),before=unchanged(c.snapshot());
@@ -112,11 +112,11 @@ for(const type of ['CAVE','FOREST_TO_CAVE','CAVE_TO_FOREST'])test(type+': veins 
     for(let a=0;a<w.mineralVeins.length;a++)for(let b=a+1;b<w.mineralVeins.length;b++)assert.ok(Math.hypot(w.mineralVeins[a].x-w.mineralVeins[b].x,w.mineralVeins[a].z-w.mineralVeins[b].z)>=MINING.minSpacing);
   }
 });
-test('pure Forest never has veins, including the three floors of the normal expedition',()=>{
-  for(let seed=0;seed<30;seed++)for(let floor=1;floor<=3;floor++){const w=generateFloor(seed,floor,'hub');assert.deepEqual(w.mineralVeins,[]);assert.ok(!w.obstacles.some(o=>o.kind==='mineralVein'));assert.ok(!w.interactables.some(i=>i.action==='mining'));}
+test('pure Forest never has veins; the first two campaign floors are Forest, and floor 3 only has veins when it is a transition',()=>{
+  for(let seed=0;seed<30;seed++)for(let floor=1;floor<=3;floor++){const w=generateFloor(seed,floor,'hub');if(w.floorEnvironment.type==='FOREST'){assert.deepEqual(w.mineralVeins,[]);assert.ok(!w.obstacles.some(o=>o.kind==='mineralVein'));assert.ok(!w.interactables.some(i=>i.action==='mining'));}else{assert.equal(floor,3);assert.equal(w.floorEnvironment.type,'FOREST_TO_CAVE');assert.ok(w.mineralVeins.length>=1);}}
   for(let seed=0;seed<20;seed++)assert.deepEqual(generateFloor(seed,5,'hub',{environment:'FOREST'}).mineralVeins,[]);
   const c=new Character(),s=new AreaSession(definitions,c,{seed:7}),i=new Inventory(c);i.acquire('trainingStaff');i.equip(0);s.startRun();
-  for(const id of ['tower-floor-1','tower-floor-2','tower-floor-3'])assert.deepEqual(s.areas[id].mineralVeins,[]);
+  for(const id of ['tower-floor-1','tower-floor-2'])assert.deepEqual(s.areas[id].mineralVeins,[]);
 });
 test('transitions only place veins on the underground side, in both directions',()=>{
   for(let seed=0;seed<40;seed++){

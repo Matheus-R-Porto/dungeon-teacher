@@ -1,6 +1,8 @@
 import {decodeFood} from '../../domain/food.js';
 import {decodeLifeSkills} from '../../domain/life-skills.js';
 import {decodeFirstSteps} from '../../domain/first-steps.js';
+import {decodeTower} from '../../domain/tower-progress.js';
+import {decodeMastery} from '../../domain/smithing.js';
 import {decodeInventory} from '../../domain/items/inventory.js';
 import {ABILITIES,WEAPONS} from '../../domain/abilities/definitions.js';
 import {createCharacter} from '../../domain/character/character.js';
@@ -29,7 +31,7 @@ export function decodeSave(raw){
   Object.assign(data,decodeInventory(source));data.lifeSkills=decodeLifeSkills(source.lifeSkills);
   if(source.knownAbilities!==undefined&&(!Array.isArray(source.knownAbilities)||source.knownAbilities.some(id=>!Object.hasOwn(ABILITIES,id))))throw Error('Habilidade desconhecida no save.');
   data.knownAbilities=source.knownAbilities?[...new Set(source.knownAbilities)]:[];
-  data.firstSteps=decodeFirstSteps(source.firstSteps);
+  data.firstSteps=decodeFirstSteps(source.firstSteps);data.tower=decodeTower(source.tower);data.smithingMastery=decodeMastery(source.smithingMastery);
   Object.assign(data,decodeFood(source));if(source.hp===0)data.foodBuff=null;
   const stats=calculateStats(data);
   for(const [key,max]of [['hp',stats.maxHP],['mp',stats.maxMP]]){const value=source[key]??max;if(!Number.isFinite(value))throw Error('Recurso inválido no save.');data[key]=clamp(value,0,max);}

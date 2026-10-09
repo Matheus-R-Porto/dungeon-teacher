@@ -9,10 +9,13 @@ export class MiningHud {
     document.querySelector('#app').append(this.root);
     this.meter=this.root.querySelector('.mining-meter');this.good=this.root.querySelector('.mining-good');this.perfect=this.root.querySelector('.mining-perfect');this.cursor=this.root.querySelector('i');
     this.root.querySelector('[data-strike]').onclick=()=>session.mining.strike();this.root.querySelector('[data-cancel]').onclick=()=>session.mining.cancel();
+    this.banner=document.createElement('div');this.banner.id='mining-result';this.banner.hidden=true;this.banner.setAttribute('role','status');document.querySelector('#app').append(this.banner);this.shownResult=0;this.hideAt=0;
     this.labels=document.createElement('div');this.labels.id='mining-labels';document.querySelector('#app').append(this.labels);
   }
   update(view){
     const s=this.session,m=s.mining,c=MINING;
+    if(m.result&&m.result.id!==this.shownResult){const r=m.result;this.shownResult=r.id;this.banner.dataset.kind=r.kind;this.banner.innerHTML='<strong></strong><span></span>';this.banner.firstChild.textContent=r.text;this.banner.lastChild.textContent=r.kind==='MISS'?'Sem recompensa · tente de novo':'+1 Minério Bruto · +'+r.xp+' Mining XP'+(r.kind==='PERFECT'?' (bônus)':'');this.banner.hidden=false;this.hideAt=performance.now()+2200;}
+    if(!this.banner.hidden&&performance.now()>this.hideAt)this.banner.hidden=true;
     this.root.hidden=s.game.paused||!m.active;
     if(m.active){
       this.root.dataset.phase=m.state;
@@ -30,5 +33,5 @@ export class MiningHud {
     veins.forEach((v,i)=>{const n=this.labels.children[i],near=Math.hypot(v.x-player.x,v.z-player.z)<=c.interactionRadius,remaining=m.remaining(v);n.style.left=v.screen.x+'px';n.style.top=v.screen.y+'px';n.dataset.state=v.state;
       n.textContent=v.state==='exhausted'?'◇ Veio esgotado':!owns?'◆ Veio mineral · precisa de picareta':remaining>0?'◆ Veio mineral · recuperando o fôlego':near?'◆ Veio mineral · F para minerar':'◆ Veio mineral';});
   }
-  dispose(){this.root.remove();this.labels.remove();}
+  dispose(){this.root.remove();this.labels.remove();this.banner.remove();}
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 0,
+    "type": "FOREST",
+    "hash": "253ac268d1563982c93fb4746a3cb59e1fd058cb232867e4d922bb28297d7c9f"
+  },
+  {
+    "seed": 5,
+    "type": "FOREST",
+    "hash": "414a3e12ef6284edff6762739a346bcccea53004f63600bcae4f5b84358f4b45"
+  },
+  {
+    "seed": 42,
+    "type": "FOREST",
+    "hash": "b34340824620729cd08071a3381f9c2dcbc4fe7d1ff1d7822bb7ef8c3db85880"
+  },
+  {
+    "seed": 0,
+    "type": "FOREST_TO_CAVE",
+    "hash": "92b8e808958a5bfdcfa5ca7a05ae52a080f593821c31c03fea00fa1e7168644f"
+  },
+  {
+    "seed": 5,
+    "type": "FOREST_TO_CAVE",
+    "hash": "fc95950f88b6f8b2a648d6b7a5c16e07b5cc28e9cbb7499d265690a29246932c"
+  },
+  {
+    "seed": 42,
+    "type": "FOREST_TO_CAVE",
+    "hash": "f0e4911e623834e4a82a7ac2260335401cd2482e8e5b1a325adbc323e0f22f40"
+  },
+  {
+    "seed": 0,
+    "type": "CAVE",
+    "hash": "90a24742b69632be979fb255b4bfe7ba27c3b973cccebfa946d22e64974ee3f5"
+  },
+  {
+    "seed": 5,
+    "type": "CAVE",
+    "hash": "33c72e5d19d16cc3d8308a251d62a3570b4d1b0992e0fc3bdb7fe0f0485c4f60"
+  },
+  {
+    "seed": 42,
+    "type": "CAVE",
+    "hash": "5a8cb1a8b550cb077a0c7c7cba7199dab29eecbe0afda28d8d86aabe047c3119"
+  },
+  {
+    "seed": 0,
+    "type": "CAVE_TO_FOREST",
+    "hash": "7bb01649482d5a9efcb69c4c4e671e85a397a847219ff9342b289a704c118623"
+  },
+  {
+    "seed": 5,
+    "type": "CAVE_TO_FOREST",
+    "hash": "64fa6732fa1184afbf27a5f69b5f1c0c0218e488fb1a01c4ee930568fdb913d3"
+  },
+  {
+    "seed": 42,
+    "type": "CAVE_TO_FOREST",
+    "hash": "2723191b11f9c02bb2b5a934a8a05720887cc29d9f6e1f754b88577b7fd4147c"
+  }
+]

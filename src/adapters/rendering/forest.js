@@ -70,6 +70,7 @@ export function buildForest(v){
   v.hemisphere.intensity=1.8-c*.5;v.sun.intensity=2.6-c*1.2;v.hemisphere.groundColor.copy(blend(0x718b45,0x283449,c));
  };
  v.updateBiomeAtmosphere(w.spawn.z);
+ if(w.refugePortal){const g=new THREE.Group();g.position.set(w.refugePortal.x,0,w.refugePortal.z);v.scene.add(g);const warm=mat(0xffd27a,{emissive:0xd8902a,emissiveIntensity:.9});const ring=v.mesh(new THREE.TorusGeometry(1.1,.14,6,24),warm,g,0,1.4,0);for(const x of [-1.1,1.1])v.mesh(new THREE.CylinderGeometry(.22,.3,1.6,6),v.mats.stone,g,x,.8,0);const base=v.mesh(new THREE.CircleGeometry(1.5,24),new THREE.MeshBasicMaterial({color:0xffc66b,transparent:true,opacity:.3,depthWrite:false}),g,0,.04,0);base.rotation.x=-Math.PI/2;base.castShadow=false;ring.rotation.y=Math.PI/2;}
  const boss=w.graph.regions.find(r=>r.type==='boss');if(boss){const ring=v.mesh(new THREE.RingGeometry(8.5,8.8,48),v.mats.stoneLight,v.scene,boss.x,.055,boss.z);ring.rotation.x=-Math.PI/2;for(const x of [-7,7])v.box(v.scene,.9,3,.9,boss.x+x,1.5,boss.z-5,v.mats.stone);}
  v.forestStats={regions:w.graph.regions.length,trees:trees.length,shrubs:shrubs.length,stones:stones.length};
 }

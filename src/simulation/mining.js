@@ -7,7 +7,7 @@ import {seeded,seedOf} from '../domain/random.js';
 export class MiningRuntime {
   constructor(session,{notify=()=>{},save=async()=>{},config=MINING}={}){
     this.session=session;this.character=session.combat.character;this.notify=notify;this.save=save;this.config=config;
-    this.state='idle';this.time=0;this.cooldowns=new Map();this.message='';this.pending=null;this.vein=null;this.area=null;
+    this.state='idle';this.time=0;this.cooldowns=new Map();this.result=null;this.resultId=0;this.message='';this.pending=null;this.vein=null;this.area=null;
     this.reset(0);
   }
   get active(){return this.state==='prepare'||this.state==='strike';}
@@ -17,6 +17,8 @@ export class MiningRuntime {
   reset(seed){this.cancel('Mineração encerrada.');this.random=seeded(seedOf(seed+':mining-attempts'));this.attempts=0;this.cooldowns.clear();}
   remaining(vein){return Math.max(0,(this.cooldowns.get(vein.id)??0)-this.time);}
   say(message){this.message=message;this.notify(message);}
+  // Last outcome of a swing, for a large on-screen banner. Presentation only: it never affects the rules.
+  announce(kind,text,xp=0){this.result={id:++this.resultId,kind,text,xp};}
   start(id){
     const s=this.session,g=s.game,c=s.combat;
     if(this.busy)return false;
@@ -43,14 +45,14 @@ export class MiningRuntime {
     if(!this.active)return;
     if(this.area!==this.session.area||!this.character.isAlive||this.character.damageRevision!==this.damageRevision||this.vein.state!=='available'){this.cancel('Mineração interrompida.');return;}
     if(this.state==='prepare'&&this.time+1e-9>=this.strikeAt){this.state='strike';this.say('AGORA! · F ou Espaço no momento certo');}
-    if(this.time+1e-9>=this.endsAt)this.finish('O golpe demorou demais. Você errou o golpe.');
+    if(this.time+1e-9>=this.endsAt){this.finish('O golpe demorou demais. Você errou o golpe.');this.announce('MISS','ERROU!');}
   }
   strike(){
     if(!this.active)return this.pending??Promise.resolve(false);
     if(this.state==='prepare'){this.say('Prepare o golpe… aguarde o indicador.');return Promise.resolve(false);}
-    if(this.time>=this.endsAt-1e-9){this.finish('O golpe demorou demais. Você errou o golpe.');return Promise.resolve(false);}
+    if(this.time>=this.endsAt-1e-9){this.finish('O golpe demorou demais. Você errou o golpe.');this.announce('MISS','ERROU!');return Promise.resolve(false);}
     const result=strikeResult(this.indicator,this.center,this.config);
-    if(result==='MISS'){this.finish('Você errou o golpe.');return Promise.resolve(false);}
+    if(result==='MISS'){this.finish('Você errou o golpe.');this.announce('MISS','ERROU!');return Promise.resolve(false);}
     const vein=this.vein,area=this.area,s=this.session;
     // Re-validated at reward time, not only at start. Everything is staged off a copy of the live character.
     if(!this.character.isAlive||area!==s.area||vein.state!=='available'){this.finish('Mineração interrompida.',false);return Promise.resolve(false);}
@@ -63,7 +65,7 @@ export class MiningRuntime {
     const operation=Promise.resolve().then(()=>this.save(draft.data)).then(()=>{
       this.character.data.inventory=draft.data.inventory;this.character.data.lifeSkills=draft.data.lifeSkills;
       vein.state='exhausted';const interactable=area.interactables.find(i=>i.id===vein.id);if(interactable)interactable.label='Veio esgotado · já foi minerado';
-      s.onResourceChange();
+      s.onResourceChange();this.announce(result,result==='PERFECT'?'PERFEITO!':'BOM!',xp);
       this.say((result==='PERFECT'?'Golpe perfeito! ':'Mineração concluída! ')+'+1 '+ITEMS[RAW_ORE].name+' · Mining XP +'+xp+(result==='PERFECT'?' (bônus)':'')+(levels?' · MINERAÇÃO NÍVEL '+draft.data.lifeSkills.mining.level+'!':''));return true;
     }).catch(error=>{vein.state='available';this.say('Mineração não salva: '+error.message+' Nenhum minério ou XP concedido.');return false;}).finally(()=>{this.pending=null;this.state='idle';});
     this.pending=operation;return operation;

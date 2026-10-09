@@ -1,11 +1,12 @@
 import {RAW_FOOD,INGREDIENTS,DISHES} from '../food.js';
 import {FISH,FISHING} from '../fishing.js';
 import {MINING,PICKAXE_PRICE} from '../mining.js';
+import {SMITHING_RECIPES,QUALITIES,QUALITY_ORDER} from '../smithing.js';
 export const EQUIPMENT_SLOTS = Object.freeze(['weapon','head','chest','legs','boots','ring','necklace','talisman']);
 export const INVENTORY_CAPACITY = 32;
 const weapon = (id,name,weaponType,icon,stats,attackRange=1.45,damageType='physical') => ({id,name,weaponType,icon,stats,description:({sword:'Golpes físicos próximos, firmes e pesados.',dagger:'Golpes físicos mais fracos e rápidos, a curtíssima distância.',bow:'Flechas físicas que causam dano ao atingir o alvo.',staff:'Orbes mágicos que atingem à distância e enfrentam defesa mágica.'})[weaponType],type:'weapon',stackable:false,maxStack:1,equipSlot:'weapon',unique:true,price:0,basicAttack:{attackRange,damageType,attackSpeedModifier:0,delivery:attackRange>2?'projectile':'melee',projectileSpeed:damageType==='magic'?8:12,power:weaponType==='dagger'?.72:1,impact:weaponType==='sword'?'heavy':'light'}});
 const gear=(id,name,icon,equipSlot,stats)=>({id,name,icon,equipSlot,stats,type:'equipment',unique:false,description:'Equipamento obtido nas expedições.',stackable:false,maxStack:1});
-export const ITEMS = Object.freeze({
+const BASE_ITEMS = {
   fishingRod:{id:'fishingRod',name:'Vara de Pesca',icon:'♧',type:'tool',stats:{},unique:true,stackable:false,maxStack:1,description:'Leve na mochila para pescar. Não substitui sua arma.'},
   simplePickaxe:{id:'simplePickaxe',name:'Picareta Simples',icon:'⛏',type:'tool',stats:{},unique:true,stackable:false,maxStack:1,price:PICKAXE_PRICE,description:'Leve na mochila para minerar veios nas cavernas da Torre. Não substitui sua arma e não se desgasta.'},
   rawOre:{id:'rawOre',name:'Minério Bruto',icon:'◆',type:'resource',stats:{},unique:false,stackable:true,maxStack:MINING.maxStack,description:'Um fragmento mineral extraído das cavernas da Torre. Poderá ser utilizado futuramente em trabalhos de forja.'},
@@ -24,7 +25,24 @@ export const ITEMS = Object.freeze({
   trainingDagger:weapon('trainingDagger','Adaga de Treino','dagger','Ⅱ',{physicalAttack:3,attackSpeed:.65},1.35),
   trainingBow:weapon('trainingBow','Arco de Treino','bow','⇉',{physicalAttack:4},6),
   trainingStaff:weapon('trainingStaff','Cajado de Treino','staff','◉',{magicAttack:6},6,'magic'),
-});
+};
+// Forged weapons: one stable item per recipe and quality. They copy the Armorer's equivalent weapon (range, delivery,
+// speed and every other stat) and move only its damage stat by the quality delta, so quality can never grant anything else.
+// Unlike the Armorer's weapons they are not unique, so a character can hold several with different qualities.
+function forgedWeapons(){
+  const entries={};
+  for(const recipe of SMITHING_RECIPES){
+    const base=BASE_ITEMS[recipe.baseItemId],stat=base.basicAttack.damageType==='magic'?'magicAttack':'physicalAttack';
+    for(const quality of QUALITY_ORDER){
+      const q=QUALITIES[quality],id=recipe.outputs[quality];
+      entries[id]={...base,id,name:recipe.name+q.suffix,stats:{...base.stats,[stat]:base.stats[stat]+q.damageDelta},unique:false,price:0,
+        forged:{recipeId:recipe.id,quality,damageStat:stat,referenceItemId:recipe.baseItemId},
+        description:'Forjada no Refúgio · qualidade '+q.tier.toLowerCase()+' ('+q.label+'). '+base.description};
+    }
+  }
+  return entries;
+}
+export const ITEMS = Object.freeze({...BASE_ITEMS,...forgedWeapons()});
 export const emptyInventory = () => ({version:1,capacity:INVENTORY_CAPACITY,nextId:1,slots:Array(INVENTORY_CAPACITY).fill(null)});
 export const emptyEquipment = () => Object.fromEntries(EQUIPMENT_SLOTS.map(slot=>[slot,null]));
 export function equipmentStats(data){const stats={};for(const item of Object.values(data.equipment??{})){for(const [key,value] of Object.entries(ITEMS[item?.definitionId]?.stats??{}))stats[key]=(stats[key]??0)+value;}return {stats};}
@@ -47,7 +65,7 @@ export class Inventory {
 
 // Additive migration: old beta saves keep their provisional weapon as a real item.
 export function decodeInventory(source){
-  if(source.inventory===undefined){if(source.equipment!==undefined)throw Error('Equipamento sem inventário.');const inventory=emptyInventory(),equipment=emptyEquipment(),type=source.equippedWeaponType===undefined?'sword':source.equippedWeaponType;const definition=Object.values(ITEMS).find(item=>item.weaponType===type);if(type!==null&&!definition)throw Error('Arma desconhecida no save.');if(definition){equipment.weapon={instanceId:'item-1',definitionId:definition.id,quantity:1};inventory.nextId=2;}return {inventory,equipment,equippedWeaponType:definition?.weaponType??null};}
+  if(source.inventory===undefined){if(source.equipment!==undefined)throw Error('Equipamento sem inventário.');const inventory=emptyInventory(),equipment=emptyEquipment(),type=source.equippedWeaponType===undefined?'sword':source.equippedWeaponType;const definition=Object.values(ITEMS).find(item=>item.weaponType===type&&!item.forged);if(type!==null&&!definition)throw Error('Arma desconhecida no save.');if(definition){equipment.weapon={instanceId:'item-1',definitionId:definition.id,quantity:1};inventory.nextId=2;}return {inventory,equipment,equippedWeaponType:definition?.weaponType??null};}
   const inventory=structuredClone(source.inventory),equipment=structuredClone(source.equipment);
   if(!inventory||inventory.version!==1||inventory.capacity!==INVENTORY_CAPACITY||!Array.isArray(inventory.slots)||inventory.slots.length!==inventory.capacity||!Number.isSafeInteger(inventory.nextId)||inventory.nextId<1)throw Error('Inventário inválido no save.');
   if(!equipment||typeof equipment!=='object'||Array.isArray(equipment)||Object.keys(equipment).some(slot=>!EQUIPMENT_SLOTS.includes(slot)))throw Error('Equipamento inválido no save.');

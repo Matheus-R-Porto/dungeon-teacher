@@ -1,0 +1,54 @@
+DUNGEON MASTER — ITERAÇÃO 15
+SMITHING PLAYTEST
+
+ATENÇÃO:
+Smithing é experimental e ainda não teve playtest manual.
+Ela se apoia na Iteração 14, aprovada em playtest manual
+pelo responsável em 09/10/2026.
+
+Como testar:
+  1. Consiga Minério Bruto: compre a Picareta Simples (30 ouro) com o Armeiro
+     e minere veios na Caverna (Explorar biomas leva rápido até lá).
+  2. Volte ao Refúgio e procure a Forja (bigorna com brasas) entre o Armeiro
+     e o portal. Aproxime-se e pressione F.
+  3. Escolha a receita, inicie e martele três vezes (F ou Espaço).
+  4. Equipe a arma em I e teste na Torre.
+Use um perfil de teste se não quiser alterar o seu personagem principal.
+
+[ ] Instalador funciona.
+[ ] Jogo abre normalmente.
+[ ] Save antigo carrega.
+[ ] Refúgio funciona.
+[ ] Estação de Forja aparece.
+[ ] Consigo abrir a interface.
+[ ] Consigo selecionar uma receita.
+[ ] Minério insuficiente impede fabricação.
+[ ] Cancelamento não consome minério.
+[ ] FALHA produz arma inferior.
+[ ] FALHA concede Smithing XP.
+[ ] BOM produz arma funcional.
+[ ] BOM supera a arma do Armeiro.
+[ ] PERFEITO supera a arma BOM.
+[ ] Qualidade altera somente dano.
+[ ] Minério é consumido corretamente.
+[ ] Smithing XP e Level funcionam.
+[ ] Prática por receita aumenta.
+[ ] Arma aparece no inventário.
+[ ] Arma pode ser equipada.
+[ ] Dano funciona no combate.
+[ ] Arma persiste após reabrir.
+[ ] Mining continua funcionando.
+[ ] Fishing continua funcionando.
+[ ] Cooking continua funcionando.
+[ ] Torre continua funcionando.
+[ ] Multiplayer do Refúgio continua funcionando.
+[ ] Nenhum crash crítico.
+
+Receita testada:
+Resultado:
+Dano:
+Smithing Level:
+Minério antes/depois:
+Problemas:
+Passos para reproduzir:
+Observações:

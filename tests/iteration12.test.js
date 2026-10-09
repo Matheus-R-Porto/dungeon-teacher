@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {biomeSequence,advanceBiome,environmentRecord,caveAt,BIOME_RULES} from '../src/world/biomes.js';
+import {biomeSequence,advanceBiome,environmentRecord,caveAt,initialBiomeState} from '../src/world/biomes.js';
 import {generateFloorGraph,validateFloorGraph} from '../src/world/floor-graph.js';
 import {generateFloor} from '../src/world/tower.js';
 import {canStand} from '../src/world/collision.js';
@@ -12,30 +12,29 @@ import {Character} from '../src/domain/character/character.js';
 import {Inventory} from '../src/domain/items/inventory.js';
 const types=['FOREST','FOREST_TO_CAVE','CAVE','CAVE_TO_FOREST'];
 
-test('100 seeds x 50 floors: legal transitions, dwell bounds, determinism and complete graph generation',()=>{
- const lengths=new Set(),seen=new Set();
+test('100 seeds x 50 floors: legal transitions, determinism and complete graph generation',()=>{
+ const seen=new Set();
  for(let seed=0;seed<100;seed++){
   const sequence=biomeSequence(seed,50);assert.deepEqual(sequence,biomeSequence(seed,50));
-  let state={currentBiome:'FOREST',pureFloors:0};
+  let state=initialBiomeState();
   for(const record of sequence){
    assert.deepEqual(record.before,state);const e=record.environment;seen.add(e.type);
    assert.equal(e.from,state.currentBiome);
-   if(e.transitionDirection){assert.ok(state.pureFloors>=3&&state.pureFloors<=7);lengths.add(state.pureFloors);}
    state=advanceBiome(state,e.type);assert.deepEqual(state,record.nextBiomeState);
    const graph=generateFloorGraph(seed,record.floorNumber);validateFloorGraph(graph);
    assert.deepEqual(graph,generateFloorGraph(seed,record.floorNumber));
   }
-  assert.deepEqual(sequence.slice(0,3).map(r=>r.environment.type),['FOREST','FOREST','FOREST']);
+  assert.deepEqual(sequence.slice(0,2).map(r=>r.environment.type),['FOREST','FOREST']);
  }
- assert.equal(seen.size,4);assert.ok(lengths.size>=4);assert.equal(BIOME_RULES.maximumPureFloors,7);
+ assert.equal(seen.size,4);
 });
-test('invalid environmental jumps, premature transitions and excessive dwell are rejected',()=>{
+test('invalid environmental jumps, premature transitions and missing transitions are rejected',()=>{
  for(const currentBiome of ['FOREST','CAVE']){
-  const opposite=currentBiome==='FOREST'?'CAVE':'FOREST',state={currentBiome,pureFloors:3};
+  const opposite=currentBiome==='FOREST'?'CAVE':'FOREST',state={currentBiome,pureFloors:2,transitions:1};
   assert.throws(()=>advanceBiome(state,opposite));assert.throws(()=>advanceBiome(state,opposite+'_TO_'+currentBiome));
-  assert.throws(()=>advanceBiome({currentBiome,pureFloors:2},currentBiome+'_TO_'+opposite));
-  assert.throws(()=>advanceBiome({currentBiome,pureFloors:7},currentBiome));
-  assert.equal(advanceBiome(state,currentBiome).pureFloors,4);
+  assert.throws(()=>advanceBiome({currentBiome,pureFloors:0,transitions:1},currentBiome+'_TO_'+opposite));
+  assert.throws(()=>advanceBiome({currentBiome,pureFloors:4,transitions:1},currentBiome));
+  assert.equal(advanceBiome(state,currentBiome).pureFloors,3);
  }
  assert.throws(()=>environmentRecord('UNKNOWN'));assert.throws(()=>biomeSequence(1,0));
 });
@@ -55,7 +54,7 @@ for(const type of types)test(type+': 10 materialized seeds have usable spawns, g
  }
 });
 test('boss role is independent of cave and transitions, with original reward and return route',()=>{
- for(const type of types){const w=generateFloor(12,3,'hub',{environment:type,floorRole:'boss'});assert.equal(w.enemySpawns.filter(e=>e.overrides.boss).length,1);assert.equal(w.graph.regions.at(w.graph.mainPath.length-1).type,'boss');assert.equal(w.exits[0].areaId,'hub');}
+ for(const type of types){const w=generateFloor(12,3,'hub',{environment:type,floorRole:'boss'});assert.equal(w.enemySpawns.filter(e=>e.overrides.boss).length,1);assert.equal(w.graph.regions.at(w.graph.mainPath.length-1).type,'boss');assert.equal(w.exits[0].areaId,'tower-floor-4');assert.ok(w.exits.some(x=>x.interactionId==='refuge-portal'&&x.areaId==='hub'));}
  const normal=generateFloor(12,3,'hub',{environment:'CAVE',floorRole:'normal'});assert.ok(!normal.enemySpawns.some(e=>e.overrides.boss));assert.equal(normal.exits[0].areaId,'tower-floor-4');
 });
 test('actual movement traverses a cave and both directed transitions',()=>{

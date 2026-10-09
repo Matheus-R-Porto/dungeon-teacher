@@ -7,7 +7,7 @@ export const FIRST_STEPS = [
   {id:'equipped',title:'Equipe a arma',hint:'Abra I, selecione a arma e clique em Equipar.'},
   {id:'entered',title:'Entre no Portal da Torre',hint:'Com uma arma equipada, aproxime-se do Portal e pressione F.'},
   {id:'cleared',title:'Explore a Torre e avance',hint:'Siga as trilhas e resolva os encontros que bloqueiam passagens. Desvios são opcionais.'},
-  {id:'returned',title:'Volte ao lobby',hint:'Conclua os três andares, derrote o Guardião, pegue o baú e use F no portal para voltar ao Refúgio.'},
+  {id:'returned',title:'Volte ao lobby',hint:'Conclua os três andares, derrote o Guardião, pegue o baú e volte ao Refúgio pelo portal de retorno (ou continue subindo).'},
   {id:'learned',title:'Aprenda uma habilidade',hint:'Você ganhou um Espaço de Habilidade! Pressione TAB para aprender uma técnica.'},
 ];
 export const emptyFirstSteps=()=>Object.fromEntries(FIRST_STEPS.map(step=>[step.id,false]));

@@ -7,6 +7,8 @@ import {RemotePlayers} from './adapters/rendering/remote-players.js';
 import {MultiplayerPanel} from './ui/multiplayer-panel.js';
 import {FoodService} from './domain/food-service.js';
 import {KitchenPanel} from './ui/kitchen-panel.js';
+import {SmithingService} from './domain/smithing-service.js';
+import {ForgePanel} from './ui/forge-panel.js';
 import {equipmentBlocked} from './domain/items/inventory.js';
 import {FishingHud} from './ui/fishing-hud.js';
 import {MiningHud} from './ui/mining-hud.js';
@@ -68,10 +70,13 @@ try {
     open:()=>{if(!isBlocked()){characterPanel.render();openDialog('character-dialog');}},
     onChange:async()=>{try{session.quest.sync(session);await saves.save(character.snapshot());dirty=false;saveFailed=false;characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador');}catch(error){saveFailed=true;characterPanel.status(error.message);throw error;}}
   });
-  const flush=()=>{if(!desktopClosing&&dirty&&!saveFailed&&!session.fishing.pending&&!session.mining.pending&&!food.busy){dirty=false;saves.save(character.snapshot()).then(()=>characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador')).catch(error=>{saveFailed=true;characterPanel.status(error.message);});}};
+  const flush=()=>{if(!desktopClosing&&dirty&&!saveFailed&&!session.fishing.pending&&!session.mining.pending&&!food.busy&&!smithing.busy){dirty=false;saves.save(character.snapshot()).then(()=>characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador')).catch(error=>{saveFailed=true;characterPanel.status(error.message);});}};
+  session.onFloorCleared=()=>{characterPanel.onChange().catch(()=>{});};
   const rewardPanel=new RewardPanel(character,{open:id=>openDialog(id),save:()=>characterPanel.onChange(),safe:()=>session.area.safe,notify});
   const food=new FoodService(character,{save:snapshot=>saves.save(snapshot),context:()=>({safe:session.area.safe,blocked:equipmentBlocked(combat)||session.collecting}),onChange:()=>{dirty=true;characterPanel.render();}});
   const kitchen=new KitchenPanel(food,session,{open:id=>openDialog(id),notify});
+  const smithing=new SmithingService(character,{save:snapshot=>saves.save(snapshot),context:()=>({safe:session.area.safe,blocked:equipmentBlocked(combat)||session.collecting}),onChange:()=>{characterPanel.render();}});
+  const forgePanel=new ForgePanel(smithing,session,{open:id=>openDialog(id),notify});
   const panels=new RpgPanels(character,combat,{food,open:id=>openDialog(id),isBlocked:()=>isBlocked()||session.fishing.busy||session.mining.busy,save:()=>characterPanel.onChange(),onChest:id=>{validateChest(character,id,session.area.safe);panels.dialogs.inventory.close();rewardPanel.show(id);},onEquipment:()=>{combat.attackRange=combat.abilities.autoRange;characterPanel.render();}});
   let multiplayerPanel,identityStore,identityError;
   try{identityStore=loadIdentity(localStorage,()=>crypto.randomUUID(),testProfile?'dungeon-multiplayer.test.v1':'dungeon-multiplayer.identity.v1');}catch(error){identityError='Não foi possível salvar a identidade multiplayer. O modo individual continua disponível.';}
@@ -96,8 +101,8 @@ try {
     try {
       await saveBeforeClose({
         pause:()=>{game.paused=true;input?.clear();},
-        cancel:()=>{multiplayer.disconnect();session.fishing.cancel();session.mining.cancel();food.cancel();if(rewardPanel.busy)rewardPanel.stop();},
-        isBusy:()=>food.busy||panels.busy||characterPanel.busy||rewardPanel.busy||session.collecting||!!session.fishing.pending||!!session.mining.pending,
+        cancel:()=>{multiplayer.disconnect();session.fishing.cancel();session.mining.cancel();food.cancel();smithing.cancel();if(rewardPanel.busy)rewardPanel.stop();},
+        isBusy:()=>food.busy||smithing.busy||panels.busy||characterPanel.busy||rewardPanel.busy||session.collecting||!!session.fishing.pending||!!session.mining.pending,
         save:async()=>{await saves.save(character.snapshot());dirty=false;saveFailed=false;}
       });
     } catch(error) {desktopClosing=false;game.paused=isBlocked();throw error;}
@@ -116,6 +121,7 @@ try {
     fishing:command=>{try{session.fishing.start(command.targetId);input?.clear();}catch(error){hud.toast(error.message);}},
     mining:command=>{try{session.mining.start(command.content.veinId);input?.clear();}catch(error){hud.toast(error.message);}},
     cook:command=>kitchen.show(!!command.content.station),
+    forge:()=>forgePanel.show(),
     shop:()=>{session.quest.mark('smith');panels.show('shop');},
     chest:()=>{input?.clear();session.collectChest(()=>characterPanel.onChange()).catch(error=>hud.toast(error.message));},
     travel:command=>{try{session.travel(command);}catch(error){hud.toast(error.message);}},
@@ -164,7 +170,7 @@ try {
       game.interactionTarget = session.interactions.update(game.player, game.paused||session.fishing.busy||session.mining.busy);
       view.update(game, game.paused ? 1 : accumulator / CONFIG.tick, dt, reducedMotion.matches);
       if(!food.busy)dirty=character.updateFoodTime()||dirty;
-      biomePanel.update();kitchen.update(view);panels.updateFoodUI();combatHud.update();abilityHud.update();fishingHud.update(view);miningHud.update(view);session.quest.observe(game,view.orbit);
+      biomePanel.update();kitchen.update(view);forgePanel.update(dt,view);panels.updateFoodUI();combatHud.update();abilityHud.update();fishingHud.update(view);miningHud.update(view);session.quest.observe(game,view.orbit);
       const boss=session.boss;$('boss-health').hidden=!boss||boss.dormant||!boss.alive;if(boss){$('boss-health-label').textContent=`BOSS · Slime Guardião · ${Math.ceil(boss.hp)} / ${boss.stats.maxHP}`;$('boss-health-bar').max=boss.stats.maxHP;$('boss-health-bar').value=boss.hp;}
       $('run-debug').hidden=params.get('debug')!=='1'||!session.run;if(session.run)$('run-debug').textContent=`Run ${session.run.seed} · Andar ${session.area.floorId} · Seed ${session.area.seed} · ${session.area.floorEnvironment?.type}`;
       $('floor-objective').hidden=session.area.safe;$('floor-objective').textContent=session.objectiveText;
@@ -175,7 +181,7 @@ try {
   };
   view.update(game, 1, 1, reducedMotion.matches); hud.update();
   $('loading').hidden = true; frameId = requestAnimationFrame(animate); focusWorld();
-  if (import.meta.hot) import.meta.hot.dispose(() => { biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();fishingHud.dispose();miningHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
+  if (import.meta.hot) import.meta.hot.dispose(() => { biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();forgePanel.dispose();fishingHud.dispose();miningHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
 } catch (error) { fatal(error); }
 
 }
