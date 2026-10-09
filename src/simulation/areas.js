@@ -1,5 +1,6 @@
 import {biomeSequence} from '../world/biomes.js';
 import {FishingRuntime} from './fishing.js';
+import {MiningRuntime} from './mining.js';
 import {BALANCE} from '../domain/character/balance.js';
 import {canStand} from '../world/collision.js';
 import {generateFloor} from '../world/tower.js';
@@ -33,7 +34,10 @@ export class AreaSession {
   constructor(areas,character,{seed=null,stress=false,onResourceChange=()=>{},notify=()=>{},onTransition=()=>{}}={}){
     this.run=null;this.seedOverride=seed;this.notify=notify;this.onResourceChange=onResourceChange;this.areas=areas;this.hubId=Object.values(areas).find(a=>a.safe).id;this.stress=stress;this.onTransition=onTransition;this.transitioning=false;
     this.game=new Game(areas[this.hubId]);this.combat=new Combat(this.game,character,{enemies:[],onResourceChange});this.combat.abilities=new AbilityRuntime(this.combat,{notify});
-    this.fishing=new FishingRuntime(this,{notify});this.game.activity=this.fishing;this.combat.onHostileImpact=()=>this.fishing.cancel('Pesca interrompida por um ataque!');
+    this.fishing=new FishingRuntime(this,{notify});this.mining=new MiningRuntime(this,{notify});
+    // One activity slot for combat, abilities and equipment: either life-skill activity blocks them.
+    const fishing=this.fishing,mining=this.mining;this.game.activity={fishing,mining,get active(){return fishing.active||mining.active;},get busy(){return fishing.busy||mining.busy;},cancel(message){fishing.cancel(message);mining.cancel('Mineração interrompida.');}};
+    this.combat.onHostileImpact=()=>{this.fishing.cancel('Pesca interrompida por um ataque!');this.mining.cancel('Mineração interrompida por um ataque!');};
     this.quest=new FirstSteps(character,onResourceChange);
     this.combat.onPlayerReturn=()=>this.endRun('failure');this.enter(this.hubId,{initial:true});
   }
@@ -41,7 +45,7 @@ export class AreaSession {
   get normalsCleared(){return !this.area.safe&&this.objectiveIds.size>0&&[...this.objectiveIds].every(id=>this.defeated.has(id));}
   get complete(){return this.normalsCleared&&(this.area.floorRole!=='boss'||!!this.run?.bossDefeated);}
   get boss(){return this.combat.enemies.find(e=>e.boss);}
-  startRun(){const seed=this.seedOverride??Math.floor(Math.random()*4294967296);const floors=[1,2,3].map(n=>generateFloor(seed,n,this.hubId));for(const floor of floors)this.areas[floor.id]=floor;this.run={seed,floor:1,floors:floors.map(f=>f.seed),encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};this.fishing.reset(seed);this.enter('tower-floor-1');this.notify('Expedição iniciada · Andar 1');}
+  startRun(){const seed=this.seedOverride??Math.floor(Math.random()*4294967296);const floors=[1,2,3].map(n=>generateFloor(seed,n,this.hubId));for(const floor of floors)this.areas[floor.id]=floor;this.run={seed,floor:1,floors:floors.map(f=>f.seed),encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};this.fishing.reset(seed);this.mining.reset(seed);this.enter('tower-floor-1');this.notify('Expedição iniciada · Andar 1');}
   startBiomePlaytest(type){
     if(!this.area.safe)throw Error('Volte ao Refúgio antes de escolher um bioma.');
     if(!equippedDefinition(this.combat.character.data))throw Error('Equipe uma arma em I para explorar.');
@@ -49,14 +53,14 @@ export class AreaSession {
     if(!record)throw Error('Ambiente não encontrado.');
     const world=generateFloor(seed,record.floorNumber,this.hubId,{floorRole:'normal'});
     this.areas[world.id]=world;this.run={seed,mode:'biome-playtest',sequence,currentBiome:record.before.currentBiome,floor:record.floorNumber,floors:[world.seed],encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};
-    this.fishing.reset(seed);this.enter(world.id);this.notify('Exploração de biomas · volte pelo portal de entrada quando quiser.');
+    this.fishing.reset(seed);this.mining.reset(seed);this.enter(world.id);this.notify('Exploração de biomas · volte pelo portal de entrada quando quiser.');
   }
   endRun(result='abandoned'){this.recordExploration();this.lastRun=this.run?{...this.run,result}:null;this.run=null;this.enter(this.hubId,{returning:true});this.notify(result==='success'?'Expedição concluída! Abra o baú em I e evolua em C.':result==='failure'?'Você voltou ao Refúgio. Recursos e itens preservados.':'Expedição encerrada. Prepare uma nova tentativa.');}
   async collectChest(save){if(this.collecting)return;const drop=this.area.interactables.find(i=>i.id==='boss-chest');if(!this.run?.bossDefeated||this.run.rewardCollected||!drop?.enabled)throw Error('Baú indisponível.');const p=this.game.player;if(Math.hypot(p.x-drop.x,p.z-drop.z)>drop.radius)throw Error('Aproxime-se do baú.');const before=this.combat.character.snapshot();this.collecting=true;this.game.paused=true;try{new Inventory(this.combat.character).acquire('expeditionChest',{rewardSeed:seedOf(this.run.seed+':chest')});await save();this.run.rewardCollected=true;drop.enabled=false;this.notify('BAÚ OBTIDO · Volte ao Refúgio para abrir em I.');}catch(error){this.combat.character.data=before;this.combat.character.recalculate();throw error;}finally{this.collecting=false;this.game.paused=false;}}
   get currentRegion(){return this.area.graph?.regions.find(r=>Math.hypot(this.game.player.x-r.x,this.game.player.z-r.z)<r.radius);}
   get objectiveText(){if(this.area.safe)return '';const r=this.currentRegion,enc=this.run?.encounters.find(e=>e.regionId===r?.id&&e.state!=='completed');if(this.run?.bossStarted&&!this.run.bossDefeated)return 'Clareira do Guardião · derrote o Guardião';if(this.run?.bossDefeated)return this.run.rewardCollected?'Baú obtido · volte pelo portal':'Vitória! Pegue o baú com F';if(enc?.required)return r.name+' · ENCONTRO · '+enc.enemyIds.filter(id=>!this.defeated.has(id)).length+' restantes · a passagem adiante está selada';if(enc)return r.name+' · Encontro opcional · lute por XP ou retorne à trilha';return (r?.name??'Trilha da Torre')+' · '+(this.complete?'Encontre o arco de saída':this.normalsCleared&&this.area.floorRole==='boss'?'Siga até a clareira do Guardião':'Explore o andar · siga as pedras douradas');}
   enter(id,{initial=false,returning=false}={}){
-    if(this.transitioning)throw Error('Transição em andamento.');this.fishing?.cancel('Pesca encerrada pela troca de área.');const definition=this.areas[id];if(!definition)throw Error('Área desconhecida.');
+    if(this.transitioning)throw Error('Transição em andamento.');this.fishing?.cancel('Pesca encerrada pela troca de área.');this.mining?.cancel('Mineração encerrada pela troca de área.');const definition=this.areas[id];if(!definition)throw Error('Área desconhecida.');
     // Construct and validate the destination before releasing the current context.
     const world=structuredClone(definition);let spawns=world.enemySpawns;if(this.stress&&!world.safe){spawns=[];for(let z=world.bounds.minZ+2;z<world.bounds.maxZ-1;z+=3)for(let x=world.bounds.minX+2;x<world.bounds.maxX-1;x+=3)if(spawns.length<20&&canStand(world,x,z,.8))spawns.push({id:'stress-'+spawns.length,enemyType:'trainingSlime',position:{x,z},overrides:{noRespawn:true}});spawns.push(...world.enemySpawns.filter(e=>e.overrides?.boss));}
     for(const gate of world.gates??[])world.obstacles.push(gate);
@@ -82,7 +86,7 @@ export class AreaSession {
     this.recordExploration();this.enter(exit.areaId);this.notify('Você chegou ao Andar '+this.area.floorId);
   }
   recordExploration(){if(this.run&&!this.area.safe)this.run.exploration.push({floor:this.area.floorId,seconds:this.game.elapsed-this.run.floorTimeStart,distance:this.game.distance-this.run.floorDistanceStart,regions:[...this.run.visitedRegions],completed:[...this.run.completedEncounters],optionalAlive:this.combat.enemies.filter(e=>e.optional&&e.alive).length});}
-  update(dt,axis,azimuth){if(this.game.paused||this.transitioning)return;this.combat.update(dt,axis,azimuth);this.fishing.update(dt);
+  update(dt,axis,azimuth){if(this.game.paused||this.transitioning)return;this.combat.update(dt,axis,azimuth);this.fishing.update(dt);this.mining.update(dt);
     for(const enemy of this.combat.enemies){if(enemy.dormant||enemy.alive||this.rewarded.has(enemy.id))continue;this.rewarded.add(enemy.id);
       if(!enemy.boss)this.defeated.add(enemy.id);
       const levels=earnResources(this.combat.character,enemy.rewardXP??0,enemy.rewardGold??0);this.onResourceChange();

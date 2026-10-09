@@ -1,0 +1,51 @@
+DUNGEON MASTER — MINING PLAYTEST
+Beta 0.1.3 / Mining — Windows x64
+
+Feche normalmente a versao anterior antes de instalar a nova.
+Como testar sem jogar muitos andares:
+  1. No Refugio, fale com o Armeiro (F) e compre a Picareta Simples (30 ouro).
+     Se faltar ouro, venda peixes a Mira (pesque nos lagos opcionais) ou
+     abra um bau do Guardiao.
+  2. Pegue e equipe uma arma (I). A picareta fica na mochila.
+  3. Clique em Explorar biomas e escolha Caverna (ou uma transicao).
+  4. Procure os veios minerais (rocha clara com cristais ambar, rotulo
+     "Veio mineral"). Eles ficam principalmente em desvios opcionais.
+  5. Aproxime-se, pressione F e acerte o golpe com F ou Espaco.
+O portal normal (3 andares de Floresta) nao tem veios: Mining so aparece
+em Caverna e nas partes subterraneas das transicoes.
+
+[ ] Setup instala.
+[ ] Jogo abre.
+[ ] Save anterior carrega.
+[ ] Armeiro vende Picareta Simples.
+[ ] Compra desconta ouro corretamente.
+[ ] Picareta aparece no inventario.
+[ ] Caverna continua funcionando.
+[ ] Veios aparecem na Caverna.
+[ ] Veios aparecem nas regioes subterraneas das transicoes.
+[ ] Veios nao aparecem na Floresta pura.
+[ ] Veio e visualmente identificavel.
+[ ] Interacao sem picareta e rejeitada.
+[ ] Interacao com picareta funciona.
+[ ] Minigame abre.
+[ ] GOOD funciona.
+[ ] PERFECT funciona.
+[ ] MISS funciona.
+[ ] Recompensa nao duplica.
+[ ] Veio fica esgotado apos sucesso.
+[ ] Minerio Bruto entra no inventario.
+[ ] Mining XP aumenta.
+[ ] Mining Level progride.
+[ ] Retorno ao Refugio funciona.
+[ ] Save persiste apos fechar/reabrir.
+[ ] Fishing continua funcionando.
+[ ] Cooking continua funcionando.
+[ ] Combate continua funcionando.
+[ ] Multiplayer do Refugio continua conectando.
+[ ] Nenhum crash critico.
+
+Seed:
+Andar:
+Problemas:
+Passos para reproduzir:
+Observacoes:

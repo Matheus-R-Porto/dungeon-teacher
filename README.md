@@ -1,10 +1,10 @@
-# Dungeon Teacher — Beta 0.1.2
+# Dungeon Teacher — Beta 0.1.3
 
 A roguelite-ish tower climber (in quotes because it's not quite a traditional roguelike) built with **Three.js (3D)**, inspired by Ragnarok Online's dungeon loop and general Sword Art Online vibes. Pick a weapon, climb the procedural tower fighting for drops and boss chests, then return to the hub — or die trying — to level up, learn skills and gear up before heading back in stronger.
 
-The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Fishing is implemented as an optional activity at existing lakes, with its own levels, five species and persistent ingredient stacks. Cooking now adds six recipes, consumable fish and dishes, four temporary food buffs, and a local ingredient shop/buyback economy. Mining and smithing remain future work.
+The educational hook: chests have rarities, and opening one triggers an educational question — answer correctly and the odds shift toward better loot. That layer isn't built yet; this beta is the RPG foundation it will sit on: a hub town, a procedurally generated tower, five weapon-based classes, a skill tree, chest-based rewards and full save persistence. Fishing is implemented as an optional activity at existing lakes, with its own levels, five species and persistent ingredient stacks. Cooking now adds six recipes, consumable fish and dishes, four temporary food buffs, and a local ingredient shop/buyback economy. Mining is now the third life skill: buy a Simple Pickaxe from the Armorer, break mineral veins in caves with a timing minigame and collect Raw Ore. Smithing remains future work.
 
-**Current distribution: Beta 0.1.2 / CaveBiome.** Forest, Cave and directional transitions are ready for visual playtest. 373 tests pass. Install the Setup in `release/cave-biome-playtest/`, equip a weapon at the Hub and choose **Explorar biomas**. The normal portal retains the original three-floor adventure. Existing saves and public Hub multiplayer are preserved. See the [Iteration 12 report](docs/ITERACAO-12-RELATORIO.md) and [checklist](release/cave-biome-playtest/CHECKLIST-CAVE-BIOME.txt). Earlier delivery notes below are historical.
+**Current distribution: Beta 0.1.3 / Mining.** The first Mining cycle is ready for playtest: Simple Pickaxe at the Armorer, mineral veins in Caves and the underground parts of the transitions, a timing minigame, Raw Ore and an independent Mining level. Install the Setup in `release/mining-playtest/`, buy the pickaxe, equip a weapon and choose **Explorar biomas** → Caverna. The normal portal keeps the original three-floor Forest adventure (no veins). Existing saves and public Hub multiplayer are preserved. See the [Iteration 13 report](docs/ITERACAO-13-RELATORIO.md) and [checklist](release/mining-playtest/CHECKLIST-MINING.txt). The [Iteration 12 report](docs/ITERACAO-12-RELATORIO.md) covers the biomes. Earlier delivery notes below are historical.
 
 ## Screenshots
 *(placeholder art — geometric shapes and default assets, not final visuals)*
@@ -90,7 +90,7 @@ Don't open `index.html` by double-clicking: the modules need the local server. T
 
 ## Limits of this version
 
-There are three controlled procedural floors, one placeholder boss and eight reward items. Fishing and cooking are implemented; mining and smithing are not yet. Multiplayer covers shared Hub presence only — no PvP, no shared tower runs. The Forest and Cave biomes are literal templates: current shape, size and enemies are placeholders and will change as the biome system matures. Playable classes, a full economy and educational questions are not implemented. The sections below document the history; the current rules above take precedence.
+There are three controlled procedural floors, one placeholder boss and eight reward items. Fishing, cooking and mining are implemented; smithing is not yet. Raw Ore has no use yet and cannot be sold. Multiplayer covers shared Hub presence only — no PvP, no shared tower runs. The Forest and Cave biomes are literal templates: current shape, size and enemies are placeholders and will change as the biome system matures. Playable classes, a full economy and educational questions are not implemented. The sections below document the history; the current rules above take precedence.
 
 Almost everything visible is a placeholder: plain geometry, local effects and no final assets anywhere in the game. What's solid is the code underneath — movement, combat, systems — not the art on top of it. Enemies will likely keep their current roles but get a visual overhaul; nothing currently on screen should be read as final. WebGL 2 and graphics acceleration are required. Mobile has not been validated.
 
@@ -161,6 +161,12 @@ To try all four weapons, open `http://127.0.0.1:5173/?debug=1&test=1` → Combat
 ## Cooking and food (Iteration 11)
 
 Visit Mira or the stove in the Refuge and press F. Buy ingredients, choose a recipe and press F/Space in the green or gold timing zone. Cooking gains its own XP; even a missed timing produces the normal dish with less XP. Open I to eat fish or dishes outside combat. Food shares an 8-second cooldown; one 5-minute food buff can be active at a time. Sell fish or dishes to Mira for gold. Buff deadlines, cooldowns, items, gold and profession progress survive reload.
+
+## Mining (Iteration 13)
+
+Buy the **Simple Pickaxe** from the Armorer (30 gold). It lives in the bag like the fishing rod: no equipment slot, no durability, one per character. Mineral veins (pale rock with amber crystals) only spawn on Cave floors and on the underground side of the two transitions, mostly in optional detours; pure Forest has none, so the normal three-floor expedition has no veins. Walk up to a vein and press F: a bar appears with a sweeping indicator, and F or Space in the green zone is GOOD, in the gold zone PERFECT. A success gives 1 Raw Ore and Mining XP (8 GOOD, 12 PERFECT); a miss costs nothing and allows a retry after a short pause. Each vein pays once and is spent for that floor. Mining has its own level and XP (shown in the Life Skills panel), shares the same XP curve as Fishing and Cooking and never touches combat XP. Esc cancels; taking damage, dying or leaving the floor also cancels with no reward.
+
+The Armorer's paid stock is declared in `src/domain/shop.js`; timing and balance in `src/domain/mining.js`; vein placement in `src/world/mineral-veins.js` (own seed stream, so existing floors stay byte-identical); the runtime in `src/simulation/mining.js`. Report: [Iteration 13](docs/ITERACAO-13-RELATORIO.md).
 
 ## Windows — Desktop Build 01
 

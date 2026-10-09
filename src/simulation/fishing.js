@@ -19,6 +19,7 @@ export class FishingRuntime {
   start(id){
     const s=this.session,c=s.combat,g=s.game;
     if(this.busy)return false;
+    if(s.mining?.busy)throw Error('Termine a mineração antes de pescar.');
     const spot=s.area.fishingSpots?.find(p=>p.id===id),water=s.area.waterFeatures?.find(w=>w.id===spot?.waterFeatureId);
     if(!spot||!water?.fishingCompatible||!s.run||!this.character.isAlive)throw Error('Margem de pesca indisponível.');
     if(equipmentBlocked(c))throw Error('Você não pode pescar durante o combate.');

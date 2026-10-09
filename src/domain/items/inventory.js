@@ -1,11 +1,14 @@
 import {RAW_FOOD,INGREDIENTS,DISHES} from '../food.js';
 import {FISH,FISHING} from '../fishing.js';
+import {MINING,PICKAXE_PRICE} from '../mining.js';
 export const EQUIPMENT_SLOTS = Object.freeze(['weapon','head','chest','legs','boots','ring','necklace','talisman']);
 export const INVENTORY_CAPACITY = 32;
 const weapon = (id,name,weaponType,icon,stats,attackRange=1.45,damageType='physical') => ({id,name,weaponType,icon,stats,description:({sword:'Golpes físicos próximos, firmes e pesados.',dagger:'Golpes físicos mais fracos e rápidos, a curtíssima distância.',bow:'Flechas físicas que causam dano ao atingir o alvo.',staff:'Orbes mágicos que atingem à distância e enfrentam defesa mágica.'})[weaponType],type:'weapon',stackable:false,maxStack:1,equipSlot:'weapon',unique:true,price:0,basicAttack:{attackRange,damageType,attackSpeedModifier:0,delivery:attackRange>2?'projectile':'melee',projectileSpeed:damageType==='magic'?8:12,power:weaponType==='dagger'?.72:1,impact:weaponType==='sword'?'heavy':'light'}});
 const gear=(id,name,icon,equipSlot,stats)=>({id,name,icon,equipSlot,stats,type:'equipment',unique:false,description:'Equipamento obtido nas expedições.',stackable:false,maxStack:1});
 export const ITEMS = Object.freeze({
   fishingRod:{id:'fishingRod',name:'Vara de Pesca',icon:'♧',type:'tool',stats:{},unique:true,stackable:false,maxStack:1,description:'Leve na mochila para pescar. Não substitui sua arma.'},
+  simplePickaxe:{id:'simplePickaxe',name:'Picareta Simples',icon:'⛏',type:'tool',stats:{},unique:true,stackable:false,maxStack:1,price:PICKAXE_PRICE,description:'Leve na mochila para minerar veios nas cavernas da Torre. Não substitui sua arma e não se desgasta.'},
+  rawOre:{id:'rawOre',name:'Minério Bruto',icon:'◆',type:'resource',stats:{},unique:false,stackable:true,maxStack:MINING.maxStack,description:'Um fragmento mineral extraído das cavernas da Torre. Poderá ser utilizado futuramente em trabalhos de forja.'},
   ...Object.fromEntries(FISH.map(f=>[f.id,{id:f.id,name:f.name,description:f.description+' Coma cru, venda ou use em receitas.',icon:'≈',type:'resource',tags:f.tags,stats:{},unique:false,stackable:true,maxStack:FISHING.maxStack,tradeable:true,baseSellValue:RAW_FOOD[f.id].baseSellValue,consume:{hp:RAW_FOOD[f.id].hp??0,mp:RAW_FOOD[f.id].mp??0,category:'food'}}])),
   ...Object.fromEntries([...INGREDIENTS,...DISHES].map(i=>[i.id,i])),
   expeditionChest:{id:'expeditionChest',name:'Baú',icon:'▣',type:'chest',stats:{},unique:false,description:'Abra no Refúgio para receber um equipamento e ouro.',stackable:false,maxStack:1},

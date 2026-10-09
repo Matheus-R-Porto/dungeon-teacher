@@ -34,7 +34,7 @@ export function buildForest(v){
  instances(new THREE.DodecahedronGeometry(1,0),low,shrubs,.34,.6);
  instances(new THREE.DodecahedronGeometry(1,0),mat(0xffffff),stones,.035,.1);
  instances(new THREE.ConeGeometry(1,2,7),mat(0x326646),trees,.75,1);
- for(const o of w.obstacles.filter(o=>!o.encounterId)){const rock=v.mesh(new THREE.DodecahedronGeometry(1,0),o.kind==='pillar'?caveStone:stone,v.scene,o.x,.7,o.z);rock.scale.set(o.halfX,o.kind==='pillar'?2.6:1.1,o.halfZ);if(o.kind==='ruin')v.box(v.scene,1.5,.35,1.4,o.x,1.5,o.z,v.mats.stoneLight);}
+ for(const o of w.obstacles.filter(o=>!o.encounterId&&o.kind!=='mineralVein')){const rock=v.mesh(new THREE.DodecahedronGeometry(1,0),o.kind==='pillar'?caveStone:stone,v.scene,o.x,.7,o.z);rock.scale.set(o.halfX,o.kind==='pillar'?2.6:1.1,o.halfZ);if(o.kind==='ruin')v.box(v.scene,1.5,.35,1.4,o.x,1.5,o.z,v.mats.stoneLight);}
  v.forestGates=[];for(const gate of w.gates){const group=new THREE.Group();group.position.set(gate.x,0,gate.z);v.scene.add(group);const underground=gate.kind==='crystal';const root=v.mesh(new THREE.SphereGeometry(gate.radius,16,8),mat(underground?0x65bada:0x597d68,{transparent:true,opacity:.48,emissive:0x3b755d,emissiveIntensity:.5}),group,0,.25,0);root.scale.y=.5;for(let i=0;i<6;i++){const a=i*Math.PI/3,branch=v.box(group,.28,2,gate.radius*1.6,0,.8,0,underground?v.mats.stone:v.mats.bark);branch.rotation.set(.3,a,.3);}v.forestGates.push({gate,group});}
  for(const p of w.pois.filter(p=>p.type!=='futureResource')){const group=new THREE.Group();group.position.set(p.x,0,p.z);v.scene.add(group);group.userData.kind='ruin';
   if(amount(p.z)>.5&&p.kind!==2){
@@ -50,6 +50,20 @@ export function buildForest(v){
   if(p.kind===3){for(const x of [-1.5,1.5])v.box(group,.8,2.5,.8,x,1.25,0,v.mats.stone);v.box(group,3.8,.45,.9,0,2.5,0,v.mats.stoneLight);}
   if(p.kind===4){const log=v.mesh(new THREE.CylinderGeometry(.55,.8,4,7),v.mats.bark,group,0,.65,0);log.rotation.z=Math.PI/2;}
  }
+ // Mineable veins: dark rock with warm amber ore, clearly unlike the cold decorative crystals. Spent veins collapse to rubble.
+ v.mineralVeins=[];
+ for(const vein of w.mineralVeins??[]){
+  const group=new THREE.Group();group.position.set(vein.x,0,vein.z);v.scene.add(group);
+  const rock=mat(0x7a7f90),ore=mat(0xffb347,{emissive:0xe07a1a,emissiveIntensity:1}),full=new THREE.Group(),spent=new THREE.Group();group.add(full,spent);
+  const body=v.mesh(new THREE.DodecahedronGeometry(vein.radius*1.1,0),rock,full,0,vein.radius*.6,0);body.scale.y=.9;body.rotation.y=vein.x;
+  for(let i=0;i<5;i++){const a=i*1.26+vein.z,shard=v.mesh(new THREE.ConeGeometry(.3,1.4+(i%3)*.5,5),ore,full,Math.sin(a)*.55,1.1+(i%2)*.3,Math.cos(a)*.55);shard.rotation.set(Math.cos(a)*.45,0,-Math.sin(a)*.45);}
+  const halo=v.mesh(new THREE.CircleGeometry(vein.radius+1.2,24),new THREE.MeshBasicMaterial({color:0xffa83c,transparent:true,opacity:.28,depthWrite:false}),full,0,.04,0);halo.rotation.x=-Math.PI/2;halo.castShadow=false;
+  const glow=v.mesh(new THREE.RingGeometry(vein.radius+.15,vein.radius+.32,24),new THREE.MeshBasicMaterial({color:0xffc66b,transparent:true,opacity:.7,side:THREE.DoubleSide}),full,0,.05,0);glow.rotation.x=-Math.PI/2;glow.castShadow=false;
+  for(let i=0;i<4;i++){const a=i*1.7+vein.x,chunk=v.mesh(new THREE.DodecahedronGeometry(.28+(i%2)*.1,0),mat(0x6b6e78),spent,Math.sin(a)*.5,.16,Math.cos(a)*.5);chunk.rotation.set(a,a*.5,0);}
+  v.mineralVeins.push({vein,full,spent,ore});
+ }
+ v.updateMineralVeins=time=>{for(const entry of v.mineralVeins){const done=entry.vein.state==='exhausted';entry.full.visible=!done;entry.spent.visible=done;entry.ore.emissiveIntensity=.9+Math.sin(time*2.2+entry.vein.x)*.35;}};
+ v.updateMineralVeins(0);
  // Local atmosphere follows the player along the directional transition; no roof hides combat.
  v.updateBiomeAtmosphere=z=>{
   const c=amount(z);v.scene.background.copy(blend([0x9ab9a0,0x769885,0x667e78][depth-1],0x18232f,c));v.scene.fog.color.copy(v.scene.background);v.scene.fog.density=.014+c*.009;

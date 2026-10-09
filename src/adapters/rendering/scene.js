@@ -296,7 +296,7 @@ export class SceneView {
     if (selected) { this.interactionRing.position.set(selected.x, selected.highlightHeight ?? 0.06, selected.z); this.interactionRing.scale.setScalar((selected.highlightRadius ?? 0.6) / 0.83); }
     this.flags.forEach((flag,i) => { flag.rotation.y = reducedMotion ? 0 : Math.sin(time*1.8+i)*0.08; });
     if (this.water) this.water.material.emissiveIntensity = 0.3 + (reducedMotion ? 0 : Math.sin(time*1.5)*0.08);
-    for(const entry of this.forestGates??[])entry.group.visible=!entry.gate.open;
+    for(const entry of this.forestGates??[])entry.group.visible=!entry.gate.open;this.updateMineralVeins?.(time);
     if(this.world.safe===false){if(!this.chestModel){this.chestModel=new THREE.Group();this.box(this.chestModel,1,.7,.7,0,.4,0,this.mats.bark);this.box(this.chestModel,1.05,.15,.75,0,.8,0,this.mats.gold);this.scene.add(this.chestModel);}const drop=this.world.interactables.find(i=>i.id==='boss-chest'&&i.enabled);this.chestModel.visible=!!drop;if(drop)this.chestModel.position.set(drop.x,0,drop.z);}
     this.combatVisual?.update();this.fishingVisual.update(game);
     this.remotePlayers?.update(reducedMotion);

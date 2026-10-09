@@ -1,10 +1,10 @@
-DUNGEON MASTER — BETA 0.1.2 — CAVE BIOME
+DUNGEON MASTER — BETA 0.1.3 — MINING
 Windows x64. Versão de playtest; arte e balanceamento provisórios.
 
 COMO ABRIR
-Abra DungeonMaster-Beta-0.1.2-CaveBiome-Setup.exe e siga o assistente.
+Abra DungeonMaster-Beta-0.1.3-Mining-Setup.exe e siga o assistente.
 Depois, abra pelo atalho Dungeon Master. Alternativa sem instalação:
-DungeonMaster-Beta-0.1.2-CaveBiome-Portable.exe.
+DungeonMaster-Beta-0.1.3-Mining-Portable.exe.
 Não precisa de Node, npm, terminal ou servidor no seu computador.
 
 REFÚGIO COMPARTILHADO
@@ -19,17 +19,18 @@ Entre na Torre para jogar individualmente; sua presença sai do Refúgio.
 Ao voltar, a conexão é retomada. Desconectar encerra essa participação.
 Somente nome, identidade local e movimento são compartilhados.
 Inventário, ouro, combate, pesca, culinária e progresso permanecem locais.
-Consulte CHECKLIST-CAVE-BIOME.txt para o playtest desta versão.
+Consulte CHECKLIST-MINING.txt para o playtest desta versão.
 
 MODO INDIVIDUAL
 Continua funcionando sem internet e sem conectar ao multiplayer.
 
 CONTROLES
 WASD/setas ou clique no chão: caminhar. Q/E: girar câmera.
-Roda do mouse: zoom. F: conversar, portal ou pescar.
+Roda do mouse: zoom. F: conversar, portal, pescar ou minerar.
 Clique no inimigo: ataque automático. 1–8: habilidades aprendidas.
 I: inventário/equipamentos/comida. C: personagem. Tab: habilidades.
-F/Espaço: fisgar quando aparecer AGORA ou retirar o preparo do fogo.
+F/Espaço: fisgar quando aparecer AGORA, golpear a rocha no minigame de
+Mineração ou retirar o preparo do fogo.
 Esc: cancelar/fechar painel/pausar. H: ajuda. F11: tela cheia.
 
 PRIMEIROS PASSOS
@@ -52,7 +53,7 @@ desconhecido. Confirme a origem com o organizador. Não desative antivírus
 ou outras proteções do Windows.
 
 PROBLEMAS
-Informe "Beta 0.1.2 / CaveBiome", Windows, Setup ou Portable,
+Informe "Beta 0.1.3 / Mining", Windows, Setup ou Portable,
 passos, resultado esperado e observado. Inclua captura quando possível.
 Na conexão, informe se ambos ficaram Online, atraso, teleportes, direção
 incorreta ou personagem que permaneceu visível depois de sair.
@@ -65,5 +66,18 @@ saídas seguem a sequência procedural normal. Resolva os encontros para subir.
 Volte pelo portal na entrada do andar quando quiser encerrar a exploração.
 Essa rota de playtest tem até 50 andares gerados sob demanda, sem novo boss
 ou baú final. XP e itens obtidos são mantidos. O portal normal preserva
-a expedição de três andares com o Guardião. Não há Mining nem Smithing.
-Consulte CHECKLIST-CAVE-BIOME.txt.
+a expedição de três andares com o Guardião. Não há Smithing.
+Consulte CHECKLIST-MINING.txt.
+
+MINERAÇÃO (NOVO)
+Compre a Picareta Simples do Armeiro (30 ouro). Ela fica na mochila, não
+ocupa o slot de arma, não se gasta e não pode ser vendida. Veios minerais
+só existem na Caverna e nas partes subterrâneas das transições; use
+Explorar biomas para chegar rápido. Aproxime-se do veio e pressione F: uma
+barra aparece com um indicador em movimento. Pressione F ou Espaço quando
+ele estiver na zona verde (BOM) ou dourada (PERFEITO); errar não custa nada
+e permite tentar de novo após uma pausa curta. Cada veio rende no máximo
+1 Minério Bruto e depois fica esgotado naquele andar. Mining tem nível e
+XP próprios (painel Life Skills) e é independente de combate, Pesca e
+Culinária. O Minério Bruto ainda não tem uso: é matéria-prima para a
+futura Forja. Esc cancela a mineração sem perder nada.
