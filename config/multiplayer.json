@@ -1,4 +1,5 @@
 {
   "serverUrl": "wss://dungeon-master-hub-u40z.onrender.com/hub",
-  "build": "Multiplayer01.1"
+  "build": "Beta 0.5.0",
+  "profileDirectory": "Dungeon Master Playtest 0.5.0"
 }

@@ -1,0 +1,29 @@
+
+> dungeon-teacher-beta@0.4.3 build
+> vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 105 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                        7.85 kB │ gzip:   3.12 kB
+dist/assets/world-mode-DW5pzqQ2.css    1.76 kB │ gzip:   0.80 kB
+dist/assets/index-BaOcVzcD.css        39.86 kB │ gzip:   9.90 kB
+dist/assets/world-mode-DWQ1mx4M.js    25.47 kB │ gzip:   9.83 kB
+dist/assets/index-DjO6x1uF.js        864.68 kB │ gzip: 241.33 kB
+
+✓ built in 22.42s
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[PLUGIN_TIMINGS] JavaScript callbacks ran for 16.7s of this 21.7s build (77%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin vite:prepare-out-dir renderStart (53%, 11.5s, 1 call)
+  - plugin vite:css transform (12%, 2.5s, 2 calls)
+  - plugin vite:build-html transform (6%, 1.2s, 1 call)
+Additional callback time came from callbacks under 1s.
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+

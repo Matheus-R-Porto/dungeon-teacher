@@ -1,11 +1,11 @@
 import {canStand,moveWithCollision} from '../world/collision.js';
 import {CONFIG} from '../core/config.js';
 import {AI_CONFIG as A} from '../domain/enemies/config.js';
-const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
+const distance=(a,b)=>Math.abs((a.y??0)-(b.y??0))>.75?Infinity:Math.hypot(a.x-b.x,a.z-b.z);
 // Bodies are soft for the player: contact pushes the monster when the static
 // world permits it. The player's own swept move still cannot cross a body.
 export function resolvePlayerBodies(game,enemies){
-  const alive=enemies.filter(e=>e.alive),p=game.player,old=game.previous;
+  const p=game.player,old=game.previous,alive=enemies.filter(e=>e.alive&&Math.abs((e.y??0)-(p.y??0))<.75);
   const dx=p.x-old.x,dz=p.z-old.z,length=Math.hypot(dx,dz);
   if(length){
     for(const e of alive){const t=Math.max(0,Math.min(1,((e.x-old.x)*dx+(e.z-old.z)*dz)/(length*length))),near={x:old.x+t*dx,z:old.z+t*dz};
@@ -13,13 +13,13 @@ export function resolvePlayerBodies(game,enemies){
     }
     const bodyWorld={...game.world,obstacles:[...game.world.obstacles,...alive.map(e=>({shape:'circle',x:e.x,z:e.z,radius:e.radius}))]};
     const moved=moveWithCollision(bodyWorld,old,dx,dz,CONFIG.playerRadius);
-    game.distance-=Math.max(0,length-distance(old,moved));p.x=moved.x;p.z=moved.z;p.moving=distance(old,p)>0.0001;
+    game.distance-=Math.max(0,length-distance(old,moved));p.x=moved.x;p.z=moved.z;if(game.world.surfaces){p.y=moved.y;p.surface=moved.surface;}p.moving=distance(old,p)>0.0001;
     if(p.moving)p.heading=Math.atan2(p.x-old.x,p.z-old.z);
   }
 }
 export function separateBodies(world,enemies,player,dt){
   const alive=enemies.filter(e=>e.alive),maxStep=A.separationSpeed*dt;
-  const shift=(e,dx,dz)=>{const next=moveWithCollision(world,e,dx,dz,e.radius);e.x=next.x;e.z=next.z;};
+  const shift=(e,dx,dz)=>{const next=moveWithCollision(world,e,dx,dz,e.radius);e.x=next.x;e.z=next.z;if(world.surfaces){e.y=next.y;e.surface=next.surface;}};
   for(let pass=0;pass<A.separationPasses;pass++){
     for(let i=0;i<alive.length;i++)for(let j=i+1;j<alive.length;j++){
       const a=alive[i],b=alive[j],d=distance(a,b),overlap=a.radius+b.radius+A.bodyPadding-d;if(overlap<=0)continue;

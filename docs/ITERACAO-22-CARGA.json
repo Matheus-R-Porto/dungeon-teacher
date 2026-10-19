@@ -1,0 +1,412 @@
+{
+  "method": "10 cold isolated creations per floor, expansion measured separately, followed by disk reload. CPU filesystem/domain only; not GPU first-frame timing.",
+  "rows": [
+    {
+      "floor": 1,
+      "repeat": 0,
+      "baseMs": 40.3035,
+      "expansionMs": 4.261600000000001,
+      "totalMs": 44.5651,
+      "diskReloadMs": 2.2531000000000034,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 0,
+      "baseMs": 63.27080000000001,
+      "expansionMs": 1.8821000000000083,
+      "totalMs": 65.15290000000002,
+      "diskReloadMs": 1.744400000000013,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 0,
+      "baseMs": 49.566400000000016,
+      "expansionMs": 1.6536000000000115,
+      "totalMs": 51.22000000000003,
+      "diskReloadMs": 1.7147999999999968,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 1,
+      "baseMs": 15.541500000000013,
+      "expansionMs": 0.6162999999999954,
+      "totalMs": 16.15780000000001,
+      "diskReloadMs": 1.7728999999999928,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 1,
+      "baseMs": 30.833500000000015,
+      "expansionMs": 0.8288000000000011,
+      "totalMs": 31.662300000000016,
+      "diskReloadMs": 1.9839000000000055,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 1,
+      "baseMs": 26.287099999999953,
+      "expansionMs": 1.4232000000000085,
+      "totalMs": 27.71029999999996,
+      "diskReloadMs": 1.811999999999955,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 2,
+      "baseMs": 15.738900000000001,
+      "expansionMs": 0.6807000000000016,
+      "totalMs": 16.419600000000003,
+      "diskReloadMs": 2.4050000000000296,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 2,
+      "baseMs": 31.422900000000027,
+      "expansionMs": 0.802599999999984,
+      "totalMs": 32.22550000000001,
+      "diskReloadMs": 1.9431999999999903,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 2,
+      "baseMs": 29.367999999999995,
+      "expansionMs": 1.0102999999999724,
+      "totalMs": 30.378299999999967,
+      "diskReloadMs": 1.8152000000000044,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 3,
+      "baseMs": 14.915699999999958,
+      "expansionMs": 0.7386999999999944,
+      "totalMs": 15.654399999999953,
+      "diskReloadMs": 1.3940999999999804,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 3,
+      "baseMs": 31.78989999999999,
+      "expansionMs": 0.8797000000000139,
+      "totalMs": 32.6696,
+      "diskReloadMs": 2.1807000000000016,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 3,
+      "baseMs": 26.789600000000007,
+      "expansionMs": 0.9771999999999821,
+      "totalMs": 27.76679999999999,
+      "diskReloadMs": 1.7350999999999885,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 4,
+      "baseMs": 14.966999999999985,
+      "expansionMs": 0.6824000000000296,
+      "totalMs": 15.649400000000014,
+      "diskReloadMs": 1.5489999999999782,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 4,
+      "baseMs": 31.47580000000005,
+      "expansionMs": 0.7731999999999744,
+      "totalMs": 32.249000000000024,
+      "diskReloadMs": 1.702099999999973,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 4,
+      "baseMs": 25.84940000000006,
+      "expansionMs": 1.0676999999999452,
+      "totalMs": 26.917100000000005,
+      "diskReloadMs": 1.9864000000000033,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 5,
+      "baseMs": 15.132600000000025,
+      "expansionMs": 0.4518999999999096,
+      "totalMs": 15.584499999999935,
+      "diskReloadMs": 1.8649000000000342,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 5,
+      "baseMs": 34.798400000000015,
+      "expansionMs": 1.6573999999999387,
+      "totalMs": 36.455799999999954,
+      "diskReloadMs": 1.8256000000000085,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 5,
+      "baseMs": 27.293999999999983,
+      "expansionMs": 1.1649999999999636,
+      "totalMs": 28.458999999999946,
+      "diskReloadMs": 2.0915999999999713,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 6,
+      "baseMs": 16.421500000000037,
+      "expansionMs": 0.7350999999999885,
+      "totalMs": 17.156600000000026,
+      "diskReloadMs": 2.6019999999999754,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 6,
+      "baseMs": 32.74630000000002,
+      "expansionMs": 1.1908000000000811,
+      "totalMs": 33.9371000000001,
+      "diskReloadMs": 2.7391000000000076,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 6,
+      "baseMs": 26.677800000000047,
+      "expansionMs": 1.1444000000000187,
+      "totalMs": 27.822200000000066,
+      "diskReloadMs": 2.556799999999953,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 7,
+      "baseMs": 16.030500000000075,
+      "expansionMs": 0.49929999999994834,
+      "totalMs": 16.529800000000023,
+      "diskReloadMs": 1.768799999999942,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 7,
+      "baseMs": 30.94100000000003,
+      "expansionMs": 0.841600000000085,
+      "totalMs": 31.782600000000116,
+      "diskReloadMs": 1.7077000000000453,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 7,
+      "baseMs": 26.319099999999935,
+      "expansionMs": 0.9601999999999862,
+      "totalMs": 27.27929999999992,
+      "diskReloadMs": 1.9978999999999587,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 8,
+      "baseMs": 13.60080000000005,
+      "expansionMs": 0.6585999999999785,
+      "totalMs": 14.259400000000028,
+      "diskReloadMs": 1.8262999999999465,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 8,
+      "baseMs": 32.16579999999999,
+      "expansionMs": 0.9768000000000256,
+      "totalMs": 33.142600000000016,
+      "diskReloadMs": 2.2393999999999323,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 8,
+      "baseMs": 25.227100000000064,
+      "expansionMs": 1.2232999999999947,
+      "totalMs": 26.45040000000006,
+      "diskReloadMs": 1.8310000000000173,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    },
+    {
+      "floor": 1,
+      "repeat": 9,
+      "baseMs": 14.647799999999961,
+      "expansionMs": 0.4396000000000413,
+      "totalMs": 15.087400000000002,
+      "diskReloadMs": 1.4940000000000282,
+      "bytesBefore": 10969,
+      "bytesAfter": 26241
+    },
+    {
+      "floor": 2,
+      "repeat": 9,
+      "baseMs": 30.49279999999999,
+      "expansionMs": 0.7481999999999971,
+      "totalMs": 31.240999999999985,
+      "diskReloadMs": 1.6153000000000475,
+      "bytesBefore": 15371,
+      "bytesAfter": 40280
+    },
+    {
+      "floor": 3,
+      "repeat": 9,
+      "baseMs": 26.109199999999987,
+      "expansionMs": 1.0585999999999558,
+      "totalMs": 27.167799999999943,
+      "diskReloadMs": 2.286100000000033,
+      "bytesBefore": 16269,
+      "bytesAfter": 48717
+    }
+  ],
+  "byFloor": [
+    {
+      "floor": 1,
+      "baseMs": {
+        "n": 10,
+        "mean": 17.729980000000012,
+        "p50": 15.541500000000013,
+        "p95": 40.3035,
+        "p99": 40.3035,
+        "max": 40.3035
+      },
+      "expansionMs": {
+        "n": 10,
+        "mean": 0.9764199999999889,
+        "p50": 0.6807000000000016,
+        "p95": 4.261600000000001,
+        "p99": 4.261600000000001,
+        "max": 4.261600000000001
+      },
+      "totalMs": {
+        "n": 10,
+        "mean": 18.7064,
+        "p50": 16.15780000000001,
+        "p95": 44.5651,
+        "p99": 44.5651,
+        "max": 44.5651
+      },
+      "diskReloadMs": {
+        "n": 10,
+        "mean": 1.893009999999991,
+        "p50": 1.8262999999999465,
+        "p95": 2.6019999999999754,
+        "p99": 2.6019999999999754,
+        "max": 2.6019999999999754
+      }
+    },
+    {
+      "floor": 2,
+      "baseMs": {
+        "n": 10,
+        "mean": 34.99372000000001,
+        "p50": 31.78989999999999,
+        "p95": 63.27080000000001,
+        "p99": 63.27080000000001,
+        "max": 63.27080000000001
+      },
+      "expansionMs": {
+        "n": 10,
+        "mean": 1.0581200000000108,
+        "p50": 0.8797000000000139,
+        "p95": 1.8821000000000083,
+        "p99": 1.8821000000000083,
+        "max": 1.8821000000000083
+      },
+      "totalMs": {
+        "n": 10,
+        "mean": 36.05184000000003,
+        "p50": 32.6696,
+        "p95": 65.15290000000002,
+        "p99": 65.15290000000002,
+        "max": 65.15290000000002
+      },
+      "diskReloadMs": {
+        "n": 10,
+        "mean": 1.9681400000000024,
+        "p50": 1.9431999999999903,
+        "p95": 2.7391000000000076,
+        "p99": 2.7391000000000076,
+        "max": 2.7391000000000076
+      }
+    },
+    {
+      "floor": 3,
+      "baseMs": {
+        "n": 10,
+        "mean": 28.948770000000003,
+        "p50": 26.677800000000047,
+        "p95": 49.566400000000016,
+        "p99": 49.566400000000016,
+        "max": 49.566400000000016
+      },
+      "expansionMs": {
+        "n": 10,
+        "mean": 1.1683499999999838,
+        "p50": 1.1444000000000187,
+        "p95": 1.6536000000000115,
+        "p99": 1.6536000000000115,
+        "max": 1.6536000000000115
+      },
+      "totalMs": {
+        "n": 10,
+        "mean": 30.11711999999999,
+        "p50": 27.76679999999999,
+        "p95": 51.22000000000003,
+        "p99": 51.22000000000003,
+        "max": 51.22000000000003
+      },
+      "diskReloadMs": {
+        "n": 10,
+        "mean": 1.982689999999988,
+        "p50": 1.9864000000000033,
+        "p95": 2.556799999999953,
+        "p99": 2.556799999999953,
+        "max": 2.556799999999953
+      }
+    }
+  ]
+}

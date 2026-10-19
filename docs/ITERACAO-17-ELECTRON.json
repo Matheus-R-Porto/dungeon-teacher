@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-13T23:29:51.000Z",
+  "checks": [
+    "two Electron processes display same procedural floor and one another",
+    "both players attack same floor monster and both render death",
+    "server respawns shared floor monster",
+    "F portal transitions A; B remains in floor 1 with no remote from floor 2",
+    "reconnection returns A to floor 2 without duplicating across areas",
+    "both clients render the same persisted floor 2",
+    "F down portal returns to floor 1",
+    "neither shared client opened any IndexedDB database",
+    "return to local campaign initializes correctly in the isolated test profile"
+  ],
+  "screenshots": [
+    ".logs/tower-probe/01-floor1-a.png",
+    ".logs/tower-probe/01-floor1-b.png",
+    ".logs/tower-probe/02-floor1-death-a.png",
+    ".logs/tower-probe/02-floor1-death-b.png",
+    ".logs/tower-probe/03-floor2-a.png",
+    ".logs/tower-probe/03-floor1-b.png",
+    ".logs/tower-probe/04-both-floor2-a.png",
+    ".logs/tower-probe/04-both-floor2-b.png",
+    ".logs/tower-probe/05-return-floor1.png",
+    ".logs/tower-probe/04-final-A.png",
+    ".logs/tower-probe/04-final-B.png",
+    ".logs/tower-probe/05-local-campaign.png"
+  ],
+  "errors": [],
+  "fixture": "Server-side positioning near first monster and portals skips long walks. No HP/damage/transition state is injected; real mouse, F and buttons drive those operations.",
+  "ok": true
+}

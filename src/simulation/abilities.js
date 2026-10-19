@@ -1,3 +1,4 @@
+import {normalizeHotbar} from '../domain/abilities/hotbar.js';
 import {Inventory,ITEMS,equippedDefinition,equipmentBlocked} from '../domain/items/inventory.js';
 import {ABILITIES,INITIAL_HOTBAR,WEAPONS,ABILITY_CONFIG as A} from '../domain/abilities/definitions.js';
 import {PeriodicEffects} from '../domain/abilities/effects.js';
@@ -5,7 +6,8 @@ import {resolveAttack} from '../domain/combat/attack.js';
 import {COMBAT} from '../domain/combat/config.js';
 import {clearSegment} from '../world/collision.js';
 export class AbilityRuntime {
-  constructor(combat,{notify=()=>{}}={}){this.combat=combat;this.character=combat.character;this.notify=notify;this.hotbar=[...INITIAL_HOTBAR];this.time=0;this.cooldowns=new Map();this.pending=null;this.active=null;this.projectiles=combat.projectiles;this.periodic=new PeriodicEffects();this.lastMessage='';this.metrics={started:0,impacts:0,launched:0,ticks:0};}
+  constructor(combat,{notify=()=>{}}={}){this.combat=combat;this.character=combat.character;this.notify=notify;this.time=0;this.cooldowns=new Map();this.pending=null;this.active=null;this.projectiles=combat.projectiles;this.periodic=new PeriodicEffects();this.lastMessage='';this.metrics={started:0,impacts:0,launched:0,ticks:0};}
+  get hotbar(){return normalizeHotbar(this.character.data.hotbar,this.character.data.knownAbilities);}
   get busy(){return !!(this.pending||this.active);}
   get weapon(){return equippedDefinition(this.character.data)?.weaponType??null;}
   get autoRange(){return equippedDefinition(this.character.data)?.basicAttack.attackRange??WEAPONS[this.weapon]?.basicAttackOverrides.range??COMBAT.playerRange;}

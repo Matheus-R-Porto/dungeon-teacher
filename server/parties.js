@@ -1,0 +1,20 @@
+import {randomUUID} from 'node:crypto';
+import {ONLINE_RULES as R} from '../shared/online.js';
+export class Parties {
+ constructor(lookup,combat,now=()=>Date.now()){Object.assign(this,{lookup,combat,now});this.groups=new Map();this.members=new Map();this.invites=new Map();this.inviteTimes=new Map();}
+ party(id){return this.groups.get(this.members.get(id));}
+ expire(){for(const [key,at]of this.inviteTimes)if(this.now()-at>=R.inviteCooldownMs)this.inviteTimes.delete(key);for(const [id,i]of this.invites)if(i.expires<=this.now())this.invites.delete(id);}
+ command(p,a){this.expire();let g=this.party(p.id);const leader=()=>{if(!g||g.leader!==p.id)throw Error('Apenas o líder pode fazer isso.');};
+ if(a.kind==='party:create'){if(g)throw Error('Você já está em um grupo.');g={id:randomUUID(),leader:p.id,members:[p.id]};this.groups.set(g.id,g);this.members.set(p.id,g.id);return;}
+ if(a.kind==='party:invite'){leader();const q=this.lookup(a.target);if(!q?.ws||q.id===p.id||this.members.has(q.id)||g.members.length>=R.partySize)throw Error('Convite incompatível.');if([...this.invites.values()].some(i=>i.party===g.id&&i.target===q.id))throw Error('Convite duplicado.');const pair=p.id+':'+q.id;if(this.now()-(this.inviteTimes.get(pair)??-Infinity)<R.inviteCooldownMs||[...this.invites.values()].filter(i=>i.party===g.id||i.target===q.id).length>=R.maxPendingInvites)throw Error('Aguarde antes de convidar novamente.');this.levels(g,q);this.inviteTimes.set(pair,this.now());const id=randomUUID();this.invites.set(id,{id,party:g.id,from:p.id,target:q.id,expires:this.now()+R.inviteMs});return;}
+ if(['party:accept','party:decline','party:cancel'].includes(a.kind)){const i=this.invites.get(a.target);if(!i)throw Error('Convite expirado ou inválido.');if(a.kind==='party:cancel'){if(i.from!==p.id)throw Error('Convite inválido.');this.invites.delete(i.id);return;}if(i.target!==p.id)throw Error('Convite inválido.');this.invites.delete(i.id);if(a.kind==='party:decline')return;const dest=this.groups.get(i.party);if(g||!dest||dest.leader!==i.from||dest.members.length>=R.partySize)throw Error('Grupo indisponível.');this.levels(dest,p);dest.members.push(p.id);this.members.set(p.id,dest.id);for(const [id,v]of this.invites)if(v.target===p.id)this.invites.delete(id);return;}
+ if(a.kind==='party:lead'){leader();if(!g.members.includes(a.target)||!this.lookup(a.target)?.ws)throw Error('Integrante indisponível.');g.leader=a.target;this.clearInvites(g.id);return;}
+ if(a.kind==='party:kick'){leader();if(a.target===p.id||!g.members.includes(a.target))throw Error('Integrante inválido.');if(g.members.some(id=>this.combat(id)))throw Error('Não é possível expulsar durante combate de chefe ou mini-chefe.');this.remove(a.target);return;}
+ if(a.kind==='party:leave'){if(!g)throw Error('Você não está em grupo.');this.remove(p.id);return;}throw Error('Ação de grupo inválida.');
+ }
+ levels(g,p){const levels=[...g.members.map(id=>this.lookup(id).character.data.level),p.character.data.level];if(Math.max(...levels)-Math.min(...levels)>R.levelGap)throw Error('Diferença máxima de 20 níveis na entrada.');}
+ clearInvites(party){for(const[id,i]of this.invites)if(i.party===party)this.invites.delete(id);}
+ remove(id){const g=this.party(id);if(!g)return;g.members=g.members.filter(v=>v!==id);this.members.delete(id);this.clearInvites(g.id);if(!g.members.length){this.groups.delete(g.id);return;}if(g.leader===id)g.leader=g.members.find(v=>this.lookup(v)?.ws)||g.members[0];}
+ offline(id){const g=this.party(id);if(g?.leader===id){g.leader=g.members.find(v=>v!==id&&this.lookup(v)?.ws)||id;this.clearInvites(g.id);}}
+ view(id){this.expire();const g=this.party(id);return {group:g?{...g,members:g.members.map(id=>{const p=this.lookup(id);return {id,name:p.name,online:!!p.ws,level:p.character.data.level,hp:p.character.data.hp,maxHP:p.character.stats.maxHP};})}:null,invitations:[...this.invites.values()].filter(i=>i.target===id||i.from===id).map(i=>({...i,fromName:this.lookup(i.from)?.name,targetName:this.lookup(i.target)?.name}))};}
+}

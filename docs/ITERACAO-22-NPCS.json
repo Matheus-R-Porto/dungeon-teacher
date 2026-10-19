@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-19T17:10:18.811Z",
+  "checks": [
+    "All six enlarged NPCs inspected from alternate camera angle and dialogs opened by normal mouse input"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-reset-angel-clear-angle.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-reset-angel-dialogue.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-warehouse-clear-angle.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-warehouse-dialogue.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-blacksmith-clear-angle.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-blacksmith-dialogue.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-cook-clear-angle.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-cook-dialogue.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-potion-mage-clear-angle.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-potion-mage-dialogue.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-tower-guide-clear-angle.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-npcs\\npc-tower-guide-dialogue.png"
+  ],
+  "errors": [],
+  "fixture": "Isolated server and two real Electron processes. Positions prepared server-side for short scenarios; movement, attacks, damage, death, XP, loot, respawn and travel use normal simulation/protocol. NPC scale comparisons are visual inspection fixtures.",
+  "ok": true
+}

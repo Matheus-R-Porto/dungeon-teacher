@@ -1,0 +1,372 @@
+{
+  "source": "C:/Users/theuz/.codex/generated_images/01a0d4c8-c623-7a51-9d6e-d93056a0fef3/exec-f736cc1d-4016-4990-948b-93dd7a890b61.png",
+  "width": 1402,
+  "height": 1122,
+  "columns": 5,
+  "rows": 4,
+  "cell": 512,
+  "padding": 51.2,
+  "scale": 1,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "scale": 0.823045267489712,
+      "sourceBounds": [
+        52,
+        24,
+        182,
+        267
+      ],
+      "bounds": [
+        199,
+        260,
+        306,
+        460
+      ]
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "scale": 0.9302325581395349,
+      "sourceBounds": [
+        309,
+        51,
+        573,
+        266
+      ],
+      "bounds": [
+        171,
+        260,
+        417,
+        460
+      ]
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "scale": 0.9803921568627451,
+      "sourceBounds": [
+        630,
+        64,
+        847,
+        268
+      ],
+      "bounds": [
+        183,
+        260,
+        396,
+        460
+      ]
+    },
+    {
+      "column": 3,
+      "row": 0,
+      "scale": 0.9523809523809523,
+      "sourceBounds": [
+        898,
+        58,
+        1132,
+        268
+      ],
+      "bounds": [
+        186,
+        260,
+        409,
+        460
+      ]
+    },
+    {
+      "column": 4,
+      "row": 0,
+      "scale": 0.966183574879227,
+      "sourceBounds": [
+        1211,
+        61,
+        1390,
+        268
+      ],
+      "bounds": [
+        187,
+        260,
+        360,
+        460
+      ]
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "scale": 0.847457627118644,
+      "sourceBounds": [
+        44,
+        309,
+        188,
+        545
+      ],
+      "bounds": [
+        192,
+        259,
+        323,
+        460
+      ],
+      "completePoseMirrorFrom": {
+        "row": 3,
+        "column": 0
+      }
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "scale": 0.8620689655172413,
+      "sourceBounds": [
+        305,
+        313,
+        604,
+        545
+      ],
+      "bounds": [
+        48,
+        260,
+        339,
+        460
+      ],
+      "completePoseMirrorFrom": {
+        "row": 3,
+        "column": 1
+      }
+    },
+    {
+      "column": 2,
+      "row": 1,
+      "scale": 0.966183574879227,
+      "sourceBounds": [
+        628,
+        341,
+        865,
+        548
+      ],
+      "bounds": [
+        112,
+        260,
+        322,
+        460
+      ],
+      "completePoseMirrorFrom": {
+        "row": 3,
+        "column": 2
+      }
+    },
+    {
+      "column": 3,
+      "row": 1,
+      "scale": 0.8928571428571429,
+      "sourceBounds": [
+        898,
+        324,
+        1108,
+        548
+      ],
+      "bounds": [
+        102,
+        260,
+        315,
+        460
+      ],
+      "completePoseMirrorFrom": {
+        "row": 3,
+        "column": 3
+      }
+    },
+    {
+      "column": 4,
+      "row": 1,
+      "scale": 0.9615384615384616,
+      "sourceBounds": [
+        1186,
+        341,
+        1390,
+        548
+      ],
+      "bounds": [
+        137,
+        260,
+        322,
+        460
+      ],
+      "completePoseMirrorFrom": {
+        "row": 3,
+        "column": 4
+      }
+    },
+    {
+      "column": 0,
+      "row": 2,
+      "scale": 0.8438818565400844,
+      "sourceBounds": [
+        53,
+        583,
+        193,
+        821
+      ],
+      "bounds": [
+        197,
+        259,
+        315,
+        460
+      ]
+    },
+    {
+      "column": 1,
+      "row": 2,
+      "scale": 0.8968609865470852,
+      "sourceBounds": [
+        328,
+        599,
+        587,
+        822
+      ],
+      "bounds": [
+        199,
+        260,
+        431,
+        460
+      ]
+    },
+    {
+      "column": 2,
+      "row": 2,
+      "scale": 1.0101010101010102,
+      "sourceBounds": [
+        644,
+        625,
+        839,
+        823
+      ],
+      "bounds": [
+        196,
+        260,
+        393,
+        460
+      ]
+    },
+    {
+      "column": 3,
+      "row": 2,
+      "scale": 0.970873786407767,
+      "sourceBounds": [
+        877,
+        615,
+        1109,
+        821
+      ],
+      "bounds": [
+        114,
+        260,
+        339,
+        460
+      ]
+    },
+    {
+      "column": 4,
+      "row": 2,
+      "scale": 0.975609756097561,
+      "sourceBounds": [
+        1201,
+        617,
+        1390,
+        823
+      ],
+      "bounds": [
+        194,
+        259,
+        378,
+        460
+      ]
+    },
+    {
+      "column": 0,
+      "row": 3,
+      "scale": 0.8888888888888888,
+      "sourceBounds": [
+        40,
+        866,
+        188,
+        1092
+      ],
+      "bounds": [
+        188,
+        259,
+        319,
+        460
+      ]
+    },
+    {
+      "column": 1,
+      "row": 3,
+      "scale": 0.9259259259259259,
+      "sourceBounds": [
+        305,
+        877,
+        619,
+        1093
+      ],
+      "bounds": [
+        172,
+        260,
+        463,
+        460
+      ]
+    },
+    {
+      "column": 2,
+      "row": 3,
+      "scale": 0.9900990099009901,
+      "sourceBounds": [
+        634,
+        894,
+        846,
+        1096
+      ],
+      "bounds": [
+        189,
+        260,
+        399,
+        460
+      ]
+    },
+    {
+      "column": 3,
+      "row": 3,
+      "scale": 0.970873786407767,
+      "sourceBounds": [
+        913,
+        889,
+        1132,
+        1095
+      ],
+      "bounds": [
+        196,
+        260,
+        409,
+        460
+      ]
+    },
+    {
+      "column": 4,
+      "row": 3,
+      "scale": 0.975609756097561,
+      "sourceBounds": [
+        1200,
+        890,
+        1390,
+        1095
+      ],
+      "bounds": [
+        189,
+        260,
+        374,
+        460
+      ]
+    }
+  ]
+}

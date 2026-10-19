@@ -1,0 +1,17 @@
+✔ online protocol rejects credential leaks, sender spoofing, old party IDs and malformed input (2.2802ms)
+✔ party lifecycle, six members, entry level gap, combat kick guard and deterministic offline leadership (120.1744ms)
+✔ party XP proximity eligibility, single death, manual private loot, inventory full and expiry (99.0379ms)
+✔ XP excludes distant, dead, disconnected and other-floor members; solo threshold and competing groups (111.7082ms)
+✔ chat isolation, membership changes, spam, concurrent identity and stale visits (74.3723ms)
+✔ credentials are random, encrypted per profile and endpoint, never plaintext or silently replaced (16.6796ms)
+✔ SQLite atomic rollback, abrupt process exit, checksum validation and uncollected drop persistence (174.7353ms)
+✔ party entrant after first impact is excluded; leaving loses sharing; no teleport on social changes (73.222ms)
+✔ eligible solo receives XP; ordinary combat allows kick; expired identity session reconnects without duplication (99.2465ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 918.9415

@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-16T00:37:53.966Z",
+  "checks": [
+    "Expanded city districts, common online HUD, professions availability, party menu, NPC dialog and movement rendered in two Electron clients",
+    "neither shared client opened any IndexedDB database",
+    "Local hotbar reordered through editor and preserved after page reload",
+    "Four actual equipment families, local professions and skills menus rendered using explicit test fixture in isolated profile",
+    "return to local campaign initializes correctly in the isolated test profile"
+  ],
+  "screenshots": [
+    "../screenshots/iteration21/21-online-hud.png",
+    "../screenshots/iteration21/21-twelve-players.png",
+    "../screenshots/iteration21/21-city-plaza.png",
+    "../screenshots/iteration21/21-city-market.png",
+    "../screenshots/iteration21/21-city-workshops.png",
+    "../screenshots/iteration21/21-city-homes.png",
+    "../screenshots/iteration21/21-city-sanctuary.png",
+    "../screenshots/iteration21/21-city-tower.png",
+    "../screenshots/iteration21/21-city-tavern.png",
+    "../screenshots/iteration21/21-online-professions.png",
+    "../screenshots/iteration21/21-party.png",
+    "../screenshots/iteration21/21-party-compact.png",
+    "../screenshots/iteration21/21-dialogue-hud.png",
+    "../screenshots/iteration21/21-walking.png",
+    "../screenshots/iteration21/04-final-A.png",
+    "../screenshots/iteration21/04-final-B.png",
+    "../screenshots/iteration21/05-local-campaign.png",
+    "../screenshots/iteration21/21-local-hud.png",
+    "../screenshots/iteration21/21-local-professions.png",
+    "../screenshots/iteration21/21-local-skills.png",
+    "../screenshots/iteration21/21-hotbar-reordered.png",
+    "../screenshots/iteration21/21-weapon-sword.png",
+    "../screenshots/iteration21/21-weapon-dagger.png",
+    "../screenshots/iteration21/21-weapon-bow.png",
+    "../screenshots/iteration21/21-weapon-staff.png",
+    "../screenshots/iteration21/21-north-inspection.png",
+    "../screenshots/iteration21/21-city-overview.png",
+    "../screenshots/iteration21/21-small-window.png"
+  ],
+  "errors": [],
+  "ok": true
+}

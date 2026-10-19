@@ -1,13 +1,16 @@
-const {app,BrowserWindow,Menu,protocol,session,ipcMain,dialog} = require('electron');
+const {app,BrowserWindow,Menu,protocol,session,ipcMain,dialog,safeStorage} = require('electron');
 const path = require('node:path');
 const fs = require('node:fs');
 const {ORIGIN,assetHandler} = require('./protocol.cjs');
 const {endpoint,networkAllowed} = require('./network.cjs');
-const serverUrl=endpoint(require('../config/multiplayer.json').serverUrl);
+const {testOptions}=require('./test-profile.cjs');
+const releaseConfig=require('../config/multiplayer.json');
+const options=testOptions(process.argv,app.getPath('appData'),releaseConfig.serverUrl,releaseConfig.profileDirectory);
+const serverUrl=options.serverUrl;
 
 app.setName('Dungeon Master');
 // Stable across installer/portable versions; never uses the extraction directory.
-const profile = path.join(app.getPath('appData'),'Dungeon Master');
+const profile = options.profile;
 fs.mkdirSync(profile,{recursive:true});
 app.setPath('userData',profile);
 app.setPath('sessionData',profile);
@@ -34,6 +37,10 @@ else {
     window.webContents.on('before-input-event',(event,input)=>{if(input.type==='keyDown'&&input.key==='F11'&&!input.isAutoRepeat){event.preventDefault();window.setFullScreen(!window.isFullScreen());}});
     window.once('ready-to-show',()=>window.show());
     window.webContents.on('did-fail-load',(_event,code,description,_url,isMainFrame)=>{if(isMainFrame&&code!==-3)dialog.showErrorBox('Dungeon Master','Não foi possível abrir o jogo: '+description);});
+    ipcMain.handle('online:credential',event=>{
+      if(!trusted(event))throw Error('Origem inválida.');
+      return require('./online-identity.cjs').loadCredential(profile,serverUrl,safeStorage);
+    });
     ipcMain.on('desktop:ready',event=>{if(trusted(event))ready=true;});
     ipcMain.on('desktop:close-result',async(event,result)=>{
       if(!trusted(event)||!closing)return;
@@ -54,7 +61,7 @@ else {
       closeTimer=setTimeout(()=>closeFailed('O salvamento demorou mais que o esperado.'),15000);
     });
     window.on('closed',()=>{clearTimeout(closeTimer);window=null;});
-    window.loadURL(ORIGIN+'/index.html');
+    window.loadURL(ORIGIN+'/index.html'+options.query);
   }).catch(error=>{dialog.showErrorBox('Dungeon Master',error.message);app.quit();});
   app.on('window-all-closed',()=>app.quit());
 }

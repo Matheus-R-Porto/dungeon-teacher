@@ -1,0 +1,71 @@
+[
+  {
+    "floor": 1,
+    "seed": 217021,
+    "storedHash": "f486cdb9982ab115f09fb908555d77aa30a61b0e66d6b6779c7b4655bf62e076",
+    "servedHash": "d375bca060207828c13c1a033ac39c063291131c60cad2652c90c8028ca19676",
+    "before": {
+      "width": 83,
+      "depth": 219.42726515885442,
+      "walkableAreaEstimate": 3907,
+      "mainDistance": 296.40512728056876,
+      "monsters": 5,
+      "obstacles": 6
+    },
+    "after": {
+      "width": 104,
+      "depth": 219.42726515885442,
+      "walkableAreaEstimate": 5499,
+      "mainDistance": 296.40512728056876,
+      "monsters": 6,
+      "obstacles": 52
+    },
+    "wolves": 1
+  },
+  {
+    "floor": 2,
+    "seed": 217021,
+    "storedHash": "ef2eb7b19432fbd5cfbde5b5a05a01cf7049fbd3708e887221ffc0bfc5b1582a",
+    "servedHash": "ebe956b96abfa87e4a319c80d4e52f82e9063fc387149e3e991114e0dec9c1ab",
+    "before": {
+      "width": 122,
+      "depth": 253.68620273377746,
+      "walkableAreaEstimate": 4601,
+      "mainDistance": 339.4459173600597,
+      "monsters": 8,
+      "obstacles": 12
+    },
+    "after": {
+      "width": 144,
+      "depth": 253.68620273377746,
+      "walkableAreaEstimate": 6463,
+      "mainDistance": 339.4459173600597,
+      "monsters": 11,
+      "obstacles": 92
+    },
+    "wolves": 3
+  },
+  {
+    "floor": 3,
+    "seed": 217021,
+    "storedHash": "79882c84a9daa0d6eea0b70213ec403b3d044aee796bfc6be78af0a89d6732f1",
+    "servedHash": "6aa569d5b3b586ae4a02cfb465a8062de4f0657d591841e0465ee3866d482860",
+    "before": {
+      "width": 125,
+      "depth": 288.63400237914175,
+      "walkableAreaEstimate": 5250,
+      "mainDistance": 385.945643518959,
+      "monsters": 9,
+      "obstacles": 8
+    },
+    "after": {
+      "width": 137,
+      "depth": 288.63400237914175,
+      "walkableAreaEstimate": 7334,
+      "mainDistance": 385.945643518959,
+      "monsters": 14,
+      "obstacles": 114
+    },
+    "wolves": 5
+  }
+]

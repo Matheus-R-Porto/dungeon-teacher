@@ -1,6 +1,28 @@
 import { canStand, clearSegment } from './collision.js';
+import {surfaceId,layerWorld,surfaceHeight,containsSurface} from './surfaces.js';
 
 export function findPath(world, start, destination, radius, cell = 0.5, local = false) {
+  if(world.surfaces){
+    const from=surfaceId(start),to=surfaceId(destination),surfaces=world.surfaces;
+    if(start.enemyType&&to!=='ground')return null;
+    if(to!=='ground'&&!surfaces.some(s=>s.id===to&&containsSurface(s,destination.x,destination.z,radius)))return null;
+    const point=(p,id)=>({...p,surface:id,y:id==='ground'?0:surfaceHeight(surfaces.find(s=>s.id===id),p.z)});
+    if(from===to){const route=findPath(layerWorld(world,from),start,destination,radius,cell,local);return route?.map(p=>point(p,from))??null;}
+    const nodes=[{...start,id:'start',surface:from},{...destination,id:'end',surface:to}],edges=[];
+    for(const s of surfaces.filter(s=>s.kind==='ramp')){
+      const offset=nodes.length;
+      nodes.push({id:offset,x:s.x,z:s.z-s.halfZ-radius-.15,surface:'ground'}, {id:offset+1,x:s.x,z:s.z-s.halfZ+radius+.15,surface:s.id}, {id:offset+2,x:s.x,z:s.z+s.halfZ-radius-.15,surface:s.id}, {id:offset+3,x:s.x,z:s.z+s.halfZ+radius+.15,surface:s.to});
+      edges.push([offset,offset+1],[offset+2,offset+3]);
+    }
+    const queue=[0],seen=new Set(queue),parents=new Map();
+    for(let k=0;k<queue.length&&!seen.has(1);k++){const i=queue[k];for(let j=0;j<nodes.length;j++){
+      if(seen.has(j))continue;let route;
+      if(edges.some(([a,b])=>a===i&&b===j||a===j&&b===i))route=[point(nodes[j],nodes[j].surface)];
+      else if(nodes[i].surface===nodes[j].surface)route=findPath(layerWorld(world,nodes[i].surface),nodes[i],nodes[j],radius,cell,true)?.map(p=>point(p,nodes[j].surface));
+      if(route){seen.add(j);parents.set(j,{i,route});queue.push(j);}
+    }}
+    if(!seen.has(1))return null;const route=[];let j=1;while(j){const p=parents.get(j);route.unshift(...p.route);j=p.i;}return route;
+  }
   if (!canStand(world, destination.x, destination.z, radius)) return null;
   if (clearSegment(world, start, destination, radius)) return [{ ...destination }];
   if(world.graph&&!local&&Math.hypot(destination.x-start.x,destination.z-start.z)>24){
@@ -8,7 +30,7 @@ export function findPath(world, start, destination, radius, cell = 0.5, local = 
     const first=nearest(start),last=nearest(destination),queue=[first.id],seen=new Set(queue),parents=new Map();
     for(let i=0;i<queue.length&&!seen.has(last.id);i++)for(const t of world.trails){if(t.gateId&&world.obstacles.some(o=>o.id===t.gateId&&!o.open))continue;const to=t.from===queue[i]?t.to:t.to===queue[i]?t.from:null;if(to&&!seen.has(to)){seen.add(to);parents.set(to,{from:queue[i],trail:t});queue.push(to);}}
     if(!seen.has(last.id))return null;const edges=[];let id=last.id;while(id!==first.id){const p=parents.get(id);edges.unshift(p.trail.from===p.from?p.trail.points:[...p.trail.points].reverse());id=p.from;}
-    let cursor=start;const route=[];for(const point of [first,...edges.flat(),destination]){if(Math.hypot(point.x-cursor.x,point.z-cursor.z)<.01)continue;const part=findPath(world,cursor,point,radius,cell,true);if(!part)return null;route.push(...part);cursor=point;}let skip=0;for(let i=1;i<route.length;i++)if(clearSegment(world,start,route[i],radius))skip=i;return route.slice(skip);
+    let cursor=start;const route=[];for(const point of [first,...edges.flat(),destination]){if(Math.hypot(point.x-cursor.x,point.z-cursor.z)<.01)continue;const part=findPath(world,cursor,point,radius,cell,true);if(!part)return null;route.push(...part);cursor=point;}if(world.openTower){const smooth=[];let origin=start,k=0;while(k<route.length){let next=route.length-1;while(next>k&&!clearSegment(world,origin,route[next],radius))next--;smooth.push(route[next]);origin=route[next];k=next+1;}return smooth;}let skip=0;for(let i=1;i<route.length;i++)if(clearSegment(world,start,route[i],radius))skip=i;return route.slice(skip);
   }
   const b = world.graph?{minX:Math.max(world.bounds.minX,Math.min(start.x,destination.x)-14),maxX:Math.min(world.bounds.maxX,Math.max(start.x,destination.x)+14),minZ:Math.max(world.bounds.minZ,Math.min(start.z,destination.z)-14),maxZ:Math.min(world.bounds.maxZ,Math.max(start.z,destination.z)+14)}:world.bounds;
   const width = Math.floor((b.maxX - b.minX) / cell) + 1;

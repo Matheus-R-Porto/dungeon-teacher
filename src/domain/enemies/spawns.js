@@ -8,6 +8,6 @@ export function createEnemies(spawns,world){
     for(const key of ['detectionRange','chaseSpeed','returnSpeed','leashRange','returnRegen','radius'])if(!Number.isFinite(definition[key])||definition[key]<=0)throw Error(`Parâmetro inválido de inimigo: ${key}`);
     if(definition.noRespawn)delete definition.respawnTime;else if(!Number.isFinite(definition.respawnTime)||definition.respawnTime<=0)throw Error('Respawn inválido.');
     if(!canStand(world,definition.x,definition.z,definition.radius))throw Error(`Spawn bloqueado: ${spawn.id}`);
-    const enemy=new Enemy(definition);enemy.spawnPosition={x:enemy.x,z:enemy.z};enemy.spawnHeading=enemy.heading;enemy.targetId=null;enemy.aggroReason=null;enemy.path=[];enemy.generation=0;if(enemy.dormant){enemy.hp=0;enemy.state='removed';}return enemy;
+    const enemy=new Enemy(definition);enemy.enemyType=spawn.enemyType;enemy.spawnPosition={x:enemy.x,z:enemy.z};enemy.spawnHeading=enemy.heading;enemy.targetId=null;enemy.aggroReason=null;enemy.path=[];enemy.generation=0;if(enemy.dormant){enemy.hp=0;enemy.state='removed';}return enemy;
   });
 }

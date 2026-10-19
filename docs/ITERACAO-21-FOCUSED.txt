@@ -1,0 +1,17 @@
+✔ configurable hotbar accepts only learned skills, swaps, clears and survives save (8.351ms)
+✔ local city shares geography and keeps reachable local services and safe entry (341.2549ms)
+✔ sprite walk keeps direction, phases do not reset on equal snapshots and weapon follows equipment (12.2286ms)
+✔ static batching retains world geometry, material, shadow flags and dynamic objects (7.0168ms)
+✔ real clients share movement, combat, late join, unique death, respawn and reconnect (10427.0117ms)
+✔ real socket rejects invented damage and cannot mutate after replacement (91.5762ms)
+✔ public city has navigable NPC approaches, solid buildings and reachable tower (127.7575ms)
+✔ dialogue requires proximity and unobstructed line of sight, ignoring only its own NPC collider (2.4351ms)
+✔ school: 12 v4 identities, 2x6 parties, combat, loot, travel, reconnection and persistent restart (5696.6505ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10890.4931

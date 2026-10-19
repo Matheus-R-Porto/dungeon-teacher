@@ -1,10 +1,10 @@
 {
   "name": "dungeon-teacher-beta",
-  "version": "0.1.5",
+  "version": "0.5.1",
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.13.0"
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
@@ -19,7 +19,19 @@
     "test:multiplayer": "node --test tests/multiplayer*.test.js",
     "multiplayer:configure": "node scripts/configure-multiplayer.cjs",
     "desktop:package:playtest": "node scripts/verify-multiplayer.cjs && npm run desktop:package",
-    "test:public-hub": "electron scripts/public-hub-probe.cjs"
+    "test:public-hub": "electron scripts/public-hub-probe.cjs",
+    "desktop:test:a": "electron . --test-profile=A",
+    "desktop:test:b": "electron . --test-profile=B",
+    "test:world": "node --test tests/world.test.js tests/multiplayer-world.test.js",
+    "test:tower": "node --test tests/tower-shared.test.js tests/tower-twelve.test.js tests/multiplayer-tower.test.js",
+    "test:tower:electron": "node scripts/world-electron-probe.mjs --tower",
+    "desktop:test:legacy": "electron . --test-profile=Legacy --legacy-world",
+    "test:online": "node --test tests/online.test.js tests/multiplayer-online.test.js",
+    "test:online:electron": "node scripts/world-electron-probe.mjs --social",
+    "desktop:test:temporary": "electron . --test-profile=Temporary --temporary-tower",
+    "test:school": "node --test tests/school-multiplayer.test.js",
+    "test:school:soak": "node scripts/school-soak.mjs",
+    "test:school:electron": "node scripts/world-electron-probe.mjs --school"
   },
   "dependencies": {
     "three": "0.186.1"

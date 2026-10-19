@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-14T00:15:15.346Z",
+  "checks": [
+    "party created, invited and accepted using UI; private and global chat delivered",
+    "both players earn XP and manually collect individual drops through UI",
+    "portal, global chat across floors and persistent-character reconnection passed",
+    "neither shared client opened any IndexedDB database",
+    "return to local campaign initializes correctly in the isolated test profile"
+  ],
+  "screenshots": [
+    "../.logs/social-probe/01-invitation.png",
+    "../.logs/social-probe/02-party.png",
+    "../.logs/social-probe/03-xp-drop.png",
+    "../.logs/social-probe/04-inventory.png",
+    "../.logs/social-probe/05-global-across-floors.png",
+    "../.logs/social-probe/06-reconnect.png",
+    "../.logs/social-probe/04-final-A.png",
+    "../.logs/social-probe/04-final-B.png",
+    "../.logs/social-probe/05-local-campaign.png"
+  ],
+  "errors": [],
+  "fixture": "Only server-side positions skip long walks. Real UI creates party, accepts, chats, attacks, collects and travels. No XP, damage or items injected.",
+  "ok": true
+}

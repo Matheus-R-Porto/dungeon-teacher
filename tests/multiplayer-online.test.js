@@ -1,0 +1,34 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import {randomBytes} from 'node:crypto';import {createRequire} from 'node:module';
+import {startHub} from '../server/hub.js';import {WorldClient} from '../src/multiplayer/world-client.js';
+const {WebSocket}=createRequire(new URL('../server/package.json',import.meta.url))('ws');const Socket=class extends WebSocket{constructor(url){super(url,{origin:'dungeon://game'});}};
+const wait=ms=>new Promise(r=>setTimeout(r,ms));const until=async fn=>{const end=Date.now()+15000;while(!fn()){if(Date.now()>end)throw Error('Online scenario timeout');await wait(20);}};
+test('complete online loop: party, chat, cooperative XP level-up, manual loot, travel, restart and stable characters',async t=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dm-social-net-'));let h;const clients=[];t.after(async()=>{clients.forEach(c=>c.disconnect());await h?.close();assert.equal(path.dirname(path.resolve(dir)),path.resolve(os.tmpdir()));fs.rmSync(dir,{recursive:true,force:true});});
+ const options={port:0,worldDataDir:path.join(dir,'maps'),characterDataDir:path.join(dir,'characters'),worldOptions:{random:()=>.5},log(){}};h=await startHub(options);const chat=[[],[]];const [a,b]=[0,1].map(i=>new WorldClient({url:`ws://127.0.0.1:${h.port}/hub`,protocol:4,credential:randomBytes(32).toString('hex'),name:'Online '+i,Socket,onChat:m=>chat[i].push(m),onNotice:m=>t.diagnostic('notice: '+m)}));clients.push(a,b);a.connect();b.connect();await until(()=>a.snapshot?.players.length===2&&b.snapshot?.players.length===2);
+ a.command({kind:'party:create'});await until(()=>a.snapshot.social.group);a.command({kind:'party:invite',target:b.id});await until(()=>b.snapshot.social.invitations.length===1);b.command({kind:'party:accept',target:b.snapshot.social.invitations[0].id});await until(()=>a.snapshot.social.group.members.length===2);
+ a.command({kind:'chat',channel:'party',text:'Vamos juntos'});await until(()=>chat[1].length===1);assert.equal(chat[1][0].channel,'party');b.command({kind:'chat',channel:'global',text:'Olá mundo'});await until(()=>chat[0].some(m=>m.channel==='global'));
+ for(const c of[a,b])if(c.mapId==='shared-city'){Object.assign(h.online.people.get(c.id).game.player,h.online.world(c.mapId).map.portal);c.command({kind:'travel',portal:'tower-portal'});}await until(()=>[a,b].every(c=>c.mapId==='shared-floor-1'&&c.snapshot));
+ const w=h.online.world(a.mapId),p=w.players.get(a.id),q=w.players.get(b.id),e=w.enemies[0];
+ // Positions and accelerated ticks only: actual protocol attacks, server damage, drops and pickup.
+ for(let kill=0;kill<18&&p.character.data.level<2;kill++){
+  for(const person of[p,q]){person.target=null;Object.assign(person.game.player,{x:e.spawnPosition.x+(person===p?-1:1),z:e.spawnPosition.z});}
+  for(const c of[a,b])c.command({kind:'attack',target:e.id,generation:e.generation});await until(()=>p.target&&q.target);
+  for(let i=0;i<400&&e.alive;i++)h.online.step();assert.equal(e.hp,0);await until(()=>a.snapshot.drops.length&&b.snapshot.drops.length);
+  for(const [c,person]of[[a,p],[b,q]]){const drop=c.snapshot.drops.at(-1);Object.assign(person.game.player,{x:drop.x,z:drop.z});c.command({kind:'pickup',target:drop.id});}
+  await until(()=>a.snapshot.drops.length===0&&b.snapshot.drops.length===0);
+  for(const person of[p,q]){person.target=null;person.game.cancel();Object.assign(person.game.player,w.map.spawn);}for(let i=0;i<Math.ceil(w.map.livingTower.respawn.slime/.05)+2;i++)h.online.step();assert.ok(e.alive);
+ }
+ assert.ok(p.character.data.level>=2);assert.ok(p.character.data.attributePoints>0);assert.ok(p.character.data.inventory.slots[0].quantity>=1);await wait(5100);a.command({kind:'allocate',attribute:'str'});await until(()=>p.character.data.attributes.str===6);
+ for(const [c,person]of[[a,p],[b,q]]){Object.assign(person.game.player,w.map.portal);c.command({kind:'travel',portal:'return-portal'});}await until(()=>a.snapshot?.mapId==='shared-floor-2'&&b.snapshot?.mapId==='shared-floor-2');
+ // A global message also crosses floor boundaries.
+ Object.assign(q.game.player,h.online.world(q.mapId).map.portal);b.command({kind:'travel',portal:'return-portal'});await until(()=>b.snapshot?.mapId==='shared-floor-3');await wait(1100);a.command({kind:'chat',channel:'global',text:'Outro andar'});await until(()=>chat[1].some(m=>m.text==='Outro andar'));
+ a.disconnect();b.disconnect();await until(()=>!p.ws&&!q.ws);const saved=[h.online.db.read(p.id),h.online.db.read(q.id)],ids=[a.id,b.id],port=h.port;await h.close();h=null;h=await startHub({...options,port});a.connect();b.connect();await until(()=>a.snapshot?.profile&&b.snapshot?.profile);assert.deepEqual([a.id,b.id],ids);
+ for(const [i,c]of[a,b].entries()){const actual=h.online.db.read(c.id);assert.deepEqual(actual.character,saved[i].character);assert.equal(actual.reached,saved[i].reached);assert.equal(actual.floor,saved[i].floor);}
+});
+test('seven real sockets enforce six-member party limit and private channel access',async t=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dm-party-net-')),h=await startHub({port:0,worldDataDir:path.join(dir,'maps'),characterDataDir:path.join(dir,'people'),log(){}}),clients=[],chats=Array.from({length:7},()=>[]);t.after(async()=>{clients.forEach(c=>c.disconnect());await h.close();assert.equal(path.dirname(path.resolve(dir)),path.resolve(os.tmpdir()));fs.rmSync(dir,{recursive:true,force:true});});
+ const notices=[];for(let i=0;i<7;i++){const c=new WorldClient({url:`ws://127.0.0.1:${h.port}/hub`,name:'Grupo '+i,credential:randomBytes(32).toString('hex'),protocol:4,Socket,onChat:m=>chats[i].push(m),onNotice:m=>notices.push(m)});clients.push(c);c.connect();}await until(()=>clients.every(c=>c.snapshot?.players.length===7));const leader=clients[0];leader.command({kind:'party:create'});await until(()=>leader.snapshot.social.group);
+ for(let i=1;i<6;i++){leader.command({kind:'party:invite',target:clients[i].id});await until(()=>clients[i].snapshot.social.invitations.length);clients[i].command({kind:'party:accept',target:clients[i].snapshot.social.invitations[0].id});await until(()=>leader.snapshot.social.group.members.length===i+1);}
+ leader.command({kind:'party:invite',target:clients[6].id});await until(()=>notices.length);assert.equal(leader.snapshot.social.group.members.length,6);leader.command({kind:'chat',channel:'party',text:'Somente seis'});await until(()=>chats.slice(0,6).every(v=>v.length===1));assert.equal(chats[6].length,0);
+ clients[1].command({kind:'party:leave'});await until(()=>!clients[1].snapshot.social.group);clients[1].command({kind:'chat',channel:'party',text:'Nao deve enviar'});await until(()=>notices.some(v=>v.includes('grupo')));assert.ok(chats.every(v=>v.every(m=>m.text!=='Nao deve enviar')));
+});

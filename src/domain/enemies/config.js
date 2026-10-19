@@ -6,6 +6,7 @@ export const AI_CONFIG=Object.freeze({
   separationSpeed:3,separationPasses:3,bodyPadding:0.03,approachSamples:8,
 });
 export const ENEMY_TYPES=Object.freeze({
+  wolf:{...TRAINING_ENEMY,name:'Lobo',behaviorType:'wolf',aggressive:true,requiresLOS:true,detectionRange:5.5,chaseSpeed:3.8,returnSpeed:4.2,leashRange:10,respawnTime:32,returnRegen:35,radius:.55,assistRange:0,stats:{...TRAINING_ENEMY.stats,maxHP:85,physicalAttack:9,physicalDefense:3,attackRange:1.25,attackSpeed:.85}},
   jumpingSlime:{...TRAINING_ENEMY,name:'Slime Saltador',behaviorType:'mobile',color:0xe7ad57,aggressive:false,requiresLOS:true,detectionRange:3.2,chaseSpeed:4,returnSpeed:4,leashRange:8,respawnTime:8,returnRegen:30,radius:.48,assistRange:0,stats:{...TRAINING_ENEMY.stats,physicalDefense:2,attackSpeed:.9}},
   magicSlime:{...TRAINING_ENEMY,name:'Slime Mágico',behaviorType:'ranged',color:0x74bbdf,aggressive:false,requiresLOS:true,detectionRange:6,chaseSpeed:2.4,returnSpeed:3.2,leashRange:9,respawnTime:8,returnRegen:30,radius:.48,assistRange:0,preferredDistance:4,retreatDistance:2.8,retreatDuration:.7,retreatCooldown:2.4,basicAttack:{delivery:'projectile',damageType:'magic',projectileSpeed:5,power:1},stats:{...TRAINING_ENEMY.stats,magicAttack:13,physicalDefense:2,magicDefense:5,attackRange:6,attackSpeed:.6}},
   trainingSlime:{...TRAINING_ENEMY,behaviorType:'meleeAggressive',aggressive:true,requiresLOS:true,

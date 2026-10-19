@@ -11,3 +11,5 @@ contextBridge.exposeInMainWorld('desktopLifecycle',Object.freeze({
     return () => ipcRenderer.removeListener('desktop:prepare-close',listener);
   }
 }));
+
+contextBridge.exposeInMainWorld('onlineIdentity',Object.freeze({load:()=>ipcRenderer.invoke('online:credential')}));

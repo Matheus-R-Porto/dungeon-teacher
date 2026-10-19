@@ -1,0 +1,18 @@
+✔ complete online loop: party, chat, cooperative XP level-up, manual loot, travel, restart and stable characters (11185.3796ms)
+✔ seven real sockets enforce six-member party limit and private channel access (1715.2574ms)
+✔ online protocol rejects credential leaks, sender spoofing, old party IDs and malformed input (2.0224ms)
+✔ party lifecycle, six members, entry level gap, combat kick guard and deterministic offline leadership (132.5375ms)
+✔ party XP proximity eligibility, single death, manual private loot, inventory full and expiry (164.323ms)
+✔ XP excludes distant, dead, disconnected and other-floor members; solo threshold and competing groups (121.3546ms)
+✔ chat isolation, membership changes, spam, concurrent identity and stale visits (77.8ms)
+✔ credentials are random, encrypted per profile and endpoint, never plaintext or silently replaced (16.9819ms)
+✔ SQLite atomic rollback, abrupt process exit, checksum validation and uncollected drop persistence (181.1654ms)
+✔ party entrant after first impact is excluded; leaving loses sharing; no teleport on social changes (74.0231ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13221.9481

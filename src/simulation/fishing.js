@@ -31,7 +31,7 @@ export class FishingRuntime {
     c.cancel(true);this.spot=spot;this.area=s.area;this.damageRevision=this.character.damageRevision;
     this.result=selectFish(this.character.data.lifeSkills.fishing.level,this.random);
     const wait=this.config.waitMin+this.random()*(this.config.waitMax-this.config.waitMin);
-    this.attempts++;this.started=this.time;this.biteAt=this.time+this.config.castSeconds+wait;this.endsAt=this.biteAt+this.config.reactionSeconds;
+    this.visualCatch=null;this.attempts++;this.started=this.time;this.biteAt=this.time+this.config.castSeconds+wait;this.endsAt=this.biteAt+this.config.reactionSeconds;
     this.state='cast';g.player.heading=spot.heading;g.player.moving=false;this.say('Lançando… · Esc cancela');return true;
   }
   finish(message){if(this.spot)this.cooldowns.set(this.spot.id,this.time+this.config.cooldownSeconds);this.state='idle';this.result=null;this.say(message);}
@@ -46,6 +46,7 @@ export class FishingRuntime {
   }
   pull(){
     if(!this.active)return this.pending??Promise.resolve(false);
+    this.visualReelRevision=(this.visualReelRevision??0)+1; // Presentation event only.
     if(this.time<this.biteAt-1e-9){this.finish('Muito cedo!');return Promise.resolve(false);}
     if(this.time>=this.endsAt-1e-9){this.finish('O peixe escapou.');return Promise.resolve(false);}
     const fish=this.result,s=this.session;
@@ -56,7 +57,7 @@ export class FishingRuntime {
     this.finish('Captura confirmada · salvando…');this.state='saving';
     const operation=Promise.resolve().then(()=>this.save(draft.data)).then(()=>{
       this.character.data.inventory=draft.data.inventory;this.character.data.lifeSkills=draft.data.lifeSkills;
-      s.onResourceChange();this.say('PESCADO! '+fish.name+' · Pesca XP +'+fish.xp+(levels?' · PESCA NÍVEL '+draft.data.lifeSkills.fishing.level+'!':''));return true;
+      this.visualCatch={revision:(this.visualCatchRevision??0)+1,fish:fish.id,spot:structuredClone(this.spot)};this.visualCatchRevision=this.visualCatch.revision;s.onResourceChange();this.say('PESCADO! '+fish.name+' · Pesca XP +'+fish.xp+(levels?' · PESCA NÍVEL '+draft.data.lifeSkills.fishing.level+'!':''));return true;
     }).catch(error=>{this.say('Captura não salva: '+error.message+' Nenhum peixe ou XP concedido.');return false;}).finally(()=>{this.pending=null;this.state='idle';});
     this.pending=operation;return operation;
   }

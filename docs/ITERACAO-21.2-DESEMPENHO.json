@@ -1,0 +1,4982 @@
+{
+  "before": {
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "cores": 12,
+      "platform": "win32"
+    },
+    "seconds": 30,
+    "server": [],
+    "client": [
+      {
+        "name": "city-one",
+        "frames": {
+          "n": 2527,
+          "mean": 11.87538583300415,
+          "p50": 11.700000002980232,
+          "p95": 15.799999997019768,
+          "p99": 18,
+          "max": 23.099999994039536
+        },
+        "fps": 84.17385047898648,
+        "activeFps": 84.20779030360373,
+        "durationMs": 30021.20000000298,
+        "visibility": [
+          {
+            "at": 3574.1999999955297,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 50.94043887310929,
+        "methods": {
+          "interpolation": {
+            "n": 2528,
+            "mean": 0.04287974678180358,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.20000000298023224,
+            "max": 1.1000000014901161
+          },
+          "sprites": {
+            "n": 2528,
+            "mean": 0.05253164550654967,
+            "p50": 0,
+            "p95": 0.19999999552965164,
+            "p99": 0.20000000298023224,
+            "max": 0.5
+          },
+          "effects": {
+            "n": 2528,
+            "mean": 0.002492088603468824,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000149011612,
+            "max": 0.10000000149011612
+          },
+          "combatVisualInclusive": {
+            "n": 2528,
+            "mean": 0.019106012668837852,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 0.3999999985098839
+          },
+          "remoteInclusive": {
+            "n": 2528,
+            "mean": 0.006685126561058473,
+            "p50": 0,
+            "p95": 0.09999999403953552,
+            "p99": 0.10000000149011612,
+            "max": 0.20000000298023224
+          },
+          "renderSubmit": {
+            "n": 2528,
+            "mean": 8.899406645535432,
+            "p50": 8.800000004470348,
+            "p95": 12.299999997019768,
+            "p99": 14.299999997019768,
+            "max": 19.299999997019768
+          },
+          "sceneInclusive": {
+            "n": 2528,
+            "mean": 9.35356012660173,
+            "p50": 9.299999997019768,
+            "p95": 12.799999997019768,
+            "p99": 14.800000004470348,
+            "max": 19.600000001490116
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.9379999997466802,
+            "p50": 0.8000000044703484,
+            "p95": 1.8000000044703484,
+            "p99": 2.4000000059604645,
+            "max": 3.2999999970197678
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 1.079333333397905,
+            "p50": 1,
+            "p95": 2,
+            "p99": 2.7999999970197678,
+            "max": 3.399999998509884
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 707,
+          "visible": 700,
+          "materials": 164,
+          "textures": 17,
+          "textureSources": 12,
+          "geometries": 353,
+          "transparentObjects": 157,
+          "drawCalls": 402,
+          "triangles": 40646,
+          "gpuTextures": 12,
+          "gpuGeometries": 237,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 26911593,
+        "cdpDelta": {
+          "Timestamp": 30.080957000005583,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -1,
+          "Frames": -1,
+          "JSEventListeners": -29,
+          "LayoutObjects": 2056,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 3140,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": -15,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -1,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -2,
+          "ArrayBufferContents": -1537,
+          "LayoutCount": 2831,
+          "RecalcStyleCount": 20240,
+          "LayoutDuration": 1.1141670000000001,
+          "RecalcStyleDuration": 0.86922,
+          "DevToolsCommandDuration": 0.02943,
+          "ScriptDuration": 25.057057,
+          "V8CompileDuration": 0,
+          "TaskDuration": 29.742065,
+          "TaskOtherDuration": 2.672191,
+          "ThreadTime": 28.108597,
+          "ProcessTime": 34.309812,
+          "JSHeapUsedSize": 7025064,
+          "JSHeapTotalSize": 2621440,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30099.2137,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.00052247212026,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 1.2210292358803723,
+              "p50": 0.9783000000006723,
+              "p95": 2.7368999999998778,
+              "p99": 4.003700000001118,
+              "max": 20.20799999999963
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 0.6800289036543979,
+              "p50": 0.6033999999999651,
+              "p95": 1.3200999999990017,
+              "p99": 1.923399999999674,
+              "max": 9.46429999999964
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 0.5401219269103114,
+              "p50": 0.34060000000317814,
+              "p95": 1.8392000000003463,
+              "p99": 2.4627000000000407,
+              "max": 10.742699999999786
+            },
+            "interval": {
+              "n": 601,
+              "mean": 49.99784975041598,
+              "p50": 47.093800000002375,
+              "p95": 62.59629999999743,
+              "p99": 63.57719999999972,
+              "max": 66.70939999999973
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.5273908485856684,
+            "p50": 0,
+            "p95": 12.596299999997427,
+            "p99": 13.57719999999972,
+            "max": 16.709399999999732
+          },
+          "noopTimerMs": {
+            "n": 483,
+            "mean": 62.14440144927536,
+            "p50": 62.184799999999086,
+            "p95": 64.14749999999913,
+            "p99": 65.43790000000081,
+            "max": 78.98369999999977
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 602,
+              "mean": 0.39426013289035244,
+              "p50": 0.3194999999977881,
+              "p95": 0.765400000000227,
+              "p99": 1.0839999999989232,
+              "max": 6.729900000000271
+            },
+            "sqliteRead": {
+              "n": 301,
+              "mean": 0.3316006644519162,
+              "p50": 0.23470000000088476,
+              "p95": 0.7163000000000466,
+              "p99": 1.1455999999961932,
+              "max": 1.5993999999991502
+            },
+            "serialization": {
+              "n": 301,
+              "mean": 0.04398205980077518,
+              "p50": 0.02870000000257278,
+              "p95": 0.08269999999902211,
+              "p99": 0.25979999999981374,
+              "max": 0.8553000000001703
+            },
+            "send": {
+              "n": 301,
+              "mean": 0.5407043189367001,
+              "p50": 0.37550000000010186,
+              "p95": 1.0810999999994237,
+              "p99": 1.931800000000294,
+              "max": 9.293100000000777
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.564799,
+            "p95": 17.940479,
+            "p99": 19.824639,
+            "max": 29.720575
+          },
+          "eventLoopUtilization": 0.04360341114287506,
+          "cpuPercentOneCore": 3.5848112537238808,
+          "memory": {
+            "rss": 46477312,
+            "heapTotal": 13361152,
+            "heapUsed": 10438368,
+            "external": 4220782,
+            "arrayBuffers": 212311
+          },
+          "connections": 1
+        }
+      },
+      {
+        "name": "city-empty",
+        "frames": {
+          "n": 2640,
+          "mean": 11.366893939394505,
+          "p50": 11.200000002980232,
+          "p95": 15.099999994039536,
+          "p99": 17.799999997019768,
+          "max": 26.399999998509884
+        },
+        "fps": 87.93727141306304,
+        "activeFps": 87.97478056290093,
+        "durationMs": 30021.39999999851,
+        "visibility": [
+          {
+            "at": 36719.29999999702,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 49.81549815635112,
+        "methods": {
+          "interpolation": {
+            "n": 2641,
+            "mean": 0.04184021203807248,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.20000000298023224,
+            "max": 6.899999998509884
+          },
+          "sprites": {
+            "n": 2641,
+            "mean": 0.051192730061487016,
+            "p50": 0,
+            "p95": 0.19999999552965164,
+            "p99": 0.20000000298023224,
+            "max": 0.7000000029802322
+          },
+          "effects": {
+            "n": 2641,
+            "mean": 0.002877697850754206,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000149011612,
+            "max": 0.10000000149011612
+          },
+          "combatVisualInclusive": {
+            "n": 2641,
+            "mean": 0.017417644859714428,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 0.7000000029802322
+          },
+          "remoteInclusive": {
+            "n": 2641,
+            "mean": 0.006058311225992403,
+            "p50": 0,
+            "p95": 0.09999999403953552,
+            "p99": 0.10000000149011612,
+            "max": 0.6999999955296516
+          },
+          "renderSubmit": {
+            "n": 2641,
+            "mean": 8.390079515361618,
+            "p50": 8.300000004470348,
+            "p95": 11.100000001490116,
+            "p99": 13.299999997019768,
+            "max": 21.200000002980232
+          },
+          "sceneInclusive": {
+            "n": 2641,
+            "mean": 8.823816736037985,
+            "p50": 8.799999997019768,
+            "p95": 11.899999998509884,
+            "p99": 14.199999995529652,
+            "max": 22.100000001490116
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.9993333335965872,
+            "p50": 0.8999999985098839,
+            "p95": 1.8999999985098839,
+            "p99": 2.5,
+            "max": 2.899999998509884
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 1.1296666670093933,
+            "p50": 1,
+            "p95": 2.100000001490116,
+            "p99": 2.600000001490116,
+            "max": 3.100000001490116
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 0,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 707,
+          "visible": 697,
+          "materials": 164,
+          "textures": 17,
+          "textureSources": 12,
+          "geometries": 353,
+          "transparentObjects": 157,
+          "drawCalls": 397,
+          "triangles": 40584,
+          "gpuTextures": 12,
+          "gpuGeometries": 237,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 19780176,
+        "cdpDelta": {
+          "Timestamp": 30.06770400000096,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": -1626,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -3111,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -2,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 2944,
+          "RecalcStyleCount": 21145,
+          "LayoutDuration": 1.1420789999999998,
+          "RecalcStyleDuration": 0.8740939999999999,
+          "DevToolsCommandDuration": 0.019556999999999998,
+          "ScriptDuration": 24.768656,
+          "V8CompileDuration": 0,
+          "TaskDuration": 29.682736000000006,
+          "TaskOtherDuration": 2.87835,
+          "ThreadTime": 28.264611000000002,
+          "ProcessTime": 34.654581,
+          "JSHeapUsedSize": -1515028,
+          "JSHeapTotalSize": -1310720,
+          "FirstMeaningfulPaint": 37547.228578,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30085.680499999995,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.976280742594476,
+          "ticks": {
+            "total": {
+              "n": 601,
+              "mean": 1.1239608985024505,
+              "p50": 0.8715999999985797,
+              "p95": 2.565600000001723,
+              "p99": 3.4218000000037136,
+              "max": 14.810599999997066
+            },
+            "simulation": {
+              "n": 601,
+              "mean": 0.6400608985024576,
+              "p50": 0.5236000000004424,
+              "p95": 1.0883000000030734,
+              "p99": 2.099900000001071,
+              "max": 13.868000000002212
+            },
+            "snapshots": {
+              "n": 601,
+              "mean": 0.48275806988359105,
+              "p50": 0.2885999999998603,
+              "p95": 1.6728000000002794,
+              "p99": 2.3319999999948777,
+              "max": 3.458099999996193
+            },
+            "interval": {
+              "n": 600,
+              "mean": 49.98654799999999,
+              "p50": 47.07179999999789,
+              "p95": 62.634600000004866,
+              "p99": 63.87639999999374,
+              "max": 67.2838000000047
+            }
+          },
+          "latenessMs": {
+            "n": 600,
+            "mean": 2.558339166666701,
+            "p50": 0,
+            "p95": 12.634600000004866,
+            "p99": 13.876399999993737,
+            "max": 17.283800000004703
+          },
+          "noopTimerMs": {
+            "n": 485,
+            "mean": 62.01873608247423,
+            "p50": 62.26800000000367,
+            "p95": 63.95380000000296,
+            "p99": 65.19409999999334,
+            "max": 76.41189999999915
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 601,
+              "mean": 0.40142479201332476,
+              "p50": 0.32679999999527354,
+              "p95": 0.7249999999985448,
+              "p99": 1.4410999999963678,
+              "max": 8.805299999999988
+            },
+            "sqliteRead": {
+              "n": 300,
+              "mean": 0.3259146666669403,
+              "p50": 0.23160000000643777,
+              "p95": 0.7199999999938882,
+              "p99": 0.9588999999978114,
+              "max": 1.2364999999990687
+            },
+            "serialization": {
+              "n": 300,
+              "mean": 0.042365333333679395,
+              "p50": 0.028299999998125713,
+              "p95": 0.09680000000662403,
+              "p99": 0.16780000000289874,
+              "max": 0.3687999999965541
+            },
+            "send": {
+              "n": 300,
+              "mean": 0.4368963333330612,
+              "p50": 0.33140000000275904,
+              "p95": 1.0023999999975786,
+              "p99": 1.4665999999997439,
+              "max": 1.661999999996624
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.581183,
+            "p95": 17.629183,
+            "p99": 19.693567,
+            "max": 45.711359
+          },
+          "eventLoopUtilization": 0.03765070927094445,
+          "cpuPercentOneCore": 3.8955409368254115,
+          "memory": {
+            "rss": 47734784,
+            "heapTotal": 13885440,
+            "heapUsed": 10554616,
+            "external": 4220840,
+            "arrayBuffers": 212329
+          },
+          "connections": 1
+        }
+      },
+      {
+        "name": "city-twelve",
+        "frames": {
+          "n": 2317,
+          "mean": 12.951532153645028,
+          "p50": 12.899999998509884,
+          "p95": 16.80000000447035,
+          "p99": 18.600000001490116,
+          "max": 26.5
+        },
+        "fps": 77.17442352338098,
+        "activeFps": 77.2109421601184,
+        "durationMs": 30022.89999999851,
+        "visibility": [
+          {
+            "at": 70052,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 49.78220286309215,
+        "methods": {
+          "interpolation": {
+            "n": 27816,
+            "mean": 0.0056693989082823755,
+            "p50": 0,
+            "p95": 0.09999999403953552,
+            "p99": 0.10000000149011612,
+            "max": 1.2000000029802322
+          },
+          "sprites": {
+            "n": 27816,
+            "mean": 0.012277106704393406,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 2.399999998509884
+          },
+          "effects": {
+            "n": 2318,
+            "mean": 0.0026315789480112666,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000149011612,
+            "max": 0.10000000149011612
+          },
+          "combatVisualInclusive": {
+            "n": 2318,
+            "mean": 0.016177739430543573,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 0.3999999985098839
+          },
+          "remoteInclusive": {
+            "n": 2318,
+            "mean": 0.26626402078271943,
+            "p50": 0.20000000298023224,
+            "p95": 0.5,
+            "p99": 0.8000000044703484,
+            "max": 6.600000001490116
+          },
+          "renderSubmit": {
+            "n": 2318,
+            "mean": 9.652027610062627,
+            "p50": 9.5,
+            "p95": 13.100000001490116,
+            "p99": 14.700000002980232,
+            "max": 17.299999997019768
+          },
+          "sceneInclusive": {
+            "n": 2318,
+            "mean": 10.309577221798166,
+            "p50": 10.199999995529652,
+            "p95": 14,
+            "p99": 15.800000004470348,
+            "max": 24.600000001490116
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.738666666696469,
+            "p50": 0.6000000014901161,
+            "p95": 1.5999999940395355,
+            "p99": 2,
+            "max": 2.7999999970197678
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.9416666665424903,
+            "p50": 0.7999999970197678,
+            "p95": 1.8999999985098839,
+            "p99": 2.7000000029802322,
+            "max": 3.399999998509884
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 982,
+          "visible": 942,
+          "materials": 230,
+          "textures": 28,
+          "textureSources": 12,
+          "geometries": 562,
+          "transparentObjects": 179,
+          "drawCalls": 457,
+          "triangles": 40296,
+          "gpuTextures": 14,
+          "gpuGeometries": 283,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 21404017,
+        "cdpDelta": {
+          "Timestamp": 30.083803000001353,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 934,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 1782,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 2621,
+          "RecalcStyleCount": 18567,
+          "LayoutDuration": 1.0389020000000002,
+          "RecalcStyleDuration": 1.2484920000000002,
+          "DevToolsCommandDuration": 0.034924,
+          "ScriptDuration": 25.194143999999994,
+          "V8CompileDuration": 0,
+          "TaskDuration": 29.900098,
+          "TaskOtherDuration": 2.383636,
+          "ThreadTime": 28.419876000000002,
+          "ProcessTime": 34.17412800000001,
+          "JSHeapUsedSize": -1179780,
+          "JSHeapTotalSize": 811008,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30105.774099999995,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.996164124542478,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 4.658945847175818,
+              "p50": 3.8311000000103377,
+              "p95": 10.173699999999371,
+              "p99": 12.833700000002864,
+              "max": 18.52379999999539
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.7802368770763222,
+              "p50": 1.6597000000037951,
+              "p95": 3.0089000000007218,
+              "p99": 3.8695999999908963,
+              "max": 4.615600000004633
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.878096843853992,
+              "p50": 2.3907000000035623,
+              "p95": 7.946599999995669,
+              "p99": 10.664999999993597,
+              "max": 15.832699999999022
+            },
+            "interval": {
+              "n": 601,
+              "mean": 50.00062995008319,
+              "p50": 46.97149999999965,
+              "p95": 62.74199999999837,
+              "p99": 63.83830000000307,
+              "max": 66.25110000000859
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.5694389351082707,
+            "p50": 0,
+            "p95": 12.74199999999837,
+            "p99": 13.838300000003073,
+            "max": 16.25110000000859
+          },
+          "noopTimerMs": {
+            "n": 485,
+            "mean": 61.927107010309264,
+            "p50": 62.179999999993015,
+            "p95": 64.45810000000347,
+            "p99": 73.01249999999709,
+            "max": 79.81530000000203
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7224,
+              "mean": 0.08429102990034362,
+              "p50": 0.05220000000554137,
+              "p95": 0.25559999998949934,
+              "p99": 0.5602000000071712,
+              "max": 1.8888999999908265
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.1258641749722591,
+              "p50": 0.09049999999115244,
+              "p95": 0.32980000000679865,
+              "p99": 0.6233000000065658,
+              "max": 2.033400000000256
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.06267444629013448,
+              "p50": 0.04499999999825377,
+              "p95": 0.12569999998959247,
+              "p99": 0.43889999999373686,
+              "max": 1.8892999999952735
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.19312976190473152,
+              "p50": 0.1441999999951804,
+              "p95": 0.46670000000449363,
+              "p99": 0.9421000000002095,
+              "max": 5.165800000002491
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.851519,
+            "p95": 24.461311,
+            "p99": 26.673151,
+            "max": 38.928383
+          },
+          "eventLoopUtilization": 0.10788636155212593,
+          "cpuPercentOneCore": 9.084636026681673,
+          "memory": {
+            "rss": 56164352,
+            "heapTotal": 20963328,
+            "heapUsed": 12061112,
+            "external": 4288194,
+            "arrayBuffers": 279683
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "city-twelve-moving-15Hz",
+        "frames": {
+          "n": 1970,
+          "mean": 15.232639593910898,
+          "p50": 14.799999997019768,
+          "p95": 20.400000005960464,
+          "p99": 24.299999997019768,
+          "max": 64.89999999850988
+        },
+        "fps": 65.60740131415925,
+        "activeFps": 65.64850391390738,
+        "durationMs": 30027.09999999404,
+        "visibility": [
+          {
+            "at": 103214.5,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 33.22811098197294,
+        "methods": {
+          "interpolation": {
+            "n": 23652,
+            "mean": 0.006291222723782738,
+            "p50": 0,
+            "p95": 0.09999999403953552,
+            "p99": 0.10000000149011612,
+            "max": 1.2999999970197678
+          },
+          "sprites": {
+            "n": 23652,
+            "mean": 0.01621850161330764,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 1.1000000014901161
+          },
+          "effects": {
+            "n": 1971,
+            "mean": 0.002688990358711196,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000149011612,
+            "max": 0.10000000149011612
+          },
+          "combatVisualInclusive": {
+            "n": 1971,
+            "mean": 0.01659056314095696,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 0.29999999701976776
+          },
+          "remoteInclusive": {
+            "n": 1971,
+            "mean": 1.4474885845051266,
+            "p50": 1.2999999970197678,
+            "p95": 2.7000000029802322,
+            "p99": 3.7999999970197678,
+            "max": 10.700000002980232
+          },
+          "renderSubmit": {
+            "n": 1971,
+            "mean": 9.691222729540337,
+            "p50": 9.5,
+            "p95": 13.399999998509884,
+            "p99": 15.700000002980232,
+            "max": 19.700000002980232
+          },
+          "sceneInclusive": {
+            "n": 1971,
+            "mean": 11.585591070629933,
+            "p50": 11.300000004470348,
+            "p95": 15.799999997019768,
+            "p99": 18.5,
+            "max": 26.5
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.782333333392938,
+            "p50": 0.6000000014901161,
+            "p95": 1.7999999970197678,
+            "p99": 2.2000000029802322,
+            "max": 3.5
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.9669999999552965,
+            "p50": 0.8000000044703484,
+            "p95": 2.1999999955296516,
+            "p99": 2.600000001490116,
+            "max": 3.8000000044703484
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 982,
+          "visible": 942,
+          "materials": 230,
+          "textures": 28,
+          "textureSources": 12,
+          "geometries": 562,
+          "transparentObjects": 179,
+          "drawCalls": 433,
+          "triangles": 39394,
+          "gpuTextures": 14,
+          "gpuGeometries": 283,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 20360984,
+        "cdpDelta": {
+          "Timestamp": 30.112858000000415,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": -388,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -754,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 23891,
+          "RecalcStyleCount": 37487,
+          "LayoutDuration": 2.709718,
+          "RecalcStyleDuration": 1.847623,
+          "DevToolsCommandDuration": 0.046486,
+          "ScriptDuration": 22.143,
+          "V8CompileDuration": 0,
+          "TaskDuration": 29.592602,
+          "TaskOtherDuration": 2.8457749999999997,
+          "ThreadTime": 27.506175999999996,
+          "ProcessTime": 32.96164,
+          "JSHeapUsedSize": 2565908,
+          "JSHeapTotalSize": 630784,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30135.497799999997,
+          "commands": {
+            "move": 4856
+          },
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.976441205494208,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 4.227291362126177,
+              "p50": 3.667600000015227,
+              "p95": 9.094700000001467,
+              "p99": 13.410300000017742,
+              "max": 28.962899999998626
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.58235000000002,
+              "p50": 1.3438000000023749,
+              "p95": 2.755699999994249,
+              "p99": 4.626699999993434,
+              "max": 28.79899999999907
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.6439883720932116,
+              "p50": 1.9933000000019092,
+              "p95": 7.1806999999971595,
+              "p99": 9.935400000002119,
+              "max": 26.044999999998254
+            },
+            "interval": {
+              "n": 601,
+              "mean": 50.0143319467554,
+              "p50": 47.40820000000531,
+              "p95": 62.32699999999022,
+              "p99": 63.301800000015646,
+              "max": 63.61919999998645
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.478358069883474,
+            "p50": 0,
+            "p95": 12.326999999990221,
+            "p99": 13.301800000015646,
+            "max": 13.61919999998645
+          },
+          "noopTimerMs": {
+            "n": 512,
+            "mean": 58.770805078124994,
+            "p50": 60.81889999999839,
+            "p95": 64.2329000000027,
+            "p99": 69.44310000000405,
+            "max": 72.8917999999976
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 12080,
+              "mean": 0.09475759105955016,
+              "p50": 0.06190000000060536,
+              "p95": 0.24199999999837019,
+              "p99": 0.5397999999986496,
+              "max": 16.88060000000405
+            },
+            "command": {
+              "n": 4856,
+              "mean": 0.12025685749572036,
+              "p50": 0.08509999999660067,
+              "p95": 0.3018000000010943,
+              "p99": 0.5761000000056811,
+              "max": 1.9380999999993946
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.122558250276963,
+              "p50": 0.08580000000074506,
+              "p95": 0.2905999999929918,
+              "p99": 0.6532000000006519,
+              "max": 7.395400000008522
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.05537358804001892,
+              "p50": 0.044200000003911555,
+              "p95": 0.11000000000058208,
+              "p99": 0.2143999999971129,
+              "max": 3.044399999998859
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.17647918050937803,
+              "p50": 0.13029999998980202,
+              "p95": 0.39310000000114087,
+              "p99": 0.8108999999967637,
+              "max": 5.048899999994319
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.704063,
+            "p95": 23.904255,
+            "p99": 26.247167,
+            "max": 44.826623
+          },
+          "eventLoopUtilization": 0.1488387577676851,
+          "cpuPercentOneCore": 13.947007040978763,
+          "memory": {
+            "rss": 54116352,
+            "heapTotal": 22536192,
+            "heapUsed": 15809904,
+            "external": 4291911,
+            "arrayBuffers": 283400
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-monsters",
+        "frames": {
+          "n": 3116,
+          "mean": 9.631739409499358,
+          "p50": 9.200000002980232,
+          "p95": 13.200000002980232,
+          "p99": 15.700000002980232,
+          "max": 53.5
+        },
+        "fps": 103.7749987511032,
+        "activeFps": 103.82340691378592,
+        "durationMs": 30026.5,
+        "visibility": [
+          {
+            "at": 137346.3999999985,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 49.704877290739056,
+        "methods": {
+          "interpolation": {
+            "n": 37404,
+            "mean": 0.007440380700894275,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 1.5
+          },
+          "sprites": {
+            "n": 37404,
+            "mean": 0.015733611379458157,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 2.600000001490116
+          },
+          "effects": {
+            "n": 3117,
+            "mean": 0.004908565927821549,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000149011612,
+            "max": 0.3999999985098839
+          },
+          "combatVisualInclusive": {
+            "n": 3117,
+            "mean": 0.11177414193878504,
+            "p50": 0.10000000149011612,
+            "p95": 0.29999999701976776,
+            "p99": 0.3999999985098839,
+            "max": 1
+          },
+          "remoteInclusive": {
+            "n": 3117,
+            "mean": 0.33445620788981373,
+            "p50": 0.29999999701976776,
+            "p95": 0.6000000014901161,
+            "p99": 1,
+            "max": 3.899999998509884
+          },
+          "renderSubmit": {
+            "n": 3117,
+            "mean": 5.028873917194639,
+            "p50": 4.899999998509884,
+            "p95": 7.200000002980232,
+            "p99": 8.199999995529652,
+            "max": 16.600000001490116
+          },
+          "sceneInclusive": {
+            "n": 3117,
+            "mean": 6.369136990722954,
+            "p50": 6.200000002980232,
+            "p95": 8.800000004470348,
+            "p99": 10.300000004470348,
+            "max": 18.200000002980232
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.9206666667511065,
+            "p50": 0.8999999985098839,
+            "p95": 1.6000000014901161,
+            "p99": 2.3000000044703484,
+            "max": 3.2999999970197678
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 1.2149999999503294,
+            "p50": 1.1000000014901161,
+            "p95": 2,
+            "p99": 2.7999999970197678,
+            "max": 3.7999999970197678
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 633,
+          "visible": 586,
+          "materials": 156,
+          "textures": 17,
+          "textureSources": 2,
+          "geometries": 485,
+          "transparentObjects": 111,
+          "drawCalls": 140,
+          "triangles": 30958,
+          "gpuTextures": 4,
+          "gpuGeometries": 97,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 21007782,
+        "cdpDelta": {
+          "Timestamp": 30.121463000003132,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 908,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 2972,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 6244,
+          "RecalcStyleCount": 21854,
+          "LayoutDuration": 2.81175,
+          "RecalcStyleDuration": 1.3469379999999997,
+          "DevToolsCommandDuration": 0.04299800000000001,
+          "ScriptDuration": 21.10202600000001,
+          "V8CompileDuration": 0,
+          "TaskDuration": 29.278444999999977,
+          "TaskOtherDuration": 3.9747329999999987,
+          "ThreadTime": 27.446566999999988,
+          "ProcessTime": 35.34606600000001,
+          "JSHeapUsedSize": 1978008,
+          "JSHeapTotalSize": 30728192,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30171.523400000005,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.018876474762287,
+          "ticks": {
+            "total": {
+              "n": 604,
+              "mean": 5.326071523179233,
+              "p50": 4.415800000017043,
+              "p95": 13.182600000000093,
+              "p99": 19.717499999998836,
+              "max": 39.507500000006985
+            },
+            "simulation": {
+              "n": 604,
+              "mean": 1.8470807947017582,
+              "p50": 1.5622999999905005,
+              "p95": 3.6538000000000466,
+              "p99": 6.101699999999255,
+              "max": 29.319900000002235
+            },
+            "snapshots": {
+              "n": 604,
+              "mean": 3.47801258278162,
+              "p50": 2.486399999994319,
+              "p95": 10.696100000001024,
+              "p99": 15.947799999994459,
+              "max": 30.25010000000475
+            },
+            "interval": {
+              "n": 603,
+              "mean": 49.99075091210614,
+              "p50": 46.9769999999844,
+              "p95": 62.75559999997495,
+              "p99": 63.829100000002654,
+              "max": 65.38310000000638
+            }
+          },
+          "latenessMs": {
+            "n": 603,
+            "mean": 2.614573963515551,
+            "p50": 0,
+            "p95": 12.755599999974947,
+            "p99": 13.829100000002654,
+            "max": 15.38310000000638
+          },
+          "noopTimerMs": {
+            "n": 487,
+            "mean": 61.800328336755655,
+            "p50": 62.16259999998147,
+            "p95": 65.24709999997867,
+            "p99": 74.30480000001262,
+            "max": 81.26230000000214
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7248,
+              "mean": 0.1049151214127444,
+              "p50": 0.05849999998463318,
+              "p95": 0.33409999997820705,
+              "p99": 0.7240999999921769,
+              "max": 13.735200000024633
+            },
+            "sqliteRead": {
+              "n": 3624,
+              "mean": 0.1591327262692073,
+              "p50": 0.10740000000805594,
+              "p95": 0.45130000001518056,
+              "p99": 0.8096999999834225,
+              "max": 3.184800000017276
+            },
+            "serialization": {
+              "n": 3624,
+              "mean": 0.08232676600462213,
+              "p50": 0.06050000002142042,
+              "p95": 0.1698000000033062,
+              "p99": 0.42939999999362044,
+              "max": 3.3370999999751803
+            },
+            "send": {
+              "n": 3624,
+              "mean": 0.2237499999993964,
+              "p50": 0.1598000000230968,
+              "p95": 0.5624000000243541,
+              "p99": 1.050599999987753,
+              "max": 5.515300000028219
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.892479,
+            "p95": 24.952831,
+            "p99": 30.294015,
+            "max": 55.181311
+          },
+          "eventLoopUtilization": 0.1242533248315413,
+          "cpuPercentOneCore": 11.70308821728239,
+          "memory": {
+            "rss": 39043072,
+            "heapTotal": 31449088,
+            "heapUsed": 18455080,
+            "external": 4354160,
+            "arrayBuffers": 345649
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-combat",
+        "frames": {
+          "n": 3051,
+          "mean": 9.832972795804166,
+          "p50": 9.299999997019768,
+          "p95": 14.199999995529652,
+          "p99": 17.5,
+          "max": 63.29999999701977
+        },
+        "fps": 101.6549329796972,
+        "activeFps": 101.69864401808482,
+        "durationMs": 30013.30000000447,
+        "visibility": [
+          {
+            "at": 170596.09999999404,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 47.72167487564313,
+        "methods": {
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.8646666663885116,
+            "p50": 0.7000000029802322,
+            "p95": 1.7999999970197678,
+            "p99": 3.6999999955296516,
+            "max": 5.100000001490116
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 1.1686666665474574,
+            "p50": 1,
+            "p95": 2.2999999970197678,
+            "p99": 4.299999997019768,
+            "max": 5.899999998509884
+          },
+          "interpolation": {
+            "n": 36624,
+            "mean": 0.008770205330123166,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 2.600000001490116
+          },
+          "sprites": {
+            "n": 36624,
+            "mean": 0.01634447356013035,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 4.5
+          },
+          "effects": {
+            "n": 3052,
+            "mean": 0.007667103535733717,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 0.8999999985098839
+          },
+          "combatVisualInclusive": {
+            "n": 3052,
+            "mean": 0.10353866304718885,
+            "p50": 0.10000000149011612,
+            "p95": 0.29999999701976776,
+            "p99": 0.5,
+            "max": 5
+          },
+          "remoteInclusive": {
+            "n": 3052,
+            "mean": 0.5356815203165008,
+            "p50": 0.30000000447034836,
+            "p95": 1.7999999970197678,
+            "p99": 3,
+            "max": 9
+          },
+          "renderSubmit": {
+            "n": 3052,
+            "mean": 5.0128112713468225,
+            "p50": 5,
+            "p95": 7.5999999940395355,
+            "p99": 9.099999994039536,
+            "max": 14.100000001490116
+          },
+          "sceneInclusive": {
+            "n": 3052,
+            "mean": 6.115825688166161,
+            "p50": 6,
+            "p95": 9.200000002980232,
+            "p99": 10.700000002980232,
+            "max": 15.400000005960464
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 633,
+          "visible": 573,
+          "materials": 156,
+          "textures": 17,
+          "textureSources": 2,
+          "geometries": 485,
+          "transparentObjects": 111,
+          "drawCalls": 110,
+          "triangles": 30378,
+          "gpuTextures": 6,
+          "gpuGeometries": 204,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 690,
+          "effectFrames": 227
+        },
+        "heap": 37325830,
+        "cdpDelta": {
+          "Timestamp": 30.088449000002583,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -1,
+          "Frames": 0,
+          "JSEventListeners": -4,
+          "LayoutObjects": -1182,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -4109,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": -1,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -1,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 15974,
+          "RecalcStyleCount": 30629,
+          "LayoutDuration": 3.2396329999999995,
+          "RecalcStyleDuration": 1.7324929999999998,
+          "DevToolsCommandDuration": 0.04392299999999999,
+          "ScriptDuration": 20.423823,
+          "V8CompileDuration": 0,
+          "TaskDuration": 29.139629000000014,
+          "TaskOtherDuration": 3.6997570000000017,
+          "ThreadTime": 26.57399700000002,
+          "ProcessTime": 33.523908000000006,
+          "JSHeapUsedSize": 20376160,
+          "JSHeapTotalSize": 524288,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30115.623900000006,
+          "commands": {
+            "attack": 96
+          },
+          "transitions": 0,
+          "impacts": 40,
+          "tickHz": 19.98962405690024,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 8.223118438538489,
+              "p50": 6.542799999995623,
+              "p95": 23.38169999999809,
+              "p99": 45.16929999997956,
+              "max": 70.88979999997537
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 2.8369795681068584,
+              "p50": 1.9910999999847263,
+              "p95": 7.20339999999851,
+              "p99": 19.114499999996042,
+              "max": 28.962900000013178
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 5.385461129567946,
+              "p50": 2.6886000000231434,
+              "p95": 18.073100000008708,
+              "p99": 36.91670000000158,
+              "max": 55.59389999997802
+            },
+            "interval": {
+              "n": 601,
+              "mean": 49.97885407653912,
+              "p50": 47.131200000003446,
+              "p95": 63.25999999998021,
+              "p99": 67.08629999999539,
+              "max": 117.4321999999811
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 3.0391574043261635,
+            "p50": 0,
+            "p95": 13.25999999998021,
+            "p99": 17.08629999999539,
+            "max": 67.4321999999811
+          },
+          "noopTimerMs": {
+            "n": 472,
+            "mean": 63.67351800847455,
+            "p50": 62.133700000005774,
+            "p95": 77.97969999999623,
+            "p99": 108.77859999999055,
+            "max": 204.43299999999
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7320,
+              "mean": 0.13307650273236704,
+              "p50": 0.062000000005355105,
+              "p95": 0.39320000002044253,
+              "p99": 1.0568000000203028,
+              "max": 15.78760000001057
+            },
+            "sqliteRead": {
+              "n": 3652,
+              "mean": 0.28847949069017015,
+              "p50": 0.17079999999259599,
+              "p95": 0.7263000000093598,
+              "p99": 2.306400000001304,
+              "max": 26.229400000011083
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.14939925249191452,
+              "p50": 0.09359999999287538,
+              "p95": 0.3102000000071712,
+              "p99": 1.2227999999886379,
+              "max": 13.30429999998887
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.3011127076410217,
+              "p50": 0.18800000002374873,
+              "p95": 0.7551999999850523,
+              "p99": 2.343399999983376,
+              "max": 15.975800000014715
+            },
+            "command": {
+              "n": 96,
+              "mean": 0.17594270833281675,
+              "p50": 0.10899999999674037,
+              "p95": 0.6649000000033993,
+              "p99": 0.9345000000030268,
+              "max": 0.9345000000030268
+            },
+            "sqliteSave": {
+              "n": 40,
+              "mean": 0.17031499999720837,
+              "p50": 0.12429999999585561,
+              "p95": 0.5425999999861233,
+              "p99": 0.7183999999833759,
+              "max": 0.7183999999833759
+            },
+            "sqliteTransaction": {
+              "n": 8,
+              "mean": 7.649874999999156,
+              "p50": 7.7541999999957625,
+              "p95": 10.248499999986961,
+              "p99": 10.248499999986961,
+              "max": 10.248499999986961
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 16.187391,
+            "p95": 29.999103,
+            "p99": 49.053695,
+            "max": 168.165375
+          },
+          "eventLoopUtilization": 0.18461189018339066,
+          "cpuPercentOneCore": 12.760818147951433,
+          "memory": {
+            "rss": 38060032,
+            "heapTotal": 31711232,
+            "heapUsed": 20449840,
+            "external": 4375833,
+            "arrayBuffers": 367322
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-24-effects-synthetic",
+        "frames": {
+          "n": 3426,
+          "mean": 8.760011675422364,
+          "p50": 8.5,
+          "p95": 11.399999998509884,
+          "p99": 13,
+          "max": 22.899999998509884
+        },
+        "fps": 114.11023328314492,
+        "activeFps": 114.15509899440688,
+        "durationMs": 30023.60000000149,
+        "visibility": [
+          {
+            "at": 203764.3999999985,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 67.8820791309132,
+        "methods": {
+          "interpolation": {
+            "n": 41124,
+            "mean": 0.006845151252777193,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 1
+          },
+          "sprites": {
+            "n": 41124,
+            "mean": 0.013330415327690035,
+            "p50": 0,
+            "p95": 0.10000000149011612,
+            "p99": 0.10000000149011612,
+            "max": 1
+          },
+          "effects": {
+            "n": 3427,
+            "mean": 0.05118179164972533,
+            "p50": 0,
+            "p95": 0.20000000298023224,
+            "p99": 0.6999999955296516,
+            "max": 8
+          },
+          "combatVisualInclusive": {
+            "n": 3427,
+            "mean": 0.1416399183171916,
+            "p50": 0.10000000149011612,
+            "p95": 0.3999999985098839,
+            "p99": 0.8000000044703484,
+            "max": 8.199999995529652
+          },
+          "remoteInclusive": {
+            "n": 3427,
+            "mean": 0.27341698274899057,
+            "p50": 0.20000000298023224,
+            "p95": 0.5,
+            "p99": 0.7999999970197678,
+            "max": 2.5
+          },
+          "renderSubmit": {
+            "n": 3427,
+            "mean": 4.4040560256793055,
+            "p50": 4.200000002980232,
+            "p95": 6.5,
+            "p99": 7.9000000059604645,
+            "max": 11.600000001490116
+          },
+          "sceneInclusive": {
+            "n": 3427,
+            "mean": 5.160169244243029,
+            "p50": 5,
+            "p95": 7.5,
+            "p99": 9.100000001490116,
+            "max": 20.5
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.6266666666418313,
+            "p50": 0.5,
+            "p95": 1.2999999970197678,
+            "p99": 1.7000000029802322,
+            "max": 1.8999999985098839
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.8769999999304613,
+            "p50": 0.7999999970197678,
+            "p95": 1.6999999955296516,
+            "p99": 2.2999999970197678,
+            "max": 2.600000001490116
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 657,
+          "visible": 609,
+          "materials": 180,
+          "textures": 41,
+          "textureSources": 3,
+          "geometries": 485,
+          "transparentObjects": 135,
+          "drawCalls": 170,
+          "triangles": 30858,
+          "gpuTextures": 7,
+          "gpuGeometries": 204,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 2971
+        },
+        "heap": 21983033,
+        "cdpDelta": {
+          "Timestamp": 30.103460000005725,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 1774,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 5564,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 7165,
+          "RecalcStyleCount": 24024,
+          "LayoutDuration": 2.722588,
+          "RecalcStyleDuration": 1.5491539999999997,
+          "DevToolsCommandDuration": 0.04064699999999999,
+          "ScriptDuration": 19.993524000000008,
+          "V8CompileDuration": 0,
+          "TaskDuration": 28.510588000000013,
+          "TaskOtherDuration": 4.204675000000002,
+          "ThreadTime": 27.427582,
+          "ProcessTime": 34.71429599999999,
+          "JSHeapUsedSize": -16988540,
+          "JSHeapTotalSize": 1310720,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30133.81390000001,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.977557503930818,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 5.260423920265497,
+              "p50": 4.751300000003539,
+              "p95": 11.84320000000298,
+              "p99": 14.778699999995297,
+              "max": 19.532299999991665
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.6057139534887663,
+              "p50": 1.4841000000014901,
+              "p95": 2.7652999999991152,
+              "p99": 3.984599999996135,
+              "max": 7.266399999993155
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 3.653855481726776,
+              "p50": 3.5161999999836553,
+              "p95": 10.13259999998263,
+              "p99": 13.352899999998044,
+              "max": 17.416599999996834
+            },
+            "interval": {
+              "n": 601,
+              "mean": 50.014326622296174,
+              "p50": 47.03750000000582,
+              "p95": 62.8350999999966,
+              "p99": 63.55249999999069,
+              "max": 63.95470000000205
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.556963227953525,
+            "p50": 0,
+            "p95": 12.8350999999966,
+            "p99": 13.552499999990687,
+            "max": 13.954700000002049
+          },
+          "noopTimerMs": {
+            "n": 485,
+            "mean": 61.880111546391745,
+            "p50": 62.14890000000014,
+            "p95": 64.36009999999078,
+            "p99": 73.45579999999609,
+            "max": 78.18350000001374
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7224,
+              "mean": 0.08454101605720332,
+              "p50": 0.05400000000372529,
+              "p95": 0.2614999999932479,
+              "p99": 0.5510000000067521,
+              "max": 1.6094999999913853
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.1941436877075695,
+              "p50": 0.15309999999590218,
+              "p95": 0.4768000000040047,
+              "p99": 0.7496000000101048,
+              "max": 2.228499999997439
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.11203200443010966,
+              "p50": 0.09410000001662411,
+              "p95": 0.21820000000298023,
+              "p99": 0.3471999999892432,
+              "max": 1.4703999999910593
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.20246522702080555,
+              "p50": 0.15349999998579733,
+              "p95": 0.48840000000200234,
+              "p99": 0.8140999999886844,
+              "max": 2.6669999999867287
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.884287,
+            "p95": 25.247743,
+            "p99": 28.622847,
+            "max": 34.013183
+          },
+          "eventLoopUtilization": 0.12012391367284939,
+          "cpuPercentOneCore": 11.561762515563949,
+          "memory": {
+            "rss": 48828416,
+            "heapTotal": 32759808,
+            "heapUsed": 15186024,
+            "external": 4351943,
+            "arrayBuffers": 343432
+          },
+          "connections": 12
+        }
+      }
+    ],
+    "errors": [],
+    "raycastMs": {
+      "n": 1200,
+      "mean": 0.01525000000372529,
+      "p50": 0,
+      "p95": 0.10000000149011612,
+      "p99": 0.19999999552965164,
+      "max": 2.2999999970197678
+    },
+    "ok": true
+  },
+  "after": {
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "cores": 12,
+      "platform": "win32"
+    },
+    "seconds": 30,
+    "server": [],
+    "client": [
+      {
+        "name": "city-one",
+        "frames": {
+          "n": 2112,
+          "mean": 14.219981060606104,
+          "p50": 13.599999999627471,
+          "p95": 19.699999999720603,
+          "p99": 25.699999999720603,
+          "max": 83.39999999990687
+        },
+        "fps": 70.27514449328295,
+        "activeFps": 70.32358170787722,
+        "durationMs": 30053.30000000028,
+        "visibility": [
+          {
+            "at": 3564.399999999907,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 29.360736687618864,
+        "methods": {
+          "interpolation": {
+            "n": 2113,
+            "mean": 0.038996687174589144,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.20000000018626451,
+            "max": 4.600000000093132
+          },
+          "sprites": {
+            "n": 2113,
+            "mean": 0.06649313771932386,
+            "p50": 0,
+            "p95": 0.20000000018626451,
+            "p99": 0.3000000002793968,
+            "max": 6.300000000279397
+          },
+          "effects": {
+            "n": 2113,
+            "mean": 0.003454803595591779,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 1.1000000000931323
+          },
+          "combatVisualInclusive": {
+            "n": 2113,
+            "mean": 0.029673450068653094,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.20000000018626451,
+            "max": 3.3999999999068677
+          },
+          "remoteInclusive": {
+            "n": 2113,
+            "mean": 0.005679129201070821,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 1.8999999999068677
+          },
+          "renderSubmit": {
+            "n": 2113,
+            "mean": 8.664221486039247,
+            "p50": 8.300000000279397,
+            "p95": 13.799999999813735,
+            "p99": 18,
+            "max": 75.89999999990687
+          },
+          "sceneInclusive": {
+            "n": 2113,
+            "mean": 9.227827733081545,
+            "p50": 8.899999999906868,
+            "p95": 15,
+            "p99": 19.100000000093132,
+            "max": 76.29999999981374
+          },
+          "snapshotCallback": {
+            "n": 301,
+            "mean": 0.965448504980604,
+            "p50": 0.8000000002793968,
+            "p95": 1.7999999998137355,
+            "p99": 2.7000000001862645,
+            "max": 2.900000000372529
+          },
+          "snapshotProcessing": {
+            "n": 301,
+            "mean": 1.1119601328894373,
+            "p50": 1,
+            "p95": 2,
+            "p99": 3,
+            "max": 3
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 684,
+          "visible": 680,
+          "materials": 160,
+          "textures": 17,
+          "textureSources": 12,
+          "geometries": 335,
+          "transparentObjects": 157,
+          "drawCalls": 399,
+          "triangles": 40610,
+          "gpuTextures": 13,
+          "gpuGeometries": 234,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 16003047,
+        "cdpDelta": {
+          "Timestamp": 30.167899000000034,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -2,
+          "Frames": -3,
+          "JSEventListeners": -163,
+          "LayoutObjects": 554,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 539,
+          "Resources": -1,
+          "ContextLifecycleStateObservers": -21,
+          "V8PerContextDatas": -2,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -2,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -4,
+          "ArrayBufferContents": -1576,
+          "LayoutCount": 2419,
+          "RecalcStyleCount": 16936,
+          "LayoutDuration": 1.003387,
+          "RecalcStyleDuration": 0.771778,
+          "DevToolsCommandDuration": 0.076639,
+          "ScriptDuration": 20.691845999999998,
+          "V8CompileDuration": 0,
+          "TaskDuration": 24.960783,
+          "TaskOtherDuration": 2.417133,
+          "ThreadTime": 22.589814,
+          "ProcessTime": 27.458344000000004,
+          "JSHeapUsedSize": -722072,
+          "JSHeapTotalSize": -1572864,
+          "FirstMeaningfulPaint": 3941.29977,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30212.967099999998,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.024514573413082,
+          "ticks": {
+            "total": {
+              "n": 605,
+              "mean": 2.069960330578517,
+              "p50": 1.0601999999998952,
+              "p95": 7.4055999999982305,
+              "p99": 16.82209999999759,
+              "max": 35.58719999999812
+            },
+            "simulation": {
+              "n": 605,
+              "mean": 1.1366309090908244,
+              "p50": 0.6049999999995634,
+              "p95": 4.239700000000084,
+              "p99": 8.387300000000323,
+              "max": 28.213999999999942
+            },
+            "snapshots": {
+              "n": 605,
+              "mean": 0.9320727272728333,
+              "p50": 0.3403999999973166,
+              "p95": 2.789699999999357,
+              "p99": 12.491300000001502,
+              "max": 27.084100000000035
+            },
+            "interval": {
+              "n": 604,
+              "mean": 50.014256622516555,
+              "p50": 47.026999999998225,
+              "p95": 62.91530000000057,
+              "p99": 71.12659999999596,
+              "max": 100.1260000000002
+            }
+          },
+          "latenessMs": {
+            "n": 604,
+            "mean": 3.2917377483443935,
+            "p50": 0,
+            "p95": 12.91530000000057,
+            "p99": 21.12659999999596,
+            "max": 50.126000000000204
+          },
+          "noopTimerMs": {
+            "n": 487,
+            "mean": 61.972627720739226,
+            "p50": 61.63699999999881,
+            "p95": 70.59159999999974,
+            "p99": 81.3897999999972,
+            "max": 119.45219999999972
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 605,
+              "mean": 0.6489386776859293,
+              "p50": 0.3187000000034459,
+              "p95": 2.125,
+              "p99": 5.4531000000024505,
+              "max": 28.07369999999719
+            },
+            "sqliteRead": {
+              "n": 303,
+              "mean": 0.5557808580857521,
+              "p50": 0.2515000000003056,
+              "p95": 1.0149000000001251,
+              "p99": 4.940299999998388,
+              "max": 23.850000000002183
+            },
+            "serialization": {
+              "n": 303,
+              "mean": 0.060128382838196284,
+              "p50": 0.028800000000046566,
+              "p95": 0.1169000000008964,
+              "p99": 0.43800000000192085,
+              "max": 2.4847000000008848
+            },
+            "send": {
+              "n": 303,
+              "mean": 0.8611709570956555,
+              "p50": 0.4404000000013184,
+              "p95": 2.0741999999991094,
+              "p99": 5.775399999998626,
+              "max": 19.58339999999953
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.605759,
+            "p95": 26.476543,
+            "p99": 42.336255,
+            "max": 96.075775
+          },
+          "eventLoopUtilization": 0.06843438495977001,
+          "cpuPercentOneCore": 3.4620896270727415,
+          "memory": {
+            "rss": 20377600,
+            "heapTotal": 13099008,
+            "heapUsed": 10587568,
+            "external": 4220782,
+            "arrayBuffers": 212311
+          },
+          "connections": 1
+        }
+      },
+      {
+        "name": "city-empty",
+        "frames": {
+          "n": 2282,
+          "mean": 13.156134969325072,
+          "p50": 13.100000000093132,
+          "p95": 16.59999999962747,
+          "p99": 20,
+          "max": 50.299999999813735
+        },
+        "fps": 75.97777267264063,
+        "activeFps": 76.01016577677308,
+        "durationMs": 30035.099999999627,
+        "visibility": [
+          {
+            "at": 36851.80000000028,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 39.944425147569014,
+        "methods": {
+          "interpolation": {
+            "n": 2283,
+            "mean": 0.03048620236759326,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.20000000018626451,
+            "max": 2.5
+          },
+          "sprites": {
+            "n": 2283,
+            "mean": 0.04682435392125939,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.20000000018626451,
+            "max": 0.6000000000931323
+          },
+          "effects": {
+            "n": 2283,
+            "mean": 0.002146298729088867,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.10000000009313226
+          },
+          "combatVisualInclusive": {
+            "n": 2283,
+            "mean": 0.020148926851247036,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 0.40000000037252903
+          },
+          "remoteInclusive": {
+            "n": 2283,
+            "mean": 0.004204993430350467,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.10000000009313226
+          },
+          "renderSubmit": {
+            "n": 2283,
+            "mean": 7.077179150242013,
+            "p50": 7,
+            "p95": 10.900000000372529,
+            "p99": 13.700000000186265,
+            "max": 20.299999999813735
+          },
+          "sceneInclusive": {
+            "n": 2283,
+            "mean": 7.4951379763432,
+            "p50": 7.399999999906868,
+            "p95": 11.600000000093132,
+            "p99": 14.200000000186265,
+            "max": 41.09999999962747
+          },
+          "snapshotCallback": {
+            "n": 301,
+            "mean": 0.8066445182656182,
+            "p50": 0.7000000001862645,
+            "p95": 1.5,
+            "p99": 2.2000000001862645,
+            "max": 7.900000000372529
+          },
+          "snapshotProcessing": {
+            "n": 301,
+            "mean": 0.9159468438497983,
+            "p50": 0.7999999998137355,
+            "p95": 1.7999999998137355,
+            "p99": 2.5,
+            "max": 8.100000000093132
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 0,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 684,
+          "visible": 678,
+          "materials": 160,
+          "textures": 17,
+          "textureSources": 12,
+          "geometries": 335,
+          "transparentObjects": 157,
+          "drawCalls": 397,
+          "triangles": 40584,
+          "gpuTextures": 13,
+          "gpuGeometries": 234,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 22888941,
+        "cdpDelta": {
+          "Timestamp": 30.09493199999997,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 1646,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 3138,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 2588,
+          "RecalcStyleCount": 18295,
+          "LayoutDuration": 0.944321,
+          "RecalcStyleDuration": 0.7191250000000001,
+          "DevToolsCommandDuration": 0.022157999999999997,
+          "ScriptDuration": 18.172712,
+          "V8CompileDuration": 0,
+          "TaskDuration": 22.260001,
+          "TaskOtherDuration": 2.4016849999999996,
+          "ThreadTime": 21.378587,
+          "ProcessTime": 25.890055999999994,
+          "JSHeapUsedSize": 10582556,
+          "JSHeapTotalSize": -786432,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30145.993800000004,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.002657865603354,
+          "ticks": {
+            "total": {
+              "n": 603,
+              "mean": 1.0822892205637022,
+              "p50": 0.8364999999976135,
+              "p95": 2.55109999999695,
+              "p99": 4.579100000002654,
+              "max": 23.93819999999687
+            },
+            "simulation": {
+              "n": 603,
+              "mean": 0.6045003316748311,
+              "p50": 0.4056999999957043,
+              "p95": 1.4078999999983353,
+              "p99": 3.043499999999767,
+              "max": 9.54989999999816
+            },
+            "snapshots": {
+              "n": 603,
+              "mean": 0.4761199004975095,
+              "p50": 0.2706000000034692,
+              "p95": 1.6440999999977066,
+              "p99": 2.588499999998021,
+              "max": 23.16250000000582
+            },
+            "interval": {
+              "n": 602,
+              "mean": 50.002092192691016,
+              "p50": 46.707500000004075,
+              "p95": 62.62670000000071,
+              "p99": 64.7213999999949,
+              "max": 73.34860000001208
+            }
+          },
+          "latenessMs": {
+            "n": 602,
+            "mean": 2.8689058139535213,
+            "p50": 0,
+            "p95": 12.62670000000071,
+            "p99": 14.721399999994901,
+            "max": 23.348600000012084
+          },
+          "noopTimerMs": {
+            "n": 490,
+            "mean": 61.335069591836735,
+            "p50": 61.644899999999325,
+            "p95": 64.31000000001222,
+            "p99": 68.8125999999902,
+            "max": 83.84279999999853
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 603,
+              "mean": 0.3958305140961484,
+              "p50": 0.25319999999919673,
+              "p95": 0.835400000003574,
+              "p99": 2.128499999998894,
+              "max": 7.8303000000014435
+            },
+            "sqliteRead": {
+              "n": 302,
+              "mean": 0.3043645695365047,
+              "p50": 0.18730000000505242,
+              "p95": 0.6248000000050524,
+              "p99": 1.1013999999995576,
+              "max": 9.752500000002328
+            },
+            "serialization": {
+              "n": 302,
+              "mean": 0.03528344370857932,
+              "p50": 0.025600000000849832,
+              "p95": 0.0705999999991036,
+              "p99": 0.19470000000001164,
+              "max": 0.35540000000037253
+            },
+            "send": {
+              "n": 302,
+              "mean": 0.4309592715235219,
+              "p50": 0.3041000000011991,
+              "p95": 0.9778000000005704,
+              "p99": 1.9190999999991618,
+              "max": 3.7577999999994063
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.450111,
+            "p95": 18.743295,
+            "p99": 24.936447,
+            "max": 40.140799
+          },
+          "eventLoopUtilization": 0.03899418152231928,
+          "cpuPercentOneCore": 3.629006252897192,
+          "memory": {
+            "rss": 20930560,
+            "heapTotal": 12574720,
+            "heapUsed": 11041160,
+            "external": 4220840,
+            "arrayBuffers": 212329
+          },
+          "connections": 1
+        }
+      },
+      {
+        "name": "city-twelve",
+        "frames": {
+          "n": 2315,
+          "mean": 12.961036717062555,
+          "p50": 12.799999999813735,
+          "p95": 15.5,
+          "p99": 18.199999999720603,
+          "max": 453
+        },
+        "fps": 77.12167902057134,
+        "activeFps": 77.15432197515112,
+        "durationMs": 30017.5,
+        "visibility": [
+          {
+            "at": 70534.20000000019,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 25.31378546569056,
+        "methods": {
+          "interpolation": {
+            "n": 27792,
+            "mean": 0.004389752446780776,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.5
+          },
+          "sprites": {
+            "n": 27792,
+            "mean": 0.01075129533689815,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 0.7000000001862645
+          },
+          "effects": {
+            "n": 2316,
+            "mean": 0.0025906735745263453,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.2999999998137355
+          },
+          "combatVisualInclusive": {
+            "n": 2316,
+            "mean": 0.01955958549033799,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 0.39999999990686774
+          },
+          "remoteInclusive": {
+            "n": 2316,
+            "mean": 0.2220639032826458,
+            "p50": 0.20000000018626451,
+            "p95": 0.5,
+            "p99": 0.6999999997206032,
+            "max": 1.7000000001862645
+          },
+          "renderSubmit": {
+            "n": 2316,
+            "mean": 6.920379965458932,
+            "p50": 6.899999999906868,
+            "p95": 10.100000000093132,
+            "p99": 12.100000000093132,
+            "max": 26.300000000279397
+          },
+          "sceneInclusive": {
+            "n": 2316,
+            "mean": 7.517357512956062,
+            "p50": 7.399999999906868,
+            "p95": 11,
+            "p99": 13.200000000186265,
+            "max": 27.300000000279397
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.7803333333460614,
+            "p50": 0.6999999997206032,
+            "p95": 1.6000000000931323,
+            "p99": 2,
+            "max": 2.7000000001862645
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.9956666666688397,
+            "p50": 0.8000000002793968,
+            "p95": 2.099999999627471,
+            "p99": 2.6999999997206032,
+            "max": 3.1000000000931323
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 702,
+          "materials": 182,
+          "textures": 28,
+          "textureSources": 12,
+          "geometries": 346,
+          "transparentObjects": 179,
+          "drawCalls": 420,
+          "triangles": 39862,
+          "gpuTextures": 15,
+          "gpuGeometries": 247,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 24143147,
+        "cdpDelta": {
+          "Timestamp": 30.095479999999952,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 791,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 1586,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 2617,
+          "RecalcStyleCount": 18552,
+          "LayoutDuration": 0.9934529999999997,
+          "RecalcStyleDuration": 1.053909,
+          "DevToolsCommandDuration": 0.04857299999999999,
+          "ScriptDuration": 18.507233999999997,
+          "V8CompileDuration": 0,
+          "TaskDuration": 22.957902999999995,
+          "TaskOtherDuration": 2.3547340000000005,
+          "ThreadTime": 22.412298,
+          "ProcessTime": 26.960949999999997,
+          "JSHeapUsedSize": 10134744,
+          "JSHeapTotalSize": 811008,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30125.309899999993,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.98319691974356,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 4.041141196013446,
+              "p50": 3.192800000004354,
+              "p95": 9.173299999994924,
+              "p99": 13.245800000004238,
+              "max": 31.169900000008056
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.6533888704322584,
+              "p50": 1.37149999999383,
+              "p95": 2.7912000000069384,
+              "p99": 8.37970000000496,
+              "max": 17.72720000000845
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.387179900331951,
+              "p50": 1.526400000002468,
+              "p95": 6.896200000002864,
+              "p99": 8.666599999996834,
+              "max": 13.441800000000512
+            },
+            "interval": {
+              "n": 601,
+              "mean": 50.00801214642263,
+              "p50": 46.77719999999681,
+              "p95": 62.31699999999546,
+              "p99": 63.53740000000107,
+              "max": 70.57310000000871
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.816784858569111,
+            "p50": 0,
+            "p95": 12.31699999999546,
+            "p99": 13.537400000001071,
+            "max": 20.573100000008708
+          },
+          "noopTimerMs": {
+            "n": 490,
+            "mean": 61.3673287755102,
+            "p50": 61.731500000008964,
+            "p95": 64.8689999999915,
+            "p99": 71.22999999999593,
+            "max": 75.11329999999725
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7224,
+              "mean": 0.08926742801764988,
+              "p50": 0.054799999998067506,
+              "p95": 0.2390999999915948,
+              "p99": 0.5745000000024447,
+              "max": 13.343199999988428
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.10151182170542042,
+              "p50": 0.07400000000779983,
+              "p95": 0.24420000000100117,
+              "p99": 0.5285000000003492,
+              "max": 3.6134000000020023
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.0519839147286173,
+              "p50": 0.04370000000926666,
+              "p95": 0.09679999999934807,
+              "p99": 0.1643000000040047,
+              "max": 1.4245999999984633
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.15963546511623544,
+              "p50": 0.1187999999965541,
+              "p95": 0.36639999999897555,
+              "p99": 0.7338000000017928,
+              "max": 3.4809000000095693
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.622143,
+            "p95": 24.297471,
+            "p99": 27.590655,
+            "max": 62.324735
+          },
+          "eventLoopUtilization": 0.09722052287928068,
+          "cpuPercentOneCore": 9.078744779983163,
+          "memory": {
+            "rss": 25010176,
+            "heapTotal": 16769024,
+            "heapUsed": 12102768,
+            "external": 4288128,
+            "arrayBuffers": 279617
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "city-twelve-moving-15Hz",
+        "frames": {
+          "n": 2253,
+          "mean": 13.318952507767463,
+          "p50": 13.099999999627471,
+          "p95": 16.800000000279397,
+          "p99": 20.700000000186265,
+          "max": 58.5
+        },
+        "fps": 75.03571940037988,
+        "activeFps": 75.08097948519685,
+        "durationMs": 30025.700000000186,
+        "visibility": [
+          {
+            "at": 103728,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 35.52123552128661,
+        "methods": {
+          "interpolation": {
+            "n": 27048,
+            "mean": 0.005098343685245116,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.6000000000931323
+          },
+          "sprites": {
+            "n": 27048,
+            "mean": 0.014252440106029754,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 0.599999999627471
+          },
+          "effects": {
+            "n": 2254,
+            "mean": 0.002040816327398304,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.10000000009313226
+          },
+          "combatVisualInclusive": {
+            "n": 2254,
+            "mean": 0.021916592724831194,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 0.20000000018626451
+          },
+          "remoteInclusive": {
+            "n": 2254,
+            "mean": 1.1925909494208098,
+            "p50": 1.1000000000931323,
+            "p95": 2.1000000000931323,
+            "p99": 2.7999999998137355,
+            "max": 4.400000000372529
+          },
+          "renderSubmit": {
+            "n": 2254,
+            "mean": 6.775643300796019,
+            "p50": 6.7000000001862645,
+            "p95": 9.700000000186265,
+            "p99": 11.299999999813735,
+            "max": 17.899999999906868
+          },
+          "sceneInclusive": {
+            "n": 2254,
+            "mean": 8.390328305227618,
+            "p50": 8.399999999906868,
+            "p95": 11.899999999906868,
+            "p99": 13.5,
+            "max": 21.100000000093132
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.8180000000074505,
+            "p50": 0.7000000001862645,
+            "p95": 1.6000000000931323,
+            "p99": 2.099999999627471,
+            "max": 2.6000000000931323
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 1.0006666666672877,
+            "p50": 0.8999999999068677,
+            "p95": 1.900000000372529,
+            "p99": 2.3000000002793968,
+            "max": 2.8000000002793968
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 702,
+          "materials": 182,
+          "textures": 28,
+          "textureSources": 12,
+          "geometries": 346,
+          "transparentObjects": 179,
+          "drawCalls": 404,
+          "triangles": 39392,
+          "gpuTextures": 15,
+          "gpuGeometries": 247,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 19115650,
+        "cdpDelta": {
+          "Timestamp": 30.09897600000022,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 290,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 478,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 27308,
+          "RecalcStyleCount": 42806,
+          "LayoutDuration": 2.6470890000000002,
+          "RecalcStyleDuration": 1.7749960000000002,
+          "DevToolsCommandDuration": 0.034613000000000005,
+          "ScriptDuration": 18.293677000000002,
+          "V8CompileDuration": 0,
+          "TaskDuration": 26.019143,
+          "TaskOtherDuration": 3.2687680000000015,
+          "ThreadTime": 25.41701400000001,
+          "ProcessTime": 30.613350999999994,
+          "JSHeapUsedSize": -3605704,
+          "JSHeapTotalSize": 106496,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30124.849199999997,
+          "commands": {
+            "move": 4889
+          },
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.983502523225912,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 3.9765122923587155,
+              "p50": 3.494700000010198,
+              "p95": 8.593900000007125,
+              "p99": 11.571700000000419,
+              "max": 37.22170000000915
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.6441420265778968,
+              "p50": 1.40230000000156,
+              "p95": 2.8548999999911757,
+              "p99": 4.499400000000605,
+              "max": 27.115099999995437
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.327834053156444,
+              "p50": 1.8021999999909895,
+              "p95": 6.515400000003865,
+              "p99": 8.138999999995576,
+              "max": 32.50010000000475
+            },
+            "interval": {
+              "n": 601,
+              "mean": 49.995295507487505,
+              "p50": 46.925600000002305,
+              "p95": 61.91600000001199,
+              "p99": 62.91800000000512,
+              "max": 64.28130000000237
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.701516139767175,
+            "p50": 0,
+            "p95": 11.91600000001199,
+            "p99": 12.918000000005122,
+            "max": 14.281300000002375
+          },
+          "noopTimerMs": {
+            "n": 514,
+            "mean": 58.43740525291826,
+            "p50": 60.37700000000768,
+            "p95": 63.54200000000128,
+            "p99": 68.4655999999959,
+            "max": 70.15739999999641
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 12113,
+              "mean": 0.09727591843460456,
+              "p50": 0.06609999999636784,
+              "p95": 0.25210000001243316,
+              "p99": 0.532999999995809,
+              "max": 24.335700000010547
+            },
+            "command": {
+              "n": 4889,
+              "mean": 0.11585845776235051,
+              "p50": 0.08729999998467974,
+              "p95": 0.2816000000166241,
+              "p99": 0.5127000000065891,
+              "max": 2.0064999999885913
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.10342522148391696,
+              "p50": 0.07390000000305008,
+              "p95": 0.2620000000024447,
+              "p99": 0.5592000000033295,
+              "max": 4.291700000001583
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.05250384828345388,
+              "p50": 0.04499999999825377,
+              "p95": 0.09500000000116415,
+              "p99": 0.18009999999776483,
+              "max": 2.2942999999941094
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.15523128460682484,
+              "p50": 0.11819999999715947,
+              "p95": 0.333199999993667,
+              "p99": 0.6779999999998836,
+              "max": 15.84649999999965
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.540223,
+            "p95": 23.887871,
+            "p99": 26.066943,
+            "max": 52.264959
+          },
+          "eventLoopUtilization": 0.1402384803434059,
+          "cpuPercentOneCore": 13.536997224205194,
+          "memory": {
+            "rss": 30785536,
+            "heapTotal": 23060480,
+            "heapUsed": 17243928,
+            "external": 4292602,
+            "arrayBuffers": 283334
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-monsters",
+        "frames": {
+          "n": 2439,
+          "mean": 12.297047970479705,
+          "p50": 12.399999999906868,
+          "p95": 14.700000000186265,
+          "p99": 16.100000000093132,
+          "max": 50.60000000009313
+        },
+        "fps": 81.27913835448851,
+        "activeFps": 81.32033008252063,
+        "durationMs": 30007.700000000186,
+        "visibility": [
+          {
+            "at": 138148.3999999999,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 55.00550054994229,
+        "methods": {
+          "interpolation": {
+            "n": 29280,
+            "mean": 0.004262295082008562,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 4.899999999906868
+          },
+          "sprites": {
+            "n": 29280,
+            "mean": 0.008808060108888844,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 1
+          },
+          "effects": {
+            "n": 2440,
+            "mean": 0.002704918033206744,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.10000000009313226
+          },
+          "combatVisualInclusive": {
+            "n": 2440,
+            "mean": 0.06209016393480792,
+            "p50": 0.09999999962747097,
+            "p95": 0.19999999972060323,
+            "p99": 0.20000000018626451,
+            "max": 2.3000000002793968
+          },
+          "remoteInclusive": {
+            "n": 2440,
+            "mean": 0.19180327868127248,
+            "p50": 0.19999999972060323,
+            "p95": 0.3000000002793968,
+            "p99": 0.5,
+            "max": 1.3999999999068677
+          },
+          "renderSubmit": {
+            "n": 2440,
+            "mean": 2.8693442623008836,
+            "p50": 2.7999999998137355,
+            "p95": 4.199999999720603,
+            "p99": 5.100000000093132,
+            "max": 10.899999999906868
+          },
+          "sceneInclusive": {
+            "n": 2440,
+            "mean": 3.6416803278757994,
+            "p50": 3.5,
+            "p95": 5.2999999998137355,
+            "p99": 6.7999999998137355,
+            "max": 12.399999999906868
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.5120000000173847,
+            "p50": 0.5,
+            "p95": 0.900000000372529,
+            "p99": 1.400000000372529,
+            "max": 1.5
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.6936666666747381,
+            "p50": 0.6000000000931323,
+            "p95": 1.2000000001862645,
+            "p99": 1.5,
+            "max": 1.7000000001862645
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 357,
+          "visible": 346,
+          "materials": 108,
+          "textures": 17,
+          "textureSources": 2,
+          "geometries": 269,
+          "transparentObjects": 111,
+          "drawCalls": 104,
+          "triangles": 30526,
+          "gpuTextures": 5,
+          "gpuGeometries": 61,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 31646834,
+        "cdpDelta": {
+          "Timestamp": 30.088640999999825,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": -4,
+          "LayoutObjects": 2814,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 8357,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 4887,
+          "RecalcStyleCount": 17102,
+          "LayoutDuration": 1.2115149999999995,
+          "RecalcStyleDuration": 0.6300229999999996,
+          "DevToolsCommandDuration": 0.040318999999999994,
+          "ScriptDuration": 9.412813999999997,
+          "V8CompileDuration": 0,
+          "TaskDuration": 13.316441999999995,
+          "TaskOtherDuration": 2.0217709999999993,
+          "ThreadTime": 13.159301999999997,
+          "ProcessTime": 17.068313000000003,
+          "JSHeapUsedSize": 15428460,
+          "JSHeapTotalSize": 19005440,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30133.17320000002,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.01116828943855,
+          "ticks": {
+            "total": {
+              "n": 603,
+              "mean": 3.1119412935318063,
+              "p50": 2.8364000000001397,
+              "p95": 6.641199999983655,
+              "p99": 9.049399999988964,
+              "max": 15.00690000000759
+            },
+            "simulation": {
+              "n": 603,
+              "mean": 1.182137147594364,
+              "p50": 1.1048000000009779,
+              "p95": 1.922099999996135,
+              "p99": 2.4244999999937136,
+              "max": 11.98379999998724
+            },
+            "snapshots": {
+              "n": 603,
+              "mean": 1.9292767827538948,
+              "p50": 2.073899999988498,
+              "p95": 5.174100000003818,
+              "p99": 6.410499999998137,
+              "max": 13.892699999996694
+            },
+            "interval": {
+              "n": 602,
+              "mean": 49.998069269103,
+              "p50": 46.62859999999637,
+              "p95": 62.47730000002775,
+              "p99": 63.76939999999013,
+              "max": 99.15780000001541
+            }
+          },
+          "latenessMs": {
+            "n": 602,
+            "mean": 2.873967774087001,
+            "p50": 0,
+            "p95": 12.477300000027753,
+            "p99": 13.769399999990128,
+            "max": 49.15780000001541
+          },
+          "noopTimerMs": {
+            "n": 490,
+            "mean": 61.44717387755102,
+            "p50": 61.73170000000391,
+            "p95": 63.782500000001164,
+            "p99": 67.52509999999893,
+            "max": 81.37569999997504
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7236,
+              "mean": 0.06781463515755097,
+              "p50": 0.04649999999674037,
+              "p95": 0.19439999997848645,
+              "p99": 0.3662999999942258,
+              "max": 10.17290000000503
+            },
+            "sqliteRead": {
+              "n": 3624,
+              "mean": 0.07951972958082246,
+              "p50": 0.05929999999352731,
+              "p95": 0.1912000000011176,
+              "p99": 0.38039999999455176,
+              "max": 1.8550000000104774
+            },
+            "serialization": {
+              "n": 3624,
+              "mean": 0.053706125828174286,
+              "p50": 0.04970000000321306,
+              "p95": 0.08799999998882413,
+              "p99": 0.1459999999788124,
+              "max": 0.8586999999824911
+            },
+            "send": {
+              "n": 3624,
+              "mean": 0.1166793598230516,
+              "p50": 0.09079999997629784,
+              "p95": 0.25650000001769513,
+              "p99": 0.46620000002440065,
+              "max": 3.529000000009546
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.507455,
+            "p95": 22.036479,
+            "p99": 25.346047,
+            "max": 74.973183
+          },
+          "eventLoopUtilization": 0.07450843182771068,
+          "cpuPercentOneCore": 7.208002906245529,
+          "memory": {
+            "rss": 37572608,
+            "heapTotal": 32759808,
+            "heapUsed": 15859408,
+            "external": 4353994,
+            "arrayBuffers": 345483
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-combat",
+        "frames": {
+          "n": 2407,
+          "mean": 12.466472787702457,
+          "p50": 12.5,
+          "p95": 15.5,
+          "p99": 17,
+          "max": 24.299999999813735
+        },
+        "fps": 80.18228394588753,
+        "activeFps": 80.21515123238783,
+        "durationMs": 30019.100000000093,
+        "visibility": [
+          {
+            "at": 171379.3999999999,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 51.79200331481811,
+        "methods": {
+          "interpolation": {
+            "n": 28896,
+            "mean": 0.006021594684272577,
+            "p50": 0,
+            "p95": 0.09999999962747097,
+            "p99": 0.10000000009313226,
+            "max": 5.699999999720603
+          },
+          "sprites": {
+            "n": 28896,
+            "mean": 0.01097383720956339,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 1.5
+          },
+          "effects": {
+            "n": 2408,
+            "mean": 0.0053986710949918484,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.6000000000931323
+          },
+          "combatVisualInclusive": {
+            "n": 2408,
+            "mean": 0.07026578073503537,
+            "p50": 0.09999999962747097,
+            "p95": 0.20000000018626451,
+            "p99": 0.2999999998137355,
+            "max": 1.400000000372529
+          },
+          "remoteInclusive": {
+            "n": 2408,
+            "mean": 0.3740033222537602,
+            "p50": 0.20000000018626451,
+            "p95": 1.2999999998137355,
+            "p99": 1.8999999999068677,
+            "max": 6.100000000093132
+          },
+          "renderSubmit": {
+            "n": 2408,
+            "mean": 2.9788621262509136,
+            "p50": 2.7999999998137355,
+            "p95": 4.899999999906868,
+            "p99": 6.300000000279397,
+            "max": 12.200000000186265
+          },
+          "sceneInclusive": {
+            "n": 2408,
+            "mean": 3.7937292358824486,
+            "p50": 3.5,
+            "p95": 6.5,
+            "p99": 8.600000000093132,
+            "max": 20
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.5416666666868454,
+            "p50": 0.5,
+            "p95": 1.1000000000931323,
+            "p99": 1.6000000000931323,
+            "max": 3.1000000000931323
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.7553333333398526,
+            "p50": 0.6999999997206032,
+            "p95": 1.5,
+            "p99": 2,
+            "max": 3.6000000000931323
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 357,
+          "visible": 345,
+          "materials": 108,
+          "textures": 17,
+          "textureSources": 2,
+          "geometries": 269,
+          "transparentObjects": 111,
+          "drawCalls": 110,
+          "triangles": 30378,
+          "gpuTextures": 8,
+          "gpuGeometries": 169,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 585,
+          "effectFrames": 238
+        },
+        "heap": 39969903,
+        "cdpDelta": {
+          "Timestamp": 30.08603099999982,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 649,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 2412,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 9644,
+          "RecalcStyleCount": 24796,
+          "LayoutDuration": 1.1579569999999997,
+          "RecalcStyleDuration": 0.8684580000000004,
+          "DevToolsCommandDuration": 0.038518,
+          "ScriptDuration": 9.831802999999994,
+          "V8CompileDuration": 0,
+          "TaskDuration": 14.152135000000001,
+          "TaskOtherDuration": 2.255398999999999,
+          "ThreadTime": 13.781678000000014,
+          "ProcessTime": 17.875268000000005,
+          "JSHeapUsedSize": 17557936,
+          "JSHeapTotalSize": 1335296,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30111.62150000001,
+          "commands": {
+            "attack": 96
+          },
+          "transitions": 0,
+          "impacts": 40,
+          "tickHz": 19.99228105334679,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 4.3467960132878565,
+              "p50": 3.486899999988964,
+              "p95": 10.911599999992177,
+              "p99": 19.940999999991618,
+              "max": 26.5116000000271
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.625079568105112,
+              "p50": 1.2456999999994878,
+              "p95": 3.4086999999999534,
+              "p99": 10.544099999999162,
+              "max": 17.202399999980116
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.721186710964228,
+              "p50": 1.8954000000085216,
+              "p95": 8.02379999999539,
+              "p99": 13.434899999992922,
+              "max": 22.644799999980023
+            },
+            "interval": {
+              "n": 601,
+              "mean": 49.999485357737065,
+              "p50": 46.600600000005215,
+              "p95": 62.56359999999404,
+              "p99": 64.06899999998859,
+              "max": 84.77110000001267
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.9425126455906128,
+            "p50": 0,
+            "p95": 12.56359999999404,
+            "p99": 14.068999999988591,
+            "max": 34.771100000012666
+          },
+          "noopTimerMs": {
+            "n": 490,
+            "mean": 61.388965918367305,
+            "p50": 61.53029999998398,
+            "p95": 64.83389999999781,
+            "p99": 70.50539999999455,
+            "max": 99.8299999999872
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7320,
+              "mean": 0.07615329234986795,
+              "p50": 0.04899999999906868,
+              "p95": 0.19709999999031425,
+              "p99": 0.5051000000094064,
+              "max": 10.28880000000936
+            },
+            "sqliteRead": {
+              "n": 3652,
+              "mean": 0.1353511226723596,
+              "p50": 0.09909999999217689,
+              "p95": 0.33379999999306165,
+              "p99": 0.6048000000009779,
+              "max": 9.999700000014855
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.0857632613508337,
+              "p50": 0.07579999999143183,
+              "p95": 0.15880000000470318,
+              "p99": 0.27280000000610016,
+              "max": 1.3674000000173692
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.14546118493942442,
+              "p50": 0.10570000001462176,
+              "p95": 0.3715999999840278,
+              "p99": 0.7228999999933876,
+              "max": 2.9200999999884516
+            },
+            "command": {
+              "n": 96,
+              "mean": 0.10746666666424669,
+              "p50": 0.08889999997336417,
+              "p95": 0.23639999999431893,
+              "p99": 0.4118000000016764,
+              "max": 0.4118000000016764
+            },
+            "sqliteSave": {
+              "n": 40,
+              "mean": 0.12136999999711406,
+              "p50": 0.10959999999613501,
+              "p95": 0.40299999999115244,
+              "p99": 0.48179999997955747,
+              "max": 0.48179999997955747
+            },
+            "sqliteTransaction": {
+              "n": 8,
+              "mean": 5.5819625000076485,
+              "p50": 5.498500000016065,
+              "p95": 6.90480000001844,
+              "p99": 6.90480000001844,
+              "max": 6.90480000001844
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.630335,
+            "p95": 24.150015,
+            "p99": 29.409279,
+            "max": 75.563007
+          },
+          "eventLoopUtilization": 0.1006919516494154,
+          "cpuPercentOneCore": 8.717564412796566,
+          "memory": {
+            "rss": 41652224,
+            "heapTotal": 32759808,
+            "heapUsed": 17116176,
+            "external": 4375739,
+            "arrayBuffers": 367228
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-24-effects-synthetic",
+        "frames": {
+          "n": 2435,
+          "mean": 12.326160164270933,
+          "p50": 12.599999999627471,
+          "p95": 15.100000000093132,
+          "p99": 16.299999999813735,
+          "max": 21.300000000279397
+        },
+        "fps": 81.10961956757056,
+        "activeFps": 81.1282659541158,
+        "durationMs": 30021.100000000093,
+        "visibility": [
+          {
+            "at": 204537.2000000002,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 58.31583858173347,
+        "methods": {
+          "interpolation": {
+            "n": 29232,
+            "mean": 0.004317186644715504,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000009313226,
+            "max": 0.8999999999068677
+          },
+          "sprites": {
+            "n": 29232,
+            "mean": 0.009229611385000445,
+            "p50": 0,
+            "p95": 0.10000000009313226,
+            "p99": 0.10000000009313226,
+            "max": 0.39999999990686774
+          },
+          "effects": {
+            "n": 2436,
+            "mean": 0.038875205252489324,
+            "p50": 0,
+            "p95": 0.19999999972060323,
+            "p99": 0.5,
+            "max": 1.099999999627471
+          },
+          "combatVisualInclusive": {
+            "n": 2436,
+            "mean": 0.10874384236258221,
+            "p50": 0.10000000009313226,
+            "p95": 0.2999999998137355,
+            "p99": 0.599999999627471,
+            "max": 1.1999999997206032
+          },
+          "remoteInclusive": {
+            "n": 2436,
+            "mean": 0.1942528735617656,
+            "p50": 0.19999999972060323,
+            "p95": 0.3000000002793968,
+            "p99": 0.5,
+            "max": 1.2000000001862645
+          },
+          "renderSubmit": {
+            "n": 2436,
+            "mean": 3.1907224959003004,
+            "p50": 2.8999999999068677,
+            "p95": 5.2999999998137355,
+            "p99": 10.799999999813735,
+            "max": 15.300000000279397
+          },
+          "sceneInclusive": {
+            "n": 2436,
+            "mean": 3.796921182271095,
+            "p50": 3.3999999999068677,
+            "p95": 6.2999999998137355,
+            "p99": 11.699999999720603,
+            "max": 17.40000000037253
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.49633333332836627,
+            "p50": 0.40000000037252903,
+            "p95": 0.900000000372529,
+            "p99": 1.3000000002793968,
+            "max": 1.6000000000931323
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.6936666666576639,
+            "p50": 0.6000000000931323,
+            "p95": 1.2999999998137355,
+            "p99": 1.7000000001862645,
+            "max": 2
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 405,
+          "visible": 393,
+          "materials": 156,
+          "textures": 65,
+          "textureSources": 3,
+          "geometries": 269,
+          "transparentObjects": 159,
+          "drawCalls": 158,
+          "triangles": 30474,
+          "gpuTextures": 9,
+          "gpuGeometries": 169,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 2436
+        },
+        "heap": 39501375,
+        "cdpDelta": {
+          "Timestamp": 30.068898999999874,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 464,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 1736,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 2740,
+          "RecalcStyleCount": 17072,
+          "LayoutDuration": 0.7821920000000002,
+          "RecalcStyleDuration": 0.6438199999999998,
+          "DevToolsCommandDuration": 0.02560000000000001,
+          "ScriptDuration": 10.062635,
+          "V8CompileDuration": 0,
+          "TaskDuration": 13.716165999999987,
+          "TaskOtherDuration": 2.201919,
+          "ThreadTime": 13.692259000000007,
+          "ProcessTime": 17.86794900000001,
+          "JSHeapUsedSize": 17204664,
+          "JSHeapTotalSize": -262144,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30091.63130000001,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.005562144449105,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 3.5796858803986473,
+              "p50": 3.1180999999924097,
+              "p95": 8.081300000019837,
+              "p99": 9.68959999998333,
+              "max": 13.986400000023423
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.1759853820597186,
+              "p50": 1.0783999999985099,
+              "p95": 2.087100000004284,
+              "p99": 2.725899999990361,
+              "max": 3.100299999990966
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.4030192691031798,
+              "p50": 2.367499999993015,
+              "p95": 6.774499999999534,
+              "p99": 8.430999999982305,
+              "max": 12.496199999994133
+            },
+            "interval": {
+              "n": 601,
+              "mean": 49.99697603993344,
+              "p50": 46.6304999999993,
+              "p95": 62.28959999998915,
+              "p99": 63.1306999999797,
+              "max": 76.44680000000517
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.7964642262896917,
+            "p50": 0,
+            "p95": 12.28959999998915,
+            "p99": 13.130699999979697,
+            "max": 26.44680000000517
+          },
+          "noopTimerMs": {
+            "n": 489,
+            "mean": 61.34208957055214,
+            "p50": 61.61329999999725,
+            "p95": 63.73029999999562,
+            "p99": 67.89930000001914,
+            "max": 78.55610000001616
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7224,
+              "mean": 0.064229485049777,
+              "p50": 0.0443000000086613,
+              "p95": 0.1680999999807682,
+              "p99": 0.4414000000106171,
+              "max": 0.9690999999875203
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.11972954042058405,
+              "p50": 0.09499999997206032,
+              "p95": 0.29589999999734573,
+              "p99": 0.4778999999980442,
+              "max": 1.0142000000050757
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.08630337763006356,
+              "p50": 0.08070000002044253,
+              "p95": 0.1493999999947846,
+              "p99": 0.2104000000108499,
+              "max": 0.5581999999994878
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.12293612956851668,
+              "p50": 0.0951000000059139,
+              "p95": 0.2911000000021886,
+              "p99": 0.4893000000156462,
+              "max": 1.3984000000054948
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.589375,
+            "p95": 23.887871,
+            "p99": 25.034751,
+            "max": 31.145983
+          },
+          "eventLoopUtilization": 0.08287234845843655,
+          "cpuPercentOneCore": 8.773203332449441,
+          "memory": {
+            "rss": 49397760,
+            "heapTotal": 34070528,
+            "heapUsed": 13344592,
+            "external": 4351871,
+            "arrayBuffers": 343360
+          },
+          "connections": 12
+        }
+      }
+    ],
+    "errors": [],
+    "raycastMs": {
+      "n": 1200,
+      "mean": 0.01424999999968956,
+      "p50": 0,
+      "p95": 0.10000000009313226,
+      "p99": 0.10000000009313226,
+      "max": 3.3999999999068677
+    },
+    "ok": true
+  },
+  "repeat": {
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "cores": 12,
+      "platform": "win32"
+    },
+    "seconds": 30,
+    "server": [],
+    "client": [
+      {
+        "name": "city-twelve-moving-15Hz",
+        "frames": {
+          "n": 2321,
+          "mean": 12.927617406290391,
+          "p50": 12.799999999813735,
+          "p95": 16.899999999441206,
+          "p99": 20.600000000558794,
+          "max": 26
+        },
+        "fps": 77.3210472487894,
+        "activeFps": 77.35377437093818,
+        "durationMs": 30017.700000000186,
+        "visibility": [
+          {
+            "at": 3839.2000000001863,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 44.41154700218996,
+        "methods": {
+          "interpolation": {
+            "n": 27864,
+            "mean": 0.006345104794376275,
+            "p50": 0,
+            "p95": 0.09999999962747097,
+            "p99": 0.10000000055879354,
+            "max": 0.5
+          },
+          "sprites": {
+            "n": 27864,
+            "mean": 0.013630490956934686,
+            "p50": 0,
+            "p95": 0.10000000055879354,
+            "p99": 0.10000000055879354,
+            "max": 1.2999999998137355
+          },
+          "effects": {
+            "n": 2322,
+            "mean": 0.002799310939246909,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000055879354,
+            "max": 0.40000000037252903
+          },
+          "combatVisualInclusive": {
+            "n": 2322,
+            "mean": 0.0231696813055262,
+            "p50": 0,
+            "p95": 0.10000000055879354,
+            "p99": 0.20000000018626451,
+            "max": 1.7000000001862645
+          },
+          "remoteInclusive": {
+            "n": 2322,
+            "mean": 1.1350559862198197,
+            "p50": 1,
+            "p95": 2.099999999627471,
+            "p99": 2.699999999254942,
+            "max": 4.400000000372529
+          },
+          "renderSubmit": {
+            "n": 2322,
+            "mean": 6.14745908700095,
+            "p50": 6,
+            "p95": 9.399999999441206,
+            "p99": 11.200000000186265,
+            "max": 17
+          },
+          "sceneInclusive": {
+            "n": 2322,
+            "mean": 7.692980189508101,
+            "p50": 7.5,
+            "p95": 11.600000000558794,
+            "p99": 13.700000000186265,
+            "max": 19.5
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.7423333333587895,
+            "p50": 0.7000000001862645,
+            "p95": 1.5,
+            "p99": 1.7000000001862645,
+            "max": 2.099999999627471
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.929666666649282,
+            "p50": 0.8000000007450581,
+            "p95": 1.7000000001862645,
+            "p99": 2,
+            "max": 2.5
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 11,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 702,
+          "materials": 182,
+          "textures": 28,
+          "textureSources": 12,
+          "geometries": 346,
+          "transparentObjects": 179,
+          "drawCalls": 399,
+          "triangles": 39042,
+          "gpuTextures": 15,
+          "gpuGeometries": 247,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 15311182,
+        "cdpDelta": {
+          "Timestamp": 30.106544000000213,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -1,
+          "Frames": -1,
+          "JSEventListeners": -1,
+          "LayoutObjects": 324,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -165,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": -15,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -1,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -2,
+          "ArrayBufferContents": -1462,
+          "LayoutCount": 27548,
+          "RecalcStyleCount": 44134,
+          "LayoutDuration": 2.426727,
+          "RecalcStyleDuration": 1.6802110000000001,
+          "DevToolsCommandDuration": 0.052336999999999995,
+          "ScriptDuration": 17.224514999999997,
+          "V8CompileDuration": 0,
+          "TaskDuration": 24.431841,
+          "TaskOtherDuration": 3.048051,
+          "ThreadTime": 24.054281,
+          "ProcessTime": 29.253338,
+          "JSHeapUsedSize": -8353256,
+          "JSHeapTotalSize": 3694592,
+          "FirstMeaningfulPaint": 4193.695996,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30140.232900000003,
+          "commands": {
+            "move": 4857
+          },
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.9733028605761,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 3.363703488372109,
+              "p50": 2.8122000000003027,
+              "p95": 7.614700000000084,
+              "p99": 10.70089999999982,
+              "max": 14.16779999999926
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.372596843853823,
+              "p50": 1.1930999999967753,
+              "p95": 2.413300000000163,
+              "p99": 3.4130000000004657,
+              "max": 5.688400000000911
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 1.9906016611296649,
+              "p50": 1.6221000000005006,
+              "p95": 6.064800000000105,
+              "p99": 8.587099999997008,
+              "max": 10.458199999999124
+            },
+            "interval": {
+              "n": 601,
+              "mean": 50.02010349417637,
+              "p50": 46.870499999997264,
+              "p95": 62.09239999999954,
+              "p99": 63.32560000000376,
+              "max": 70.83420000000115
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.841204159733766,
+            "p50": 0,
+            "p95": 12.092399999999543,
+            "p99": 13.32560000000376,
+            "max": 20.834200000001147
+          },
+          "noopTimerMs": {
+            "n": 513,
+            "mean": 58.72953606237816,
+            "p50": 60.67139999999927,
+            "p95": 63.392699999996694,
+            "p99": 65.38640000000305,
+            "max": 86.44360000000052
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 12081,
+              "mean": 0.08378104461550263,
+              "p50": 0.06069999999999709,
+              "p95": 0.2139999999999418,
+              "p99": 0.4963999999999942,
+              "max": 3.1494000000002416
+            },
+            "command": {
+              "n": 4857,
+              "mean": 0.10487523162445635,
+              "p50": 0.08049999999639113,
+              "p95": 0.24919999999838183,
+              "p99": 0.46309999999903084,
+              "max": 2.754499999999098
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.09486697120705846,
+              "p50": 0.06599999999889405,
+              "p95": 0.24690000000009604,
+              "p99": 0.5317999999970198,
+              "max": 2.111700000001292
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.04774734219267759,
+              "p50": 0.04179999999996653,
+              "p95": 0.08929999999963911,
+              "p99": 0.14179999999760184,
+              "max": 1.8140000000021246
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.1451211794020148,
+              "p50": 0.10820000000239816,
+              "p95": 0.3544000000001688,
+              "p99": 0.6986999999935506,
+              "max": 2.5169999999998254
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.482879,
+            "p95": 22.708223,
+            "p99": 25.247743,
+            "max": 45.088767
+          },
+          "eventLoopUtilization": 0.12498964377315541,
+          "cpuPercentOneCore": 13.171762849914805,
+          "memory": {
+            "rss": 54865920,
+            "heapTotal": 22798336,
+            "heapUsed": 13706584,
+            "external": 4291564,
+            "arrayBuffers": 283093
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-monsters",
+        "frames": {
+          "n": 2417,
+          "mean": 12.409474555233453,
+          "p50": 12.5,
+          "p95": 14.899999999441206,
+          "p99": 16.5,
+          "max": 21.200000000186265
+        },
+        "fps": 80.54116196537763,
+        "activeFps": 80.58358922040495,
+        "durationMs": 30009.5,
+        "visibility": [
+          {
+            "at": 37781.40000000037,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 54.39512619640619,
+        "methods": {
+          "interpolation": {
+            "n": 29016,
+            "mean": 0.003918527709145581,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000055879354,
+            "max": 1.5
+          },
+          "sprites": {
+            "n": 29016,
+            "mean": 0.008929556106545364,
+            "p50": 0,
+            "p95": 0.09999999962747097,
+            "p99": 0.10000000055879354,
+            "max": 2.6000000005587935
+          },
+          "effects": {
+            "n": 2418,
+            "mean": 0.0023986765917627844,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.09999999962747097,
+            "max": 0.10000000055879354
+          },
+          "combatVisualInclusive": {
+            "n": 2418,
+            "mean": 0.06112489661177184,
+            "p50": 0.09999999962747097,
+            "p95": 0.19999999925494194,
+            "p99": 0.20000000018626451,
+            "max": 1.2999999998137355
+          },
+          "remoteInclusive": {
+            "n": 2418,
+            "mean": 0.18767576510698294,
+            "p50": 0.20000000018626451,
+            "p95": 0.30000000074505806,
+            "p99": 0.5,
+            "max": 2.099999999627471
+          },
+          "renderSubmit": {
+            "n": 2418,
+            "mean": 2.72828784118606,
+            "p50": 2.599999999627471,
+            "p95": 4.2999999998137355,
+            "p99": 5.599999999627471,
+            "max": 9.599999999627471
+          },
+          "sceneInclusive": {
+            "n": 2418,
+            "mean": 3.5007030603917264,
+            "p50": 3.2999999998137355,
+            "p95": 5.599999999627471,
+            "p99": 7.5,
+            "max": 14.200000000186265
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.5193333333451301,
+            "p50": 0.5,
+            "p95": 1,
+            "p99": 1.599999999627471,
+            "max": 2.300000000745058
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.6879999999546756,
+            "p50": 0.6000000005587935,
+            "p95": 1.2000000001862645,
+            "p99": 2,
+            "max": 2.900000000372529
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 357,
+          "visible": 346,
+          "materials": 108,
+          "textures": 17,
+          "textureSources": 2,
+          "geometries": 269,
+          "transparentObjects": 111,
+          "drawCalls": 104,
+          "triangles": 30526,
+          "gpuTextures": 5,
+          "gpuGeometries": 61,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 0
+        },
+        "heap": 20208643,
+        "cdpDelta": {
+          "Timestamp": 30.079345000000103,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": -4,
+          "LayoutObjects": -87,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -167,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 4844,
+          "RecalcStyleCount": 16954,
+          "LayoutDuration": 1.2063970000000004,
+          "RecalcStyleDuration": 0.6256609999999998,
+          "DevToolsCommandDuration": 0.039793,
+          "ScriptDuration": 8.986891,
+          "V8CompileDuration": 0,
+          "TaskDuration": 12.978001999999996,
+          "TaskOtherDuration": 2.1192599999999997,
+          "ThreadTime": 12.751038999999999,
+          "ProcessTime": 16.978509000000003,
+          "JSHeapUsedSize": -2336596,
+          "JSHeapTotalSize": -3121152,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30111.1901,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 19.992567480751948,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 3.289282890365329,
+              "p50": 2.7767000000021653,
+              "p95": 7.4945000000006985,
+              "p99": 12.93760000000475,
+              "max": 25.755299999997078
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.2443174418604694,
+              "p50": 1.079200000000128,
+              "p95": 1.9908999999970547,
+              "p99": 3.7938999999969383,
+              "max": 20.918499999999767
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.044439534883757,
+              "p50": 1.3909000000057858,
+              "p95": 5.91990000000078,
+              "p99": 8.553200000009383,
+              "max": 24.15009999999893
+            },
+            "interval": {
+              "n": 601,
+              "mean": 50.02088136439269,
+              "p50": 46.63260000000446,
+              "p95": 62.47609999999986,
+              "p99": 63.50680000000284,
+              "max": 87.03899999999703
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.9491414309484574,
+            "p50": 0,
+            "p95": 12.47609999999986,
+            "p99": 13.50680000000284,
+            "max": 37.03899999999703
+          },
+          "noopTimerMs": {
+            "n": 488,
+            "mean": 61.604610655737694,
+            "p50": 61.66320000000269,
+            "p95": 64.09540000000561,
+            "p99": 71.47239999999874,
+            "max": 118.01209999999264
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7224,
+              "mean": 0.06978707087488441,
+              "p50": 0.045400000002700835,
+              "p95": 0.18509999998786952,
+              "p99": 0.4023999999917578,
+              "max": 18.564300000012736
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.08236572535986234,
+              "p50": 0.0588999999963562,
+              "p95": 0.20609999999578577,
+              "p99": 0.4092999999993481,
+              "max": 2.3168000000005122
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.054809523809556476,
+              "p50": 0.05040000000008149,
+              "p95": 0.09079999999812571,
+              "p99": 0.1595999999990454,
+              "max": 1.9257000000070548
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.13414086378735865,
+              "p50": 0.098599999997532,
+              "p95": 0.30389999999897555,
+              "p99": 0.5734000000011292,
+              "max": 15.678599999999278
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.491071,
+            "p95": 22.233087,
+            "p99": 25.559039,
+            "max": 58.130431
+          },
+          "eventLoopUtilization": 0.0788912035737384,
+          "cpuPercentOneCore": 8.302561246159447,
+          "memory": {
+            "rss": 47738880,
+            "heapTotal": 31449088,
+            "heapUsed": 16031920,
+            "external": 4288623,
+            "arrayBuffers": 280112
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-combat",
+        "frames": {
+          "n": 2414,
+          "mean": 12.426387738194178,
+          "p50": 12.5,
+          "p95": 15,
+          "p99": 16.59999999962747,
+          "max": 89.40000000037253
+        },
+        "fps": 80.43931729878459,
+        "activeFps": 80.47390931850333,
+        "durationMs": 30010.200000000186,
+        "visibility": [
+          {
+            "at": 70977.70000000019,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 43.09601792797113,
+        "methods": {
+          "interpolation": {
+            "n": 28980,
+            "mean": 0.005089717045885281,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000055879354,
+            "max": 4.2999999998137355
+          },
+          "sprites": {
+            "n": 28980,
+            "mean": 0.00992408557598954,
+            "p50": 0,
+            "p95": 0.09999999962747097,
+            "p99": 0.10000000055879354,
+            "max": 0.7000000001862645
+          },
+          "effects": {
+            "n": 2415,
+            "mean": 0.004265010352661027,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000055879354,
+            "max": 0.7000000001862645
+          },
+          "combatVisualInclusive": {
+            "n": 2415,
+            "mean": 0.06343685299944804,
+            "p50": 0.09999999962747097,
+            "p95": 0.19999999925494194,
+            "p99": 0.20000000018626451,
+            "max": 0.900000000372529
+          },
+          "remoteInclusive": {
+            "n": 2415,
+            "mean": 0.32964803312189767,
+            "p50": 0.20000000018626451,
+            "p95": 1.099999999627471,
+            "p99": 1.5,
+            "max": 3.2000000001862645
+          },
+          "renderSubmit": {
+            "n": 2415,
+            "mean": 2.6040993788817564,
+            "p50": 2.400000000372529,
+            "p95": 4.099999999627471,
+            "p99": 5.7000000001862645,
+            "max": 11.700000000186265
+          },
+          "sceneInclusive": {
+            "n": 2415,
+            "mean": 3.308985507246454,
+            "p50": 3.099999999627471,
+            "p95": 5.3999999994412065,
+            "p99": 7,
+            "max": 15.299999999813735
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.5063333333252619,
+            "p50": 0.40000000037252903,
+            "p95": 1.099999999627471,
+            "p99": 1.5,
+            "max": 1.5
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.6933333333209157,
+            "p50": 0.6000000005587935,
+            "p95": 1.3999999994412065,
+            "p99": 1.7999999998137355,
+            "max": 2.2000000001862645
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 357,
+          "visible": 345,
+          "materials": 108,
+          "textures": 17,
+          "textureSources": 3,
+          "geometries": 269,
+          "transparentObjects": 111,
+          "drawCalls": 110,
+          "triangles": 30378,
+          "gpuTextures": 8,
+          "gpuGeometries": 169,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 581,
+          "effectFrames": 249
+        },
+        "heap": 39353682,
+        "cdpDelta": {
+          "Timestamp": 30.068355000000338,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 449,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -274,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 9746,
+          "RecalcStyleCount": 24955,
+          "LayoutDuration": 1.06513,
+          "RecalcStyleDuration": 0.7969369999999998,
+          "DevToolsCommandDuration": 0.03196099999999999,
+          "ScriptDuration": 8.657225999999998,
+          "V8CompileDuration": 0,
+          "TaskDuration": 12.689493999999996,
+          "TaskOtherDuration": 2.1382399999999997,
+          "ThreadTime": 12.561047000000002,
+          "ProcessTime": 16.575727,
+          "JSHeapUsedSize": 26018920,
+          "JSHeapTotalSize": 10772480,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30092.4911,
+          "commands": {
+            "attack": 96
+          },
+          "transitions": 0,
+          "impacts": 40,
+          "tickHz": 19.971759665985246,
+          "ticks": {
+            "total": {
+              "n": 601,
+              "mean": 3.846218302828183,
+              "p50": 3.4063999999925727,
+              "p95": 8.5170999999973,
+              "p99": 17.062799999999697,
+              "max": 29.24069999999483
+            },
+            "simulation": {
+              "n": 601,
+              "mean": 1.4124515806982885,
+              "p50": 1.1411000000080094,
+              "p95": 2.797600000005332,
+              "p99": 8.396899999992456,
+              "max": 15.994099999996251
+            },
+            "snapshots": {
+              "n": 601,
+              "mean": 2.433357570715812,
+              "p50": 2.0610999999917112,
+              "p95": 6.587200000009034,
+              "p99": 11.368900000001304,
+              "max": 25.85319999999774
+            },
+            "interval": {
+              "n": 600,
+              "mean": 49.97960566666666,
+              "p50": 46.82390000000305,
+              "p95": 62.474299999987124,
+              "p99": 63.365499999999884,
+              "max": 75.38460000000487
+            }
+          },
+          "latenessMs": {
+            "n": 600,
+            "mean": 2.713620666666708,
+            "p50": 0,
+            "p95": 12.474299999987124,
+            "p99": 13.365499999999884,
+            "max": 25.384600000004866
+          },
+          "noopTimerMs": {
+            "n": 488,
+            "mean": 61.47829159836063,
+            "p50": 61.767600000006496,
+            "p95": 64.22359999999753,
+            "p99": 69.35899999999674,
+            "max": 92.38460000000487
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7308,
+              "mean": 0.06482806513402209,
+              "p50": 0.04400000000896398,
+              "p95": 0.16650000000663567,
+              "p99": 0.4300999999977648,
+              "max": 2.8008000000118045
+            },
+            "sqliteRead": {
+              "n": 3652,
+              "mean": 0.11175520262877359,
+              "p50": 0.08350000000791624,
+              "p95": 0.26550000000861473,
+              "p99": 0.47520000000076834,
+              "max": 8.578000000008615
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.0794114894793925,
+              "p50": 0.07160000001022127,
+              "p95": 0.13289999999688007,
+              "p99": 0.2101000000111526,
+              "max": 4.142099999997299
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.13258513289049614,
+              "p50": 0.09979999999632128,
+              "p95": 0.3010999999969499,
+              "p99": 0.6171999999933178,
+              "max": 5.913499999995111
+            },
+            "command": {
+              "n": 96,
+              "mean": 0.09747604166674743,
+              "p50": 0.08239999999932479,
+              "p95": 0.21570000000065193,
+              "p99": 0.43569999998726416,
+              "max": 0.43569999998726416
+            },
+            "sqliteSave": {
+              "n": 40,
+              "mean": 0.10186499999981606,
+              "p50": 0.0834000000031665,
+              "p95": 0.35369999999238644,
+              "p99": 0.3644999999960419,
+              "max": 0.3644999999960419
+            },
+            "sqliteTransaction": {
+              "n": 8,
+              "mean": 6.229937500002052,
+              "p50": 5.545300000012503,
+              "p95": 13.181500000006054,
+              "p99": 13.181500000006054,
+              "max": 13.181500000006054
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.581183,
+            "p95": 23.822335,
+            "p99": 26.443775,
+            "max": 46.202879
+          },
+          "eventLoopUtilization": 0.08966296766776274,
+          "cpuPercentOneCore": 8.566921201149745,
+          "memory": {
+            "rss": 52531200,
+            "heapTotal": 32497664,
+            "heapUsed": 18431736,
+            "external": 4375833,
+            "arrayBuffers": 367322
+          },
+          "connections": 12
+        }
+      },
+      {
+        "name": "tower-24-effects-synthetic",
+        "frames": {
+          "n": 2439,
+          "mean": 12.299015990159825,
+          "p50": 12.5,
+          "p95": 14.900000000372529,
+          "p99": 16.100000000558794,
+          "max": 21
+        },
+        "fps": 81.257745972093,
+        "activeFps": 81.30731765858978,
+        "durationMs": 30015.60000000056,
+        "visibility": [
+          {
+            "at": 104098.79999999981,
+            "state": "visible"
+          }
+        ],
+        "validVisible": true,
+        "onePercentLow": 58.96226415081388,
+        "methods": {
+          "interpolation": {
+            "n": 29280,
+            "mean": 0.00435109289564686,
+            "p50": 0,
+            "p95": 0,
+            "p99": 0.10000000055879354,
+            "max": 0.2999999998137355
+          },
+          "sprites": {
+            "n": 29280,
+            "mean": 0.009310109290240913,
+            "p50": 0,
+            "p95": 0.09999999962747097,
+            "p99": 0.10000000055879354,
+            "max": 0.30000000074505806
+          },
+          "effects": {
+            "n": 2440,
+            "mean": 0.03524590164659636,
+            "p50": 0,
+            "p95": 0.20000000018626451,
+            "p99": 0.5,
+            "max": 0.900000000372529
+          },
+          "combatVisualInclusive": {
+            "n": 2440,
+            "mean": 0.10176229509181481,
+            "p50": 0.09999999962747097,
+            "p95": 0.2999999998137355,
+            "p99": 0.599999999627471,
+            "max": 0.900000000372529
+          },
+          "remoteInclusive": {
+            "n": 2440,
+            "mean": 0.1902868852309394,
+            "p50": 0.20000000018626451,
+            "p95": 0.30000000074505806,
+            "p99": 0.40000000037252903,
+            "max": 1
+          },
+          "renderSubmit": {
+            "n": 2440,
+            "mean": 2.999590163942442,
+            "p50": 2.699999999254942,
+            "p95": 4.8999999994412065,
+            "p99": 9.800000000745058,
+            "max": 14.099999999627471
+          },
+          "sceneInclusive": {
+            "n": 2440,
+            "mean": 3.575737704933224,
+            "p50": 3.2000000001862645,
+            "p95": 5.900000000372529,
+            "p99": 10.600000000558794,
+            "max": 15.900000000372529
+          },
+          "snapshotCallback": {
+            "n": 300,
+            "mean": 0.4936666666623205,
+            "p50": 0.40000000037252903,
+            "p95": 0.900000000372529,
+            "p99": 1.6000000005587935,
+            "max": 2.6000000005587935
+          },
+          "snapshotProcessing": {
+            "n": 300,
+            "mean": 0.6839999999757856,
+            "p50": 0.599999999627471,
+            "p95": 1.2999999998137355,
+            "p99": 2,
+            "max": 2.7000000001862645
+          }
+        },
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 405,
+          "visible": 393,
+          "materials": 156,
+          "textures": 65,
+          "textureSources": 3,
+          "geometries": 269,
+          "transparentObjects": 159,
+          "drawCalls": 158,
+          "triangles": 30474,
+          "gpuTextures": 9,
+          "gpuGeometries": 169,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "activity": {
+          "combatFrames": 0,
+          "effectFrames": 2440
+        },
+        "heap": 16202136,
+        "cdpDelta": {
+          "Timestamp": 30.06328399999984,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": -339,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -1293,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 2744,
+          "RecalcStyleCount": 17101,
+          "LayoutDuration": 0.768732,
+          "RecalcStyleDuration": 0.6360999999999999,
+          "DevToolsCommandDuration": 0.02487600000000001,
+          "ScriptDuration": 9.542439000000002,
+          "V8CompileDuration": 0,
+          "TaskDuration": 13.152055000000004,
+          "TaskOtherDuration": 2.1799079999999993,
+          "ThreadTime": 13.128517999999993,
+          "ProcessTime": 17.289072000000004,
+          "JSHeapUsedSize": -13474104,
+          "JSHeapTotalSize": 1048576,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "server": {
+          "elapsedMs": 30082.770800000013,
+          "commands": {},
+          "transitions": 0,
+          "impacts": 0,
+          "tickHz": 20.011454529979655,
+          "ticks": {
+            "total": {
+              "n": 602,
+              "mean": 3.613002823920445,
+              "p50": 3.099000000001979,
+              "p95": 8.026599999997416,
+              "p99": 10.135000000009313,
+              "max": 17.052799999975832
+            },
+            "simulation": {
+              "n": 602,
+              "mean": 1.172365116279119,
+              "p50": 1.072199999995064,
+              "p95": 2.0579999999899883,
+              "p99": 2.998699999996461,
+              "max": 8.619000000006054
+            },
+            "snapshots": {
+              "n": 602,
+              "mean": 2.440152159468325,
+              "p50": 1.8797000000049593,
+              "p95": 6.783100000000559,
+              "p99": 8.32719999999972,
+              "max": 14.611599999974715
+            },
+            "interval": {
+              "n": 601,
+              "mean": 49.98943394342762,
+              "p50": 46.74709999997867,
+              "p95": 62.312999999994645,
+              "p99": 63.29550000000745,
+              "max": 63.886599999998
+            }
+          },
+          "latenessMs": {
+            "n": 601,
+            "mean": 2.6936106489188334,
+            "p50": 0,
+            "p95": 12.312999999994645,
+            "p99": 13.29550000000745,
+            "max": 13.886599999997998
+          },
+          "noopTimerMs": {
+            "n": 486,
+            "mean": 61.72126358024689,
+            "p50": 61.84570000000531,
+            "p95": 63.541600000011385,
+            "p99": 67.13990000000922,
+            "max": 76.27119999998831
+          },
+          "methods": {
+            "persistenceCheck": {
+              "n": 7224,
+              "mean": 0.06295570321157375,
+              "p50": 0.04409999999916181,
+              "p95": 0.15929999999934807,
+              "p99": 0.3874999999970896,
+              "max": 2.769700000004377
+            },
+            "sqliteRead": {
+              "n": 3612,
+              "mean": 0.12029490586920753,
+              "p50": 0.0970999999990454,
+              "p95": 0.27680000000691507,
+              "p99": 0.4566999999951804,
+              "max": 4.232799999997951
+            },
+            "serialization": {
+              "n": 3612,
+              "mean": 0.09085179955710249,
+              "p50": 0.08370000000286382,
+              "p95": 0.15230000000155997,
+              "p99": 0.23589999999967404,
+              "max": 0.965299999981653
+            },
+            "send": {
+              "n": 3612,
+              "mean": 0.1251423034331006,
+              "p50": 0.09870000000228174,
+              "p95": 0.29249999998137355,
+              "p99": 0.49020000000018626,
+              "max": 1.047999999995227
+            }
+          },
+          "eventLoopDelayMs": {
+            "p50": 15.622143,
+            "p95": 23.592959,
+            "p99": 25.133055,
+            "max": 31.096831
+          },
+          "eventLoopUtilization": 0.08322513866780351,
+          "cpuPercentOneCore": 7.532550824739851,
+          "memory": {
+            "rss": 54243328,
+            "heapTotal": 34856960,
+            "heapUsed": 18075528,
+            "external": 4376049,
+            "arrayBuffers": 367538
+          },
+          "connections": 12
+        }
+      }
+    ],
+    "errors": [],
+    "raycastMs": {
+      "n": 1200,
+      "mean": 0.011833333330384145,
+      "p50": 0,
+      "p95": 0.09999999962747097,
+      "p99": 0.10000000055879354,
+      "max": 1
+    },
+    "ok": true
+  }
+}

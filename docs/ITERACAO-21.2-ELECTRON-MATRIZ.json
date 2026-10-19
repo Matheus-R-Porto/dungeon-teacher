@@ -1,0 +1,381 @@
+{
+  "at": "2026-10-19T15:48:34.049Z",
+  "checks": [
+    "Two actual clients move simultaneously; walls, gates, forest and roads rendered in the shared city",
+    "neither shared client opened any IndexedDB database",
+    "Presentation matrix: four families × four directions × stored/held walks; move/stop/hurt/reverse during equip transition. Fixture inputs, no gameplay claim.",
+    "return to local campaign initializes correctly in the isolated test profile"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-two-players-city.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-two-players-walking.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-city-south-gate.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-city-east-road.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-city-sanctuary.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-npc-reset-angel.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-npc-warehouse.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-npc-blacksmith.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-npc-cook.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-npc-potion-mage.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\211-npc-tower-guide.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\04-final-A.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\04-final-B.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration212-matrix-final\\05-local-campaign.png"
+  ],
+  "errors": [],
+  "poseSamples": [
+    {
+      "family": "sword",
+      "direction": 0,
+      "held": false,
+      "frame": {
+        "column": 5,
+        "row": 0
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "sword",
+      "direction": 0,
+      "held": true,
+      "frame": {
+        "column": 5,
+        "row": 4
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "sword",
+      "direction": 1,
+      "held": false,
+      "frame": {
+        "column": 4,
+        "row": 1
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "sword",
+      "direction": 1,
+      "held": true,
+      "frame": {
+        "column": 5,
+        "row": 5
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "sword",
+      "direction": 2,
+      "held": false,
+      "frame": {
+        "column": 5,
+        "row": 2
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "sword",
+      "direction": 2,
+      "held": true,
+      "frame": {
+        "column": 5,
+        "row": 6
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "sword",
+      "direction": 3,
+      "held": false,
+      "frame": {
+        "column": 5,
+        "row": 3
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "sword",
+      "direction": 3,
+      "held": true,
+      "frame": {
+        "column": 4,
+        "row": 7
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "bow",
+      "direction": 0,
+      "held": false,
+      "frame": {
+        "column": 3,
+        "row": 0
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "bow",
+      "direction": 0,
+      "held": true,
+      "frame": {
+        "column": 3,
+        "row": 4
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "bow",
+      "direction": 1,
+      "held": false,
+      "frame": {
+        "column": 3,
+        "row": 1
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "bow",
+      "direction": 1,
+      "held": true,
+      "frame": {
+        "column": 3,
+        "row": 5
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "bow",
+      "direction": 2,
+      "held": false,
+      "frame": {
+        "column": 4,
+        "row": 2
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "bow",
+      "direction": 2,
+      "held": true,
+      "frame": {
+        "column": 4,
+        "row": 6
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "bow",
+      "direction": 3,
+      "held": false,
+      "frame": {
+        "column": 4,
+        "row": 3
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "bow",
+      "direction": 3,
+      "held": true,
+      "frame": {
+        "column": 1,
+        "row": 7
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "dagger",
+      "direction": 0,
+      "held": false,
+      "frame": {
+        "column": 2,
+        "row": 0
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "dagger",
+      "direction": 0,
+      "held": true,
+      "frame": {
+        "column": 1,
+        "row": 4
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "dagger",
+      "direction": 1,
+      "held": false,
+      "frame": {
+        "column": 2,
+        "row": 1
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "dagger",
+      "direction": 1,
+      "held": true,
+      "frame": {
+        "column": 5,
+        "row": 5
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "dagger",
+      "direction": 2,
+      "held": false,
+      "frame": {
+        "column": 1,
+        "row": 2
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "dagger",
+      "direction": 2,
+      "held": true,
+      "frame": {
+        "column": 3,
+        "row": 6
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "dagger",
+      "direction": 3,
+      "held": false,
+      "frame": {
+        "column": 5,
+        "row": 3
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "dagger",
+      "direction": 3,
+      "held": true,
+      "frame": {
+        "column": 1,
+        "row": 7
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "staff",
+      "direction": 0,
+      "held": false,
+      "frame": {
+        "column": 3,
+        "row": 0
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "staff",
+      "direction": 0,
+      "held": true,
+      "frame": {
+        "column": 2,
+        "row": 4
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "staff",
+      "direction": 1,
+      "held": false,
+      "frame": {
+        "column": 2,
+        "row": 1
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "staff",
+      "direction": 1,
+      "held": true,
+      "frame": {
+        "column": 3,
+        "row": 5
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "staff",
+      "direction": 2,
+      "held": false,
+      "frame": {
+        "column": 4,
+        "row": 2
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "staff",
+      "direction": 2,
+      "held": true,
+      "frame": {
+        "column": 5,
+        "row": 6
+      },
+      "state": "combat",
+      "blend": 1
+    },
+    {
+      "family": "staff",
+      "direction": 3,
+      "held": false,
+      "frame": {
+        "column": 5,
+        "row": 3
+      },
+      "state": "exploration",
+      "blend": 0
+    },
+    {
+      "family": "staff",
+      "direction": 3,
+      "held": true,
+      "frame": {
+        "column": 5,
+        "row": 7
+      },
+      "state": "combat",
+      "blend": 1
+    }
+  ],
+  "ok": true
+}

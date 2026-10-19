@@ -1,7 +1,8 @@
+import {surfaceId,sameLevel,layerWorld,stepSurface} from './surfaces.js';
 // Playable forest is the union of clearings and trail capsules. Borders are rendered as roots/forest.
 export function insideTerrain(world,x,z,radius=0){
  if(!world.walkable)return true;
- return world.walkable.some(s=>{if(!s.a)return Math.hypot(x-s.x,z-s.z)<=s.radius-radius;const dx=s.b.x-s.a.x,dz=s.b.z-s.a.z,t=Math.max(0,Math.min(1,((x-s.a.x)*dx+(z-s.a.z)*dz)/(dx*dx+dz*dz)));return Math.hypot(x-s.a.x-t*dx,z-s.a.z-t*dz)<=s.radius-radius;});
+ return world.walkable.some(s=>{if(s.shape==='polygon')return s.vertices.every((a,i)=>{const b=s.vertices[(i+1)%s.vertices.length];return ((b.x-a.x)*(z-a.z)-(b.z-a.z)*(x-a.x))/Math.hypot(b.x-a.x,b.z-a.z)>=radius-1e-8;});if(!s.a)return Math.hypot(x-s.x,z-s.z)<=s.radius-radius;const dx=s.b.x-s.a.x,dz=s.b.z-s.a.z,t=Math.max(0,Math.min(1,((x-s.a.x)*dx+(z-s.a.z)*dz)/(dx*dx+dz*dz)));return Math.hypot(x-s.a.x-t*dx,z-s.a.z-t*dz)<=s.radius-radius;});
 }
 export function canStand(world, x, z, radius) {
   if (![x, z, radius].every(Number.isFinite) || radius <= 0) return false;
@@ -23,6 +24,7 @@ export function canStand(world, x, z, radius) {
 
 // Exact segment tests use conservatively expanded boxes; no sampled corner cutting.
 export function clearSegment(world, a, b, radius) {
+  if(world.surfaces){if(!sameLevel(a,b)||surfaceId(a)!==surfaceId(b))return false;world=layerWorld(world,surfaceId(a));}
   if (!canStand(world, a.x, a.z, radius) || !canStand(world, b.x, b.z, radius)) return false;
   const dx = b.x - a.x, dz = b.z - a.z;
   if(world.walkable&&!terrainSegmentClear(world,a,b,radius))return false;
@@ -49,7 +51,7 @@ function terrainSegmentClear(world,a,b,radius){
  const dx=b.x-a.x,dz=b.z-a.z,length2=dx*dx+dz*dz,intervals=[];
  if(length2<1e-20)return insideTerrain(world,a.x,a.z,radius);
  const circle=(x,z,r)=>{const ox=a.x-x,oz=a.z-z,p=ox*dx+oz*dz,q=ox*ox+oz*oz-r*r,disc=p*p-length2*q;if(disc<0)return;const root=Math.sqrt(disc);intervals.push([Math.max(0,(-p-root)/length2),Math.min(1,(-p+root)/length2)]);};
- for(const s of world.walkable){const r=s.radius-radius;if(r<=0)continue;if(!s.a){circle(s.x,s.z,r);continue;}circle(s.a.x,s.a.z,r);circle(s.b.x,s.b.z,r);const sx=s.b.x-s.a.x,sz=s.b.z-s.a.z,len=Math.hypot(sx,sz),ux=sx/len,uz=sz/len,ox=a.x-s.a.x,oz=a.z-s.a.z;let near=0,far=1;for(const [p,d,min,max]of [[ox*ux+oz*uz,dx*ux+dz*uz,0,len],[-ox*uz+oz*ux,-dx*uz+dz*ux,-r,r]]){if(Math.abs(d)<1e-12){if(p<min||p>max){near=2;break;}}else{const t1=(min-p)/d,t2=(max-p)/d;near=Math.max(near,Math.min(t1,t2));far=Math.min(far,Math.max(t1,t2));}}if(near<=far)intervals.push([near,far]);}
+ for(const s of world.walkable){if(s.shape==='polygon'){let lo=0,hi=1;for(let i=0;i<s.vertices.length;i++){const p=s.vertices[i],q=s.vertices[(i+1)%s.vertices.length],ex=q.x-p.x,ez=q.z-p.z,l=Math.hypot(ex,ez),v=(ex*(a.z-p.z)-ez*(a.x-p.x))/l-radius,d=(ex*dz-ez*dx)/l;if(Math.abs(d)<1e-12){if(v<0){lo=2;break;}}else if(d>0)lo=Math.max(lo,-v/d);else hi=Math.min(hi,-v/d);}if(lo<=hi)intervals.push([lo,hi]);continue;}const r=s.radius-radius;if(r<=0)continue;if(!s.a){circle(s.x,s.z,r);continue;}circle(s.a.x,s.a.z,r);circle(s.b.x,s.b.z,r);const sx=s.b.x-s.a.x,sz=s.b.z-s.a.z,len=Math.hypot(sx,sz),ux=sx/len,uz=sz/len,ox=a.x-s.a.x,oz=a.z-s.a.z;let near=0,far=1;for(const [p,d,min,max]of [[ox*ux+oz*uz,dx*ux+dz*uz,0,len],[-ox*uz+oz*ux,-dx*uz+dz*ux,-r,r]]){if(Math.abs(d)<1e-12){if(p<min||p>max){near=2;break;}}else{const t1=(min-p)/d,t2=(max-p)/d;near=Math.max(near,Math.min(t1,t2));far=Math.min(far,Math.max(t1,t2));}}if(near<=far)intervals.push([near,far]);}
  intervals.sort((x,y)=>x[0]-y[0]);let covered=0;for(const [from,to]of intervals){if(to<covered)continue;if(from>covered+1e-10)return false;covered=Math.max(covered,to);if(covered>=1-1e-10)return true;}return false;
 }
 
@@ -59,6 +61,7 @@ export function moveWithCollision(world, position, dx, dz, radius) {
   const steps = Math.max(1, Math.ceil(Math.hypot(dx, dz) / (radius * 0.45)));
   for (let i = 0; i < steps; i++) {
     const x = dx / steps, z = dz / steps;
+    if(world.surfaces){const next=stepSurface(world,result,result.x+x,result.z+z,radius,canStand)??stepSurface(world,result,result.x+x,result.z,radius,canStand)??stepSurface(world,result,result.x,result.z+z,radius,canStand);if(next)Object.assign(result,next);continue;}
     if (canStand(world, result.x + x, result.z + z, radius)) { result.x += x; result.z += z; }
     else {
       if (canStand(world, result.x + x, result.z, radius)) result.x += x;

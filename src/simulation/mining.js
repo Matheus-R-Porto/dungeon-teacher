@@ -51,6 +51,7 @@ export class MiningRuntime {
     if(!this.active)return this.pending??Promise.resolve(false);
     if(this.state==='prepare'){this.say('Prepare o golpe… aguarde o indicador.');return Promise.resolve(false);}
     if(this.time>=this.endsAt-1e-9){this.finish('O golpe demorou demais. Você errou o golpe.');this.announce('MISS','ERROU!');return Promise.resolve(false);}
+    this.visualStrikeRevision=(this.visualStrikeRevision??0)+1; // Presentation event; never used by reward logic.
     const result=strikeResult(this.indicator,this.center,this.config);
     if(result==='MISS'){this.finish('Você errou o golpe.');this.announce('MISS','ERROU!');return Promise.resolve(false);}
     const vein=this.vein,area=this.area,s=this.session;

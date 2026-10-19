@@ -1,0 +1,5 @@
+import fs from 'node:fs';import{sharedFloor,geographyHash}from'../server/floor-store.js';import{expandLivingTower}from'../src/world/living-tower.js';import{insideTerrain}from'../src/world/collision.js';
+const rows=[];for(let floor=1;floor<=3;floor++){
+ const before=sharedFloor(217021,floor),after=expandLivingTower(before),measure=w=>{let area=0;for(let x=Math.floor(w.bounds.minX);x<w.bounds.maxX;x++)for(let z=Math.floor(w.bounds.minZ);z<w.bounds.maxZ;z++)if(insideTerrain(w,x+.5,z+.5))area++;return {width:w.bounds.maxX-w.bounds.minX,depth:w.bounds.maxZ-w.bounds.minZ,walkableAreaEstimate:area,mainDistance:w.trails.filter(t=>t.main).reduce((n,t)=>n+t.points.slice(1).reduce((m,p,i)=>m+Math.hypot(p.x-t.points[i].x,p.z-t.points[i].z),0),0),monsters:w.enemySpawns.length,obstacles:w.obstacles.length};};
+ rows.push({floor,seed:217021,storedHash:geographyHash(before),servedHash:geographyHash(after),before:measure(before),after:measure(after),wolves:after.enemySpawns.filter(s=>s.enemyType==='wolf').length});
+}fs.writeFileSync('docs/ITERACAO-22-GEOGRAFIA.json',JSON.stringify(rows,null,2));console.log(rows);

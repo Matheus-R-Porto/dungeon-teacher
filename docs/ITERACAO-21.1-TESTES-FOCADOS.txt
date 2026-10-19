@@ -1,0 +1,19 @@
+✔ configurable hotbar accepts only learned skills, swaps, clears and survives save (18.2588ms)
+✔ local city shares geography and keeps reachable local services and safe entry (360.9325ms)
+✔ sprite walk keeps direction, phases do not reset on equal snapshots and weapon follows equipment (11.4572ms)
+✔ static batching retains world geometry, material, shadow flags and dynamic objects (14.5559ms)
+✔ atlas cell bounds sample only their own texel centres and reject fractional grids (2.387ms)
+✔ packed assets retain complete silhouettes inside integer transparent gutters (1184.8499ms)
+✔ visual drawing and sheathing have intermediate states, cannot alter attack data, and can reverse (1.465ms)
+✔ four walk frames follow distance, retain phase across snapshots, and stop without sliding (0.383ms)
+✔ reconnect preserves server-reported combat posture and ignores absent legacy fields (0.2769ms)
+✔ all weapons select their own atlas without duplicate sheathed props, direction remains stable (14.7507ms)
+✔ exterior uses spatially bounded instances and keeps the terrain continuous (47.9718ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1524.6308

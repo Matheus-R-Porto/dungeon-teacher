@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-15T22:29:18.952Z",
+  "checks": [
+    "two isolated Electron processes render one another",
+    "actual WASD input moves player on server",
+    "both clients select and damage same monster through mouse input",
+    "same death and zero HP displayed in both clients",
+    "respawn displayed in both clients while one menu is open",
+    "disconnect and reconnect retain two unique players",
+    "neither shared client opened any IndexedDB database",
+    "return to local campaign initializes correctly in the isolated test profile"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\01-client-a.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\01-client-b.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\02-combat-a.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\02-combat-b.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\03-death-a.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\03-death-b.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\04-final-A.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\04-final-B.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\world-probe\\05-local-campaign.png"
+  ],
+  "errors": [],
+  "ok": true
+}

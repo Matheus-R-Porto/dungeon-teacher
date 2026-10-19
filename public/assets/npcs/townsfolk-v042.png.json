@@ -1,0 +1,108 @@
+{
+  "source": "public/assets/npcs/townsfolk.png",
+  "width": 1536,
+  "height": 1024,
+  "columns": 3,
+  "rows": 2,
+  "cell": 256,
+  "padding": 22,
+  "scale": 0.4140625,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "sourceBounds": [
+        39,
+        8,
+        472,
+        506
+      ],
+      "bounds": [
+        38,
+        27,
+        217,
+        233
+      ]
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "sourceBounds": [
+        625,
+        0,
+        879,
+        511
+      ],
+      "bounds": [
+        75,
+        22,
+        180,
+        233
+      ]
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "sourceBounds": [
+        1089,
+        8,
+        1472,
+        511
+      ],
+      "bounds": [
+        48,
+        25,
+        206,
+        233
+      ]
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "sourceBounds": [
+        128,
+        518,
+        393,
+        1019
+      ],
+      "bounds": [
+        73,
+        26,
+        182,
+        233
+      ]
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "sourceBounds": [
+        619,
+        513,
+        899,
+        1019
+      ],
+      "bounds": [
+        70,
+        24,
+        185,
+        233
+      ]
+    },
+    {
+      "column": 2,
+      "row": 1,
+      "sourceBounds": [
+        1120,
+        515,
+        1432,
+        1018
+      ],
+      "bounds": [
+        63,
+        25,
+        192,
+        233
+      ]
+    }
+  ]
+}

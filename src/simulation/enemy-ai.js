@@ -11,7 +11,7 @@ export class EnemyAI {
   constructor(combat){this.combat=combat;this.world=combat.game.world;this.metrics={paths:0,fallbacks:0,updates:0};this.debug=false;
     combat.enemies.forEach((e,i)=>{e.ai={perception:i*A.perceptionInterval/combat.enemies.length,repath:i*0.025,alert:0,outside:0,stuck:0,returnTime:0,...(e.noRespawn?{}:{respawnRetry:0}),lastTarget:null,ambientTimer:.5+i*.43,ambientPhase:'idle',retreatRemaining:0,retreatCooldown:0,random:seeded(e.ambientSeed??i+1)};});
   }
-  resolveTarget(id){const c=this.combat;return id===c.character.data.id&&c.character.isAlive&&c.state!=='dead'?c.game.player:null;}
+  resolveTarget(id){const c=this.combat;return id===c.character.data.id&&c.character.isAlive&&c.state!=='dead'&&(c.game.player.y??0)<.75?c.game.player:null;}
   acquire(e,targetId,reason){if(!e.alive||e.state==='returning'||!this.resolveTarget(targetId))return;e.targetId=targetId;e.aggroReason=reason;e.state='alert';e.ai.alert=A.alertDuration;e.ai.outside=0;e.ai.repath=0;e.ai.stuck=0;e.path=[];}
   onDamaged(e,attackerId){if(!e.targetId)this.acquire(e,attackerId,'damage');}
   returning(e,reason){if(!e.alive||e.state==='returning')return;e.state='returning';e.targetId=null;e.aggroReason=reason;e.path=[];e.ai.repath=0;e.ai.returnTime=0;e.ai.stuck=0;this.combat.enemyCycles.get(e.id)?.cancel();}

@@ -1,0 +1,17 @@
+BETA 0.5.0 — CHECKLIST HUMANO PENDENTE
+Preparação e limites: docs/ITERACAO-22-RELATORIO.md
+
+[ ] Abrir A/B e conferir identidades diferentes.
+[ ] Criar party; convidar, aceitar/recusar/cancelar.
+[ ] Transferir liderança; sair/expulsar sem teleporte.
+[ ] Conferir HP, nível e presença dos integrantes.
+[ ] Conversar no global entre andares e no canal exclusivo da party.
+[ ] Combater juntos, conferir XP e pontos ao subir de nível.
+[ ] Coletar drops privados; outro jogador não pode coletá-los.
+[ ] Conferir inventário e distribuir pontos na entrada, fora de combate.
+[ ] Avançar, desconectar, reiniciar servidor e recuperar progresso.
+[ ] Conferir que a party precisa ser refeita após reinício.
+[ ] Voltar à campanha local e confirmar independência do save.
+
+Validação automatizada concluída não substitui este checklist humano.
+

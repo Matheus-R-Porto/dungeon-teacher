@@ -1,0 +1,361 @@
+{
+  "source": "sword-v042-poses",
+  "walk": "walk-v042",
+  "cell": 384,
+  "columns": 8,
+  "rows": 4,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "bounds": [
+        115,
+        152,
+        271,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "bounds": [
+        105,
+        154,
+        264,
+        350
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "bounds": [
+        105,
+        154,
+        258,
+        350
+      ],
+      "removedDetachedPixels": 47
+    },
+    {
+      "column": 3,
+      "row": 0,
+      "bounds": [
+        105,
+        154,
+        258,
+        350
+      ],
+      "removedDetachedPixels": 47
+    },
+    {
+      "column": 4,
+      "row": 0,
+      "bounds": [
+        105,
+        154,
+        258,
+        350
+      ],
+      "removedDetachedPixels": 47
+    },
+    {
+      "column": 5,
+      "row": 0,
+      "bounds": [
+        105,
+        154,
+        258,
+        350
+      ],
+      "removedDetachedPixels": 47
+    },
+    {
+      "column": 6,
+      "row": 0,
+      "bounds": [
+        118,
+        134,
+        260,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 7,
+      "row": 0,
+      "bounds": [
+        82,
+        164,
+        302,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "bounds": [
+        138,
+        146,
+        283,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "bounds": [
+        93,
+        147,
+        284,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 2,
+      "row": 1,
+      "bounds": [
+        93,
+        147,
+        284,
+        350
+      ],
+      "removedDetachedPixels": 8
+    },
+    {
+      "column": 3,
+      "row": 1,
+      "bounds": [
+        93,
+        147,
+        284,
+        350
+      ],
+      "removedDetachedPixels": 8
+    },
+    {
+      "column": 4,
+      "row": 1,
+      "bounds": [
+        93,
+        147,
+        284,
+        350
+      ],
+      "removedDetachedPixels": 8
+    },
+    {
+      "column": 5,
+      "row": 1,
+      "bounds": [
+        93,
+        147,
+        284,
+        350
+      ],
+      "removedDetachedPixels": 8
+    },
+    {
+      "column": 6,
+      "row": 1,
+      "bounds": [
+        136,
+        112,
+        299,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 7,
+      "row": 1,
+      "bounds": [
+        38,
+        157,
+        322,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 0,
+      "row": 2,
+      "bounds": [
+        120,
+        156,
+        256,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 2,
+      "bounds": [
+        124,
+        156,
+        286,
+        350
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 2,
+      "row": 2,
+      "bounds": [
+        128,
+        156,
+        286,
+        350
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 3,
+      "row": 2,
+      "bounds": [
+        128,
+        156,
+        286,
+        350
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 4,
+      "row": 2,
+      "bounds": [
+        128,
+        156,
+        286,
+        350
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 5,
+      "row": 2,
+      "bounds": [
+        128,
+        156,
+        286,
+        350
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 6,
+      "row": 2,
+      "bounds": [
+        120,
+        147,
+        259,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 7,
+      "row": 2,
+      "bounds": [
+        97,
+        175,
+        315,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 0,
+      "row": 3,
+      "bounds": [
+        104,
+        153,
+        246,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 3,
+      "bounds": [
+        102,
+        154,
+        285,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 2,
+      "row": 3,
+      "bounds": [
+        102,
+        154,
+        285,
+        350
+      ],
+      "removedDetachedPixels": 8
+    },
+    {
+      "column": 3,
+      "row": 3,
+      "bounds": [
+        102,
+        154,
+        285,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 4,
+      "row": 3,
+      "bounds": [
+        102,
+        154,
+        285,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 5,
+      "row": 3,
+      "bounds": [
+        102,
+        154,
+        285,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 6,
+      "row": 3,
+      "bounds": [
+        97,
+        144,
+        249,
+        350
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 7,
+      "row": 3,
+      "bounds": [
+        75,
+        174,
+        313,
+        350
+      ],
+      "removedDetachedPixels": 1
+    }
+  ]
+}

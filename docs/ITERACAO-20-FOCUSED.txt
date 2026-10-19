@@ -1,0 +1,58 @@
+✔ training enemy stands on walkable ground, approach reaches range and stops (31.5442ms)
+✔ attack cycle has delayed one-time impact and exact low/normal/high frequency at 30/60/144 FPS (2.1963ms)
+✔ cancelled windup causes no damage and clicking again cannot erase cooldown (0.2421ms)
+✔ central hit, minimum damage, variation, critical and miss formulas (1.2996ms)
+✔ STR AGI DEX LUK VIT change actual damage, cadence, chance, critical frequency and survival (16.7135ms)
+✔ manual WASD and floor click cancel pursuit but preserve selected target (4.3227ms)
+✔ range revalidated at impact; removed target cannot be struck (35.3572ms)
+✔ enemy death clamps HP, clears target, ends attack and removes after delay without XP (5.5745ms)
+✔ passive validation, retaliation shares formulas, and death returns player with full resources (13.244ms)
+✔ pausing freezes both cycles, movement, HP and death timer (2.6586ms)
+✔ combat facing and damage independent of seven camera angles (41.4132ms)
+✔ interaction explicitly cancels windup and combat blocks attribute allocation (3.3392ms)
+✔ enemy attacks continue at high player attack speed without stun lock (6.9942ms)
+✔ ray targeting hits the enemy at all requested orbital camera angles (22.3225ms)
+✔ switching targets cancels the first pending impact (3.3372ms)
+20 enemies / 15 simulated seconds: 109.7 ms, paths: 3 fallbacks: 0
+20 active pursuers / 10 simulated seconds: 98.9 ms, paths: 123
+✔ data-driven spawns have independent identity, origin, statistics and timers (6.5979ms)
+✔ perception acquires a living visible player with an aggro reason (3.789ms)
+✔ outside detection, passive enemies and dead player do not trigger perception (5.3636ms)
+✔ solid obstacles block perception when LOS is required (3.4179ms)
+✔ chase reaches attack range and uses existing attack damage (6.3611ms)
+✔ leaving attack range cancels impact and resumes chase (2.2136ms)
+✔ enemy navigation routes around solid obstacles instead of crossing them (9.8186ms)
+✔ repath is throttled and reacts to significant target movement (1.7568ms)
+✔ small leash boundary excursion does not immediately reset aggro (2.43ms)
+✔ sustained leash violation clears target, enters return and stops attacks (4.7087ms)
+✔ return regenerates gradually and fills HP on arrival without normal teleport (3.6462ms)
+✔ returning ignores damage and reacquisition to prevent leash exploits (0.8684ms)
+✔ aggro is individual and does not socially alert distant neighbors (1.5485ms)
+✔ all six eligible enemies can acquire aggro without a global cap (3.185ms)
+✔ individual death removes only its body/target and starts respawn (3.6319ms)
+✔ respawn restores source position, HP and clean attack state (1.8363ms)
+✔ respawn is delayed when player or another body occupies origin (2.6914ms)
+✔ player death clears all aggro and pending impacts while enemies return (1.498ms)
+✔ pause freezes perception, movement, respawn and attacks together (1.1165ms)
+✔ impossible chase transitions into return with a bounded pathfinding count (243.9743ms)
+✔ blocked return uses safe fallback only after stuck timeout (39.8255ms)
+✔ separation resolves coincident bodies and respects static walls (2.0581ms)
+✔ player movement contacts and pushes a body instead of walking through it (2.1651ms)
+✔ swept collision blocks a high displacement from tunneling through a pinned enemy (0.7336ms)
+✔ AI and attack outcomes remain comparable at 30, 60 and 144 FPS (7.6188ms)
+✔ normal and twenty-enemy Hub fixtures validate; scale run stays finite with bounded repaths (119.0093ms)
+✔ twenty simultaneous pursuers remain independent with bounded navigation work (101.3013ms)
+✔ return fallback waits instead of teleporting onto player (66.6928ms)
+✔ ray targeting distinguishes nearby monsters and draws only the selected ring (8.7086ms)
+✔ a surrounded player can push through a small group without remaining trapped (1.295ms)
+✔ public city has navigable NPC approaches, solid buildings and reachable tower (56.1782ms)
+✔ dialogue requires proximity and unobstructed line of sight, ignoring only its own NPC collider (1.071ms)
+✔ school: 12 v4 identities, 2x6 parties, combat, loot, travel, reconnection and persistent restart (16285.05ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 48
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16685.604

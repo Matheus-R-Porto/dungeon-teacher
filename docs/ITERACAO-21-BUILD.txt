@@ -1,0 +1,21 @@
+
+> dungeon-teacher-beta@0.4.1 build
+> vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 100 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                        7.85 kB │ gzip:   3.12 kB
+dist/assets/world-mode-DW5pzqQ2.css    1.76 kB │ gzip:   0.80 kB
+dist/assets/index-BDqIwOu_.css        39.42 kB │ gzip:   9.74 kB
+dist/assets/world-mode-Cyt5SUcz.js    25.37 kB │ gzip:   9.78 kB
+dist/assets/index-COTUwWIm.js        852.98 kB │ gzip: 237.30 kB
+
+✓ built in 1.01s
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

@@ -1,0 +1,1 @@
+export function stats(a){if(!a.length)return {n:0};const s=[...a].sort((a,b)=>a-b),q=p=>s[Math.min(s.length-1,Math.floor(p*s.length))];return {n:s.length,mean:a.reduce((a,b)=>a+b,0)/a.length,p50:q(.5),p95:q(.95),p99:q(.99),max:s.at(-1)};}

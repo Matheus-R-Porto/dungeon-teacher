@@ -1,9 +1,12 @@
+import {cityMap} from '../../shared/city.js';
 import {biomeSequence} from '../world/biomes.js';
 import {FishingRuntime} from './fishing.js';
 import {MiningRuntime} from './mining.js';
 import {BALANCE} from '../domain/character/balance.js';
 import {canStand} from '../world/collision.js';
-import {generateFloor} from '../world/tower.js';
+import {generateFloor as generateBaseFloor} from '../world/tower.js';
+import {expandOpenTower} from '../world/open-tower.js';
+const generateFloor=(...args)=>expandOpenTower(generateBaseFloor(...args));
 import {EXPEDITION as E,seedOf,earnResources,TOWER_LIMIT} from '../domain/expedition.js';
 import {Inventory} from '../domain/items/inventory.js';
 import {TOWER_REWARDS,markFloorCleared,rewardClaimed,claimReward} from '../domain/tower-progress.js';
@@ -19,16 +22,18 @@ import {EnemyAI} from './enemy-ai.js';
 import {AbilityRuntime} from './abilities.js';
 
 export function createAreas(hubData){
-  const hub=structuredClone(hubData);
-  hub.name='Refúgio do Limiar';hub.safe=true;hub.floorId=null;hub.environment='refuge';hub.enemySpawns=[];hub.returnSpawn={x:0,z:-2};
-  const portal=hub.interactables.find(i=>i.id==='tower-portal');portal.action='travel';portal.label='Entrar na Torre · Andar 1';portal.content={areaId:'tower-floor-1'};
-  hub.npcs=[{id:'weaponsmith',name:'Armeiro',x:2.4,z:3.5},{id:'cook',name:'Mira · Cozinheira',x:-3,z:6.7}];
- hub.obstacles.push({id:'cook',x:-3,z:6.7,shape:'circle',radius:.4,kind:'npc'},{id:'cooking-station',x:-4,z:4.8,shape:'circle',radius:.65,kind:'cooking'});
- hub.interactables.push({id:'cook',x:-3,z:6.7,radius:2,priority:1,label:'Falar com Mira · Cozinheira',action:'cook',content:{},ignoreObstacles:['cook','cooking-station'],highlightRadius:.7},{id:'cooking-station',x:-4,z:4.8,radius:2,priority:0,label:'Cozinhar no fogão',action:'cook',content:{station:true},ignoreObstacles:['cook','cooking-station'],highlightRadius:.7});
-  hub.obstacles.push({id:'forge',x:2.8,z:-.5,shape:'circle',radius:.75,kind:'forge'});
-  hub.interactables.push({id:'forge',x:2.8,z:-.5,radius:2.2,priority:1,label:'Usar a Forja',action:'forge',content:{},ignoreObstacles:['forge'],highlightRadius:.9});
-  hub.obstacles.push({id:'weaponsmith',x:2.4,z:3.5,shape:'circle',radius:.4,kind:'npc'});
-  hub.interactables.push({id:'weaponsmith',x:2.4,z:3.5,radius:2,priority:1,label:'Conversar com o Armeiro',action:'shop',content:{shopId:'training-weapons'},ignoreObstacles:['weaponsmith'],highlightRadius:.7});
+  const hub=cityMap();hub.id=hubData.id;hub.name='Refúgio do Limiar';hub.floorId=null;hub.returnSpawn={x:0,z:5};
+  const portal=hub.interactables[0];portal.content={areaId:'tower-floor-1'};
+  const smith=hub.npcs.find(n=>n.id==='blacksmith');smith.id='weaponsmith';smith.name='Brasa · Armeiro';
+  hub.obstacles.find(o=>o.id==='npc-blacksmith').id='weaponsmith';
+  for(const npc of hub.npcs){
+    const action=npc.id==='weaponsmith'?'shop':npc.id==='cook'?'cook':'examine';
+    hub.interactables.push({id:npc.id,x:npc.x,z:npc.z,radius:2.7,priority:1,label:'Conversar com '+npc.name,action,content:action==='shop'?{shopId:'training-weapons'}:action==='cook'?{}:{eyebrow:'CIDADE DO LIMIAR',title:npc.name,text:npc.id==='tower-guide'?'Equipe uma arma e siga ao portal. Prepare sua expedição e volte à cidade para guardar suas conquistas.':npc.id==='warehouse'?'Seus itens permanecem no inventário do personagem. O serviço de armazenamento ainda está em preparação.':npc.lines.join(' ')},ignoreObstacles:[npc.id==='weaponsmith'?'weaponsmith':'npc-'+npc.id],highlightRadius:.7});
+  }
+  hub.obstacles.push({id:'cooking-station',x:18,z:12,shape:'circle',radius:.65,kind:'cooking'});
+  hub.interactables.push({id:'cooking-station',x:18,z:12,radius:2,priority:1,label:'Cozinhar no fogão',action:'cook',content:{station:true},ignoreObstacles:['cooking-station']});
+  const anvil=hub.obstacles.find(o=>o.id==='city-forge');anvil.id='forge';anvil.kind='forge';
+  hub.interactables.push({id:'forge',x:anvil.x,z:anvil.z,radius:2.2,priority:1,label:'Usar a Forja',action:'forge',content:{},ignoreObstacles:['forge'],highlightRadius:.9});
   hub.exits=hub.interactables.filter(i=>i.action==='travel').map(i=>({interactionId:i.id,...i.content}));validateHub(hub);
   return Object.fromEntries([hub,...[1,2,3].map(n=>generateFloor(1,n,hub.id))].map(a=>[a.id,a]));
 }
@@ -49,7 +54,7 @@ export class AreaSession {
   // A floor the character already cleared (campaign only) never blocks the way again; its enemies stay alive.
   get complete(){return this.revisit||(this.normalsCleared&&(this.area.floorRole!=='boss'||!!this.run?.bossDefeated));}
   get boss(){return this.combat.enemies.find(e=>e.boss);}
-  startRun(){const seed=this.seedOverride??Math.floor(Math.random()*4294967296);const floors=[1,2,3].map(n=>generateFloor(seed,n,this.hubId));for(const floor of floors)this.areas[floor.id]=floor;this.run={seed,mode:'campaign',floor:1,floors:floors.map(f=>f.seed),encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};this.fishing.reset(seed);this.mining.reset(seed);this.enter('tower-floor-1');this.notify('Expedição iniciada · Andar 1');}
+  startRun(){const seed=this.seedOverride??Math.floor(Math.random()*4294967296);const floors=[1,2,3].map(n=>generateFloor(seed,n,this.hubId));for(const [id,area] of Object.entries(this.areas))if(!area.safe)delete this.areas[id];for(const floor of floors)this.areas[floor.id]=floor;this.run={seed,mode:'campaign',floor:1,floors:floors.map(f=>f.seed),encounters:[],completedEncounters:[],graph:null,exploration:[],bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0};this.fishing.reset(seed);this.mining.reset(seed);this.enter('tower-floor-1');this.notify('Expedição iniciada · Andar 1');}
   startBiomePlaytest(type){
     if(!this.area.safe)throw Error('Volte ao Refúgio antes de escolher um bioma.');
     if(!equippedDefinition(this.combat.character.data))throw Error('Equipe uma arma em I para explorar.');
@@ -76,7 +81,7 @@ export class AreaSession {
     new Game({...world,spawn});
     this.transitioning=true;try{
       const g=this.game,c=this.combat;g.paused=true;c.cancel(true);c.abilities.interrupt('death');c.playerCycle=new AttackCycle();c.enemyCycles.clear();c.events=[];c.lastResult='—';c.deathTime=0;c.pursuitPoint=null;c.pursuitRepath=0;c.state='idle';
-      c.enemies=enemies;g.world=world;c.ai=world.safe?null:new EnemyAI(c);g.areaId=world.id;g.floorId=world.floorId;g.inCombat=false;g.interactionTarget=null;Object.assign(g.player,spawn,{heading:Math.PI,moving:false});g.previous={...g.player};
+      c.enemies=enemies;g.world=world;c.ai=world.safe?null:new EnemyAI(c);g.areaId=world.id;g.floorId=world.floorId;g.inCombat=false;g.interactionTarget=null;Object.assign(g.player,{y:0,surface:'ground'},spawn,{heading:Math.PI,moving:false});g.previous={...g.player};
       this.interactions=interactions;this.defeated=new Set();this.objectiveIds=new Set(enemies.filter(e=>!e.boss&&!e.optional).map(e=>e.id));this.rewarded=new Set();this.floorAnnounced=false;this.revisit=cleared;if(this.run){if(world.floorRole!=='boss')Object.assign(this.run,{bossStarted:false,bossDefeated:false,rewardCollected:false,bossTimer:0});if(world.floorRole==='boss'&&cleared){this.run.bossStarted=true;this.run.bossDefeated=true;this.run.rewardCollected=rewardClaimed(this.combat.character.data,'boss-floor-3');}this.run.floor=world.floorId;this.run.graph=world.graph;this.run.encounters=(world.encounters??[]).map(e=>({...e,state:cleared?'completed':'pending'}));this.run.completedEncounters=[];this.run.visitedRegions=[];this.run.floorDistanceStart=g.distance;this.run.floorTimeStart=g.elapsed;}this.returnInteraction=world.interactables.find(i=>i.id==='return-portal');this.refugeInteraction=world.interactables.find(i=>i.id==='refuge-portal');
       this.quest.sync(this);if(!initial)this.onTransition(world);g.paused=false;
     }finally{this.transitioning=false;}

@@ -1,0 +1,23 @@
+[
+  {
+    "file": "public\\assets\\monsters\\wolf-v050.png",
+    "width": 2240,
+    "height": 1280,
+    "fileBytes": 1362746,
+    "rgbaBytes": 11468800
+  },
+  {
+    "file": "public\\assets\\environment\\living-v050.png",
+    "width": 1280,
+    "height": 640,
+    "fileBytes": 650198,
+    "rgbaBytes": 3276800
+  },
+  {
+    "file": "public\\assets\\environment\\forest-ground-v050.png",
+    "width": 1254,
+    "height": 1254,
+    "fileBytes": 2992293,
+    "rgbaBytes": 6290064
+  }
+]

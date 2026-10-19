@@ -1,3 +1,4 @@
+import {normalizeHotbar} from '../../domain/abilities/hotbar.js';
 import {decodeFood} from '../../domain/food.js';
 import {decodeLifeSkills} from '../../domain/life-skills.js';
 import {decodeFirstSteps} from '../../domain/first-steps.js';
@@ -31,6 +32,7 @@ export function decodeSave(raw){
   Object.assign(data,decodeInventory(source));data.lifeSkills=decodeLifeSkills(source.lifeSkills);
   if(source.knownAbilities!==undefined&&(!Array.isArray(source.knownAbilities)||source.knownAbilities.some(id=>!Object.hasOwn(ABILITIES,id))))throw Error('Habilidade desconhecida no save.');
   data.knownAbilities=source.knownAbilities?[...new Set(source.knownAbilities)]:[];
+  if(source.hotbar!==undefined)data.hotbar=normalizeHotbar(source.hotbar,data.knownAbilities);
   data.firstSteps=decodeFirstSteps(source.firstSteps);data.tower=decodeTower(source.tower);data.smithingMastery=decodeMastery(source.smithingMastery);
   Object.assign(data,decodeFood(source));if(source.hp===0)data.foodBuff=null;
   const stats=calculateStats(data);
@@ -44,7 +46,9 @@ export class CharacterSave {
     this.db=await new Promise((resolve,reject)=>{const request=indexedDB.open('dungeon-master',1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains('character'))request.result.createObjectStore('character');};request.onerror=()=>reject(request.error);request.onblocked=()=>reject(Error('Feche outras abas do jogo para abrir o save.'));request.onsuccess=()=>resolve(request.result);});
     this.db.onversionchange=()=>this.db.close();
     const raw=await new Promise((resolve,reject)=>{const tx=this.db.transaction('character','readonly'),r=tx.objectStore('character').get(this.key);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
-    this.revision=raw?.revision??0;const data=decodeSave(raw);if(!raw||raw.character?.progressionVersion!==BALANCE.progressionVersion)await this.save(data);return data;
+    // Never run the historical destructive reset when opening a real profile.
+    if(raw&&(raw.character??raw).progressionVersion!==BALANCE.progressionVersion){this.db.close();throw Error('Save antigo preservado. Conversão automática desativada; use um perfil de teste separado.');}
+    this.revision=raw?.revision??0;const data=decodeSave(raw);if(!raw)await this.save(data);return data;
   }
   save(character){const snapshot=structuredClone(character);const operation=this.queue.then(()=>new Promise((resolve,reject)=>{
     const tx=this.db.transaction('character','readwrite'),store=tx.objectStore('character'),read=store.get(this.key);let conflict=false;

@@ -1,0 +1,25 @@
+✔ configurable hotbar accepts only learned skills, swaps, clears and survives save (114.3671ms)
+✔ local city shares geography and keeps reachable local services and safe entry (1545.6686ms)
+✔ sprite walk keeps direction, phases do not reset on equal snapshots and weapon follows equipment (28.8739ms)
+✔ static batching retains world geometry, material, shadow flags and dynamic objects (69.7117ms)
+✔ atlas cell bounds sample only their own texel centres and reject fractional grids (7.6955ms)
+✔ packed assets retain complete silhouettes inside integer transparent gutters (5459.7861ms)
+✔ visual drawing and sheathing have intermediate states, cannot alter attack data, and can reverse (6.3617ms)
+✔ five walk frames follow distance, retain phase across snapshots, and stop without sliding (3.9926ms)
+✔ reconnect preserves server-reported combat posture and ignores absent legacy fields (1.4512ms)
+✔ all weapons select their own atlas without duplicate sheathed props, direction remains stable (87.7202ms)
+✔ exterior uses spatially bounded instances and keeps the terrain continuous (982.7647ms)
+✔ each family renders complete stored and held five-frame walks in all directions (622.5907ms)
+✔ starting and stopping movement changes transition variant without resetting equipment progress (7.6844ms)
+✔ damage reaction pauses equip transition and preserves gameplay inputs (1.6891ms)
+✔ mining presents a strike only for a real strike event, never for timeout (1.6098ms)
+✔ fishing follows real cast, wait, bite and reel events without changing them (3.2224ms)
+✔ current PNGs match integer manifests with complete silhouettes inside safe margins (220.4657ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8403.2749

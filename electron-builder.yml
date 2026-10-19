@@ -1,9 +1,9 @@
 appId: com.dungeonmaster.playtest
 productName: Dungeon Master
-buildVersion: 0.1.5.1
+buildVersion: 0.5.0.0
 asar: true
 directories:
-  output: release/smithing-build
+  output: release/beta-0.5.0
 files:
   - dist/**/*
   - desktop/*.cjs
@@ -13,8 +13,8 @@ files:
 extraResources:
   - from: desktop/LEIA-ME.txt
     to: LEIA-ME.txt
-  - from: desktop/CHECKLIST-SMITHING.txt
-    to: CHECKLIST-SMITHING.txt
+  - from: desktop/CHECKLIST-SHARED-WORLD.txt
+    to: CHECKLIST-SHARED-WORLD.txt
 win:
   executableName: DungeonMaster
   target:
@@ -23,7 +23,7 @@ win:
     - target: portable
       arch: [x64]
 nsis:
-  artifactName: DungeonMaster-Beta-${version}-Smithing-Setup.${ext}
+  artifactName: DungeonMaster-Beta-${version}-SharedWorld-Setup.${ext}
   oneClick: false
   perMachine: false
   allowElevation: false
@@ -32,7 +32,7 @@ nsis:
   createDesktopShortcut: true
   shortcutName: Dungeon Master
 portable:
-  artifactName: DungeonMaster-Beta-${version}-Smithing-Portable.${ext}
+  artifactName: DungeonMaster-Beta-${version}-SharedWorld-Portable.${ext}
 publish: null
 
 electronDist: node_modules/electron/dist

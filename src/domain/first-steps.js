@@ -2,7 +2,7 @@ import {equippedDefinition} from './items/inventory.js';
 export const FIRST_STEPS = [
   {id:'movement',title:'Explore o Refúgio',hint:'Use WASD ou clique no chão para caminhar.'},
   {id:'camera',title:'Teste a câmera',hint:'Segure Q ou E para girar. Use a roda do mouse para aproximar.'},
-  {id:'smith',title:'Converse com o Armeiro',hint:'Procure o Armeiro junto à tenda e pressione F.'},
+  {id:'smith',title:'Converse com o Armeiro',hint:'Procure Brasa no Pátio das Oficinas, a leste da praça, e pressione F.'},
   {id:'acquired',title:'Obtenha sua primeira arma',hint:'Na loja, escolha uma arma gratuita.'},
   {id:'equipped',title:'Equipe a arma',hint:'Abra I, selecione a arma e clique em Equipar.'},
   {id:'entered',title:'Entre no Portal da Torre',hint:'Com uma arma equipada, aproxime-se do Portal e pressione F.'},

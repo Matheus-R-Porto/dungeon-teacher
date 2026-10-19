@@ -266,17 +266,17 @@ test('invalid Smithing data in a save is rejected instead of being trusted',()=>
 });
 
 // ───────────── The forge station in the Refuge ─────────────
-test('the Refuge has a reachable forge that blocks nothing and the Armorer is unchanged',()=>{
+test('the Refuge has a reachable forge that blocks nothing and the Armorer retains its shop action',()=>{
   const hub=Object.values(createAreas(hubData)).find(a=>a.safe),forge=hub.obstacles.find(o=>o.id==='forge'),it=hub.interactables.find(i=>i.id==='forge');
   assert.ok(forge&&it);assert.equal(forge.kind,'forge');assert.equal(it.action,'forge');assert.deepEqual([it.x,it.z],[forge.x,forge.z]);assert.ok(it.ignoreObstacles.includes('forge'));assert.match(it.label,/Forja/);
   assert.equal(new Set(hub.obstacles.map(o=>o.id)).size,hub.obstacles.length);
   for(const o of hub.obstacles){if(o.id==='forge')continue;const gap=o.shape==='circle'?Math.hypot(o.x-forge.x,o.z-forge.z)-o.radius-forge.radius:Math.hypot(forge.x-Math.max(o.x-o.halfX,Math.min(forge.x,o.x+o.halfX)),forge.z-Math.max(o.z-o.halfZ,Math.min(forge.z,o.z+o.halfZ)))-forge.radius;assert.ok(gap>=.4,'forge too close to '+o.id+' ('+gap.toFixed(2)+')');}
   const reach=(x,z)=>canStand(hub,x,z,.32)&&!!findPath(hub,hub.spawn,{x,z},.32);
   for(const [dx,dz] of [[1.4,0],[-1.4,0],[0,1.4],[0,-1.4]])assert.ok(reach(forge.x+dx,forge.z+dz),'forge side '+dx+','+dz);
-  for(const p of [hub.portal,{x:2.4,z:2},{x:-3,z:5.3},{x:-4,z:3.2}])assert.ok(reach(p.x,p.z));
-  const smith=hub.interactables.find(i=>i.id==='weaponsmith');assert.deepEqual([smith.x,smith.z,smith.action],[2.4,3.5,'shop']);assert.ok(hub.interactables.some(i=>i.id==='cook')&&hub.interactables.some(i=>i.id==='cooking-station')&&hub.interactables.some(i=>i.id==='tower-portal'));
+  for(const p of [hub.portal,...hub.npcs.map(n=>({x:n.x,z:n.z+1})),{x:18,z:13}])assert.ok(reach(p.x,p.z));
+  const smith=hub.interactables.find(i=>i.id==='weaponsmith');assert.deepEqual([smith.x,smith.z,smith.action],[hub.npcs.find(n=>n.id==='weaponsmith').x,hub.npcs.find(n=>n.id==='weaponsmith').z,'shop']);assert.ok(hub.interactables.some(i=>i.id==='cook')&&hub.interactables.some(i=>i.id==='cooking-station')&&hub.interactables.some(i=>i.id==='tower-portal'));
   const system=new InteractionSystem(hub,hub.interactables);
-  assert.equal(system.update({x:forge.x,z:forge.z+1.3,heading:Math.PI})?.id,'forge');assert.equal(system.update({x:forge.x-1.4,z:forge.z,heading:Math.PI/2})?.id,'forge');assert.equal(system.update({x:2.4,z:2.6,heading:0})?.id,'weaponsmith');assert.equal(system.update({x:0,z:-4.5,heading:Math.PI})?.id,'tower-portal');
+  assert.equal(system.update({x:forge.x,z:forge.z+1.3,heading:Math.PI})?.id,'forge');assert.equal(system.update({x:forge.x-1.4,z:forge.z,heading:Math.PI/2})?.id,'forge');assert.equal(system.update({x:smith.x,z:smith.z-1,heading:0})?.id,'weaponsmith');assert.equal(system.update({x:hub.portal.x,z:hub.portal.z+1,heading:Math.PI})?.id,'tower-portal');
   assert.equal(system.activate({x:forge.x,z:forge.z+1.3,heading:Math.PI}).type,'forge');assert.equal(system.activate({x:0,z:4,heading:0}),null);
 });
 test('a forged weapon opens the Tower like any other weapon, and the Refuge forge is blocked while in a run',()=>{

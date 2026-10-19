@@ -77,3 +77,57 @@ dialog,.modal{color:#e9e4d0;width:min(460px,90vw);padding:38px;border:1px solid 
 .forge-pips{display:flex;gap:10px;margin:8px 0}.forge-pips span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:2px solid #8a7a5a;background:#243a33;font-weight:700}.forge-pips [data-grade="live"]{border-color:#ffd479;background:#4a3a1a}.forge-pips [data-grade="PRECISE"]{border-color:#ffd479;background:#8a6a1a;color:#fff}.forge-pips [data-grade="OK"]{border-color:#9fd18b;background:#37573a}.forge-pips [data-grade="MISS"]{border-color:#c46a5a;background:#5a2a24}
 .forge-meter{position:relative;height:36px;margin:14px 4px;background:#3a2a22;border:2px solid #dbc788;border-radius:8px;overflow:hidden}.forge-meter[data-live="false"]{opacity:.55}.forge-zone-good{position:absolute;top:0;height:100%;background:#a0562a}.forge-zone-perfect{position:absolute;top:0;height:100%;background:#ffe9a8;box-shadow:0 0 12px #ffd479}.forge-meter i{position:absolute;top:0;width:4px;height:100%;background:#fff;box-shadow:0 0 8px #fff;transform:translateX(-50%)}.forge-hint{font-size:12px;color:#c1cbbd}
 .forge-result{padding:18px 22px;border:2px solid #e0a458;border-radius:10px;background:#2b2217;text-align:center}.forge-result strong{display:block;font:800 38px/1.1 Georgia,serif;letter-spacing:.08em}.forge-result h3{margin:6px 0;color:#ffe1a1}.forge-result p{margin:4px 0}.forge-result-failure{border-color:#c46a5a;background:#3a1a16}.forge-result-failure strong{color:#ff9d8a}.forge-result-good strong{color:#9fd18b}.forge-result-perfect{border-color:#ffd479;background:#3a2c10}.forge-result-perfect strong{color:#ffd479}
+/* Shared test mode reuses the existing canvas, camera and visual language. */
+.shared-status{position:fixed;left:20px;top:110px;width:265px;padding:16px;z-index:20;pointer-events:auto}
+.shared-status p{margin:10px 0;font-size:13px}.shared-status small{display:block;line-height:1.5}
+.shared-status button{margin:12px 6px 0 0;padding:8px;cursor:pointer}
+.shared-entry{position:fixed;right:20px;top:115px;z-index:15;padding:10px;cursor:pointer}
+.in-tower .shared-entry{display:none}.shared-enemy{pointer-events:none;white-space:nowrap}
+.shared-world:not(.game-hud) .left-panel,.shared-world:not(.game-hud) .map-panel{display:none!important}
+.online-panel{position:absolute;right:18px;top:170px;width:310px;max-height:65vh;overflow:auto;padding:14px;z-index:20;font-size:13px}.online-panel progress{display:block;width:100%;margin:8px 0}.online-panel details{margin-top:10px}.online-panel summary{cursor:pointer;font-weight:bold}.online-panel button{padding:5px 8px;margin:3px;font-size:12px}.online-panel select,.online-panel input{max-width:100%;background:#203b36;color:#fff;border:1px solid #72867c;padding:5px}.online-panel [data-messages]{height:110px;overflow:auto;overflow-wrap:anywhere}.online-panel [data-messages] p{margin:5px 0}.online-panel form{display:flex;flex-wrap:wrap;gap:4px}.online-panel input{width:170px}.online-drop{position:absolute;transform:translate(-50%,-50%);z-index:15;background:#4c4224;color:#fff2ba;border:1px solid #d9c174;padding:7px;cursor:pointer}
+.online-drop:active{transform:translate(-50%,-50%)}
+
+/* Beta 0.4.1: shared, compact game HUD. Gameplay stays visible between menus. */
+.game-hud .topbar{pointer-events:none;left:270px;right:200px;top:14px;justify-content:center}
+.game-hud .location h1{font-size:16px;margin:0}.game-hud .location .eyebrow,.game-hud .location-state,.game-hud .top-actions,.game-hud .bottom-bar,.game-hud .chapter-tag{display:none}
+.game-hud .left-panel{position:absolute;left:16px;top:16px;width:236px;bottom:auto;pointer-events:none;display:block}
+.game-hud .character{padding:12px;pointer-events:auto;background:linear-gradient(135deg,#172b31f5,#152024ee);border:1px solid #c3a97175;border-radius:10px}
+.game-hud .rpg-hud{display:grid;gap:4px}.game-hud #character-button{font-size:13px;padding:0;text-align:left;border:0;background:none;color:#f5e1ad}
+.game-hud #rpg-level{font-size:11px;font-weight:400;color:#bdc9c4}.game-hud .rpg-hud label{display:grid;grid-template-columns:1fr;position:relative;margin:0}
+.game-hud .rpg-hud progress{height:14px;width:100%;border:0;border-radius:4px;overflow:hidden}.game-hud .rpg-hud label span{font-size:10px;z-index:1;position:absolute;left:6px;top:0;line-height:14px;color:white;text-shadow:0 1px 2px black}
+.game-hud #rpg-hp{accent-color:#b95256}.game-hud #rpg-mp{accent-color:#518eb8}.game-hud #rpg-xp{accent-color:#baab62}.game-hud #save-status,.game-hud #rpg-gold,.game-hud #rpg-menu,.game-hud #multiplayer-button{display:none}
+.game-hud .map-panel{top:60px;right:16px;width:152px;padding:9px}.game-hud #minimap{width:132px;height:132px}.game-hud .map-legend{font-size:9px}
+.game-menu{position:absolute;right:16px;top:16px;z-index:30;width:152px;color:#ead9b1;background:#14252df5;border:1px solid #b6a37488;border-radius:8px;pointer-events:auto}
+.game-menu summary{cursor:pointer;padding:9px 12px;font-size:13px}.game-menu nav{display:grid;padding:7px;gap:3px}.game-menu nav button{text-align:left;padding:7px;font-size:12px}
+.game-hud #ability-bar{position:absolute;left:50%;bottom:15px;top:auto;transform:translateX(-50%);width:auto;padding:6px;background:#14252de8;border:1px solid #baa36d88;border-radius:9px;z-index:12}
+.game-hud .ability-slots{display:flex;gap:5px}.game-hud .ability-slot{position:relative;width:53px;height:55px;min-width:0;padding:8px 3px 2px;background:#283d44;border:1px solid #9e916c;border-radius:5px;color:#f4dfad}.game-hud .ability-icon{font-size:22px}.game-hud .ability-name{display:none}.game-hud .ability-slot kbd{position:absolute;top:1px;left:4px;font-size:10px;background:none;padding:0}.game-hud .ability-slot.unavailable{opacity:.5}.game-hud .ability-cooldown{position:absolute;bottom:2px;right:3px;font-size:10px}.game-hud #ability-status:empty{display:none}.game-hud #ability-status{font-size:11px;text-align:center}
+.hotbar-editor{font-size:11px}.hotbar-editor summary{cursor:pointer;text-align:center;padding-top:3px}.hotbar-editor[open]{background:#172c34;padding:8px}.hotbar-editor label{display:inline-grid;margin:4px}.hotbar-editor select{max-width:190px}.hotbar-editor p:empty{display:none}
+.game-hud #floor-objective{top:48px;max-width:420px;font-size:11px;background:#17272dc9}.game-hud #interact{bottom:116px}.game-hud #toast{bottom:145px;max-width:min(500px,80vw)}
+.game-hud dialog{max-height:calc(100vh - 150px);margin:4vh auto auto;max-width:min(850px,92vw);overflow:auto}.game-hud dialog .camera-controls{position:static;transform:none;margin:15px 0;display:flex;max-width:100%}.game-hud dialog .journey{position:static;width:auto;background:none;border:0;padding:0}.game-hud .shared-entry{position:static;display:block;margin:15px 0}.profession-card{border-bottom:1px solid #99865c66;padding:8px 0}.profession-card h3{color:#e4c57f}
+.game-hud .shared-status{display:none}.game-hud #pause-dialog .shared-status{display:block;position:static;width:auto;max-width:none}.game-hud .online-panel{position:absolute;left:16px;bottom:15px;top:auto;right:auto;width:255px;max-height:240px;padding:7px;background:#17272ddc;font-size:12px}.game-hud .online-panel>[data-profile],.game-hud .online-panel>[data-xp],.game-hud .online-panel>[data-progress],.game-hud .online-panel>[data-reward]{display:none}.game-hud .online-panel>details:not([data-chat-panel]){display:none}.game-hud .online-panel details:last-child{margin:0}.game-hud .online-panel [data-messages]{max-height:140px;overflow:auto}.game-hud .online-panel form{display:flex;gap:3px}.game-hud .online-panel input{width:110px;min-width:0}.game-hud .online-panel select{max-width:70px}.game-hud .online-panel button{padding:4px}.game-hud .online-panel [data-messages] p{margin:3px 0}
+@media(max-width:900px){.game-hud .online-panel{width:190px;bottom:112px}.game-hud .left-panel{width:210px;left:8px;top:8px}.game-hud .topbar{left:225px;right:170px}.game-hud .map-panel{transform:scale(.8);transform-origin:top right}.game-hud .ability-slot{width:45px;height:49px}.game-hud .ability-slots{gap:3px}}
+@media(max-width:600px){.game-hud .topbar{display:none}.game-hud .left-panel{width:180px}.game-hud #ability-bar{bottom:8px}.game-hud .ability-slot{width:36px;height:44px}.game-hud .online-panel{bottom:105px;max-height:120px}.game-hud .online-panel [data-messages]{max-height:60px}.game-hud #floor-objective{display:none}}
+
+.game-hud .online-panel details[data-chat-panel]{display:block;margin:0}
+.game-hud .online-panel dialog details{display:block!important}
+.game-hud .online-panel dialog{font-size:14px}
+.game-hud .online-panel dialog [data-party]{min-width:320px}
+
+.game-hud .character{display:block}.game-hud .rpg-hud{width:100%}
+.game-hud .topbar{width:auto;padding:0}.game-hud .location{position:static;transform:none}
+.game-hud .ability-slot{min-height:0}.game-hud #ability-bar{pointer-events:auto}
+.game-hud .online-panel:has(dialog[open]){z-index:40}
+.game-hud #pause-dialog .shared-status{display:block}
+
+.local-messages{position:absolute;left:16px;bottom:16px;width:250px;background:#14252dda;border:1px solid #bba37355;border-radius:6px;font:12px Arial;padding:9px;z-index:11}.local-messages summary{cursor:pointer}.local-messages div{max-height:130px;overflow:auto}.local-messages p{line-height:1.5;border-top:1px solid #ffffff18;padding-top:5px}
+@media(max-width:900px){.local-messages{bottom:110px;width:200px}}
+
+.game-hud #rpg-hp::-webkit-progress-value{background:#b64c58}.game-hud #rpg-mp::-webkit-progress-value{background:#4c8cb6}.game-hud #rpg-xp::-webkit-progress-value{background:#b59a52}.game-hud progress::-webkit-progress-bar{background:#263c45}
+.game-hud .left-panel,.game-hud .map-panel{z-index:15}.game-hud .npc-name{z-index:4}.game-hud #biome-playtest-button{display:none}
+
+.party-compact{position:absolute;top:160px;left:16px;width:236px;background:#14252ddd;border:1px solid #c2ab7266;padding:8px;border-radius:6px;font:11px Arial;z-index:14}.party-compact summary{cursor:pointer;color:#ebd29a}.party-compact p{margin:7px 0}.hotbar-editor select{background:#253d45;color:#f1dfb9;border:1px solid #9b8c62;padding:4px;border-radius:3px}.hotbar-editor [data-assign]{padding:5px;border-radius:3px}
+
+/* Contextual hostile selection: canvas only, never UI controls. */
+#world.enemy-hover:not(.orbiting){cursor:url("/assets/ui/target-sword.svg") 3 2,crosshair}
+
+.service-npc{display:flex;align-items:center;gap:16px;margin:8px 0 16px;color:#efd9a5}.service-portrait{width:112px;height:112px;flex:none;border:1px solid #bca370;border-radius:10px;background-image:url("/assets/portraits/townsfolk.png");background-size:300% 200%;image-rendering:pixelated}@media(max-width:600px){.service-portrait{width:80px;height:80px}}

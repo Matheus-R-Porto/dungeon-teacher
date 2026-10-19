@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-15T22:22:16.667Z",
+  "checks": [
+    "All six NPC mouse interactions, exclusive portraits/names, next/close, movement blocked and second player unaffected",
+    "Out-of-range dialogue rejected and disconnect closes context",
+    "Map context change closes dialogue; real F input returns from floor 1 to city",
+    "party created, invited and accepted using UI; private and global chat delivered",
+    "both players earn XP and manually collect individual drops through UI",
+    "portal, global chat across floors and persistent-character reconnection passed",
+    "neither shared client opened any IndexedDB database",
+    "return to local campaign initializes correctly in the isolated test profile"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-01-city.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-02-plaza-players.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-npc-reset-angel.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-world-reset-angel.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-npc-warehouse.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-world-warehouse.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-npc-blacksmith.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-world-blacksmith.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-npc-cook.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-world-cook.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-npc-potion-mage.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-world-potion-mage.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-npc-tower-guide.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-world-tower-guide.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-12-visible-players.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\01-invitation.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\02-party.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\school-monster-damage.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\03-xp-drop.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\04-inventory.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\05-global-across-floors.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\06-reconnect.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\04-final-A.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\04-final-B.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\school-electron\\05-local-campaign.png"
+  ],
+  "errors": [],
+  "rendering": {
+    "frames": 180,
+    "meanFrameMs": 20.700000000008288,
+    "p95FrameMs": 33.5,
+    "maxFrameMs": 63.19999999999709,
+    "viewport": [
+      1282,
+      722
+    ],
+    "devicePixelRatio": 1.25,
+    "heapBytes": 20055778,
+    "scene": "12 visible players, 2 Electron processes + 10 sockets"
+  },
+  "assets": [
+    {
+      "url": "/assets/characters/adventurer.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "url": "/assets/npcs/townsfolk.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "url": "/assets/portraits/townsfolk.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "url": "/assets/monsters/slimes.png",
+      "width": 1774,
+      "height": 887
+    }
+  ],
+  "fixture": "Only server-side positions skip long walks. Real UI creates party, accepts, chats, attacks, collects and travels. No XP, damage or items injected.",
+  "ok": true
+}

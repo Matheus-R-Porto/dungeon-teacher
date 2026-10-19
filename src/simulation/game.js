@@ -12,7 +12,7 @@ export class Game {
   constructor(world) {
     this.world = world;
     if (!canStand(world, world.spawn.x, world.spawn.z, CONFIG.playerRadius)) throw new Error('A posição inicial está bloqueada.');
-    this.player = { ...world.spawn, heading: Math.PI, moving: false };
+    this.player = { y:0,surface:'ground',...world.spawn, heading: Math.PI, moving: false };
     this.previous = { ...this.player };
     this.path = [];
     this.distance = 0;
@@ -42,7 +42,7 @@ export class Game {
     const traveled = Math.hypot(next.x - this.player.x, next.z - this.player.z);
     this.player.moving = traveled > 0.0001;
     if (this.player.moving) this.player.heading = Math.atan2(next.x - this.player.x, next.z - this.player.z);
-    this.player.x = next.x; this.player.z = next.z; this.distance += traveled;
+    this.player.x = next.x; this.player.z = next.z; if(this.world.surfaces){this.player.y=next.y;this.player.surface=next.surface;} this.distance += traveled;
     if (!this.player.moving && this.path.length && step > 0.001) this.path = [];
     if (this.nearPortal) this.portalFound = true;
   }

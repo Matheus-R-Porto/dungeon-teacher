@@ -1,3 +1,5 @@
+import {showServicePortrait} from './ui/service-portrait.js';
+import {createGameShell} from './ui/game-shell.js';
 import {BiomePanel} from './ui/biome-panel.js';
 import {saveBeforeClose} from './adapters/desktop/lifecycle.js';
 import multiplayerConfig from '../config/multiplayer.json';
@@ -51,6 +53,7 @@ $('reload-button').addEventListener('click', () => location.reload());
 async function bootstrap() {
 try {
   const params=new URLSearchParams(location.search);
+  if(params.get('shared')==='1'){const {startWorldMode}=await import('./multiplayer/world-mode.js');startWorldMode(params);return;}
   const testProfile=params.get('test')==='1';
   const saves=new CharacterSave(testProfile?'iteration03-test':'current');
   const character=new Character(await saves.open());const sound=new FeedbackSound();
@@ -71,6 +74,8 @@ try {
     onChange:async()=>{try{session.quest.sync(session);await saves.save(character.snapshot());dirty=false;saveFailed=false;characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador');}catch(error){saveFailed=true;characterPanel.status(error.message);throw error;}}
   });
   const flush=()=>{if(!desktopClosing&&dirty&&!saveFailed&&!session.fishing.pending&&!session.mining.pending&&!food.busy&&!smithing.busy){dirty=false;saves.save(character.snapshot()).then(()=>characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador')).catch(error=>{saveFailed=true;characterPanel.status(error.message);});}};
+  const sharedButton=document.createElement('button');sharedButton.textContent='Mapa compartilhado · teste';sharedButton.className='shared-entry';document.querySelector('#pause-dialog').append(sharedButton);
+  sharedButton.onclick=async()=>{if($('pause-dialog').open)$('pause-dialog').close();if(isBlocked()||!session.area.safe||session.fishing.busy||session.mining.busy||food.busy||smithing.busy)return;try{await characterPanel.onChange();const next=new URL(location.href);next.searchParams.set('shared','1');next.searchParams.set('tower','1');if(window.onlineIdentity)next.searchParams.set('online','1');next.searchParams.set('server',params.get('server')||multiplayerConfig.serverUrl);location.href=next.href;}catch(error){hud.toast(error.message);}};
   session.onFloorCleared=()=>{characterPanel.onChange().catch(()=>{});};
   const rewardPanel=new RewardPanel(character,{open:id=>openDialog(id),save:()=>characterPanel.onChange(),safe:()=>session.area.safe,notify});
   const food=new FoodService(character,{save:snapshot=>saves.save(snapshot),context:()=>({safe:session.area.safe,blocked:equipmentBlocked(combat)||session.collecting}),onChange:()=>{dirty=true;characterPanel.render();}});
@@ -80,11 +85,12 @@ try {
   const panels=new RpgPanels(character,combat,{food,open:id=>openDialog(id),isBlocked:()=>isBlocked()||session.fishing.busy||session.mining.busy,save:()=>characterPanel.onChange(),onChest:id=>{validateChest(character,id,session.area.safe);panels.dialogs.inventory.close();rewardPanel.show(id);},onEquipment:()=>{combat.attackRange=combat.abilities.autoRange;characterPanel.render();}});
   let multiplayerPanel,identityStore,identityError;
   try{identityStore=loadIdentity(localStorage,()=>crypto.randomUUID(),testProfile?'dungeon-multiplayer.test.v1':'dungeon-multiplayer.identity.v1');}catch(error){identityError='Não foi possível salvar a identidade multiplayer. O modo individual continua disponível.';}
-  const multiplayer=new HubClient({url:multiplayerConfig.serverUrl,identity:identityStore?.identity??{id:'',name:'Viajante'},getPlayer:()=>game.player,isPaused:()=>game.paused,onChange:()=>multiplayerPanel?.update()});
+  const multiplayer=new HubClient({url:params.get('server')||multiplayerConfig.serverUrl,identity:identityStore?.identity??{id:'',name:'Viajante'},getPlayer:()=>game.player,isPaused:()=>game.paused,onChange:()=>multiplayerPanel?.update()});
   multiplayerPanel=new MultiplayerPanel({client:multiplayer,identityStore,open:id=>{if(!isBlocked())openDialog(id);},debug:params.get('debug')==='1'});
   if(identityError){multiplayer.changed('Erro',identityError);multiplayerPanel.connectButton.disabled=true;}
   view.remotePlayers=new RemotePlayers(view,multiplayer);
   const biomePanel=new BiomePanel({session,debug:testProfile&&params.get('debug')==='1',open:id=>{if(!isBlocked())openDialog(id);},notify});
+  const shell=createGameShell({character,open:id=>openDialog(id),blocked:()=>isBlocked(),actions:{biomes:()=>biomePanel.button.click(),inventory:()=>panels.show('inventory'),equipment:()=>panels.show('inventory'),attributes:()=>{characterPanel.render();openDialog('character-dialog');},skills:()=>panels.show('skills'),party:()=>multiplayerPanel.button.click()}});
   const dialogs = [...document.querySelectorAll('dialog')];
   const isBlocked = () => !!session.fishing.pending || !!session.mining.pending || session.collecting || dialogs.some(dialog => dialog.open) || !$('fatal').hidden;
   const openDialog = id => { if(session.fishing.busy||session.mining.busy){hud.toast('Encerre a atividade com Esc antes de abrir painéis.');return;}input?.clear(); game.paused = true; game.previous = { ...game.player }; $(id).showModal(); };
@@ -107,6 +113,7 @@ try {
       });
     } catch(error) {desktopClosing=false;game.paused=isBlocked();throw error;}
   });
+  if(params.get('diagnostic')==='1')window.__dmInspection={session,character,get view(){return view;}};
   let abilityHud=new AbilityHud(combat.abilities,{isBlocked,debug:params.get('debug')==='1',save:()=>characterPanel.onChange()});
   session.onTransition=()=>{
     multiplayer.setHub(session.area.safe);
@@ -120,12 +127,13 @@ try {
   const interactionHandlers = {
     fishing:command=>{try{session.fishing.start(command.targetId);input?.clear();}catch(error){hud.toast(error.message);}},
     mining:command=>{try{session.mining.start(command.content.veinId);input?.clear();}catch(error){hud.toast(error.message);}},
-    cook:command=>kitchen.show(!!command.content.station),
+    cook:command=>{showServicePortrait(kitchen.dialog,command.content.station?null:session.area.npcs?.find(n=>n.id===command.targetId));kitchen.show(!!command.content.station);},
     forge:()=>forgePanel.show(),
-    shop:()=>{session.quest.mark('smith');panels.show('shop');},
+    shop:()=>{session.quest.mark('smith');showServicePortrait(panels.dialogs.shop,session.area.npcs?.find(n=>n.id==='weaponsmith'));panels.show('shop');},
     chest:()=>{input?.clear();session.collectChest(()=>characterPanel.onChange()).catch(error=>hud.toast(error.message));},
     travel:command=>{try{session.travel(command);}catch(error){hud.toast(error.message);}},
     examine: command => {
+      showServicePortrait($('interaction-dialog'),session.area.npcs?.find(n=>n.id===command.targetId));
       for (const field of ['eyebrow','title','text','notice']) $(`interaction-${field}`).textContent = command.content[field] ?? '';
       openDialog('interaction-dialog');
     },
@@ -181,7 +189,7 @@ try {
   };
   view.update(game, 1, 1, reducedMotion.matches); hud.update();
   $('loading').hidden = true; frameId = requestAnimationFrame(animate); focusWorld();
-  if (import.meta.hot) import.meta.hot.dispose(() => { biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();forgePanel.dispose();fishingHud.dispose();miningHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
+  if (import.meta.hot) import.meta.hot.dispose(() => { shell.dispose();hud.npcLabels?.forEach(n=>n.remove());delete window.__dmInspection;sharedButton.remove();biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();forgePanel.dispose();fishingHud.dispose();miningHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
 } catch (error) { fatal(error); }
 
 }

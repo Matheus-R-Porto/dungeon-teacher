@@ -1,0 +1,15 @@
+
+> dungeon-teacher-beta@0.4.0 test:school
+> node --test tests/school-multiplayer.test.js
+
+✔ public city has navigable NPC approaches, solid buildings and reachable tower (37.5574ms)
+✔ dialogue requires proximity and unobstructed line of sight, ignoring only its own NPC collider (0.7379ms)
+✔ school: 12 v4 identities, 2x6 parties, combat, loot, travel, reconnection and persistent restart (6073.4766ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6375.8555

@@ -14,7 +14,7 @@ export class MiningHud {
   }
   update(view){
     const s=this.session,m=s.mining,c=MINING;
-    if(m.result&&m.result.id!==this.shownResult){const r=m.result;this.shownResult=r.id;this.banner.dataset.kind=r.kind;this.banner.innerHTML='<strong></strong><span></span>';this.banner.firstChild.textContent=r.text;this.banner.lastChild.textContent=r.kind==='MISS'?'Sem recompensa · tente de novo':'+1 Minério Bruto · +'+r.xp+' Mining XP'+(r.kind==='PERFECT'?' (bônus)':'');this.banner.hidden=false;this.hideAt=performance.now()+2200;}
+    if(m.result&&m.result.id!==this.shownResult&&s.game.elapsed-(view.actor?.activity?.impactAt??-Infinity)>.65){const r=m.result;this.shownResult=r.id;this.banner.dataset.kind=r.kind;this.banner.innerHTML='<strong></strong><span></span>';this.banner.firstChild.textContent=r.text;this.banner.lastChild.textContent=r.kind==='MISS'?'Sem recompensa · tente de novo':'+1 Minério Bruto · +'+r.xp+' Mining XP'+(r.kind==='PERFECT'?' (bônus)':'');this.banner.hidden=false;this.hideAt=performance.now()+2200;}
     if(!this.banner.hidden&&performance.now()>this.hideAt)this.banner.hidden=true;
     this.root.hidden=s.game.paused||!m.active;
     if(m.active){

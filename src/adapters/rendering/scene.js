@@ -1,3 +1,5 @@
+import {equippedDefinition} from '../../domain/items/inventory.js';
+import {buildCity,buildCityNpcs,updateCityAmbient} from './city.js';
 import {FishingVisual} from './fishing-visual.js';
 import {buildForest} from './forest.js';
 import * as THREE from 'three';
@@ -21,7 +23,7 @@ export class SceneView {
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xaccfc7);
     this.scene.fog = new THREE.FogExp2(0xaccfc7, 0.007);
-    this.camera = new THREE.OrthographicCamera(-20, 20, 12, -12, 0.1, 120);
+    this.camera = new THREE.OrthographicCamera(-20, 20, 12, -12, 0.1, 350);
     this.orbit = new OrbitState();
     this.lookAt = new THREE.Vector3(world.spawn.x, 0.75, world.spawn.z);
     this.raycaster = new THREE.Raycaster();
@@ -33,9 +35,10 @@ export class SceneView {
     sun.position.set(-8, 18, 8); sun.castShadow = true;
     Object.assign(sun.shadow.camera, { left: -19, right: 19, top: 19, bottom: -19, near: 1, far: 50 });
     sun.shadow.mapSize.set(2048, 2048); sun.shadow.normalBias = 0.04;
+    if(world.environment==='city'){const b=world.bounds,r=Math.hypot((b.maxX-b.minX)/2,(b.maxZ-b.minZ)/2)+3;sun.position.multiplyScalar(4);Object.assign(sun.shadow.camera,{left:-r,right:r,top:r,bottom:-r,far:160});}
     this.sun=sun;this.scene.add(sun);
     const rim = new THREE.DirectionalLight(0xb9e6f1, 1.0); rim.position.set(10, 6, -12); this.scene.add(rim);
-    this.flags=[]; if(['forest','biome'].includes(world.environment))buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
+    this.flags=[]; if(world.environment==='city')buildCity(this);else if(['forest','biome'].includes(world.environment))buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
     this.fishingVisual=new FishingVisual(this);this.registerStructureOcclusion();
     this.interactionRing = this.mesh(new THREE.RingGeometry(0.8, 0.86, 48), new THREE.MeshBasicMaterial({ color: 0xffdf88, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.25, 0);
     this.interactionRing.rotation.x = -Math.PI / 2; this.interactionRing.visible = false; this.interactionRing.castShadow = false;
@@ -71,7 +74,7 @@ export class SceneView {
     this.mesh(new THREE.CylinderGeometry(.24,.24,.05,10),coal,group,-.42,.47,0);
     this.forgeCoal=coal;
   }
-  buildNpcs(){for(const npc of this.world.npcs??[]){const group=new THREE.Group();group.position.set(npc.x,0,npc.z);this.scene.add(group);this.box(group,.55,.85,.4,0,.8,0,material(0x926f49));this.mesh(new THREE.SphereGeometry(.25,8,6),material(0xddb890),group,0,1.48,0);for(const x of [-.17,.17])this.box(group,.17,.4,.2,x,.23,0,this.mats.darkStone);this.box(group,.7,npc.id==='cook'?.35:.1,.55,0,1.7,0,npc.id==='cook'?this.mats.stoneLight:this.mats.darkStone);if(npc.id==='cook'){this.box(group,.42,.6,.1,0,.8,.25,this.mats.stoneLight);const station=this.world.obstacles.find(o=>o.id==='cooking-station');this.box(this.scene,1.2,.6,1.2,station.x,.3,station.z,this.mats.darkStone);this.mesh(new THREE.CylinderGeometry(.45,.35,.4,12),this.mats.darkStone,this.scene,station.x,.85,station.z);this.mesh(new THREE.CylinderGeometry(.33,.33,.02,12),material(0xd2a85b),this.scene,station.x,1.06,station.z);}this.mesh(new THREE.OctahedronGeometry(.18),this.mats.gold,group,0,2.05,0);}}
+  buildNpcs(){if(this.world.environment==='city'){buildCityNpcs(this);return;}for(const npc of this.world.npcs??[]){const group=new THREE.Group();group.position.set(npc.x,0,npc.z);this.scene.add(group);this.box(group,.55,.85,.4,0,.8,0,material(0x926f49));this.mesh(new THREE.SphereGeometry(.25,8,6),material(0xddb890),group,0,1.48,0);for(const x of [-.17,.17])this.box(group,.17,.4,.2,x,.23,0,this.mats.darkStone);this.box(group,.7,npc.id==='cook'?.35:.1,.55,0,1.7,0,npc.id==='cook'?this.mats.stoneLight:this.mats.darkStone);if(npc.id==='cook'){this.box(group,.42,.6,.1,0,.8,.25,this.mats.stoneLight);const station=this.world.obstacles.find(o=>o.id==='cooking-station');this.box(this.scene,1.2,.6,1.2,station.x,.3,station.z,this.mats.darkStone);this.mesh(new THREE.CylinderGeometry(.45,.35,.4,12),this.mats.darkStone,this.scene,station.x,.85,station.z);this.mesh(new THREE.CylinderGeometry(.33,.33,.02,12),material(0xd2a85b),this.scene,station.x,1.06,station.z);}this.mesh(new THREE.OctahedronGeometry(.18),this.mats.gold,group,0,2.05,0);}}
   buildGround() {
     this.box(this.scene, 26, 1.5, 26, 0, -0.8, 0, this.mats.darkStone);
     this.box(this.scene, 25.6, 0.28, 25.6, 0, -0.15, 0, material(0x78a84e));
@@ -260,8 +263,10 @@ export class SceneView {
   pick(clientX, clientY) {
     const rect = this.canvas.getBoundingClientRect();
     this.raycaster.setFromCamera(new THREE.Vector2((clientX - rect.left) / rect.width * 2 - 1, -(clientY - rect.top) / rect.height * 2 + 1), this.camera);
+    const hit=this.raycaster.intersectObjects(this.walkableMeshes??[],false).find(h=>h.object.userData.surface?.endsWith('-stairs')||h.object.material.opacity>.5);
+    if(hit)return {x:hit.point.x,z:hit.point.z,y:hit.point.y,surface:hit.object.userData.surface};
     const point = this.raycaster.ray.intersectPlane(this.floorPlane, new THREE.Vector3());
-    return point ? { x: point.x, z: point.z } : null;
+    return point ? { x: point.x, z: point.z, y:0, surface:'ground' } : null;
   }
   screenPoint(x, y, z) {
     const point = new THREE.Vector3(x, y, z).project(this.camera);
@@ -270,14 +275,15 @@ export class SceneView {
   update(game, alpha, dt, reducedMotion = false) {
     const time = game.elapsed;this.updateBiomeAtmosphere?.(game.player.z);
     const x = THREE.MathUtils.lerp(game.previous.x, game.player.x, alpha), z = THREE.MathUtils.lerp(game.previous.z, game.player.z, alpha);
-    this.selection.position.set(x, 0.06, z);
-    this.actor.update({ ...game.player, x, z }, this.azimuth, time, reducedMotion);
+    const y=THREE.MathUtils.lerp(game.previous.y??0,game.player.y??0,alpha);
+    this.selection.position.set(x, y+0.06, z);
+    this.actor.update({ ...game.player, activity:game.activity, weaponType:this.combatVisual?.combat.character?equippedDefinition(this.combatVisual.combat.character.data)?.weaponType:game.player.weaponType,hp:this.combatVisual?.combat.character?.data.hp??game.player.hp, phase:this.combatVisual?.combat.abilities?.active?(this.combatVisual.combat.state==='casting'?'windup':this.combatVisual.combat.state==='recovering'?'recovery':'impact'):this.combatVisual?.combat.playerCycle.phase, x, y, z }, this.azimuth, time, reducedMotion,this.camera);
     // Exact player pivot: rotation never displaces the actor from the focus point.
-    this.lookAt.set(x, 0.75, z);
+    this.lookAt.set(x, y+0.75, z);
     const aspect = this.canvas.clientWidth / Math.max(1, this.canvas.clientHeight);
     this.camera.left = -this.height * aspect / 2; this.camera.right = this.height * aspect / 2;
     this.camera.top = this.height / 2; this.camera.bottom = -this.height / 2; this.camera.updateProjectionMatrix();
-    const distance = 36, horizontal = Math.cos(CONFIG.cameraElevation) * distance;
+    const distance = this.world.environment==='city'?Math.max(36,this.height*1.35):36, horizontal = Math.cos(CONFIG.cameraElevation) * distance;
     this.camera.position.set(this.lookAt.x + Math.sin(this.azimuth) * horizontal, this.lookAt.y + Math.sin(CONFIG.cameraElevation) * distance, this.lookAt.z + Math.cos(this.azimuth) * horizontal);
     this.camera.lookAt(this.lookAt); this.camera.updateMatrixWorld();
     this.portalSurface.uniforms.time.value = reducedMotion ? 0 : time;
@@ -285,9 +291,9 @@ export class SceneView {
     if (this.forgeCoal) this.forgeCoal.emissiveIntensity = 1 + (reducedMotion ? 0 : Math.sin(time * 4) * 0.25);
     this.portalCore.position.y = 2.08 + (reducedMotion ? 0 : Math.sin(time * 1.3) * 0.1);
     this.destination.visible = game.path.length > 0;
-    if (game.path.length) { const dest = game.path.at(-1); this.destination.position.set(dest.x, 0.08, dest.z); this.destination.scale.setScalar(1 + Math.sin(time * 5) * 0.07); }
+    if (game.path.length) { const dest = game.path.at(-1); this.destination.position.set(dest.x, (dest.y??0)+0.08, dest.z); this.destination.scale.setScalar(1 + Math.sin(time * 5) * 0.07); }
     if (game.path.length) {
-      const points = [new THREE.Vector3(x, 0.1, z), ...game.path.map(p => new THREE.Vector3(p.x, 0.1, p.z))];
+      const points = [new THREE.Vector3(x, y+0.1, z), ...game.path.map(p => new THREE.Vector3(p.x, (p.y??0)+0.1, p.z))];
       // Release the old GPU buffer; idle frames do not allocate a route geometry.
       this.pathLine.geometry.dispose(); this.pathLine.geometry = new THREE.BufferGeometry().setFromPoints(points); this.pathLine.computeLineDistances();
     }
@@ -296,16 +302,19 @@ export class SceneView {
       const positions = this.particles.geometry.attributes.position;
       this.particleOrigins.forEach((p, i) => positions.setXYZ(i, p.x + Math.sin(time * 0.25 + p.phase) * 0.3, p.y + Math.sin(time * 0.5 + p.phase) * 0.3, p.z + Math.cos(time * 0.3 + p.phase) * 0.3)); positions.needsUpdate = true;
     }
-    const target = new THREE.Vector3(x, 1, z), ray = target.clone().sub(this.camera.position), distanceToPlayer = ray.length(); ray.normalize();
+    const target = new THREE.Vector3(x, y+1, z), ray = target.clone().sub(this.camera.position), distanceToPlayer = ray.length(); ray.normalize();
+    this.occlusionRay??=new THREE.Ray();this.occlusionHit??=new THREE.Vector3();this.occlusionRay.set(this.camera.position,ray);
     for (const o of this.occluders) {
-      const offset = o.center.clone().sub(this.camera.position), along = offset.dot(ray);
-      const obscured = along > 0 && along < distanceToPlayer && offset.addScaledVector(ray, -along).length() < o.radius;
+      let obscured;
+      if(o.box){const hit=this.occlusionRay.intersectBox(o.box,this.occlusionHit);obscured=!!hit&&hit.distanceTo(this.camera.position)<distanceToPlayer;}
+      else {const offset = o.center.clone().sub(this.camera.position), along = offset.dot(ray);obscured=along > 0 && along < distanceToPlayer && offset.addScaledVector(ray, -along).length() < o.radius;}
       if (o.shader) o.shader.uniforms.fade.value = THREE.MathUtils.lerp(o.shader.uniforms.fade.value, obscured ? 0.2 : 1, 1 - Math.exp(-dt * 8));
       for (const mat of o.materials) { mat.opacity = THREE.MathUtils.lerp(mat.opacity, obscured ? 0.2 : 1, 1 - Math.exp(-dt * 8)); mat.depthWrite = mat.opacity > 0.8; }
     }
     const selected = game.interactionTarget;
     this.interactionRing.visible = !!selected && !game.paused;
     if (selected) { this.interactionRing.position.set(selected.x, selected.highlightHeight ?? 0.06, selected.z); this.interactionRing.scale.setScalar((selected.highlightRadius ?? 0.6) / 0.83); }
+    updateCityAmbient(this,time,reducedMotion);this.updateLivingForest?.(time,game.player,reducedMotion);
     this.flags.forEach((flag,i) => { flag.rotation.y = reducedMotion ? 0 : Math.sin(time*1.8+i)*0.08; });
     if (this.water) this.water.material.emissiveIntensity = 0.3 + (reducedMotion ? 0 : Math.sin(time*1.5)*0.08);
     for(const entry of this.forestGates??[])entry.group.visible=!entry.gate.open;this.updateMineralVeins?.(time);
@@ -320,6 +329,7 @@ export class SceneView {
     this.scene.traverse(object => { if (object.geometry) geometries.add(object.geometry); if (object.material) for (const m of Array.isArray(object.material) ? object.material : [object.material]) materials.add(m); });
     this.combatVisual?.dispose();
     this.actor.dispose();
+    this.scene.traverse(o=>{if(o.material?.map)o.material.map.dispose();});
     geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); this.renderer.dispose();
   }
 }

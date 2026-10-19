@@ -1,123 +1,32 @@
-DUNGEON MASTER — BETA 0.1.5 — SMITHING (EXPERIMENTAL)
-ATENÇÃO: Smithing experimental — ainda sem playtest manual. Baseada na
-Iteração 14 (Tower Progression, Beta 0.1.4), que foi aprovada em playtest
-manual pelo responsável em 09/10/2026. A versão 0.1.4 continua disponível
-na sua própria pasta de release.
-Windows x64. Versão de playtest; arte e balanceamento provisórios.
+DUNGEON MASTER — BETA 0.5.0 — PLAYTEST WINDOWS 64 BITS
 
-COMO ABRIR
-Abra DungeonMaster-Beta-0.1.5-Smithing-Setup.exe e siga o assistente.
-Depois, abra pelo atalho Dungeon Master. Alternativa sem instalação:
-DungeonMaster-Beta-0.1.5-Smithing-Portable.exe.
-Não precisa de Node, npm, terminal ou servidor no seu computador.
+ABRIR
+Abra DungeonMaster-Beta-0.5.0-SharedWorld-Portable.exe.
+Não precisa instalar Node.js nem executar comandos. O Setup é a alternativa
+para instalar o jogo; não é necessário usar os dois arquivos.
 
-REFÚGIO COMPARTILHADO
-Os dois computadores precisam deste MESMO instalador e de internet.
-O servidor público já está configurado: não informe URL, IP ou porta.
-Na primeira conexão, aguarde: o serviço gratuito pode levar cerca de um
-minuto para iniciar. O jogo continua tentando com pausas entre tentativas.
-Abra Multiplayer, escolha seu nome e
-clique Conectar. O indicador mostra Online e o número de jogadores.
-O nome aparece para os demais viajantes. A conexão não é automática ao abrir.
-Entre na Torre para jogar individualmente; sua presença sai do Refúgio.
-Ao voltar, a conexão é retomada. Desconectar encerra essa participação.
-Somente nome, identidade local e movimento são compartilhados.
-Inventário, ouro, combate, pesca, culinária e progresso permanecem locais.
-Consulte CHECKLIST-SMITHING.txt para o playtest desta versão.
+COMEÇAR DO ZERO
+Esta versão usa um perfil novo: %APPDATA%\Dungeon Master Playtest 0.5.0.
+Os saves anteriores são preservados. Na primeira abertura você começa do zero;
+nas seguintes seu progresso continua salvo. Portable e Setup usam esse mesmo
+perfil neste computador. Não compartilhe a pasta do perfil ou arquivos .key.
+Cada pessoa deve receber somente o executável, nunca seus dados pessoais.
 
-MODO INDIVIDUAL
-Continua funcionando sem internet e sem conectar ao multiplayer.
+JOGAR ONLINE
+Na cidade, abra o menu no canto superior esquerdo, entre em Configurações
+(pausa) e escolha "Mapa compartilhado · teste". O servidor público já está
+configurado. A outra pessoa deve abrir a mesma versão e entrar pelo mesmo botão.
+A campanha local e o personagem online são separados. A identidade online nova
+é criada automaticamente neste perfil e guardada de forma protegida no Windows.
+Internet e disponibilidade do servidor público são necessárias. O primeiro
+acesso pode demorar enquanto o serviço hospedado inicia. A versão do conteúdo
+online depende do servidor, que não é atualizado ao instalar este executável.
 
 CONTROLES
-WASD/setas ou clique no chão: caminhar. Q/E: girar câmera.
-Roda do mouse: zoom. F: conversar, portal, pescar ou minerar.
-Clique no inimigo: ataque automático. 1–8: habilidades aprendidas.
-I: inventário/equipamentos/comida. C: personagem. Tab: habilidades.
-F/Espaço: fisgar quando aparecer AGORA, golpear a rocha no minigame de
-Mineração ou retirar o preparo do fogo.
-Esc: cancelar/fechar painel/pausar. H: ajuda. F11: tela cheia.
+WASD ou clique no chão: mover. Consulte Ajuda no menu para os demais controles.
+F11 alterna tela cheia. Feche o jogo normalmente para concluir o salvamento.
 
-PRIMEIROS PASSOS
-Converse com o Armeiro, obtenha uma arma e equipe em I. Pegue também a vara.
-Entre na Torre com F. Explore os desvios para encontrar o lago e pescar.
-Mira compra peixes/pratos e vende ingredientes. Cozinhe no fogão do Refúgio.
-
-PROGRESSO
-O save da Desktop01 é preservado em %APPDATA%\Dungeon Master.
-Instalador e Portable compartilham esse perfil no mesmo usuário Windows.
-Não importa automaticamente o save do navegador. "Portable" não significa
-que o save viaja com o executável no pendrive. Não apague a pasta do perfil.
-Feche normalmente e aguarde a janela sair. A expedição não é retomada:
-ao abrir você retorna ao Refúgio, mantendo progresso e itens.
-Buffs e recarga de comida continuam contando o tempo com o jogo fechado.
-
-AVISO DO WINDOWS
-Esta Beta não tem assinatura digital. Pode aparecer aviso de aplicativo
-desconhecido. Confirme a origem com o organizador. Não desative antivírus
-ou outras proteções do Windows.
-
-PROBLEMAS
-Informe "Beta 0.1.5 / Smithing", Windows, Setup ou Portable,
-passos, resultado esperado e observado. Inclua captura quando possível.
-Na conexão, informe se ambos ficaram Online, atraso, teleportes, direção
-incorreta ou personagem que permaneceu visível depois de sair.
-
-EXPLORAR CAVERNA E TRANSIÇÕES
-No Refúgio, equipe uma arma e clique em Explorar biomas. Escolha Floresta,
-Caverna, Floresta → Caverna ou Caverna → Floresta. O início salta para o
-primeiro andar desse ambiente na sequência da nova seed; as próximas
-saídas seguem a sequência procedural normal. Resolva os encontros para subir.
-Volte pelo portal na entrada do andar quando quiser encerrar a exploração.
-Essa rota de playtest tem até 50 andares gerados sob demanda, sem novo boss
-ou baú final. XP e itens obtidos são mantidos. O portal normal preserva
-a expedição de três andares com o Guardião. Não há Smithing.
-Consulte CHECKLIST-SMITHING.txt.
-
-MINERAÇÃO (NOVO)
-Compre a Picareta Simples do Armeiro (30 ouro). Ela fica na mochila, não
-ocupa o slot de arma, não se gasta e não pode ser vendida. Veios minerais
-só existem na Caverna e nas partes subterrâneas das transições; use
-Explorar biomas para chegar rápido. Aproxime-se do veio e pressione F: uma
-barra aparece com um indicador em movimento. Pressione F ou Espaço quando
-ele estiver na zona verde (BOM) ou dourada (PERFEITO); errar não custa nada
-e permite tentar de novo após uma pausa curta. Cada veio rende no máximo
-1 Minério Bruto e depois fica esgotado naquele andar. Mining tem nível e
-XP próprios (painel Life Skills) e é independente de combate, Pesca e
-Culinária. O Minério Bruto ainda não tem uso: é matéria-prima para a
-futura Forja. Esc cancela a mineração sem perder nada.
-
-PROGRESSÃO DA TORRE (NOVO NA 0.1.4)
-A expedição normal agora continua depois do Guardião (andar 3). Os andares
-1 e 2 são sempre Floresta. O andar 3 pode ser Floresta ou Floresta →
-Caverna; a primeira transição acontece entre os andares 3 e 5 e depois
-alterna Caverna e Floresta em ciclos. Assim você chega às cavernas, e aos
-veios de Mineração, pelo portal normal, sem Explorar biomas.
-Depois de derrotar o Guardião e pegar o baú, há DOIS portais: o de subida
-(continua para o andar 4) e o de retorno ao Refúgio. Nada começa sozinho.
-Cada andar que você conclui fica registrado (veja "Maior andar concluído"
-em C). Ao voltar a um andar já concluído, os portões dos encontros ficam
-abertos, mas os inimigos continuam lá e continuam rendendo XP. O Guardião
-não volta, e o baú dele só é entregue uma vez por personagem.
-O portal da Torre ainda começa no andar 1 (não há atalho de andar). A
-Torre vai até o andar 50, sem chefe final: lá o portal só leva de volta ao
-Refúgio. Depois do andar 3, os inimigos crescem de forma suave e
-provisória. Explorar biomas continua sendo só uma ferramenta de teste e
-não altera esse progresso.
-
-FORJA E SMITHING (NOVO NA 0.1.5)
-Há uma estação de Forja no Refúgio, ao lado do caminho entre o Armeiro e o
-portal (uma bigorna com brasas). Aproxime-se e pressione F. Escolha uma receita
-(espada, adaga, arco ou cajado), veja o Minério Bruto exigido e o dano esperado
-de cada qualidade, e clique em "Iniciar fabricação".
-O minigame tem três marteladas: o indicador cruza a barra e você pressiona F ou
-Espaço quando ele estiver na zona brilhante (dourada = preciso, laranja =
-aceitável). Esc ou fechar só cancelam ANTES do primeiro martelo, sem custo.
-Depois do primeiro martelo a tentativa sempre termina com um resultado:
-  FALHA    arma inferior (um pouco abaixo da do Armeiro)
-  BOM      arma um pouco acima da do Armeiro
-  PERFEITO arma acima da BOM
-Toda tentativa concluída gasta o minério, entrega exatamente uma arma, rende
-Smithing XP (também na FALHA) e conta como prática daquela receita. A qualidade
-muda só o dano da arma. Equipe a arma em I. O Minério Bruto vem da Mineração
-(Caverna). Ferraria tem nível e XP próprios no painel Life Skills.
-
+TESTE
+Verifiquem se ambos aparecem no mesmo mapa, criem uma party pelo menu e testem
+movimento, combate e transições. Relatem a ação, o mapa e uma captura se houver erro.
+Esta é uma versão de teste, sem assinatura digital de distribuição comercial.

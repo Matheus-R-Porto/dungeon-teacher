@@ -4,7 +4,10 @@ COPY server/package*.json ./server/
 RUN npm ci --prefix server --omit=dev --ignore-scripts --no-audit --no-fund
 COPY server ./server
 COPY shared ./shared
+COPY src ./src
+RUN mkdir -p /app/data/shared-tower /app/data/online && chown -R node:node /app/data
 ENV NODE_ENV=production HOST=0.0.0.0 PORT=8787
+ENV WORLD_DATA_DIR=/app/data/shared-tower CHARACTER_DATA_DIR=/app/data/online
 USER node
 EXPOSE 8787
 CMD ["node", "server/index.js"]

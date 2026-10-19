@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {fixedTicker} from '../server/fixed-ticker.js';
+function clock(){let at=0,id=0;const jobs=new Map();return {now:()=>at,schedule(fn,ms){jobs.set(++id,{fn,at:at+ms});return id;},cancel(id){jobs.delete(id);},wake(time){at=time;const due=[...jobs].filter(([,v])=>v.at<=at);for(const [id,v]of due){jobs.delete(id);v.fn();}},get pending(){return jobs.size;}};}
+test('late 62.5 ms callbacks retain 20 fixed steps per second',()=>{const c=clock();let steps=0;const ticker=fixedTicker(()=>steps++,50,c);for(let time=62.5;time<=1000;time+=62.5)c.wake(time);assert.equal(steps,20);ticker.stop();assert.equal(c.pending,0);});
+test('on-time callbacks do not advance early or duplicate ticks',()=>{const c=clock();let steps=0;const ticker=fixedTicker(()=>steps++,50,c);c.wake(49);assert.equal(steps,0);c.wake(50);assert.equal(steps,1);c.wake(50);assert.equal(steps,1);c.wake(100);assert.equal(steps,2);ticker.stop();});
+test('long stalls yield after bounded catch-up and preserve remaining steps',()=>{const c=clock();let steps=0;const ticker=fixedTicker(()=>steps++,50,c);c.wake(1000);assert.equal(steps,5);for(let i=1;i<=3;i++)c.wake(1000+i);assert.equal(steps,20);ticker.stop();c.wake(1100);assert.equal(steps,20);});
+test('stop from inside a step prevents further catch-up and scheduling',()=>{const c=clock();let steps=0;const ticker=fixedTicker(()=>{steps++;ticker.stop();},50,c);c.wake(1000);assert.equal(steps,1);assert.equal(c.pending,0);});

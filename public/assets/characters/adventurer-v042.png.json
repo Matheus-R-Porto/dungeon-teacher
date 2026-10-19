@@ -1,0 +1,273 @@
+{
+  "source": "adventurer-v042-poses",
+  "walk": "walk-v042",
+  "cell": 256,
+  "columns": 6,
+  "rows": 4,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "bounds": [
+        56,
+        34,
+        199,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "bounds": [
+        64,
+        33,
+        190,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "bounds": [
+        65,
+        33,
+        190,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 3,
+      "row": 0,
+      "bounds": [
+        64,
+        33,
+        190,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 4,
+      "row": 0,
+      "bounds": [
+        63,
+        33,
+        191,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 5,
+      "row": 0,
+      "bounds": [
+        58,
+        44,
+        196,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "bounds": [
+        59,
+        27,
+        196,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "bounds": [
+        56,
+        24,
+        199,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 2,
+      "row": 1,
+      "bounds": [
+        58,
+        22,
+        196,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 3,
+      "row": 1,
+      "bounds": [
+        56,
+        24,
+        199,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 4,
+      "row": 1,
+      "bounds": [
+        59,
+        22,
+        196,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 5,
+      "row": 1,
+      "bounds": [
+        50,
+        37,
+        204,
+        233
+      ],
+      "removedDetachedPixels": 5
+    },
+    {
+      "column": 0,
+      "row": 2,
+      "bounds": [
+        63,
+        43,
+        192,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 2,
+      "bounds": [
+        68,
+        31,
+        187,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 2,
+      "row": 2,
+      "bounds": [
+        66,
+        31,
+        189,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 3,
+      "row": 2,
+      "bounds": [
+        67,
+        29,
+        187,
+        233
+      ],
+      "removedDetachedPixels": 1
+    },
+    {
+      "column": 4,
+      "row": 2,
+      "bounds": [
+        65,
+        30,
+        189,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 5,
+      "row": 2,
+      "bounds": [
+        61,
+        51,
+        193,
+        233
+      ],
+      "removedDetachedPixels": 5
+    },
+    {
+      "column": 0,
+      "row": 3,
+      "bounds": [
+        62,
+        22,
+        193,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 1,
+      "row": 3,
+      "bounds": [
+        53,
+        22,
+        201,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 2,
+      "row": 3,
+      "bounds": [
+        64,
+        23,
+        190,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 3,
+      "row": 3,
+      "bounds": [
+        61,
+        23,
+        194,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 4,
+      "row": 3,
+      "bounds": [
+        64,
+        23,
+        191,
+        233
+      ],
+      "removedDetachedPixels": 0
+    },
+    {
+      "column": 5,
+      "row": 3,
+      "bounds": [
+        51,
+        34,
+        204,
+        233
+      ],
+      "removedDetachedPixels": 0
+    }
+  ]
+}

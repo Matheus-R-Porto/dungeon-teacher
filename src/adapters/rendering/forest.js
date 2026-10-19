@@ -1,3 +1,6 @@
+import {buildTowerStructures} from './tower-structures.js';
+import {buildLivingForest} from './living-forest.js';
+import {artTexture} from './art.js';
 import {caveAt} from '../../world/biomes.js';
 import * as THREE from 'three';
 import {insideTerrain} from '../../world/collision.js';
@@ -9,16 +12,20 @@ export function buildForest(v){
  for(let z=b.minZ-4;z<b.maxZ+4;z+=10)v.box(v.scene,b.maxX-b.minX+8,.5,10,(b.minX+b.maxX)/2,-.35,z+5,mat(blend(0x304d36,0x27333d,amount(z+5))));
  const ground=mat([0x789e54,0x62874d,0x526e49][depth-1]),path=mat(0xa99c6a),low=mat(0x456b42),stone=mat(0x738266),caveStone=mat(0x657485);
  const surfaces=Array.from({length:17},(_,i)=>mat(blend([0x789e54,0x62874d,0x526e49][depth-1],0x4f5965,i/16))),surface=z=>surfaces[Math.round(amount(z)*16)];
+ if(w.livingTower){const texture=artTexture('/assets/environment/forest-ground-v050.png');texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.minFilter=THREE.LinearMipmapLinearFilter;texture.generateMipmaps=true;
+  for(const m of surfaces){m.map=texture;m.color.lerp(new THREE.Color(0xffffff),.72);m.onBeforeCompile=shader=>{shader.vertexShader=shader.vertexShader.replace('#include <uv_vertex>','#include <uv_vertex>\n vMapUv = (modelMatrix * vec4(position, 1.0)).xz * .12;');};m.customProgramCacheKey=()=> 'living-ground-world-uv-v1';}
+ }
  const disk=new THREE.CircleGeometry(1,16);disk.rotateX(-Math.PI/2);
- for(const r of w.graph.regions){const patch=v.mesh(disk,surface(r.z),v.scene,r.x,.005,r.z);patch.scale.setScalar(r.radius);patch.castShadow=false;}
- for(const segment of w.walkable.filter(s=>s.a)){
+ if(w.openTower){const shape=new THREE.Shape(w.openTower.vertices.map(p=>new THREE.Vector2(p.x,-p.z))),g=new THREE.ShapeGeometry(shape);g.rotateX(-Math.PI/2);const meadow=v.mesh(g,surface(w.spawn.z),v.scene,0,.035,0);meadow.castShadow=false;buildTowerStructures(v);}
+ for(const r of w.openTower?[]:w.graph.regions){const patch=v.mesh(disk,surface(r.z),v.scene,r.x,.005,r.z);patch.scale.setScalar(r.radius);patch.castShadow=false;}
+ for(const segment of w.openTower?[]:w.walkable.filter(s=>s.a)){
   const {a,b,radius}=segment,dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz),steps=Math.ceil(d/3);
   for(let i=0;i<steps;i++){const t=(i+.5)/steps,x=a.x+dx*t,z=a.z+dz*t,strip=v.box(v.scene,radius*2,.04,d/steps+.08,x,0,z,surface(z));strip.rotation.y=Math.atan2(dx,dz);}
   for(const p of [a,b]){const cap=v.mesh(disk,surface(p.z),v.scene,p.x,.026,p.z);cap.scale.setScalar(radius);cap.castShadow=false;}
  }
  const stones=[],shrubs=[],trees=[],arrows=[],grass=[],walls=[],crystals=[];
  for(const t of w.trails)for(let k=1;k<t.points.length;k++){const a=t.points[k-1],b=t.points[k],d=Math.hypot(b.x-a.x,b.z-a.z);for(let n=0;n<d;n+=1.8){const f=n/d;stones.push({x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f,scale:t.main?.48:.3,color:t.main?0xc6b978:0x92b49a});if(t.main&&n>3&&Math.floor(n/1.8)%4===0)arrows.push({x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f,scale:.65,angle:Math.atan2(b.x-a.x,b.z-a.z)});}}
- for(let z=b.minZ;z<b.maxZ;z+=2)for(let x=b.minX;x<b.maxX;x+=2){
+ for(let z=b.minZ;!w.livingTower&&z<b.maxZ;z+=2)for(let x=b.minX;x<b.maxX;x+=2){
   if(insideTerrain(w,x,z,0)||!insideTerrain(w,x,z,-2.4))continue;
   const c=amount(z);
   if(c>.15)walls.push({x,z,scale:.9+random()*.4,color:blend(0x708169,0x465264,c)});
@@ -26,7 +33,7 @@ export function buildForest(v){
   if(c>.5&&random()<.09)crystals.push({x,z,scale:.4+random()*.7});
  }
  function instances(geometry,material,points,height,scaleY=1){const mesh=new THREE.InstancedMesh(geometry,material,points.length),d=new THREE.Object3D();points.forEach((p,i)=>{d.position.set(p.x,height*p.scale,p.z);d.scale.set(p.scale,p.scale*scaleY,p.scale);d.rotation.y=p.angle??random()*6.28;d.updateMatrix();mesh.setMatrixAt(i,d.matrix);if(p.color)mesh.setColorAt(i,new THREE.Color(p.color));});mesh.receiveShadow=true;v.scene.add(mesh);return mesh;}
- for(const r of w.graph.regions)for(let i=0;i<65;i++){const a=random()*6.28,d=3+random()*(r.radius-3);if(random()>amount(r.z))grass.push({x:r.x+Math.sin(a)*d,z:r.z+Math.cos(a)*d,scale:.18+random()*.22});}
+ for(const r of w.livingTower?[]:w.graph.regions)for(let i=0;i<65;i++){const a=random()*6.28,d=3+random()*(r.radius-3);if(random()>amount(r.z))grass.push({x:r.x+Math.sin(a)*d,z:r.z+Math.cos(a)*d,scale:.18+random()*.22});}
  instances(new THREE.DodecahedronGeometry(1,0),mat(0xffffff),walls,.85,1.8);
  instances(new THREE.ConeGeometry(.45,2,5),mat(0x70c4df,{emissive:0x287496,emissiveIntensity:.65}),crystals,.9,1.3);
  instances(new THREE.ConeGeometry(.4,1,3),mat(0x88a96c),grass,.4);
@@ -34,9 +41,9 @@ export function buildForest(v){
  instances(new THREE.DodecahedronGeometry(1,0),low,shrubs,.34,.6);
  instances(new THREE.DodecahedronGeometry(1,0),mat(0xffffff),stones,.035,.1);
  instances(new THREE.ConeGeometry(1,2,7),mat(0x326646),trees,.75,1);
- for(const o of w.obstacles.filter(o=>!o.encounterId&&o.kind!=='mineralVein')){const rock=v.mesh(new THREE.DodecahedronGeometry(1,0),o.kind==='pillar'?caveStone:stone,v.scene,o.x,.7,o.z);rock.scale.set(o.halfX,o.kind==='pillar'?2.6:1.1,o.halfZ);if(o.kind==='ruin')v.box(v.scene,1.5,.35,1.4,o.x,1.5,o.z,v.mats.stoneLight);}
+ for(const o of w.obstacles.filter(o=>!w.livingTower&&!o.encounterId&&o.kind!=='mineralVein')){const rock=v.mesh(new THREE.DodecahedronGeometry(1,0),o.kind==='pillar'?caveStone:stone,v.scene,o.x,.7,o.z);rock.scale.set(o.halfX,o.kind==='pillar'?2.6:1.1,o.halfZ);if(o.kind==='ruin')v.box(v.scene,1.5,.35,1.4,o.x,1.5,o.z,v.mats.stoneLight);}
  v.forestGates=[];for(const gate of w.gates){const group=new THREE.Group();group.position.set(gate.x,0,gate.z);v.scene.add(group);const underground=gate.kind==='crystal';const root=v.mesh(new THREE.SphereGeometry(gate.radius,16,8),mat(underground?0x65bada:0x597d68,{transparent:true,opacity:.48,emissive:0x3b755d,emissiveIntensity:.5}),group,0,.25,0);root.scale.y=.5;for(let i=0;i<6;i++){const a=i*Math.PI/3,branch=v.box(group,.28,2,gate.radius*1.6,0,.8,0,underground?v.mats.stone:v.mats.bark);branch.rotation.set(.3,a,.3);}v.forestGates.push({gate,group});}
- for(const p of w.pois.filter(p=>p.type!=='futureResource')){const group=new THREE.Group();group.position.set(p.x,0,p.z);v.scene.add(group);group.userData.kind='ruin';
+ for(const p of w.pois.filter(p=>!w.livingTower&&p.type!=='futureResource')){const group=new THREE.Group();group.position.set(p.x,0,p.z);v.scene.add(group);group.userData.kind='ruin';
   if(amount(p.z)>.5&&p.kind!==2){
    const mineral=mat(0x74c9cf,{emissive:0x266480,emissiveIntensity:.6});
    for(let i=0;i<3;i++){const crystal=v.mesh(new THREE.ConeGeometry(.45,1.8+i*.45,5),mineral,group,(i-1)*.7,.9,Math.sin(i)*.5);crystal.rotation.z=(i-1)*.25;}
@@ -62,7 +69,7 @@ export function buildForest(v){
   for(let i=0;i<4;i++){const a=i*1.7+vein.x,chunk=v.mesh(new THREE.DodecahedronGeometry(.28+(i%2)*.1,0),mat(0x6b6e78),spent,Math.sin(a)*.5,.16,Math.cos(a)*.5);chunk.rotation.set(a,a*.5,0);}
   v.mineralVeins.push({vein,full,spent,ore});
  }
- v.updateMineralVeins=time=>{for(const entry of v.mineralVeins){const done=entry.vein.state==='exhausted';entry.full.visible=!done;entry.spent.visible=done;entry.ore.emissiveIntensity=.9+Math.sin(time*2.2+entry.vein.x)*.35;}};
+ v.updateMineralVeins=time=>{for(const entry of v.mineralVeins){const contactPending=v.actor?.activity?.mining?.vein===entry.vein&&time-(v.actor.activity.impactAt??-Infinity)<.58;const done=entry.vein.state==='exhausted'&&!contactPending;entry.full.visible=!done;entry.spent.visible=done;entry.ore.emissiveIntensity=.9+Math.sin(time*2.2+entry.vein.x)*.35;}};
  v.updateMineralVeins(0);
  // Local atmosphere follows the player along the directional transition; no roof hides combat.
  v.updateBiomeAtmosphere=z=>{
@@ -73,4 +80,5 @@ export function buildForest(v){
  if(w.refugePortal){const g=new THREE.Group();g.position.set(w.refugePortal.x,0,w.refugePortal.z);v.scene.add(g);const warm=mat(0xffd27a,{emissive:0xd8902a,emissiveIntensity:.9});const ring=v.mesh(new THREE.TorusGeometry(1.1,.14,6,24),warm,g,0,1.4,0);for(const x of [-1.1,1.1])v.mesh(new THREE.CylinderGeometry(.22,.3,1.6,6),v.mats.stone,g,x,.8,0);const base=v.mesh(new THREE.CircleGeometry(1.5,24),new THREE.MeshBasicMaterial({color:0xffc66b,transparent:true,opacity:.3,depthWrite:false}),g,0,.04,0);base.rotation.x=-Math.PI/2;base.castShadow=false;ring.rotation.y=Math.PI/2;}
  const boss=w.graph.regions.find(r=>r.type==='boss');if(boss){const ring=v.mesh(new THREE.RingGeometry(8.5,8.8,48),v.mats.stoneLight,v.scene,boss.x,.055,boss.z);ring.rotation.x=-Math.PI/2;for(const x of [-7,7])v.box(v.scene,.9,3,.9,boss.x+x,1.5,boss.z-5,v.mats.stone);}
  v.forestStats={regions:w.graph.regions.length,trees:trees.length,shrubs:shrubs.length,stones:stones.length};
+ if(w.livingTower)buildLivingForest(v);
 }

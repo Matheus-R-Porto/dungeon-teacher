@@ -4,3 +4,16 @@ dist/
 test-results/
 *.local
 release/
+
+# Server-owned persistent shared geography (back up independently).
+data/shared-tower/
+
+# Online identities and progression: server database, never versioned.
+data/online/
+
+# Bulk automated QA capture dumps (hundreds of frames per run). Git showcases
+# the work, not a full QA archive — curated screenshots/beta0*.png stay.
+screenshots/iteration21/
+screenshots/iteration211/
+screenshots/iteration212/
+screenshots/iteration22/

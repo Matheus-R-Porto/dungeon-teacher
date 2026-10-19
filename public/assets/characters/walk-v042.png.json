@@ -1,0 +1,268 @@
+{
+  "source": "C:/Users/theuz/.codex/generated_images/01a0d4c8-c623-7a51-9d6e-d93056a0fef3/exec-76b15476-346c-4e76-b02e-812c8449f14c.png",
+  "width": 1254,
+  "height": 1254,
+  "columns": 4,
+  "rows": 4,
+  "cell": 256,
+  "padding": 22,
+  "scale": 0.7794117647058824,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "sourceBounds": [
+        76,
+        38,
+        238,
+        295
+      ],
+      "bounds": [
+        64,
+        33,
+        190,
+        233
+      ]
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "sourceBounds": [
+        388,
+        38,
+        549,
+        295
+      ],
+      "bounds": [
+        65,
+        33,
+        190,
+        233
+      ]
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "sourceBounds": [
+        702,
+        38,
+        864,
+        295
+      ],
+      "bounds": [
+        64,
+        33,
+        190,
+        233
+      ]
+    },
+    {
+      "column": 3,
+      "row": 0,
+      "sourceBounds": [
+        1012,
+        38,
+        1177,
+        295
+      ],
+      "bounds": [
+        63,
+        33,
+        191,
+        233
+      ]
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "sourceBounds": [
+        117,
+        96,
+        485,
+        631
+      ],
+      "bounds": [
+        56,
+        24,
+        199,
+        233
+      ]
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "sourceBounds": [
+        645,
+        90,
+        1000,
+        631
+      ],
+      "bounds": [
+        58,
+        22,
+        196,
+        233
+      ]
+    },
+    {
+      "column": 2,
+      "row": 1,
+      "sourceBounds": [
+        1179,
+        96,
+        1545,
+        631
+      ],
+      "bounds": [
+        56,
+        24,
+        199,
+        233
+      ]
+    },
+    {
+      "column": 3,
+      "row": 1,
+      "sourceBounds": [
+        1732,
+        90,
+        2084,
+        631
+      ],
+      "bounds": [
+        59,
+        22,
+        196,
+        233
+      ]
+    },
+    {
+      "column": 0,
+      "row": 2,
+      "sourceBounds": [
+        79,
+        657,
+        232,
+        917
+      ],
+      "bounds": [
+        68,
+        31,
+        187,
+        233
+      ]
+    },
+    {
+      "column": 1,
+      "row": 2,
+      "sourceBounds": [
+        391,
+        657,
+        549,
+        917
+      ],
+      "bounds": [
+        66,
+        31,
+        189,
+        233
+      ]
+    },
+    {
+      "column": 2,
+      "row": 2,
+      "sourceBounds": [
+        706,
+        655,
+        860,
+        917
+      ],
+      "bounds": [
+        67,
+        29,
+        187,
+        233
+      ]
+    },
+    {
+      "column": 3,
+      "row": 2,
+      "sourceBounds": [
+        1018,
+        656,
+        1177,
+        917
+      ],
+      "bounds": [
+        65,
+        30,
+        189,
+        233
+      ]
+    },
+    {
+      "column": 0,
+      "row": 3,
+      "sourceBounds": [
+        94,
+        66,
+        512,
+        661
+      ],
+      "bounds": [
+        53,
+        22,
+        201,
+        233
+      ]
+    },
+    {
+      "column": 1,
+      "row": 3,
+      "sourceBounds": [
+        648,
+        64,
+        1005,
+        657
+      ],
+      "bounds": [
+        64,
+        23,
+        190,
+        233
+      ]
+    },
+    {
+      "column": 2,
+      "row": 3,
+      "sourceBounds": [
+        1182,
+        66,
+        1559,
+        657
+      ],
+      "bounds": [
+        61,
+        23,
+        194,
+        233
+      ]
+    },
+    {
+      "column": 3,
+      "row": 3,
+      "sourceBounds": [
+        1710,
+        64,
+        2070,
+        657
+      ],
+      "bounds": [
+        64,
+        23,
+        191,
+        233
+      ]
+    }
+  ]
+}

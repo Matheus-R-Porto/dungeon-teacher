@@ -1,3 +1,4 @@
+import {sameLevel} from '../world/surfaces.js';
 import {Projectiles} from '../domain/abilities/effects.js';
 import {ABILITY_CONFIG} from '../domain/abilities/definitions.js';
 import {equippedDefinition} from '../domain/items/inventory.js';
@@ -42,7 +43,7 @@ export class Combat {
   }
   projectileTarget(ref,p){
     if(p?.owner){const owner=this.enemies.find(e=>e.id===p.owner.id&&(e.generation??0)===p.owner.generation);if(!owner?.alive||owner.state==='returning')return null;}
-    if(ref?.id===this.character.data.id)return this.character.isAlive?this.game.player:null;
+    if(ref?.id===this.character.data.id)return this.character.isAlive&&sameLevel(p,this.game.player)?this.game.player:null;
     return this.enemies.find(e=>e.id===ref?.id&&(e.generation??0)===ref.generation&&e.alive&&e.state!=='returning')??null;
   }
   basicImpact(profile,stats,target,source){

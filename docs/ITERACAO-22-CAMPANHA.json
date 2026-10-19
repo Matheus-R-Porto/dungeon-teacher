@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-19T16:50:36.525Z",
+  "checks": [
+    "Local campaign initializes expanded floor with existing progression"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration22-local\\campaign-expanded-floor-1.png"
+  ],
+  "errors": [],
+  "fixture": "Isolated server and two real Electron processes. Positions prepared server-side for short scenarios; movement, attacks, damage, death, XP, loot, respawn and travel use normal simulation/protocol. NPC scale comparisons are visual inspection fixtures.",
+  "ok": true
+}

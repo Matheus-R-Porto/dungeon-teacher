@@ -1,0 +1,16 @@
+✔ B/C/D/E/F/G: real tower clients isolate floors, fight, transition, resume and reuse geography after server restart (13862.9712ms)
+✔ 18 A: all twelve real floors deterministic, valid, persisted and legacy bytes preserved (1351.2368ms)
+ℹ {"generationOrLoadMs":[3.89,2.15,64.48,68.04,33.5,29.58,30.78,47.03,46.92,77.83,48.32,29.07],"reload12Ms":44.09,"heapDeltaMB":12.77}
+✔ 18 B/C/E: climb all twelve, reunite, reconnect mid-tower, descend, reject old visits and floor 13 (488.0387ms)
+✔ 18 performance: empty areas sleep after reconnection grace; occupied areas continue (417.3214ms)
+ℹ 1000 idle twelve-area steps ms: 0.73
+✔ 18 D: two attackers share real damage in every floor with independent HP and targets (467.4742ms)
+ℹ max mean occupied-floor step ms: 0.25
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14087.9715
