@@ -12,7 +12,7 @@ export function layerWorld(w,id){
  if(cache.layers.has(id))return cache.layers.get(id);
  const s=w.surfaces.find(s=>s.id===id);
  const layer={...w,surfaces:undefined,graph:s?undefined:w.graph,bounds:s?{minX:s.x-s.halfX,maxX:s.x+s.halfX,minZ:s.z-s.halfZ,maxZ:s.z+s.halfZ}:w.bounds,walkable:s?[{shape:'polygon',vertices:[{x:s.x-s.halfX,z:s.z-s.halfZ},{x:s.x+s.halfX,z:s.z-s.halfZ},{x:s.x+s.halfX,z:s.z+s.halfZ},{x:s.x-s.halfX,z:s.z+s.halfZ}]}]:w.walkable,
- obstacles:s?[]:[...w.obstacles,...w.surfaces.filter(s=>s.kind==='ramp').map(s=>({shape:'rect',x:s.x,z:s.z+.35,halfX:s.halfX,halfZ:s.halfZ-.35}))]};
+ obstacles:s?(s.obstacles??[]):[...w.obstacles,...w.surfaces.filter(s=>s.kind==='ramp').map(s=>({shape:'rect',x:s.x,z:s.z+.35,halfX:s.halfX,halfZ:s.halfZ-.35}))]};
  cache.layers.set(id,layer);return layer;
 }
 export function stepSurface(w,p,x,z,r,valid){

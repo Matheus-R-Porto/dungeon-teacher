@@ -16,9 +16,9 @@ test('complete online loop: party, chat, cooperative XP level-up, manual loot, t
   for(let i=0;i<400&&e.alive;i++)h.online.step();assert.equal(e.hp,0);await until(()=>a.snapshot.drops.length&&b.snapshot.drops.length);
   for(const [c,person]of[[a,p],[b,q]]){const drop=c.snapshot.drops.at(-1);Object.assign(person.game.player,{x:drop.x,z:drop.z});c.command({kind:'pickup',target:drop.id});}
   await until(()=>a.snapshot.drops.length===0&&b.snapshot.drops.length===0);
-  for(const person of[p,q]){person.target=null;person.game.cancel();Object.assign(person.game.player,w.map.spawn);}for(let i=0;i<Math.ceil(w.map.livingTower.respawn.slime/.05)+2;i++)h.online.step();assert.ok(e.alive);
+  for(const person of[p,q]){person.target=null;person.game.cancel();Object.assign(person.game.player,{...w.map.portal,y:0,surface:"ground"});}for(let i=0;i<Math.ceil(w.map.livingTower.respawn.slime/.05)+2;i++)h.online.step();assert.ok(e.alive);
  }
- assert.ok(p.character.data.level>=2);assert.ok(p.character.data.attributePoints>0);assert.ok(p.character.data.inventory.slots[0].quantity>=1);await wait(5100);a.command({kind:'allocate',attribute:'str'});await until(()=>p.character.data.attributes.str===6);
+ assert.ok(p.character.data.level>=2);assert.ok(p.character.data.attributePoints>0);assert.ok(p.character.data.inventory.slots[0].quantity>=1);Object.assign(p.game.player,w.map.spawn);await wait(5100);a.command({kind:'allocate',attribute:'str'});await until(()=>p.character.data.attributes.str===6);
  for(const [c,person]of[[a,p],[b,q]]){Object.assign(person.game.player,w.map.portal);c.command({kind:'travel',portal:'return-portal'});}await until(()=>a.snapshot?.mapId==='shared-floor-2'&&b.snapshot?.mapId==='shared-floor-2');
  // A global message also crosses floor boundaries.
  Object.assign(q.game.player,h.online.world(q.mapId).map.portal);b.command({kind:'travel',portal:'return-portal'});await until(()=>b.snapshot?.mapId==='shared-floor-3');await wait(1100);a.command({kind:'chat',channel:'global',text:'Outro andar'});await until(()=>chat[1].some(m=>m.text==='Outro andar'));

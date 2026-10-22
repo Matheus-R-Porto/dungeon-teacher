@@ -1,7 +1,9 @@
+import {getGraphics} from '../../ui/graphics-settings.js';
+import {buildGuardianHall} from './guardian.js';
 import {equippedDefinition} from '../../domain/items/inventory.js';
 import {buildCity,buildCityNpcs,updateCityAmbient} from './city.js';
 import {FishingVisual} from './fishing-visual.js';
-import {buildForest} from './forest.js';
+import {buildForest,buildForestSteps} from './forest.js';
 import * as THREE from 'three';
 import { CONFIG } from '../../core/config.js';
 import { OrbitState } from '../../core/orbit.js';
@@ -12,10 +14,12 @@ const material = (color, extra = {}) => new THREE.MeshStandardMaterial({ color, 
 function randomSource(seed) { return () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296; }; }
 
 export class SceneView {
-  constructor(canvas, world) {
+  constructor(canvas, world, renderer=null, {deferred=false}={}) {
+    const builtAt=performance.now();
     this.canvas = canvas; this.world = world;
-    this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+    this.renderer = renderer??new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+    this.renderer.baseRender??=this.renderer.render;if(!deferred)this.renderer.render=this.renderer.baseRender;
+    if(!renderer)this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -38,7 +42,14 @@ export class SceneView {
     if(world.environment==='city'){const b=world.bounds,r=Math.hypot((b.maxX-b.minX)/2,(b.maxZ-b.minZ)/2)+3;sun.position.multiplyScalar(4);Object.assign(sun.shadow.camera,{left:-r,right:r,top:r,bottom:-r,far:160});}
     this.sun=sun;this.scene.add(sun);
     const rim = new THREE.DirectionalLight(0xb9e6f1, 1.0); rim.position.set(10, 6, -12); this.scene.add(rim);
-    this.flags=[]; if(world.environment==='city')buildCity(this);else if(['forest','biome'].includes(world.environment))buildForest(this);else if(world.environment==='dungeon')this.buildDungeon();else {this.buildGround();this.buildEnvironment();this.buildLife();} this.buildPortal();this.buildNpcs();this.buildPlayer();this.buildParticles();
+    this.flags=[];
+    if(!deferred){for(const step of this.buildSteps()){}this.activate();}
+    getGraphics()?.event('sceneConstruction',performance.now()-builtAt);
+  }
+  *buildSteps(){
+    const world=this.world;
+    if(world.environment==='guardian'){}else if(world.environment==='city'){buildCity(this);yield 'city';}else if(['forest','biome'].includes(world.environment)){yield* buildForestSteps(this);}else if(world.environment==='dungeon'){this.buildDungeon();yield 'dungeon';}else {this.buildGround();yield 'ground';this.buildEnvironment();yield 'environment';this.buildLife();yield 'life';}
+    buildGuardianHall(this);yield 'guardian';if(!world.arena)this.buildPortal();yield 'portal';this.buildNpcs();yield 'npcs';this.buildPlayer();yield 'player-animation';this.buildParticles();yield 'particles';
     this.fishingVisual=new FishingVisual(this);this.registerStructureOcclusion();
     this.interactionRing = this.mesh(new THREE.RingGeometry(0.8, 0.86, 48), new THREE.MeshBasicMaterial({ color: 0xffdf88, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.25, 0);
     this.interactionRing.rotation.x = -Math.PI / 2; this.interactionRing.visible = false; this.interactionRing.castShadow = false;
@@ -46,7 +57,13 @@ export class SceneView {
     this.destination.rotation.x = -Math.PI / 2; this.destination.visible = false;
     this.pathLine = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: 0xd6c18a, transparent: true, opacity: 0.36, dashSize: 0.14, gapSize: 0.2 }));
     this.scene.add(this.pathLine);
-    this.resize();
+    this.resize();yield 'camera';
+  }
+  activate(){this.renderer.render=this.renderer.baseRender;getGraphics()?.bind(this);}
+  async texturesReady(){
+    const textures=new Set();this.scene.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material])if(m?.map)textures.add(m.map);});
+    for(const texture of this.actor?.textures?.values()??[])textures.add(texture);
+    await Promise.all([...textures].map(t=>t.userData.ready?.()??t.image?.decode?.()??Promise.resolve()));
   }
   mesh(geometry, mat, parent, x = 0, y = 0, z = 0) {
     const mesh = new THREE.Mesh(geometry, mat); mesh.position.set(x, y, z); mesh.castShadow = true; mesh.receiveShadow = true; parent.add(mesh); return mesh;
@@ -177,7 +194,7 @@ export class SceneView {
     this.box(this.scene,1.7,0.5,0.12,-6.2,0.86,2.5,this.mats.bark);
   }
   registerStructureOcclusion() {
-    const structures = [...this.scene.children.filter(g => ['ruin','camp','well','crates','sign'].includes(g.userData.kind)),this.portal];
+    const structures = [...this.scene.children.filter(g => ['ruin','camp','well','crates','sign'].includes(g.userData.kind)),this.portal].filter(Boolean);
     for (const group of structures) {
       const materials = new Map();
       group.traverse(object => {
@@ -255,7 +272,8 @@ export class SceneView {
   zoom(delta) { this.orbit.zoom(delta); }
   resize() {
     const { width, height } = this.canvas.getBoundingClientRect();
-    this.renderer.setSize(width, height, false);
+    const current=this.renderer.getSize(new THREE.Vector2());
+    if(current.x!==width||current.y!==height)this.renderer.setSize(width, height, false);
     const aspect = width / Math.max(height, 1);
     this.camera.left = -this.height * aspect / 2; this.camera.right = this.height * aspect / 2; this.camera.top = this.height / 2; this.camera.bottom = -this.height / 2;
     this.camera.updateProjectionMatrix();
@@ -263,33 +281,34 @@ export class SceneView {
   pick(clientX, clientY) {
     const rect = this.canvas.getBoundingClientRect();
     this.raycaster.setFromCamera(new THREE.Vector2((clientX - rect.left) / rect.width * 2 - 1, -(clientY - rect.top) / rect.height * 2 + 1), this.camera);
-    const hit=this.raycaster.intersectObjects(this.walkableMeshes??[],false).find(h=>h.object.userData.surface?.endsWith('-stairs')||h.object.material.opacity>.5);
+    const hit=this.raycaster.intersectObjects(this.walkableMeshes??[],false).find(h=>h.object.visible&&(h.object.userData.surface?.endsWith('-stairs')||h.object.material.opacity>.5));
     if(hit)return {x:hit.point.x,z:hit.point.z,y:hit.point.y,surface:hit.object.userData.surface};
     const point = this.raycaster.ray.intersectPlane(this.floorPlane, new THREE.Vector3());
     return point ? { x: point.x, z: point.z, y:0, surface:'ground' } : null;
   }
   screenPoint(x, y, z) {
-    const point = new THREE.Vector3(x, y, z).project(this.camera);
-    return { x: (point.x * 0.5 + 0.5) * this.canvas.clientWidth, y: (-point.y * 0.5 + 0.5) * this.canvas.clientHeight, visible: Math.abs(point.x) < 0.92 && Math.abs(point.y) < 0.92 && point.z < 1 };
+    this.projectPoint??=new THREE.Vector3();const point=this.projectPoint.set(x,y,z).project(this.camera);
+    return { x: (point.x * 0.5 + 0.5) * (this.viewportWidth??this.canvas.clientWidth), y: (-point.y * 0.5 + 0.5) * (this.viewportHeight??this.canvas.clientHeight), visible: Math.abs(point.x) < 0.92 && Math.abs(point.y) < 0.92 && point.z < 1 };
   }
   update(game, alpha, dt, reducedMotion = false) {
-    const time = game.elapsed;this.updateBiomeAtmosphere?.(game.player.z);
+    const time = game.elapsed;this.updateBiomeAtmosphere?.(game.player.z);this.updateAwakened?.(game.player);
     const x = THREE.MathUtils.lerp(game.previous.x, game.player.x, alpha), z = THREE.MathUtils.lerp(game.previous.z, game.player.z, alpha);
     const y=THREE.MathUtils.lerp(game.previous.y??0,game.player.y??0,alpha);
     this.selection.position.set(x, y+0.06, z);
     this.actor.update({ ...game.player, activity:game.activity, weaponType:this.combatVisual?.combat.character?equippedDefinition(this.combatVisual.combat.character.data)?.weaponType:game.player.weaponType,hp:this.combatVisual?.combat.character?.data.hp??game.player.hp, phase:this.combatVisual?.combat.abilities?.active?(this.combatVisual.combat.state==='casting'?'windup':this.combatVisual.combat.state==='recovering'?'recovery':'impact'):this.combatVisual?.combat.playerCycle.phase, x, y, z }, this.azimuth, time, reducedMotion,this.camera);
     // Exact player pivot: rotation never displaces the actor from the focus point.
     this.lookAt.set(x, y+0.75, z);
-    const aspect = this.canvas.clientWidth / Math.max(1, this.canvas.clientHeight);
+    this.viewportWidth=this.canvas.clientWidth;this.viewportHeight=this.canvas.clientHeight;
+    const aspect = this.viewportWidth / Math.max(1, this.viewportHeight);
     this.camera.left = -this.height * aspect / 2; this.camera.right = this.height * aspect / 2;
     this.camera.top = this.height / 2; this.camera.bottom = -this.height / 2; this.camera.updateProjectionMatrix();
     const distance = this.world.environment==='city'?Math.max(36,this.height*1.35):36, horizontal = Math.cos(CONFIG.cameraElevation) * distance;
     this.camera.position.set(this.lookAt.x + Math.sin(this.azimuth) * horizontal, this.lookAt.y + Math.sin(CONFIG.cameraElevation) * distance, this.lookAt.z + Math.cos(this.azimuth) * horizontal);
     this.camera.lookAt(this.lookAt); this.camera.updateMatrixWorld();
-    this.portalSurface.uniforms.time.value = reducedMotion ? 0 : time;
-    this.portalCore.rotation.y = reducedMotion ? 0 : time * 0.5;
+    if(this.portalSurface)this.portalSurface.uniforms.time.value = reducedMotion ? 0 : time;
+    if(this.portalCore)this.portalCore.rotation.y = reducedMotion ? 0 : time * 0.5;
     if (this.forgeCoal) this.forgeCoal.emissiveIntensity = 1 + (reducedMotion ? 0 : Math.sin(time * 4) * 0.25);
-    this.portalCore.position.y = 2.08 + (reducedMotion ? 0 : Math.sin(time * 1.3) * 0.1);
+    if(this.portalCore)this.portalCore.position.y = 2.08 + (reducedMotion ? 0 : Math.sin(time * 1.3) * 0.1);
     this.destination.visible = game.path.length > 0;
     if (game.path.length) { const dest = game.path.at(-1); this.destination.position.set(dest.x, (dest.y??0)+0.08, dest.z); this.destination.scale.setScalar(1 + Math.sin(time * 5) * 0.07); }
     if (game.path.length) {
@@ -308,6 +327,7 @@ export class SceneView {
       let obscured;
       if(o.box){const hit=this.occlusionRay.intersectBox(o.box,this.occlusionHit);obscured=!!hit&&hit.distanceTo(this.camera.position)<distanceToPlayer;}
       else {const offset = o.center.clone().sub(this.camera.position), along = offset.dot(ray);obscured=along > 0 && along < distanceToPlayer && offset.addScaledVector(ray, -along).length() < o.radius;}
+      if(o.arenaWall){const a=o.arenaWall;obscured ||= a.x*(this.camera.position.x-a.cx)+a.z*(this.camera.position.z-a.cz)>0;}
       if (o.shader) o.shader.uniforms.fade.value = THREE.MathUtils.lerp(o.shader.uniforms.fade.value, obscured ? 0.2 : 1, 1 - Math.exp(-dt * 8));
       for (const mat of o.materials) { mat.opacity = THREE.MathUtils.lerp(mat.opacity, obscured ? 0.2 : 1, 1 - Math.exp(-dt * 8)); mat.depthWrite = mat.opacity > 0.8; }
     }
@@ -323,13 +343,15 @@ export class SceneView {
     this.remotePlayers?.update(reducedMotion);
     this.renderer.render(this.scene, this.camera);
   }
-  dispose() {
+  dispose({releaseRenderer=true}={}) {
+    this.diagnosticCleanup?.();this.sun?.shadow?.dispose?.();
     this.remotePlayers?.dispose();
     const geometries = new Set(), materials = new Set();
     this.scene.traverse(object => { if (object.geometry) geometries.add(object.geometry); if (object.material) for (const m of Array.isArray(object.material) ? object.material : [object.material]) materials.add(m); });
     this.combatVisual?.dispose();
-    this.actor.dispose();
+    this.actor?.dispose();
     this.scene.traverse(o=>{if(o.material?.map)o.material.map.dispose();});
-    geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); this.renderer.dispose();
+    geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose());this.renderer.renderLists?.dispose();
+    if(releaseRenderer)this.renderer.dispose();
   }
 }

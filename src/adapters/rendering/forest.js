@@ -1,11 +1,13 @@
+import {buildAwakened} from './awakened-structures.js';
 import {buildTowerStructures} from './tower-structures.js';
-import {buildLivingForest} from './living-forest.js';
+import {buildLivingForestSteps} from './living-forest.js';
 import {artTexture} from './art.js';
 import {caveAt} from '../../world/biomes.js';
 import * as THREE from 'three';
 import {insideTerrain} from '../../world/collision.js';
 import {seeded,seedOf} from '../../domain/random.js';
-export function buildForest(v){
+export function buildForest(v){for(const step of buildForestSteps(v)){} }
+export function* buildForestSteps(v){
  const w=v.world,b=w.bounds,random=seeded(seedOf(w.seed+':decoration')),mat=(color,extra={})=>new THREE.MeshStandardMaterial({color,roughness:1,flatShading:true,...extra});
  const depth=Math.min(w.floorId,3),amount=z=>caveAt(w,z),blend=(a,b,t)=>new THREE.Color(a).lerp(new THREE.Color(b),t);
  v.scene.background=new THREE.Color([0x9ab9a0,0x769885,0x667e78][depth-1]);v.scene.fog=new THREE.FogExp2(v.scene.background,.014);
@@ -23,6 +25,7 @@ export function buildForest(v){
   for(let i=0;i<steps;i++){const t=(i+.5)/steps,x=a.x+dx*t,z=a.z+dz*t,strip=v.box(v.scene,radius*2,.04,d/steps+.08,x,0,z,surface(z));strip.rotation.y=Math.atan2(dx,dz);}
   for(const p of [a,b]){const cap=v.mesh(disk,surface(p.z),v.scene,p.x,.026,p.z);cap.scale.setScalar(radius);cap.castShadow=false;}
  }
+ yield 'forest-surfaces';
  const stones=[],shrubs=[],trees=[],arrows=[],grass=[],walls=[],crystals=[];
  for(const t of w.trails)for(let k=1;k<t.points.length;k++){const a=t.points[k-1],b=t.points[k],d=Math.hypot(b.x-a.x,b.z-a.z);for(let n=0;n<d;n+=1.8){const f=n/d;stones.push({x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f,scale:t.main?.48:.3,color:t.main?0xc6b978:0x92b49a});if(t.main&&n>3&&Math.floor(n/1.8)%4===0)arrows.push({x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f,scale:.65,angle:Math.atan2(b.x-a.x,b.z-a.z)});}}
  for(let z=b.minZ;!w.livingTower&&z<b.maxZ;z+=2)for(let x=b.minX;x<b.maxX;x+=2){
@@ -41,6 +44,7 @@ export function buildForest(v){
  instances(new THREE.DodecahedronGeometry(1,0),low,shrubs,.34,.6);
  instances(new THREE.DodecahedronGeometry(1,0),mat(0xffffff),stones,.035,.1);
  instances(new THREE.ConeGeometry(1,2,7),mat(0x326646),trees,.75,1);
+ yield 'forest-instances';
  for(const o of w.obstacles.filter(o=>!w.livingTower&&!o.encounterId&&o.kind!=='mineralVein')){const rock=v.mesh(new THREE.DodecahedronGeometry(1,0),o.kind==='pillar'?caveStone:stone,v.scene,o.x,.7,o.z);rock.scale.set(o.halfX,o.kind==='pillar'?2.6:1.1,o.halfZ);if(o.kind==='ruin')v.box(v.scene,1.5,.35,1.4,o.x,1.5,o.z,v.mats.stoneLight);}
  v.forestGates=[];for(const gate of w.gates){const group=new THREE.Group();group.position.set(gate.x,0,gate.z);v.scene.add(group);const underground=gate.kind==='crystal';const root=v.mesh(new THREE.SphereGeometry(gate.radius,16,8),mat(underground?0x65bada:0x597d68,{transparent:true,opacity:.48,emissive:0x3b755d,emissiveIntensity:.5}),group,0,.25,0);root.scale.y=.5;for(let i=0;i<6;i++){const a=i*Math.PI/3,branch=v.box(group,.28,2,gate.radius*1.6,0,.8,0,underground?v.mats.stone:v.mats.bark);branch.rotation.set(.3,a,.3);}v.forestGates.push({gate,group});}
  for(const p of w.pois.filter(p=>!w.livingTower&&p.type!=='futureResource')){const group=new THREE.Group();group.position.set(p.x,0,p.z);v.scene.add(group);group.userData.kind='ruin';
@@ -57,9 +61,11 @@ export function buildForest(v){
   if(p.kind===3){for(const x of [-1.5,1.5])v.box(group,.8,2.5,.8,x,1.25,0,v.mats.stone);v.box(group,3.8,.45,.9,0,2.5,0,v.mats.stoneLight);}
   if(p.kind===4){const log=v.mesh(new THREE.CylinderGeometry(.55,.8,4,7),v.mats.bark,group,0,.65,0);log.rotation.z=Math.PI/2;}
  }
+ yield 'forest-points';
  // Mineable veins: dark rock with warm amber ore, clearly unlike the cold decorative crystals. Spent veins collapse to rubble.
  v.mineralVeins=[];
  for(const vein of w.mineralVeins??[]){
+  yield 'mineral';
   const group=new THREE.Group();group.position.set(vein.x,0,vein.z);v.scene.add(group);
   const rock=mat(0x7a7f90),ore=mat(0xffb347,{emissive:0xe07a1a,emissiveIntensity:1}),full=new THREE.Group(),spent=new THREE.Group();group.add(full,spent);
   const body=v.mesh(new THREE.DodecahedronGeometry(vein.radius*1.1,0),rock,full,0,vein.radius*.6,0);body.scale.y=.9;body.rotation.y=vein.x;
@@ -80,5 +86,5 @@ export function buildForest(v){
  if(w.refugePortal){const g=new THREE.Group();g.position.set(w.refugePortal.x,0,w.refugePortal.z);v.scene.add(g);const warm=mat(0xffd27a,{emissive:0xd8902a,emissiveIntensity:.9});const ring=v.mesh(new THREE.TorusGeometry(1.1,.14,6,24),warm,g,0,1.4,0);for(const x of [-1.1,1.1])v.mesh(new THREE.CylinderGeometry(.22,.3,1.6,6),v.mats.stone,g,x,.8,0);const base=v.mesh(new THREE.CircleGeometry(1.5,24),new THREE.MeshBasicMaterial({color:0xffc66b,transparent:true,opacity:.3,depthWrite:false}),g,0,.04,0);base.rotation.x=-Math.PI/2;base.castShadow=false;ring.rotation.y=Math.PI/2;}
  const boss=w.graph.regions.find(r=>r.type==='boss');if(boss){const ring=v.mesh(new THREE.RingGeometry(8.5,8.8,48),v.mats.stoneLight,v.scene,boss.x,.055,boss.z);ring.rotation.x=-Math.PI/2;for(const x of [-7,7])v.box(v.scene,.9,3,.9,boss.x+x,1.5,boss.z-5,v.mats.stone);}
  v.forestStats={regions:w.graph.regions.length,trees:trees.length,shrubs:shrubs.length,stones:stones.length};
- if(w.livingTower)buildLivingForest(v);
+ yield 'forest-decoration';if(w.livingTower)yield* buildLivingForestSteps(v);yield 'living-forest';buildAwakened(v);yield 'awakened-structures';
 }

@@ -83,7 +83,7 @@ test('desktop CSP permits configured endpoint only and rejects host directive in
 
 test('Multiplayer01.1 production configuration allows its exact public WSS and rejects other destinations',async()=>{
   const {readFile}=await import('node:fs/promises');const config=JSON.parse(await readFile(new URL('../config/multiplayer.json',import.meta.url),'utf8'));
-  const url=new URL(config.serverUrl);assert.equal(url.protocol,'wss:');assert.equal(url.pathname,'/hub');assert.equal(config.build,'Multiplayer01.1');assert.equal(network.networkAllowed(config.serverUrl,config.serverUrl),true);
+  const url=new URL(config.serverUrl);assert.equal(url.protocol,'wss:');assert.equal(url.pathname,'/hub');assert.equal(config.build,'Beta '+JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8')).version);assert.equal(network.networkAllowed(config.serverUrl,config.serverUrl),true);
   for(const rejected of ['https://'+url.host+'/health','wss://'+url.host+'/other','wss://elsewhere.invalid/hub','ws://127.0.0.1:8787/hub'])assert.equal(network.networkAllowed(rejected,config.serverUrl),false);
 });
 test('Render cold start retains connection attempt beyond the online timeout',()=>{

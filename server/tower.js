@@ -1,5 +1,5 @@
 import {randomUUID} from 'node:crypto';
-import {expandOpenTower} from '../src/world/open-tower.js';
+import {awakenTower} from '../src/world/awakened-tower.js';
 import {SharedWorld} from './world.js';
 import {FloorStore,applyTowerAccess,geographyHash} from './floor-store.js';
 import {FLOOR_IDS,towerMessage} from '../shared/tower.js';
@@ -8,8 +8,8 @@ import {AttackCycle} from '../src/domain/combat/attack.js';
 import {Game} from '../src/simulation/game.js';
 import {canStand} from '../src/world/collision.js';
 export class SharedTower {
- constructor({directory,seed,worldOptions={},capacity=16}){this.store=new FloorStore(directory,{seed});this.worldOptions=worldOptions;this.capacity=capacity;this.worlds=new Map();this.records=new Map();}
- world(id){if(!FLOOR_IDS.includes(id))throw Error('Andar indisponível.');if(!this.worlds.has(id)){const record=this.store.load(FLOOR_IDS.indexOf(id)+1);this.records.set(id,record);this.worlds.set(id,new SharedWorld({...this.worldOptions,map:expandOpenTower(applyTowerAccess(record.definition))}));}return this.worlds.get(id);}
+ constructor({directory,seed,worldOptions={},capacity=32}){this.store=new FloorStore(directory,{seed});this.worldOptions=worldOptions;this.capacity=capacity;this.worlds=new Map();this.records=new Map();}
+ world(id){if(!FLOOR_IDS.includes(id))throw Error('Andar indisponível.');if(!this.worlds.has(id)){const record=this.store.load(FLOOR_IDS.indexOf(id)+1);this.records.set(id,record);this.worlds.set(id,new SharedWorld({...this.worldOptions,map:awakenTower(applyTowerAccess(record.definition),{population:this.worldOptions.population??'high'})}));}return this.worlds.get(id);}
  find(token){for(const w of this.worlds.values()){const p=w.tokens.get(token);if(p&&p.expires>w.time)return {w,p};}return null;}
  join(ws,name,token){const existing=token&&this.find(token),w=existing?.w??this.world(FLOOR_IDS[0]);if(w.players.size>=this.capacity&&!existing?.p.ws)throw Error('Andar cheio.');if([...this.worlds.values()].reduce((n,w)=>n+w.tokens.size,0)>=256&&!existing)throw Error('Aguarde antes de criar uma sessão.');
   const p=w.join(ws,name,token);p.mapId=w.map.id;p.epoch=randomUUID();ws.worldPlayer=p;ws.towerSession=true;return this.welcome(p);

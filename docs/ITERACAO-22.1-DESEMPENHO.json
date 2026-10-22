@@ -1,0 +1,673 @@
+{
+  "before": {
+    "file": ".logs\\iteration221-benchmark-v1-1792510991321\\report.json",
+    "at": "2026-10-20T15:43:11.322Z",
+    "checks": [],
+    "screenshots": [],
+    "errors": [],
+    "benchmarks": [
+      {
+        "name": "city-one-animated",
+        "frames": {
+          "n": 2349,
+          "mean": 8.513580246913639,
+          "p50": 8.399999999906868,
+          "p95": 10,
+          "p99": 12.699999999953434,
+          "max": 17.300000000046566
+        },
+        "fps": 117.45939675173933,
+        "onePercentLow": 69.26406926402272,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 698,
+          "materials": 167,
+          "textures": 17,
+          "textureSources": 13,
+          "geometries": 349,
+          "transparentObjects": 157,
+          "drawCalls": 418,
+          "triangles": 41332,
+          "gpuTextures": 13,
+          "gpuGeometries": 244,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 22848198,
+        "visibility": [
+          {
+            "at": 2284.100000000093,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.02996382688433
+      },
+      {
+        "name": "city-one-frozen-control",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343304130162664,
+          "p50": 8.300000000046566,
+          "p95": 8.899999999906868,
+          "p99": 9.400000000139698,
+          "max": 11.899999999906868
+        },
+        "fps": 119.85659211256674,
+        "onePercentLow": 98.72480460702518,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 698,
+          "materials": 167,
+          "textures": 17,
+          "textureSources": 13,
+          "geometries": 349,
+          "transparentObjects": 157,
+          "drawCalls": 418,
+          "triangles": 41332,
+          "gpuTextures": 13,
+          "gpuGeometries": 244,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 19437837,
+        "visibility": [
+          {
+            "at": 24326.300000000047,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 19.982972009975995
+      },
+      {
+        "name": "tower-one-entry",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343304130162664,
+          "p50": 8.300000000046566,
+          "p95": 8.5,
+          "p99": 8.699999999953434,
+          "max": 10.800000000046566
+        },
+        "fps": 119.85659211256674,
+        "onePercentLow": 111.57601115731126,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 746,
+          "visible": 477,
+          "materials": 227,
+          "textures": 162,
+          "textureSources": 5,
+          "geometries": 287,
+          "transparentObjects": 423,
+          "drawCalls": 119,
+          "triangles": 12096,
+          "gpuTextures": 7,
+          "gpuGeometries": 48,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 23760010,
+        "visibility": [
+          {
+            "at": 47136.19999999995,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.031559146964895
+      },
+      {
+        "name": "tower-one-grove-monsters",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343387567793114,
+          "p50": 8.300000000046566,
+          "p95": 8.5,
+          "p99": 8.700000000186265,
+          "max": 11.300000000046566
+        },
+        "fps": 119.85539349270661,
+        "onePercentLow": 110.90573012907977,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 746,
+          "visible": 500,
+          "materials": 227,
+          "textures": 162,
+          "textureSources": 5,
+          "geometries": 287,
+          "transparentObjects": 423,
+          "drawCalls": 109,
+          "triangles": 12006,
+          "gpuTextures": 8,
+          "gpuGeometries": 78,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 24116719,
+        "visibility": [
+          {
+            "at": 69171.1000000001,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 19.98232782909123
+      },
+      {
+        "name": "tower-twelve-grove",
+        "frames": {
+          "n": 2396,
+          "mean": 8.343405676126897,
+          "p50": 8.300000000046566,
+          "p95": 8.5,
+          "p99": 8.700000000186265,
+          "max": 11.300000000046566
+        },
+        "fps": 119.85513336134595,
+        "onePercentLow": 108.20559062193225,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 768,
+          "visible": 522,
+          "materials": 249,
+          "textures": 173,
+          "textureSources": 5,
+          "geometries": 298,
+          "transparentObjects": 445,
+          "drawCalls": 129,
+          "triangles": 12278,
+          "gpuTextures": 8,
+          "gpuGeometries": 89,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 25895943,
+        "visibility": [
+          {
+            "at": 91422.30000000005,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 19.98956105142773
+      }
+    ],
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "seconds": 20,
+      "realElectronProcesses": 1,
+      "baselineV1": true
+    },
+    "ok": true
+  },
+  "after": {
+    "file": ".logs\\iteration221-benchmark-v2-1792511130125\\report.json",
+    "at": "2026-10-20T15:45:30.125Z",
+    "checks": [],
+    "screenshots": [
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration221-benchmark-v2-1792511130125\\structure-ground.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration221-benchmark-v2-1792511130125\\structure-upper.png"
+    ],
+    "errors": [],
+    "benchmarks": [
+      {
+        "name": "city-one-animated",
+        "frames": {
+          "n": 2398,
+          "mean": 8.343452877397871,
+          "p50": 8.300000000046566,
+          "p95": 8.800000000046566,
+          "p99": 9.5,
+          "max": 12
+        },
+        "fps": 119.85445530698279,
+        "onePercentLow": 97.64035801435008,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 698,
+          "materials": 167,
+          "textures": 17,
+          "textureSources": 13,
+          "geometries": 349,
+          "transparentObjects": 157,
+          "drawCalls": 418,
+          "triangles": 41332,
+          "gpuTextures": 13,
+          "gpuGeometries": 244,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 22712545,
+        "visibility": [
+          {
+            "at": 2276.5,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.023697071763504
+      },
+      {
+        "name": "city-one-frozen-control",
+        "frames": {
+          "n": 2397,
+          "mean": 8.346891948268668,
+          "p50": 8.300000000046566,
+          "p95": 8.800000000046566,
+          "p99": 9.300000000046566,
+          "max": 12
+        },
+        "fps": 119.80507309758842,
+        "onePercentLow": 100.12515644547913,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 706,
+          "visible": 698,
+          "materials": 167,
+          "textures": 17,
+          "textureSources": 13,
+          "geometries": 349,
+          "transparentObjects": 157,
+          "drawCalls": 418,
+          "triangles": 41332,
+          "gpuTextures": 13,
+          "gpuGeometries": 244,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 22317627,
+        "visibility": [
+          {
+            "at": 24319.600000000093,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.023808758025456
+      },
+      {
+        "name": "tower-one-entry",
+        "frames": {
+          "n": 2398,
+          "mean": 8.343369474562095,
+          "p50": 8.300000000046566,
+          "p95": 8.5,
+          "p99": 8.700000000186265,
+          "max": 10.599999999860302
+        },
+        "fps": 119.85565340823952,
+        "onePercentLow": 110.65006915634072,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 525,
+          "visible": 294,
+          "materials": 178,
+          "textures": 107,
+          "textureSources": 5,
+          "geometries": 135,
+          "transparentObjects": 420,
+          "drawCalls": 73,
+          "triangles": 11657,
+          "gpuTextures": 7,
+          "gpuGeometries": 31,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 19171722,
+        "visibility": [
+          {
+            "at": 47136.5,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.02561820906192
+      },
+      {
+        "name": "tower-one-grove-monsters",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343471005423465,
+          "p50": 8.300000000046566,
+          "p95": 8.599999999860302,
+          "p99": 8.799999999813735,
+          "max": 9.699999999953434
+        },
+        "fps": 119.85419489682111,
+        "onePercentLow": 111.47236414339375,
+        "inventory": {
+          "visiblePlayers": 1,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 525,
+          "visible": 320,
+          "materials": 178,
+          "textures": 107,
+          "textureSources": 5,
+          "geometries": 135,
+          "transparentObjects": 420,
+          "drawCalls": 100,
+          "triangles": 12251,
+          "gpuTextures": 8,
+          "gpuGeometries": 59,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 19234273,
+        "visibility": [
+          {
+            "at": 69175.6000000001,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.03633722164855
+      },
+      {
+        "name": "tower-twelve-grove",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343387567793114,
+          "p50": 8.300000000046566,
+          "p95": 8.599999999860302,
+          "p99": 9,
+          "max": 13.100000000093132
+        },
+        "fps": 119.85539349270661,
+        "onePercentLow": 99.50248756201617,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 547,
+          "visible": 342,
+          "materials": 200,
+          "textures": 118,
+          "textureSources": 5,
+          "geometries": 146,
+          "transparentObjects": 442,
+          "drawCalls": 121,
+          "triangles": 12535,
+          "gpuTextures": 8,
+          "gpuGeometries": 70,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 35376445,
+        "visibility": [
+          {
+            "at": 91425.6000000001,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.029668584458324
+      },
+      {
+        "name": "structure-ground",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343304130162762,
+          "p50": 8.300000000046566,
+          "p95": 8.599999999860302,
+          "p99": 8.800000000046566,
+          "max": 12.599999999860302
+        },
+        "fps": 119.85659211256535,
+        "onePercentLow": 108.59728506775889,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 547,
+          "visible": 307,
+          "materials": 200,
+          "textures": 118,
+          "textureSources": 5,
+          "geometries": 146,
+          "transparentObjects": 442,
+          "drawCalls": 115,
+          "triangles": 12503,
+          "gpuTextures": 8,
+          "gpuGeometries": 70,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 20915868,
+        "visibility": [
+          {
+            "at": 113466,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.03002475736036
+      },
+      {
+        "name": "structure-upper",
+        "frames": {
+          "n": 2398,
+          "mean": 8.343327773144306,
+          "p50": 8.300000000046566,
+          "p95": 8.5,
+          "p99": 8.699999999953434,
+          "max": 12.600000000093132
+        },
+        "fps": 119.85625246784896,
+        "onePercentLow": 110.7521919700139,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 547,
+          "visible": 307,
+          "materials": 200,
+          "textures": 118,
+          "textureSources": 5,
+          "geometries": 146,
+          "transparentObjects": 442,
+          "drawCalls": 113,
+          "triangles": 12499,
+          "gpuTextures": 8,
+          "gpuGeometries": 70,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 27971639,
+        "visibility": [
+          {
+            "at": 140465,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 20.025285593531887
+      },
+      {
+        "name": "structure-upper-sustained-0",
+        "frames": {
+          "n": 2396,
+          "mean": 8.343363939899813,
+          "p50": 8.300000000046566,
+          "p95": 8.599999999860302,
+          "p99": 8.899999999906868,
+          "max": 11
+        },
+        "fps": 119.85573291580613,
+        "onePercentLow": 107.0950468537047,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 547,
+          "visible": 307,
+          "materials": 200,
+          "textures": 118,
+          "textureSources": 5,
+          "geometries": 146,
+          "transparentObjects": 442,
+          "drawCalls": 113,
+          "triangles": 12499,
+          "gpuTextures": 8,
+          "gpuGeometries": 70,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 34201898,
+        "visibility": [
+          {
+            "at": 162846.6000000001,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 19.99155037132007
+      },
+      {
+        "name": "structure-upper-sustained-1",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343387567793016,
+          "p50": 8.300000000046566,
+          "p95": 8.599999999860302,
+          "p99": 8.800000000046566,
+          "max": 11.699999999953434
+        },
+        "fps": 119.85539349270802,
+        "onePercentLow": 106.71409515322475,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 547,
+          "visible": 307,
+          "materials": 200,
+          "textures": 118,
+          "textureSources": 5,
+          "geometries": 146,
+          "transparentObjects": 442,
+          "drawCalls": 113,
+          "triangles": 12499,
+          "gpuTextures": 8,
+          "gpuGeometries": 70,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 28725594,
+        "visibility": [
+          {
+            "at": 184864.30000000005,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 19.988000503717572
+      },
+      {
+        "name": "structure-upper-sustained-2",
+        "frames": {
+          "n": 2397,
+          "mean": 8.343345848977888,
+          "p50": 8.300000000046566,
+          "p95": 8.5,
+          "p99": 8.699999999953434,
+          "max": 10.400000000139698
+        },
+        "fps": 119.85599279963999,
+        "onePercentLow": 110.80332409979445,
+        "inventory": {
+          "visiblePlayers": 12,
+          "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "objects": 547,
+          "visible": 307,
+          "materials": 200,
+          "textures": 118,
+          "textureSources": 5,
+          "geometries": 146,
+          "transparentObjects": 442,
+          "drawCalls": 113,
+          "triangles": 12499,
+          "gpuTextures": 8,
+          "gpuGeometries": 70,
+          "shadow": true,
+          "width": 1282,
+          "height": 722,
+          "dpr": 1.25,
+          "visibility": "visible",
+          "gpuTimerAvailable": true
+        },
+        "heap": 31199199,
+        "visibility": [
+          {
+            "at": 206896,
+            "state": "visible"
+          }
+        ],
+        "tickHz": 19.98257070226923
+      }
+    ],
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "seconds": 20,
+      "realElectronProcesses": 1,
+      "baselineV1": false,
+      "gpu": {
+        "vendor": "Google Inc. (AMD)",
+        "renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      }
+    },
+    "ok": true
+  }
+}

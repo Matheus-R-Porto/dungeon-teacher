@@ -23,9 +23,9 @@ export function canStand(world, x, z, radius) {
 }
 
 // Exact segment tests use conservatively expanded boxes; no sampled corner cutting.
-export function clearSegment(world, a, b, radius) {
+export function clearSegment(world, a, b, radius, endpointsValidated=false) {
   if(world.surfaces){if(!sameLevel(a,b)||surfaceId(a)!==surfaceId(b))return false;world=layerWorld(world,surfaceId(a));}
-  if (!canStand(world, a.x, a.z, radius) || !canStand(world, b.x, b.z, radius)) return false;
+  if (!endpointsValidated&&(!canStand(world, a.x, a.z, radius) || !canStand(world, b.x, b.z, radius))) return false;
   const dx = b.x - a.x, dz = b.z - a.z;
   if(world.walkable&&!terrainSegmentClear(world,a,b,radius))return false;
   for (const o of world.obstacles) {

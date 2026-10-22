@@ -1,0 +1,742 @@
+{
+  "environment": {
+    "node": "v24.19.0",
+    "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+    "method": "Server and simulated clients in one Node process, loopback. CPU includes driver. Continuous 15Hz movement, periodic actual attack/chat commands, arena transitions and reconnection; fixture positions and simultaneous kills explicitly prepared."
+  },
+  "beforeNavigationFix": {
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "method": "Server and simulated clients in one Node process, loopback. CPU includes driver. Continuous 15Hz movement, periodic actual attack/chat/travel commands; fixture positions and simultaneous kills explicitly prepared."
+    },
+    "rows": [
+      {
+        "name": "solo",
+        "players": 1,
+        "arenas": 1,
+        "seconds": 20.004277000000002,
+        "tickHz": 19.995723914440894,
+        "tickMs": {
+          "n": 400,
+          "mean": 0.8204295000000207,
+          "p50": 0.7430000000003929,
+          "p95": 1.7026999999998225,
+          "p99": 4.360499999998865,
+          "max": 5.02599999999984
+        },
+        "intervalMs": {
+          "n": 399,
+          "mean": 49.98192180451127,
+          "p50": 46.764000000000124,
+          "p95": 62.23630000000048,
+          "p99": 63.176800000001094,
+          "max": 63.36079999999856
+        },
+        "ackLatencyMs": {
+          "n": 139,
+          "mean": 57.11470719424455,
+          "p50": 61.71419999999853,
+          "p95": 106.04190000000017,
+          "p99": 109.83629999999903,
+          "max": 110.71879999999874
+        },
+        "cpuPercentOneCore": 4.68899725793639,
+        "rssMB": 60.47265625,
+        "aiMs": {
+          "n": 1200,
+          "mean": 0.1014649999999339,
+          "p50": 0.019800000001851004,
+          "p95": 0.24959999999987303,
+          "p99": 0.24959999999987303,
+          "max": 0.5731999999989057
+        },
+        "outboundBytesPerSecond": 24756.00592813227,
+        "wireBytesPerSecond": 1458.2381557703884,
+        "online": 1,
+        "cleanup": {
+          "created": 1,
+          "cleaned": 1,
+          "createMs": 9.63819999999987,
+          "cleanupMs": 5.760900000001129,
+          "remaining": 0
+        }
+      },
+      {
+        "name": "six-party",
+        "players": 6,
+        "arenas": 1,
+        "seconds": 20.0058666,
+        "tickHz": 19.99413512034515,
+        "tickMs": {
+          "n": 400,
+          "mean": 2.797109000000173,
+          "p50": 2.156699999999546,
+          "p95": 7.5873999999967054,
+          "p99": 21.172899999997753,
+          "max": 42.18669999999838
+        },
+        "intervalMs": {
+          "n": 399,
+          "mean": 49.98273258145365,
+          "p50": 46.73449999999866,
+          "p95": 62.52440000000206,
+          "p99": 67.30480000000534,
+          "max": 87.82459999999992
+        },
+        "ackLatencyMs": {
+          "n": 876,
+          "mean": 63.040649885844786,
+          "p50": 64.89259999999922,
+          "p95": 107.70440000000235,
+          "p99": 111.3718000000008,
+          "max": 115.73049999999785
+        },
+        "cpuPercentOneCore": 10.306976654537923,
+        "rssMB": 80.55078125,
+        "aiMs": {
+          "n": 1200,
+          "mean": 0.04525583333165438,
+          "p50": 0.026300000004994217,
+          "p95": 0.07369999999718857,
+          "p99": 0.20089999999618158,
+          "max": 5.284599999999045
+        },
+        "outboundBytesPerSecond": 497494.319991117,
+        "wireBytesPerSecond": 93679.32104475793,
+        "online": 6,
+        "cleanup": {
+          "created": 1,
+          "cleaned": 1,
+          "createMs": 6.188799999999901,
+          "cleanupMs": 34.009500000000116,
+          "remaining": 0
+        }
+      },
+      {
+        "name": "two-parties",
+        "players": 12,
+        "arenas": 2,
+        "seconds": 20.000598299999996,
+        "tickHz": 19.999401717897612,
+        "tickMs": {
+          "n": 400,
+          "mean": 3.874278499999891,
+          "p50": 3.445899999998801,
+          "p95": 8.608699999997043,
+          "p99": 13.913000000000466,
+          "max": 51.09209999999439
+        },
+        "intervalMs": {
+          "n": 399,
+          "mean": 49.98806942355889,
+          "p50": 46.76799999999639,
+          "p95": 62.55760000000009,
+          "p99": 64.36579999999958,
+          "max": 65.53699999999662
+        },
+        "ackLatencyMs": {
+          "n": 1740,
+          "mean": 65.60435988505746,
+          "p50": 60.12640000000101,
+          "p95": 109.98029999999562,
+          "p99": 117.31629999999859,
+          "max": 120.64700000000448
+        },
+        "cpuPercentOneCore": 17.579474110032002,
+        "rssMB": 96.703125,
+        "aiMs": {
+          "n": 1600,
+          "mean": 0.037816562500897814,
+          "p50": 0.021899999992456287,
+          "p95": 0.07790000000386499,
+          "p99": 0.1503999999986263,
+          "max": 0.8479999999981374
+        },
+        "outboundBytesPerSecond": 1007187.2699928182,
+        "wireBytesPerSecond": 217019.8078524481,
+        "online": 12,
+        "cleanup": {
+          "created": 2,
+          "cleaned": 2,
+          "createMs": 12.490899999997055,
+          "cleanupMs": 62.350299999990966,
+          "remaining": 0
+        }
+      },
+      {
+        "name": "32-mixed-eight-arenas",
+        "players": 32,
+        "arenas": 8,
+        "seconds": 35.4901792,
+        "tickHz": 18.5403403091298,
+        "tickMs": {
+          "n": 658,
+          "mean": 43.27259574468081,
+          "p50": 4.895100000008824,
+          "p95": 23.275699999998324,
+          "p99": 1579.0320999999967,
+          "max": 2120.340299999996
+        },
+        "intervalMs": {
+          "n": 657,
+          "mean": 53.95949923896497,
+          "p50": 7.388500000000931,
+          "p95": 61.26020000000426,
+          "p99": 1579.0436000000045,
+          "max": 2120.364699999991
+        },
+        "ackLatencyMs": {
+          "n": 2550,
+          "mean": 260.7198416470586,
+          "p50": 89.21469999999681,
+          "p95": 136.72390000001178,
+          "p99": 12921.07620000001,
+          "max": 13119.726500000004
+        },
+        "cpuPercentOneCore": 81.66766314890853,
+        "rssMB": 199.97265625,
+        "aiMs": {
+          "n": 6580,
+          "mean": 0.026223556231846662,
+          "p50": 0.00810000000637956,
+          "p95": 0.11340000000200234,
+          "p99": 0.23540000000502914,
+          "max": 1.0767999999952735
+        },
+        "outboundBytesPerSecond": 958412.658564429,
+        "wireBytesPerSecond": -1766.7704535005562,
+        "online": 31,
+        "cleanup": {
+          "created": 8,
+          "cleaned": 8,
+          "createMs": 39.33969999999681,
+          "cleanupMs": 147.05349999997998,
+          "remaining": 0
+        }
+      }
+    ],
+    "errors": [],
+    "ok": false
+  },
+  "afterNavigationFix": {
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "method": "Server and simulated clients in one Node process, loopback. CPU includes driver. Continuous 15Hz movement, periodic actual attack/chat commands, arena transitions and reconnection; fixture positions and simultaneous kills explicitly prepared."
+    },
+    "rows": [
+      {
+        "name": "solo",
+        "players": 1,
+        "arenas": 1,
+        "seconds": 20.0096311,
+        "tickHz": 19.99037353567203,
+        "tickMs": {
+          "n": 400,
+          "mean": 0.9152489999999535,
+          "p50": 0.753099999999904,
+          "p95": 1.6826000000000931,
+          "p99": 5.321200000000317,
+          "max": 14.02349999999933
+        },
+        "intervalMs": {
+          "n": 399,
+          "mean": 50.001141854636586,
+          "p50": 46.746399999999994,
+          "p95": 62.490499999999884,
+          "p99": 63.28570000000036,
+          "max": 64.15530000000217
+        },
+        "ackLatencyMs": {
+          "n": 139,
+          "mean": 58.39267625899282,
+          "p50": 61.90340000000015,
+          "p95": 108.97450000000026,
+          "p99": 110.31130000000121,
+          "max": 111.77760000000126
+        },
+        "cpuPercentOneCore": 4.532817199213633,
+        "rssMB": 60.15234375,
+        "aiMs": {
+          "n": 1200,
+          "mean": 0.08877033333331306,
+          "p50": 0.021299999996699626,
+          "p95": 0.21440000000006876,
+          "p99": 0.22009999999863794,
+          "max": 1.1188999999994849
+        },
+        "playerNavigationMs": {
+          "n": 1200,
+          "mean": 0.0006153333333327282,
+          "p50": 0,
+          "p95": 0,
+          "p99": 0,
+          "max": 0.29070000000047
+        },
+        "outboundBytesPerSecond": 24521.991312473525,
+        "wireBytesPerSecond": 9367.888846286627,
+        "online": 1,
+        "cleanup": {
+          "created": 1,
+          "cleaned": 1,
+          "createMs": 5.9375,
+          "cleanupMs": 6.216300000000047,
+          "remaining": 0
+        }
+      },
+      {
+        "name": "six-party",
+        "players": 6,
+        "arenas": 1,
+        "seconds": 20.003220300000002,
+        "tickHz": 19.996780218433127,
+        "tickMs": {
+          "n": 400,
+          "mean": 2.2044667500001287,
+          "p50": 1.9187000000019907,
+          "p95": 4.846299999997427,
+          "p99": 8.045700000002398,
+          "max": 17.060499999999593
+        },
+        "intervalMs": {
+          "n": 399,
+          "mean": 49.97569598997494,
+          "p50": 46.68399999999383,
+          "p95": 62.198899999995774,
+          "p99": 63.047599999998056,
+          "max": 63.54320000000007
+        },
+        "ackLatencyMs": {
+          "n": 876,
+          "mean": 64.84080273972612,
+          "p50": 66.7786999999953,
+          "p95": 108.36200000000099,
+          "p99": 110.82430000000022,
+          "max": 113.4372000000003
+        },
+        "cpuPercentOneCore": 8.513629177997904,
+        "rssMB": 73.90234375,
+        "aiMs": {
+          "n": 1200,
+          "mean": 0.05122091666648885,
+          "p50": 0.03409999999712454,
+          "p95": 0.10729999999966822,
+          "p99": 0.15669999999954598,
+          "max": 0.38620000000082655
+        },
+        "playerNavigationMs": {
+          "n": 1200,
+          "mean": 0.0014930000000003929,
+          "p50": 0,
+          "p95": 0,
+          "p99": 0.042099999998754356,
+          "max": 0.5601000000024214
+        },
+        "outboundBytesPerSecond": 504650.9436283117,
+        "wireBytesPerSecond": 107491.39227347309,
+        "online": 6,
+        "cleanup": {
+          "created": 1,
+          "cleaned": 1,
+          "createMs": 14.664199999999255,
+          "cleanupMs": 32.028999999994994,
+          "remaining": 0
+        }
+      },
+      {
+        "name": "two-parties",
+        "players": 12,
+        "arenas": 2,
+        "seconds": 20.0046639,
+        "tickHz": 19.995337187344596,
+        "tickMs": {
+          "n": 400,
+          "mean": 3.5553347500000565,
+          "p50": 2.849000000001979,
+          "p95": 7.514000000002852,
+          "p99": 19.995600000002014,
+          "max": 50.66569999999774
+        },
+        "intervalMs": {
+          "n": 399,
+          "mean": 49.98229649122809,
+          "p50": 46.68029999999271,
+          "p95": 62.44090000000142,
+          "p99": 63.347200000003795,
+          "max": 64.69980000000214
+        },
+        "ackLatencyMs": {
+          "n": 1740,
+          "mean": 67.48017103448272,
+          "p50": 57.2870999999941,
+          "p95": 111.08860000000277,
+          "p99": 117.67259999999078,
+          "max": 125.4832999999926
+        },
+        "cpuPercentOneCore": 18.43070205243488,
+        "rssMB": 94.4765625,
+        "aiMs": {
+          "n": 1600,
+          "mean": 0.029914750000034473,
+          "p50": 0.021500000002561137,
+          "p95": 0.06739999999990687,
+          "p99": 0.15380000000004657,
+          "max": 0.5190000000002328
+        },
+        "playerNavigationMs": {
+          "n": 1600,
+          "mean": 0.004051937499916676,
+          "p50": 0,
+          "p95": 0,
+          "p99": 0.04379999999946449,
+          "max": 4.38369999997667
+        },
+        "outboundBytesPerSecond": 1042580.3254809994,
+        "wireBytesPerSecond": 231365.64668802058,
+        "online": 12,
+        "cleanup": {
+          "created": 2,
+          "cleaned": 2,
+          "createMs": 11.472000000001572,
+          "cleanupMs": 60.2615000000078,
+          "remaining": 0
+        }
+      },
+      {
+        "name": "32-mixed-eight-arenas",
+        "players": 32,
+        "arenas": 8,
+        "seconds": 35.0818495,
+        "tickHz": 20.010347516028197,
+        "tickMs": {
+          "n": 702,
+          "mean": 12.270591310541755,
+          "p50": 10.615200000000186,
+          "p95": 26.641199999998207,
+          "p99": 63.01270000000659,
+          "max": 172.1704000000027
+        },
+        "intervalMs": {
+          "n": 701,
+          "mean": 49.99175506419401,
+          "p50": 47.33610000000044,
+          "p95": 62.21370000000752,
+          "p99": 85.591499999995,
+          "max": 180.40510000000359
+        },
+        "ackLatencyMs": {
+          "n": 7616,
+          "mean": 105.89096968224817,
+          "p50": 100.3176999999996,
+          "p95": 236.4499999999971,
+          "p99": 422.59969999999157,
+          "max": 609.5112999999983
+        },
+        "cpuPercentOneCore": 56.52210554064432,
+        "rssMB": 217.14453125,
+        "aiMs": {
+          "n": 7020,
+          "mean": 0.03224497150976849,
+          "p50": 0.00849999999627471,
+          "p95": 0.13650000000779983,
+          "p99": 0.3239000000030501,
+          "max": 3.4796000000060303
+        },
+        "playerNavigationMs": {
+          "n": 7020,
+          "mean": 0.11096000000002186,
+          "p50": 0,
+          "p95": 0,
+          "p99": 0.04989999999816064,
+          "max": 165.5356000000029
+        },
+        "outboundBytesPerSecond": 4043659.157707749,
+        "wireBytesPerSecond": 869140.4083470572,
+        "online": 32,
+        "cleanup": {
+          "created": 8,
+          "cleaned": 8,
+          "createMs": 44.68049999998766,
+          "cleanupMs": 160.99669999998878,
+          "remaining": 0
+        }
+      }
+    ],
+    "errors": [],
+    "ok": true
+  },
+  "final32AndCleanup": {
+    "environment": {
+      "node": "v24.19.0",
+      "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+      "method": "Server and simulated clients in one Node process, loopback. CPU includes driver. Continuous 15Hz movement, periodic actual attack/chat commands, arena transitions and reconnection; fixture positions and simultaneous kills explicitly prepared."
+    },
+    "rows": [
+      {
+        "name": "32-mixed-eight-arenas",
+        "players": 32,
+        "arenas": 8,
+        "seconds": 35.0070941,
+        "tickHz": 20.024512688701,
+        "tickMs": {
+          "n": 701,
+          "mean": 11.531519543509216,
+          "p50": 10.770100000001548,
+          "p95": 24.060199999999895,
+          "p99": 57.493900000001304,
+          "max": 221.14769999999953
+        },
+        "intervalMs": {
+          "n": 700,
+          "mean": 50.00355885714286,
+          "p50": 47.12289999999848,
+          "p95": 62.745200000001205,
+          "p99": 77.05829999999696,
+          "max": 221.21639999999934
+        },
+        "ackLatencyMs": {
+          "n": 7647,
+          "mean": 95.02519946384227,
+          "p50": 95.66070000000036,
+          "p95": 169.23500000000058,
+          "p99": 328.4216000000015,
+          "max": 419.384
+        },
+        "cpuPercentOneCore": 54.097606461999945,
+        "rssMB": 210.41015625,
+        "aiMs": {
+          "n": 7010,
+          "mean": 0.029927346647650958,
+          "p50": 0.008700000000317232,
+          "p95": 0.12779999999838765,
+          "p99": 0.2889999999970314,
+          "max": 1.900999999998021
+        },
+        "playerNavigationMs": {
+          "n": 7010,
+          "mean": 0.09588473609129244,
+          "p50": 0,
+          "p95": 0,
+          "p99": 0.05400000000008731,
+          "max": 202.96680000000197
+        },
+        "outboundBytesPerSecond": 4080281.9449101314,
+        "wireBytesPerSecond": 877582.8097082756,
+        "online": 32,
+        "cleanup": {
+          "created": 8,
+          "cleaned": 8,
+          "createMs": 58.01750000000038,
+          "cleanupMs": 89.18810000001395,
+          "remaining": 0
+        }
+      }
+    ],
+    "errors": [],
+    "ok": true
+  },
+  "electronFinal": {
+    "at": "2026-10-20T23:50:22.033Z",
+    "checks": [
+      "focused: real client attacks win, authoritative return and fourth floor portal after matching epoch"
+    ],
+    "screenshots": [
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792540222032\\arena-benchmark.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792540222032\\victory.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792540222032\\fourth-floor.png"
+    ],
+    "errors": [],
+    "frameStats": {
+      "n": 1326,
+      "mean": 15.120739064855027,
+      "p50": 13.800000000745058,
+      "p95": 25.799999997019768,
+      "p99": 38.30000000074506,
+      "max": 146.19999999925494
+    },
+    "fps": 66.13433349460341,
+    "onePercentLow": 15.887426237030212,
+    "inventory": {
+      "visiblePlayers": 1,
+      "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "objects": 64,
+      "visible": 55,
+      "materials": 39,
+      "textures": 2,
+      "textureSources": 2,
+      "geometries": 53,
+      "transparentObjects": 28,
+      "drawCalls": 76,
+      "triangles": 1364,
+      "gpuTextures": 8,
+      "gpuGeometries": 39,
+      "shadow": true,
+      "width": 1282,
+      "height": 722,
+      "dpr": 1.25,
+      "visibility": "visible",
+      "gpuTimerAvailable": true
+    },
+    "ok": true
+  },
+  "electronEarlierFunctionalEvidence": {
+    "at": "2026-10-20T23:33:35.170Z",
+    "checks": [
+      "fourth floor rejected before victory",
+      "two real Electron clients in different private arenas",
+      "reconnect retains instance; cross-instance attack rejected",
+      "solo defeat does not unlock",
+      "solo victory by client attack, prepared evolved attributes; fourth floor unlock",
+      "party confirmation atomic, dead member spectates and receives unlock, repeat helper"
+    ],
+    "screenshots": [
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\fortress-door.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\door-closing.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\knight-intro.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\telegraph-sword.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\telegraph-arc.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\telegraph-rupture.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\telegraph-charge.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\solo-defeat.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\last-oath-phase.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\solo-victory.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\party-wait.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\party-ready.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\dead-spectator.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\dead-member-victory.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\failure-A.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration23-electron-1792539215169\\failure-B.png"
+    ],
+    "errors": [
+      "Error: Tempo limite da verificaÃ§Ã£o Electron.\n    at until (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration23-electron.mjs:28:162)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processTimers (node:internal/timers:568:9)\n    at async file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration23-electron.mjs:63:107"
+    ],
+    "inventory": {
+      "visiblePlayers": 1,
+      "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "objects": 64,
+      "visible": 55,
+      "materials": 39,
+      "textures": 2,
+      "textureSources": 2,
+      "geometries": 53,
+      "transparentObjects": 28,
+      "drawCalls": 76,
+      "triangles": 1112,
+      "gpuTextures": 8,
+      "gpuGeometries": 39,
+      "shadow": true,
+      "width": 1282,
+      "height": 722,
+      "dpr": 1.25,
+      "visibility": "visible",
+      "gpuTimerAvailable": true
+    },
+    "frameStats": {
+      "n": 1485,
+      "mean": 13.593131313131815,
+      "p50": 12.699999999254942,
+      "p95": 21.799999997019768,
+      "p99": 32.100000001490116,
+      "max": 86.10000000149012
+    },
+    "fps": 73.56656659631747,
+    "ok": false,
+    "failureState": [
+      {
+        "status": "Online",
+        "seq": 1,
+        "map": "shared-floor-3",
+        "epoch": "5301ec6b-434a-4289-bf65-8ab16bc4fee0",
+        "toast": "VitÃ³ria! Seu acesso ao quarto andar estÃ¡ preservado."
+      },
+      {
+        "status": "Online",
+        "seq": 1,
+        "map": "shared-floor-3",
+        "epoch": "b54252c9-0ce0-44b3-ad0a-39e11e924cdd",
+        "toast": "VitÃ³ria! Quarto andar desbloqueado Â· +300 XP"
+      }
+    ]
+  },
+  "navigationReplay": [
+    {
+      "start": {
+        "x": 73,
+        "z": -20,
+        "y": 6.4,
+        "surface": "ruin-3-upper"
+      },
+      "target": {
+        "x": -14.7,
+        "z": -53
+      },
+      "before": {
+        "ms": 614.0980000000001,
+        "points": 7
+      },
+      "after": {
+        "ms": 49.664800000000014,
+        "points": 6
+      }
+    },
+    {
+      "start": {
+        "x": 78,
+        "z": -20,
+        "y": 6.4,
+        "surface": "ruin-3-upper"
+      },
+      "target": {
+        "x": -14.7,
+        "z": -53
+      },
+      "before": {
+        "ms": 623.3115,
+        "points": 7
+      },
+      "after": {
+        "ms": 39.475400000000036,
+        "points": 6
+      }
+    },
+    {
+      "start": {
+        "x": 83,
+        "z": -20,
+        "y": 6.4,
+        "surface": "ruin-3-upper"
+      },
+      "target": {
+        "x": -14.7,
+        "z": -53
+      },
+      "before": {
+        "ms": 494.02109999999993,
+        "points": 7
+      },
+      "after": {
+        "ms": 34.41679999999997,
+        "points": 6
+      }
+    }
+  ],
+  "notes": [
+    "The earlier functional harness completed all party scenarios but timed out issuing the final portal command with a stale epoch. The final focal harness awaits the matching epoch and passed.",
+    "The negative wire measurement in the initial failed 32-client row is invalid and must not be used.",
+    "No human playtest or school network validation. CPU includes the simulated driver in the same Node process."
+  ],
+  "finalValidation": {
+    "tests": 606,
+    "passed": 606,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 322510.9365,
+    "concurrency": 2,
+    "concurrentBenchmarks": false,
+    "iteration23Tests": 29,
+    "suiteLog": ".logs/iteration23-suite-final.txt",
+    "productionBuild": "passed",
+    "buildLog": ".logs/iteration23-build-final.txt"
+  }
+}

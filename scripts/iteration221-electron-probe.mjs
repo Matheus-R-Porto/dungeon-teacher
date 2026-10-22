@@ -46,18 +46,20 @@ try{
  const a=await start('A'),b=await start('B');
  for(const s of [a,b]){const url=await s.evaluate('location.href');await s.send('Page.navigate',{url:url+'&diagnostic=1'});await until(()=>s.evaluate('!!window.__dm'));}
  const people=[...hub.online.people.values()],p=people.find(p=>p.name==='Teste '+a.profile),q=people.find(p=>p.name==='Teste '+b.profile);
- for(const npc of hub.online.world('shared-city').map.npcs){
+ for(const npc of hub.online.world('shared-city').map.npcs.filter(n=>!process.env.FOCUSED||n.id==='blacksmith')){
   Object.assign(p.game.player,{x:npc.x,z:npc.z+1.5});await a.evaluate('window.__dm.view.orbit.azimuth=-Math.PI*.75');await wait(400);await startVideo(a);await wait(npc.id==='blacksmith'?16000:5000);await finishVideo(a,path.join(output,'npc-'+npc.id+'.webm'));await capture(a,'npc-'+npc.id);
   const point=await a.evaluate(`window.__dm.view.screenPoint(${npc.x},1,${npc.z})`);await click(a,point.x,point.y);await until(()=>a.evaluate("!!document.querySelector('.npc-dialog[open]')"));await a.evaluate("document.querySelector('.npc-dialog').close()");report.checks.push('dialogue '+npc.id);
  }
  async function travel(s,person,id){const world=hub.online.world(person.mapId),portal=world.map.interactables.find(i=>i.id===id);Object.assign(person.game.player,{x:portal.x,z:portal.z,y:0,surface:'ground'});const old=person.mapId;await wait(400);await s.evaluate(`window.__dm.client.command({kind:'travel',portal:${JSON.stringify(id)}})`);await until(()=>person.mapId!==old);await until(()=>s.evaluate(`window.__dm.client.mapId===${JSON.stringify(person.mapId)}`));await wait(500);}
  await travel(a,p,'tower-portal');await travel(b,q,'tower-portal');
- for(let floor=1;floor<=3;floor++){
+ for(let floor=1;floor<=(process.env.FOCUSED?1:3);floor++){
   if(floor>1){await travel(a,p,'return-portal');await travel(b,q,'return-portal');}
   const w=hub.online.world(p.mapId),r=w.map.surfaces[0],d=w.map.surfaces[1];Object.assign(p.game.player,{x:r.x,z:r.z-r.halfZ-1,y:0,surface:'ground'});Object.assign(q.game.player,{x:d.x,z:d.z,y:0,surface:'ground'});
   await a.evaluate('window.__dm.view.orbit.azimuth=Math.PI*.25');await wait(700);await capture(a,'floor-'+floor+'-stairs');
   await startVideo(a);await a.evaluate(`window.__dm.client.command(${JSON.stringify({kind:'destination',x:d.x,z:d.z,surface:d.id})})`);await until(()=>p.game.player.surface===d.id&&p.game.path.length===0,20000);await wait(500);await capture(a,'floor-'+floor+'-upper');await capture(b,'floor-'+floor+'-ground-below');
+  await a.evaluate(`window.__dm.client.command(${JSON.stringify({kind:'destination',x:d.x+1,z:d.z+1,surface:d.id})})`);await until(()=>p.game.path.length===0&&Math.hypot(p.game.player.x-d.x-1,p.game.player.z-d.z-1)<.3);await wait(300);
   await a.evaluate("document.dispatchEvent(new KeyboardEvent('keydown',{key:'f',code:'KeyF',bubbles:true}));document.dispatchEvent(new KeyboardEvent('keyup',{key:'f',code:'KeyF',bubbles:true}));");
+  await until(()=>a.evaluate("document.body.textContent.includes('A antiga sentinela contemplava')"));report.checks.push('upper lookout interaction '+floor);
   if(Math.abs(p.game.player.y-3.2)>.01||q.game.player.y!==0||p.mapId!==q.mapId)throw Error('Vertical separation failed');
   const remote=await b.evaluate(`window.__dm.client.remotes.get(${JSON.stringify(p.id)})?.sample(performance.now(),100).y`);if(Math.abs(remote-3.2)>.05)throw Error('Remote height missing');
   await a.evaluate('window.__dm.client.disconnect()');await wait(200);await a.evaluate('window.__dm.client.connect()');await until(()=>a.evaluate("window.__dm.client.status==='Online'"));if(p.game.player.y!==3.2)throw Error('Reconnect lost height');

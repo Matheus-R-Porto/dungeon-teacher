@@ -1,0 +1,30 @@
+// Injected only by the isolated Electron benchmark. No production profiler.
+export function installCapture({enabled=true,panel=false,gpu=false}={}){
+ const cap=window.__stutter={frames:[],events:[],windows:[],dropped:0,running:true,enabled,panel};
+ let last=0,previous=null,view=null,visibilityAt=-Infinity,ring=[],pending=[],lastResource=0,resource={},lastMap=null,returning=false,gpuCleanup;
+ const event=(name,data={})=>{const e={at:performance.now(),name,...data};cap.events.push(e);for(const p of pending)if(p.events.length<256)p.events.push(e);if(cap.events.length>2048){cap.events.shift();cap.dropped++;}};
+ cap.event=event;
+ const visibility=()=>{visibilityAt=performance.now();event('visibility',{visibility:document.visibilityState,focus:document.hasFocus()});};
+ for(const name of ['visibilitychange','focus','blur'])window.addEventListener(name,visibility);
+ let observer;try{observer=new PerformanceObserver(list=>{for(const e of list.getEntries())event('longtask',{start:e.startTime,duration:e.duration});});if(enabled)observer.observe({type:'longtask',buffered:false});}catch{}
+ const restorers=[];
+ const wrap=(o,key,name)=>{if(!o||typeof o[key]!=='function'||o[key].stutterWrapped)return;const original=o[key];function timed(...args){const at=performance.now();try{return original.apply(this,args);}finally{const duration=performance.now()-at;if(duration>3)event(name,{start:at,duration});}}timed.stutterWrapped=true;timed.diagnosticWrapped=original.diagnosticWrapped;o[key]=timed;restorers.push(()=>{if(o[key]===timed)o[key]=original;});};
+ function context(now){const d=window.__dm,t=d?.view?.transitionReport,loading=!!d?.graphics?.loading,map=d?.client?.mapId;
+  if(map!==lastMap){returning=!!lastMap?.includes('arena')&&!map?.includes('arena');event('map',{from:lastMap,to:map,returning});lastMap=map;}
+  if(d?.view!==view){gpuCleanup?.();gpuCleanup=null;for(const restore of restorers.reverse())restore();restorers.length=0;view=d?.view;if(enabled&&view){wrap(view,'update','scene');wrap(view.renderer,'render','renderSubmit');wrap(d.client,'onSnapshot','snapshot');wrap(view,'screenPoint','projection');wrap(view.combatVisual,'update','combat');wrap(view.remotePlayers,'update','remote');wrap(view,'dispose','dispose');}
+   if(gpu&&view){const renderer=view.renderer,gl=renderer.getContext(),ext=gl.getExtension('EXT_disjoint_timer_query_webgl2');event('gpuSupport',{available:!!ext});for(const key of ['texImage2D','texSubImage2D']){const original=gl[key];const measured=function(...args){const at=performance.now();try{return original.apply(this,args);}finally{const duration=performance.now()-at;if(duration>3){const image=args.at(-1);event('texture-upload',{start:at,duration,url:image?.currentSrc??image?.src??null,width:image?.width,height:image?.height});}}};gl[key]=measured;restorers.push(()=>{if(gl[key]===measured)gl[key]=original;});}if(ext){const original=renderer.render,queries=[];let count=0;const measured=function(...args){while(queries.length&&gl.getQueryParameter(queries[0].q,gl.QUERY_RESULT_AVAILABLE)){const {q,submittedAt}=queries.shift();if(!gl.getParameter(ext.GPU_DISJOINT_EXT))event('gpu',{submittedAt,duration:gl.getQueryParameter(q,gl.QUERY_RESULT)/1e6});gl.deleteQuery(q);}const q=count++%30===0&&queries.length<8?gl.createQuery():null;if(q)gl.beginQuery(ext.TIME_ELAPSED_EXT,q);try{return original.apply(this,args);}finally{if(q){gl.endQuery(ext.TIME_ELAPSED_EXT);queries.push({q,submittedAt:performance.now()});}}};renderer.render=measured;gpuCleanup=()=>{if(renderer.render===measured)renderer.render=original;for(const {q}of queries)gl.deleteQuery(q);};}}
+   d?.graphics?.toggle(panel);}
+  if(now-lastResource>500){lastResource=now;const info=view?.renderer.info;resource={heap:performance.memory?.usedJSHeapSize,geometries:info?.memory.geometries,textures:info?.memory.textures,drawCalls:info?.render.calls,triangles:info?.render.triangles,entities:d?.combat?.enemies?.length,profile:d?.graphics?.quality.active,scale:d?.graphics?.quality.scale,panel};}
+  const age=t?.controlAt?now-t.controlAt:Infinity;
+  let category=now-visibilityAt<1000?'visibility':loading?'loading':age<2000?'post-transition':age<5000?'resumed':'stable';
+  const speculative=d?.anticipation?.slot?.current;if(!loading&&(speculative&&!speculative.resource||d?.client?.transitionRequestedAt!=null))category='pre-transition';
+  return {at:now,map,category,returning,tick:d?.client?.lastTick,controlAt:t?.controlAt,firstSubmittedAt:t?.firstSubmittedAt,started:t?.started,...resource};
+ }
+ function frame(now){if(!cap.running)return;const start=performance.now(),c=context(now);if(last){const f={...c,at:now,start:last,ms:now-last,category:previous?.category??c.category};if(c.firstSubmittedAt>=last&&c.firstSubmittedAt<=now)f.category='first-frame';
+   if(cap.frames.length<120000)cap.frames.push(f);else cap.dropped++;
+   if(enabled){ring.push(f);if(ring.length>12)ring.shift();for(const p of pending){p.frames.push(f);p.remaining--;}pending=pending.filter(p=>p.remaining>0);
+    if(f.ms>50){if(cap.windows.length<256){const w={at:now,ms:f.ms,frames:ring.slice(),events:cap.events.filter(e=>e.at>=last-200).slice(-256),remaining:8};cap.windows.push(w);pending.push(w);}else cap.droppedWindows=(cap.droppedWindows??0)+1;}}
+  }last=now;previous=c;cap.overheadMs=(cap.overheadMs??0)+performance.now()-start;cap.callbacks=(cap.callbacks??0)+1;requestAnimationFrame(frame);}
+ requestAnimationFrame(frame);
+ cap.stop=()=>{cap.running=false;observer?.disconnect();gpuCleanup?.();for(const restore of restorers.reverse())restore();for(const name of ['visibilitychange','focus','blur'])window.removeEventListener(name,visibility);return {frames:cap.frames,events:cap.events,windows:cap.windows,dropped:cap.dropped,droppedWindows:cap.droppedWindows??0,overheadMs:cap.overheadMs,callbacks:cap.callbacks,enabled,panel,gpu,method:{postTransitionMs:2000,resumedUntilMs:5000,visibilityMs:1000,windowPrevious:12,windowFollowing:8,maxWindows:256,maxEvents:2048,maxFrames:120000,classification:'interval start; first submission crossing overrides; arena return is overlapping tag'}};};
+}

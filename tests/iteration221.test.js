@@ -10,9 +10,17 @@ import {SharedWorld} from '../server/world.js';
 import {RemoteState} from '../src/multiplayer/remote-state.js';
 import {ActivityAnimation} from '../src/core/activity-animation.js';
 import {npcAmbient} from '../src/core/npc-ambient.js';
+import * as THREE from 'three';
+import {updateNpcActivities} from '../src/adapters/rendering/npc-ambient.js';
 import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
 import {OnlineTower} from '../server/online-tower.js';
 const map=f=>expandOpenTower(sharedFloor(217021,f));
+test('blacksmith mirrors atlas UVs toward the anvil without negative sprite scale or cell bleeding',()=>{
+ const texture=new THREE.Texture();texture.userData.atlas={columns:4,rows:1};
+ const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture}));
+ const view={npcActivities:[{npc:{id:'blacksmith'},sprite,tool:new THREE.Group()}]};
+ let t=0;for(const azimuth of [0,Math.PI,0,Math.PI]){view.azimuth=azimuth;updateNpcActivities(view,t++,false);assert.ok(sprite.scale.x>0);assert.equal(Math.sign(texture.repeat.x),azimuth===0?1:-1);assert.ok(Math.min(texture.offset.x,texture.offset.x+texture.repeat.x)>=0);assert.ok(Math.max(texture.offset.x,texture.offset.x+texture.repeat.x)<=1);}
+});
 test('v2 composition preserves v1 and source, is deterministic and reversible without writes',()=>{
  for(let f=1;f<=3;f++){const base=sharedFloor(217021,f),before=JSON.stringify(base),v1=expandLivingTower(base),w=expandOpenTower(base);
  assert.equal(JSON.stringify(base),before);assert.deepEqual(expandOpenTower(w),w);assert.deepEqual(expandOpenTower(base,{enabled:false}),v1);assert.deepEqual(w.interactables.slice(0,v1.interactables.length),v1.interactables);assert.deepEqual(w.enemySpawns,v1.enemySpawns);assert.deepEqual(w.livingTower.futureArena,v1.livingTower.futureArena);
@@ -46,6 +54,7 @@ test('online clean restart restores validated upper surface without rewriting ge
  t.after(()=>{assert.equal(path.dirname(path.resolve(dir)),path.resolve(os.tmpdir()));fs.rmSync(dir,{recursive:true,force:true});});
  const credential='a'.repeat(64);let tower=new OnlineTower(options),ws={close(){}};tower.join(ws,'Teste',credential);const p=ws.worldPlayer;
  Object.assign(p.game.player,tower.world(p.mapId).map.portal);tower.command(ws,{mapId:p.mapId,epoch:p.epoch,seq:1,action:{kind:'travel',portal:'tower-portal'}});
- const w=tower.world(p.mapId),d=w.map.surfaces[1];Object.assign(p.game.player,{x:d.x,z:d.z,y:d.y,surface:d.id});const bytes=fs.readFileSync(path.join(dir,'maps','floor-1.json'));tower.leave(ws);tower.close();
- tower=new OnlineTower(options);ws={close(){}};tower.join(ws,'Teste',credential);assert.equal(ws.worldPlayer.game.player.y,3.2);assert.equal(ws.worldPlayer.game.player.surface,d.id);assert.deepEqual(fs.readFileSync(path.join(dir,'maps','floor-1.json')),bytes);tower.close();
+ for(let i=0;i<2;i++){Object.assign(p.game.player,tower.world(p.mapId).map.portal);tower.command(ws,{mapId:p.mapId,epoch:p.epoch,seq:1,action:{kind:'travel',portal:'return-portal'}});}
+ const w=tower.world(p.mapId),d=w.map.surfaces[1];Object.assign(p.game.player,{x:d.x,z:d.z,y:d.y,surface:d.id});const bytes=fs.readFileSync(path.join(dir,'maps','floor-3.json'));tower.leave(ws);tower.close();
+ tower=new OnlineTower(options);ws={close(){}};tower.join(ws,'Teste',credential);assert.equal(ws.worldPlayer.game.player.y,6.4);assert.equal(ws.worldPlayer.game.player.surface,d.id);assert.deepEqual(fs.readFileSync(path.join(dir,'maps','floor-3.json')),bytes);tower.close();
 });

@@ -9,7 +9,8 @@ export function buildNpcActivities(v){
   let tool;
   if(npc.id==='blacksmith'||npc.id==='weaponsmith'){
    const sprite=v.npcModels.get(npc.id);sprite.material.map.dispose();sprite.material.map=artTexture('/assets/npcs/blacksmith-v051.png',4,1);sprite.center.y=.18;
-   v.box(group,.65,.6,.65,-.65,.3,.55,wood);v.box(group,1.25,.22,.6,-.65,.76,.55,metal);v.box(group,.45,.07,.22,-.65,.91,.55,gold);
+   v.box(group,.65,.6,.65,-1.5,.3,.55,wood);v.box(group,1.25,.22,.6,-1.5,.76,.55,metal);v.box(group,.45,.07,.22,-1.5,.91,.55,gold);
+   const horn=v.mesh(new THREE.ConeGeometry(.13,.4,8),metal,group,-2.25,.76,.55);horn.rotation.z=Math.PI/2;
    tool=new THREE.Group();tool.visible=false;group.add(tool);
   }else if(npc.id==='cook'){
    v.mesh(new THREE.SphereGeometry(.3,12,6,0,Math.PI*2,0,Math.PI/2),metal,group,-.6,.85,.4).rotation.x=Math.PI;tool=v.box(group,.06,.7,.06,-.6,1.1,.4,wood);
@@ -30,8 +31,10 @@ export function updateNpcActivities(v,time,reduced){
   sprite.scale.set(4.5*(1-a.breath*.3),4.5*(1+a.breath),1);sprite.material.rotation=reduced?0:a.lean;
   if(npc.id==='blacksmith'||npc.id==='weaponsmith'){
    const cycle=((a.phase-3)%1.25+1.25)%1.25,frame=!a.active?0:cycle<.42?1:cycle<.68?2:cycle<1?3:0;
-   selectAtlasFrame(sprite.material.map,frame,0);const side=-.65*Math.cos(v.azimuth)-.55*Math.sin(v.azimuth);
-   sprite.scale.x=3.375*(side<0?-1:1);sprite.material.rotation=0;
+   selectAtlasFrame(sprite.material.map,frame,0);const side=-1.5*Math.cos(v.azimuth)-.55*Math.sin(v.azimuth);
+   sprite.scale.x=3.375;sprite.material.rotation=0;
+   // Sprite shaders use scale lengths, so mirror UVs rather than a negative scale.
+   if(side>0){const map=sprite.material.map;map.offset.x+=map.repeat.x;map.repeat.x=-map.repeat.x;}
   }
   else if(npc.id==='cook'){tool.rotation.z=a.active?Math.sin(a.phase*4)*.18:0;}
   else if(npc.id==='reset-angel'){tool.rotation.y=time*.12;tool.visible=a.active;}

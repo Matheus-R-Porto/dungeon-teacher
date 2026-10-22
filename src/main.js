@@ -1,3 +1,5 @@
+import {SceneTransition} from './adapters/rendering/scene-transition.js';
+import {initializeGraphics} from './ui/graphics-settings.js';
 import {showServicePortrait} from './ui/service-portrait.js';
 import {createGameShell} from './ui/game-shell.js';
 import {BiomePanel} from './ui/biome-panel.js';
@@ -21,6 +23,7 @@ import {CONFIG} from './core/config.js';
 import {AreaSession,createAreas} from './simulation/areas.js';
 import {RpgPanels} from './ui/rpg-panels.js';
 import './style.css';
+import './ui/hud-foundation.css';
 import hubData from './data/hub.json';
 
 
@@ -52,6 +55,7 @@ function fatal(error) {
 $('reload-button').addEventListener('click', () => location.reload());
 async function bootstrap() {
 try {
+  await initializeGraphics();
   const params=new URLSearchParams(location.search);
   if(params.get('shared')==='1'){const {startWorldMode}=await import('./multiplayer/world-mode.js');startWorldMode(params);return;}
   const testProfile=params.get('test')==='1';
@@ -63,6 +67,7 @@ try {
   const session=new AreaSession(createAreas(hubData),character,{seed:params.get('debug')==='1'&&params.has('seed')?params.get('seed'):null,stress:params.get('stress')==='1'&&params.get('debug')==='1',onResourceChange:()=>{dirty=true;},notify});
   game=session.game;const combat=session.combat;
   view=new SceneView($('world'),game.world);
+  const transition=new SceneTransition($('world'));
   const hud=new Hud(game,view,session);const fishingHud=new FishingHud(session);const miningHud=new MiningHud(session);session.fishing.save=snapshot=>saves.save(snapshot);session.mining.save=snapshot=>saves.save(snapshot);
   view.combatVisual=new CombatVisual(view,combat);
   let combatHud=new CombatHud(combat,view,params.get('debug')==='1');
@@ -90,14 +95,18 @@ try {
   if(identityError){multiplayer.changed('Erro',identityError);multiplayerPanel.connectButton.disabled=true;}
   view.remotePlayers=new RemotePlayers(view,multiplayer);
   const biomePanel=new BiomePanel({session,debug:testProfile&&params.get('debug')==='1',open:id=>{if(!isBlocked())openDialog(id);},notify});
-  const shell=createGameShell({character,open:id=>openDialog(id),blocked:()=>isBlocked(),actions:{biomes:()=>biomePanel.button.click(),inventory:()=>panels.show('inventory'),equipment:()=>panels.show('inventory'),attributes:()=>{characterPanel.render();openDialog('character-dialog');},skills:()=>panels.show('skills'),party:()=>multiplayerPanel.button.click()}});
+  const shell=createGameShell({character,safetyOptions:{isDangerous:()=>!session.area.safe,clearInput:()=>input?.clear(),focus:()=>focusWorld(),canFocus:()=>!document.querySelector('dialog[open]')},open:id=>openDialog(id),blocked:()=>isBlocked(),actions:{biomes:()=>biomePanel.button.click(),inventory:()=>panels.show('inventory'),equipment:()=>panels.show('inventory'),attributes:()=>{characterPanel.render();openDialog('character-dialog');},skills:()=>panels.show('skills'),party:()=>multiplayerPanel.button.click()}});
   const dialogs = [...document.querySelectorAll('dialog')];
-  const isBlocked = () => !!session.fishing.pending || !!session.mining.pending || session.collecting || dialogs.some(dialog => dialog.open) || !$('fatal').hidden;
-  const openDialog = id => { if(session.fishing.busy||session.mining.busy){hud.toast('Encerre a atividade com Esc antes de abrir painéis.');return;}input?.clear(); game.paused = true; game.previous = { ...game.player }; $(id).showModal(); };
+  const safety=shell.safety;
+  for(const id of ['character-dialog','inventory-dialog','skills-dialog','interaction-dialog','biome-playtest-dialog','multiplayer-dialog'])safety.registerDialog($(id));
+  const hostileImpact=combat.onHostileImpact;combat.onHostileImpact=()=>{hostileImpact?.();safety.hit({hit:true});};
+  const shouldPause=()=>desktopClosing||session.collecting||!!session.fishing.pending||!!session.mining.pending||!$('fatal').hidden||dialogs.some(d=>d.open&&(session.area.safe||!safety.has(d)));
+  const isBlocked = () => transition.busy || !!session.fishing.pending || !!session.mining.pending || session.collecting || dialogs.some(dialog => dialog.open) || !$('fatal').hidden;
+  const openDialog = id => { if(session.fishing.busy||session.mining.busy){hud.toast('Encerre a atividade com Esc antes de abrir painéis.');return;}input?.clear(); game.cancel(); game.paused = session.area.safe||!safety.has($(id)); game.previous = { ...game.player }; $(id).showModal(); };
   const focusWorld = () => $('world').focus({ preventScroll: true });
   dialogs.forEach(dialog => {
     dialog.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => {if(!button.disabled)dialog.close();}));
-    dialog.addEventListener('close', () => { input?.clear(); game.paused = isBlocked(); focusWorld(); });
+    dialog.addEventListener('close', () => { input?.clear(); game.paused = shouldPause(); if(!dialogs.some(d=>d.open))focusWorld(); });
   });
   const characterKey=event=>{if(event.repeat||event.target.isContentEditable||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;if(event.key.toLowerCase()==='c'){event.preventDefault();if(characterPanel.dialog.open){if(!characterPanel.busy)characterPanel.dialog.close();}else if(!isBlocked()){characterPanel.render();openDialog('character-dialog');}}};
   window.addEventListener('keydown',characterKey);
@@ -111,17 +120,22 @@ try {
         isBusy:()=>food.busy||smithing.busy||panels.busy||characterPanel.busy||rewardPanel.busy||session.collecting||!!session.fishing.pending||!!session.mining.pending,
         save:async()=>{await saves.save(character.snapshot());dirty=false;saveFailed=false;}
       });
-    } catch(error) {desktopClosing=false;game.paused=isBlocked();throw error;}
+    } catch(error) {desktopClosing=false;game.paused=shouldPause();throw error;}
   });
   if(params.get('diagnostic')==='1')window.__dmInspection={session,character,get view(){return view;}};
   let abilityHud=new AbilityHud(combat.abilities,{isBlocked,debug:params.get('debug')==='1',save:()=>characterPanel.onChange()});
+  const registerEditor=()=>safety.register('hotbar-editor',{isOpen:()=>abilityHud.editor.open,close:()=>{abilityHud.editor.open=false;}});registerEditor();
   session.onTransition=()=>{
-    multiplayer.setHub(session.area.safe);
-    input?.clear();const orbit=view.orbit;abilityHud.dispose();combatHud.dispose();view.dispose();
-    view=new SceneView($('world'),game.world);view.orbit=orbit;view.combatVisual=new CombatVisual(view,combat);hud.view=view;
-    if(session.area.safe)view.remotePlayers=new RemotePlayers(view,multiplayer);
-    combatHud=new CombatHud(combat,view,params.get('debug')==='1');abilityHud=new AbilityHud(combat.abilities,{isBlocked,debug:params.get('debug')==='1',save:()=>characterPanel.onChange()});
-    view.update(game,1,0,true);hud.update();focusWorld();
+    safety.close('transition');multiplayer.setHub(session.area.safe);input?.clear();const old=view,orbit=view.orbit;
+    transition.prepare(game.world,old,candidate=>{
+      candidate.orbit=orbit;candidate.combatVisual=new CombatVisual(candidate,combat);
+      if(session.area.safe)candidate.remotePlayers=new RemotePlayers(candidate,multiplayer);
+      const render=candidate.renderer.render;candidate.renderer.render=()=>{};try{candidate.update(game,1,0,true);}finally{candidate.renderer.render=render;}
+    },{beforeCompile:candidate=>{const render=candidate.renderer.render;candidate.renderer.render=()=>{};try{candidate.update(game,1,0,true);}finally{candidate.renderer.render=render;}}}).then(async candidate=>{
+      abilityHud.dispose();combatHud.dispose();old.dispose({releaseRenderer:false});view=candidate;view.activate();hud.view=view;
+      combatHud=new CombatHud(combat,view,params.get('debug')==='1');abilityHud=new AbilityHud(combat.abilities,{isBlocked,debug:params.get('debug')==='1',save:()=>characterPanel.onChange()});
+      registerEditor();const at=performance.now();view.update(game,1,0,true);view.transitionReport.firstRender=performance.now()-at;hud.update();await transition.presented(view);focusWorld();
+    }).catch(error=>{if(error.name==='AbortError')return;transition.fail(error);fatal(error);});
   };
   const zoom = delta => { if (!isBlocked()) view.zoom(delta); };
   const interactionHandlers = {
@@ -142,6 +156,7 @@ try {
     if(session.fishing.active){session.fishing.pull();return;}
     if(session.mining.active){session.mining.strike();return;}
     const command = session.interactions.activate(game.player, isBlocked());
+    if(command&&['fishing','mining','cook','forge','shop','chest'].includes(command.type)&&(panels.busy||food.busy||smithing.busy)){hud.toast('Aguarde a confirmação da operação anterior.');return;}
     if (command && character.isAlive) { if(command.type!=='fishing'&&command.type!=='mining')combat.interact(); interactionHandlers[command.type]?.(command); }
     else if (!isBlocked()) hud.toast('Aproxime-se de um objeto para ver sua ação disponível.');
   };
@@ -166,6 +181,7 @@ try {
   const perf=params.get('perf')==='1'?document.createElement('output'):null;let frameSamples=[];if(perf){perf.id='performance-sample';perf.style.cssText='position:fixed;bottom:100px;right:25px;z-index:20;background:#142b28;color:#fff;padding:8px;font:12px monospace;pointer-events:none';document.querySelector('#app').append(perf);}
   let last = performance.now(), accumulator = 0, uiElapsed = 0;
   const animate = now => {
+    if(transition.busy){last=now;frameId=requestAnimationFrame(animate);return;}
     try {
       if(perf&&!game.paused&&now>last){frameSamples.push(now-last);if(frameSamples.length>=120){const sorted=[...frameSamples].sort((a,b)=>a-b),mean=frameSamples.reduce((a,b)=>a+b,0)/frameSamples.length;perf.textContent='FPS '+(1000/mean).toFixed(1)+' · frame p95 '+sorted[Math.floor(sorted.length*.95)].toFixed(1)+' ms · projéteis '+combat.projectiles.items.length+' · draws '+view.renderer.info.render.calls+' · tri '+view.renderer.info.render.triangles+'\n'+(session.run?'Andar '+session.run.floor+' · '+(game.elapsed-session.run.floorTimeStart).toFixed(0)+'s · '+(game.distance-session.run.floorDistanceStart).toFixed(0)+'m · regiões '+session.run.visitedRegions.length+' · '+(session.currentRegion?.name??'trilha'):'Última run: '+JSON.stringify(session.lastRun?.exploration??[]));perf.style.whiteSpace='pre-wrap';perf.style.maxWidth='430px';frameSamples=[];}}else if(game.paused)frameSamples=[];
       const dt = Math.min((now - last) / 1000, CONFIG.tick * CONFIG.maxCatchUpTicks); last = now;
@@ -173,9 +189,10 @@ try {
       if (!game.paused) {
         view.orbit.update(dt, input.orbitAxis, reducedMotion.matches);
         accumulator += dt;
-        while (accumulator >= CONFIG.tick) { session.update(CONFIG.tick, input.axis, view.azimuth); dirty=character.regenerate(CONFIG.tick)||dirty; accumulator -= CONFIG.tick; }
+        while (accumulator >= CONFIG.tick) { session.update(CONFIG.tick, isBlocked()?{x:0,z:0}:input.axis, view.azimuth); dirty=character.regenerate(CONFIG.tick)||dirty; accumulator -= CONFIG.tick; }
       } else { accumulator = 0; game.previous = { ...game.player }; }
       game.interactionTarget = session.interactions.update(game.player, game.paused||session.fishing.busy||session.mining.busy);
+      if(transition.busy){frameId=requestAnimationFrame(animate);return;}
       view.update(game, game.paused ? 1 : accumulator / CONFIG.tick, dt, reducedMotion.matches);
       if(!food.busy)dirty=character.updateFoodTime()||dirty;
       biomePanel.update();kitchen.update(view);forgePanel.update(dt,view);panels.updateFoodUI();combatHud.update();abilityHud.update();fishingHud.update(view);miningHud.update(view);session.quest.observe(game,view.orbit);
@@ -189,7 +206,7 @@ try {
   };
   view.update(game, 1, 1, reducedMotion.matches); hud.update();
   $('loading').hidden = true; frameId = requestAnimationFrame(animate); focusWorld();
-  if (import.meta.hot) import.meta.hot.dispose(() => { shell.dispose();hud.npcLabels?.forEach(n=>n.remove());delete window.__dmInspection;sharedButton.remove();biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();forgePanel.dispose();fishingHud.dispose();miningHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
+  if (import.meta.hot) import.meta.hot.dispose(() => { transition.dispose();shell.dispose();hud.npcLabels?.forEach(n=>n.remove());delete window.__dmInspection;sharedButton.remove();biomePanel.dispose();multiplayer.dispose();multiplayerPanel.dispose();removeDesktopClose?.();window.removeEventListener('keydown',characterKey);window.removeEventListener('pagehide',flush);perf?.remove();kitchen.dispose();forgePanel.dispose();fishingHud.dispose();miningHud.dispose();characterPanel.dialog.remove();rewardPanel.dispose();sound.dispose();panels.dispose();combatHud.dispose();abilityHud.dispose();saves.db.close();cancelAnimationFrame(frameId); input.dispose(); resizeObserver.disconnect(); view.dispose(); });
 } catch (error) { fatal(error); }
 
 }

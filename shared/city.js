@@ -46,7 +46,7 @@ export function cityMap(){
  for(const [i,[x,z]] of [[-8,0],[8,0],[-16,-22],[10,18]].entries())obstacles.push({id:'garden-'+i,kind:'garden',shape:'rect',x,z,halfX:1.8,halfZ:1.2});
  for(const [i,[x,z]] of [[-16,4],[-16,9],[-11,4]].entries())obstacles.push({id:'stall-'+i,kind:'stall',shape:'rect',x,z,halfX:1.3,halfZ:.8});
  for(const [i,[x,z]] of [[24,1],[26,14],[-26,15]].entries())obstacles.push({id:'supplies-'+i,kind:'supplies',shape:'rect',x,z,halfX:.9,halfZ:.5});
- const smith=CITY_NPCS.find(n=>n.id==='blacksmith');obstacles.push({id:'smith-workbench',kind:'workbench',shape:'rect',x:smith.x-.65,z:smith.z+.55,halfX:.63,halfZ:.3});
+ const smith=CITY_NPCS.find(n=>n.id==='blacksmith');obstacles.push({id:'smith-workbench',kind:'workbench',shape:'rect',x:smith.x-1.5,z:smith.z+.55,halfX:.63,halfZ:.3});
  obstacles.push({id:'city-forge',kind:'anvil',shape:'circle',x:17,z:-4,radius:.8});
  for(const tower of CITY_WATCHTOWERS)obstacles.push({...tower,kind:'watchtower',shape:'circle'});
  return {id:CITY_ID,layoutVersion:3,name:'Cidade do Limiar',environment:'city',floorId:0,safe:true,bounds:{minX:-30,maxX:30,minZ:-28,maxZ:28},spawn:{x:0,z:5},portal:{x:0,z:-24,interactRadius:2.7},enemySpawns:[],districts:structuredClone(CITY_DISTRICTS),npcs:structuredClone(CITY_NPCS),obstacles,interactables:[{id:'tower-portal',x:0,z:-24,radius:2.7,priority:1,label:'Entrar na Torre · Andar 1',action:'travel',content:{areaId:'shared-floor-1'}}],zones:[]};

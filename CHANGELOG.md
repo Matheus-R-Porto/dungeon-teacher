@@ -1,4 +1,88 @@
+## 0.6.4 — Iteração 24.1
+
+- Fundação visual compartilhada de HP, MP, XP, nível e oito slots da hotbar,
+  com CSS leve, identificação por texto e valores atualizados somente quando mudam.
+- Registro de interfaces de exploração no shell existente: fechamento por
+  acerto confirmado, foco seguro e supressão de entradas residuais.
+- Painéis registrados da Torre local bloqueiam os controles sem pausar a simulação.
+- Confirmação de consumo e rollback do painel preservam dano/progressão recebidos
+  enquanto uma operação é salva, sem alterar fórmulas, formato do save ou protocolo.
+- Testes de layout, dano zero, clique interrompido e transações, além dos benchmarks existentes.
+
+## 0.6.3 — Iteração 23.3
+
+- Submissão cooperativa de shaders, com esperas GPU sobrepostas e cancelamento.
+- Preparação dos atlas já solicitados e da pose efetiva antes do primeiro render.
+- Captura diagnóstica limitada de outliers, classificação temporal e traces
+  separados; nenhuma carga contínua de profiler no jogo normal.
+- Comparação repetida com a 0.6.2 final, medição de overhead e ensaio prolongado.
+- Testes de preservação de objetos, contexto de iluminação, cancelamento e
+  propriedade dos atlas. Conteúdo, HUD, regras, saves e scheduler preservados.
+
+## 0.6.2 — Iteração 23.2
+
+- Construção cooperativa de cenas e cancelamento de destinos obsoletos.
+- Preparação assíncrona de shaders e aquecimento GPU limitado ao primeiro
+  enquadramento, com restauração integral das sombras do perfil antes de exibir.
+- Passagem visual com indicação de espera e recuperação de falhas/reconexões.
+- Snapshot mais recente retido durante preparação, sem fila crescente nem
+  alteração da autoridade ou do protocolo de entrada em arenas.
+- Antecipação limitada do atlas público do Cavaleiro perto da porta, sem
+  antecipar dados privados; correção de invalidação redundante dos atlas.
+- Diagnóstico de etapas no F10, referências repetidas e sessão contínua
+  incluindo transições. Picos residuais e aumento de latência documentados.
+- HUD, conteúdo, saves, recompensas, Parties e scheduler de 20 Hz preservados.
+
+## 0.6.1 — Iteração 23.1
+
+- Diagnóstico F10 persistente, exportação local e métricas de cauda com amostra mínima.
+- Perfis gráficos, avaliação inicial descartável, reavaliação manual e ajuste
+  gradual opcional com histerese, limites e cooldown.
+- Projeção de rótulos sem leitura de layout por entidade e sem escritas para nomes ocultos.
+- Reuso de um renderer nas transições; descarte de shadow maps, listeners e wrappers de profiling.
+- Navegação com recorte conservador de obstáculos e ocupação memoizada por consulta.
+- Benchmarks comparáveis, teste prolongado e roteiro de validação escolar documentados.
+- Mecânicas, 155 monstros comuns, bosses, Parties, instâncias, saves e scheduler de 20 Hz preservados.
+
+## 0.6.0 — Iteração 23
+
+- Correção comprovada de navegação longa entre superfície e terreno; reutilização de rotas ainda válidas.
+- Limite global de 32 identidades conectadas, incluindo arenas; limpeza com gravação agrupada.
+
+- Arenas privadas simultâneas, entrada coletiva com prontidão e participantes fixos.
+- Cavaleiro do Último Juramento: espada, onda arcana, ruptura circular, investida e segunda fase.
+- Sala da fortaleza, porta animada, arte SVG original, indicadores e barra de boss.
+- Mortos acompanham a luta; desconectados mantêm corpo vulnerável por até 45 segundos.
+- Vitória transacional, desbloqueio persistente do quarto andar e 300 XP apenas na primeira vitória.
+- Limpeza após resultado/abandono; retorno seguro ao mundo público após reinício.
+- Tabelas adicionais guardian_unlocks e arena_results; nenhum mapa ou save apagado.
+- Campanha, mini-boss público, respawns e andares 4–12 preservados.
+- Servidor passa a ignorar envio para conexões ausentes durante a reserva da arena.
+- Renderer permite cenas sem portal público e preserva orientação/zoom nas transições.
+
 # Changelog
+
+## 0.5.2 — A Torre Desperta — 2026-10-20
+
+- Populações compartilhadas de 30/55/70 monstros comuns; alternativa explícita 18/33/42. Respawn de 12/16 segundos, candidatos limitados e avaliação de todos os jogadores.
+- Geografia v3: pradaria sem mirante no primeiro andar, caverna subterrânea opcional no segundo, fortaleza elevada no terceiro. Portais e arquivos-base preservados; recuperação segura de posições antigas.
+- Lobo Branco com atlas vetorial original, quatro orientações, investida, mordida, uivo e frenesi; reforços limitados e sem XP/loot explorável.
+- Lápide persistente com nome do golpe final; respawn do encontro após 15 minutos; XP individual elegível e sorteios privados de baú com coleta manual e abertura no Refúgio.
+- Compressão negociada de snapshots, com descarte de snapshots substituíveis durante drenagem da fila de envio. Agendador de 20 Hz preservado.
+- Capacidade padrão de 32 jogadores; cliente aceita até 96 slots de monstros para incluir o terceiro andar e as reservas do encontro.
+- Testes, gravações Electron e medições em `docs/ITERACAO-22.2-RELATORIO.md`. Campanha local conserva suas regras de população e recompensas.
+- Sem commit, publicação, deploy, instalador, exclusão de saves ou início da Iteração 23.
+
+
+## 0.5.1 — Um Mundo Vivo — 2026-10-20
+
+- Composição v2 de terreno aberto nos andares 1–3, preservando os arquivos-base e a expansão v1.
+- Ruínas com terreno inferior, escadaria e pavimento superior no mesmo mapa; navegação, colisão, combate e câmera consideram altura.
+- Altura sincronizada entre clientes e posição validada restaurada após encerramento limpo do servidor local.
+- Ciclos ambientais dos seis NPCs; quatro poses originais do ferreiro e bigorna sólida com aproximação livre.
+- Cadência de caminhada por distância ajustada; golpe descendente de mineração e apresentação de lançamento, recolhimento e peixe confirmado na pesca.
+- Regras econômicas preservadas. Relatório e limites em `docs/ITERACAO-22.1-RELATORIO.md`.
+- Sem deploy, instalador, commit ou reset de saves.
 
 ## 0.5.0 — A Torre Viva — 2026-10-19
 

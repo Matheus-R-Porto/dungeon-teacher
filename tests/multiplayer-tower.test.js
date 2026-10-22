@@ -25,7 +25,7 @@ test('B/C/D/E/F/G: real tower clients isolate floors, fight, transition, resume 
  for(const c of [a,b])c.command({kind:'attack',target:enemy.id,generation:0});await until(()=>enemy.hp===0);
  await until(()=>a.snapshot.monsters.find(e=>e.id===enemy.id).hp===0&&b.snapshot.monsters.find(e=>e.id===enemy.id).hp===0);
  assert.ok(w1.events.some(e=>e.source===p.id));assert.ok(w1.events.some(e=>e.source===q.id));
- for(const player of [p,q]){player.target=null;player.game.cancel();Object.assign(player.game.player,w1.map.spawn);}
+ for(const player of [p,q]){player.target=null;player.game.cancel();Object.assign(player.game.player,{...w1.map.portal,y:0,surface:"ground"});}
  await until(()=>a.snapshot.monsters.find(e=>e.id===enemy.id).generation===1&&b.snapshot.monsters.find(e=>e.id===enemy.id).generation===1,35000);
  const stale={mapId:a.mapId,epoch:a.epoch};Object.assign(p.game.player,w1.map.portal);a.command({kind:'travel',portal:'return-portal'});
  await until(()=>a.mapId===FLOOR_IDS[1]&&a.snapshot?.players.length===1&&b.snapshot?.players.length===1);assert.equal(a.remotes.size,0);assert.equal(b.remotes.size,0);assert.equal(q.mapId,FLOOR_IDS[0]);

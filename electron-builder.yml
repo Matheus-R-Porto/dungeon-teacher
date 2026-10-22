@@ -1,9 +1,9 @@
 appId: com.dungeonmaster.playtest
 productName: Dungeon Master
-buildVersion: 0.5.0.0
+buildVersion: 0.6.4.0
 asar: true
 directories:
-  output: release/beta-0.5.0
+  output: release/beta-0.6.4
 files:
   - dist/**/*
   - desktop/*.cjs

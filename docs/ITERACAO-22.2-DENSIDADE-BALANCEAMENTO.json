@@ -1,0 +1,198 @@
+{
+  "method": "Deterministic spatial proxy: nearest common monster from walkable grid points / 3.6 units per second. Straight-line estimate, not actual encounter time or human playtest. Combat fixtures use authoritative simulation and auto-attacks, stationary players, no dodging.",
+  "density": [
+    {
+      "floor": 1,
+      "mode": "baseline",
+      "nearestSeconds": {
+        "n": 1198,
+        "mean": 8.635682552320544,
+        "p50": 8.28112566799192,
+        "p95": 16.148545925439393,
+        "p99": 19.109075992929526,
+        "max": 21.194753773109323
+      }
+    },
+    {
+      "floor": 1,
+      "mode": "high",
+      "nearestSeconds": {
+        "n": 1200,
+        "mean": 3.5156517261916225,
+        "p50": 3.364730129374501,
+        "p95": 6.573635158891014,
+        "p99": 7.5434567490613444,
+        "max": 8.567679325160759
+      }
+    },
+    {
+      "floor": 1,
+      "mode": "reduced",
+      "nearestSeconds": {
+        "n": 1200,
+        "mean": 5.101071414465938,
+        "p50": 4.593019835905984,
+        "p95": 11.642173309753828,
+        "p99": 15.022768186217023,
+        "max": 17.38064785766405
+      }
+    },
+    {
+      "floor": 2,
+      "mode": "baseline",
+      "nearestSeconds": {
+        "n": 1621,
+        "mean": 7.720765262315279,
+        "p50": 7.367174954477301,
+        "p95": 14.384326810719768,
+        "p99": 16.08445805941701,
+        "max": 18.423687095705315
+      }
+    },
+    {
+      "floor": 2,
+      "mode": "high",
+      "nearestSeconds": {
+        "n": 1623,
+        "mean": 3.950316696126614,
+        "p50": 3.3953341740788123,
+        "p95": 9.858384184857677,
+        "p99": 13.811926481774309,
+        "max": 15.075782837649324
+      }
+    },
+    {
+      "floor": 2,
+      "mode": "reduced",
+      "nearestSeconds": {
+        "n": 1623,
+        "mean": 4.859312477201849,
+        "p50": 4.330927506421802,
+        "p95": 10.701069482142334,
+        "p99": 14.002991381266941,
+        "max": 15.137917271274905
+      }
+    },
+    {
+      "floor": 3,
+      "mode": "baseline",
+      "nearestSeconds": {
+        "n": 1789,
+        "mean": 8.214697014783606,
+        "p50": 7.835844432368924,
+        "p95": 14.872107776429127,
+        "p99": 16.77370564758969,
+        "max": 18.6200912667787
+      }
+    },
+    {
+      "floor": 3,
+      "mode": "high",
+      "nearestSeconds": {
+        "n": 1785,
+        "mean": 3.0869581757578484,
+        "p50": 2.8362300222113643,
+        "p95": 6.296533058500952,
+        "p99": 8.07523628344313,
+        "max": 9.858468954018837
+      }
+    },
+    {
+      "floor": 3,
+      "mode": "reduced",
+      "nearestSeconds": {
+        "n": 1785,
+        "mean": 4.1783538673444935,
+        "p50": 4.000153216579202,
+        "p95": 8.07523628344313,
+        "p99": 9.966578119114988,
+        "max": 11.728875483191512
+      }
+    }
+  ],
+  "combat": [
+    {
+      "players": 1,
+      "evolved": false,
+      "seconds": 9.750000000000004,
+      "bossDead": false,
+      "bossLowestHP": 1635,
+      "survivors": 0,
+      "playersHP": [
+        0
+      ]
+    },
+    {
+      "players": 1,
+      "evolved": true,
+      "seconds": 25.500000000000227,
+      "bossDead": true,
+      "bossLowestHP": 0,
+      "survivors": 1,
+      "playersHP": [
+        501
+      ]
+    },
+    {
+      "players": 2,
+      "evolved": false,
+      "seconds": 18.55000000000013,
+      "bossDead": false,
+      "bossLowestHP": 1335,
+      "survivors": 0,
+      "playersHP": [
+        0,
+        0
+      ]
+    },
+    {
+      "players": 4,
+      "evolved": false,
+      "seconds": 45.449999999999555,
+      "bossDead": false,
+      "bossLowestHP": 1140,
+      "survivors": 0,
+      "playersHP": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "players": 12,
+      "evolved": false,
+      "seconds": 8.79999999999999,
+      "bossDead": true,
+      "bossLowestHP": 0,
+      "survivors": 12,
+      "playersHP": [
+        160,
+        132,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        37
+      ]
+    },
+    {
+      "players": 2,
+      "evolved": true,
+      "seconds": 12.500000000000043,
+      "bossDead": true,
+      "bossLowestHP": 0,
+      "survivors": 2,
+      "playersHP": [
+        568,
+        564
+      ]
+    }
+  ],
+  "seeds": []
+}

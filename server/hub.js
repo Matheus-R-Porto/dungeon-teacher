@@ -17,8 +17,10 @@ export async function startHub(options={}) {
   const world=new SharedWorld(options.worldOptions);
   const tower=new SharedTower({directory:options.worldDataDir??process.env.WORLD_DATA_DIR??path.resolve('data/shared-tower'),seed:options.towerSeed??217021,worldOptions:options.worldOptions,capacity:config.capacity});
   const httpServer=http.createServer((req,res)=>{if(req.url==='/health'&&req.method==='GET'){res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({ok:true,protocolVersion:NET.version,room:NET.room,players:players.size}));}else{res.writeHead(404);res.end();}});
-  const wss=new WebSocketServer({noServer:true,maxPayload:config.maxPayload,perMessageDeflate:false});
-  const send=(ws,m)=>{if(ws.readyState!==WebSocket.OPEN)return;if(ws.bufferedAmount>config.maxBuffered){ws.terminate();return;}const at=options.onSendSample?performance.now():0;const json=JSON.stringify(m),encoded=options.onSendSample?performance.now():0;ws.send(json);if(options.onSendSample)options.onSendSample({serialization:encoded-at,send:performance.now()-encoded});};
+  const wss=new WebSocketServer({noServer:true,maxPayload:config.maxPayload,perMessageDeflate:options.compression===false?false:{serverNoContextTakeover:true,clientNoContextTakeover:true,concurrencyLimit:4,threshold:1024,zlibDeflateOptions:{level:1}}});
+  // Compressed map welcomes can temporarily exceed the queue budget. Skip replaceable snapshots
+  // until the queue drains instead of disconnecting during a valid map transition.
+  const send=(ws,m)=>{if(!ws||ws.readyState!==WebSocket.OPEN)return;if(ws.bufferedAmount>config.maxBuffered){if(m.type==='world:snapshot')return;ws.terminate();return;}const at=options.onSendSample?performance.now():0;const json=JSON.stringify(m),encoded=options.onSendSample?performance.now():0;ws.send(json);if(options.onSendSample)options.onSendSample({serialization:encoded-at,send:performance.now()-encoded,bytes:Buffer.byteLength(json)});};
   let online;const onlineWorld=()=>online??=new OnlineTower({directory:options.worldDataDir??process.env.WORLD_DATA_DIR??path.resolve('data/shared-tower'),characterDirectory:options.characterDataDir??process.env.CHARACTER_DATA_DIR??path.resolve('data/online'),seed:options.towerSeed??217021,worldOptions:options.worldOptions,capacity:config.capacity,send});
   const broadcast=(m,except)=>{for(const p of players.values())if(p.ws!==except)send(p.ws,m);};
   const publicPlayer=p=>({id:p.id,name:p.name,state:p.state});

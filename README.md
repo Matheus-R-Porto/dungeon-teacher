@@ -1,4 +1,4 @@
-# Dungeon Teacher — Beta 0.5.0 (A Torre Viva)
+# Dungeon Teacher — Beta 0.5.2 (A Torre Desperta)
 
 A roguelite-ish tower climber (not a traditional roguelike) built with **Three.js (3D, orthographic camera)**, inspired by Ragnarok Online's dungeon loop. You pick a weapon at the Refuge, climb a procedurally generated tower fighting for XP and a boss chest, gather resources (fishing, cooking, mining, smithing), and return to the Refuge to level up, learn skills and gear up before going back in stronger.
 
@@ -10,7 +10,9 @@ A roguelite-ish tower climber (not a traditional roguelike) built with **Three.j
 
 | Build | State |
 |---|---|
-| **0.5.0 A Torre Viva** (current source) | Additive expansion of floors 1–3, original forest art, grounded wolves, safe server respawn and larger NPCs. [Iteration 22 report](docs/ITERACAO-22-RELATORIO.md). |
+| **0.5.2 A Torre Desperta** (current source) | Shared population 30/55/70, conservative respawn, optional underground White Wolf encounter, persistent tomb and private loot, floor-three fortress. [Iteration 22.2 report](docs/ITERACAO-22.2-RELATORIO.md). |
+| **0.5.1 Um Mundo Vivo** | Open terrain on floors 1–3, layered ruins and stairs, ambient townsfolk, revised walking/mining/fishing presentation. [Iteration 22.1 report](docs/ITERACAO-22.1-RELATORIO.md). |
+| **0.5.0 A Torre Viva** | Additive expansion of floors 1–3, original forest art, grounded wolves, safe server respawn and larger NPCs. [Iteration 22 report](docs/ITERACAO-22-RELATORIO.md). |
 | 0.4.3 Animation Coherence | Five full-body walk frames per direction and equipment state, illustrated tools/projectiles, consistent NPCs and contextual enemy hover. [Iteration 21.2 report](docs/ITERACAO-21.2-RELATORIO.md). |
 | 0.4.2 Visual Polish | Integer padded atlases, four alternating walking frames per direction, integrated weapon draw/combat/sheath, city walls and continuous forest exterior. [Iteration 21.1 report](docs/ITERACAO-21.1-RELATORIO.md). |
 | 0.4.1 City and HUD | 60 × 56 city with seven districts in both modes, corrected player atlas, four equipment visuals, shared compact HUD, profession book and persistent configurable hotbar. [Iteration 21 report](docs/ITERACAO-21-RELATORIO.md). |
@@ -535,3 +537,4 @@ This README describes the game **as the code works today**. The history of how i
 - `docs/` — each iteration's prompt, report and test/build logs (`ITERACAO-NN-RELATORIO.md`, `DESKTOP-01-…`, `MULTIPLAYER-01…`).
 - Foundation documents: [technical plan](docs/PLANO-TECNICO-BETA-0.1.0.md), [foundation decisions](docs/DECISOES-FUNDACAO.md), [progression guidelines](docs/DIRETRIZES-DE-PROGRESSAO.md), [first steps](docs/PRIMEIROS-PASSOS.md) and the preserved [original spec](docs/ESPECIFICACAO-ORIGINAL-BETA-0.1.0.txt).
 - Player-facing instructions for installers: `desktop/LEIA-ME.txt` and the `desktop/CHECKLIST-*.txt` playtest checklists. Backend deploy steps: `server/DEPLOY.md`.
+

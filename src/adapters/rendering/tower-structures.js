@@ -2,7 +2,7 @@ import * as THREE from 'three';
 export function buildTowerStructures(v){
  v.walkableMeshes=[];
  for(const structure of v.world.openTower?.structures??[]){
-  const deck=v.world.surfaces.find(s=>s.id===structure.deck),ramp=v.world.surfaces.find(s=>s.id===structure.ramp);
+  const layer=v.world.surfaces.find(s=>s.id===structure.deck),deck={...layer,...layer.visualBase},ramp=v.world.surfaces.find(s=>s.id===structure.ramp);
   const stone=v.mats.stone.clone();stone.transparent=true;
   const slab=v.box(v.scene,deck.halfX*2,.32,deck.halfZ*2,deck.x,deck.y-.16,deck.z,stone);
   slab.userData.surface=deck.id;v.walkableMeshes.push(slab);

@@ -16,11 +16,18 @@ export class RpgPanels {
     this.launcher=document.createElement('nav');this.launcher.id='rpg-menu';this.launcher.setAttribute('aria-label','Painéis do jogador');this.launcher.innerHTML='<button data-panel="inventory">Inventário <kbd>I</kbd></button><button data-panel="skills">Habilidades <kbd>TAB</kbd></button>';document.querySelector('.rpg-hud').append(this.launcher);
     this.launcher.onclick=event=>{const id=event.target.closest('[data-panel]')?.dataset.panel;if(id&&!isBlocked())this.show(id);};
     window.addEventListener('keydown',event=>{if(event.repeat||event.ctrlKey||event.altKey||event.metaKey)return;const key=event.key.toLowerCase(),id=key==='tab'?'skills':key==='i'?'inventory':null;if(!id||event.target.isContentEditable||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;if(this.dialogs[id].open){event.preventDefault();if(!this.busy)this.dialogs[id].close();}else if(!isBlocked()){event.preventDefault();this.show(id);}}, {signal:this.abort.signal});
-    // Saving mutations finish before the modal can resume gameplay.
+    // Manual cancellation waits for saving; danger may dismiss only the view.
     for(const dialog of Object.values(this.dialogs))dialog.addEventListener('cancel',event=>{if(this.busy)event.preventDefault();});
   }
   show(id){this.dialogs[id].querySelector('.rpg-feedback').textContent='';this.render(id);this.openDialog(id+'-dialog');}
-  async mutate(id,action){if(this.busy)return;const snapshot=this.character.snapshot();this.busy=true;this.render(id);try{const message=action();this.render(id);await this.save();this.dialogs[id].querySelector('.rpg-feedback').textContent=message;}catch(error){this.character.data=snapshot;this.character.recalculate();this.onEquipment();this.dialogs[id].querySelector('.rpg-feedback').textContent=error.message;}finally{this.busy=false;this.render(id);}}
+  async mutate(id,action){if(this.busy)return;const snapshot=this.character.snapshot();let applied;this.busy=true;this.render(id);try{const message=action();applied=this.character.snapshot();this.render(id);await this.save();this.dialogs[id].querySelector('.rpg-feedback').textContent=message;}catch(error){
+    // Combat keeps running in Tower panels. Undo only this UI transaction,
+    // preserving HP/MP, XP/levels and resources earned while its save awaited.
+    applied??=this.character.snapshot();const data=this.character.data;
+    for(const key of ['inventory','equipment','equippedWeaponType','knownAbilities','hotbar'])if(JSON.stringify(snapshot[key])!==JSON.stringify(applied[key]))data[key]=snapshot[key];
+    for(const key of ['gold','skillSpaces'])if(Number.isFinite(snapshot[key])&&Number.isFinite(applied[key]))data[key]+=snapshot[key]-applied[key];
+    this.character.recalculate();this.onEquipment();this.dialogs[id].querySelector('.rpg-feedback').textContent=error.message;
+  }finally{this.busy=false;this.render(id);}}
   click(id,event){const b=event.target.closest('button');if(!b||this.busy)return;
     if(b.dataset.item!==undefined){this.selectedItem=Number(b.dataset.item);this.render(id);}
     if(b.dataset.node){this.selectedSkill=b.dataset.node;this.render(id);}

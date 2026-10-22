@@ -3,12 +3,13 @@ import {artSprite} from './art.js';
 import {seeded,seedOf} from '../../domain/random.js';
 import {insideTerrain} from '../../world/collision.js';
 
-export function buildLivingForest(v){
+export function buildLivingForest(v){for(const step of buildLivingForestSteps(v)){} }
+export function* buildLivingForestSteps(v){
  const w=v.world,l=w.livingTower,random=seeded(seedOf(w.seed+':living-art')),props=[],waters=[],materials=new Map();
  const add=(variant,x,z,size)=>{const sprite=materials.has(variant)?new THREE.Sprite(materials.get(variant)):artSprite('/assets/environment/living-v050.png',4,2,variant%4,Math.floor(variant/4),size,size);if(variant>=3)materials.set(variant,sprite.material);sprite.scale.set(size,size,1);sprite.center.y=.08;sprite.position.set(x,.03,z);v.scene.add(sprite);props.push(sprite);return sprite;};
  const shadowGeometry=new THREE.CircleGeometry(1,20);shadowGeometry.rotateX(-Math.PI/2);
  const shadowMaterial=new THREE.MeshBasicMaterial({color:0x203c31,transparent:true,opacity:.2,depthWrite:false});
- for(const p of l.props){const sprite=add(p.variant,p.x,p.z,p.size);
+ for(const p of l.props){yield 'living-prop';const sprite=add(p.variant,p.x,p.z,p.size);
   if(p.kind==='tree'){
    const shadow=new THREE.Mesh(shadowGeometry,shadowMaterial);shadow.position.set(p.x,.04,p.z);shadow.scale.set(p.size*.25,1,p.size*.16);v.scene.add(shadow);
    v.occluders.push({center:new THREE.Vector3(p.x,p.size*.4,p.z),radius:p.size*.27,materials:[sprite.material]});
@@ -23,7 +24,7 @@ export function buildLivingForest(v){
  const pools=[...(w.waterFeatures??[]).map(p=>({...p,radiusX:p.waterBounds.radiusX,radiusZ:p.waterBounds.radiusZ,traversable:true})),...l.water];
  const waterMaterial=new THREE.MeshStandardMaterial({color:0x528d87,roughness:.32,metalness:.15,transparent:true,opacity:.88});
  const rimMaterial=new THREE.MeshStandardMaterial({color:0x6c8970,roughness:1});
- for(const p of pools){
+ for(const p of pools){yield 'water';
   const shape=new THREE.Shape();for(let i=0;i<=32;i++){const a=i*Math.PI*2/32,r=1+.06*Math.sin(a*5+p.x);const x=Math.cos(a)*p.radiusX*r,y=Math.sin(a)*p.radiusZ*r;if(!i)shape.moveTo(x,y);else shape.lineTo(x,y);}
   const geometry=new THREE.ShapeGeometry(shape);geometry.rotateX(-Math.PI/2);
   const rim=new THREE.Mesh(geometry,rimMaterial);rim.position.set(p.x,.045,p.z);rim.scale.set(1.1,1,1.1);v.scene.add(rim);

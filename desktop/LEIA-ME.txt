@@ -1,32 +1,33 @@
-DUNGEON MASTER — BETA 0.5.0 — PLAYTEST WINDOWS 64 BITS
+DUNGEON MASTER — BETA 0.5.2 — WINDOWS 64 BITS
 
-ABRIR
-Abra DungeonMaster-Beta-0.5.0-SharedWorld-Portable.exe.
-Não precisa instalar Node.js nem executar comandos. O Setup é a alternativa
-para instalar o jogo; não é necessário usar os dois arquivos.
+1. Extraia o ZIP inteiro para uma pasta antes de jogar.
+2. Abra JOGAR TORRE LOCAL.cmd para testar a Torre atual, incluindo a população
+   ampliada, a caverna do Lobo Branco e a fortaleza. Não precisa instalar Node.js
+   nem conectar à internet. Uma janela auxiliar permanece aberta durante o jogo;
+   feche o jogo normalmente e ela encerra junto. Não abra duas cópias desse modo.
+3. JOGAR CAMPANHA.cmd abre a campanha local, com progressão independente.
+   A campanha mantém suas regras anteriores e não inclui o novo boss da Torre.
 
-COMEÇAR DO ZERO
-Esta versão usa um perfil novo: %APPDATA%\Dungeon Master Playtest 0.5.0.
-Os saves anteriores são preservados. Na primeira abertura você começa do zero;
-nas seguintes seu progresso continua salvo. Portable e Setup usam esse mesmo
-perfil neste computador. Não compartilhe a pasta do perfil ou arquivos .key.
-Cada pessoa deve receber somente o executável, nunca seus dados pessoais.
+SALVAMENTO
+O pacote não contém saves, personagens ou credenciais de outras pessoas.
+Em um computador novo, ambos os modos começam do zero. Depois, o progresso
+fica salvo nesse computador. Não apague pastas para atualizar o jogo.
+A Torre local tem perfil próprio, separado dos seus testes anteriores:
+  %APPDATA%\Dungeon Master Tests\Beta052Local
+  %APPDATA%\Dungeon Master Local 0.5.2
+A campanha mantém o perfil existente Dungeon Master Playtest 0.5.0.
 
-JOGAR ONLINE
-Na cidade, abra o menu no canto superior esquerdo, entre em Configurações
-(pausa) e escolha "Mapa compartilhado · teste". O servidor público já está
-configurado. A outra pessoa deve abrir a mesma versão e entrar pelo mesmo botão.
-A campanha local e o personagem online são separados. A identidade online nova
-é criada automaticamente neste perfil e guardada de forma protegida no Windows.
-Internet e disponibilidade do servidor público são necessárias. O primeiro
-acesso pode demorar enquanto o serviço hospedado inicia. A versão do conteúdo
-online depende do servidor, que não é atualizado ao instalar este executável.
+COMPARTILHAR
+Envie o ZIP original completo. Não envie pastas de AppData, bancos de dados
+ou arquivos .key. O destinatário deve extrair tudo e abrir um dos atalhos .cmd.
+Cada computador tem sua própria Torre local. Este pacote NÃO conecta duas
+pessoas pela internet. O servidor público não foi atualizado neste trabalho;
+o botão de mapa compartilhado da campanha depende desse serviço externo e
+não é a forma de testar o conteúdo completo da 0.5.2 neste pacote.
 
 CONTROLES
-WASD ou clique no chão: mover. Consulte Ajuda no menu para os demais controles.
-F11 alterna tela cheia. Feche o jogo normalmente para concluir o salvamento.
+WASD ou clique no chão: mover. Ajuda no menu contém os demais controles.
+F11: tela cheia. Feche normalmente para salvar o progresso.
 
-TESTE
-Verifiquem se ambos aparecem no mesmo mapa, criem uma party pelo menu e testem
-movimento, combate e transições. Relatem a ação, o mapa e uma captura se houver erro.
-Esta é uma versão de teste, sem assinatura digital de distribuição comercial.
+Esta versão de teste não possui assinatura digital comercial. Se ocorrer um
+problema, informe o modo, andar, ação realizada e envie uma captura da tela.
