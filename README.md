@@ -1,17 +1,24 @@
-# Dungeon Teacher — Beta 0.5.2 (A Torre Desperta)
+# Dungeon Teacher — Beta 0.6.4 (HUD Foundation)
 
 A roguelite-ish tower climber (not a traditional roguelike) built with **Three.js (3D, orthographic camera)**, inspired by Ragnarok Online's dungeon loop. You pick a weapon at the Refuge, climb a procedurally generated tower fighting for XP and a boss chest, gather resources (fishing, cooking, mining, smithing), and return to the Refuge to level up, learn skills and gear up before going back in stronger.
 
 **Design intent that is not built yet:** the educational layer (opening a chest triggers a question; answering correctly shifts the odds toward better loot) and chest rarities. Today a chest simply grants one equipment piece and some gold. Everything below describes what the code actually does; the final section lists what does not exist.
 
-> **Beta 0.4.1 expands the city and shares its HUD across modes. Original integrated sprite art includes:** player, six townsfolk, six matching portraits and three Slime types, plus a shared city with original environment textures. This is a provisional visual direction. WebGL 2 and graphics acceleration are required; school hardware and mobile have not been validated.
+> **Original integrated art, as of 0.6.0:** player, six townsfolk, six matching portraits, three Slime types, the White Wolf and the Oath Knight boss, plus a shared city with original environment textures. 0.6.1–0.6.4 focused on performance and shared HUD, not new art. This is a provisional visual direction. WebGL 2 and graphics acceleration are required; school hardware and mobile have not been validated.
 
 ## Status
 
+**Beta 0.5.1 is the last packaged, exportable installer.** Everything from 0.5.2 onward (including this 0.6.4 source) has been validated with automated tests and local Electron runs, but has not been repackaged into a new installer yet.
+
 | Build | State |
 |---|---|
-| **0.5.2 A Torre Desperta** (current source) | Shared population 30/55/70, conservative respawn, optional underground White Wolf encounter, persistent tomb and private loot, floor-three fortress. [Iteration 22.2 report](docs/ITERACAO-22.2-RELATORIO.md). |
-| **0.5.1 Um Mundo Vivo** | Open terrain on floors 1–3, layered ruins and stairs, ambient townsfolk, revised walking/mining/fishing presentation. [Iteration 22.1 report](docs/ITERACAO-22.1-RELATORIO.md). |
+| **0.6.4 HUD Foundation** (current source) | Shared HUD foundation (HP/MP/XP/level, eight hotbar slots); exploration panels close on a confirmed hit (including zero damage) with safe focus recovery; registered Tower panels block controls without pausing the simulation; consumption confirmation/rollback preserves damage/progress received mid-save. [Iteration 24.1 report](docs/ITERACAO-24.1-RELATORIO.md). |
+| 0.6.3 The Last Stutters | Cooperative shader submission with overlapping, cancellable GPU waits; atlas/pose preparation finishes before first render; limited diagnostic capture of outliers, no continuous profiler load. [Iteration 23.3 report](docs/ITERACAO-23.3-RELATORIO.md). |
+| 0.6.2 The Tower Without Waits | Cooperative scene building with stale-destination cancellation; async shader prep with GPU warmup limited to the first frame; visual waiting/recovery pass for failures and reconnects; limited anticipation of the Guardian's public atlas near the door. [Iteration 23.2 report](docs/ITERACAO-23.2-RELATORIO.md). |
+| 0.6.1 The Tower Without Stutters | Persistent F10 diagnostics with local export and tail-latency metrics; graphics profiles with automatic/manual adjustment and hysteresis; renderer reuse across transitions; conservative navigation obstacle clipping. [Iteration 23.1 report](docs/ITERACAO-23.1-RELATORIO.md). |
+| 0.6.0 Knight of the Last Oath | Simultaneous private arenas on floor 3; new boss (sword, arcane wave, circular burst, charge, second phase); global 32-connection cap; 300 XP and permanent floor-4 unlock granted once, on the first win only. [Iteration 23 report](docs/ITERACAO-23-RELATORIO.md). |
+| 0.5.2 A Torre Desperta | Shared population 30/55/70, conservative respawn, optional underground White Wolf encounter, persistent tomb and private loot, floor-three fortress. [Iteration 22.2 report](docs/ITERACAO-22.2-RELATORIO.md). |
+| **0.5.1 Um Mundo Vivo** (last exportable installer) | Open terrain on floors 1–3, layered ruins and stairs, ambient townsfolk, revised walking/mining/fishing presentation. [Iteration 22.1 report](docs/ITERACAO-22.1-RELATORIO.md). |
 | **0.5.0 A Torre Viva** | Additive expansion of floors 1–3, original forest art, grounded wolves, safe server respawn and larger NPCs. [Iteration 22 report](docs/ITERACAO-22-RELATORIO.md). |
 | 0.4.3 Animation Coherence | Five full-body walk frames per direction and equipment state, illustrated tools/projectiles, consistent NPCs and contextual enemy hover. [Iteration 21.2 report](docs/ITERACAO-21.2-RELATORIO.md). |
 | 0.4.2 Visual Polish | Integer padded atlases, four alternating walking frames per direction, integrated weapon draw/combat/sheath, city walls and continuous forest exterior. [Iteration 21.1 report](docs/ITERACAO-21.1-RELATORIO.md). |
