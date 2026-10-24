@@ -1,3 +1,55 @@
+## 0.6.9 — Iterações 28, 28.1 e 28.1B
+
+- Nova interface de inventário: grade com ícones, nomes, pilhas, tooltip acessível,
+  navegação por setas/Home/End, painel de equipamentos separado e comparação
+  opcional de estatísticas lado a lado.
+- 32 ícones SVG originais (+ 1 fallback) para os 44 itens reais, leves e vetoriais,
+  seguindo a mesma estratégia da Árvore do Destino.
+- Em paralelo (28.1/28.1B): sprites pixel art gerados por IA para os 44 itens,
+  128×128, produzidos a partir de 7 designs aprovados como referência visual.
+  Integrados em `public/assets/items/`; aprovação artística final ainda pendente.
+- 44 IDs auditados sem alteração de estatísticas, raridades ou preços.
+
+## 0.6.8 — Iterações 27, 27.1 e 27.2
+
+- Componente de diálogo unificado entre campanha e modo online (antes eram
+  interfaces separadas).
+- Retratos de corpo inteiro dos seis NPCs, moldura ornamentada em bronze,
+  animação de entrada de 210ms (respeitando `prefers-reduced-motion`).
+- Retrato ajustado de 46vh para 55vh em desktop após revisão; quatro NPCs
+  espelhados para melhor composição (Marta, Brasa, Lina, Caio).
+- Navegação por teclado, foco visível, Safety fecha em transição/impacto/blur.
+  Aprovação estética humana ainda pendente.
+
+## 0.6.7 — Iteração 26
+
+- Minimapa com névoa de descoberta: HUD compacto permanente (180×180) e mapa
+  ampliado (tecla M), navegável por arrasto/roda/setas.
+- Descoberta persistida por personagem, vinculada à geometria/seed do ambiente.
+- 708/708 testes aprovados. Playtest humano pendente.
+
+## 0.6.6 — Iteração 25
+
+- Árvore do Destino: substitui o menu TAB antigo por uma árvore orgânica em SVG
+  para aprender as 5 habilidades existentes, com pan/zoom e navegação por teclado.
+- Hotbar de 8 posições reaproveitada dentro do painel da árvore (arrastar para
+  aprender/posicionar).
+- Sincronizado com a persistência multiplayer v4 (aprendizado confirmado pelo
+  servidor antes de aplicar).
+- 696/696 testes aprovados. Playtest humano pendente.
+
+## 0.6.5 — Iteração 24.2 (fases A/B/C)
+
+- Castelo do Cavaleiro do Último Juramento reconstruído: exterior, interior e
+  arena conectados nos dois modos (antes só existia no modo online).
+- Covil do Lobo Branco reconstruído com acesso frontal e filtragem de
+  visibilidade subterrânea corrigida.
+- Água deixa de ser só decoração: lagos agora têm colisão sólida real e podem
+  ser pescados em qualquer margem válida, não só em pontos fixos.
+- Nova animação de pesca (arco de lançamento, recolhimento) e HUD de mineração
+  com acabamento visual.
+- 688/688 testes aprovados ao final da fase C.
+
 ## 0.6.4 — Iteração 24.1
 
 - Fundação visual compartilhada de HP, MP, XP, nível e oito slots da hotbar,
