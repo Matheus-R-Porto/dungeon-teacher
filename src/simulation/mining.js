@@ -1,3 +1,4 @@
+import {invalidateCarry} from '../domain/items/carry.js';
 import {MINING,PICKAXE,RAW_ORE,indicatorAt,strikeResult} from '../domain/mining.js';
 import {gainLifeXP} from '../domain/life-skills.js';
 import {Inventory,ITEMS,equipmentBlocked} from '../domain/items/inventory.js';
@@ -29,7 +30,7 @@ export class MiningRuntime {
     if(equipmentBlocked(c))throw Error('Você não pode minerar durante o combate.');
     const inv=new Inventory(this.character);
     if(!inv.owns(PICKAXE))throw Error('Você precisa de uma picareta para minerar.');
-    if(!inv.canAcquire(RAW_ORE))throw Error('Sua mochila está cheia.');
+    if(!inv.canAcquire(RAW_ORE))throw Error((inv.acquisitionError(RAW_ORE)==='Inventário cheio.'?'Sua mochila está cheia.':inv.acquisitionError(RAW_ORE)));
     if(this.remaining(vein)>1e-8)throw Error('Recupere o fôlego antes de golpear de novo.');
     if(Math.hypot(g.player.x-vein.x,g.player.z-vein.z)>this.config.interactionRadius)throw Error('Aproxime-se do veio mineral.');
     c.cancel(true);this.vein=vein;this.area=s.area;this.damageRevision=this.character.damageRevision;
@@ -59,12 +60,12 @@ export class MiningRuntime {
     if(!this.character.isAlive||area!==s.area||vein.state!=='available'){this.finish('Mineração interrompida.',false);return Promise.resolve(false);}
     const draft={data:this.character.snapshot()},inv=new Inventory(draft);
     if(!inv.owns(PICKAXE)){this.finish('Você precisa de uma picareta para minerar.');return Promise.resolve(false);}
-    if(!inv.canAcquire(RAW_ORE)){this.finish('Sua mochila está cheia. Nenhuma recompensa concedida.');return Promise.resolve(false);}
+    if(!inv.canAcquire(RAW_ORE)){this.finish((inv.acquisitionError(RAW_ORE)==='Inventário cheio.'?'Sua mochila está cheia.':inv.acquisitionError(RAW_ORE))+' Nenhuma recompensa concedida.');return Promise.resolve(false);}
     const xp=this.config.xp[result];inv.acquire(RAW_ORE);const levels=gainLifeXP(draft.data,'mining',xp);
     // Reserved synchronously: a second input, or another start, can never claim the same vein.
     vein.state='reserved';this.finish('Golpe confirmado · salvando…',false);this.state='saving';
     const operation=Promise.resolve().then(()=>this.save(draft.data)).then(()=>{
-      this.character.data.inventory=draft.data.inventory;this.character.data.lifeSkills=draft.data.lifeSkills;
+      this.character.data.inventory=draft.data.inventory;invalidateCarry(this.character.data);this.character.data.lifeSkills=draft.data.lifeSkills;
       vein.state='exhausted';const interactable=area.interactables.find(i=>i.id===vein.id);if(interactable)interactable.label='Veio esgotado · já foi minerado';
       s.onResourceChange();this.announce(result,result==='PERFECT'?'PERFEITO!':'BOM!',xp);
       this.say((result==='PERFECT'?'Golpe perfeito! ':'Mineração concluída! ')+'+1 '+ITEMS[RAW_ORE].name+' · Mining XP +'+xp+(result==='PERFECT'?' (bônus)':'')+(levels?' · MINERAÇÃO NÍVEL '+draft.data.lifeSkills.mining.level+'!':''));return true;

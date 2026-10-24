@@ -49,6 +49,7 @@ export class SharedWorld {
       if(p.target&&!valid()){p.target=null;p.game.cancel();p.cycle.cancel();}
       const range=equippedDefinition(p.character.data).basicAttack.attackRange,inRange=()=>valid()&&this.validHit(p.game.player,e,range);
       if(valid()){if(inRange())p.game.cancel();else if(this.time>=p.repathAt&&(!p.game.path.length||!p.repathTarget||p.repathTarget.surface!==e.surface||Math.hypot(e.x-p.repathTarget.x,e.z-p.repathTarget.z)>.75)){p.repathTarget={x:e.x,z:e.z,surface:e.surface};const pathStart=performance.now();p.game.moveTo(p.repathTarget);this.metrics.playerNavigationMs+=performance.now()-pathStart;p.repathAt=this.time+.3;}}
+      p.game.character=p.character;
       p.game.update(dt,p.axis,0);
       if(valid())p.game.player.heading=Math.atan2(e.x-p.game.player.x,e.z-p.game.player.z);
       p.cycle.advance(dt,p.character.stats.attackSpeed,inRange,()=>{

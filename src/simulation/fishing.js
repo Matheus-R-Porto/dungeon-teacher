@@ -1,3 +1,5 @@
+import {invalidateCarry} from '../domain/items/carry.js';
+import {castTarget,nearestCast} from '../world/fishing-water.js';
 import {FISHING,eligibleFish,selectFish} from '../domain/fishing.js';
 import {gainLifeXP} from '../domain/life-skills.js';
 import {Inventory,equipmentBlocked} from '../domain/items/inventory.js';
@@ -12,34 +14,38 @@ export class FishingRuntime {
     this.reset(0);
   }
   get active(){return ['cast','waiting','bite'].includes(this.state);}
+  get presenting(){return this.area===this.session.area&&this.session.game.elapsed<(this.visualReelUntil??0);}
   get busy(){return this.active||!!this.pending;}
   reset(seed){this.cancel('Pesca encerrada.');this.random=seeded(seedOf(seed+':fishing-attempts'));this.attempts=0;this.cooldowns.clear();}
-  remaining(spot){return Math.max(0,(this.cooldowns.get(spot.id)??0)-this.time);}
+  remaining(spot){return Math.max(0,(this.cooldowns.get(spot.waterFeatureId??spot.id)??0)-this.time);}
   say(message){this.message=message;this.notify(message);}
   start(id){
     const s=this.session,c=s.combat,g=s.game;
     if(this.busy)return false;
     if(s.mining?.busy)throw Error('Termine a mineração antes de pescar.');
-    const spot=s.area.fishingSpots?.find(p=>p.id===id),water=s.area.waterFeatures?.find(w=>w.id===spot?.waterFeatureId);
+    const legacy=typeof id==='string'?s.area.fishingSpots?.find(p=>p.id===id):null;
+    if(typeof id==='string'&&!legacy)throw Error('Margem de pesca indisponível.');
+    if(legacy&&Math.hypot(g.player.x-legacy.x,g.player.z-legacy.z)>this.config.interactionRadius)throw Error('Aproxime-se da margem, fora da água.');
+    const spot=legacy?{...castTarget(s.area,g.player,{...legacy.bobber,surface:legacy.surface},this.config),id:legacy.id}:id?castTarget(s.area,g.player,id,this.config):nearestCast(s.area,g.player,this.config),water=s.area.waterBodies?.find(w=>w.id===spot?.waterFeatureId);
     if(!spot||!water?.fishingCompatible||!s.run||!this.character.isAlive)throw Error('Margem de pesca indisponível.');
     if(equipmentBlocked(c))throw Error('Você não pode pescar durante o combate.');
     const inv=new Inventory(this.character);
     if(!inv.owns('fishingRod'))throw Error('Você precisa de uma Vara de Pesca.');
-    if(!eligibleFish(this.character.data.lifeSkills.fishing.level).some(f=>inv.canAcquire(f.itemDefinition)))throw Error('Sua mochila está cheia.');
+    if(!eligibleFish(this.character.data.lifeSkills.fishing.level).some(f=>inv.canAcquire(f.itemDefinition)))throw Error(inv.acquisitionError(eligibleFish(this.character.data.lifeSkills.fishing.level)[0].itemDefinition).replace('Inventário cheio.','Sua mochila está cheia.'));
     if(this.remaining(spot)>1e-8)throw Error('Aguarde a água se acalmar.');
-    if(Math.hypot(g.player.x-spot.x,g.player.z-spot.z)>this.config.interactionRadius||inWater(water,g.player,.32)||!canStand(s.area,g.player.x,g.player.z,.32)||!clearSegment(s.area,g.player,spot,.32))throw Error('Aproxime-se da margem sinalizada, fora da água.');
-    c.cancel(true);this.spot=spot;this.area=s.area;this.damageRevision=this.character.damageRevision;
+
+    c.cancel(true);this.spot=spot;this.area=s.area;this.damageRevision=this.character.damageRevision;this.origin={...g.player};
     this.result=selectFish(this.character.data.lifeSkills.fishing.level,this.random);
     const wait=this.config.waitMin+this.random()*(this.config.waitMax-this.config.waitMin);
     this.visualCatch=null;this.attempts++;this.started=this.time;this.biteAt=this.time+this.config.castSeconds+wait;this.endsAt=this.biteAt+this.config.reactionSeconds;
     this.state='cast';g.player.heading=spot.heading;g.player.moving=false;this.say('Lançando… · Esc cancela');return true;
   }
-  finish(message){if(this.spot)this.cooldowns.set(this.spot.id,this.time+this.config.cooldownSeconds);this.state='idle';this.result=null;this.say(message);}
-  cancel(message='Pesca cancelada.'){if(this.active)this.finish(message);}
+  finish(message){if(this.spot)this.cooldowns.set(this.spot.waterFeatureId??this.spot.id,this.time+this.config.cooldownSeconds);this.state='idle';this.result=null;this.say(message);}
+  cancel(message='Pesca cancelada.'){this.visualReelUntil=0;this.visualCancelRevision=(this.visualCancelRevision??0)+1;if(this.active)this.finish(message);}
   update(dt){
     if(!Number.isFinite(dt)||dt<0)throw Error('Tempo de pesca inválido.');this.time+=dt;
     if(!this.active)return;
-    if(this.area!==this.session.area||!this.character.isAlive||this.character.damageRevision!==this.damageRevision){this.cancel('Pesca interrompida.');return;}
+    if(this.area!==this.session.area||!this.character.isAlive||this.character.damageRevision!==this.damageRevision||Math.hypot(this.session.game.player.x-this.origin.x,this.session.game.player.z-this.origin.z)>.1){this.cancel('Pesca interrompida.');return;}
     if(this.time+1e-9>=this.endsAt){this.finish('O peixe escapou.');return;}
     if(this.time+1e-9>=this.biteAt&&this.state!=='bite'){this.state='bite';this.say('AGORA! · F ou Espaço para puxar');}
     else if(this.state==='cast'&&this.time-this.started+1e-9>=this.config.castSeconds){this.state='waiting';this.say('Observe a boia… · Esc cancela');}
@@ -47,16 +53,17 @@ export class FishingRuntime {
   pull(){
     if(!this.active)return this.pending??Promise.resolve(false);
     this.visualReelRevision=(this.visualReelRevision??0)+1; // Presentation event only.
+    this.visualReelUntil=this.session.game.elapsed+1.35;
     if(this.time<this.biteAt-1e-9){this.finish('Muito cedo!');return Promise.resolve(false);}
     if(this.time>=this.endsAt-1e-9){this.finish('O peixe escapou.');return Promise.resolve(false);}
     const fish=this.result,s=this.session;
     // Stage both fields off the live character. Failure cannot leave half a grant.
     const draft={data:this.character.snapshot()},inv=new Inventory(draft);
-    if(!inv.canAcquire(fish.itemDefinition)){this.finish('Sua mochila está cheia para este peixe. Nenhuma recompensa concedida.');return Promise.resolve(false);}
+    if(!inv.canAcquire(fish.itemDefinition)){this.finish((inv.acquisitionError(fish.itemDefinition)==='Inventário cheio.'?'Sua mochila está cheia para este peixe.':inv.acquisitionError(fish.itemDefinition))+' Nenhuma recompensa concedida.');return Promise.resolve(false);}
     inv.acquire(fish.itemDefinition);const levels=gainLifeXP(draft.data,'fishing',fish.xp);
     this.finish('Captura confirmada · salvando…');this.state='saving';
     const operation=Promise.resolve().then(()=>this.save(draft.data)).then(()=>{
-      this.character.data.inventory=draft.data.inventory;this.character.data.lifeSkills=draft.data.lifeSkills;
+      this.character.data.inventory=draft.data.inventory;invalidateCarry(this.character.data);this.character.data.lifeSkills=draft.data.lifeSkills;
       this.visualCatch={revision:(this.visualCatchRevision??0)+1,fish:fish.id,spot:structuredClone(this.spot)};this.visualCatchRevision=this.visualCatch.revision;s.onResourceChange();this.say('PESCADO! '+fish.name+' · Pesca XP +'+fish.xp+(levels?' · PESCA NÍVEL '+draft.data.lifeSkills.fishing.level+'!':''));return true;
     }).catch(error=>{this.say('Captura não salva: '+error.message+' Nenhum peixe ou XP concedido.');return false;}).finally(()=>{this.pending=null;this.state='idle';});
     this.pending=operation;return operation;

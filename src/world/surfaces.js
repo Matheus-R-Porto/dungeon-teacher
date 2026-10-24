@@ -11,14 +11,14 @@ export function layerWorld(w,id){
  if(!cache||cache.revision!==w.navRevision||cache.obstacles!==w.obstacles||cache.count!==w.obstacles.length||cache.walkable!==w.walkable||cache.graph!==w.graph){cache={revision:w.navRevision,obstacles:w.obstacles,count:w.obstacles.length,walkable:w.walkable,graph:w.graph,layers:new Map()};layerCache.set(w,cache);}
  if(cache.layers.has(id))return cache.layers.get(id);
  const s=w.surfaces.find(s=>s.id===id);
- const layer={...w,surfaces:undefined,graph:s?undefined:w.graph,bounds:s?{minX:s.x-s.halfX,maxX:s.x+s.halfX,minZ:s.z-s.halfZ,maxZ:s.z+s.halfZ}:w.bounds,walkable:s?[{shape:'polygon',vertices:[{x:s.x-s.halfX,z:s.z-s.halfZ},{x:s.x+s.halfX,z:s.z-s.halfZ},{x:s.x+s.halfX,z:s.z+s.halfZ},{x:s.x-s.halfX,z:s.z+s.halfZ}]}]:w.walkable,
+ const layer={...w,waterBodies:(w.waterBodies??[]).filter(b=>b.surface===id),surfaces:undefined,graph:s?undefined:w.graph,bounds:s?{minX:s.x-s.halfX,maxX:s.x+s.halfX,minZ:s.z-s.halfZ,maxZ:s.z+s.halfZ}:w.bounds,walkable:s?(s.walkable??[{shape:'polygon',vertices:[{x:s.x-s.halfX,z:s.z-s.halfZ},{x:s.x+s.halfX,z:s.z-s.halfZ},{x:s.x+s.halfX,z:s.z+s.halfZ},{x:s.x-s.halfX,z:s.z+s.halfZ}]}]):w.walkable,
  obstacles:s?(s.obstacles??[]):[...w.obstacles,...w.surfaces.filter(s=>s.kind==='ramp').map(s=>({shape:'rect',x:s.x,z:s.z+.35,halfX:s.halfX,halfZ:s.halfZ-.35}))]};
  cache.layers.set(id,layer);return layer;
 }
 export function stepSurface(w,p,x,z,r,valid){
  const id=surfaceId(p),s=w.surfaces.find(s=>s.id===id);
  if(!s){
-  for(const ramp of w.surfaces.filter(s=>s.kind==='ramp'))if(!p.enemyType&&Math.abs(x-ramp.x)<ramp.halfX-r&&p.z<=ramp.z-ramp.halfZ+.12&&z>=ramp.z-ramp.halfZ&&z<ramp.z-ramp.halfZ+.3)return {x,z,y:surfaceHeight(ramp,z),surface:ramp.id};
+  for(const ramp of w.surfaces.filter(s=>s.kind==='ramp'))if(!p.enemyType&&(!ramp.frontOnly||z>p.z&&p.z<=ramp.z-ramp.halfZ)&&Math.abs(z-p.z)>=Math.abs(x-p.x)&&Math.abs(x-ramp.x)<ramp.halfX-r&&p.z<=ramp.z-ramp.halfZ+.12&&z>=ramp.z-ramp.halfZ&&z<ramp.z-ramp.halfZ+.3)return {x,z,y:surfaceHeight(ramp,z),surface:ramp.id};
   if(valid(layerWorld(w,'ground'),x,z,r))return {x,z,y:0,surface:'ground'};
  }else{
   if(containsSurface(s,x,z,r)&&valid(layerWorld(w,id),x,z,r))return {x,z,y:surfaceHeight(s,z),surface:id};

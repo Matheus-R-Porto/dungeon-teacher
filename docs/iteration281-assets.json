@@ -1,0 +1,156 @@
+[
+  {
+    "id": "trainingSword",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      74,
+      46,
+      1222,
+      1193
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 2414
+  },
+  {
+    "id": "trainingDagger",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      117,
+      84,
+      1170,
+      1180
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 3675
+  },
+  {
+    "id": "trainingBow",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      137,
+      27,
+      1210,
+      1230
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 2068
+  },
+  {
+    "id": "trainingStaff",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      122,
+      51,
+      1203,
+      1205
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 1860
+  },
+  {
+    "id": "travelerVest",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      227,
+      153,
+      1078,
+      1163
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 6131
+  },
+  {
+    "id": "limiarMinnow",
+    "sourceSize": [
+      1448,
+      1086
+    ],
+    "bounds": [
+      200,
+      275,
+      1303,
+      817
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 3051
+  },
+  {
+    "id": "oil",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      271,
+      150,
+      990,
+      1145
+    ],
+    "size": [
+      64,
+      64
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "bytes": 4834
+  }
+]

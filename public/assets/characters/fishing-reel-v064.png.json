@@ -1,0 +1,80 @@
+{
+  "source": "public/assets/characters/fishing-reel-v064-source.png",
+  "width": 1402,
+  "height": 1122,
+  "columns": 2,
+  "rows": 2,
+  "cell": 512,
+  "padding": 51.2,
+  "scale": 1,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "scale": 0.45977011494252873,
+      "sourceBounds": [
+        179,
+        79,
+        638,
+        515
+      ],
+      "bounds": [
+        197,
+        260,
+        407,
+        460
+      ]
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "scale": 0.4750593824228028,
+      "sourceBounds": [
+        760,
+        93,
+        1263,
+        515
+      ],
+      "bounds": [
+        76,
+        260,
+        314,
+        460
+      ]
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "scale": 0.4576659038901602,
+      "sourceBounds": [
+        179,
+        602,
+        646,
+        1040
+      ],
+      "bounds": [
+        187,
+        260,
+        400,
+        460
+      ]
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "scale": 0.46296296296296297,
+      "sourceBounds": [
+        839,
+        608,
+        1335,
+        1041
+      ],
+      "bounds": [
+        199,
+        260,
+        428,
+        460
+      ]
+    }
+  ]
+}

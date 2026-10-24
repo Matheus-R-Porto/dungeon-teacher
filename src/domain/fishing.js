@@ -1,4 +1,4 @@
-export const FISHING = Object.freeze({castSeconds:.35,waitMin:1,waitMax:3,reactionSeconds:1.2,cooldownSeconds:2.5,maxStack:99,spotsPerLake:1,interactionRadius:1.4});
+export const FISHING = Object.freeze({maxCastDistance:3.8,castSeconds:.35,waitMin:1,waitMax:3,reactionSeconds:1.2,cooldownSeconds:2.5,maxStack:99,spotsPerLake:1,interactionRadius:1.4});
 export const FISH = Object.freeze([
   {id:'limiarMinnow',name:'Lambari do Limiar',description:'Pequeno peixe prateado das águas da Torre.',minLevel:1,weight:55,xp:6},
   {id:'fireflyCarp',name:'Carpa dos Vaga-lumes',description:'Suas escamas refletem os brilhos da margem.',minLevel:1,weight:30,xp:8},

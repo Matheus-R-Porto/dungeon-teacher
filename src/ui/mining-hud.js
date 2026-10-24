@@ -5,7 +5,7 @@ export class MiningHud {
   constructor(session){
     this.session=session;
     this.root=document.createElement('section');this.root.id='mining-hud';this.root.setAttribute('aria-label','Mineração');this.root.hidden=true;
-    this.root.innerHTML='<strong>MINERAÇÃO</strong><div class="mining-meter" role="meter" aria-label="Indicador do golpe" aria-valuemin="0" aria-valuemax="100"><span class="mining-good"></span><span class="mining-perfect"></span><i></i></div><p role="status" data-state></p><button data-strike>Golpear · F / Espaço</button><button data-cancel>Cancelar · Esc</button>';
+    this.root.innerHTML='<header><span aria-hidden="true">◆</span><div><small>OFÍCIO DA TORRE</small><strong>Mineração</strong></div><span class="mining-phase"></span></header><div class="mining-meter" role="meter" aria-label="Indicador do golpe" aria-valuemin="0" aria-valuemax="100"><span class="mining-good"></span><span class="mining-perfect"></span><i></i></div><p role="status" data-state></p><div class="mining-actions"><button data-strike>Golpear · F / Espaço</button><button data-cancel>Cancelar · Esc</button></div>';
     document.querySelector('#app').append(this.root);
     this.meter=this.root.querySelector('.mining-meter');this.good=this.root.querySelector('.mining-good');this.perfect=this.root.querySelector('.mining-perfect');this.cursor=this.root.querySelector('i');
     this.root.querySelector('[data-strike]').onclick=()=>session.mining.strike();this.root.querySelector('[data-cancel]').onclick=()=>session.mining.cancel();
@@ -19,6 +19,7 @@ export class MiningHud {
     this.root.hidden=s.game.paused||!m.active;
     if(m.active){
       this.root.dataset.phase=m.state;
+      this.root.querySelector('.mining-phase').textContent=m.state==='prepare'?'Preparação':'Golpe';
       this.good.style.left=(m.center-c.goodHalf)*100+'%';this.good.style.width=c.goodHalf*200+'%';
       this.perfect.style.left=(m.center-c.perfectHalf)*100+'%';this.perfect.style.width=c.perfectHalf*200+'%';
       const position=m.indicator;this.cursor.style.left=position*100+'%';this.meter.setAttribute('aria-valuenow',String(Math.round(position*100)));

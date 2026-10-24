@@ -1,3 +1,4 @@
+import {installWaterGeometry} from './water-geometry.js';
 import {environmentFor,caveAmount,environmentRecord} from './biomes.js';
 import {addWaterFeatures} from './water-features.js';
 import {addMineralVeins} from './mineral-veins.js';
@@ -26,7 +27,7 @@ function materializeFloor(runSeed,floor,hubId,options){
  world.interactables=[{id:'return-portal',...world.portal,radius:2.6,priority:1,label:'Siga a trilha e libere as passagens',action:'travel',content:{areaId:limit?hubId:'tower-floor-'+(floor+1),requiresCompletion:true},highlightRadius:2.4},{id:'abandon-run',...world.spawn,radius:2,priority:0,label:'Abandonar expedição · voltar ao Refúgio',action:'travel',content:{areaId:hubId,abandon:true},highlightRadius:.7}];
  if(role==='boss'&&!limit){world.refugePortal={x:exit.x+5,z:exit.z-1};world.interactables.push({id:'refuge-portal',...world.refugePortal,radius:2.2,priority:1,label:'Retornar ao Refúgio',action:'travel',content:{areaId:hubId,requiresCompletion:true},highlightRadius:1.6});}
  world.exits=world.interactables.map(i=>({interactionId:i.id,...i.content}));
- addWaterFeatures(world);addMineralVeins(world);
+ addWaterFeatures(world);installWaterGeometry(world);addMineralVeins(world);
  validateHub(world);const materializationMs=performance.now()-start-topologyMs,validationStart=performance.now();
  // Validate every physical graph edge locally. Their union proves global connectivity.
  for(const t of world.trails)for(let i=1;i<t.points.length;i++)if(!findPath(world,t.points[i-1],t.points[i],.85))throw Error('Trilha inacessível.');

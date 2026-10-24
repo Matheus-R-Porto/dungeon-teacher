@@ -1,3 +1,4 @@
+import {layerWorld,surfaceId} from '../world/surfaces.js';
 import { CONFIG } from '../core/config.js';
 import { canStand, moveWithCollision } from '../world/collision.js';
 import { findPath } from '../world/navigation.js';
@@ -11,7 +12,8 @@ export function cameraDirection(horizontal, vertical, azimuth) {
 export class Game {
   constructor(world) {
     this.world = world;
-    if (!canStand(world, world.spawn.x, world.spawn.z, CONFIG.playerRadius)) throw new Error('A posição inicial está bloqueada.');
+    this.movementMultiplier = 1;
+    if (!canStand(layerWorld(world,surfaceId(world.spawn)), world.spawn.x, world.spawn.z, CONFIG.playerRadius)) throw new Error('A posição inicial está bloqueada.');
     this.player = { y:0,surface:'ground',...world.spawn, heading: Math.PI, moving: false };
     this.previous = { ...this.player };
     this.path = [];
@@ -31,7 +33,7 @@ export class Game {
     this.previous = { ...this.player };
     if (this.paused) return;
     this.elapsed += dt;
-    let direction = { x: 0, z: 0 }, step = CONFIG.playerSpeed * dt;
+    let direction = { x: 0, z: 0 }, step = CONFIG.playerSpeed * this.movementMultiplier * (this.character?.carry?.movementMultiplier??1) * dt;
     if (axis.x || axis.z) { this.path = []; direction = cameraDirection(axis.x, axis.z, azimuth); }
     else if (this.path.length) {
       const target = this.path[0], dx = target.x - this.player.x, dz = target.z - this.player.z, distance = Math.hypot(dx, dz);

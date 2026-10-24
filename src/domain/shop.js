@@ -9,7 +9,7 @@ export function purchaseItem(character,id){
   const inventory=new Inventory(character);
   if(inventory.owns(id))throw Error('Já possuído');
   if(character.data.gold<def.price)throw Error('Ouro insuficiente.');
-  if(!inventory.canAcquire(id))throw Error('Inventário cheio.');
+  const error=inventory.acquisitionError(id);if(error)throw Error(error);
   inventory.acquire(id);character.data.gold-=def.price;
   return def;
 }

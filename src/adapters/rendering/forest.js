@@ -20,6 +20,7 @@ export function* buildForestSteps(v){
  const disk=new THREE.CircleGeometry(1,16);disk.rotateX(-Math.PI/2);
  if(w.openTower){const shape=new THREE.Shape(w.openTower.vertices.map(p=>new THREE.Vector2(p.x,-p.z))),g=new THREE.ShapeGeometry(shape);g.rotateX(-Math.PI/2);const meadow=v.mesh(g,surface(w.spawn.z),v.scene,0,.035,0);meadow.castShadow=false;buildTowerStructures(v);}
  for(const r of w.openTower?[]:w.graph.regions){const patch=v.mesh(disk,surface(r.z),v.scene,r.x,.005,r.z);patch.scale.setScalar(r.radius);patch.castShadow=false;}
+ for(const bank of w.openTower?[]:w.walkable.filter(s=>s.waterBank)){const patch=v.mesh(disk,surface(bank.z),v.scene,bank.x,.005,bank.z);patch.scale.setScalar(bank.radius);patch.castShadow=false;}
  for(const segment of w.openTower?[]:w.walkable.filter(s=>s.a)){
   const {a,b,radius}=segment,dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz),steps=Math.ceil(d/3);
   for(let i=0;i<steps;i++){const t=(i+.5)/steps,x=a.x+dx*t,z=a.z+dz*t,strip=v.box(v.scene,radius*2,.04,d/steps+.08,x,0,z,surface(z));strip.rotation.y=Math.atan2(dx,dz);}
@@ -27,7 +28,7 @@ export function* buildForestSteps(v){
  }
  yield 'forest-surfaces';
  const stones=[],shrubs=[],trees=[],arrows=[],grass=[],walls=[],crystals=[];
- for(const t of w.trails)for(let k=1;k<t.points.length;k++){const a=t.points[k-1],b=t.points[k],d=Math.hypot(b.x-a.x,b.z-a.z);for(let n=0;n<d;n+=1.8){const f=n/d;stones.push({x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f,scale:t.main?.48:.3,color:t.main?0xc6b978:0x92b49a});if(t.main&&n>3&&Math.floor(n/1.8)%4===0)arrows.push({x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f,scale:.65,angle:Math.atan2(b.x-a.x,b.z-a.z)});}}
+ for(const t of w.trails)for(let k=1;k<t.points.length;k++){const a=t.points[k-1],b=t.points[k],d=Math.hypot(b.x-a.x,b.z-a.z);for(let n=0;n<d;n+=1.1+random()*1.2){const f=n/d,side=(random()-.5)*2.8;stones.push({x:a.x+(b.x-a.x)*f+(b.z-a.z)/d*side,z:a.z+(b.z-a.z)*f-(b.x-a.x)/d*side,scale:.12+random()*.3,color:[0x7f8069,0x93917a,0xa49c80][Math.floor(random()*3)]});}}
  for(let z=b.minZ;!w.livingTower&&z<b.maxZ;z+=2)for(let x=b.minX;x<b.maxX;x+=2){
   if(insideTerrain(w,x,z,0)||!insideTerrain(w,x,z,-2.4))continue;
   const c=amount(z);
@@ -57,7 +58,7 @@ export function* buildForestSteps(v){
   }
   if(p.kind===0){v.buildTree(group,5.5);v.mesh(new THREE.TorusGeometry(1.3,.08,5,20),v.mats.gold,group,0,1,0).rotation.x=Math.PI/2;}
   if(p.kind===1){v.mesh(new THREE.OctahedronGeometry(1.3),v.mats.darkStone,group,0,1.3,0);v.mesh(new THREE.OctahedronGeometry(.32),mat(0x72d3bc,{emissive:0x48bbaa,emissiveIntensity:.7}),group,0,2.6,0);}
-  if(p.kind===2){const lake=v.mesh(disk,mat(0x428f92,{metalness:.2,roughness:.25}),group,0,.05,0);const water=w.waterFeatures?.find(w=>w.regionId===p.regionId);lake.scale.set(water?.waterBounds.radiusX??2.5,1,water?.waterBounds.radiusZ??1.8);for(let i=0;i<5;i++)v.mesh(new THREE.OctahedronGeometry(.12),v.mats.gold,group,Math.cos(i)*2,.5,Math.sin(i)*1.5);}
+  if(p.kind===2){const water=w.waterBodies?.find(b=>b.id==='water-'+p.id);if(water){const geometry=new THREE.ShapeGeometry(new THREE.Shape(water.vertices.map(q=>new THREE.Vector2(q.x-p.x,-(q.z-p.z)))));geometry.rotateX(-Math.PI/2);v.mesh(geometry,mat(0x428f92,{metalness:.2,roughness:.25}),group,0,water.y,0);}for(let i=0;i<5;i++)v.mesh(new THREE.OctahedronGeometry(.12),v.mats.gold,group,Math.cos(i)*2,.5,Math.sin(i)*1.5);}
   if(p.kind===3){for(const x of [-1.5,1.5])v.box(group,.8,2.5,.8,x,1.25,0,v.mats.stone);v.box(group,3.8,.45,.9,0,2.5,0,v.mats.stoneLight);}
   if(p.kind===4){const log=v.mesh(new THREE.CylinderGeometry(.55,.8,4,7),v.mats.bark,group,0,.65,0);log.rotation.z=Math.PI/2;}
  }

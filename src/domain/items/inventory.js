@@ -1,3 +1,4 @@
+import {itemWeightGrams,carryOf,invalidateCarry,CARRY_LIMIT_MESSAGE} from './carry.js';
 import {RAW_FOOD,INGREDIENTS,DISHES} from '../food.js';
 import {FISH,FISHING} from '../fishing.js';
 import {MINING,PICKAXE_PRICE} from '../mining.js';
@@ -42,7 +43,7 @@ function forgedWeapons(){
   }
   return entries;
 }
-export const ITEMS = Object.freeze({...BASE_ITEMS,...forgedWeapons()});
+export const ITEMS = Object.freeze(Object.fromEntries(Object.entries({...BASE_ITEMS,...forgedWeapons()}).map(([id,def])=>[id,{...def,weightGrams:itemWeightGrams(id)}])));
 export const emptyInventory = () => ({version:1,capacity:INVENTORY_CAPACITY,nextId:1,slots:Array(INVENTORY_CAPACITY).fill(null)});
 export const emptyEquipment = () => Object.fromEntries(EQUIPMENT_SLOTS.map(slot=>[slot,null]));
 export function equipmentStats(data){const stats={};for(const item of Object.values(data.equipment??{})){for(const [key,value] of Object.entries(ITEMS[item?.definitionId]?.stats??{}))stats[key]=(stats[key]??0)+value;}return {stats};}
@@ -50,17 +51,19 @@ export const equippedDefinition = data => ITEMS[data.equipment?.weapon?.definiti
 export function equipmentBlocked(combat){return combat.game.activity?.busy||!combat.character.isAlive||combat.game.inCombat===true||combat.abilities?.busy||combat.abilities?.projectiles.items.length>0||['attacking','chasing','dead'].includes(combat.state)||combat.playerCycle.phase!=='idle'||combat.enemies.some(e=>['alert','chasing','attacking'].includes(e.state));}
 
 export class Inventory {
-  constructor(character){this.character=character;}
+  constructor(character,{maxWeightGrams=null}={}){this.character=character;this.maxWeightGrams=maxWeightGrams;}
   get data(){return this.character.data;}
   owns(id){return [...this.data.inventory.slots,...Object.values(this.data.equipment)].some(item=>item?.definitionId===id);}
-  canAcquire(id){const def=ITEMS[id];return !!def&&(!def.unique||!this.owns(id))&&(this.data.inventory.slots.includes(null)||def.stackable&&this.data.inventory.slots.some(i=>i?.definitionId===id&&i.quantity<def.maxStack));}
-  acquire(id,metadata={}){const definition=Object.hasOwn(ITEMS,id)?ITEMS[id]:null;if(!definition)throw Error('Item inválido.');if(definition.unique&&this.owns(id))throw Error('Já possuído');const inventory=this.data.inventory;const stack=definition.stackable&&inventory.slots.find(i=>i?.definitionId===id&&i.quantity<definition.maxStack);if(stack){stack.quantity++;return stack;}const index=inventory.slots.indexOf(null);if(index<0)throw Error('Inventário cheio.');if(!Number.isSafeInteger(inventory.nextId)||inventory.nextId>=Number.MAX_SAFE_INTEGER)throw Error('Limite de identificadores de itens.');if(id==='expeditionChest'&&(!Number.isSafeInteger(metadata.rewardSeed)||metadata.rewardSeed<0||metadata.rewardSeed>4294967295))throw Error('Seed de baú inválida.');const item={...(id==='expeditionChest'?{rewardSeed:metadata.rewardSeed}:{}),instanceId:'item-'+inventory.nextId++,definitionId:id,quantity:1};inventory.slots[index]=item;return item;}
+  acquisitionError(id){const def=Object.hasOwn(ITEMS,id)?ITEMS[id]:null;if(!def)return 'Item inválido.';if(def.unique&&this.owns(id))return 'Já possuído';if(!this.data.inventory.slots.includes(null)&&!(def.stackable&&this.data.inventory.slots.some(i=>i?.definitionId===id&&i.quantity<def.maxStack)))return 'Inventário cheio.';const load=carryOf(this.data);if(load.totalGrams+def.weightGrams>(this.maxWeightGrams??load.effectiveGrams))return CARRY_LIMIT_MESSAGE;return ''; }
+  canAcquire(id){return !this.acquisitionError(id);}
+
+  acquire(id,metadata={}){const error=this.acquisitionError(id);if(error)throw Error(error);const definition=Object.hasOwn(ITEMS,id)?ITEMS[id]:null;if(!definition)throw Error('Item inválido.');if(definition.unique&&this.owns(id))throw Error('Já possuído');const inventory=this.data.inventory;const stack=definition.stackable&&inventory.slots.find(i=>i?.definitionId===id&&i.quantity<definition.maxStack);if(stack){stack.quantity++;invalidateCarry(this.data);return stack;}const index=inventory.slots.indexOf(null);if(index<0)throw Error('Inventário cheio.');if(!Number.isSafeInteger(inventory.nextId)||inventory.nextId>=Number.MAX_SAFE_INTEGER)throw Error('Limite de identificadores de itens.');if(id==='expeditionChest'&&(!Number.isSafeInteger(metadata.rewardSeed)||metadata.rewardSeed<0||metadata.rewardSeed>4294967295))throw Error('Seed de baú inválida.');const item={...(id==='expeditionChest'?{rewardSeed:metadata.rewardSeed}:{}),instanceId:'item-'+inventory.nextId++,definitionId:id,quantity:1};inventory.slots[index]=item;invalidateCarry(this.data);return item;}
   count(id){return this.data.inventory.slots.reduce((n,i)=>n+(i?.definitionId===id?i.quantity:0),0);}
-  removeInstance(instanceId,quantity=1){const slots=this.data.inventory.slots,index=slots.findIndex(i=>i?.instanceId===instanceId),item=slots[index];if(!item||!Number.isSafeInteger(quantity)||quantity<1||quantity>item.quantity)throw Error('Quantidade indisponível.');item.quantity-=quantity;if(!item.quantity)slots[index]=null;}
+  removeInstance(instanceId,quantity=1){const slots=this.data.inventory.slots,index=slots.findIndex(i=>i?.instanceId===instanceId),item=slots[index];if(!item||!Number.isSafeInteger(quantity)||quantity<1||quantity>item.quantity)throw Error('Quantidade indisponível.');item.quantity-=quantity;if(!item.quantity)slots[index]=null;invalidateCarry(this.data);}
   remove(id,quantity){if(!Number.isSafeInteger(quantity)||quantity<1||this.count(id)<quantity)throw Error('Ingredientes insuficientes.');for(const item of [...this.data.inventory.slots]){if(item?.definitionId===id){const amount=Math.min(quantity,item.quantity);this.removeInstance(item.instanceId,amount);quantity-=amount;if(!quantity)break;}}}
   equip(index,slot='weapon',blocked=false){if(blocked)throw Error('Não é possível trocar equipamento durante combate.');if(!EQUIPMENT_SLOTS.includes(slot))throw Error('Slot incompatível.');const item=this.data.inventory.slots[index],definition=ITEMS[item?.definitionId];if(!definition)throw Error('Item inválido.');if(definition.equipSlot!==slot)throw Error('Slot incompatível.');const previous=this.data.equipment[slot];this.data.equipment[slot]=item;this.data.inventory.slots[index]=previous;this.sync();}
   unequip(slot='weapon',blocked=false){if(blocked)throw Error('Não é possível trocar equipamento durante combate.');if(!EQUIPMENT_SLOTS.includes(slot))throw Error('Slot incompatível.');const item=this.data.equipment[slot];if(!item)return false;const index=this.data.inventory.slots.indexOf(null);if(index<0)throw Error('Inventário cheio.');this.data.inventory.slots[index]=item;this.data.equipment[slot]=null;this.sync();return true;}
-  sync(){this.data.equippedWeaponType=equippedDefinition(this.data)?.weaponType??null;this.character.recalculate();}
+  sync(){invalidateCarry(this.data);this.data.equippedWeaponType=equippedDefinition(this.data)?.weaponType??null;this.character.recalculate();}
 }
 
 // Additive migration: old beta saves keep their provisional weapon as a real item.

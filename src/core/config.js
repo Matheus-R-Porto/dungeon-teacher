@@ -7,7 +7,7 @@ export const CONFIG = Object.freeze({
   cameraElevation: Math.atan(1 / Math.sqrt(2)),
   cameraHeight: 23,
   minCameraHeight: 16,
-  maxCameraHeight: 30,
+  maxCameraHeight: 24,
   cameraOrbitSpeed: 1.45,
   cameraDragSensitivity: 0.006,
   cameraZoomResponse: 12,

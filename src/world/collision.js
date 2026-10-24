@@ -1,3 +1,4 @@
+import {touchesWater,crossesWater} from './water-geometry.js';
 import {surfaceId,sameLevel,layerWorld,stepSurface} from './surfaces.js';
 // Playable forest is the union of clearings and trail capsules. Borders are rendered as roots/forest.
 export function insideTerrain(world,x,z,radius=0){
@@ -7,6 +8,7 @@ export function insideTerrain(world,x,z,radius=0){
 export function canStand(world, x, z, radius) {
   if (![x, z, radius].every(Number.isFinite) || radius <= 0) return false;
   if(!insideTerrain(world,x,z,radius))return false;
+  if((world.waterBodies??[]).some(w=>touchesWater(w,{x,z},radius)))return false;
   const b = world.bounds;
   if (x - radius < b.minX || x + radius > b.maxX || z - radius < b.minZ || z + radius > b.maxZ) return false;
   for (const obstacle of world.obstacles) {
@@ -26,6 +28,7 @@ export function canStand(world, x, z, radius) {
 export function clearSegment(world, a, b, radius, endpointsValidated=false) {
   if(world.surfaces){if(!sameLevel(a,b)||surfaceId(a)!==surfaceId(b))return false;world=layerWorld(world,surfaceId(a));}
   if (!endpointsValidated&&(!canStand(world, a.x, a.z, radius) || !canStand(world, b.x, b.z, radius))) return false;
+  if((world.waterBodies??[]).some(w=>crossesWater(w,a,b,radius)))return false;
   const dx = b.x - a.x, dz = b.z - a.z;
   if(world.walkable&&!terrainSegmentClear(world,a,b,radius))return false;
   for (const o of world.obstacles) {

@@ -16,7 +16,7 @@ test('living migration is deterministic, idempotent and preserves original ident
   assert.equal(JSON.stringify(base),before);assert.deepEqual(expandLivingTower(w),w);assert.equal(geographyHash(expandLivingTower(base)),geographyHash(w));
   assert.deepEqual(w.interactables,base.interactables);assert.deepEqual(w.enemySpawns.slice(0,base.enemySpawns.length),base.enemySpawns);assert.deepEqual(w.graph.mainPath,base.graph.mainPath);
   assert.equal(w.enemySpawns.filter(s=>s.enemyType==='wolf').length,2*f-1);
-  assert.ok(w.walkable.length>base.walkable.length);assert.ok(w.livingTower.water.every(p=>p.traversable));
+  assert.ok(w.walkable.length>base.walkable.length);assert.ok(w.livingTower.water.every(p=>p.traversable===false));
   createEnemies(w.enemySpawns,w);
   for(const t of w.trails)for(let i=1;i<t.points.length;i++)assert.ok(findPath(w,t.points[i-1],t.points[i],.85),t.id);
   for(const i of w.interactables)assert.ok(canStand(w,i.x,i.z,.85),i.id);

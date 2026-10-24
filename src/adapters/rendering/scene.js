@@ -1,3 +1,5 @@
+import {followsPlayer} from './cave-visibility.js';
+import {buildCastle} from './castle.js';
 import {getGraphics} from '../../ui/graphics-settings.js';
 import {buildGuardianHall} from './guardian.js';
 import {equippedDefinition} from '../../domain/items/inventory.js';
@@ -48,8 +50,8 @@ export class SceneView {
   }
   *buildSteps(){
     const world=this.world;
-    if(world.environment==='guardian'){}else if(world.environment==='city'){buildCity(this);yield 'city';}else if(['forest','biome'].includes(world.environment)){yield* buildForestSteps(this);}else if(world.environment==='dungeon'){this.buildDungeon();yield 'dungeon';}else {this.buildGround();yield 'ground';this.buildEnvironment();yield 'environment';this.buildLife();yield 'life';}
-    buildGuardianHall(this);yield 'guardian';if(!world.arena)this.buildPortal();yield 'portal';this.buildNpcs();yield 'npcs';this.buildPlayer();yield 'player-animation';this.buildParticles();yield 'particles';
+    if(world.environment==='guardian'||world.environment==='castle'){}else if(world.environment==='city'){buildCity(this);yield 'city';}else if(['forest','biome'].includes(world.environment)){yield* buildForestSteps(this);}else if(world.environment==='dungeon'){this.buildDungeon();yield 'dungeon';}else {this.buildGround();yield 'ground';this.buildEnvironment();yield 'environment';this.buildLife();yield 'life';}
+    buildCastle(this);yield 'castle';buildGuardianHall(this);yield 'guardian';if(!world.arena)this.buildPortal();yield 'portal';this.buildNpcs();yield 'npcs';this.buildPlayer();yield 'player-animation';this.buildParticles();yield 'particles';
     this.fishingVisual=new FishingVisual(this);this.registerStructureOcclusion();
     this.interactionRing = this.mesh(new THREE.RingGeometry(0.8, 0.86, 48), new THREE.MeshBasicMaterial({ color: 0xffdf88, transparent: true, opacity: 0.8, depthWrite: false }), this.scene, 0, 0.25, 0);
     this.interactionRing.rotation.x = -Math.PI / 2; this.interactionRing.visible = false; this.interactionRing.castShadow = false;
@@ -57,6 +59,10 @@ export class SceneView {
     this.destination.rotation.x = -Math.PI / 2; this.destination.visible = false;
     this.pathLine = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: 0xd6c18a, transparent: true, opacity: 0.36, dashSize: 0.14, gapSize: 0.2 }));
     this.scene.add(this.pathLine);
+    // Include late-built portal lights before preparation. Changing the light
+    // count at the cave threshold would compile new programs during movement.
+    if(world.awakening?.cave)this.scene.traverse(o=>{if(o.isLight)o.layers.enableAll();});
+    if(world.awakening?.cave)for(const o of [this.actor.sprite,this.actor.shadow,this.selection,this.destination,this.pathLine,this.interactionRing])if(o)followsPlayer(o);
     this.resize();yield 'camera';
   }
   activate(){this.renderer.render=this.renderer.baseRender;getGraphics()?.bind(this);}
@@ -280,9 +286,10 @@ export class SceneView {
   }
   pick(clientX, clientY) {
     const rect = this.canvas.getBoundingClientRect();
-    this.raycaster.setFromCamera(new THREE.Vector2((clientX - rect.left) / rect.width * 2 - 1, -(clientY - rect.top) / rect.height * 2 + 1), this.camera);
-    const hit=this.raycaster.intersectObjects(this.walkableMeshes??[],false).find(h=>h.object.visible&&(h.object.userData.surface?.endsWith('-stairs')||h.object.material.opacity>.5));
+    this.raycaster.layers.mask=this.camera.layers.mask;this.raycaster.setFromCamera(new THREE.Vector2((clientX - rect.left) / rect.width * 2 - 1, -(clientY - rect.top) / rect.height * 2 + 1), this.camera);
+    const hit=this.raycaster.intersectObjects(this.walkableMeshes??[],false).find(h=>h.object.visible&&h.object.layers.test(this.camera.layers)&&(h.object.userData.surface?.endsWith('-stairs')||h.object.material.opacity>.5));
     if(hit)return {x:hit.point.x,z:hit.point.z,y:hit.point.y,surface:hit.object.userData.surface};
+    if(this.world.awakening?.cave&&!this.camera.layers.isEnabled(0))return null;
     const point = this.raycaster.ray.intersectPlane(this.floorPlane, new THREE.Vector3());
     return point ? { x: point.x, z: point.z, y:0, surface:'ground' } : null;
   }
@@ -291,7 +298,7 @@ export class SceneView {
     return { x: (point.x * 0.5 + 0.5) * (this.viewportWidth??this.canvas.clientWidth), y: (-point.y * 0.5 + 0.5) * (this.viewportHeight??this.canvas.clientHeight), visible: Math.abs(point.x) < 0.92 && Math.abs(point.y) < 0.92 && point.z < 1 };
   }
   update(game, alpha, dt, reducedMotion = false) {
-    const time = game.elapsed;this.updateBiomeAtmosphere?.(game.player.z);this.updateAwakened?.(game.player);
+    const time = game.elapsed;this.updateBiomeAtmosphere?.(game.player.z);this.updateAwakened?.(game.player,dt);
     const x = THREE.MathUtils.lerp(game.previous.x, game.player.x, alpha), z = THREE.MathUtils.lerp(game.previous.z, game.player.z, alpha);
     const y=THREE.MathUtils.lerp(game.previous.y??0,game.player.y??0,alpha);
     this.selection.position.set(x, y+0.06, z);
@@ -332,9 +339,9 @@ export class SceneView {
       for (const mat of o.materials) { mat.opacity = THREE.MathUtils.lerp(mat.opacity, obscured ? 0.2 : 1, 1 - Math.exp(-dt * 8)); mat.depthWrite = mat.opacity > 0.8; }
     }
     const selected = game.interactionTarget;
-    this.interactionRing.visible = !!selected && !game.paused;
+    this.interactionRing.visible = !!selected && selected.action!=='fishing' && !game.paused;
     if (selected) { this.interactionRing.position.set(selected.x, selected.highlightHeight ?? 0.06, selected.z); this.interactionRing.scale.setScalar((selected.highlightRadius ?? 0.6) / 0.83); }
-    updateCityAmbient(this,time,reducedMotion);this.updateLivingForest?.(time,game.player,reducedMotion);
+    updateCityAmbient(this,time,reducedMotion);if(!this.caveUnder)this.updateLivingForest?.(time,game.player,reducedMotion);
     this.flags.forEach((flag,i) => { flag.rotation.y = reducedMotion ? 0 : Math.sin(time*1.8+i)*0.08; });
     if (this.water) this.water.material.emissiveIntensity = 0.3 + (reducedMotion ? 0 : Math.sin(time*1.5)*0.08);
     for(const entry of this.forestGates??[])entry.group.visible=!entry.gate.open;this.updateMineralVeins?.(time);

@@ -17,3 +17,8 @@ screenshots/iteration21/
 screenshots/iteration211/
 screenshots/iteration212/
 screenshots/iteration22/
+
+# Art generation intermediates (source candidates, preview comparisons).
+# Final integrated sprites live in public/assets/, same split as the
+# arauto-do-sol repo's assets/work/.
+docs/art/

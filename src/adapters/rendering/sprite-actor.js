@@ -15,13 +15,13 @@ export class SpriteActor {
  }
  atlas(name,columns,rows,version='v043'){
   const key=name+'-'+version;if(name==='bow-transition'||name==='staff-transition'){columns=3;rows=8;}
-  if(!this.textures.has(key)){const t=artTexture('/assets/characters/'+key+'.png',columns,rows);t.userData.cell=['fishing','staff-transition','sword-action'].includes(name)?512:version==='v042'?256:320;this.textures.set(key,t);}return this.textures.get(key);
+  if(!this.textures.has(key)){const t=artTexture('/assets/characters/'+key+'.png',columns,rows);t.userData.cell=['fishing','fishing-reel','staff-transition','sword-action'].includes(name)?512:version==='v042'?256:320;this.textures.set(key,t);}return this.textures.get(key);
  }
  update(input,azimuth,time,reducedMotion,camera){
   const {x,z,y=0,heading,moving,phase,hp,weaponType}=input,v=this.visual.update(input,time);
   this.facing=resolveFacing(heading,azimuth,this.facing?.direction);this.facing.animationState=v.state;
   const direction=Math.round(this.facing.direction/2)%4;
-  if(input.activity){this.atlas('fishing',5,4);this.atlas('mining',5,4);}
+  if(input.activity){this.atlas('fishing',5,4);this.atlas('fishing-reel',2,2,'v064');this.atlas('mining',5,4);}
   if(phase!==this.lastPhase){this.phaseAt=time;this.lastPhase=phase;}
   let texture=this.baseTexture,frame=moving?1+v.walkFrame:0,row=direction,scale=1,anchor=.1;
   if(families.has(weaponType)){
@@ -39,6 +39,7 @@ export class SpriteActor {
   if(v.state==='hurt'&&v.blend>=1&&families.has(weaponType)){texture=this.atlas(weaponType+'-action',3,4);frame=2;row=direction;}
   const activity=this.activity.update(input.activity,time);this.currentActivity=activity;
   if(activity&&v.state!=='hurt'&&hp!==0){texture=this.atlas(activity.type,5,4);frame=activity.frame;row=direction;scale=activity.type==='fishing'?1.6:1;anchor=.1;}
+  if(activity?.type==='fishing'&&activity.frame===5&&v.state!=='hurt'&&hp!==0){texture=this.atlas('fishing-reel',2,2,'v064');frame=direction%2;row=Math.floor(direction/2);}
   if(hp===0){texture=this.atlas('adventurer-death',8,4,'v042');frame=7;row=direction;scale=.8;anchor=22/256;}
   this.sprite.position.set(x,y+.055,z);this.shadow.position.set(x,y+.035,z);
   // Keep the last complete pose while a newly requested atlas decodes.

@@ -1,0 +1,332 @@
+{
+  "at": "2026-10-24T05:23:53.357Z",
+  "checks": [
+    "32 real empty slots",
+    "full inventory",
+    "UI equip conserves all instances",
+    "full bag refuses unequip",
+    "UI unequip returns exact item",
+    "tooltip and stack count",
+    "arrow navigation",
+    "broken image fallback",
+    "inventory blocks tree and map shortcuts",
+    "hotbar preserved",
+    "responsive 800",
+    "responsive 480",
+    "20 open/close cycles stable DOM",
+    "Safety transition closes inventory",
+    "Safety hostile impact closes inventory",
+    "dialogue blocks inventory shortcut",
+    "temporary save survives reload",
+    "online shared icons and server-owned chest action preserved",
+    "Real Electron process restart preserves inventory, equipment and PNG loading"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-empty.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-full.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\rendering-auto.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\rendering-pixelated.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-weapons-and-consumables.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-comparison.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-equipment.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-tooltip.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-800x600.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-480x720.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-sprites281b-restart-1792819433356\\inventory-after-process-restart.png"
+  ],
+  "errors": [],
+  "inventoryPerf": {
+    "draws": 421,
+    "triangles": 41652,
+    "textures": 13,
+    "geometries": 245,
+    "heap": 26185419,
+    "nodes": 717,
+    "metrics": {
+      "n": 43,
+      "seconds": 0.8675999999999995,
+      "mean": 20.1767441860465,
+      "fps": 49.562010142923036,
+      "medianFPS": 59.52380952380888,
+      "p50": 16.800000000000182,
+      "p95": 25.300000000000182,
+      "p99": 41.5,
+      "p999": null,
+      "low1": null,
+      "low01": null,
+      "max": 41.5,
+      "thresholds": {
+        "50": {
+          "count": 0,
+          "perMinute": 0,
+          "ratio": 0
+        },
+        "100": {
+          "count": 0,
+          "perMinute": 0,
+          "ratio": 0
+        },
+        "150": {
+          "count": 0,
+          "perMinute": 0,
+          "ratio": 0
+        },
+        "200": {
+          "count": 0,
+          "perMinute": 0,
+          "ratio": 0
+        },
+        "16.67": {
+          "count": 30,
+          "perMinute": 2074.6887966804993,
+          "ratio": 0.6976744186046512
+        },
+        "33.33": {
+          "count": 1,
+          "perMinute": 69.1562932226833,
+          "ratio": 0.023255813953488372
+        }
+      }
+    }
+  },
+  "openDurations": [
+    135.2497000000003,
+    107.72780000000057,
+    115.15099999999802,
+    104.8708000000006,
+    113.32649999999921,
+    130.91059999999925,
+    102.3150999999998,
+    131.96659999999974,
+    117.82779999999912,
+    105.10009999999966
+  ],
+  "resourceBytes": [],
+  "iconLoads": [
+    {
+      "src": "/assets/items/inventory-v281/fishingRod.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/simplePickaxe.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/rawOre.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/limiarMinnow.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/fireflyCarp.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/mossCatfish.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/moonFish.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/runeFish.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/salt.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/flour.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/herbs.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/oil.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/water.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/roastMinnow.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/limiarStew.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/goldenCarp.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/lunarSoup.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/runicDish.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/herbCatfish.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/expeditionChest.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/travelerCap.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/travelerVest.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/travelerBoots.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/focusRing.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/apprenticeHood.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/lightVest.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/agileBoots.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/strengthRing.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/trainingSword.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/trainingDagger.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/trainingBow.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/trainingStaff.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedSwordFailure.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedSwordGood.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedSwordPerfect.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedDaggerFailure.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedDaggerGood.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedDaggerPerfect.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedBowFailure.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedBowGood.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedBowPerfect.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedStaffFailure.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedStaffGood.png",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "src": "/assets/items/inventory-v281/forgedStaffPerfect.png",
+      "width": 128,
+      "height": 128
+    }
+  ],
+  "alpha": 0,
+  "heapBeforeCycles": 28058355,
+  "heapAfterCycles": 31230191,
+  "ok": true
+}

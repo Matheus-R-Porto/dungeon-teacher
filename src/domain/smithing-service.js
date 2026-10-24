@@ -22,10 +22,10 @@ export class SmithingService {
   material(recipe){return recipe.materials.map(m=>({...m,name:ITEMS[m.itemId].name,have:new Inventory(this.character).count(m.itemId)}));}
   // The whole effect of an attempt on a copy of the character; throws before anything real changes.
   prepare(c,recipe,quality,grades=[]){
-    const inv=new Inventory(c);
+    const inv=new Inventory(c,{maxWeightGrams:Math.max(c.carry.totalGrams,c.carry.effectiveGrams)});
     for(const m of recipe.materials)if(inv.count(m.itemId)<m.quantity)throw Error('Faltam materiais: '+ITEMS[m.itemId].name+' ('+inv.count(m.itemId)+' de '+m.quantity+').');
     for(const m of recipe.materials)inv.remove(m.itemId,m.quantity);
-    if(!inv.canAcquire(recipe.outputs[quality]))throw Error('Mochila cheia: libere um espaço para receber a arma.');
+    const error=inv.acquisitionError(recipe.outputs[quality]);if(error)throw Error(error==='Inventário cheio.'?'Mochila cheia: libere um espaço para receber a arma.':error);
     const item=inv.acquire(recipe.outputs[quality]);
     const xp=recipe.xp[quality],levels=gainLifeXP(c.data,'smithing',xp);
     const previous=practiceOf(c.data,recipe.id);if(previous+1>this.config.maxPractice)throw Error('Limite de prática da receita atingido.');

@@ -1,0 +1,9 @@
+import {canStand} from '../src/world/collision.js';
+import {layerWorld} from '../src/world/surfaces.js';
+export async function waterMapCase({a,wait,until,capture,report}){
+ const url=new URL(await a.evaluate('location.href'));url.search='?test=1&diagnostic=1';await a.send('Page.navigate',{url:url.href});await until(()=>a.evaluate('!!window.__dmInspection'),30000);
+ await a.evaluate('window.__dmInspection.session.seedOverride=42;window.__dmInspection.session.startRun();window.__dmInspection.session.enter("tower-floor-2")');await until(()=>a.evaluate('window.__dmInspection.view.world===window.__dmInspection.session.area'),40000);const w=await a.evaluate('window.__dmInspection.session.area'),water=w.waterBodies.find(b=>b.surface==='ground'),layer=layerWorld(w,'ground');if(!water)throw Error('No existing water fixture');let bank;
+ for(const vertex of water.vertices){const dx=vertex.x-water.x,dz=vertex.z-water.z,d=Math.hypot(dx,dz),p={x:vertex.x+dx/d,z:vertex.z+dz/d,y:0,surface:'ground'};if(canStand(layer,p.x,p.z,.32)){bank=p;break;}}if(!bank)throw Error('No valid bank');
+ await a.evaluate(`window.__dmInspection.session.combat.cancel();Object.assign(window.__dmInspection.session.game.player,${JSON.stringify(bank)});window.__dmInspection.session.game.previous={...window.__dmInspection.session.game.player}`);await wait(350);await capture(a,'map-water-bank-hud');await a.evaluate('window.__dmInspection.navigation.open()');await wait(150);await capture(a,'map-water-bank-expanded');
+ const stats=await a.evaluate('(()=>{const e=window.__dmInspection.exploration;return {water:[...e.visible].filter(i=>e.type(i)===3).length,known:e.bits.filter(Boolean).length}})()');if(!stats.water)throw Error('Water boundary missing from visible map');report.checks.push('real floor 2 shoreline rendered from shared water polygon; discovered water boundary visible; far bank stays fogged');report.water=stats;
+}

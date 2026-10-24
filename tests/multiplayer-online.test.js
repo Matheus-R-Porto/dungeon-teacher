@@ -20,6 +20,8 @@ test('complete online loop: party, chat, cooperative XP level-up, manual loot, t
  }
  assert.ok(p.character.data.level>=2);assert.ok(p.character.data.attributePoints>0);assert.ok(p.character.data.inventory.slots[0].quantity>=1);Object.assign(p.game.player,w.map.spawn);await wait(5100);a.command({kind:'allocate',attribute:'str'});await until(()=>p.character.data.attributes.str===6);
  for(const [c,person]of[[a,p],[b,q]]){Object.assign(person.game.player,w.map.portal);c.command({kind:'travel',portal:'return-portal'});}await until(()=>a.snapshot?.mapId==='shared-floor-2'&&b.snapshot?.mapId==='shared-floor-2');
+ // Prepare the next passage through authoritative impacts; kills are permanent.
+ const second=h.online.world(q.mapId);for(const e of second.enemies.slice(0,4)){Object.assign(q.game.player,{x:e.x,z:e.z});second.impact(q.id,e.id,{physicalAttack:100000,accuracy:100,criticalChance:0},e.stats,d=>e.damage(d));}
  // A global message also crosses floor boundaries.
  Object.assign(q.game.player,h.online.world(q.mapId).map.portal);b.command({kind:'travel',portal:'return-portal'});await until(()=>b.snapshot?.mapId==='shared-floor-3');await wait(1100);a.command({kind:'chat',channel:'global',text:'Outro andar'});await until(()=>chat[1].some(m=>m.text==='Outro andar'));
  a.disconnect();b.disconnect();await until(()=>!p.ws&&!q.ws);const saved=[h.online.db.read(p.id),h.online.db.read(q.id)],ids=[a.id,b.id],port=h.port;await h.close();h=null;h=await startHub({...options,port});a.connect();b.connect();await until(()=>a.snapshot?.profile&&b.snapshot?.profile);assert.deepEqual([a.id,b.id],ids);

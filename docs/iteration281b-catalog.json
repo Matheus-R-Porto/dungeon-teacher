@@ -1,0 +1,977 @@
+[
+  {
+    "id": "fishingRod",
+    "name": "Vara de Pesca",
+    "icon": "♧",
+    "type": "tool",
+    "stats": {},
+    "unique": true,
+    "stackable": false,
+    "maxStack": 1,
+    "description": "Leve na mochila para pescar. Não substitui sua arma."
+  },
+  {
+    "id": "simplePickaxe",
+    "name": "Picareta Simples",
+    "icon": "⛏",
+    "type": "tool",
+    "stats": {},
+    "unique": true,
+    "stackable": false,
+    "maxStack": 1,
+    "price": 30,
+    "description": "Leve na mochila para minerar veios nas cavernas da Torre. Não substitui sua arma e não se desgasta."
+  },
+  {
+    "id": "rawOre",
+    "name": "Minério Bruto",
+    "icon": "◆",
+    "type": "resource",
+    "stats": {},
+    "unique": false,
+    "stackable": true,
+    "maxStack": 99,
+    "description": "Um fragmento mineral extraído das cavernas da Torre. Poderá ser utilizado futuramente em trabalhos de forja."
+  },
+  {
+    "id": "limiarMinnow",
+    "name": "Lambari do Limiar",
+    "description": "Pequeno peixe prateado das águas da Torre. Coma cru, venda ou use em receitas.",
+    "icon": "≈",
+    "type": "resource",
+    "tags": [
+      "fish",
+      "ingredient"
+    ],
+    "stats": {},
+    "unique": false,
+    "stackable": true,
+    "maxStack": 99,
+    "tradeable": true,
+    "baseSellValue": 4,
+    "consume": {
+      "hp": 15,
+      "mp": 0,
+      "category": "food"
+    }
+  },
+  {
+    "id": "fireflyCarp",
+    "name": "Carpa dos Vaga-lumes",
+    "description": "Suas escamas refletem os brilhos da margem. Coma cru, venda ou use em receitas.",
+    "icon": "≈",
+    "type": "resource",
+    "tags": [
+      "fish",
+      "ingredient"
+    ],
+    "stats": {},
+    "unique": false,
+    "stackable": true,
+    "maxStack": 99,
+    "tradeable": true,
+    "baseSellValue": 7,
+    "consume": {
+      "hp": 25,
+      "mp": 0,
+      "category": "food"
+    }
+  },
+  {
+    "id": "mossCatfish",
+    "name": "Bagre Musgoso",
+    "description": "Vive junto às raízes submersas. Coma cru, venda ou use em receitas.",
+    "icon": "≈",
+    "type": "resource",
+    "tags": [
+      "fish",
+      "ingredient"
+    ],
+    "stats": {},
+    "unique": false,
+    "stackable": true,
+    "maxStack": 99,
+    "tradeable": true,
+    "baseSellValue": 10,
+    "consume": {
+      "hp": 35,
+      "mp": 0,
+      "category": "food"
+    }
+  },
+  {
+    "id": "moonFish",
+    "name": "Peixe-Lua",
+    "description": "Um brilho pálido acompanha suas nadadeiras. Coma cru, venda ou use em receitas.",
+    "icon": "≈",
+    "type": "resource",
+    "tags": [
+      "fish",
+      "ingredient"
+    ],
+    "stats": {},
+    "unique": false,
+    "stackable": true,
+    "maxStack": 99,
+    "tradeable": true,
+    "baseSellValue": 12,
+    "consume": {
+      "hp": 0,
+      "mp": 20,
+      "category": "food"
+    }
+  },
+  {
+    "id": "runeFish",
+    "name": "Peixe Rúnico",
+    "description": "Marcas luminosas percorrem suas escamas. Coma cru, venda ou use em receitas.",
+    "icon": "≈",
+    "type": "resource",
+    "tags": [
+      "fish",
+      "ingredient"
+    ],
+    "stats": {},
+    "unique": false,
+    "stackable": true,
+    "maxStack": 99,
+    "tradeable": true,
+    "baseSellValue": 18,
+    "consume": {
+      "hp": 25,
+      "mp": 20,
+      "category": "food"
+    }
+  },
+  {
+    "id": "salt",
+    "name": "Sal",
+    "description": "Ingrediente básico vendido pela Cozinheira.",
+    "type": "resource",
+    "icon": "♧",
+    "stats": {},
+    "tags": [
+      "ingredient"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "npcBuyValue": 2,
+    "baseSellValue": 1
+  },
+  {
+    "id": "flour",
+    "name": "Farinha",
+    "description": "Ingrediente básico vendido pela Cozinheira.",
+    "type": "resource",
+    "icon": "♧",
+    "stats": {},
+    "tags": [
+      "ingredient"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "npcBuyValue": 3,
+    "baseSellValue": 1
+  },
+  {
+    "id": "herbs",
+    "name": "Ervas",
+    "description": "Ingrediente básico vendido pela Cozinheira.",
+    "type": "resource",
+    "icon": "♧",
+    "stats": {},
+    "tags": [
+      "ingredient"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "npcBuyValue": 4,
+    "baseSellValue": 2
+  },
+  {
+    "id": "oil",
+    "name": "Óleo",
+    "description": "Ingrediente básico vendido pela Cozinheira.",
+    "type": "resource",
+    "icon": "♧",
+    "stats": {},
+    "tags": [
+      "ingredient"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "npcBuyValue": 4,
+    "baseSellValue": 2
+  },
+  {
+    "id": "water",
+    "name": "Água",
+    "description": "Ingrediente básico vendido pela Cozinheira.",
+    "type": "resource",
+    "icon": "♧",
+    "stats": {},
+    "tags": [
+      "ingredient"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "npcBuyValue": 1,
+    "baseSellValue": 0
+  },
+  {
+    "id": "roastMinnow",
+    "name": "Lambari Assado",
+    "description": "Prato preparado no Refúgio. Coma para se recuperar ou venda à Cozinheira.",
+    "type": "consumable",
+    "icon": "♨",
+    "stats": {},
+    "tags": [
+      "consumable",
+      "food",
+      "cooked"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "baseSellValue": 6,
+    "consume": {
+      "hp": 45,
+      "mp": 0,
+      "buff": null,
+      "category": "food"
+    }
+  },
+  {
+    "id": "limiarStew",
+    "name": "Ensopado do Limiar",
+    "description": "Prato preparado no Refúgio. Coma para se recuperar ou venda à Cozinheira.",
+    "type": "consumable",
+    "icon": "♨",
+    "stats": {},
+    "tags": [
+      "consumable",
+      "food",
+      "cooked"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "baseSellValue": 19,
+    "consume": {
+      "hp": 100,
+      "mp": 0,
+      "buff": "hearty",
+      "category": "food"
+    }
+  },
+  {
+    "id": "goldenCarp",
+    "name": "Carpa Dourada",
+    "description": "Prato preparado no Refúgio. Coma para se recuperar ou venda à Cozinheira.",
+    "type": "consumable",
+    "icon": "♨",
+    "stats": {},
+    "tags": [
+      "consumable",
+      "food",
+      "cooked"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "baseSellValue": 14,
+    "consume": {
+      "hp": 65,
+      "mp": 0,
+      "buff": "strength",
+      "category": "food"
+    }
+  },
+  {
+    "id": "lunarSoup",
+    "name": "Sopa Lunar",
+    "description": "Prato preparado no Refúgio. Coma para se recuperar ou venda à Cozinheira.",
+    "type": "consumable",
+    "icon": "♨",
+    "stats": {},
+    "tags": [
+      "consumable",
+      "food",
+      "cooked"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "baseSellValue": 17,
+    "consume": {
+      "hp": 0,
+      "mp": 60,
+      "buff": "clarity",
+      "category": "food"
+    }
+  },
+  {
+    "id": "runicDish",
+    "name": "Prato Rúnico",
+    "description": "Prato preparado no Refúgio. Coma para se recuperar ou venda à Cozinheira.",
+    "type": "consumable",
+    "icon": "♨",
+    "stats": {},
+    "tags": [
+      "consumable",
+      "food",
+      "cooked"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "baseSellValue": 25,
+    "consume": {
+      "hp": 75,
+      "mp": 50,
+      "buff": "focus",
+      "category": "food"
+    }
+  },
+  {
+    "id": "herbCatfish",
+    "name": "Bagre com Ervas",
+    "description": "Prato preparado no Refúgio. Coma para se recuperar ou venda à Cozinheira.",
+    "type": "consumable",
+    "icon": "♨",
+    "stats": {},
+    "tags": [
+      "consumable",
+      "food",
+      "cooked"
+    ],
+    "stackable": true,
+    "maxStack": 99,
+    "unique": false,
+    "tradeable": true,
+    "baseSellValue": 14,
+    "consume": {
+      "hp": 80,
+      "mp": 0,
+      "buff": null,
+      "category": "food"
+    }
+  },
+  {
+    "id": "expeditionChest",
+    "name": "Baú",
+    "icon": "▣",
+    "type": "chest",
+    "stats": {},
+    "unique": false,
+    "description": "Abra no Refúgio para receber um equipamento e ouro.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "travelerCap",
+    "name": "Capuz do Viajante",
+    "icon": "♜",
+    "equipSlot": "head",
+    "stats": {
+      "physicalDefense": 2
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "travelerVest",
+    "name": "Colete do Viajante",
+    "icon": "◇",
+    "equipSlot": "chest",
+    "stats": {
+      "maxHP": 25
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "travelerBoots",
+    "name": "Botas do Viajante",
+    "icon": "♧",
+    "equipSlot": "boots",
+    "stats": {
+      "physicalDefense": 1,
+      "evasion": 2
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "focusRing",
+    "name": "Anel de Foco",
+    "icon": "○",
+    "equipSlot": "ring",
+    "stats": {
+      "magicAttack": 3,
+      "maxMP": 10
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "apprenticeHood",
+    "name": "Capuz do Aprendiz",
+    "icon": "♜",
+    "equipSlot": "head",
+    "stats": {
+      "maxMP": 18,
+      "magicAttack": 2
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "lightVest",
+    "name": "Colete Leve",
+    "icon": "◇",
+    "equipSlot": "chest",
+    "stats": {
+      "evasion": 5
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "agileBoots",
+    "name": "Botas Ágeis",
+    "icon": "♧",
+    "equipSlot": "boots",
+    "stats": {
+      "attackSpeed": 0.12
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "strengthRing",
+    "name": "Anel de Força",
+    "icon": "○",
+    "equipSlot": "ring",
+    "stats": {
+      "physicalAttack": 4
+    },
+    "type": "equipment",
+    "unique": false,
+    "description": "Equipamento obtido nas expedições.",
+    "stackable": false,
+    "maxStack": 1
+  },
+  {
+    "id": "trainingSword",
+    "name": "Espada de Treino",
+    "weaponType": "sword",
+    "icon": "⚔",
+    "stats": {
+      "physicalAttack": 5
+    },
+    "description": "Golpes físicos próximos, firmes e pesados.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": true,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.45,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "heavy"
+    }
+  },
+  {
+    "id": "trainingDagger",
+    "name": "Adaga de Treino",
+    "weaponType": "dagger",
+    "icon": "Ⅱ",
+    "stats": {
+      "physicalAttack": 3,
+      "attackSpeed": 0.65
+    },
+    "description": "Golpes físicos mais fracos e rápidos, a curtíssima distância.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": true,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.35,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 0.72,
+      "impact": "light"
+    }
+  },
+  {
+    "id": "trainingBow",
+    "name": "Arco de Treino",
+    "weaponType": "bow",
+    "icon": "⇉",
+    "stats": {
+      "physicalAttack": 4
+    },
+    "description": "Flechas físicas que causam dano ao atingir o alvo.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": true,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "light"
+    }
+  },
+  {
+    "id": "trainingStaff",
+    "name": "Cajado de Treino",
+    "weaponType": "staff",
+    "icon": "◉",
+    "stats": {
+      "magicAttack": 6
+    },
+    "description": "Orbes mágicos que atingem à distância e enfrentam defesa mágica.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": true,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "magic",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 8,
+      "power": 1,
+      "impact": "light"
+    }
+  },
+  {
+    "id": "forgedSwordFailure",
+    "name": "Espada Forjada — Inferior",
+    "weaponType": "sword",
+    "icon": "⚔",
+    "stats": {
+      "physicalAttack": 4
+    },
+    "description": "Forjada no Refúgio · qualidade inferior (FALHA). Golpes físicos próximos, firmes e pesados.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.45,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "heavy"
+    },
+    "forged": {
+      "recipeId": "forged-sword",
+      "quality": "FAILURE",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingSword"
+    }
+  },
+  {
+    "id": "forgedSwordGood",
+    "name": "Espada Forjada",
+    "weaponType": "sword",
+    "icon": "⚔",
+    "stats": {
+      "physicalAttack": 6
+    },
+    "description": "Forjada no Refúgio · qualidade normal (BOM). Golpes físicos próximos, firmes e pesados.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.45,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "heavy"
+    },
+    "forged": {
+      "recipeId": "forged-sword",
+      "quality": "GOOD",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingSword"
+    }
+  },
+  {
+    "id": "forgedSwordPerfect",
+    "name": "Espada Forjada — Superior",
+    "weaponType": "sword",
+    "icon": "⚔",
+    "stats": {
+      "physicalAttack": 7
+    },
+    "description": "Forjada no Refúgio · qualidade superior (PERFEITO). Golpes físicos próximos, firmes e pesados.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.45,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "heavy"
+    },
+    "forged": {
+      "recipeId": "forged-sword",
+      "quality": "PERFECT",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingSword"
+    }
+  },
+  {
+    "id": "forgedDaggerFailure",
+    "name": "Adaga Forjada — Inferior",
+    "weaponType": "dagger",
+    "icon": "Ⅱ",
+    "stats": {
+      "physicalAttack": 2,
+      "attackSpeed": 0.65
+    },
+    "description": "Forjada no Refúgio · qualidade inferior (FALHA). Golpes físicos mais fracos e rápidos, a curtíssima distância.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.35,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 0.72,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-dagger",
+      "quality": "FAILURE",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingDagger"
+    }
+  },
+  {
+    "id": "forgedDaggerGood",
+    "name": "Adaga Forjada",
+    "weaponType": "dagger",
+    "icon": "Ⅱ",
+    "stats": {
+      "physicalAttack": 4,
+      "attackSpeed": 0.65
+    },
+    "description": "Forjada no Refúgio · qualidade normal (BOM). Golpes físicos mais fracos e rápidos, a curtíssima distância.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.35,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 0.72,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-dagger",
+      "quality": "GOOD",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingDagger"
+    }
+  },
+  {
+    "id": "forgedDaggerPerfect",
+    "name": "Adaga Forjada — Superior",
+    "weaponType": "dagger",
+    "icon": "Ⅱ",
+    "stats": {
+      "physicalAttack": 5,
+      "attackSpeed": 0.65
+    },
+    "description": "Forjada no Refúgio · qualidade superior (PERFEITO). Golpes físicos mais fracos e rápidos, a curtíssima distância.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 1.35,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "melee",
+      "projectileSpeed": 12,
+      "power": 0.72,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-dagger",
+      "quality": "PERFECT",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingDagger"
+    }
+  },
+  {
+    "id": "forgedBowFailure",
+    "name": "Arco Forjado — Inferior",
+    "weaponType": "bow",
+    "icon": "⇉",
+    "stats": {
+      "physicalAttack": 3
+    },
+    "description": "Forjada no Refúgio · qualidade inferior (FALHA). Flechas físicas que causam dano ao atingir o alvo.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-bow",
+      "quality": "FAILURE",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingBow"
+    }
+  },
+  {
+    "id": "forgedBowGood",
+    "name": "Arco Forjado",
+    "weaponType": "bow",
+    "icon": "⇉",
+    "stats": {
+      "physicalAttack": 5
+    },
+    "description": "Forjada no Refúgio · qualidade normal (BOM). Flechas físicas que causam dano ao atingir o alvo.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-bow",
+      "quality": "GOOD",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingBow"
+    }
+  },
+  {
+    "id": "forgedBowPerfect",
+    "name": "Arco Forjado — Superior",
+    "weaponType": "bow",
+    "icon": "⇉",
+    "stats": {
+      "physicalAttack": 6
+    },
+    "description": "Forjada no Refúgio · qualidade superior (PERFEITO). Flechas físicas que causam dano ao atingir o alvo.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "physical",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 12,
+      "power": 1,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-bow",
+      "quality": "PERFECT",
+      "damageStat": "physicalAttack",
+      "referenceItemId": "trainingBow"
+    }
+  },
+  {
+    "id": "forgedStaffFailure",
+    "name": "Cajado Forjado — Inferior",
+    "weaponType": "staff",
+    "icon": "◉",
+    "stats": {
+      "magicAttack": 5
+    },
+    "description": "Forjada no Refúgio · qualidade inferior (FALHA). Orbes mágicos que atingem à distância e enfrentam defesa mágica.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "magic",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 8,
+      "power": 1,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-staff",
+      "quality": "FAILURE",
+      "damageStat": "magicAttack",
+      "referenceItemId": "trainingStaff"
+    }
+  },
+  {
+    "id": "forgedStaffGood",
+    "name": "Cajado Forjado",
+    "weaponType": "staff",
+    "icon": "◉",
+    "stats": {
+      "magicAttack": 7
+    },
+    "description": "Forjada no Refúgio · qualidade normal (BOM). Orbes mágicos que atingem à distância e enfrentam defesa mágica.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "magic",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 8,
+      "power": 1,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-staff",
+      "quality": "GOOD",
+      "damageStat": "magicAttack",
+      "referenceItemId": "trainingStaff"
+    }
+  },
+  {
+    "id": "forgedStaffPerfect",
+    "name": "Cajado Forjado — Superior",
+    "weaponType": "staff",
+    "icon": "◉",
+    "stats": {
+      "magicAttack": 8
+    },
+    "description": "Forjada no Refúgio · qualidade superior (PERFEITO). Orbes mágicos que atingem à distância e enfrentam defesa mágica.",
+    "type": "weapon",
+    "stackable": false,
+    "maxStack": 1,
+    "equipSlot": "weapon",
+    "unique": false,
+    "price": 0,
+    "basicAttack": {
+      "attackRange": 6,
+      "damageType": "magic",
+      "attackSpeedModifier": 0,
+      "delivery": "projectile",
+      "projectileSpeed": 8,
+      "power": 1,
+      "impact": "light"
+    },
+    "forged": {
+      "recipeId": "forged-staff",
+      "quality": "PERFECT",
+      "damageStat": "magicAttack",
+      "referenceItemId": "trainingStaff"
+    }
+  }
+]

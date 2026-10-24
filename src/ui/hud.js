@@ -17,7 +17,7 @@ export class Hud {
     $('.journey').hidden=false;n['landmark-label'].querySelector('strong').textContent=g.world.safe===false?(g.world.towerLimit?'Portal de retorno':'Portal de subida'):'Portal da Torre';
     $('#npc-label').hidden=true;
     if(this.npcWorld!==g.world){this.npcLabels?.forEach(n=>n.remove());this.npcWorld=g.world;this.npcLabels=(g.world.npcs??[]).map(npc=>{const label=document.createElement('span');label.className='npc-name';label.textContent=npc.name;$('#app').append(label);return label;});}
-    (g.world.npcs??[]).forEach((npc,i)=>{const p=this.view.screenPoint(npc.x,g.world.environment==='city'?3.5:2.4,npc.z),label=this.npcLabels[i];label.hidden=!p.visible||g.paused||Math.hypot(npc.x-g.player.x,npc.z-g.player.z)>5;label.style.left=p.x+'px';label.style.top=p.y+'px';});
+    (g.world.npcs??[]).forEach((npc,i)=>{const p=this.view.screenPoint(npc.x,g.world.environment==='city'?3.5:2.4,npc.z),label=this.npcLabels[i];label.hidden=!p.visible||g.paused||this.view.caveUnder||Math.hypot(npc.x-g.player.x,npc.z-g.player.z)>5;label.style.left=p.x+'px';label.style.top=p.y+'px';});
 
 
     if(this.session){const quest=this.session.quest,description=quest.describe(this.session);$('#quest-current').textContent=description.title;$('#quest-hint').textContent=description.hint;$('#quest-count').textContent=Object.values(quest.state).filter(Boolean).length+' / '+Object.keys(quest.state).length;
@@ -31,7 +31,7 @@ export class Hud {
     if (g.interactionTarget) document.getElementById('interaction-label').textContent = g.interactionTarget.label;
     const point = this.view.screenPoint(g.world.portal.x, 5.2, g.world.portal.z);
     const underHeader = point.y < 145 && Math.abs(point.x - this.view.canvas.clientWidth / 2) < 210;
-    n['landmark-label'].hidden = !point.visible || g.paused || underHeader || Math.hypot(g.player.x-g.world.portal.x,g.player.z-g.world.portal.z)>7;
+    n['landmark-label'].hidden = this.view.caveUnder || !point.visible || g.paused || underHeader || Math.hypot(g.player.x-g.world.portal.x,g.player.z-g.world.portal.z)>7;
     n['landmark-label'].style.left = `${point.x}px`; n['landmark-label'].style.top = `${point.y}px`;
     if (performance.now() > this.toastUntil) n.toast.hidden = true;
     const facing = this.view.actor.facing;
@@ -43,11 +43,10 @@ export class Hud {
       document.getElementById('debug-visual').textContent = facing.visualFacing;
       document.getElementById('debug-animation').textContent = facing.animationState;
     }
-    $('.map-panel').hidden=g.world.safe===false;
-    if(g.world.safe!==false)this.drawMap();
+    if(this.navigation)this.navigation.update();else{$('.map-panel').hidden=g.world.safe===false;if(g.world.safe!==false)this.drawMap();}
     if(!this.trailLabels){this.trailLabels=document.createElement('div');this.trailLabels.id='trail-labels';document.querySelector('#app').append(this.trailLabels);}
     const visible=[];
-    for(const trail of g.world.trails??[])for(const [i,p]of trail.points.flatMap((b,j)=>{if(!j)return [b];const a=trail.points[j-1],count=Math.ceil(Math.hypot(b.x-a.x,b.z-a.z)/7);return Array.from({length:count},(_,k)=>({x:a.x+(b.x-a.x)*(k+1)/count,z:a.z+(b.z-a.z)*(k+1)/count}));}).entries()){if(i===0)continue;const distance=Math.hypot(p.x-g.player.x,p.z-g.player.z);if(distance<6||distance>18)continue;const screen=this.view.screenPoint(p.x,.15,p.z);if(!screen.visible||screen.y<160||screen.y>530||screen.x<305||screen.x>1050)continue;const to=g.world.graph.regions.find(r=>r.id===trail.to);visible.push({id:trail.id+'-'+i,x:screen.x,y:screen.y,text:trail.main?'◆ Trilha dourada':'◇ Desvio · '+to.name});}
+    for(const trail of this.view.caveUnder?[]:g.world.trails??[])for(const [i,p]of trail.points.flatMap((b,j)=>{if(!j)return [b];const a=trail.points[j-1],count=Math.ceil(Math.hypot(b.x-a.x,b.z-a.z)/7);return Array.from({length:count},(_,k)=>({x:a.x+(b.x-a.x)*(k+1)/count,z:a.z+(b.z-a.z)*(k+1)/count}));}).entries()){if(i===0)continue;const distance=Math.hypot(p.x-g.player.x,p.z-g.player.z);if(distance<6||distance>18)continue;const screen=this.view.screenPoint(p.x,.15,p.z);if(!screen.visible||screen.y<160||screen.y>530||screen.x<305||screen.x>1050)continue;const to=g.world.graph.regions.find(r=>r.id===trail.to);visible.push({id:trail.id+'-'+i,x:screen.x,y:screen.y,text:trail.main?'◆ Trilha dourada':'◇ Desvio · '+to.name});}
     const signature=visible.map(p=>p.id).join(',');if(this.trailSignature!==signature){this.trailLabels.replaceChildren(...visible.map(p=>{const label=document.createElement('span');label.dataset.trailLabel=p.id;label.textContent=p.text;label.style.cssText='position:fixed;pointer-events:none;background:#193f32ba;color:#efdfad;padding:4px 7px;font-size:11px;border-radius:8px;transform:translate(-50%,-50%)';return label;}));this.trailSignature=signature;}
     visible.forEach((p,i)=>{const node=this.trailLabels.children[i];node.style.left=p.x+'px';node.style.top=p.y+'px';});this.trailLabels.hidden=g.paused;
 

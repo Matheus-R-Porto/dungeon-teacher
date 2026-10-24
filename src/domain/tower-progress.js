@@ -10,7 +10,8 @@ export function decodeTower(raw){
   if(!Array.isArray(claimed)||claimed.some(id=>!Object.hasOwn(TOWER_REWARDS,id)))throw Error('Recompensa única inválida no save.');
   const unique=[...new Set(claimed)];
   // A reward can only be claimed after its floor was cleared, so a claim lifts a lagging marker.
-  return {highestClearedFloor:Math.max(highest,...unique.map(id=>TOWER_REWARDS[id].floor)),claimedRewards:unique};
+  const kills=raw.kills??{};if(!kills||typeof kills!=='object'||Array.isArray(kills)||Object.entries(kills).some(([k,v])=>!['1','2','3'].includes(k)||!Number.isSafeInteger(v)||v<0||v>1000000))throw Error('Contagem de derrotas inválida.');
+  return {...(Object.keys(kills).length?{kills:{...kills}}:{}),highestClearedFloor:Math.max(highest,...unique.map(id=>TOWER_REWARDS[id].floor)),claimedRewards:unique};
 }
 export const rewardClaimed=(data,id)=>!!data.tower?.claimedRewards.includes(id);
 // Only floors are cleared in order; returns true when the marker advanced.

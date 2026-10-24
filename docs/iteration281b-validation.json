@@ -1,0 +1,298 @@
+[
+  {
+    "directory": "iteration242-sprites281b-after-1792819186871",
+    "ok": true,
+    "errors": [],
+    "checks": [
+      "32 real empty slots",
+      "full inventory",
+      "UI equip conserves all instances",
+      "full bag refuses unequip",
+      "UI unequip returns exact item",
+      "tooltip and stack count",
+      "arrow navigation",
+      "broken image fallback",
+      "inventory blocks tree and map shortcuts",
+      "hotbar preserved",
+      "responsive 800",
+      "responsive 480",
+      "20 open/close cycles stable DOM",
+      "Safety transition closes inventory",
+      "Safety hostile impact closes inventory",
+      "dialogue blocks inventory shortcut",
+      "temporary save survives reload",
+      "online shared icons and server-owned chest action preserved"
+    ],
+    "empty": {
+      "draws": 421,
+      "triangles": 41652,
+      "textures": 13,
+      "geometries": 245,
+      "heap": 34574139,
+      "nodes": 717,
+      "metrics": {
+        "n": 1242,
+        "seconds": 19.88220000000003,
+        "mean": 16.008212560386497,
+        "fps": 62.46793614388741,
+        "medianFPS": 59.880239520962,
+        "p50": 16.69999999999891,
+        "p95": 25,
+        "p99": 25.400000000001455,
+        "p999": null,
+        "low1": 34.77795612627089,
+        "low01": null,
+        "max": 41.5,
+        "thresholds": {
+          "50": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "100": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "150": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "200": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "16.67": {
+            "count": 646,
+            "perMinute": 1949.4824516401577,
+            "ratio": 0.5201288244766505
+          },
+          "33.33": {
+            "count": 2,
+            "perMinute": 6.035549385882841,
+            "ratio": 0.001610305958132045
+          }
+        }
+      }
+    },
+    "heapBeforeCycles": 28510083,
+    "heapAfterCycles": 31220911,
+    "openDurations": [
+      187.04320000000007,
+      139.61629999999423,
+      151.52670000000217,
+      136.76109999999608,
+      113.87510000000475,
+      122.33339999999589,
+      95.92990000000282,
+      108.48240000000078,
+      97.31929999999556,
+      101.28179999999702
+    ],
+    "resourceBytes": []
+  },
+  {
+    "directory": "iteration242-sprites281b-before-1792819008735",
+    "ok": true,
+    "errors": [],
+    "checks": [],
+    "empty": {
+      "draws": 421,
+      "triangles": 41652,
+      "textures": 13,
+      "geometries": 245,
+      "heap": 22944435,
+      "nodes": 717,
+      "metrics": {
+        "n": 1161,
+        "seconds": 19.87359999999994,
+        "mean": 17.117657192075747,
+        "fps": 58.419209403429846,
+        "medianFPS": 59.88023952095548,
+        "p50": 16.700000000000728,
+        "p95": 25.19999999999891,
+        "p99": 25.800000000000182,
+        "p999": null,
+        "low1": 29.218407596785987,
+        "low01": null,
+        "max": 51.099999999999454,
+        "thresholds": {
+          "50": {
+            "count": 1,
+            "perMinute": 3.01908058932454,
+            "ratio": 0.0008613264427217916
+          },
+          "100": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "150": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "200": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "16.67": {
+            "count": 667,
+            "perMinute": 2013.7267530794684,
+            "ratio": 0.5745047372954349
+          },
+          "33.33": {
+            "count": 5,
+            "perMinute": 15.095402946622702,
+            "ratio": 0.004306632213608958
+          }
+        }
+      }
+    }
+  },
+  {
+    "directory": "iteration242-sprites281b-perf-1792819267159",
+    "ok": true,
+    "errors": [],
+    "checks": [
+      "32 real empty slots",
+      "full inventory"
+    ],
+    "empty": {
+      "draws": 421,
+      "triangles": 41652,
+      "textures": 13,
+      "geometries": 245,
+      "heap": 14811111,
+      "nodes": 717,
+      "metrics": {
+        "n": 1318,
+        "seconds": 19.890899999999995,
+        "mean": 15.091729893778448,
+        "fps": 66.26145624381,
+        "medianFPS": 60.24096385541377,
+        "p50": 16.600000000002183,
+        "p95": 24.899999999999636,
+        "p99": 25.299999999999272,
+        "p999": null,
+        "low1": 36.10108303249125,
+        "low01": null,
+        "max": 42.09999999999991,
+        "thresholds": {
+          "50": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "100": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "150": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "200": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "16.67": {
+            "count": 642,
+            "perMinute": 1936.5639563820646,
+            "ratio": 0.48710166919575115
+          },
+          "33.33": {
+            "count": 2,
+            "perMinute": 6.0329095214394535,
+            "ratio": 0.0015174506828528073
+          }
+        }
+      }
+    },
+    "full": {
+      "draws": 421,
+      "triangles": 41652,
+      "textures": 14,
+      "geometries": 245,
+      "metrics": {
+        "n": 2768,
+        "seconds": 40.006799999999934,
+        "mean": 14.453323699421942,
+        "fps": 69.18823799954019,
+        "medianFPS": 60.24096385542697,
+        "p50": 16.599999999998545,
+        "p95": 17.10000000000582,
+        "p99": 25.200000000000728,
+        "p999": null,
+        "low1": 38.131553860817974,
+        "low01": null,
+        "max": 33.30000000000291,
+        "thresholds": {
+          "50": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "100": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "150": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "200": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          },
+          "16.67": {
+            "count": 1186,
+            "perMinute": 1778.697621404364,
+            "ratio": 0.42846820809248554
+          },
+          "33.33": {
+            "count": 0,
+            "perMinute": 0,
+            "ratio": 0
+          }
+        }
+      }
+    },
+    "cycleHeap": [
+      {
+        "heap": 10905264,
+        "nodes": 770
+      },
+      {
+        "heap": 10905312,
+        "nodes": 770
+      },
+      {
+        "heap": 10937332,
+        "nodes": 770
+      }
+    ],
+    "openDurations": [
+      97.22539999999572,
+      90.82700000000477,
+      94.92770000000019,
+      87.55289999999513,
+      91.67320000000473,
+      95.49240000000282,
+      93.90159999999742,
+      81.94799999999668,
+      87.8900000000067,
+      102.01870000000054
+    ],
+    "resourceBytes": []
+  }
+]

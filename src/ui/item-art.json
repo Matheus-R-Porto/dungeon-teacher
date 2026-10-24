@@ -1,0 +1,266 @@
+{
+  "fishingRod": {
+    "inventoryIcon": "/assets/items/inventory-v281/fishingRod.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "simplePickaxe": {
+    "inventoryIcon": "/assets/items/inventory-v281/simplePickaxe.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "rawOre": {
+    "inventoryIcon": "/assets/items/inventory-v281/rawOre.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "limiarMinnow": {
+    "inventoryIcon": "/assets/items/inventory-v281/limiarMinnow.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "fireflyCarp": {
+    "inventoryIcon": "/assets/items/inventory-v281/fireflyCarp.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "mossCatfish": {
+    "inventoryIcon": "/assets/items/inventory-v281/mossCatfish.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "moonFish": {
+    "inventoryIcon": "/assets/items/inventory-v281/moonFish.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "runeFish": {
+    "inventoryIcon": "/assets/items/inventory-v281/runeFish.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "salt": {
+    "inventoryIcon": "/assets/items/inventory-v281/salt.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "flour": {
+    "inventoryIcon": "/assets/items/inventory-v281/flour.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "herbs": {
+    "inventoryIcon": "/assets/items/inventory-v281/herbs.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "oil": {
+    "inventoryIcon": "/assets/items/inventory-v281/oil.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "water": {
+    "inventoryIcon": "/assets/items/inventory-v281/water.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "roastMinnow": {
+    "inventoryIcon": "/assets/items/inventory-v281/roastMinnow.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "limiarStew": {
+    "inventoryIcon": "/assets/items/inventory-v281/limiarStew.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "goldenCarp": {
+    "inventoryIcon": "/assets/items/inventory-v281/goldenCarp.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "lunarSoup": {
+    "inventoryIcon": "/assets/items/inventory-v281/lunarSoup.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "runicDish": {
+    "inventoryIcon": "/assets/items/inventory-v281/runicDish.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "herbCatfish": {
+    "inventoryIcon": "/assets/items/inventory-v281/herbCatfish.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "expeditionChest": {
+    "inventoryIcon": "/assets/items/inventory-v281/expeditionChest.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "travelerCap": {
+    "inventoryIcon": "/assets/items/inventory-v281/travelerCap.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "travelerVest": {
+    "inventoryIcon": "/assets/items/inventory-v281/travelerVest.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "travelerBoots": {
+    "inventoryIcon": "/assets/items/inventory-v281/travelerBoots.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "focusRing": {
+    "inventoryIcon": "/assets/items/inventory-v281/focusRing.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "apprenticeHood": {
+    "inventoryIcon": "/assets/items/inventory-v281/apprenticeHood.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "lightVest": {
+    "inventoryIcon": "/assets/items/inventory-v281/lightVest.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "agileBoots": {
+    "inventoryIcon": "/assets/items/inventory-v281/agileBoots.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "strengthRing": {
+    "inventoryIcon": "/assets/items/inventory-v281/strengthRing.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "trainingSword": {
+    "inventoryIcon": "/assets/items/inventory-v281/trainingSword.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "trainingDagger": {
+    "inventoryIcon": "/assets/items/inventory-v281/trainingDagger.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "trainingBow": {
+    "inventoryIcon": "/assets/items/inventory-v281/trainingBow.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "trainingStaff": {
+    "inventoryIcon": "/assets/items/inventory-v281/trainingStaff.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedSwordFailure": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedSwordFailure.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedSwordGood": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedSwordGood.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedSwordPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedSwordPerfect.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedDaggerFailure": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedDaggerFailure.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedDaggerGood": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedDaggerGood.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedDaggerPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedDaggerPerfect.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedBowFailure": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedBowFailure.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedBowGood": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedBowGood.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedBowPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedBowPerfect.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedStaffFailure": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedStaffFailure.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedStaffGood": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedStaffGood.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "forgedStaffPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v281/forgedStaffPerfect.png",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  }
+}

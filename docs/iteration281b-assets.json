@@ -1,0 +1,662 @@
+[
+  {
+    "id": "limiarMinnow",
+    "source": "docs\\art\\iteration281-sources\\limiarMinnow.png",
+    "sourceSize": [
+      1448,
+      1086
+    ],
+    "bounds": [
+      200,
+      275,
+      1303,
+      817
+    ],
+    "bytes": 11740
+  },
+  {
+    "id": "oil",
+    "source": "docs\\art\\iteration281-sources\\oil.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      271,
+      150,
+      990,
+      1145
+    ],
+    "bytes": 18232
+  },
+  {
+    "id": "trainingBow",
+    "source": "docs\\art\\iteration281-sources\\trainingBow.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      137,
+      27,
+      1210,
+      1230
+    ],
+    "bytes": 8683
+  },
+  {
+    "id": "trainingDagger",
+    "source": "docs\\art\\iteration281-sources\\trainingDagger.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      117,
+      84,
+      1170,
+      1180
+    ],
+    "bytes": 14601
+  },
+  {
+    "id": "trainingStaff",
+    "source": "docs\\art\\iteration281-sources\\trainingStaff.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      122,
+      51,
+      1203,
+      1205
+    ],
+    "bytes": 7509
+  },
+  {
+    "id": "trainingSword",
+    "source": "docs\\art\\iteration281-sources\\trainingSword.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      74,
+      46,
+      1222,
+      1193
+    ],
+    "bytes": 9293
+  },
+  {
+    "id": "travelerVest",
+    "source": "docs\\art\\iteration281-sources\\travelerVest.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      227,
+      153,
+      1078,
+      1163
+    ],
+    "bytes": 22923
+  },
+  {
+    "id": "agileBoots",
+    "source": "docs\\art\\iteration281b-sources\\agileBoots.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      83,
+      251,
+      1173,
+      1057
+    ],
+    "bytes": 18112
+  },
+  {
+    "id": "apprenticeHood",
+    "source": "docs\\art\\iteration281b-sources\\apprenticeHood.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      205,
+      145,
+      1070,
+      1166
+    ],
+    "bytes": 22889
+  },
+  {
+    "id": "expeditionChest",
+    "source": "docs\\art\\iteration281b-sources\\expeditionChest.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      144,
+      229,
+      1128,
+      1153
+    ],
+    "bytes": 27176
+  },
+  {
+    "id": "fireflyCarp",
+    "source": "docs\\art\\iteration281b-sources\\fireflyCarp.png",
+    "sourceSize": [
+      1882,
+      836
+    ],
+    "bounds": [
+      193,
+      46,
+      1733,
+      773
+    ],
+    "bytes": 12160
+  },
+  {
+    "id": "fishingRod",
+    "source": "docs\\art\\iteration281b-sources\\fishingRod.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      86,
+      65,
+      1232,
+      1195
+    ],
+    "bytes": 10822
+  },
+  {
+    "id": "flour",
+    "source": "docs\\art\\iteration281b-sources\\flour.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      90,
+      106,
+      1195,
+      1194
+    ],
+    "bytes": 26397
+  },
+  {
+    "id": "focusRing",
+    "source": "docs\\art\\iteration281b-sources\\focusRing.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      247,
+      313,
+      1020,
+      967
+    ],
+    "bytes": 17164
+  },
+  {
+    "id": "forgedBowFailure",
+    "source": "docs\\art\\iteration281b-sources\\forgedBowFailure.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      188,
+      72,
+      1178,
+      1182
+    ],
+    "bytes": 9093
+  },
+  {
+    "id": "forgedBowGood",
+    "source": "docs\\art\\iteration281b-sources\\forgedBowGood.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      123,
+      39,
+      1211,
+      1182
+    ],
+    "bytes": 8153
+  },
+  {
+    "id": "forgedBowPerfect",
+    "source": "docs\\art\\iteration281b-sources\\forgedBowPerfect.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      213,
+      47,
+      1194,
+      1198
+    ],
+    "bytes": 7896
+  },
+  {
+    "id": "forgedDaggerFailure",
+    "source": "docs\\art\\iteration281b-sources\\forgedDaggerFailure.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      180,
+      101,
+      1160,
+      1155
+    ],
+    "bytes": 13041
+  },
+  {
+    "id": "forgedDaggerGood",
+    "source": "docs\\art\\iteration281b-sources\\forgedDaggerGood.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      173,
+      152,
+      1144,
+      1113
+    ],
+    "bytes": 13867
+  },
+  {
+    "id": "forgedDaggerPerfect",
+    "source": "docs\\art\\iteration281b-sources\\forgedDaggerPerfect.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      184,
+      112,
+      1173,
+      1138
+    ],
+    "bytes": 12865
+  },
+  {
+    "id": "forgedStaffFailure",
+    "source": "docs\\art\\iteration281b-sources\\forgedStaffFailure.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      180,
+      49,
+      1174,
+      1186
+    ],
+    "bytes": 7205
+  },
+  {
+    "id": "forgedStaffGood",
+    "source": "docs\\art\\iteration281b-sources\\forgedStaffGood.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      112,
+      68,
+      1214,
+      1183
+    ],
+    "bytes": 7791
+  },
+  {
+    "id": "forgedStaffPerfect",
+    "source": "docs\\art\\iteration281b-sources\\forgedStaffPerfect.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      204,
+      60,
+      1211,
+      1188
+    ],
+    "bytes": 7007
+  },
+  {
+    "id": "forgedSwordFailure",
+    "source": "docs\\art\\iteration281b-sources\\forgedSwordFailure.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      120,
+      79,
+      1190,
+      1176
+    ],
+    "bytes": 10151
+  },
+  {
+    "id": "forgedSwordGood",
+    "source": "docs\\art\\iteration281b-sources\\forgedSwordGood.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      73,
+      80,
+      1189,
+      1186
+    ],
+    "bytes": 9381
+  },
+  {
+    "id": "forgedSwordPerfect",
+    "source": "docs\\art\\iteration281b-sources\\forgedSwordPerfect.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      59,
+      71,
+      1203,
+      1205
+    ],
+    "bytes": 9483
+  },
+  {
+    "id": "goldenCarp",
+    "source": "docs\\art\\iteration281b-sources\\goldenCarp.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      25,
+      213,
+      1243,
+      1039
+    ],
+    "bytes": 17189
+  },
+  {
+    "id": "herbCatfish",
+    "source": "docs\\art\\iteration281b-sources\\herbCatfish.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      41,
+      253,
+      1237,
+      1038
+    ],
+    "bytes": 18341
+  },
+  {
+    "id": "herbs",
+    "source": "docs\\art\\iteration281b-sources\\herbs.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      212,
+      115,
+      1199,
+      1134
+    ],
+    "bytes": 27409
+  },
+  {
+    "id": "lightVest",
+    "source": "docs\\art\\iteration281b-sources\\lightVest.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      246,
+      127,
+      1056,
+      1136
+    ],
+    "bytes": 22768
+  },
+  {
+    "id": "limiarStew",
+    "source": "docs\\art\\iteration281b-sources\\limiarStew.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      27,
+      165,
+      1226,
+      1111
+    ],
+    "bytes": 20449
+  },
+  {
+    "id": "lunarSoup",
+    "source": "docs\\art\\iteration281b-sources\\lunarSoup.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      77,
+      171,
+      1226,
+      1107
+    ],
+    "bytes": 24008
+  },
+  {
+    "id": "moonFish",
+    "source": "docs\\art\\iteration281b-sources\\moonFish.png",
+    "sourceSize": [
+      1536,
+      1024
+    ],
+    "bounds": [
+      75,
+      11,
+      1536,
+      1024
+    ],
+    "bytes": 20232
+  },
+  {
+    "id": "mossCatfish",
+    "source": "docs\\art\\iteration281b-sources\\mossCatfish.png",
+    "sourceSize": [
+      2171,
+      724
+    ],
+    "bounds": [
+      283,
+      84,
+      1951,
+      627
+    ],
+    "bytes": 8483
+  },
+  {
+    "id": "rawOre",
+    "source": "docs\\art\\iteration281b-sources\\rawOre.png",
+    "sourceSize": [
+      1536,
+      1024
+    ],
+    "bounds": [
+      436,
+      211,
+      1098,
+      841
+    ],
+    "bytes": 25582
+  },
+  {
+    "id": "roastMinnow",
+    "source": "docs\\art\\iteration281b-sources\\roastMinnow.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      112,
+      267,
+      1226,
+      1016
+    ],
+    "bytes": 16502
+  },
+  {
+    "id": "runeFish",
+    "source": "docs\\art\\iteration281b-sources\\runeFish.png",
+    "sourceSize": [
+      1774,
+      887
+    ],
+    "bounds": [
+      205,
+      157,
+      1588,
+      720
+    ],
+    "bytes": 11113
+  },
+  {
+    "id": "runicDish",
+    "source": "docs\\art\\iteration281b-sources\\runicDish.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      38,
+      337,
+      1216,
+      1000
+    ],
+    "bytes": 13863
+  },
+  {
+    "id": "salt",
+    "source": "docs\\art\\iteration281b-sources\\salt.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      196,
+      206,
+      1183,
+      1092
+    ],
+    "bytes": 25177
+  },
+  {
+    "id": "simplePickaxe",
+    "source": "docs\\art\\iteration281b-sources\\simplePickaxe.png",
+    "sourceSize": [
+      1536,
+      1024
+    ],
+    "bounds": [
+      381,
+      124,
+      1152,
+      898
+    ],
+    "bytes": 12427
+  },
+  {
+    "id": "strengthRing",
+    "source": "docs\\art\\iteration281b-sources\\strengthRing.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      190,
+      173,
+      1100,
+      1097
+    ],
+    "bytes": 25341
+  },
+  {
+    "id": "travelerBoots",
+    "source": "docs\\art\\iteration281b-sources\\travelerBoots.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      95,
+      161,
+      1162,
+      1136
+    ],
+    "bytes": 24694
+  },
+  {
+    "id": "travelerCap",
+    "source": "docs\\art\\iteration281b-sources\\travelerCap.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      143,
+      69,
+      1134,
+      1158
+    ],
+    "bytes": 21291
+  },
+  {
+    "id": "water",
+    "source": "docs\\art\\iteration281b-sources\\water.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "bounds": [
+      384,
+      74,
+      966,
+      1158
+    ],
+    "bytes": 14918
+  }
+]

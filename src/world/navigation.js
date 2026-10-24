@@ -7,6 +7,19 @@ export function findPath(world, start, destination, radius, cell = 0.5, local = 
     if(start.enemyType&&from!==to)return null;
     if(to!=='ground'&&!surfaces.some(s=>s.id===to&&containsSurface(s,destination.x,destination.z,radius)))return null;
     const point=(p,id)=>({...p,surface:id,y:id==='ground'?0:surfaceHeight(surfaces.find(s=>s.id===id),p.z)});
+    // A surface switch happens at the connector center, before the whole actor
+    // clears its edge. A new click there must finish the short crossing first.
+    if(!start.enemyType&&from!=='ground'&&!canStand(layerWorld(world,from),start.x,start.z,radius)){
+      const s=surfaces.find(s=>s.id===from),r=s.kind==='ramp'?s:surfaces.find(r=>r.kind==='ramp'&&r.to===from);
+      if(r&&Math.abs(start.x-r.x)<r.halfX-radius){
+        const edge=s.kind==='ramp'?(start.z<s.z?s.z-s.halfZ:s.z+s.halfZ):r.z+r.halfZ;
+        if(Math.abs(start.z-edge)<radius+.3){
+          const z=s.kind==='ramp'?Math.max(s.z-s.halfZ+radius+.15,Math.min(s.z+s.halfZ-radius-.15,start.z)):edge+radius+.15;
+          const safe=point({x:start.x,z},from);
+          if(canStand(layerWorld(world,from),safe.x,safe.z,radius)){const rest=findPath(world,safe,destination,radius,cell,local);if(rest)return [safe,...rest];}
+        }
+      }
+    }
     if(from===to){const route=findPath(layerWorld(world,from),start,destination,radius,cell,local);return route?.map(p=>point(p,from))??null;}
     const nodes=[{...start,id:'start',surface:from},{...destination,id:'end',surface:to}],edges=[];
     for(const s of surfaces.filter(s=>s.kind==='ramp')){

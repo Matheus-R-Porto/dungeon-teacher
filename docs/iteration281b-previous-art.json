@@ -1,0 +1,266 @@
+{
+  "fishingRod": {
+    "inventoryIcon": "/assets/items/inventory-v28/fishingRod.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "simplePickaxe": {
+    "inventoryIcon": "/assets/items/inventory-v28/simplePickaxe.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "rawOre": {
+    "inventoryIcon": "/assets/items/inventory-v28/rawOre.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "limiarMinnow": {
+    "inventoryIcon": "/assets/items/inventory-v28/limiarMinnow.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "fireflyCarp": {
+    "inventoryIcon": "/assets/items/inventory-v28/fireflyCarp.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "mossCatfish": {
+    "inventoryIcon": "/assets/items/inventory-v28/mossCatfish.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "moonFish": {
+    "inventoryIcon": "/assets/items/inventory-v28/moonFish.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "runeFish": {
+    "inventoryIcon": "/assets/items/inventory-v28/runeFish.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "salt": {
+    "inventoryIcon": "/assets/items/inventory-v28/salt.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "flour": {
+    "inventoryIcon": "/assets/items/inventory-v28/flour.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "herbs": {
+    "inventoryIcon": "/assets/items/inventory-v28/herbs.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "oil": {
+    "inventoryIcon": "/assets/items/inventory-v28/oil.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "water": {
+    "inventoryIcon": "/assets/items/inventory-v28/water.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "roastMinnow": {
+    "inventoryIcon": "/assets/items/inventory-v28/roastMinnow.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "limiarStew": {
+    "inventoryIcon": "/assets/items/inventory-v28/limiarStew.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "goldenCarp": {
+    "inventoryIcon": "/assets/items/inventory-v28/goldenCarp.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "lunarSoup": {
+    "inventoryIcon": "/assets/items/inventory-v28/lunarSoup.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "runicDish": {
+    "inventoryIcon": "/assets/items/inventory-v28/runicDish.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "herbCatfish": {
+    "inventoryIcon": "/assets/items/inventory-v28/herbCatfish.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "expeditionChest": {
+    "inventoryIcon": "/assets/items/inventory-v28/expeditionChest.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "travelerCap": {
+    "inventoryIcon": "/assets/items/inventory-v28/travelerCap.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "travelerVest": {
+    "inventoryIcon": "/assets/items/inventory-v28/travelerVest.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "travelerBoots": {
+    "inventoryIcon": "/assets/items/inventory-v28/travelerBoots.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "focusRing": {
+    "inventoryIcon": "/assets/items/inventory-v28/focusRing.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "apprenticeHood": {
+    "inventoryIcon": "/assets/items/inventory-v28/apprenticeHood.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "lightVest": {
+    "inventoryIcon": "/assets/items/inventory-v28/lightVest.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "agileBoots": {
+    "inventoryIcon": "/assets/items/inventory-v28/agileBoots.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "strengthRing": {
+    "inventoryIcon": "/assets/items/inventory-v28/strengthRing.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "trainingSword": {
+    "inventoryIcon": "/assets/items/inventory-v28/sword.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "trainingDagger": {
+    "inventoryIcon": "/assets/items/inventory-v28/dagger.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "trainingBow": {
+    "inventoryIcon": "/assets/items/inventory-v28/bow.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "trainingStaff": {
+    "inventoryIcon": "/assets/items/inventory-v28/staff.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Símbolo de fonte substituído por ilustração vetorial própria."
+  },
+  "forgedSwordFailure": {
+    "inventoryIcon": "/assets/items/inventory-v28/sword.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedSwordGood": {
+    "inventoryIcon": "/assets/items/inventory-v28/sword.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedSwordPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v28/sword.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedDaggerFailure": {
+    "inventoryIcon": "/assets/items/inventory-v28/dagger.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedDaggerGood": {
+    "inventoryIcon": "/assets/items/inventory-v28/dagger.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedDaggerPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v28/dagger.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedBowFailure": {
+    "inventoryIcon": "/assets/items/inventory-v28/bow.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedBowGood": {
+    "inventoryIcon": "/assets/items/inventory-v28/bow.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedBowPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v28/bow.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedStaffFailure": {
+    "inventoryIcon": "/assets/items/inventory-v28/staff.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedStaffGood": {
+    "inventoryIcon": "/assets/items/inventory-v28/staff.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  },
+  "forgedStaffPerfect": {
+    "inventoryIcon": "/assets/items/inventory-v28/staff.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Silhueta do tipo de arma; qualidade informada textualmente, sem inventar raridade."
+  }
+}

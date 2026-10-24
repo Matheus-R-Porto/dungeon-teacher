@@ -54,7 +54,7 @@ test('online clean restart restores validated upper surface without rewriting ge
  t.after(()=>{assert.equal(path.dirname(path.resolve(dir)),path.resolve(os.tmpdir()));fs.rmSync(dir,{recursive:true,force:true});});
  const credential='a'.repeat(64);let tower=new OnlineTower(options),ws={close(){}};tower.join(ws,'Teste',credential);const p=ws.worldPlayer;
  Object.assign(p.game.player,tower.world(p.mapId).map.portal);tower.command(ws,{mapId:p.mapId,epoch:p.epoch,seq:1,action:{kind:'travel',portal:'tower-portal'}});
- for(let i=0;i<2;i++){Object.assign(p.game.player,tower.world(p.mapId).map.portal);tower.command(ws,{mapId:p.mapId,epoch:p.epoch,seq:1,action:{kind:'travel',portal:'return-portal'}});}
+ p.reached=3;for(let i=0;i<2;i++){Object.assign(p.game.player,tower.world(p.mapId).map.portal);tower.command(ws,{mapId:p.mapId,epoch:p.epoch,seq:1,action:{kind:'travel',portal:'return-portal'}});}
  const w=tower.world(p.mapId),d=w.map.surfaces[1];Object.assign(p.game.player,{x:d.x,z:d.z,y:d.y,surface:d.id});const bytes=fs.readFileSync(path.join(dir,'maps','floor-3.json'));tower.leave(ws);tower.close();
  tower=new OnlineTower(options);ws={close(){}};tower.join(ws,'Teste',credential);assert.equal(ws.worldPlayer.game.player.y,6.4);assert.equal(ws.worldPlayer.game.player.surface,d.id);assert.deepEqual(fs.readFileSync(path.join(dir,'maps','floor-3.json')),bytes);tower.close();
 });

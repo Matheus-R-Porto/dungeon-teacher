@@ -3,7 +3,7 @@ import * as THREE from 'three';
 export const GUARDIAN_INDICATOR_HEIGHT=.12;
 import {selectAtlasFrame} from '../../core/atlas.js';
 import {resolveFacing} from '../../core/actor-animation.js';
-export function buildGuardianHall(v){const h=v.world.guardianHall;if(!h)return;const g=new THREE.Group();v.scene.add(g);const privateRoom=!!v.world.arena;
+export function buildGuardianHall(v){const h=v.world.guardianHall;if(!h||v.world.castleInterior)return;const g=new THREE.Group();v.scene.add(g);const privateRoom=!!v.world.arena;
  const stone=new THREE.MeshStandardMaterial({color:0x59616b,roughness:1}),dark=new THREE.MeshStandardMaterial({color:0x303d4b,roughness:.8}),gold=new THREE.MeshStandardMaterial({color:0xb69b57,metalness:.5,roughness:.6}),cloth=new THREE.MeshStandardMaterial({color:0x424b80,side:THREE.DoubleSide});
  const floor=v.box(g,22,.25,20,h.x,h.y-.045,h.z,stone);floor.userData.surface=privateRoom?'guardian-floor':h.door.surface;v.walkableMeshes??=[];v.walkableMeshes.push(floor);
  for(const dx of [-11,11])v.box(g,.6,3,20,h.x+dx,h.y+1.5,h.z,dark);

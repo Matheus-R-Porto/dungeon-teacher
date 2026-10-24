@@ -1,3 +1,4 @@
+import {enterKnight,climb,returnRefuge} from './helpers/castle-flow.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -23,9 +24,9 @@ function make({seed=42,character=new Character(),stress=false,tower}={}){
   if(!equippedDefinition(character.data)){const bag=new Inventory(character);bag.acquire('trainingStaff');bag.equip(0);}
   s.startRun();return {s,c:character,calls,messages};
 }
-const up=s=>s.travel({targetId:'return-portal'});
+const up=s=>climb(s);
 // Plays floors 1 and 2, then floor 3 up to the dead boss standing on its chest.
-function toBossDefeated(x){const {s}=x;clear(s);up(s);clear(s);up(s);assert.equal(s.area.floorId,3);clear(s);Object.assign(s.game.player,s.boss.spawnPosition);run(s,2.1);s.boss.damage(9999);run(s,.1);return x;}
+function toBossDefeated(x){const {s}=x;clear(s);up(s);clear(s);up(s);assert.equal(s.area.floorId,3);enterKnight(s);run(s,2.6);s.boss.damage(9999);run(s,.1);return x;}
 const standOnChest=s=>Object.assign(s.game.player,s.area.interactables.find(i=>i.id==='boss-chest'));
 
 // ───────────── Biome rules ─────────────
@@ -133,7 +134,7 @@ test('markers only advance in order, never beyond the limit, and unique rewards 
 // ───────────── Campaign progression ─────────────
 for(const [label,seed] of [['Forest floor 3',SEED_FOREST3],['Forest→Cave floor 3',SEED_CAVE3]])test(label+': the boss can be followed by continuing to floor 4 or by returning, never automatically',async()=>{
   const x=toBossDefeated(make({seed})),{s,c}=x;assert.equal(s.run.mode,'campaign');
-  assert.throws(()=>up(s),/baú/);assert.throws(()=>s.travel({targetId:'refuge-portal'}),/baú/);
+  assert.throws(()=>up(s),/baú/);assert.throws(()=>returnRefuge(s),/baú/);
   standOnChest(s);await s.collectChest(async()=>{});assert.equal(s.area.floorId,3);assert.equal(s.run.rewardCollected,true);
   run(s,3);assert.equal(s.area.floorId,3,'floor 4 must wait for the player');assert.equal(s.areas['tower-floor-4'],undefined);
   const chests=()=>c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length;assert.equal(chests(),1);
@@ -144,11 +145,11 @@ for(const [label,seed] of [['Forest floor 3',SEED_FOREST3],['Forest→Cave floor
 });
 test('returning to the Refuge after the boss ends the run, keeps the clear and the single chest',async()=>{
   const x=toBossDefeated(make({seed:SEED_FOREST3})),{s,c}=x;standOnChest(s);await s.collectChest(async()=>{});
-  s.travel({targetId:'refuge-portal'});assert.equal(s.area.safe,true);assert.equal(s.run,null);assert.equal(s.lastRun.result,'success');assert.equal(c.data.tower.highestClearedFloor,3);assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,1);
+  returnRefuge(s);assert.equal(s.area.safe,true);assert.equal(s.run,null);assert.equal(s.lastRun.result,'success');assert.equal(c.data.tower.highestClearedFloor,3);assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,1);
 });
 test('both exits of floor 3 stay sealed until the boss is dead, and the main portal is a normal climb on other floors',()=>{
-  const {s}=make({seed:SEED_FOREST3});assert.throws(()=>up(s),/encontros/);clear(s);up(s);assert.equal(s.area.floorId,2);assert.equal(s.area.interactables.some(i=>i.id==='refuge-portal'),false);clear(s);up(s);
-  assert.throws(()=>s.travel({targetId:'refuge-portal'}),/encontros/);assert.throws(()=>up(s),/encontros/);clear(s);assert.equal(s.complete,false);assert.throws(()=>s.travel({targetId:'refuge-portal'}),/encontros/);
+  const {s}=make({seed:SEED_FOREST3});assert.throws(()=>up(s),/derrotas|Cavaleiro|encontros/);clear(s);up(s);assert.equal(s.area.floorId,2);assert.equal(s.area.interactables.some(i=>i.id==='refuge-portal'),false);clear(s);up(s);
+  assert.throws(()=>returnRefuge(s),/derrotas|Cavaleiro|encontros/);assert.throws(()=>up(s),/derrotas|Cavaleiro|encontros/);clear(s);assert.equal(s.complete,false);assert.throws(()=>returnRefuge(s),/derrotas|Cavaleiro|encontros/);
 });
 test('floors become cleared only through valid campaign completion',()=>{
   const x=make({seed:42}),{s,c,calls}=x;assert.equal(c.data.tower.highestClearedFloor,0);run(s,5);assert.equal(c.data.tower.highestClearedFloor,0);                       // entering is not clearing
@@ -170,12 +171,12 @@ test('the persistent marker survives a save and reload and can be re-saved at th
 // ───────────── Revisits ─────────────
 test('cleared floors open their gates, keep every enemy alive and never block the exit',()=>{
   const fresh=make({seed:42}),revisit=make({seed:42,tower:{highestClearedFloor:2,claimedRewards:[]}});
-  assert.ok(fresh.s.area.gates.length>0&&fresh.s.area.gates.every(g=>!g.open));assert.equal(fresh.s.complete,false);
+  assert.ok(fresh.s.area.gates.length>0&&fresh.s.area.gates.every(g=>g.open));assert.equal(fresh.s.complete,false);
   const {s}=revisit;assert.ok(s.area.gates.length>0&&s.area.gates.every(g=>g.open));assert.equal(s.revisit,true);assert.equal(s.complete,true);
   assert.equal(s.combat.enemies.length,fresh.s.combat.enemies.length);assert.ok(s.combat.enemies.every(e=>e.alive));assert.ok(s.combat.ai);assert.ok(s.run.encounters.every(e=>e.state==='completed'));
   assert.match(s.objectiveText,/já concluído/);run(s,.1);assert.match(s.returnInteraction.label,/Subir/);
   up(s);assert.equal(s.area.floorId,2);assert.ok(s.area.gates.every(g=>g.open));assert.ok(s.combat.enemies.every(e=>e.alive));
-  up(s);assert.equal(s.area.floorId,3);assert.equal(s.revisit,false);assert.ok(s.area.gates.every(g=>!g.open),'floor 3 was never cleared');assert.equal(s.complete,false);
+  up(s);assert.equal(s.area.floorId,3);assert.equal(s.revisit,false);assert.ok(s.area.gates.every(g=>g.open),'open terrain does not bypass the portal requirement');assert.equal(s.complete,false);
 });
 test('enemies on a revisited floor still fight, still pay XP and can still be ignored',()=>{
   const {s,c}=make({seed:42,tower:{highestClearedFloor:1,claimedRewards:[]}});const xp=c.data.xp,enemy=s.combat.enemies.find(e=>!e.optional&&!e.boss);
@@ -187,18 +188,18 @@ test('a cleared floor 3 has no boss, no duplicate chest and a free exit; floor 4
   const {s,c}=make({seed:SEED_FOREST3,tower:{highestClearedFloor:3,claimedRewards:['boss-floor-3']}});up(s);up(s);
   assert.equal(s.area.floorId,3);assert.equal(s.revisit,true);assert.equal(s.boss,undefined);assert.ok(!s.combat.enemies.some(e=>e.boss));assert.equal(s.area.interactables.some(i=>i.id==='boss-chest'),false);assert.equal(s.complete,true);
   const before=c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length;run(s,5);assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,before);
-  assert.ok(s.area.gates.every(g=>g.open));up(s);assert.equal(s.area.floorId,4);assert.equal(s.revisit,false);assert.ok(s.area.gates.every(g=>!g.open));assert.equal(s.complete,false);assert.throws(()=>up(s),/encontros/);
+  assert.ok(s.area.gates.every(g=>g.open));up(s);assert.equal(s.area.floorId,4);assert.equal(s.revisit,false);assert.ok(s.area.gates.every(g=>!g.open));assert.equal(s.complete,false);assert.throws(()=>up(s),/derrotas|Cavaleiro|encontros/);
 });
 test('a floor 3 cleared without taking the chest still offers it exactly once',async()=>{
   const x=make({seed:SEED_FOREST3,tower:{highestClearedFloor:3,claimedRewards:[]}}),{s,c}=x;up(s);up(s);
   const chest=s.area.interactables.find(i=>i.id==='boss-chest');assert.ok(chest&&chest.enabled);assert.equal(s.boss,undefined);assert.throws(()=>up(s),/baú/);
-  Object.assign(s.game.player,chest);await s.collectChest(async()=>{});assert.equal(c.data.tower.claimedRewards.length,1);assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,1);
+  Object.assign(s.game.player,chest);assert.equal(s.interactions.activate(s.game.player)?.type,'chest');await s.collectChest(async()=>{});assert.equal(s.interactions.activate(s.game.player)?.targetId,'castle-entry');assert.equal(c.data.tower.claimedRewards.length,1);assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,1);
   await assert.rejects(()=>s.collectChest(async()=>{}));up(s);assert.equal(s.area.floorId,4);
 });
 test('the unique boss reward is granted once per character across runs and rolls back with a failed save',async()=>{
   const x=toBossDefeated(make({seed:SEED_FOREST3})),{s,c}=x;standOnChest(s);
   await assert.rejects(()=>s.collectChest(async()=>{throw Error('disk failure');}));assert.deepEqual(c.data.tower.claimedRewards,[]);assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,0);assert.equal(s.run.rewardCollected,false);
-  await s.collectChest(async()=>{});assert.deepEqual(c.data.tower.claimedRewards,['boss-floor-3']);s.travel({targetId:'refuge-portal'});
+  await s.collectChest(async()=>{});assert.deepEqual(c.data.tower.claimedRewards,['boss-floor-3']);returnRefuge(s);
   // second run, same character: floors 1-3 are free to cross and nothing drops again
   s.startRun();for(let i=0;i<3;i++){assert.equal(s.revisit,true);up(s);}assert.equal(s.area.floorId,4);
   s.travel({targetId:'abandon-run'});assert.equal(c.data.inventory.slots.filter(i=>i?.definitionId==='expeditionChest').length,1);

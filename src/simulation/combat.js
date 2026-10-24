@@ -12,7 +12,7 @@ import {findPath} from '../world/navigation.js';
 import {clearSegment} from '../world/collision.js';
 export class Combat {
   constructor(game,character,{random=Math.random,onResourceChange=()=>{},enemies=null}={}){
-    this.game=game;this.character=character;this.random=random;this.onResourceChange=onResourceChange;
+    this.game=game;this.character=character;game.character=character;this.random=random;this.onResourceChange=onResourceChange;
     this.enemies=enemies??[new Enemy()];this.currentTarget=null;this.state=S.IDLE;this.playerCycle=new AttackCycle();
     this.projectiles=new Projectiles();this.enemyCycles=new Map();this.retaliation=true;this.events=[];this.lastResult='—';this.deathTime=0;this.attackRange=COMBAT.playerRange;this.pursuitRepath=0;this.pursuitPoint=null;
   }
@@ -29,7 +29,7 @@ export class Combat {
     const game=this.game,r=range-COMBAT.approachMargin;
     const angle=Math.atan2(game.player.x-target.x,game.player.z-target.z);let best=null,bestLength=Infinity;
     for(let i=0;i<COMBAT.approachSamples;i++){
-      const a=angle+i*Math.PI*2/COMBAT.approachSamples,p={x:target.x+Math.sin(a)*r,z:target.z+Math.cos(a)*r};
+      const a=angle+i*Math.PI*2/COMBAT.approachSamples,p={x:target.x+Math.sin(a)*r,z:target.z+Math.cos(a)*r,y:target.y??0,surface:target.surface??'ground'};
       if(!clearSegment(game.world,p,target,0.05))continue;
       const route=findPath(game.world,game.player,p,CONFIG.playerRadius,CONFIG.navigationCell);if(!route)continue;
       let length=0,previous=game.player;for(const node of route){length+=Math.hypot(node.x-previous.x,node.z-previous.z);previous=node;}
