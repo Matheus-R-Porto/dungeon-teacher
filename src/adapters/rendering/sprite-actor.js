@@ -25,10 +25,10 @@ export class SpriteActor {
   if(phase!==this.lastPhase){this.phaseAt=time;this.lastPhase=phase;}
   const activity=input.profession?professionPose(input.profession):this.activity.update(input.activity,time);this.currentActivity=hp===0||['recoil','impactRecovery'].includes(input.impact?.phase)?null:activity;
   if(!activity||hp===0||['recoil','impactRecovery'].includes(input.impact?.phase)){
-   if(this.sheet.update(input,direction,v,azimuth,time,this.width,this.height,camera)){this.texture=this.sheet.bodyTexture;this.accessories.update({...input,walkDistance:v.walkDistance},direction,this.sprite,camera);return;}
+   if(this.sheet.update(input,direction,v,azimuth,time,this.width,this.height,camera)){this.texture=this.sprite.material.map;this.accessories.update({...input,walkDistance:v.walkDistance},direction,this.sprite,camera);return;}
    this.sprite.position.set(x,y+.055,z);return;
   }
-  if(this.sheet.update({...input,professionPose:activity},direction,v,azimuth,time,this.width,this.height,camera)){this.texture=this.sheet.bodyTexture;this.accessories.update({...input,cart:false},direction,this.sprite,camera);}
+  if(this.sheet.update({...input,professionPose:activity},direction,v,azimuth,time,this.width,this.height,camera)){this.texture=this.sprite.material.map;this.accessories.update({...input,cart:false},direction,this.sprite,camera);}
 
  }
  dispose(){this.sheet.dispose();this.accessories.dispose();this.baseTexture.dispose();for(const t of this.textures.values())t.dispose();this.textures.clear();this.sprite.removeFromParent();this.sprite.material.dispose();this.shadow.removeFromParent();this.shadow.geometry.dispose();this.shadow.material.dispose();}

@@ -1,3 +1,5 @@
+import {seedOf} from '../src/domain/random.js';
+import {markFloorCleared} from '../src/domain/tower-progress.js';
 import {CASTLE_ID} from '../src/world/castle.js';
 import {randomUUID} from 'node:crypto';
 import {GUARDIAN as G} from '../shared/guardian.js';
@@ -32,8 +34,8 @@ export class Arenas {
  transition(i,state){if(!transitions[i.state]?.includes(state))throw Error('Transição de encontro inválida.');i.state=state;i.changed=this.t.now();}
  result(i,outcome){if(!['combat','preparing'].includes(i.state))return;const t=this.t,plans=[];
   t.db.transaction(()=>{if(t.db.db.prepare('INSERT OR IGNORE INTO arena_results VALUES(?,?,?,?,?)').run(i.id,i.encounter,JSON.stringify(i.participants),outcome,t.now()).changes!==1)return;
-   if(outcome==='victory')for(const id of i.participants){const p=t.people.get(id);if(!p)throw Error('Participante original ausente.');const first=t.db.db.prepare('INSERT OR IGNORE INTO guardian_unlocks VALUES(?,?,?)').run(id,i.encounter,i.id).changes===1,c=new Character(p.character.snapshot());if(first)c.gainXP(this.definition.xp);t.db.save(id,t.state(p,c));plans.push({p,c,first});}
-  });for(const {p,c,first}of plans){p.character=c;p.saved=JSON.stringify(t.state(p));p.notice=first?`Vitória! Quarto andar desbloqueado · +${this.definition.xp} XP`:'Vitória! Seu acesso ao quarto andar está preservado.';}
+   if(outcome==='victory')for(const id of i.participants){const p=t.people.get(id);if(!p)throw Error('Participante original ausente.');const first=t.db.db.prepare('INSERT OR IGNORE INTO guardian_unlocks VALUES(?,?,?)').run(id,i.encounter,i.id).changes===1,c=new Character(p.character.snapshot());if(first){c.gainXP(this.definition.xp);if(this.definition===G){for(let floor=1;floor<=3;floor++)markFloorCleared(c.data,floor);const map=t.world(this.origin).map;const pos=map.spawn;t.db.putDrop({id:randomUUID(),owner:id,mapId:this.origin,x:pos.x,z:pos.z,y:pos.y??0,surface:pos.surface??'ground',item:'expeditionChest',quantity:1,rewardSeed:seedOf(i.id+':'+id),rewardId:'boss-floor-3',source:'guardian',expires:Number.MAX_SAFE_INTEGER});}}t.db.save(id,t.state(p,c));plans.push({p,c,first});}
+  });for(const {p,c,first}of plans){p.character=c;p.saved=JSON.stringify(t.state(p));p.notice=first?`Vitória! Quarto andar desbloqueado · +${this.definition.xp} XP · baú pessoal na entrada do castelo`:'Vitória! Seu acesso ao quarto andar está preservado.';}
   this.transition(i,outcome);i.granted=outcome==='victory';i.w.guardian.state='finished';i.w.guardian.projectiles=[];for(const p of i.w.players.values()){p.target=null;p.axis={x:0,z:0};p.game.cancel();p.cycle=new AttackCycle();if(outcome==='defeat')p.notice='Derrota. Reúna-se novamente para tentar o guardião.';}
  }
  disconnected(p){for(const r of this.pending.values())if(r.ids.includes(p.id))this.cancel(r,'Entrada cancelada: um integrante desconectou.');const i=this.instances.get(p.instanceId);if(!i)return false;p.ws=null;p.offlineUntil=this.t.now()+this.definition.reconnectMs;p.axis={x:0,z:0};p.target=null;p.game.cancel();p.cycle=new AttackCycle();p.expires=Infinity;return true;}

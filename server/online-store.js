@@ -8,10 +8,10 @@ import {Character} from '../src/domain/character/character.js';
 import {Inventory,decodeInventory} from '../src/domain/items/inventory.js';
 const hash=s=>createHash('sha256').update(s).digest('hex');
 export class OnlineStore {
- constructor(directory){fs.mkdirSync(directory,{recursive:true});this.db=new DatabaseSync(path.join(directory,'characters.sqlite'));this.db.exec('PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA foreign_keys=ON;');
+ constructor(directory){fs.mkdirSync(directory,{recursive:true});this.db=new DatabaseSync(path.join(directory,'characters.sqlite'));try{this.db.exec('PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA foreign_keys=ON;');
  const version=this.db.prepare('PRAGMA user_version').get().user_version;if(version!==0&&version!==1)throw Error('Banco online incompatível; preservado.');
  this.db.exec('CREATE TABLE IF NOT EXISTS characters(id TEXT PRIMARY KEY, credential TEXT UNIQUE NOT NULL, name TEXT NOT NULL, data TEXT NOT NULL, checksum TEXT NOT NULL); CREATE TABLE IF NOT EXISTS deaths(id TEXT PRIMARY KEY); CREATE TABLE IF NOT EXISTS drops(id TEXT PRIMARY KEY, owner TEXT NOT NULL, data TEXT NOT NULL); PRAGMA user_version=1;');
- if(this.db.prepare('PRAGMA quick_check').get().quick_check!=='ok')throw Error('Banco online inválido; preservado.');
+ if(this.db.prepare('PRAGMA quick_check').get().quick_check!=='ok')throw Error('Banco online inválido; preservado.');}catch(error){this.db.close();throw error;}
  }
  transaction(fn){this.db.exec('BEGIN IMMEDIATE');try{const r=fn();this.db.exec('COMMIT');return r;}catch(e){this.db.exec('ROLLBACK');throw e;}}
  authenticate(credential,name){const digest=hash(credential),r=this.db.prepare('SELECT * FROM characters WHERE credential=?').get(digest);if(r)return this.decode(r);

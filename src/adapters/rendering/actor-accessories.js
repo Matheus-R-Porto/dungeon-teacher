@@ -10,11 +10,11 @@ export class ActorAccessories {
   if(this.previous){const distance=Math.hypot(input.x-this.previous.x,input.z-this.previous.z);if(input.moving&&distance<2)this.travel+=distance;}
   this.previous={x:input.x,z:input.z};if(!this.cart)return;const c=this.cart;c.visible=!!input.cart;c.layers.mask=actor.layers.mask;if(!input.cart)return;
   const phase=Math.floor((input.walkDistance??this.travel)/1.8*4)%4,bob=input.moving&&phase%2?1:0,[hx,hy]=CART_CONTACTS.hand[direction],[sx,sy]=CART_CONTACTS.shaft[direction];
-  camera?.updateMatrixWorld();const e=camera?.matrixWorld.elements??[1,0,0,0,0,1,0,0,0,0,1],w=actor.scale.x,h=actor.scale.y,dx=(hx-48)*w/96,dy=(88-hy+bob)*h/96,depth=direction===2?.012:-.012;
+  camera?.updateMatrixWorld();const e=camera?.matrixWorld.elements??[1,0,0,0,0,1,0,0,0,0,1],[w,h]=actor.userData.sheetWorldScale??[actor.scale.x,actor.scale.y],contact=actor.userData.nativeCartContact,dx=contact?(contact[0]-actor.center.x)*actor.scale.x:(hx-48)*w/96,dy=contact?(contact[1]-actor.center.y)*actor.scale.y:(88-hy+bob)*h/96,depth=direction===2?.012:-.012;
   c.position.set(actor.position.x+e[0]*dx+e[4]*dy+e[8]*depth,actor.position.y+e[1]*dx+e[5]*dy+e[9]*depth,actor.position.z+e[2]*dx+e[6]*dy+e[10]*depth);
   c.center.set(sx/128,1-sy/128);c.scale.set(w*128/96*.66,h*128/96*.66,1);c.renderOrder=actor.renderOrder+(direction===2?2:-2);c.material.opacity=actor.material.opacity;
   selectAtlasFrame(c.material.map,Math.floor(this.travel/.22)%2,direction);
-  c.userData.contact={hand:[hx,hy-bob],shaft:[sx,sy],direction};
+  c.userData.contact={hand:contact??[hx,hy-bob],native:!!contact,shaft:[sx,sy],direction};
  }
  dispose(){if(this.cart){this.cart.removeFromParent();this.cart.material.map.dispose();this.cart.material.dispose();}}
 }

@@ -1,3 +1,4 @@
+import {actorLabelPoint} from './actor-label.js';
 import {FishingVisual} from './fishing-visual.js';
 import {belowGround,regionLayer} from './cave-visibility.js';
 import {SpriteActor} from './sprite-actor.js';
@@ -15,7 +16,7 @@ export class RemotePlayers {
       const state=remote.sample(now,NET.interpolationMs);
       item.actor.update(state,this.view.azimuth,now/1000,reducedMotion,this.view.camera);item.effects.update({elapsed:now/1000,player:state},item.actor,state);
       if(this.view.world.awakening?.cave){regionLayer(item.actor.sprite,belowGround(state));regionLayer(item.actor.shadow,belowGround(state));}
-      const point=this.view.screenPoint(state.x,(state.y??0)+2.5,state.z);item.label.hidden=!point.visible||!item.actor.sprite.layers.test(this.view.camera.layers);item.label.style.left=point.x+'px';item.label.style.top=point.y+'px';
+      const point=actorLabelPoint(this.view,item.actor);item.label.hidden=!point.visible||!item.actor.sprite.layers.test(this.view.camera.layers);item.label.style.left=point.x+'px';item.label.style.top=point.y+'px';
     }
   }
   dispose(){for(const id of this.actors.keys())this.remove(id);}

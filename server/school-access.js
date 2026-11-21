@@ -15,7 +15,7 @@ const dummy='scrypt:131072:8:1:98a83fc6a184bc912d33e0d88e56b338f:'+ '00'.repeat(
 
 export class SchoolAccess {
  constructor(store,{now=()=>Date.now(),config={}}={}){
-  this.store=store;this.db=store.db;this.now=now;this.config={...SCHOOL_CONFIG,...config};this.hashing=0;this.attempts=new Map();this.singleWorld=!!config.singleWorld;this.loginConnections=new Map();
+  this.store=store;this.db=store.db;this.now=now;this.config={...SCHOOL_CONFIG,...config};this.hashing=0;this.hashQueue=[];this.attempts=new Map();this.singleWorld=!!config.singleWorld;this.loginConnections=new Map();
   this.db.exec(`CREATE TABLE IF NOT EXISTS school_cohorts(id TEXT PRIMARY KEY,capacity INTEGER NOT NULL,open INTEGER NOT NULL DEFAULT 0,closes_at INTEGER);
    CREATE TABLE IF NOT EXISTS school_accounts(id TEXT PRIMARY KEY,username TEXT NOT NULL UNIQUE,password_hash TEXT NOT NULL,role TEXT NOT NULL CHECK(role IN ('teacher','student')),cohort TEXT REFERENCES school_cohorts(id),blocked INTEGER NOT NULL DEFAULT 0,world_key TEXT NOT NULL UNIQUE,character_id TEXT UNIQUE REFERENCES characters(id));
    CREATE TABLE IF NOT EXISTS school_sessions(token_hash TEXT PRIMARY KEY,account_id TEXT NOT NULL UNIQUE REFERENCES school_accounts(id),created INTEGER NOT NULL,expires INTEGER NOT NULL,touched INTEGER NOT NULL);
@@ -24,7 +24,7 @@ export class SchoolAccess {
   if(this.singleWorld)this.seasons=new Seasons(this);
  }
  audit(actor,action,target=''){this.db.prepare('INSERT INTO school_audit(at,actor,action,target) VALUES(?,?,?,?)').run(this.now(),actor,action,String(target).slice(0,128));}
- async hash(fn){if(this.hashing>=this.config.hashConcurrency)throw Error('Servidor conferindo acessos. Aguarde e tente novamente.');this.hashing++;try{return await fn();}finally{this.hashing--;}}
+ async hash(fn){if(this.draining)throw Error('O servidor está encerrando. Aguarde.');if(this.hashing>=this.config.hashConcurrency){if(this.hashQueue.length>=32)throw Error('Servidor conferindo acessos. Aguarde e tente novamente.');await new Promise(resolve=>this.hashQueue.push(resolve));}else this.hashing++;try{if(this.draining)throw Error('O servidor está encerrando. Aguarde.');return await fn();}finally{const next=this.hashQueue.shift();if(next)next();else this.hashing--;}}
  async createAccount({username:login,password:secret,role='student',cohort},actor='bootstrap',authorize=()=>{}){
   login=username(login);password(secret);if(this.singleWorld&&role==='student')this.seasons.active();if(!['teacher','student'].includes(role)||role==='student'&&!this.singleWorld&&!['A','B'].includes(cohort))throw Error('Papel ou turma inválidos.');
   const encoded=await this.hash(()=>passwordHash(secret));

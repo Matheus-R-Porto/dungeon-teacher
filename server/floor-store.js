@@ -14,7 +14,7 @@ export function applyTowerAccess(definition){
  map.interactables=map.interactables.filter(i=>i.id==='return-portal'||floor>1&&i.id==='abandon-run');
  for(const i of map.interactables){const up=i.id==='return-portal',destination=up?floor+1:floor-1;
  i.content=destination>TOWER_FLOOR_COUNT?{unavailable:true}:{areaId:FLOOR_IDS[destination-1]};
- i.label=destination>TOWER_FLOOR_COUNT?'Continuação indisponível nesta versão · Andar 13':(up?'Subir ao Andar ':'Descer ao Andar ')+destination+' · acesso de teste';}
+ i.label=destination>TOWER_FLOOR_COUNT?'Continuação indisponível nesta versão · Andar 13':(up?'Subir ao Andar ':'Descer ao Andar ')+destination;}
  map.exits=map.interactables.map(i=>({interactionId:i.id,...i.content}));return map;
 }
 export const geographyHash=definition=>createHash('sha256').update(JSON.stringify(definition)).digest('hex');

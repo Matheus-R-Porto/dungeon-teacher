@@ -16,7 +16,8 @@ export class FishingVisual {
   if(pose.type==='mining'){if(this.miningImpact.visible){this.miningImpact.position.set(target.x,target.y??1,target.z);this.miningImpact.rotation.y=now*8;}return;}
   if(!actor.sheet.professionTip||!actor.sheet.professionPose){this.group.visible=false;return;}
   const anchor=actor.sheet.professionTip,body=actor.sprite;this.view.camera.updateMatrixWorld();this.right.setFromMatrixColumn(this.view.camera.matrixWorld,0);this.up.setFromMatrixColumn(this.view.camera.matrixWorld,1);
-  this.tip.copy(body.position).addScaledVector(this.right,(anchor[0]/128-.5)*body.scale.x).addScaledVector(this.up,(104-anchor[1])/128*body.scale.y);
+  const native=actor.sheet.nativeProfession?.active?actor.sheet.nativeProfession.tip:null;
+  this.tip.copy(body.position).addScaledVector(this.right,(native?native[0]-body.center.x:anchor[0]/128-.5)*body.scale.x).addScaledVector(this.up,(native?1-native[1]-body.center.y:(104-anchor[1])/128)*body.scale.y);
   this.destination.set(target.x,target.y??.05,target.z);const reel=pose.phase==='reel',cast=pose.phase==='cast'?Math.max(0,Math.min(1,((pose.elapsed??0)-.14)/.21)):1;
   if(reel)fishingArc(this.endpoint,this.destination,this.tip,Math.min(1,(pose.elapsed??0)/.85),1.25);
   else fishingArc(this.endpoint,this.tip,this.destination,cast,1.5);

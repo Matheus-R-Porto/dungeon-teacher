@@ -1,3 +1,4 @@
+import {COMPATIBILITY_MESSAGE} from '../../shared/release.js';
 import {CASTLE_ID} from '../world/castle.js';
 import {isArenaId} from '../../shared/guardian.js';
 import {worldMessage,WORLD_ID} from '../../shared/world.js';
@@ -6,13 +7,13 @@ import {validateHub} from '../core/config.js';
 import {FLOOR_IDS} from '../../shared/tower.js';
 
 export class WorldClient {
-  constructor({url,name='Viajante',protocol=2,Socket=globalThis.WebSocket,onMap=()=>{},onSnapshot=()=>{},onStatus=()=>{},onNotice=()=>{},onChat=()=>{},onSessionEnded=()=>{},onCountdown=()=>{},credential=null,now=()=>performance.now()}){Object.assign(this,{url,name,protocol,Socket,onMap,onSnapshot,onStatus,onNotice,onChat,onSessionEnded,onCountdown,credential,now});this.destinyPending=new Map();this.progressionRetries=new Map();this.remotes=new Map();this.token=null;this.seq=0;this.status='Offline';this.desired=false;}
+  constructor({url,name='Viajante',protocol=2,Socket=globalThis.WebSocket,onMap=()=>{},onSnapshot=()=>{},onStatus=()=>{},onNotice=()=>{},onChat=()=>{},onSessionEnded=()=>{},onCountdown=()=>{},credential=null,requiredBuild=null,now=()=>performance.now()}){Object.assign(this,{url,name,protocol,Socket,onMap,onSnapshot,onStatus,onNotice,onChat,onSessionEnded,onCountdown,credential,requiredBuild,now});this.destinyPending=new Map();this.progressionRetries=new Map();this.remotes=new Map();this.token=null;this.seq=0;this.status='Offline';this.desired=false;}
   changed(status){this.status=status;this.onStatus(status);}
   connect(){this.desired=true;this.open();}
   open(){
     this.stopSocket();if(!this.desired)return;this.changed('Conectando…');this.received=this.now();this.snapshot=null;
     const ws=new this.Socket(this.url);this.socket=ws;const current=()=>this.socket===ws;
-    ws.addEventListener('open',()=>{if(current())ws.send(JSON.stringify(this.protocol===4?{v:4,type:'world:hello',name:this.name,credential:this.credential}:{...worldMessage('world:hello',{name:this.name,token:this.token}),v:this.protocol}));});
+    ws.addEventListener('open',()=>{if(current())ws.send(JSON.stringify(this.protocol===4?{v:4,type:'world:hello',name:this.name,credential:this.credential,...(this.requiredBuild?{build:this.requiredBuild}:{})}:{...worldMessage('world:hello',{name:this.name,token:this.token}),v:this.protocol}));});
     ws.addEventListener('message',event=>{if(!current())return;const measuredAt=(this.onMessageTiming||this.onPerformanceTiming)?performance.now():0;try{
       const m=JSON.parse(event.data);if(m.type==='server:error')throw Error(m.message);
       if(m.v!==this.protocol)throw Error('Servidor sem suporte ao protocolo deste modo.');
@@ -20,6 +21,7 @@ export class WorldClient {
       if(m.type==='school:ended'&&this.protocol===4){this.disconnect();this.onSessionEnded(m.message);return;}
       if(m.type==='school:countdown'&&this.protocol===4){this.onCountdown(m);return;}
       if(m.type==='world:welcome'){
+        if(this.requiredBuild&&m.build!==this.requiredBuild)throw Error(COMPATIBILITY_MESSAGE);
         if(!(this.protocol>=3?(FLOOR_IDS.includes(m.map?.id)||this.protocol===4&&(m.map?.id==='shared-city'||m.map?.id===CASTLE_ID||isArenaId(m.map?.id)))&&typeof m.epoch==='string'&&m.epoch.length===36:m.map?.id===WORLD_ID)||typeof m.id!=='string'||typeof m.token!=='string')throw Error('Mapa ou sessão incompatível.');
         validateHub(m.map);this.transitionReceivedAt=this.now();this.transitionServerWait=this.transitionRequestedAt==null?null:this.transitionReceivedAt-this.transitionRequestedAt;this.transitionRequestedAt=null;this.id=m.id;this.token=m.token;this.mapId=m.map.id;this.epoch=m.epoch;this.geography=m.geography;this.seq=0;this.lastTick=-1;this.snapshot=null;this.remotes.clear();this.mapReady=false;const generation=this.mapGeneration=(this.mapGeneration??0)+1,epoch=this.epoch,preparation=this.onMap(m.map);this.changed('Online');
         if(preparation?.then)Promise.resolve(preparation).then(()=>{if(!current()||epoch!==this.epoch||generation!==this.mapGeneration)return;this.mapReady=true;if(this.snapshot)this.onSnapshot(this.snapshot);}).catch(error=>{if(!current()||epoch!==this.epoch||generation!==this.mapGeneration)return;this.disconnect();this.changed('Falha ao preparar mapa: '+error.message);});else this.mapReady=true;

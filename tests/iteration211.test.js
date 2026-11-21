@@ -53,7 +53,7 @@ test('reconnect preserves server-reported combat posture and ignores absent lega
 });
 test('all weapons select their own atlas without duplicate sheathed props, direction remains stable',async()=>{
  for(const weaponType of ['sword','bow','dagger','staff']){const a=new SpriteActor(new THREE.Scene()),s={x:0,z:0,hp:100,weaponType,heading:Math.PI,moving:false,phase:'idle'};
-  a.update(s,0,0);await a.sheet.ready();a.update(s,0,.001);assert.equal(a.texture.userData.atlas.rows,16);assert.equal(a.weaponRoot,undefined);a.update({...s,phase:'windup'},0,.02);assert.equal(a.sheet.direction,2);assert.equal(a.sheet.frame,18);assert.equal(a.weaponRoot,undefined);
+  a.update(s,0,0);await a.sheet.ready();a.update(s,0,.001);assert.equal(a.sheet.family,weaponType);assert.ok(a.sheet.original.texture);assert.equal(a.sheet.resource,undefined);assert.equal(a.weaponRoot,undefined);a.update({...s,phase:'windup'},0,.02);assert.equal(a.sheet.direction,2);assert.equal(a.sheet.frame,18);assert.equal(a.weaponRoot,undefined);
   for(let t=.04;t<.5;t+=.02)a.update({...s,phase:'windup'},0,t);assert.equal(a.visual.state,'attacking');assert.equal(a.sheet.frame,18);a.dispose();
  }
 });

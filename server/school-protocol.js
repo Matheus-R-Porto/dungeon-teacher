@@ -1,6 +1,7 @@
+import {RELEASE,COMPATIBILITY_MESSAGE} from '../shared/release.js';
 import {grantEducation} from './education.js';
 // Account traffic shares the game's restricted WebSocket endpoint.
-export function schoolProtocol({access,online,send,reject,connections,activities={}}){
+export function schoolProtocol({access,online,send,reject,connections,activities={},requiredBuild=null}){
  const ended=(ws,reason)=>{send(ws,{v:4,type:'school:ended',message:reason});reject(ws,reason,4003);};
  const enforce=ws=>{try{return access.session(ws.schoolToken,{touch:false});}catch(e){ended(ws,e.message);return null;}};
  return {
@@ -8,9 +9,10 @@ export function schoolProtocol({access,online,send,reject,connections,activities
    if(ws.schoolBusy){send(ws,{school:1,id:m.id,ok:false,message:'Aguarde a operação atual.'});return;}
    ws.schoolBusy=true;
    try{
-    if(m.school!==1||typeof m.id!=='string'||!/^[a-zA-Z0-9-]{1,40}$/.test(m.id)||typeof m.action!=='string'||Object.keys(m).some(k=>!['school','id','action','token','data'].includes(k)))throw Error('Pedido inválido.');
+    if(m.school!==1||typeof m.id!=='string'||!/^[a-zA-Z0-9-]{1,40}$/.test(m.id)||typeof m.action!=='string'||Object.keys(m).some(k=>!['school','id','action','token','data','build'].includes(k)))throw Error('Pedido inválido.');
+    if(requiredBuild&&m.build!==requiredBuild)throw Error(COMPATIBILITY_MESSAGE);
     if(access.singleWorld&&['overview','education','admin','account'].includes(m.action))throw Error('Operação disponível somente no Dungeon Teacher ADM.');const d=m.data??{};if(typeof d!=='object'||Array.isArray(d)||d===null)throw Error('Dados inválidos.');let result;
-    if(m.action==='status')result={online:true,school:true,singleWorld:access.singleWorld,capacity:online().capacity,players:[...online().people.values()].filter(p=>p.ws).length,season:access.seasons?.current()?.state??null};
+    if(m.action==='status')result={build:RELEASE.compatibility,release:RELEASE,online:true,school:true,singleWorld:access.singleWorld,capacity:online().capacity,players:[...online().people.values()].filter(p=>p.ws).length,season:access.seasons?.current()?.state??null};
     else if(m.action==='login'){result=await access.login(d.username,d.password,ws.ip);if(access.singleWorld){access.loginConnections.set(result.account.id,ws);ws.schoolLoginAccount=result.account.id;}}
     else if(m.action==='register'&&access.singleWorld){access.rate('register:'+ws.ip,12);result=await access.createAccount({username:d.username,password:d.password,role:'student'},'self-service');}
     else if(m.action==='character')result=access.createCharacter(m.token,d.name,d.appearance);

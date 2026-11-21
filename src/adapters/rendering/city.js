@@ -1,10 +1,11 @@
+import {freezeStaticSubtree} from './static-transforms.js';
 import {buildNpcActivities,updateNpcActivities} from './npc-ambient.js';
 import {buildCitySurroundings} from './city-surroundings.js';
 import {batchStatic} from './static-batch.js';
 import * as THREE from 'three';
 import {artTexture,artSprite} from './art.js';
 export function buildCity(view){
- const buildings=[];const s=view.scene,mat=(color,map)=>new THREE.MeshStandardMaterial({color,roughness:1,...(map?{map:artTexture(map)}:{})}),wood=mat(0x72513d),stone=mat(0xb6b6a2),grass=mat(0x79a966),leaf=mat(0x4d8759),plaster=mat(0xffffff,'/assets/environment/plaster.svg'),paving=mat(0xffffff,'/assets/environment/paving.svg'),roof=mat(0xffffff,'/assets/environment/roof.svg'),gold=mat(0xe4c47e);
+ const previousChildren=new Set(view.scene.children);const buildings=[];const s=view.scene,mat=(color,map)=>new THREE.MeshStandardMaterial({color,roughness:1,...(map?{map:artTexture(map)}:{})}),wood=mat(0x72513d),stone=mat(0xb6b6a2),grass=mat(0x79a966),leaf=mat(0x4d8759),plaster=mat(0xffffff,'/assets/environment/plaster.svg'),paving=mat(0xffffff,'/assets/environment/paving.svg'),roof=mat(0xffffff,'/assets/environment/roof.svg'),gold=mat(0xe4c47e);
  for(const [m,n]of[[roof,3]]){m.map.wrapS=m.map.wrapT=THREE.RepeatWrapping;m.map.repeat.set(n,n);m.map.needsUpdate=true;}
  const bounds=view.world.bounds;buildCitySurroundings(view);
  const stones=[];for(let z=bounds.minZ;z<bounds.maxZ;z++)for(let x=bounds.minX;x<bounds.maxX;x++){const cx=x+.5,cz=z+.5;if(Math.abs(cx)<3.5||Math.abs(cz-7)<2||Math.abs(cz+8)<2||Math.abs(cz-17)<2||Math.abs(cx-17)<2||Math.abs(cx+17)<2||Math.hypot(cx,cz)<6)stones.push([cx,cz]);}
@@ -40,6 +41,7 @@ export function buildCity(view){
  for(const x of[-3,3]){view.box(s,.12,4,.12,x,2,-21,wood);const flag=view.box(s,1.3,.9,.06,x+.6,3.4,-21,roof);view.flags.push(flag);}
 
  for(const building of buildings)batchStatic(building);batchStatic(s,{spatial:true,exclude:new Set([...buildings,...view.flags])});
+ const animated=new Set([...view.flags,view.citySmoke.mesh]);for(const child of s.children)if(!previousChildren.has(child)&&!animated.has(child))freezeStaticSubtree(child,{exclude:animated});
 }
 export function buildCityNpcs(view){view.npcModels=new Map();for(const npc of view.world.npcs){const sprite=artSprite('/assets/npcs/townsfolk-v043.png',3,2,npc.art%3,Math.floor(npc.art/3),4.5,4.5);sprite.center.y=.1;sprite.position.set(npc.x,.04,npc.z);view.scene.add(sprite);view.npcModels.set(npc.id,sprite);}buildNpcActivities(view);}
 

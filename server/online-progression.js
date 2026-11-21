@@ -14,7 +14,8 @@ export function progressionCommand(tower,p,a){
   if(p.character.data.progressionReceipts?.includes(a.request))return result(true);
   if(!p.character.isAlive)throw Error('Aguarde o retorno do personagem.');
   const c=new Character(p.character.snapshot()),w=tower.world(p.mapId),d=a.data;
-  if(a.operation==='build'){if(tower.inCombat(p.id))throw Error('Encerre o combate para confirmar a distribuição.');confirmBuild(c.data,d);}
+  if(a.operation==='tutorial'){if(Object.keys(d).join(',')!=='camera'||d.camera!==true)throw Error('Observação inválida.');c.data.firstSteps.camera=true;}
+  else if(a.operation==='build'){if(tower.inCombat(p.id))throw Error('Encerre o combate para confirmar a distribuição.');confirmBuild(c.data,d);}
   else if(a.operation==='service'){
    const npc=w.map.npcs?.find(n=>n.id==='reset-angel');serafina(c.data,d,{nearSerafina:canTalk(w.map,p.game.player,npc),inCombat:tower.inCombat(p.id),dead:!c.isAlive,reached:p.reached});
   }else if(a.operation==='hotbar')assignHotbar(c.data,d.slot,d.id);

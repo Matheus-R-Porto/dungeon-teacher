@@ -1,4 +1,5 @@
 asar: true
+executableName: DungeonTeacherAluno
 electronDist: node_modules/electron/dist
 publish: null
 win:
@@ -8,7 +9,7 @@ win:
     - target: portable
       arch: [x64]
 nsis:
-  artifactName: ${productName}-Iteracao38-${version}-Setup.${ext}
+  artifactName: ${productName}-Iteracao41-${version}-Setup.${ext}
   oneClick: false
   perMachine: false
   allowElevation: false
@@ -16,14 +17,15 @@ nsis:
   deleteAppDataOnUninstall: false
   createDesktopShortcut: true
 portable:
-  artifactName: ${productName}-Iteracao38-${version}-Portable.${ext}
+  artifactName: ${productName}-Iteracao41-${version}-Portable.${ext}
 appId: br.dungeonteacher.student
-productName: Dungeon Teacher
+productName: Dungeon Teacher Aluno
 directories:
-  output: release/iteration38/student
+  output: release/iteration41/student
 extraMetadata:
   main: desktop/student-main.cjs
 files:
+  - desktop/profile.cjs
   - dist/**/*
   - desktop/student-main.cjs
   - desktop/student-preload.cjs

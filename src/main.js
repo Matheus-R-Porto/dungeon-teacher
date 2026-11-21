@@ -71,7 +71,7 @@ try {
   if(mode.development){window.__appearanceLab=await import('./adapters/rendering/sheet-preview.js');window.__modularLab=await import('./adapters/rendering/actor-preview.js');}
   const development=mode.development&&params.get('school')!=='1';
   if(mode.schoolOnly&&!mode.serverUrl){const {lanSetup}=await import('./ui/lan-setup.js');await lanSetup();return;}
-  if(!development){const {schoolLobby}=await import('./ui/school-lobby.js');await schoolLobby({serverUrl:mode.serverUrl,schoolOnly:!!mode.schoolOnly,diagnostic:mode.development&&params.get('diagnostic')==='1'});return;}
+  if(!development){const {schoolLobby}=await import('./ui/school-lobby.js');await schoolLobby({serverUrl:mode.serverUrl,schoolOnly:!!mode.schoolOnly,diagnostic:(mode.development||mode.diagnostic)&&params.get('diagnostic')==='1'});return;}
   if(params.get('shared')==='1'){const {startWorldMode}=await import('./multiplayer/world-mode.js');startWorldMode(params);return;}
   const testProfile=params.get('test')==='1';
   const saves=new CharacterSave(testProfile?'iteration03-test':'current');
