@@ -43,7 +43,9 @@ test('cave composition preserves source, real mining resources and public wolf c
  const source=sharedFloor(42,2),before=JSON.stringify(source),w=awakenTower(source);assert.equal(JSON.stringify(source),before);assert.deepEqual(w.mineralVeins,source.mineralVeins);
  const wolf=w.enemySpawns.find(e=>e.enemyType==='whiteWolf');assert.ok(wolf.overrides.isMiniBoss&&wolf.overrides.optional);assert.equal(wolf.overrides.rewardXP,undefined);assert.equal(wolf.position.surface,'white-wolf-cave');
 });
-test('cave shaders prepare both regions without changing the visible camera mask',async()=>{
+test('cave shaders prepare both regions without changing the visible camera mask',async t=>{
+ // This browser renderer may yield when a loaded CI worker crosses its 3 ms slice.
+ const raf=globalThis.requestAnimationFrame,caf=globalThis.cancelAnimationFrame;globalThis.requestAnimationFrame=callback=>setImmediate(callback);globalThis.cancelAnimationFrame=clearImmediate;t.after(()=>{if(raf===undefined)delete globalThis.requestAnimationFrame;else globalThis.requestAnimationFrame=raf;if(caf===undefined)delete globalThis.cancelAnimationFrame;else globalThis.cancelAnimationFrame=caf;});
  const camera=new THREE.PerspectiveCamera(),scene=new THREE.Scene(),mesh=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshBasicMaterial());regionLayer(mesh,true);scene.add(mesh);let calls=0;
  await compileScene({world:{awakening:{cave:{}}},scene,camera,renderer:{compileAsync:async(_,prepared)=>{calls++;assert.ok(prepared.layers.test(mesh.layers));assert.notEqual(prepared,camera);}}},new AbortController().signal,()=>{});
  assert.equal(calls,1);assert.equal(camera.layers.isEnabled(1),false);mesh.geometry.dispose();mesh.material.dispose();

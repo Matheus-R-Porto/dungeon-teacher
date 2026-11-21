@@ -1,0 +1,1842 @@
+{
+  "checks": [
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 0,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        96
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 1,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        21,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 2,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        97,
+        38
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 3,
+      "type": "fishing",
+      "frame": 3,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        107,
+        43
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "masculine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-masculine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "masculine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-masculine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "masculine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-masculine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "masculine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-masculine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "masculine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-masculine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "masculine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-masculine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": "feminine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:novice-feminine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": "feminine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:warrior-feminine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": "feminine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:archer-feminine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": "feminine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:rogue-feminine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": "feminine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:priest-feminine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 0,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        102
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 1,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        39,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 2,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        92,
+        71
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": "feminine",
+      "direction": 3,
+      "type": "mining",
+      "frame": 12,
+      "key": "profession:mage-feminine",
+      "backpack": true,
+      "tip": [
+        89,
+        101
+      ],
+      "bodyScale": 4.72,
+      "programs": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "palette": {
+    "changed": 2230,
+    "stable": 4064
+  },
+  "programs": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "ok": true,
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "checks": [
+    "All gallery images decode",
+    "48 class/body/direction cells",
+    "Pause retains pose",
+    "Step advances one pose",
+    "Mining selects second row of each direction",
+    "All 12 atlas backgrounds load",
+    "18 before/after multiplayer screenshots",
+    "Four views keep their full width in narrow gallery"
+  ],
+  "errors": []
+}

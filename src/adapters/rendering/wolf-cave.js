@@ -49,6 +49,6 @@ export function buildWolfCave(v){
   blend+=(Math.max(0,Math.min(1,-(player.y??0)/3))-blend)*(1-Math.exp(-dt*9));
   v.scene.background.copy(groundColor).lerp(dark,blend);v.scene.fog.color.copy(fogColor).lerp(dark,blend);v.hemisphere.intensity=1.8-.5*blend;v.sun.intensity=2.6-1.5*blend;
   shade.material.opacity=Math.sin(depth*Math.PI)*.92;shade.visible=shade.material.opacity>.01;shade.scale.set(v.height*(v.canvas.clientWidth/Math.max(1,v.canvas.clientHeight))/2,v.height/2,1);
-  grave.visible=under&&!!v.encounter?.respawnAt;
+  const position=v.encounter?.position??a.den;grave.position.set(position.x,(position.y??c.y)+.85,position.z);grave.visible=under&&!!v.encounter?.respawnAt;
  };
 }

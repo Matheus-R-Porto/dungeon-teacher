@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "atlases": 60,
+  "checks": [
+    "Existing opaque main-atlas pixels unchanged",
+    "Equipment and color masks unchanged at existing opaque pixels"
+  ]
+}

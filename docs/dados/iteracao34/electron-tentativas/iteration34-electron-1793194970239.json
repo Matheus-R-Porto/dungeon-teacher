@@ -1,0 +1,44 @@
+{
+  "checks": [],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration34-electron-1793194970239\\falha-Cliente-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration34-electron-1793194970239\\falha-Cliente-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration34-electron-1793194970239\\falha-Cliente-2.png"
+  ],
+  "errors": [
+    "Error: Tempo limite Electron\n    at until (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration34/electron.mjs:5:172)\n    at async file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration34/electron.mjs:16:905"
+  ],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration34-electron-1793194970239",
+  "packagedResources": false,
+  "ok": false,
+  "failureStates": [
+    {
+      "client": "Cliente-0",
+      "state": {
+        "text": "Cidade do Limiar\n◆\nAventureiro 1 · Guerreiro\nNível 38\nHP\n1523 / 1523\nMP\n191 / 191\nXP\n7700 / 9350\nOuro 0\nBase 38 · Job 25/50 · Job XP 0/650 · Peso 7.00/60.00 kg\nBem alimentado · 211s\nREFÚGIO\n45.0°\nVocê\nPortal\n☰ Menus\n1\n2\n3\n4\n5\n6\n·\n7\n·\n8\n·\nÁrvore do Destino · Tab\nAventureiro 1\nChat\nAventureiro 2",
+        "diagnostic": true,
+        "status": "Online",
+        "map": "shared-city",
+        "transition": "<div class=\"scene-transition\" role=\"status\" hidden=\"\">Preparando passagem…</div>"
+      }
+    },
+    {
+      "client": "Cliente-1",
+      "state": {
+        "text": "Cidade do Limiar\n◆\nAventureiro 2 · Sacerdote\nNível 38\nHP\n1183 / 1183\nMP\n1112 / 1112\nXP\n7700 / 9350\nOuro 0\nBase 38 · Job 25/50 · Job XP 0/650 · Peso 4.85/60.00 kg\nBem alimentado · 211s\nREFÚGIO\n45.0°\nVocê\nPortal\n☰ Menus\n1\n2\n3\n4\n5\n6\n7\n·\n8\n·\nÁrvore do Destino · Tab\nAventureiro 2\nChat\nAventureiro 1",
+        "diagnostic": true,
+        "status": "Online",
+        "map": "shared-city",
+        "transition": "<div class=\"scene-transition\" role=\"status\" hidden=\"\">Preparando passagem…</div>"
+      }
+    },
+    {
+      "client": "Cliente-2",
+      "state": {
+        "text": "Cidade do Limiar\n◆\nPersonagem\nHP\nMP\nXP\nRESPIRAR TAMBÉM FAZ PARTE\nVocê está em um mundo compartilhado.\n\nSeus comandos foram interrompidos. Os jogadores e monstros continuam ativos.\n\nContinuar a jornada\n→\nGráficos e fluidez\nPerfil \nAutomático (recomendado)\nDesempenho\nEquilibrado\nAlta Qualidade\n\nAutomático usa a avaliação local. Desempenho reduz resolução e sombras; Equilibrado combina fluidez e qualidade; Alta Qualidade preserva os detalhes. Nenhum perfil reduz monstros ou indicadores de ataques.\n\nMeta de fluidez: 60 FPS. A taxa efetiva depende deste computador e do monitor.\n\n Permitir ajustes automáticos para manter a fluidez.\n Exibir painel de desempenho (F10)\nRefazer avaliaçãoRestaurar recomendaçãoSalvar diagnóstico local\n\nRecomendação: Alta Qualidade.\n\n↶\nQ\nÓRBITA · 45.0°\nE\n↷\n−\n+\nFalha ao preparar mapa: Tempo limite na preparação do mapa. Tente novamente.\n\nPersonagem temporário · Espada de treino\n\nClique em um monstro para atacar.\n\nProgresso salvo no servidor.\nConectarSair da conta\n☰ Menus\n1\n·\n2\n·\n3\n·\n4\n·\n5\n·\n6\n·\n7\n·\n8\n·\nÁrvore do Destino · Tab\nChat",
+        "diagnostic": false,
+        "transition": "<div class=\"scene-transition\" role=\"status\" hidden=\"\">Preparando passagem…</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1824 @@
+{
+  "frames": 883,
+  "seen": [
+    "0:0:2:0:idle",
+    "1:0:2:0:idle",
+    "0:0:2:1:idle",
+    "1:0:2:1:idle",
+    "0:0:2:2:idle",
+    "1:0:2:2:idle",
+    "0:0:2:3:idle",
+    "1:0:2:3:idle",
+    "0:0:2:4:idle",
+    "1:0:2:4:idle",
+    "0:0:2:1:windup",
+    "1:0:2:1:windup",
+    "0:0:2:1:impact",
+    "1:0:2:1:impact",
+    "0:0:2:1:recovery",
+    "1:0:2:1:recovery",
+    "0:0:0:0:idle",
+    "1:0:0:0:idle",
+    "0:0:0:1:idle",
+    "1:0:0:1:idle",
+    "0:0:0:2:idle",
+    "1:0:0:2:idle",
+    "0:0:0:3:idle",
+    "1:0:0:3:idle",
+    "0:0:1:3:idle",
+    "1:0:1:3:idle",
+    "0:0:1:4:idle",
+    "1:0:1:4:idle",
+    "0:0:1:0:idle",
+    "1:0:1:0:idle",
+    "0:0:1:1:idle",
+    "1:0:1:1:idle",
+    "0:0:3:1:idle",
+    "1:0:3:1:idle",
+    "0:0:3:2:idle",
+    "1:0:3:2:idle",
+    "0:0:3:3:idle",
+    "1:0:3:3:idle",
+    "0:0:3:4:idle",
+    "1:0:3:4:idle",
+    "0:1:2:4:idle",
+    "1:1:2:4:idle",
+    "0:1:2:1:idle",
+    "1:1:2:1:idle",
+    "0:1:2:2:idle",
+    "1:1:2:2:idle",
+    "0:1:2:3:idle",
+    "1:1:2:3:idle",
+    "0:1:2:0:idle",
+    "1:1:2:0:idle",
+    "0:1:2:1:windup",
+    "1:1:2:1:windup",
+    "0:1:2:1:impact",
+    "1:1:2:1:impact",
+    "0:1:2:1:recovery",
+    "1:1:2:1:recovery",
+    "0:1:0:0:idle",
+    "1:1:0:0:idle",
+    "0:1:0:1:idle",
+    "1:1:0:1:idle",
+    "0:1:0:2:idle",
+    "1:1:0:2:idle",
+    "0:1:0:3:idle",
+    "1:1:0:3:idle",
+    "0:1:1:3:idle",
+    "1:1:1:3:idle",
+    "0:1:1:4:idle",
+    "1:1:1:4:idle",
+    "0:1:1:0:idle",
+    "1:1:1:0:idle",
+    "0:1:1:1:idle",
+    "1:1:1:1:idle",
+    "0:1:3:1:idle",
+    "1:1:3:1:idle",
+    "0:1:3:2:idle",
+    "1:1:3:2:idle",
+    "0:1:3:3:idle",
+    "1:1:3:3:idle",
+    "0:1:3:4:idle",
+    "1:1:3:4:idle",
+    "0:2:2:4:idle",
+    "1:2:2:4:idle",
+    "0:2:2:1:idle",
+    "1:2:2:1:idle",
+    "0:2:2:2:idle",
+    "1:2:2:2:idle",
+    "0:2:2:3:idle",
+    "1:2:2:3:idle",
+    "0:2:2:0:idle",
+    "1:2:2:0:idle",
+    "0:2:2:1:windup",
+    "1:2:2:1:windup",
+    "0:2:2:1:impact",
+    "1:2:2:1:impact",
+    "0:2:2:1:recovery",
+    "1:2:2:1:recovery",
+    "0:2:0:0:idle",
+    "1:2:0:0:idle",
+    "0:2:0:1:idle",
+    "1:2:0:1:idle",
+    "0:2:0:2:idle",
+    "1:2:0:2:idle",
+    "0:2:0:3:idle",
+    "1:2:0:3:idle",
+    "0:2:1:3:idle",
+    "1:2:1:3:idle",
+    "0:2:1:4:idle",
+    "1:2:1:4:idle",
+    "0:2:1:0:idle",
+    "1:2:1:0:idle",
+    "0:2:1:1:idle",
+    "1:2:1:1:idle",
+    "0:2:3:1:idle",
+    "1:2:3:1:idle",
+    "0:2:3:2:idle",
+    "1:2:3:2:idle",
+    "0:2:3:3:idle",
+    "1:2:3:3:idle",
+    "0:2:3:4:idle",
+    "1:2:3:4:idle",
+    "0:3:2:4:idle",
+    "1:3:2:4:idle",
+    "0:3:2:1:idle",
+    "1:3:2:1:idle",
+    "0:3:2:2:idle",
+    "1:3:2:2:idle",
+    "0:3:2:3:idle",
+    "1:3:2:3:idle",
+    "0:3:2:0:idle",
+    "1:3:2:0:idle",
+    "0:3:2:1:windup",
+    "1:3:2:1:windup",
+    "0:3:2:1:impact",
+    "1:3:2:1:impact",
+    "0:3:2:1:recovery",
+    "1:3:2:1:recovery",
+    "0:3:0:0:idle",
+    "1:3:0:0:idle",
+    "0:3:0:1:idle",
+    "1:3:0:1:idle",
+    "0:3:0:2:idle",
+    "1:3:0:2:idle",
+    "0:3:0:3:idle",
+    "1:3:0:3:idle",
+    "0:3:1:3:idle",
+    "1:3:1:3:idle",
+    "0:3:1:4:idle",
+    "1:3:1:4:idle",
+    "0:3:1:0:idle",
+    "1:3:1:0:idle",
+    "0:3:1:1:idle",
+    "1:3:1:1:idle",
+    "0:3:3:1:idle",
+    "1:3:3:1:idle",
+    "0:3:3:2:idle",
+    "1:3:3:2:idle",
+    "0:3:3:3:idle",
+    "1:3:3:3:idle",
+    "0:3:3:4:idle",
+    "1:3:3:4:idle"
+  ],
+  "snapshots": [
+    {
+      "at": 0.091,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-00.png"
+    },
+    {
+      "at": 0.5434000000003725,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-01.png"
+    },
+    {
+      "at": 0.7335,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-02.png"
+    },
+    {
+      "at": 0.9304000000003725,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-03.png"
+    },
+    {
+      "at": 1.1459000000003725,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-04.png"
+    },
+    {
+      "at": 1.3475,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-05.png"
+    },
+    {
+      "at": 1.5667999999988824,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-06.png"
+    },
+    {
+      "at": 1.7852999999988823,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-07.png"
+    },
+    {
+      "at": 2.0020999999996274,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-08.png"
+    },
+    {
+      "at": 2.208,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-09.png"
+    },
+    {
+      "at": 2.4242999999988823,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-10.png"
+    },
+    {
+      "at": 2.6250999999996276,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-11.png"
+    },
+    {
+      "at": 2.8462999999988825,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-12.png"
+    },
+    {
+      "at": 3.0795,
+      "family": 0,
+      "direction": 2,
+      "phase": "windup",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-13.png"
+    },
+    {
+      "at": 3.301,
+      "family": 0,
+      "direction": 2,
+      "phase": "impact",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-14.png"
+    },
+    {
+      "at": 3.5075,
+      "family": 0,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-15.png"
+    },
+    {
+      "at": 3.7245,
+      "family": 0,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-16.png"
+    },
+    {
+      "at": 3.9375,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-17.png"
+    },
+    {
+      "at": 4.144299999998882,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-18.png"
+    },
+    {
+      "at": 4.371099999999627,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-19.png"
+    },
+    {
+      "at": 4.587699999999255,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-20.png"
+    },
+    {
+      "at": 4.800799999998882,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-21.png"
+    },
+    {
+      "at": 5.023099999999627,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-22.png"
+    },
+    {
+      "at": 5.238199999999255,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-23.png"
+    },
+    {
+      "at": 5.466400000000372,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-24.png"
+    },
+    {
+      "at": 5.692400000000372,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-25.png"
+    },
+    {
+      "at": 5.923900000000373,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-26.png"
+    },
+    {
+      "at": 6.134,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-27.png"
+    },
+    {
+      "at": 6.354099999999628,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-28.png"
+    },
+    {
+      "at": 6.573299999998882,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-29.png"
+    },
+    {
+      "at": 6.791599999999628,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-30.png"
+    },
+    {
+      "at": 7.018299999998883,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-31.png"
+    },
+    {
+      "at": 7.246599999999628,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-32.png"
+    },
+    {
+      "at": 7.441299999998883,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-33.png"
+    },
+    {
+      "at": 7.658799999998882,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-34.png"
+    },
+    {
+      "at": 7.854599999999627,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-35.png"
+    },
+    {
+      "at": 8.084799999998882,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-36.png"
+    },
+    {
+      "at": 8.2985,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-37.png"
+    },
+    {
+      "at": 8.528900000000373,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-38.png"
+    },
+    {
+      "at": 8.727099999999627,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-39.png"
+    },
+    {
+      "at": 8.957599999999628,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-40.png"
+    },
+    {
+      "at": 9.172900000000373,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-41.png"
+    },
+    {
+      "at": 9.390199999999256,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-42.png"
+    },
+    {
+      "at": 9.604799999998882,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-43.png"
+    },
+    {
+      "at": 9.824299999998882,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-44.png"
+    },
+    {
+      "at": 10.047599999999628,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-45.png"
+    },
+    {
+      "at": 10.271799999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-46.png"
+    },
+    {
+      "at": 10.498699999999255,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-47.png"
+    },
+    {
+      "at": 10.714299999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-48.png"
+    },
+    {
+      "at": 10.9425,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-49.png"
+    },
+    {
+      "at": 11.1585,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-50.png"
+    },
+    {
+      "at": 11.352400000000372,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-51.png"
+    },
+    {
+      "at": 11.584599999999627,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-52.png"
+    },
+    {
+      "at": 11.804199999999256,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-53.png"
+    },
+    {
+      "at": 12.0245,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-54.png"
+    },
+    {
+      "at": 12.252799999998883,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-55.png"
+    },
+    {
+      "at": 12.475799999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-56.png"
+    },
+    {
+      "at": 12.669099999999627,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-57.png"
+    },
+    {
+      "at": 12.891299999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-58.png"
+    },
+    {
+      "at": 13.087099999999628,
+      "family": 1,
+      "direction": 2,
+      "phase": "windup",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-59.png"
+    },
+    {
+      "at": 13.305699999999256,
+      "family": 1,
+      "direction": 2,
+      "phase": "impact",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-60.png"
+    },
+    {
+      "at": 13.531299999998883,
+      "family": 1,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-61.png"
+    },
+    {
+      "at": 13.753299999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-62.png"
+    },
+    {
+      "at": 13.967299999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-63.png"
+    },
+    {
+      "at": 14.157799999998883,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-64.png"
+    },
+    {
+      "at": 14.372400000000372,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-65.png"
+    },
+    {
+      "at": 14.592,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-66.png"
+    },
+    {
+      "at": 14.815199999999255,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-67.png"
+    },
+    {
+      "at": 15.048799999998883,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-68.png"
+    },
+    {
+      "at": 15.258299999998883,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-69.png"
+    },
+    {
+      "at": 15.465799999998882,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-70.png"
+    },
+    {
+      "at": 15.6825,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-71.png"
+    },
+    {
+      "at": 15.881599999999628,
+      "family": 1,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-72.png"
+    },
+    {
+      "at": 16.073699999999256,
+      "family": 1,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-73.png"
+    },
+    {
+      "at": 16.276299999998884,
+      "family": 1,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-74.png"
+    },
+    {
+      "at": 16.4905,
+      "family": 1,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-75.png"
+    },
+    {
+      "at": 16.696400000000374,
+      "family": 1,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-76.png"
+    },
+    {
+      "at": 16.9135,
+      "family": 1,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-77.png"
+    },
+    {
+      "at": 17.135599999999627,
+      "family": 1,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-78.png"
+    },
+    {
+      "at": 17.35890000000037,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-79.png"
+    },
+    {
+      "at": 17.591099999999628,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-80.png"
+    },
+    {
+      "at": 17.7935,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-81.png"
+    },
+    {
+      "at": 18.007,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-82.png"
+    },
+    {
+      "at": 18.22490000000037,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-83.png"
+    },
+    {
+      "at": 18.442099999999627,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-84.png"
+    },
+    {
+      "at": 18.669799999998883,
+      "family": 1,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-85.png"
+    },
+    {
+      "at": 18.89240000000037,
+      "family": 1,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-86.png"
+    },
+    {
+      "at": 19.1235,
+      "family": 1,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-87.png"
+    },
+    {
+      "at": 19.33459999999963,
+      "family": 1,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-88.png"
+    },
+    {
+      "at": 19.529699999999256,
+      "family": 1,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-89.png"
+    },
+    {
+      "at": 19.745599999999627,
+      "family": 1,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-90.png"
+    },
+    {
+      "at": 19.9685,
+      "family": 1,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-91.png"
+    },
+    {
+      "at": 20.158799999998884,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-92.png"
+    },
+    {
+      "at": 20.381299999998884,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-93.png"
+    },
+    {
+      "at": 20.581900000000374,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-94.png"
+    },
+    {
+      "at": 20.7915,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-95.png"
+    },
+    {
+      "at": 21.001900000000372,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-96.png"
+    },
+    {
+      "at": 21.209699999999255,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-97.png"
+    },
+    {
+      "at": 21.433199999999253,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-98.png"
+    },
+    {
+      "at": 21.625199999999253,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-99.png"
+    },
+    {
+      "at": 21.837799999998882,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-100.png"
+    },
+    {
+      "at": 22.06640000000037,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-101.png"
+    },
+    {
+      "at": 22.258099999999626,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-102.png"
+    },
+    {
+      "at": 22.480699999999256,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-103.png"
+    },
+    {
+      "at": 22.711400000000374,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-104.png"
+    },
+    {
+      "at": 22.911799999998884,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-105.png"
+    },
+    {
+      "at": 23.142099999999626,
+      "family": 2,
+      "direction": 2,
+      "phase": "windup",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-106.png"
+    },
+    {
+      "at": 23.3375,
+      "family": 2,
+      "direction": 2,
+      "phase": "impact",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-107.png"
+    },
+    {
+      "at": 23.562599999999627,
+      "family": 2,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-108.png"
+    },
+    {
+      "at": 23.756299999998884,
+      "family": 2,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-109.png"
+    },
+    {
+      "at": 23.972599999999627,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-110.png"
+    },
+    {
+      "at": 24.18809999999963,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-111.png"
+    },
+    {
+      "at": 24.418799999998882,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-112.png"
+    },
+    {
+      "at": 24.638,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-113.png"
+    },
+    {
+      "at": 24.857900000000374,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-114.png"
+    },
+    {
+      "at": 25.071,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-115.png"
+    },
+    {
+      "at": 25.291599999999626,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-116.png"
+    },
+    {
+      "at": 25.510599999999627,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-117.png"
+    },
+    {
+      "at": 25.72079999999888,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-118.png"
+    },
+    {
+      "at": 25.925199999999254,
+      "family": 2,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-119.png"
+    },
+    {
+      "at": 26.126400000000373,
+      "family": 2,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-120.png"
+    },
+    {
+      "at": 26.342699999999255,
+      "family": 2,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-121.png"
+    },
+    {
+      "at": 26.55890000000037,
+      "family": 2,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-122.png"
+    },
+    {
+      "at": 26.794,
+      "family": 2,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-123.png"
+    },
+    {
+      "at": 27.00990000000037,
+      "family": 2,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-124.png"
+    },
+    {
+      "at": 27.209299999998883,
+      "family": 2,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-125.png"
+    },
+    {
+      "at": 27.434900000000372,
+      "family": 2,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-126.png"
+    },
+    {
+      "at": 27.632,
+      "family": 2,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-127.png"
+    },
+    {
+      "at": 27.859,
+      "family": 2,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-128.png"
+    },
+    {
+      "at": 28.087,
+      "family": 2,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-129.png"
+    },
+    {
+      "at": 28.318400000000373,
+      "family": 2,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-130.png"
+    },
+    {
+      "at": 28.536099999999628,
+      "family": 2,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-131.png"
+    },
+    {
+      "at": 28.751,
+      "family": 2,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-132.png"
+    },
+    {
+      "at": 28.976299999998883,
+      "family": 2,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-133.png"
+    },
+    {
+      "at": 29.190900000000372,
+      "family": 2,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-134.png"
+    },
+    {
+      "at": 29.399,
+      "family": 2,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-135.png"
+    },
+    {
+      "at": 29.613199999999257,
+      "family": 2,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-136.png"
+    },
+    {
+      "at": 29.824,
+      "family": 2,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-137.png"
+    },
+    {
+      "at": 30.046099999999626,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-138.png"
+    },
+    {
+      "at": 30.297799999998883,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-139.png"
+    },
+    {
+      "at": 30.497699999999256,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-140.png"
+    },
+    {
+      "at": 30.72529999999888,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-141.png"
+    },
+    {
+      "at": 30.916699999999256,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-142.png"
+    },
+    {
+      "at": 31.136199999999256,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-143.png"
+    },
+    {
+      "at": 31.353799999998884,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-144.png"
+    },
+    {
+      "at": 31.581900000000374,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-145.png"
+    },
+    {
+      "at": 31.802099999999626,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-146.png"
+    },
+    {
+      "at": 32.02129999999888,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-147.png"
+    },
+    {
+      "at": 32.235699999999255,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-148.png"
+    },
+    {
+      "at": 32.45129999999888,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-149.png"
+    },
+    {
+      "at": 32.68269999999926,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-150.png"
+    },
+    {
+      "at": 32.899,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-151.png"
+    },
+    {
+      "at": 33.11659999999963,
+      "family": 3,
+      "direction": 2,
+      "phase": "windup",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-152.png"
+    },
+    {
+      "at": 33.324699999999254,
+      "family": 3,
+      "direction": 2,
+      "phase": "impact",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-153.png"
+    },
+    {
+      "at": 33.51769999999925,
+      "family": 3,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-154.png"
+    },
+    {
+      "at": 33.735099999999626,
+      "family": 3,
+      "direction": 2,
+      "phase": "recovery",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-155.png"
+    },
+    {
+      "at": 33.95740000000037,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-156.png"
+    },
+    {
+      "at": 34.1485,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-157.png"
+    },
+    {
+      "at": 34.36629999999888,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-158.png"
+    },
+    {
+      "at": 34.58659999999963,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-159.png"
+    },
+    {
+      "at": 34.7925,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-160.png"
+    },
+    {
+      "at": 34.98640000000037,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-161.png"
+    },
+    {
+      "at": 35.218599999999626,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-162.png"
+    },
+    {
+      "at": 35.43209999999963,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-163.png"
+    },
+    {
+      "at": 35.65290000000037,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-164.png"
+    },
+    {
+      "at": 35.8705,
+      "family": 3,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-165.png"
+    },
+    {
+      "at": 36.091,
+      "family": 3,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-166.png"
+    },
+    {
+      "at": 36.3035,
+      "family": 3,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-167.png"
+    },
+    {
+      "at": 36.51840000000037,
+      "family": 3,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-168.png"
+    },
+    {
+      "at": 36.749599999999624,
+      "family": 3,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-169.png"
+    },
+    {
+      "at": 36.96179999999888,
+      "family": 3,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-170.png"
+    },
+    {
+      "at": 37.18459999999963,
+      "family": 3,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-171.png"
+    },
+    {
+      "at": 37.399,
+      "family": 3,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-172.png"
+    },
+    {
+      "at": 37.62469999999926,
+      "family": 3,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-173.png"
+    },
+    {
+      "at": 37.83769999999925,
+      "family": 3,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-174.png"
+    },
+    {
+      "at": 38.04440000000037,
+      "family": 3,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-175.png"
+    },
+    {
+      "at": 38.25840000000037,
+      "family": 3,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "foco-176.png"
+    },
+    {
+      "at": 38.47140000000037,
+      "family": 3,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-177.png"
+    },
+    {
+      "at": 38.7025,
+      "family": 3,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 1,
+      "file": "foco-178.png"
+    },
+    {
+      "at": 38.924699999999255,
+      "family": 3,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-179.png"
+    },
+    {
+      "at": 39.1415,
+      "family": 3,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 2,
+      "file": "foco-180.png"
+    },
+    {
+      "at": 39.37140000000037,
+      "family": 3,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-181.png"
+    },
+    {
+      "at": 39.59129999999888,
+      "family": 3,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 3,
+      "file": "foco-182.png"
+    },
+    {
+      "at": 39.80859999999963,
+      "family": 3,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 4,
+      "file": "foco-183.png"
+    }
+  ],
+  "seconds": 40.72990000000037
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "version": "before",
+    "cls": "warrior",
+    "ms": 1480.300000000745,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "before",
+    "cls": "priest",
+    "ms": 1129.4000000003725,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "before",
+    "cls": "mage",
+    "ms": 1035.2999999988824,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "before",
+    "cls": "archer",
+    "ms": 1143.699999999255,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "after",
+    "cls": "warrior",
+    "ms": 660,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "after",
+    "cls": "priest",
+    "ms": 458.90000000037253,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "after",
+    "cls": "mage",
+    "ms": 368.40000000037253,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "version": "after",
+    "cls": "archer",
+    "ms": 461.8999999985099,
+    "width": 1536,
+    "height": 1024
+  }
+]

@@ -1,0 +1,18 @@
+✔ 33: TLS autenticado por identidade, descoberta opcional, endereço manual e ADM sem vaga (4031.2349ms)
+✔ 33: mesma conta A → B → A, autoridade, sessão única, queda, kick e reinício preservam estado (3947.0953ms)
+✔ 33: 32 vagas sob entradas concorrentes, professor conta, ADM não conta, 33º rejeitado e vaga liberada (4465.0297ms)
+✔ 33: temporadas, confirmação, limpeza retomável, backups vinculados e nova geração sem progresso (3027.3385ms)
+✔ 33: backup consistente, restauração interrompida, corrupção rejeitada e migração de banco legado (4542.2859ms)
+✔ 33: porta ocupada preserva banco e exige encerramento confirmado (2465.2161ms)
+✔ B/C/D/E/F/G: real tower clients isolate floors, fight, transition, resume and reuse geography after server restart (17949.8801ms)
+✔ public city has navigable NPC approaches, solid buildings and reachable tower (62.603ms)
+✔ dialogue requires proximity and unobstructed line of sight, ignoring only its own NPC collider (0.7623ms)
+✔ school: 12 v4 identities, 2x6 parties, combat, loot, travel, reconnection and persistent restart (8069.0842ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 50198.8937

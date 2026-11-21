@@ -1,3 +1,4 @@
+import {decodeWorldDrops} from '../../domain/items/world-drops.js';
 import {decodeExploration} from '../../domain/exploration.js';
 import {normalizeHotbar} from '../../domain/abilities/hotbar.js';
 import {decodeFood} from '../../domain/food.js';
@@ -17,7 +18,7 @@ export function decodeSave(raw){
   if(raw.saveVersion&&raw.saveVersion!=='0.1.0')throw Error('Versão futura ou desconhecida de save.');
   const source=raw.character??raw;if(typeof source!=='object'||Array.isArray(source))throw Error('Personagem inválido no save.');const defaults=createCharacter();
   const integer=(value,fallback,min,max)=>{if(value===undefined)return fallback;if(!Number.isSafeInteger(value)||value<min||value>max)throw Error('Save contém valor inválido.');return value;};
-  if(source.classId!==undefined&&!Object.hasOwn(CLASS_DEFINITIONS,source.classId))throw Error('Classe ainda não suportada neste save.');
+  if(source.classId!==undefined&&source.classId!=='novice')throw Error('Classe ainda não suportada neste save.');
   const data={...defaults,classId:source.classId??defaults.classId,name:typeof source.name==='string'?source.name.slice(0,60):defaults.name,
     level:integer(source.level,1,1,BALANCE.maxLevel),xp:integer(source.xp,0,0,BALANCE.maxGainXP),attributePoints:integer(source.attributePoints,0,0,BALANCE.maxPoints),attributes:{}};
   for(const key of Object.keys(ATTRIBUTES))data.attributes[key]=integer(source.attributes?.[key],defaults.attributes[key],0,BALANCE.maxAttribute);
@@ -30,7 +31,7 @@ export function decodeSave(raw){
   while(data.level<BALANCE.maxLevel&&data.xp>=xpRequired(data.level)){data.xp-=xpRequired(data.level);data.level++;data.attributePoints=Math.min(BALANCE.maxPoints,data.attributePoints+BALANCE.pointsPerLevel);data.skillSpaces=Math.min(BALANCE.maxPoints,data.skillSpaces+BALANCE.skillSpacesPerLevel);}
   if(data.level===BALANCE.maxLevel)data.xp=Math.min(data.xp,xpRequired(data.level)-1);
   if(source.equippedWeaponType!=null&&!Object.hasOwn(WEAPONS,source.equippedWeaponType))throw Error('Arma desconhecida no save.');
-  Object.assign(data,decodeInventory(source));data.lifeSkills=decodeLifeSkills(source.lifeSkills);
+  Object.assign(data,decodeInventory(source));data.worldDrops=decodeWorldDrops(source.worldDrops);data.lifeSkills=decodeLifeSkills(source.lifeSkills);
   if(source.knownAbilities!==undefined&&(!Array.isArray(source.knownAbilities)||source.knownAbilities.some(id=>!Object.hasOwn(ABILITIES,id))))throw Error('Habilidade desconhecida no save.');
   data.knownAbilities=source.knownAbilities?[...new Set(source.knownAbilities)]:[];
   if(source.hotbar!==undefined)data.hotbar=normalizeHotbar(source.hotbar,data.knownAbilities);

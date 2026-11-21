@@ -1,0 +1,11 @@
+{
+  "frames": {
+    "24": "castRecover",
+    "25": "healPrepare",
+    "26": "healRelease",
+    "27": "support",
+    "28": "area",
+    "31": "recover"
+  },
+  "method": "authored forearm silhouettes rotated offline without stretch; native costumes preserved; two-foot crouch recovery instead of a walk frame"
+}

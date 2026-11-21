@@ -5,7 +5,7 @@ export function resolveAttack(attacker,defender,random=Math.random){
   if(random()>=hitChance(attacker,defender))return {hit:false,critical:false,damage:0};
   const critical=random()<clamp(attacker.criticalChance/100,0,1);
   const variation=1+(random()*2-1)*COMBAT.variation;
-  const damage=Math.max(COMBAT.minimumDamage,Math.round(Math.max(COMBAT.minimumDamage,attacker.physicalAttack-defender.physicalDefense)*variation*(critical?COMBAT.criticalMultiplier:1)));
+  const damage=Math.max(COMBAT.minimumDamage,Math.round(Math.max(COMBAT.minimumDamage,attacker.physicalAttack-defender.physicalDefense)*variation*(critical?(attacker.criticalMultiplier??COMBAT.criticalMultiplier):1)));
   return {hit:true,critical,damage};
 }
 // A cycle owns preparation, one impact, and recovery. Cancellation keeps recovery

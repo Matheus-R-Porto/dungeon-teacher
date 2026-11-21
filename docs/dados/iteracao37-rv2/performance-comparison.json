@@ -1,0 +1,90 @@
+{
+  "metrics": [
+    {
+      "phase": "idle",
+      "metric": "fps",
+      "before": 71.9793169943153,
+      "after": 70.76870909204621,
+      "deltaPercent": -1.681883008649132
+    },
+    {
+      "phase": "idle",
+      "metric": "rendererTaskCPUPercent",
+      "before": 87.07327040607319,
+      "after": 89.21173787560826,
+      "deltaPercent": 2.4559402208762293
+    },
+    {
+      "phase": "idle",
+      "metric": "jsHeap",
+      "before": 16484100,
+      "after": 17471082,
+      "deltaPercent": 5.98747884324895
+    },
+    {
+      "phase": "fishing",
+      "metric": "fps",
+      "before": 69.94384183806682,
+      "after": 72.72140479101381,
+      "deltaPercent": 3.971132954603185
+    },
+    {
+      "phase": "fishing",
+      "metric": "rendererTaskCPUPercent",
+      "before": 90.38097030832186,
+      "after": 89.61953219804963,
+      "deltaPercent": -0.8424761403586389
+    },
+    {
+      "phase": "fishing",
+      "metric": "jsHeap",
+      "before": 20854878,
+      "after": 16432424,
+      "deltaPercent": -21.205849298183377
+    },
+    {
+      "phase": "mining",
+      "metric": "fps",
+      "before": 84.99361136017558,
+      "after": 91.96674342428797,
+      "deltaPercent": 8.204301420447369
+    },
+    {
+      "phase": "mining",
+      "metric": "rendererTaskCPUPercent",
+      "before": 97.93948211483843,
+      "after": 97.52772105161793,
+      "deltaPercent": -0.42042397440664736
+    },
+    {
+      "phase": "mining",
+      "metric": "jsHeap",
+      "before": 29217310,
+      "after": 28614750,
+      "deltaPercent": -2.062339072282837
+    },
+    {
+      "phase": "tree-scroll-tooltip",
+      "metric": "fps",
+      "before": 87.25616149493213,
+      "after": 77.52432806226466,
+      "deltaPercent": -11.15317619516497
+    },
+    {
+      "phase": "tree-scroll-tooltip",
+      "metric": "rendererTaskCPUPercent",
+      "before": 98.01124323161736,
+      "after": 98.87060295754924,
+      "deltaPercent": 0.8767970873515774
+    },
+    {
+      "phase": "tree-scroll-tooltip",
+      "metric": "jsHeap",
+      "before": 31373890,
+      "after": 31034492,
+      "deltaPercent": -1.0817848854573042
+    }
+  ],
+  "before": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv2-before-1793508330851\\report.json",
+  "after": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv2-after-1793508013387\\report.json"
+}

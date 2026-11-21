@@ -1,0 +1,333 @@
+{
+  "ok": true,
+  "grips": [
+    {
+      "family": "sword",
+      "direction": 0,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 201
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 0,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 1,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 200
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 1,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 2,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 201
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 2,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 3,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 203
+      },
+      "opaque": 81
+    },
+    {
+      "family": "sword",
+      "direction": 3,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 0,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 185
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 0,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 1,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 191
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 1,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 2,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 192
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 2,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 3,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 195
+      },
+      "opaque": 81
+    },
+    {
+      "family": "dagger",
+      "direction": 3,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 64
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 0,
+      "held": true,
+      "point": {
+        "x": 114,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 0,
+      "held": false,
+      "point": {
+        "x": 127,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 1,
+      "held": true,
+      "point": {
+        "x": 133,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 1,
+      "held": false,
+      "point": {
+        "x": 126,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 2,
+      "held": true,
+      "point": {
+        "x": 142,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 2,
+      "held": false,
+      "point": {
+        "x": 126,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 3,
+      "held": true,
+      "point": {
+        "x": 118,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "bow",
+      "direction": 3,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 137
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 0,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 0,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 1,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 76
+    },
+    {
+      "family": "staff",
+      "direction": 1,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 2,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 2,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 3,
+      "held": true,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    },
+    {
+      "family": "staff",
+      "direction": 3,
+      "held": false,
+      "point": {
+        "x": 128,
+        "y": 153
+      },
+      "opaque": 81
+    }
+  ],
+  "cacheIdentity": true,
+  "cachedMs": 0.10000000149011612,
+  "atlasBytes": 6291456,
+  "backpack": {
+    "frames": 1056,
+    "maxRelativeAreaDrift": 0.0018315018315018315,
+    "oldDistorted": 0
+  }
+}

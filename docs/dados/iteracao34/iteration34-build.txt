@@ -1,0 +1,26 @@
+
+> dungeon-teacher-beta@0.6.9 build
+> vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 189 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                            7.85 kB │ gzip:   3.12 kB
+dist/assets/school-lobby-B3jlHnWz.css      3.21 kB │ gzip:   1.27 kB
+dist/assets/index-CR9p49YW.css            81.04 kB │ gzip:  19.05 kB
+dist/assets/actor-preview-CVSky9MH.js      0.92 kB │ gzip:   0.61 kB
+dist/assets/lan-setup-CjbZqcfA.js          2.35 kB │ gzip:   1.16 kB
+dist/assets/school-lobby-C7gMHQ8I.js      11.20 kB │ gzip:   4.47 kB
+dist/assets/world-mode-EriLLQ-j.js        52.48 kB │ gzip:  18.87 kB
+dist/assets/index-DkjHfBzB.js          1,102.21 kB │ gzip: 320.54 kB
+
+[INEFFECTIVE_DYNAMIC_IMPORT] src/adapters/rendering/appearance-compositor.js is dynamically imported by src/main.js but also statically imported by src/adapters/rendering/modular-actor.js, src/ui/school-lobby.js, src/ui/serafina-panel.js, dynamic import will not move module into another chunk.
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.75s

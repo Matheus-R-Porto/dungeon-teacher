@@ -1,0 +1,29 @@
+{
+  "checks": [
+    "ADM real inicia servidor em processo separado e mostra zero vagas ocupadas",
+    "Quatro processos Electron, quatro perfis, um servidor e um banco: cadastro, login, personagens e sincronização",
+    "Segundo login rejeitado sem derrubar o cliente original",
+    "Troca A → B → A entre perfis Electron separados conserva personagem e duas alterações reais de equipamento",
+    "Kick pela interface confirma conta correta, mostra mensagem exata e permite novo login",
+    "Backup pelo ADM, parada e reinício do mesmo banco preservam equipamento e progresso",
+    "Recarregar a interface ADM não interrompe o processo servidor nem a sessão do aluno",
+    "ADM encerra normalmente com código zero após gravar e parar o serviço"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\01-adm-primeiro-acesso.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\02-adm-servidor-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\03-conexao-manual-e-identidade.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\04-adm-quatro-aventureiros.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\05-jogo-quatro-clientes.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\06-sessao-duplicada-rejeitada.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\07-retorno-ao-primeiro-cliente.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\08-confirmacao-desconexao.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\09-desconexao-administrativa.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\10-backup-e-monitoramento.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165\\11-servidor-encerrado.png"
+  ],
+  "errors": [],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793197484165",
+  "packagedResources": false,
+  "ok": true
+}

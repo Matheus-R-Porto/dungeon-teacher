@@ -1,0 +1,4 @@
+import {spawn} from 'node:child_process';import fs from 'node:fs';import {createServer} from 'vite';
+fs.mkdirSync('.logs/iteration36-rv2',{recursive:true});
+const server=await createServer({optimizeDeps:{noDiscovery:true,include:['three']},server:{host:'127.0.0.1',port:5198,strictPort:true},plugins:[{name:'visual-lab-page',configureServer(s){s.middlewares.use((req,res,next)=>{if(req.url==='/.logs/iteration36-rv2/lab.html'){res.setHeader('Content-Type','text/html');res.end('<!doctype html><html><head><title>RV2</title></head><body></body></html>');}else next();});}}]});
+try{await server.listen();const c=spawn('node_modules/electron/dist/electron.exe',['scripts/iteration36-rv2/'+(process.env.DT_RV_TASK??'quick')+'.cjs'],{stdio:'inherit',windowsHide:true});process.exitCode=await new Promise(r=>c.once('exit',r));}finally{await server.close();}

@@ -1,0 +1,58 @@
+[
+  {
+    "actor": 0,
+    "name": "weapons",
+    "ms": 228.7999999988824,
+    "hash": "7ced2120ae6029bd1376f828c11b789d91a726c100ad36750593c4d5ac1ce9d0",
+    "shared": false
+  },
+  {
+    "actor": 0,
+    "name": "gear",
+    "ms": 109.40000000037253,
+    "hash": "49b0066185f67dfa33c4fde2febb68dcfa3cfdacdd2f8ad4119ebd8b55489b44",
+    "shared": false
+  },
+  {
+    "actor": 1,
+    "name": "weapons",
+    "ms": 0.5,
+    "hash": "7ced2120ae6029bd1376f828c11b789d91a726c100ad36750593c4d5ac1ce9d0",
+    "shared": true
+  },
+  {
+    "actor": 1,
+    "name": "gear",
+    "ms": 0,
+    "hash": "49b0066185f67dfa33c4fde2febb68dcfa3cfdacdd2f8ad4119ebd8b55489b44",
+    "shared": true
+  },
+  {
+    "actor": 2,
+    "name": "weapons",
+    "ms": 0,
+    "hash": "7ced2120ae6029bd1376f828c11b789d91a726c100ad36750593c4d5ac1ce9d0",
+    "shared": true
+  },
+  {
+    "actor": 2,
+    "name": "gear",
+    "ms": 0,
+    "hash": "49b0066185f67dfa33c4fde2febb68dcfa3cfdacdd2f8ad4119ebd8b55489b44",
+    "shared": true
+  },
+  {
+    "actor": 3,
+    "name": "weapons",
+    "ms": 0,
+    "hash": "7ced2120ae6029bd1376f828c11b789d91a726c100ad36750593c4d5ac1ce9d0",
+    "shared": true
+  },
+  {
+    "actor": 3,
+    "name": "gear",
+    "ms": 0,
+    "hash": "49b0066185f67dfa33c4fde2febb68dcfa3cfdacdd2f8ad4119ebd8b55489b44",
+    "shared": true
+  }
+]

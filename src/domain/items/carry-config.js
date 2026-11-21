@@ -7,6 +7,6 @@ export const CARRY_CURVE=Object.freeze([
  {ratio:.85,multiplier:.65,state:'near',label:'Próximo ao limite'},
  {ratio:1,multiplier:.35,state:'full',label:'Carga máxima'},
 ].map(Object.freeze));
-const weights={fishingRod:900,simplePickaxe:2800,rawOre:400,limiarMinnow:250,fireflyCarp:600,mossCatfish:900,moonFish:700,runeFish:500,salt:100,flour:500,herbs:50,oil:250,water:1000,roastMinnow:350,limiarStew:900,goldenCarp:800,lunarSoup:1000,runicDish:650,herbCatfish:1100,expeditionChest:3500,travelerCap:450,travelerVest:1800,travelerBoots:1000,focusRing:100,apprenticeHood:350,lightVest:900,agileBoots:700,strengthRing:150,trainingSword:1800,trainingDagger:650,trainingBow:1000,trainingStaff:1400};
+const weights={woodenShield:1800,pairedDaggers:1300,arrows:20,unwaveringCharm:200,travelerBackpack:1200,woodenCart:8000,fishingRod:900,simplePickaxe:2800,rawOre:400,limiarMinnow:250,fireflyCarp:600,mossCatfish:900,moonFish:700,runeFish:500,salt:100,flour:500,herbs:50,oil:250,water:1000,roastMinnow:350,limiarStew:900,goldenCarp:800,lunarSoup:1000,runicDish:650,herbCatfish:1100,expeditionChest:3500,travelerCap:450,travelerVest:1800,travelerBoots:1000,focusRing:100,apprenticeHood:350,lightVest:900,agileBoots:700,strengthRing:150,trainingSword:1800,trainingDagger:650,trainingBow:1000,trainingStaff:1400};
 for(const type of ['Sword','Dagger','Bow','Staff'])for(const quality of ['Failure','Good','Perfect'])weights['forged'+type+quality]=weights['training'+type];
 export const ITEM_WEIGHT_GRAMS=Object.freeze(weights);

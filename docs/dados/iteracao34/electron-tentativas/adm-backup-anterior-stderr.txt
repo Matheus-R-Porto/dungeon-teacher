@@ -1,0 +1,7 @@
+
+DevTools listening on ws://127.0.0.1:53091/devtools/browser/781ece68-bff7-4dbf-bcc6-7b8a4d612b3d
+Error occurred in handler for 'adm:command': Error: not an error
+    at ForkUtilityProcess.<anonymous> (C:\Users\theuz\.codex\.chatgpt-projects\g-p-6ab572bee00c8191a99fc6be7aeb7536\desktop\adm-main.cjs:13:247)
+    at ForkUtilityProcess.emit (node:events:514:28)
+    at UtilityProcess.emit (node:electron/js2c/browser_init:1:90972)
+[21456:1028/111709.130:ERROR:base\observer_list.h:192] Check failed: !check_reentrancy || reentrancy != ObserverListReentrancyPolicy::kDisallowReentrancy || list_.IsOnlyRemainingNode(). 

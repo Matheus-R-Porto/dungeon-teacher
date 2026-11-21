@@ -1,0 +1,1518 @@
+{
+  "checks": [
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": -1,
+      "bodyFrame": 0,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": -1,
+      "bodyFrame": 0,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": -1,
+      "bodyFrame": 0,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": -1,
+      "bodyFrame": 0,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 0,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 0,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 0,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 0,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 1,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 1,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 1,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 1,
+      "bodyFrame": 2,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 2,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 2,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 2,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 2,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 3,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 3,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 3,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 3,
+      "bodyFrame": 4,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 4,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 4,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 4,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 4,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 5,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 5,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 5,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 5,
+      "bodyFrame": 6,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 6,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 6,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 6,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 6,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 0,
+      "phase": 7,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": null,
+      "position": [
+        0.35,
+        0.04,
+        -1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 1,
+      "phase": 7,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": null,
+      "position": [
+        1.1,
+        0.04,
+        0.3499999999999999
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 2,
+      "phase": 7,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": null,
+      "position": [
+        -0.34999999999999987,
+        0.04,
+        1.1
+      ]
+    },
+    {
+      "mode": "before",
+      "d": 3,
+      "phase": 7,
+      "bodyFrame": 8,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": null,
+      "position": [
+        -1.1,
+        0.04,
+        -0.34999999999999976
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": -1,
+      "bodyFrame": 11,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          70
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": -1,
+      "bodyFrame": 11,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          71
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": -1,
+      "bodyFrame": 11,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          70
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.5884438847630701,
+        -0.2691440365935764
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": -1,
+      "bodyFrame": 11,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          71
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 0,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          70
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 0,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          71
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 0,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          70
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.5884438847630701,
+        -0.2691440365935764
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 0,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          71
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 1,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          70
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 1,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          71
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 1,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          70
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.5884438847630701,
+        -0.2691440365935764
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 1,
+      "bodyFrame": 3,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          71
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 2,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          69
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.6065284130931954,
+        -0.3058912812702443
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 2,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          70
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 2,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          69
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.617767460380807,
+        -0.28468553167097693
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 2,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          70
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 3,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          69
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.6065284130931954,
+        -0.3058912812702443
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 3,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          70
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 3,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          69
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.617767460380807,
+        -0.28468553167097693
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 3,
+      "bodyFrame": 5,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          70
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 4,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          70
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 4,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          71
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 4,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          70
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.5884438847630701,
+        -0.2691440365935764
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 4,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          71
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 5,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          70
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 5,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          71
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 5,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          70
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.5884438847630701,
+        -0.2691440365935764
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 5,
+      "bodyFrame": 7,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          71
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5478812618577216,
+        -0.27480829111544314
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 6,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 0,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          69
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.6065284130931954,
+        -0.3058912812702443
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 6,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 0,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          70
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 6,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 0,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          69
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.617767460380807,
+        -0.28468553167097693
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 6,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 0,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          70
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 0,
+      "phase": 7,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 1,
+        "row": 0
+      },
+      "contact": {
+        "hand": [
+          33,
+          69
+        ],
+        "shaft": [
+          53,
+          69
+        ],
+        "direction": 0
+      },
+      "position": [
+        -0.4978125,
+        0.6065284130931954,
+        -0.3058912812702443
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 1,
+      "phase": 7,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 1,
+        "row": 1
+      },
+      "contact": {
+        "hand": [
+          59,
+          70
+        ],
+        "shaft": [
+          15,
+          55
+        ],
+        "direction": 1
+      },
+      "position": [
+        0.3650625,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 2,
+      "phase": 7,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 1,
+        "row": 2
+      },
+      "contact": {
+        "hand": [
+          63,
+          69
+        ],
+        "shaft": [
+          78,
+          49
+        ],
+        "direction": 2
+      },
+      "position": [
+        0.4978125,
+        0.617767460380807,
+        -0.28468553167097693
+      ]
+    },
+    {
+      "mode": "after",
+      "d": 3,
+      "phase": 7,
+      "bodyFrame": 9,
+      "cartFrame": {
+        "column": 1,
+        "row": 3
+      },
+      "contact": {
+        "hand": [
+          35,
+          70
+        ],
+        "shaft": [
+          113,
+          55
+        ],
+        "direction": 3
+      },
+      "position": [
+        -0.4314375,
+        0.5772048374754585,
+        -0.29034978619284374
+      ]
+    }
+  ],
+  "ok": true,
+  "errors": []
+}

@@ -1,0 +1,27 @@
+{
+  "baseline": {
+    "count": 471,
+    "changed": [
+      "src/core/sheet-animation.js",
+      "src/adapters/rendering/actor-accessories.js",
+      "src/adapters/rendering/combat-visual.js",
+      "src/adapters/rendering/guardian.js",
+      "src/adapters/rendering/sheet-actor.js",
+      "src/adapters/rendering/sheet-backpack.js",
+      "src/adapters/rendering/sheet-preview.js",
+      "src/adapters/rendering/sheet-resources.js",
+      "src/adapters/rendering/sprite-actor.js",
+      "tests/iteration21.test.js",
+      "tests/iteration37-visual.test.js",
+      "config/multiplayer.json"
+    ],
+    "missing": []
+  },
+  "old-packages": {
+    "count": 104,
+    "changed": [],
+    "missing": []
+  },
+  "unchangedRules": true,
+  "ok": true
+}

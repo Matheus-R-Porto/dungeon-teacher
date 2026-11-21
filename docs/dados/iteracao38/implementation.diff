@@ -1,0 +1,191 @@
+--- before/src/ui/ranked-tree.css
++++ after/src/ui/ranked-tree.css
+@@ -16,3 +16,38 @@
+ .living-tree:not([data-class=novice]) .living-tree-image{height:1480px}.living-roots-image{visibility:hidden}
+ 
+ .living-tree:not([data-class=novice]) .living-tree-image{height:1480px}.living-roots-image{visibility:hidden}
++
++/* Iteration 38: the illustration supports the data, never constrains it. */
++.living-tree{background:#dceaf1;color:#18384a;border-color:#678a9c;box-shadow:0 18px 65px #07192366}
++.living-tree header,.living-tree footer{background:#d2e3ec;border-color:#9fbac9;color:#234355}
++.living-tree header small,.living-tree [data-class]{color:#48697c}.living-tree header h2{color:#203e51}
++.living-toolbar{background:#e7f0f5;border-color:#a9c2d0}.living-toolbar [data-budget]{color:#245b72}
++.living-tree button,.living-tree select{background:#f0f6f9;border-color:#8ba9ba;color:#214557}
++.living-tree button:focus-visible,.living-tree select:focus-visible{outline-color:#216995}
++.living-scroll{background:#c5deec;scrollbar-color:#7298ad #d9e9f1}
++.living-art img{image-rendering:auto;object-fit:contain;opacity:.24;filter:saturate(.65);z-index:0}
++.living-tree:not([data-class=novice]) .living-tree-image{height:1480px;width:680px;left:20px}
++.living-tree[data-class=novice] .living-tree-image{height:520px;width:600px;left:60px;opacity:.21}
++.living-art::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#c5deec00 0,#e5f0f530 70%,#edf5f760 100%);pointer-events:none;z-index:1}
++.living-links{z-index:1}.living-links path{stroke:#437b97;stroke-width:2;filter:none;opacity:.6}.living-links path.unmet{stroke:#607f91;stroke-dasharray:3 6;opacity:.35}.living-links path.highlight{stroke:#165e8a;stroke-width:3;opacity:1}
++.living-tree .living-node{z-index:3}.living-node .living-icon{border:3px solid #62889e;outline:1px solid #e9f4fb;box-shadow:0 3px 8px #375d7440;background:#213d50;border-radius:14px;width:60px;height:60px}
++.living-icon svg{width:40px;height:40px;color:#f5d792}
++.living-name{color:#204358;background:#eaf3f8e8;text-shadow:none;font-weight:600;font-size:11px;padding:3px 6px}
++.living-rank{background:#f2f7fa;border-color:#86a7bb;color:#2d5268;border-radius:4px}
++.living-node[data-state=locked] .living-icon{filter:grayscale(.8);opacity:.72;border-style:dashed;background:#567385;box-shadow:inset 0 0 14px #d9eaf166}
++.living-node[data-state=no-points] .living-icon{border-color:#6f8190;border-style:dotted}
++.living-node[data-state=available] .living-icon{border-color:#407c9c;box-shadow:0 0 0 2px #edfaff,0 3px 9px #375d7455}
++.living-node[data-learned=true] .living-icon{border-color:#ac8034;background:#213d50;box-shadow:inset 0 0 0 1px #efd69b,0 2px 7px #375d7433}
++.living-node[data-state=max] .living-icon{border-style:double;border-width:5px;border-color:#a57823;box-shadow:0 0 0 2px #f3e3bb}
++.living-node[aria-pressed=true] .living-icon{outline:3px solid #185b88;outline-offset:4px;box-shadow:0 0 0 8px #edf8ff}
++.living-node:hover .living-name,.living-node:focus-visible .living-name{background:#fff;color:#13384f}
++.living-region-label,.living-path-label{color:#365e75;background:#e3eff6bf;text-shadow:none;font-family:Georgia,serif;font-size:13px}
++.living-detail{background:#edf4f8;border-color:#a6c0ce;color:#24475b}.living-detail h3{color:#214557}.living-detail h4{color:#386980}.living-detail p{color:#315365}.living-detail small{color:#4d6b7c}.living-detail .living-reason{color:#815322}
++.living-detail .living-invest{background:#315e76;border-color:#315e76;color:white}.living-tree [data-message]{color:#2e5f76}
++.living-class-sigil{position:absolute;left:335px;top:965px;width:50px;height:50px;opacity:.22;pointer-events:none;color:#386c87;z-index:1}.living-class-sigil svg{width:100%;height:100%}
++.living-tree[data-class=warrior] .living-tree-image{width:700px;left:10px;filter:saturate(.35)}
++.living-tree[data-class=archer] .living-tree-image{width:620px;left:50px;filter:saturate(.5)}
++.living-tree[data-class=rogue] .living-tree-image{transform:scaleX(-1);width:650px;left:35px;opacity:.27}
++.living-tree[data-class=priest] .living-tree-image{opacity:.19;filter:saturate(.25) brightness(1.05)}
++.living-tree[data-class=mage] .living-class-sigil{border:1px solid #386c87;border-radius:50%;padding:7px;box-sizing:border-box}
++@keyframes tree-unfold{from{opacity:0;clip-path:inset(100% 0 0)}to{opacity:.24;clip-path:inset(0)}}
+--- before/src/ui/ranked-tree.js
++++ after/src/ui/ranked-tree.js
+@@ -15,7 +15,7 @@
+ export class RankedTree {
+  constructor(bar,{beforeOpen=()=>{},canOpen=()=>true,focus=()=>{}}={}){
+   Object.assign(this,{bar,beforeOpen,canOpen,focus});this.abort=new AbortController();this.zoom=1;this.root=element('dialog',null,'destiny-tree ranked-tree living-tree');this.root.id='destiny-tree';this.root.setAttribute('aria-label','Árvore do Destino');
+-  this.root.innerHTML='<header><div><small>AS RAÍZES DA SUA JORNADA</small><h2>Árvore do Destino</h2><span data-class></span></div><button data-close>Fechar · Esc</button></header><nav class="living-toolbar" aria-label="Navegação da árvore"><button data-roots>Raízes do Novato</button><button data-crown>Copa da classe</button><label>Pontos de <select data-origin aria-label="Origem dos pontos"></select></label><strong data-budget></strong><label>Zoom <select data-zoom aria-label="Zoom da árvore"><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option></select></label></nav><div class="living-body"><div class="living-scroll" tabindex="0" aria-label="Árvore ilustrada, role para explorar"><div class="living-space"><div class="living-art" data-tree></div></div></div><aside class="living-detail" aria-label="Detalhes da habilidade"><p>Selecione um medalhão para conhecer a habilidade.</p></aside></div><footer><span data-message role="status" aria-live="polite"></span><details class="living-hotbar"><summary>Atalhos de habilidades</summary><label>Posição <select data-slot></select></label><label>Habilidade ou item <select data-entry></select></label><button data-assign>Salvar atalho</button></details></footer>';
++  this.root.innerHTML='<header><div><small>AS RAÍZES DA SUA JORNADA</small><h2>Árvore do Destino</h2><span data-class></span></div><button data-close>Fechar · Esc</button></header><nav class="living-toolbar" aria-label="Navegação da árvore"><button data-roots>Raízes do Novato</button><button data-crown>Tronco da classe</button><label>Pontos de <select data-origin aria-label="Origem dos pontos"></select></label><strong data-budget></strong><label>Zoom <select data-zoom aria-label="Zoom da árvore"><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option></select></label></nav><div class="living-body"><div class="living-scroll" tabindex="0" aria-label="Árvore ilustrada, role para explorar"><div class="living-space"><div class="living-art" data-tree></div></div></div><aside class="living-detail" aria-label="Detalhes da habilidade"><p>Selecione um medalhão para conhecer a habilidade.</p></aside></div><footer><span data-message role="status" aria-live="polite"></span><details class="living-hotbar"><summary>Atalhos de habilidades</summary><label>Posição <select data-slot></select></label><label>Habilidade ou item <select data-entry></select></label><button data-assign>Salvar atalho</button></details></footer>';
+   document.querySelector('#app').append(this.root);for(let i=0;i<8;i++){const o=new Option(String(i+1),String(i));this.root.querySelector('[data-slot]').append(o);}
+   this.root.querySelector('[data-close]').onclick=()=>this.close();this.root.querySelector('[data-origin]').onchange=e=>{this.origin=e.target.value;this.render(true);};this.root.querySelector('[data-zoom]').onchange=e=>{this.zoom=Number(e.target.value);this.resizeArt();};
+   this.root.querySelector('[data-roots]').onclick=()=>this.navigate(true);this.root.querySelector('[data-crown]').onclick=()=>this.navigate(false);
+@@ -37,9 +37,10 @@
+   if(!this.openNow)return;const live=this.bar.runtime.character.data,key=JSON.stringify([live.jobs.revision,live.jobs.active,live.knownAbilities,live.inventory?.slots,this.bar.busy]);if(!force&&this.lastKey===key)return;this.lastKey=key;this.prepare();const j=this.draft.jobs,previous=this.layout?.classId;this.layout=treeLayout(j);this.root.dataset.class=this.layout.classId;
+   this.root.querySelector('[data-class]').textContent=PROFESSIONS[this.layout.classId].name;const select=this.root.querySelector('[data-origin]');select.replaceChildren(...activeOrigins(j).map(id=>new Option(PROFESSIONS[id].name, id)));select.value=this.origin;this.root.querySelector('[data-budget]').textContent=available(j,this.origin)+' livres';this.root.querySelector('[data-crown]').disabled=this.layout.classId==='novice';
+   const art=this.root.querySelector('[data-tree]');art.replaceChildren();art.style.width=this.layout.width+'px';art.style.height=this.layout.height+'px';const tree=element('img',null,'living-tree-image');tree.src=this.layout.art;tree.alt='';tree.draggable=false;art.append(tree);
+-  if(this.layout.classId!=='novice'){const roots=element('img',null,'living-roots-image');roots.src='/assets/skill-tree-v37-rv2/novice.png';roots.alt='';roots.style.top=this.layout.rootOffset+'px';roots.draggable=false;art.append(roots);}
++  if(this.layout.classId!=='novice'){const sigil=element('span',null,'living-class-sigil');sigil.setAttribute('aria-hidden','true');const skill=this.layout.nodes.find(n=>!n.root);sigil.innerHTML=abilityIcon(skill.id);art.append(sigil);}
++
+   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('living-links');svg.setAttribute('viewBox',`0 0 ${this.layout.width} ${this.layout.height}`);svg.setAttribute('aria-hidden','true');const ranks=effectiveRanks(j);
+-  for(const edge of this.layout.links){const a=this.layout.nodes.find(n=>n.id===edge.from),b=this.layout.nodes.find(n=>n.id===edge.to);if(!a||!b)continue;const line=document.createElementNS(svg.namespaceURI,'path');line.setAttribute('d',`M${a.x} ${a.y} C${a.x} ${a.y-70},${b.x} ${b.y+70},${b.x} ${b.y}`);line.setAttribute('class',(ranks[edge.from]??0)>=edge.rank?'met':'unmet');svg.append(line);}art.append(svg);
++  for(const edge of this.layout.links){const a=this.layout.nodes.find(n=>n.id===edge.from),b=this.layout.nodes.find(n=>n.id===edge.to);if(!a||!b)continue;const line=document.createElementNS(svg.namespaceURI,'path');line.setAttribute('d',`M${a.x} ${a.y} C${a.x} ${a.y-70},${b.x} ${b.y+70},${b.x} ${b.y}`);line.dataset.from=edge.from;line.dataset.to=edge.to;line.setAttribute('class',(ranks[edge.from]??0)>=edge.rank?'met':'unmet');svg.append(line);}art.append(svg);
+   for(const n of [...this.layout.nodes].sort((a,b)=>b.y-a.y||a.x-b.x)){const m=skillNodeModel(this.draft,n.id,this.origin),b=element('button',null,'living-node');b.type='button';b.dataset.skill=n.id;b.dataset.state=m.state;b.dataset.learned=m.learned;b.setAttribute('aria-label',m.skill.name+', '+m.rank+' de '+m.skill.ranks.length+', '+stateNames[m.state]);b.setAttribute('aria-pressed',String(this.selected===n.id));b.style.left=n.x+'px';b.style.top=n.y+'px';const icon=element('span',null,'living-icon');icon.innerHTML=abilityIcon(n.id);const name=element('span',shortNames[n.id]??m.skill.name,'living-name'),rank=element('span',(m.max?'✓ ':m.state==='locked'?'⌑ ':m.state==='no-points'?'− ':'')+m.rank+'/'+m.skill.ranks.length,'living-rank');b.append(icon,name,rank);b.onpointerenter=()=>{clearTimeout(this.hoverTimer);this.renderDetail(n.id);};b.onpointerleave=()=>{this.hoverTimer=setTimeout(()=>this.renderDetail(this.selected),160);};b.onfocus=()=>this.renderDetail(n.id);b.onclick=()=>{this.selected=n.id;for(const other of art.querySelectorAll('[data-skill]'))other.setAttribute('aria-pressed',String(other===b));this.renderDetail(n.id);};art.append(b);}
+   const title=element('span','Raízes · Novato','living-region-label');title.style.top=(this.layout.rootOffset+280)+'px';art.append(title);
+   if(CLASS_PATHS[this.layout.classId])CLASS_PATHS[this.layout.classId].forEach((name,i)=>{const label=element('span',name,'living-path-label');label.style.left=([155,360,565][i]-65)+'px';label.style.top='875px';art.append(label);});
+@@ -47,7 +48,7 @@
+   this.resizeArt();this.renderDetail(this.selected);if(previous&&previous!==this.layout.classId){this.root.classList.remove('tree-grown');void this.root.offsetWidth;this.root.classList.add('tree-grown');this.navigate(false);}
+  }
+  renderDetail(id){
+-  const box=this.root.querySelector('.living-detail');box.replaceChildren();if(!id){box.append(element('p','Selecione um medalhão para conhecer a habilidade.'));return;}const m=skillNodeModel(this.draft,id,this.origin),s=m.skill,current=s.ranks[m.rank-1],next=s.ranks[m.next-1];box.dataset.skill=id;box.append(element('small',(s.type==='passive'?'PASSIVA':'ATIVA')+' · '+PROFESSIONS[s.classId].name),element('h3',s.name),element('strong',m.rank+' / '+s.ranks.length+' · '+stateNames[m.state]));if(s.description)box.append(element('p',s.description));box.append(element('h4','Efeito atual'),element('p',effectText(s,m.rank)),element('h4','Próximo nível'),element('p',m.max?'Nível máximo alcançado.':effectText(s,m.next)),element('small','Requisitos: '+requirementsText(s,m.next)));
++  for(const line of this.root.querySelectorAll('.living-links path'))line.classList.toggle('highlight',!!id&&(line.dataset.from===id||line.dataset.to===id));const box=this.root.querySelector('.living-detail');box.replaceChildren();if(!id){box.append(element('p','Selecione um medalhão para conhecer a habilidade.'));return;}const m=skillNodeModel(this.draft,id,this.origin),s=m.skill,current=s.ranks[m.rank-1],next=s.ranks[m.next-1];box.dataset.skill=id;box.append(element('small',(s.type==='passive'?'PASSIVA':'ATIVA')+' · '+PROFESSIONS[s.classId].name),element('h3',s.name),element('strong',m.rank+' / '+s.ranks.length+' · '+stateNames[m.state]));if(s.description)box.append(element('p',s.description));box.append(element('h4','Efeito atual'),element('p',effectText(s,m.rank)),element('h4','Próximo nível'),element('p',m.max?'Nível máximo alcançado.':effectText(s,m.next)),element('small','Requisitos: '+requirementsText(s,m.next)));
+   if(s.type==='active'&&next.weaponRequirements?.length)box.append(element('p','Arma: '+next.weaponRequirements.map(w=>WEAPONS[w]?.name??w).join(', ')));if(next.shield)box.append(element('p','Requer escudo.'));if(next.ammo)box.append(element('p',next.ammo+' flecha(s) por uso.'));
+   if(m.reason)box.append(element('p',m.reason,'living-reason'));const invest=element('button',this.pending?'Confirmando…':'Investir 1 ponto','living-invest');invest.dataset.invest=id;invest.disabled=!!m.reason||this.pending||this.bar.busy;invest.onclick=()=>this.invest(id);box.append(invest);
+   if(id==='elementalMastery'&&m.rank){const values=this.draft.jobs.elements??{fire:0,ice:0,lightning:0};for(const [key,name]of [['fire','Fogo'],['ice','Gelo'],['lightning','Eletricidade']]){const b=element('button',name+' '+values[key]+' · +1');b.disabled=this.pending||this.bar.busy||Object.values(values).reduce((a,b)=>a+b,0)>=m.rank;b.onclick=()=>this.assignElement(key);box.append(b);}}
+--- before/src/ui/skill-tree-layout.js
++++ after/src/ui/skill-tree-layout.js
+@@ -1,7 +1,9 @@
+ import {RANKED_SKILLS} from '../domain/abilities/ranked-skills.js';
+ import {CLASS_PATHS} from '../domain/abilities/class-skills.js';
+ import {lineage} from '../domain/character/professions.js';
+-// Coordinates are illustration metadata, never progression rules.
++// Foreground positions are independent of background art and progression rules.
++// Future crowns are optional presentation layers, with no reserved skill slots.
++export const TREE_STAGES=Object.freeze({roots:{kind:"novice"},trunk:{kind:"first-class"},crown:null});
+ export const TREE_WIDTH=720,ROOT_OFFSET=960;
+ const novicePositions=[[175,225],[270,160],[360,80],[450,160],[545,225],[80,445],[210,470],[360,480],[510,470],[640,445]];
+ const roots=Object.values(RANKED_SKILLS).filter(s=>s.classId==='novice');
+@@ -14,5 +16,5 @@
+   else {x=s.ranks.length===1?360:[170,360,550][s.tier];y=s.ranks.length===1?55:150;}
+   nodes.push({id:s.id,x,y,root:false});
+  }
+- return {classId,width:TREE_WIDTH,height:grown?1480:540,rootOffset:shift,nodes,links:nodes.flatMap(n=>RANKED_SKILLS[n.id].requires.map(r=>({from:r.id,to:n.id,rank:r.level}))),art:'/assets/skill-tree-v37-rv2/'+classId+'.png'};
++ return {classId,width:TREE_WIDTH,height:grown?1480:540,rootOffset:shift,nodes,links:nodes.flatMap(n=>RANKED_SKILLS[n.id].requires.map(r=>({from:r.id,to:n.id,rank:r.level}))),stages:TREE_STAGES,art:'/assets/skill-tree-v38/'+(grown?'origin':'novice')+'.png'};
+ }
+--- before/src/adapters/rendering/sheet-resources.js
++++ after/src/adapters/rendering/sheet-resources.js
+@@ -7,7 +7,7 @@
+ function trim(){const idle=[...entries.values()].filter(e=>e.refs===0&&e.loaded).sort((a,b)=>a.used-b.used);while(idle.length>idleLimit){const e=idle.shift();entries.delete(e.key);e.texture.dispose();e.mask.dispose();sheetMetrics.evictions++;}}
+ export function acquireSheet(key){
+  let e=entries.get(key);
+- if(!e){e={key,refs:0,used:performance.now(),loaded:false};entries.set(key,e);const start=performance.now(),url=key.startsWith('profession:')?'/assets/professions-v37-rv2/'+key.slice(11):'/assets/characters-v37-rv1/'+key;e.ready=Promise.allSettled([load(url+'.png',true),load(url+'-mask.png')]).then(results=>{if(results.some(r=>r.status==='rejected')){for(const r of results)if(r.status==='fulfilled')r.value.dispose();entries.delete(key);throw Error('Não foi possível carregar a aparência '+key);}e.texture=results[0].value;e.mask=results[1].value;e.loaded=true;sheetMetrics.loads++;sheetMetrics.preparationMs+=performance.now()-start;trim();return e;});}
++ if(!e){e={key,refs:0,used:performance.now(),loaded:false};entries.set(key,e);const start=performance.now(),url=key.startsWith('profession:')?'/assets/professions-v38/'+key.slice(11):'/assets/characters-v38/'+key;e.ready=Promise.allSettled([load(url+'.png',true),load(url+'-mask.png')]).then(results=>{if(results.some(r=>r.status==='rejected')){for(const r of results)if(r.status==='fulfilled')r.value.dispose();entries.delete(key);throw Error('Não foi possível carregar a aparência '+key);}e.texture=results[0].value;e.mask=results[1].value;e.loaded=true;sheetMetrics.loads++;sheetMetrics.preparationMs+=performance.now()-start;trim();return e;});}
+  e.refs++;e.used=performance.now();return e;
+ }
+ export function releaseSheet(e){if(!e)return;e.refs=Math.max(0,e.refs-1);e.used=performance.now();trim();}
+--- before/config/multiplayer.json
++++ after/config/multiplayer.json
+@@ -1,5 +1,5 @@
+ {
+   "serverUrl": "wss://dungeon-master-hub-u40z.onrender.com/hub",
+-  "build": "Beta 0.6.13",
++  "build": "Beta 0.6.14",
+   "profileDirectory": "Dungeon Master Playtest 0.5.0"
+ }
+--- before/package.json
++++ after/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "dungeon-teacher-beta",
+-  "version": "0.6.13",
++  "version": "0.6.14",
+   "private": true,
+   "type": "module",
+   "engines": {
+--- before/package-lock.json
++++ after/package-lock.json
+@@ -1,12 +1,12 @@
+ {
+   "name": "dungeon-teacher-beta",
+-  "version": "0.6.13",
++  "version": "0.6.14",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+       "name": "dungeon-teacher-beta",
+-      "version": "0.6.13",
++      "version": "0.6.14",
+       "dependencies": {
+         "three": "0.186.1"
+       },
+--- before/electron-builder.adm.yml
++++ after/electron-builder.adm.yml
+@@ -8,7 +8,7 @@
+     - target: portable
+       arch: [x64]
+ nsis:
+-  artifactName: ${productName}-Iteracao37-RV2-${version}-Setup.${ext}
++  artifactName: ${productName}-Iteracao38-${version}-Setup.${ext}
+   oneClick: false
+   perMachine: false
+   allowElevation: false
+@@ -16,11 +16,11 @@
+   deleteAppDataOnUninstall: false
+   createDesktopShortcut: true
+ portable:
+-  artifactName: ${productName}-Iteracao37-RV2-${version}-Portable.${ext}
++  artifactName: ${productName}-Iteracao38-${version}-Portable.${ext}
+ appId: br.dungeonteacher.adm
+ productName: Dungeon Teacher ADM
+ directories:
+-  output: release/iteration37-rv2/adm
++  output: release/iteration38/adm
+ extraMetadata:
+   main: desktop/adm-main.cjs
+ files:
+--- before/electron-builder.student.yml
++++ after/electron-builder.student.yml
+@@ -8,7 +8,7 @@
+     - target: portable
+       arch: [x64]
+ nsis:
+-  artifactName: ${productName}-Iteracao37-RV2-${version}-Setup.${ext}
++  artifactName: ${productName}-Iteracao38-${version}-Setup.${ext}
+   oneClick: false
+   perMachine: false
+   allowElevation: false
+@@ -16,11 +16,11 @@
+   deleteAppDataOnUninstall: false
+   createDesktopShortcut: true
+ portable:
+-  artifactName: ${productName}-Iteracao37-RV2-${version}-Portable.${ext}
++  artifactName: ${productName}-Iteracao38-${version}-Portable.${ext}
+ appId: br.dungeonteacher.student
+ productName: Dungeon Teacher
+ directories:
+-  output: release/iteration37-rv2/student
++  output: release/iteration38/student
+ extraMetadata:
+   main: desktop/student-main.cjs
+ files:

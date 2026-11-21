@@ -1,0 +1,7958 @@
+[
+  {
+    "id": "novice-masculine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            74
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            77
+          ],
+          [
+            54,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            77
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            77
+          ],
+          [
+            50,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            76
+          ],
+          [
+            45,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            74
+          ],
+          [
+            51,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            77
+          ],
+          [
+            54,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            74
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            77
+          ],
+          [
+            46,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            77
+          ],
+          [
+            53,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            76
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            74
+          ],
+          [
+            51,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "novice-feminine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            74
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            77
+          ],
+          [
+            54,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            77
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            77
+          ],
+          [
+            50,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            76
+          ],
+          [
+            45,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            74
+          ],
+          [
+            51,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            77
+          ],
+          [
+            54,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            71
+          ],
+          [
+            54,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            74
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            77
+          ],
+          [
+            46,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            77
+          ],
+          [
+            53,
+            74
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            76
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            71
+          ],
+          [
+            52,
+            71
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            74
+          ],
+          [
+            51,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "warrior-masculine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            53,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            50,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            77
+          ],
+          [
+            45,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            78
+          ],
+          [
+            46,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            53,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            77
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "warrior-feminine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            53,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            50,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            77
+          ],
+          [
+            45,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            77
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            73
+          ],
+          [
+            54,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            78
+          ],
+          [
+            46,
+            77
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            53,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            77
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            73
+          ],
+          [
+            52,
+            73
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "archer-masculine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            50,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            76
+          ],
+          [
+            45,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            78
+          ],
+          [
+            46,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            53,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "archer-feminine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            50,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            76
+          ],
+          [
+            45,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            78
+          ],
+          [
+            46,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            53,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "rogue-masculine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            50,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            76
+          ],
+          [
+            45,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            78
+          ],
+          [
+            46,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            53,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "rogue-feminine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            50,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            76
+          ],
+          [
+            45,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            72
+          ],
+          [
+            54,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            78
+          ],
+          [
+            46,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            78
+          ],
+          [
+            53,
+            75
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            76
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            72
+          ],
+          [
+            52,
+            72
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            75
+          ],
+          [
+            51,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "priest-masculine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            80
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            81
+          ],
+          [
+            54,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            81
+          ],
+          [
+            53,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            81
+          ],
+          [
+            50,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            80
+          ],
+          [
+            45,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            78
+          ],
+          [
+            51,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            81
+          ],
+          [
+            54,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            80
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            81
+          ],
+          [
+            46,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            81
+          ],
+          [
+            53,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            80
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            78
+          ],
+          [
+            51,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "priest-feminine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            80
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            81
+          ],
+          [
+            54,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            81
+          ],
+          [
+            53,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            81
+          ],
+          [
+            50,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            80
+          ],
+          [
+            45,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            78
+          ],
+          [
+            51,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            81
+          ],
+          [
+            54,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            80
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            78
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            81
+          ],
+          [
+            46,
+            80
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            81
+          ],
+          [
+            53,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            80
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            79
+          ],
+          [
+            52,
+            79
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            78
+          ],
+          [
+            51,
+            81
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "mage-masculine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            76
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            79
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            79
+          ],
+          [
+            53,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            79
+          ],
+          [
+            50,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            78
+          ],
+          [
+            45,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            76
+          ],
+          [
+            51,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            79
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            76
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            79
+          ],
+          [
+            46,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            79
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            78
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            76
+          ],
+          [
+            51,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  },
+  {
+    "id": "mage-feminine",
+    "poses": [
+      {
+        "dir": 0,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 0,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            76
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 0,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            79
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 0,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 1,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            79
+          ],
+          [
+            53,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            39,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 1,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            79
+          ],
+          [
+            50,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            48,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 1,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            50,
+            78
+          ],
+          [
+            45,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            55,
+            84
+          ],
+          [
+            39,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 1,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            45,
+            76
+          ],
+          [
+            51,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            44,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 2,
+        "phase": 0,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            79
+          ],
+          [
+            54,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            87
+          ],
+          [
+            55,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 2,
+        "phase": 1,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            79
+          ],
+          [
+            54,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 2,
+        "phase": 2,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            41,
+            78
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            55,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 2,
+        "phase": 3,
+        "hips": [
+          [
+            42,
+            75
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            42,
+            76
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            42,
+            81
+          ],
+          [
+            54,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          0,
+          1
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      },
+      {
+        "dir": 3,
+        "phase": 0,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            51,
+            79
+          ],
+          [
+            46,
+            78
+          ]
+        ],
+        "feet": [
+          [
+            57,
+            87
+          ],
+          [
+            41,
+            84
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": -14,
+        "meaning": "left contact"
+      },
+      {
+        "dir": 3,
+        "phase": 1,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            46,
+            79
+          ],
+          [
+            53,
+            76
+          ]
+        ],
+        "feet": [
+          [
+            47,
+            87
+          ],
+          [
+            54,
+            81
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "left support, right passing"
+      },
+      {
+        "dir": 3,
+        "phase": 2,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            43,
+            78
+          ],
+          [
+            54,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            41,
+            84
+          ],
+          [
+            57,
+            87
+          ]
+        ],
+        "bob": 0,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 14,
+        "meaning": "right contact"
+      },
+      {
+        "dir": 3,
+        "phase": 3,
+        "hips": [
+          [
+            46,
+            75
+          ],
+          [
+            52,
+            75
+          ]
+        ],
+        "knees": [
+          [
+            48,
+            76
+          ],
+          [
+            51,
+            79
+          ]
+        ],
+        "feet": [
+          [
+            50,
+            81
+          ],
+          [
+            51,
+            87
+          ]
+        ],
+        "bob": -1,
+        "order": [
+          1,
+          0
+        ],
+        "armDegrees": 0,
+        "meaning": "right support, left passing"
+      }
+    ],
+    "source": "0.6.11 native drawings, repainted ramps, authored joints and intact boots/arms",
+    "generatedStudiesUsed": false
+  }
+]

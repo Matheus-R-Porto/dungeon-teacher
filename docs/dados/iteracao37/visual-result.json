@@ -1,0 +1,920 @@
+{
+  "checks": [
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "novice",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "warrior",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "archer",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "rogue",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "priest",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 0,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 1,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 2,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "classId": "mage",
+      "body": true,
+      "direction": 3,
+      "frame": 4,
+      "family": "none",
+      "backpack": true,
+      "programs": [
+        {
+          "runnable": true
+        },
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "family": "sword",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "family": "sword",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "family": "sword",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "family": "bow",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "family": "bow",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "family": "bow",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "family": "staff",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "family": "staff",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "family": "staff",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "family": "dagger",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "family": "dagger",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "family": "dagger",
+      "body": true,
+      "backpack": false,
+      "programs": [
+        {
+          "runnable": true
+        }
+      ]
+    }
+  ],
+  "palette": [
+    {
+      "changes": 5454,
+      "stable": 10833
+    }
+  ],
+  "cache": {
+    "entries": 8,
+    "active": 0,
+    "idle": 8,
+    "loads": 17,
+    "evictions": 9,
+    "preparationMs": 7439.800000000745
+  },
+  "ok": true,
+  "errors": []
+}

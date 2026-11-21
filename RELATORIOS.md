@@ -1,4 +1,54 @@
+## Iteração 38 — Fidelidade Visual e Árvore do Destino
+
+Versão **0.6.14**: árvore azul discreta, habilidades em primeiro plano e conexões reais destacadas; reparos de transparência e continuidade nas seis classes e profissões. Originais testados em 96/128/192/256/320, com comparação de filtragem. Mantida a resolução estável, com os defeitos identificados corrigidos; protótipos preservados separadamente.
+
+**982 testes aprovados**, 9.408 células verificadas, 8.640 quadros no WebGL, 96 combinações de profissões, interface Electron e multiplayer com perfis temporários. Carga visual de 32 atores simulados e quatro pacotes Windows auditados. **Avaliação artística final pendente**; não houve teste presencial na escola.
+
+[Relatório](docs/ITERACAO-38-RELATORIO.md) · [Galeria](docs/capturas/iteration38/index.html) · [Desempenho](docs/ITERACAO-38-DESEMPENHO.md) · [Aplicativos e hashes](docs/ITERACAO-38-DISTRIBUICAO.md) · [Evidências](docs/dados/iteracao38/)
+
+## Iteração 37 — Revisão Visual 2
+
+Versão **0.6.13**: árvore viva do Novato e cinco classes, raízes investíveis após promoção, ícones e detalhes ligados às regras reais; pesca e mineração com sprites por classe, corpo e direção e apresentação compartilhada no multiplayer. Preservados o visual RV1, mapas, balanceamento e distribuições anteriores.
+
+**979 casos únicos validados sem falhas pendentes**, auditoria de 768 células, 96 combinações no renderizador, interface Electron, ADM + dois Alunos e quatro pacotes Windows x64 verificados. Desempenho comparado com 0.6.12. **Aprovação artística final pendente do usuário**; instalação externa e rede escolar não foram executadas.
+
+[Relatório](docs/ITERACAO-37-RV2-RELATORIO.md) · [Galeria](docs/capturas/iteration37-rv2/index.html) · [Aplicativos e hashes](docs/ITERACAO-37-RV2-DISTRIBUICAO.md) · [Desempenho](docs/ITERACAO-37-RV2-DESEMPENHO.md) · [Evidências](docs/dados/iteracao37-rv2/)
+
+## Iteração 37 — Revisão Visual 1
+
+Versão **0.6.12**: acabamento das seis classes, passadas alternadas, gestos de habilidades, recoil e morte em etapas; Lobo Branco e Cavaleiro revisados; carrinho conectado à mão, rodas por deslocamento e mochila ajustada. Mantidos mapas, regras, fontes e pacotes anteriores.
+
+**967 casos validados sem falhas pendentes** (966 na suíte integral e reteste afetado 20/20). Arte, WebGL, ADM + dois Alunos, três Alunos com impacto/morte, desempenho comparativo e quatro executáveis x64 verificados. **Aprovação artística final, instalação externa e LAN presencial pendentes.**
+
+[Relatório](docs/ITERACAO-37-RV1-RELATORIO.md) · [Galeria](docs/capturas/iteration37-rv1/index.html) · [Aplicativos e hashes](docs/ITERACAO-37-RV1-DISTRIBUICAO.md) · [Arquivos e evidências](docs/ITERACAO-37-RV1-ARQUIVOS.md)
+
+## Iteração 37 — sprites completos e interrupção por impacto
+
+Versão **0.6.11**: seis classes, dois corpos, quatro direções, quatro famílias de armas, cores por máscara, mochila/carrinho e novo Lobo Branco. Quadros preparados substituem a composição anatômica no caminho de produção. Impacto por perda efetiva de HP é confirmado pelo servidor, com proteção temporária de bosses. Mapas, itens e dados preservados.
+
+**961 casos validados, sem falhas pendentes**: 960 aprovações na suíte integral e o único caso de rótulo corrigido dentro de um reteste completo de multiplayer (27/27). ADM e alunos empacotados, reconexão, persistência, renderização e comparação com três clientes validados. Quatro executáveis Windows x64 auditados. **Aprovação artística final, instalação interativa externa e LAN presencial pendentes.**
+
+[Relatório completo](docs/ITERACAO-37-RELATORIO.md) · [Galeria](docs/capturas/iteration37/index.html) · [Aplicativos e hashes](docs/ITERACAO-37-DISTRIBUICAO.md) · [Cobertura de habilidades](docs/ITERACAO-37-HABILIDADES.md) · [Evidências](docs/dados/iteracao37/)
+
+## Iteração 34 — empacotamento final (28/10/2026)
+
+Quatro executáveis Windows x64 0.6.9 gerados com nomes Iteracao34. 894 testes aprovados, recursos empacotados validados com ADM/quatro clientes e três clientes preparados, hashes e conteúdo auditados. Instaladores da 33 preservados. **Instalação e LAN presencial pendentes.** [Distribuição e hashes](docs/ITERACAO-34-DISTRIBUICAO.md) · [Relatório](docs/ITERACAO-34-EMPACOTAMENTO.md) · [18 capturas](docs/ITERACAO-34-EMPACOTAMENTO-CAPTURAS.html).
+
+## Iteração 34 — desempenho e balanceamento
+
+[Relatório completo](docs/ITERACAO-34-RELATORIO.md) · [Medições](docs/ITERACAO-34-DESEMPENHO.md) · [Balanceamento](docs/ITERACAO-34-BALANCEAMENTO.md) · [Capturas](docs/ITERACAO-34-CAPTURAS.html) · [LAN física pendente](docs/ITERACAO-34-TESTE-LAN.md)
+
+Carga de protocolo 4–32, três clientes Electron preparados e quatro básicos, correção de filas e habilidades pendentes, Lobo Branco rebalanceado, Cavaleiro com participação efetiva e lápide persistente. Validação local concluída; instaladores 33 preservados.
+
 # Relatórios — diário das iterações
+
+## Iteração 33 — servidor escolar e aplicativos separados
+
+ADM com servidor em processo separado, cliente LAN com TLS e identidade confirmada, cadastro sem turma, sessões únicas, limite de 32 jogadores, temporadas e backups. **878 testes aprovados**, dois produtos Windows gerados, quatro clientes Electron contra um banco e recursos empacotados validados. **Validação LAN física pendente; iteração não declarada totalmente concluída.** [Relatório](docs/ITERACAO-33-RELATORIO.md) · [Instaladores](docs/ITERACAO-33-DISTRIBUICAO.md) · [Teste LAN](docs/ITERACAO-33-TESTE-LAN.md) · [Capturas](docs/ITERACAO-33-CAPTURAS.html).
+
+## Iteração 32 — cinco primeiras classes
+
+Guerreiro, Arqueiro, Ladino, Sacerdote e Mago: 80 habilidades, 350 níveis, árvores conectadas, efeitos de combate e persistência. Primeira promoção com Base 10 e Job de Novato 20, escolha permanente e mapas preservados. 872 testes aprovados, build e dois clientes Electron validados. Balanceamento provisório; sem novo instalador/deploy. [Relatório](docs/ITERACAO-32-RELATORIO.md) · [Matrizes](docs/ITERACAO-32-MATRIZES.md) · [Progressões](docs/ITERACAO-32-PROGRESSAO.md) · [Capturas](docs/ITERACAO-32-CAPTURAS.html).
 
 Este arquivo é o **diário de todas as iterações** do projeto, para conferência do que foi feito e de **como o README estava antes**. Ele não descreve o estado atual do jogo: isso é o [`README.md`](README.md), que reflete o jogo como o código está hoje (sistemas, fórmulas, geração, fila de ações, saves).
 
@@ -652,3 +702,16 @@ Artifacts currently land in `release/multiplayer-01`. Desktop01 is preserved as-
 - [Desempenho medido](docs/ITERACAO-22-DESEMPENHO.md)
 - [Artes e memória](docs/ITERACAO-22-ARTES.md)
 - [Evidências visuais](screenshots/iteration22/)
+
+## Iteração 30 — abertura de baús e recompensas
+
+Apresentação integrada com quatro quadros do baú existente, roleta com sprites reais e resultado persistente. Regras, seed, probabilidades, peso, transporte e concessão preservados. Online apresenta somente a recompensa confirmada pelo servidor, sem alterar o protocolo. 788/788 testes, build aprovado e dois Electron com perfis isolados. Aprovação artística humana pendente; sem novo instalador ou deploy. [Relatório](docs/ITERACAO-30-RELATORIO.md) · [Auditoria](docs/ITERACAO-30-AUDITORIA.md) · [Capturas e sequência](docs/ITERACAO-30-CAPTURAS.html).
+
+
+
+## Iteração 31 — acesso escolar e progressão integrada
+
+Usuário/senha, professor e turmas A/B, personagem único, encerramento autoritativo de 60 segundos, aparência modular, seis bases, equipamentos visíveis, HUD, habilidades/consumíveis online, Base/Job por origem e serviços de Serafina. Mapas preservados, promoções vinculadas a 12/36. **811 testes aprovados**, build aprovado, ensaios Electron e 60 jogadores no servidor local. Conteúdo de classes/missões, variantes artísticas e balanceamento escolar continuam pendentes; sem instalador/deploy. [Relatório](docs/ITERACAO-31-RELATORIO.md) · [Capturas](docs/ITERACAO-31-CAPTURAS.html) · [Revisão local](docs/ITERACAO-31-OPERACAO.md).
+
+O fluxo normal do aluno agora exige servidor escolar. As descrições técnicas abaixo também documentam a campanha de desenvolvimento preservada. O endpoint público anterior ainda não recebeu esta atualização. Para revisar localmente: servidor escolar local, conta de professor e `npm run desktop:test:school`, conforme o guia acima.
+

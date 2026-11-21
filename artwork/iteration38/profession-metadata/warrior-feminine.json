@@ -1,0 +1,1289 @@
+{
+  "cell": 128,
+  "columns": 8,
+  "rows": 8,
+  "framesPerDirection": 16,
+  "feetY": 104,
+  "records": [
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 0,
+      "frame": 0,
+      "tip": [
+        40,
+        31
+      ],
+      "hands": [
+        [
+          56,
+          73
+        ],
+        [
+          53,
+          65
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 1,
+      "frame": 1,
+      "tip": [
+        80,
+        60
+      ],
+      "hands": [
+        [
+          62,
+          78
+        ],
+        [
+          66,
+          74
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 2,
+      "frame": 2,
+      "tip": [
+        101,
+        108
+      ],
+      "hands": [
+        [
+          66,
+          85
+        ],
+        [
+          72,
+          90
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 3,
+      "frame": 3,
+      "tip": [
+        97,
+        96
+      ],
+      "hands": [
+        [
+          65,
+          86
+        ],
+        [
+          71,
+          88
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 4,
+      "frame": 4,
+      "tip": [
+        94,
+        79
+      ],
+      "hands": [
+        [
+          65,
+          83
+        ],
+        [
+          70,
+          82
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 5,
+      "frame": 5,
+      "tip": [
+        89,
+        61
+      ],
+      "hands": [
+        [
+          64,
+          80
+        ],
+        [
+          69,
+          77
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 6,
+      "frame": 6,
+      "tip": [
+        94,
+        71
+      ],
+      "hands": [
+        [
+          65,
+          82
+        ],
+        [
+          70,
+          80
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "fishing",
+      "phase": 7,
+      "frame": 7,
+      "tip": [
+        99,
+        103
+      ],
+      "hands": [
+        [
+          65,
+          87
+        ],
+        [
+          72,
+          90
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 0,
+      "frame": 8,
+      "tip": [
+        43,
+        83
+      ],
+      "hands": [
+        [
+          67,
+          84
+        ],
+        [
+          58,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 1,
+      "frame": 9,
+      "tip": [
+        86,
+        44
+      ],
+      "hands": [
+        [
+          66,
+          67
+        ],
+        [
+          74,
+          59
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 2,
+      "frame": 10,
+      "tip": [
+        89,
+        36
+      ],
+      "hands": [
+        [
+          65,
+          56
+        ],
+        [
+          74,
+          48
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 3,
+      "frame": 11,
+      "tip": [
+        90,
+        62
+      ],
+      "hands": [
+        [
+          62,
+          71
+        ],
+        [
+          72,
+          68
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 4,
+      "frame": 12,
+      "tip": [
+        92,
+        102
+      ],
+      "hands": [
+        [
+          62,
+          89
+        ],
+        [
+          73,
+          94
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 5,
+      "frame": 13,
+      "tip": [
+        88,
+        93
+      ],
+      "hands": [
+        [
+          62,
+          86
+        ],
+        [
+          71,
+          89
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 6,
+      "frame": 14,
+      "tip": [
+        45,
+        85
+      ],
+      "hands": [
+        [
+          68,
+          84
+        ],
+        [
+          59,
+          85
+        ]
+      ]
+    },
+    {
+      "direction": 0,
+      "type": "mining",
+      "phase": 7,
+      "frame": 15,
+      "tip": [
+        43,
+        83
+      ],
+      "hands": [
+        [
+          67,
+          84
+        ],
+        [
+          58,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 0,
+      "frame": 0,
+      "tip": [
+        87,
+        28
+      ],
+      "hands": [
+        [
+          58,
+          73
+        ],
+        [
+          63,
+          64
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 1,
+      "frame": 1,
+      "tip": [
+        28,
+        42
+      ],
+      "hands": [
+        [
+          61,
+          76
+        ],
+        [
+          55,
+          69
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 2,
+      "frame": 2,
+      "tip": [
+        9,
+        61
+      ],
+      "hands": [
+        [
+          59,
+          78
+        ],
+        [
+          50,
+          75
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 3,
+      "frame": 3,
+      "tip": [
+        21,
+        43
+      ],
+      "hands": [
+        [
+          62,
+          79
+        ],
+        [
+          54,
+          72
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 4,
+      "frame": 4,
+      "tip": [
+        23,
+        32
+      ],
+      "hands": [
+        [
+          62,
+          75
+        ],
+        [
+          55,
+          67
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 5,
+      "frame": 5,
+      "tip": [
+        28,
+        28
+      ],
+      "hands": [
+        [
+          63,
+          73
+        ],
+        [
+          57,
+          64
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 6,
+      "frame": 6,
+      "tip": [
+        23,
+        36
+      ],
+      "hands": [
+        [
+          63,
+          75
+        ],
+        [
+          56,
+          68
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "fishing",
+      "phase": 7,
+      "frame": 7,
+      "tip": [
+        11,
+        69
+      ],
+      "hands": [
+        [
+          61,
+          84
+        ],
+        [
+          51,
+          81
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 0,
+      "frame": 8,
+      "tip": [
+        43,
+        80
+      ],
+      "hands": [
+        [
+          66,
+          84
+        ],
+        [
+          58,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 1,
+      "frame": 9,
+      "tip": [
+        69,
+        42
+      ],
+      "hands": [
+        [
+          71,
+          66
+        ],
+        [
+          70,
+          57
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 2,
+      "frame": 10,
+      "tip": [
+        88,
+        37
+      ],
+      "hands": [
+        [
+          76,
+          57
+        ],
+        [
+          81,
+          50
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 3,
+      "frame": 11,
+      "tip": [
+        44,
+        54
+      ],
+      "hands": [
+        [
+          67,
+          68
+        ],
+        [
+          59,
+          63
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 4,
+      "frame": 12,
+      "tip": [
+        39,
+        101
+      ],
+      "hands": [
+        [
+          67,
+          89
+        ],
+        [
+          56,
+          93
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 5,
+      "frame": 13,
+      "tip": [
+        41,
+        89
+      ],
+      "hands": [
+        [
+          66,
+          84
+        ],
+        [
+          57,
+          86
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 6,
+      "frame": 14,
+      "tip": [
+        42,
+        81
+      ],
+      "hands": [
+        [
+          65,
+          83
+        ],
+        [
+          57,
+          82
+        ]
+      ]
+    },
+    {
+      "direction": 1,
+      "type": "mining",
+      "phase": 7,
+      "frame": 15,
+      "tip": [
+        43,
+        80
+      ],
+      "hands": [
+        [
+          66,
+          84
+        ],
+        [
+          58,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 0,
+      "frame": 0,
+      "tip": [
+        40,
+        31
+      ],
+      "hands": [
+        [
+          60,
+          73
+        ],
+        [
+          56,
+          65
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 1,
+      "frame": 1,
+      "tip": [
+        78,
+        36
+      ],
+      "hands": [
+        [
+          66,
+          74
+        ],
+        [
+          68,
+          67
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 2,
+      "frame": 2,
+      "tip": [
+        103,
+        44
+      ],
+      "hands": [
+        [
+          70,
+          75
+        ],
+        [
+          76,
+          69
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 3,
+      "frame": 3,
+      "tip": [
+        97,
+        38
+      ],
+      "hands": [
+        [
+          69,
+          74
+        ],
+        [
+          75,
+          67
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 4,
+      "frame": 4,
+      "tip": [
+        94,
+        29
+      ],
+      "hands": [
+        [
+          69,
+          73
+        ],
+        [
+          74,
+          64
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 5,
+      "frame": 5,
+      "tip": [
+        89,
+        26
+      ],
+      "hands": [
+        [
+          68,
+          72
+        ],
+        [
+          72,
+          63
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 6,
+      "frame": 6,
+      "tip": [
+        94,
+        32
+      ],
+      "hands": [
+        [
+          69,
+          73
+        ],
+        [
+          74,
+          65
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "fishing",
+      "phase": 7,
+      "frame": 7,
+      "tip": [
+        103,
+        51
+      ],
+      "hands": [
+        [
+          70,
+          76
+        ],
+        [
+          76,
+          71
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 0,
+      "frame": 8,
+      "tip": [
+        43,
+        83
+      ],
+      "hands": [
+        [
+          67,
+          84
+        ],
+        [
+          58,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 1,
+      "frame": 9,
+      "tip": [
+        86,
+        44
+      ],
+      "hands": [
+        [
+          66,
+          67
+        ],
+        [
+          74,
+          59
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 2,
+      "frame": 10,
+      "tip": [
+        89,
+        36
+      ],
+      "hands": [
+        [
+          65,
+          56
+        ],
+        [
+          74,
+          48
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 3,
+      "frame": 11,
+      "tip": [
+        90,
+        62
+      ],
+      "hands": [
+        [
+          62,
+          71
+        ],
+        [
+          72,
+          68
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 4,
+      "frame": 12,
+      "tip": [
+        92,
+        71
+      ],
+      "hands": [
+        [
+          62,
+          80
+        ],
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 5,
+      "frame": 13,
+      "tip": [
+        88,
+        63
+      ],
+      "hands": [
+        [
+          62,
+          78
+        ],
+        [
+          71,
+          73
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 6,
+      "frame": 14,
+      "tip": [
+        45,
+        85
+      ],
+      "hands": [
+        [
+          68,
+          84
+        ],
+        [
+          59,
+          85
+        ]
+      ]
+    },
+    {
+      "direction": 2,
+      "type": "mining",
+      "phase": 7,
+      "frame": 15,
+      "tip": [
+        43,
+        83
+      ],
+      "hands": [
+        [
+          67,
+          84
+        ],
+        [
+          58,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 0,
+      "frame": 0,
+      "tip": [
+        41,
+        28
+      ],
+      "hands": [
+        [
+          70,
+          73
+        ],
+        [
+          65,
+          64
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 1,
+      "frame": 1,
+      "tip": [
+        100,
+        42
+      ],
+      "hands": [
+        [
+          67,
+          76
+        ],
+        [
+          73,
+          69
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 2,
+      "frame": 2,
+      "tip": [
+        119,
+        61
+      ],
+      "hands": [
+        [
+          69,
+          78
+        ],
+        [
+          78,
+          75
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 3,
+      "frame": 3,
+      "tip": [
+        107,
+        43
+      ],
+      "hands": [
+        [
+          66,
+          79
+        ],
+        [
+          74,
+          72
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 4,
+      "frame": 4,
+      "tip": [
+        105,
+        32
+      ],
+      "hands": [
+        [
+          66,
+          75
+        ],
+        [
+          73,
+          67
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 5,
+      "frame": 5,
+      "tip": [
+        100,
+        28
+      ],
+      "hands": [
+        [
+          65,
+          73
+        ],
+        [
+          71,
+          64
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 6,
+      "frame": 6,
+      "tip": [
+        105,
+        36
+      ],
+      "hands": [
+        [
+          65,
+          75
+        ],
+        [
+          72,
+          68
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "fishing",
+      "phase": 7,
+      "frame": 7,
+      "tip": [
+        117,
+        69
+      ],
+      "hands": [
+        [
+          67,
+          84
+        ],
+        [
+          77,
+          81
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 0,
+      "frame": 8,
+      "tip": [
+        85,
+        80
+      ],
+      "hands": [
+        [
+          62,
+          84
+        ],
+        [
+          70,
+          83
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 1,
+      "frame": 9,
+      "tip": [
+        59,
+        42
+      ],
+      "hands": [
+        [
+          57,
+          66
+        ],
+        [
+          58,
+          57
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 2,
+      "frame": 10,
+      "tip": [
+        40,
+        37
+      ],
+      "hands": [
+        [
+          52,
+          57
+        ],
+        [
+          47,
+          50
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 3,
+      "frame": 11,
+      "tip": [
+        84,
+        54
+      ],
+      "hands": [
+        [
+          61,
+          68
+        ],
+        [
+          69,
+          63
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 4,
+      "frame": 12,
+      "tip": [
+        89,
+        101
+      ],
+      "hands": [
+        [
+          61,
+          89
+        ],
+        [
+          72,
+          93
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 5,
+      "frame": 13,
+      "tip": [
+        87,
+        89
+      ],
+      "hands": [
+        [
+          62,
+          84
+        ],
+        [
+          71,
+          86
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 6,
+      "frame": 14,
+      "tip": [
+        86,
+        81
+      ],
+      "hands": [
+        [
+          63,
+          83
+        ],
+        [
+          71,
+          82
+        ]
+      ]
+    },
+    {
+      "direction": 3,
+      "type": "mining",
+      "phase": 7,
+      "frame": 15,
+      "tip": [
+        85,
+        80
+      ],
+      "hands": [
+        [
+          62,
+          84
+        ],
+        [
+          70,
+          83
+        ]
+      ]
+    }
+  ]
+}

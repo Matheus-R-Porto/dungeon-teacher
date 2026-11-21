@@ -11,7 +11,9 @@ export class SceneTransition {
  cancel(){this.generation++;this.controller?.abort();this.fade?.cancel();this.controller=null;this.busy=false;this.overlay.hidden=true;if(getGraphics())getGraphics().loading=false;}
  async prepare(world,old,entities,{beforePresent=()=>{},beforeCompile=()=>{},signal:external}={}){
   this.cancel();const generation=this.generation,controller=this.controller=new AbortController(),signal=controller.signal;
-  let timedOut=false;const timeout=setTimeout(()=>{timedOut=true;controller.abort();},15000);
+  // Multiple local renderers can share one integrated GPU. Keep preparation
+  // bounded while allowing cold shader/atlas uploads to finish under contention.
+  let timedOut=false;const timeout=setTimeout(()=>{timedOut=true;controller.abort();},30000);
   const abort=()=>controller.abort();external?.addEventListener('abort',abort,{once:true});if(external?.aborted)abort();this.busy=true;this.overlay.hidden=false;this.overlay.textContent='Preparando passagem…';if(getGraphics())getGraphics().loading=true;
   const report={map:world.id,started:performance.now(),stages:[],heapBefore:performance.memory?.usedJSHeapSize};let view;
   const record=(name,ms)=>{report.stages.push({name,ms});getGraphics()?.event('transition:'+name,ms);};

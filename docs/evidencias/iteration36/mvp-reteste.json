@@ -1,0 +1,58 @@
+{
+  "checks": [
+    "E: MVP em combate, efeitos, morte controlada, lápide na posição real e reaparecimento com relógio de ensaio avançado 15 minutos."
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-3.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-4.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-5.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-6.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-7.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-8.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-9.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-10.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-11.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-12.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-13.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11b-mvp-carga-preparacao.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11c-mvp-carga-movimento.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\12-mvp-lapide.png"
+  ],
+  "errors": [],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803",
+  "packagedResources": true,
+  "temporaryDataDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt36-flows-A594T0\\adm",
+  "server": "AdminService real, mesmo serviço do aplicativo ADM, iniciado no processo de ensaio; UI ADM testada separadamente",
+  "fixtures": [
+    "Perfis preparados perfil preparado da 34 / Job 25, XP a um ponto do próximo nível, sem ouro; três minérios de teste para a forja.",
+    "Reposicionamentos pelo servidor de ensaio entre cenários; nenhum controle de debug no cliente.",
+    "Morte final do MVP, entrada em furia, recuperacao de HP dos participantes e avanco de relogio somente no servidor de ensaio."
+  ],
+  "mvpFrenzyFixture": true,
+  "chargeFixture": "Participantes e MVP reposicionados dentro da mesma sala para observar a carga existente.",
+  "grave": {
+    "state": "waiting",
+    "generation": 0,
+    "diedAt": 1793317948568,
+    "position": {
+      "x": -67.13470660527729,
+      "y": -5,
+      "z": 14.837418865159917,
+      "surface": "white-wolf-cave"
+    },
+    "respawnAt": 1793318848568,
+    "killer": "Sequência 0"
+  },
+  "mvpPhases": [
+    "howl:windup",
+    "bite:windup",
+    "bite:recovery",
+    "charge:recovery",
+    "charge:charge"
+  ],
+  "respawnRetrySimulatedSeconds": 0.05,
+  "ok": true
+}

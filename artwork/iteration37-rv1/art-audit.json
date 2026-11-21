@@ -1,0 +1,59 @@
+{
+  "ok": true,
+  "cells": 8640,
+  "atlas": 60,
+  "maskPairs": 60,
+  "opaqueGripEndpoints": 8,
+  "errors": [],
+  "nativePalette": [
+    {
+      "id": "archer-feminine-none-mask",
+      "colors": 58
+    },
+    {
+      "id": "archer-masculine-none-mask",
+      "colors": 57
+    },
+    {
+      "id": "mage-feminine-none-mask",
+      "colors": 67
+    },
+    {
+      "id": "mage-masculine-none-mask",
+      "colors": 63
+    },
+    {
+      "id": "novice-feminine-none-mask",
+      "colors": 55
+    },
+    {
+      "id": "novice-masculine-none-mask",
+      "colors": 60
+    },
+    {
+      "id": "priest-feminine-none-mask",
+      "colors": 64
+    },
+    {
+      "id": "priest-masculine-none-mask",
+      "colors": 66
+    },
+    {
+      "id": "rogue-feminine-none-mask",
+      "colors": 60
+    },
+    {
+      "id": "rogue-masculine-none-mask",
+      "colors": 60
+    },
+    {
+      "id": "warrior-feminine-none-mask",
+      "colors": 75
+    },
+    {
+      "id": "warrior-masculine-none-mask",
+      "colors": 74
+    }
+  ],
+  "artisticApproval": "Human review required; these are technical checks, not proof of natural motion."
+}

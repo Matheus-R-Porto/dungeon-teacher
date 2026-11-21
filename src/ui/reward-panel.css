@@ -1,0 +1,48 @@
+/* Shared reward surface tokens; other game panels keep their existing styles. */
+.reward-experience{--reward-ink:#eae3c9;--reward-muted:#b6c5b8;--reward-gold:#d5b87b;--reward-surface:#142b27;--reward-line:#a68e5555}
+dialog.reward-experience{width:min(600px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:28px 30px 20px;overflow:auto;color:var(--reward-ink);text-align:center;border:1px solid var(--reward-line);border-radius:16px;background:radial-gradient(ellipse at 50% 38%,#34544155,transparent 62%),linear-gradient(145deg,#203a30,#102725 75%);box-shadow:0 24px 80px #0009,inset 0 1px #e9dca51a}
+.reward-experience::backdrop{background:#071511a6;backdrop-filter:blur(3px)}
+.reward-experience header{padding:0 26px}.reward-experience h2{font-size:30px;margin:8px 0 6px;letter-spacing:.3px}.reward-experience .reward-subtitle{font-size:12px;margin:0;color:var(--reward-muted)}
+.reward-experience .close-button{width:40px;height:40px;right:10px;top:10px;border-radius:50%}
+.reward-stage{height:284px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.reward-chest{width:280px;height:280px;position:relative;flex:none;transition:width .25s ease,height .25s ease;isolation:isolate}
+.reward-chest-sprite{position:absolute;inset:0;background-image:url('/assets/rewards-v30/chest-opening.png');background-size:200% 200%;background-repeat:no-repeat;filter:drop-shadow(0 10px 8px #0004)}
+.reward-glow{position:absolute;inset:15%;z-index:-1;background:radial-gradient(ellipse,#ddbd6a33,transparent 70%);opacity:0;transition:opacity .25s}
+.reward-experience[data-phase=anticipation] .reward-chest-sprite{animation:chest-anticipation .22s ease-in-out}
+.reward-experience:is([data-phase=crack],[data-phase=half],[data-phase=open],[data-phase=transition]) .reward-glow{opacity:1}
+.reward-experience:is([data-phase=reel],[data-phase=slowing],[data-phase=saving]) .reward-chest{width:118px;height:118px}
+.reward-wheel{width:100%;animation:reward-arrive .2s ease-out}
+.reward-experience .reel-window{height:145px;margin:0;border:1px solid var(--reward-line);border-radius:10px;background:linear-gradient(#0b211e,#1b352b);box-shadow:inset 0 10px 25px #0003;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.reward-experience .reel-track{width:100%;gap:0}
+.reward-experience .reel-item{box-sizing:border-box;width:112px;flex:0 0 112px;gap:3px;padding:13px 5px 8px;border-right:1px solid #d4c38918;color:var(--reward-muted)}
+.reward-experience .reel-item img{display:block;width:76px;height:76px;object-fit:contain}.reward-experience .reel-item small{font:11px/1.2 Arial,sans-serif;min-height:26px;display:flex;align-items:center}.reward-experience .reel-item b{font:10px Arial,sans-serif;color:var(--reward-gold)}
+.reward-experience .reel-window:after{box-sizing:border-box;left:calc(50% - 56px);width:112px;border:1px solid #d5b87bb3;background:linear-gradient(#d5b87b0d,transparent);border-radius:7px}
+.reward-experience .reel-indicator{top:-5px;font-size:18px;color:#efd399;text-shadow:0 2px #142b27}
+.reward-wheel-caption{display:block;margin-top:8px;font:11px Arial,sans-serif;color:var(--reward-muted)}
+.reward-steps{list-style:none;display:flex;align-items:center;justify-content:center;gap:18px;margin:12px 0 0;padding:12px 0 0;border-top:1px solid var(--reward-line);font:11px Arial,sans-serif;color:#93a89b}.reward-steps li[aria-current]{color:#ebd3a0}.reward-steps li+li:before{content:'·';margin-right:18px;color:#829589}
+.reward-experience .reel-status{min-height:38px;margin:12px 0;font:13px/1.5 Arial,sans-serif;color:var(--reward-ink)}
+.reward-experience .primary-button{min-height:44px;justify-content:center;border-radius:7px;font-size:13px;background:linear-gradient(#ddc58d,#c6a66c);border-color:#e5d09d;color:#172924}
+.reward-experience button:focus-visible{outline:2px solid #f6dfaa;outline-offset:3px}.reward-hint{display:block;min-height:14px;margin-top:9px;font:11px/1.3 Arial,sans-serif;color:var(--reward-muted)}
+.reward-result{width:100%;animation:reward-arrive .25s ease-out}.reward-item-halo{position:relative;width:140px;height:140px;margin:0 auto 6px;background:radial-gradient(ellipse,#c7b27025,transparent 70%)}.reward-item-halo img{width:140px;height:140px;object-fit:contain}.reward-item-halo span{position:absolute;bottom:10px;right:3px;border:1px solid var(--reward-line);border-radius:6px;background:#172e26;padding:4px 7px;font:12px Arial}
+.reward-result h3{font-size:24px;font-weight:400;margin:7px 0}.reward-experience .reward-facts{max-width:430px;margin:0 auto;font:11px/1.5 Arial,sans-serif}.reward-gold{margin-top:12px;font:22px Georgia,serif;color:#e6c883}.reward-gold span{font:12px Arial,sans-serif}
+@keyframes chest-anticipation{25%{transform:rotate(-2deg) translateY(1px)}75%{transform:rotate(2deg) translateY(-1px)}}
+@keyframes reward-arrive{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){dialog.reward-experience{padding:22px 16px 16px}.reward-experience header{padding:0 20px}.reward-experience h2{font-size:26px}.reward-steps{gap:10px}.reward-steps li+li:before{margin-right:10px}.reward-experience .reward-facts{font-size:11px}.reward-stage{height:270px}}
+@media(max-height:620px){dialog.reward-experience{padding-top:18px;padding-bottom:14px}.reward-stage{height:225px}.reward-chest{width:225px;height:225px}.reward-experience:is([data-phase=reel],[data-phase=slowing],[data-phase=saving]) .reward-chest{width:80px;height:80px}.reward-item-halo,.reward-item-halo img{width:106px;height:106px}.reward-experience h2{font-size:25px}.reward-experience .reel-status{margin:8px 0;min-height:34px}.reward-steps{margin-top:6px;padding-top:9px}.reward-gold{margin-top:6px}.reward-result h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.reward-experience *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.reward-experience.reduced-motion *{animation:none!important;transition:none!important}
+/* Override the exploration HUD's top alignment and reserved hotbar space. */
+.game-hud dialog.reward-experience{margin:auto;max-height:calc(100dvh - 24px);scrollbar-width:thin;scrollbar-color:#8d895e #152c26}
+.game-hud dialog.reward-experience[data-exploration-interface]::backdrop{background:#071511a6;backdrop-filter:blur(3px)}
+.reward-experience .reward-result h3{font-size:24px;margin:7px 0;font-weight:400}
+@media(prefers-reduced-motion:reduce){.game-hud dialog.reward-experience[data-exploration-interface]::backdrop{backdrop-filter:none}}
+.reward-experience[data-phase=transition] .reward-chest{width:118px;height:118px}
+@media(max-height:520px){
+ .game-hud dialog.reward-experience{padding:14px 22px 12px}.reward-experience header .reward-subtitle{display:none}
+ .reward-experience h2{font-size:23px;margin:6px 0}.reward-stage{height:184px}.reward-chest{width:184px;height:184px}
+ .reward-experience:is([data-phase=transition],[data-phase=reel],[data-phase=slowing],[data-phase=saving]) .reward-chest{width:44px;height:44px}
+ .reward-experience .reel-window{height:126px}.reward-experience .reel-item{padding-top:9px;padding-bottom:4px}.reward-experience .reel-item img{width:62px;height:62px}.reward-wheel-caption{margin-top:4px}
+ .reward-item-halo,.reward-item-halo img{width:78px;height:78px}.reward-experience .reward-result h3{font-size:20px;margin:5px 0}
+ .reward-experience .reward-facts{font-size:10px}.reward-gold{font-size:20px;margin-top:5px}.reward-steps{margin-top:4px;padding-top:8px}
+ .reward-experience .reel-status{font-size:12px;margin:9px 0;min-height:30px}.reward-hint{display:none}
+}

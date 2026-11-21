@@ -10,6 +10,6 @@ function testOptions(argv,appData,configured,releaseProfile='Dungeon Master'){
   if(server!==undefined&&!profile)throw Error('--server exige --test-profile para proteger o perfil principal.');
   return {profile:profile?path.join(appData,'Dungeon Master Tests',profile):path.join(appData,releaseProfile),
     serverUrl:endpoint(profile?(server||'ws://127.0.0.1:8787/hub'):configured),
-    query:profile?'?'+new URLSearchParams({shared:'1',online:argv.includes('--temporary-tower')||argv.includes('--legacy-world')?'0':'1',tower:argv.includes('--legacy-world')?'0':'1',name:('Teste '+profile).slice(0,24),server:endpoint(server||'ws://127.0.0.1:8787/hub')}):''};
+    query:profile?'?'+new URLSearchParams({... (argv.includes('--school')?{school:'1'}:{}),shared:'1',online:argv.includes('--temporary-tower')||argv.includes('--legacy-world')?'0':'1',tower:argv.includes('--legacy-world')?'0':'1',name:('Teste '+profile).slice(0,24),server:endpoint(server||'ws://127.0.0.1:8787/hub')}):''};
 }
 module.exports={testOptions};

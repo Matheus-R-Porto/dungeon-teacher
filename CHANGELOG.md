@@ -1,3 +1,17 @@
+## 0.6.14 — Iteração 38
+
+- Árvore do Destino com fundo azul claro, silhueta natural discreta e habilidades em primeiro plano; raízes e regras preservadas, futura copa apenas arquitetural.
+- Reparos de roupa, capa e suporte de braços em atlas completos, com máscaras preservadas e revisão das profissões.
+- Experimentos de resolução e filtragem isolados; resolução atual mantida após comparação visual e técnica.
+- 982 testes aprovados, galeria comparativa, benchmarks e quatro aplicativos Windows x64 verificados. Arte aguardando avaliação do usuário.
+
+## 0.6.13 — Iteração 37, Revisão Visual 2
+
+- Árvore ilustrada com cinco variantes de classe, raízes Novato preservadas, navegação e investimento autorizado pelo servidor.
+- Pesca e mineração com quadros completos para seis classes, dois corpos e quatro direções; fases visíveis aos outros jogadores.
+- Cinco ícones de passivas existentes e correção da unidade exibida para velocidade de ataque do Novato.
+- Galeria, comparação de desempenho, testes de regressão e quatro pacotes Windows auditados. Regras, mapas e arte RV1 preservados; avaliação artística pendente.
+
 ## 0.6.9 — Iterações 28, 28.1 e 28.1B
 
 - Nova interface de inventário: grade com ícones, nomes, pilhas, tooltip acessível,

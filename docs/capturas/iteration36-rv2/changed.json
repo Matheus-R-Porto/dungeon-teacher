@@ -1,0 +1,42 @@
+[
+  {
+    "path": "src/core/equipment-pose.js",
+    "before": "2ef28913dbfd3ee8ca0d2a3aa7783df1342e1dd4b259b8088158b5475753579c",
+    "after": "7b0e971042acb837aa2eb17981b745d18a3f3daf360d6a4e2293c1ef407f4586"
+  },
+  {
+    "path": "src/core/modular-pose.js",
+    "before": "b65fd730725738b0baa61ddb7b7428ed21e758c948fa27c780fa32a9593ae14c",
+    "after": "edd4eb51e481a75ea74df28e4c865a880bb1075268e7e5b394ec0796cf7c57e9"
+  },
+  {
+    "path": "src/adapters/rendering/appearance-compositor.js",
+    "before": "620358bfb87c2e29c583c5f51b2fffd09d5c538880c344e446021240227f51e3",
+    "after": "920f6ce912bf446afe9eb403fa138f2ec4712d9361fa55eca10b4e98d7a7d891"
+  },
+  {
+    "path": "src/adapters/rendering/modular-actor.js",
+    "before": "157b80daa9a260ecbde50fa7329ff0009872b9e3ab4b61cba715bff47ed24e61",
+    "after": "54013c0809af64dbbae7c8ce5219726926481c479ecdd167a333df67a01799ed"
+  },
+  {
+    "path": "src/adapters/rendering/pose-compositor.js",
+    "before": "f8d03c1c1ac3329e1339b09790d2e522a3db83c4588ef6a33a1e9eaf18360a81",
+    "after": "cc9c2c72d4988cf8c48b11fc7576a362e8a56dacef8c5a60f2cd21e81417b144"
+  },
+  {
+    "path": "tests/iteration36-rv1.test.js",
+    "before": "3f76255170e6a8ed12c719859d2b6eca4215c7f769b999dcb1c5a1dd0787e597",
+    "after": "178f02134257476f4dbeceb611de5bd053b92e5742e772a32bf945d6ab907311"
+  },
+  {
+    "path": "src/core/carry-pose.js",
+    "before": null,
+    "after": "287972eacfcfa66c3800e9ee69c9726ceba4c3faa73b0207cb8ad96ef8613766"
+  },
+  {
+    "path": "tests/iteration36-rv2.test.js",
+    "before": null,
+    "after": "f19883ea5f5d8cd79f15042b9d725e02ca10d264b03c20d4f0444e78f3c14654"
+  }
+]

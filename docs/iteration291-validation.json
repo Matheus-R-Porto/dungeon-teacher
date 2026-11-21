@@ -1,0 +1,135 @@
+{
+  "at": "2026-10-26T14:26:36.352Z",
+  "iteration": "29.1",
+  "full": {
+    "log": ".logs/iteration291-full-final.txt",
+    "tests": 777,
+    "pass": 777,
+    "fail": 0,
+    "cancelled": 0,
+    "durationMs": 152795.0601
+  },
+  "targeted": {
+    "log": ".logs/iteration291-targeted.txt",
+    "tests": 105,
+    "pass": 105,
+    "fail": 0,
+    "cancelled": 0,
+    "durationMs": 15468.7573
+  },
+  "build": {
+    "log": ".logs/iteration291-build.txt",
+    "ok": true,
+    "warning": "Existing bundle above 500 kB"
+  },
+  "electron": {
+    "source": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-transport291-delivery-1793024543949",
+    "ok": true,
+    "checks": [
+      "Backpack and cart equipped with real controls",
+      "Four cart orientations and movement sequence",
+      "Transfers both ways with quantity controls",
+      "Real pointer drag outside inventory",
+      "Cancel and protected confirmation preserve items",
+      "Pending queue materializes only on close",
+      "Failed operation preserves inventory and dialog",
+      "Reload preserves cart and drop",
+      "Real pickup control removes drop only on success",
+      "Overweight pickup refuses without mutation",
+      "Second Electron client: authoritative equip, transfer, discard and pickup"
+    ],
+    "anchors": [
+      {
+        "player": [
+          0,
+          0.055,
+          5
+        ],
+        "cart": [
+          -0.4596194077712559,
+          0.04,
+          4.540380592228744
+        ],
+        "direction": 0
+      },
+      {
+        "player": [
+          0,
+          0.055,
+          5
+        ],
+        "cart": [
+          0.4596194077712559,
+          0.04,
+          4.540380592228744
+        ],
+        "direction": 2
+      },
+      {
+        "player": [
+          0,
+          0.055,
+          5
+        ],
+        "cart": [
+          0.45961940777125593,
+          0.04,
+          5.459619407771256
+        ],
+        "direction": 4
+      },
+      {
+        "player": [
+          0,
+          0.055,
+          5
+        ],
+        "cart": [
+          -0.4596194077712559,
+          0.04,
+          5.459619407771256
+        ],
+        "direction": 6
+      }
+    ],
+    "screenshots": [
+      "docs/art/iteration291/transport-no-cart.png",
+      "docs/art/iteration291/transport-capacity.png",
+      "docs/art/iteration291/cart-direction-0.png",
+      "docs/art/iteration291/cart-direction-1.png",
+      "docs/art/iteration291/cart-direction-2.png",
+      "docs/art/iteration291/cart-direction-3.png",
+      "docs/art/iteration291/cart-walking-0.png",
+      "docs/art/iteration291/cart-walking-1.png",
+      "docs/art/iteration291/cart-walking-2.png",
+      "docs/art/iteration291/cart-storage-empty.png",
+      "docs/art/iteration291/cart-storage-loaded.png",
+      "docs/art/iteration291/drag-in-progress.png",
+      "docs/art/iteration291/discard-pending.png",
+      "docs/art/iteration291/protected-confirmation.png",
+      "docs/art/iteration291/drop-on-ground.png",
+      "docs/art/iteration291/drop-collected.png",
+      "docs/art/iteration291/drop-pickup-refused.png",
+      "docs/art/iteration291/drop-weight-refused.png",
+      "docs/art/iteration291/transport-online.png"
+    ]
+  },
+  "environment": {
+    "platform": "win32",
+    "node": "v24.19.0",
+    "profiles": "isolated Electron test profiles",
+    "server": "local isolated SQLite, no public deployment"
+  },
+  "limits": [
+    "No 12-cart school hardware benchmark",
+    "Cart is a visual accessory, not independent vehicle physics",
+    "Offline lost-layout recovery is a provisional refuge rule"
+  ],
+  "additionalRegression": {
+    "log": ".logs/iteration291-drops-final.txt",
+    "tests": 31,
+    "pass": 31,
+    "fail": 0,
+    "scope": "Drops, cotas de recompensas online, persistência e teste de cavernas"
+  }
+}

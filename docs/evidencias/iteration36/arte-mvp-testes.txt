@@ -1,0 +1,36 @@
+✔ living migration is deterministic, idempotent and preserves original identities and portals (2110.0624ms)
+✔ floors 4–12 stay byte-equivalent after runtime expansion (358.7247ms)
+✔ loading expanded tower never writes back base geography or invokes migration on personal data (67.6917ms)
+✔ wolf perception, grounded pursuit, cooldown, leash and player-safe bounded respawn (410.7088ms)
+✔ first floor wolves and Slimes do not aggro merely by proximity (41.7919ms)
+✔ new atlases have complete declared frames and transparent safe gutters (10.8131ms)
+✔ NPC scale keeps foot anchoring, proportions and interaction coordinates (9.6241ms)
+✔ living renderer shares low vegetation materials, culls distant props and disposes scene resources (54.9479ms)
+✔ 34: spectators and zero damage do not scale; late damage adds budget without erasing damage (3.6746ms)
+✔ 34: support counts effective allies, including protection applied before first impact (2.8777ms)
+✔ 34: expired protection, absent, dead and disconnected players cannot raise difficulty (0.8806ms)
+✔ 34: death, disconnect and reconnect cannot shrink or multiply participation; cap six (1.0777ms)
+✔ 34: real healing excludes overheal and attributes HOT to its caster (5.274ms)
+✔ 34: sword hits multiple real players, respects telegraph and spares outside target (261.5462ms)
+✔ 34: arc hits multiple real players, respects telegraph and spares outside target (219.5009ms)
+✔ 34: rupture hits multiple real players, respects telegraph and spares outside target (145.9954ms)
+✔ 34: charge hits multiple real players, respects telegraph and spares outside target (176.6682ms)
+✔ 34: knight honors taunt and keeps the existing vulnerable disconnected body (153.8265ms)
+✔ 34: one shared public snapshot preserves each private profile, epoch and loot (102.885ms)
+✔ 34: pending online ability drains existing basic recovery without starting another basic attack (292.9947ms)
+✔ 34: grave records final hitter, server death time and exact position, shared and durable (389.0622ms)
+✔ 34: elapsed respawn waits for safe space, restores once and removes the grave (188.5714ms)
+✔ 34: wolf charge damages two nearby living players once per charge (258.5873ms)
+✔ 34: online backup under concurrent writes is consistent and keeps the live connection usable (1492.4675ms)
+✔ 36: legacy appearance is accepted unchanged; bodies and hair silhouettes are additive (5.6916ms)
+✔ 36: four attack families move body and hand in all cardinal views without gameplay mutation (2.1709ms)
+✔ 36: floors 1–3 roam without a target, stay walkable and stop homing after aggro (2507.3153ms)
+✔ 36: MVP explores only its room; a lost target does not teleport it home (944.8097ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4039.8317

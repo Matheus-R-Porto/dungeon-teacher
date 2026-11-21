@@ -1,0 +1,132 @@
+{
+  "checks": [
+    "ADM real inicia servidor em processo separado e mostra zero vagas ocupadas",
+    "Descoberta UDP local, identidade do ADM e ausência da ponte administrativa no aluno",
+    "Quatro processos Electron, quatro perfis, um servidor e um banco: cadastro, login, personagens e sincronização",
+    "Segundo login rejeitado sem derrubar o cliente original",
+    "Troca A → B → A entre perfis Electron separados conserva personagem e duas alterações reais de equipamento",
+    "Kick pela interface confirma conta correta, mostra mensagem exata e permite novo login",
+    "Backup pelo ADM, parada e reinício do mesmo banco preservam equipamento e progresso",
+    "Recarregar a interface ADM não interrompe o processo servidor nem a sessão do aluno",
+    "ADM encerra normalmente com código zero após gravar e parar o serviço"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\01-adm-primeiro-acesso.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\02-adm-servidor-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\03-conexao-manual-e-identidade.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\04-adm-quatro-aventureiros.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\05-jogo-quatro-clientes.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\06-sessao-duplicada-rejeitada.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\07-retorno-ao-primeiro-cliente.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\08-confirmacao-desconexao.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\09-desconexao-administrativa.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\10-backup-e-monitoramento.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\11-servidor-encerrado.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\falha-ADM.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\falha-Cliente-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\falha-Cliente-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\falha-Cliente-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204\\falha-Cliente-3.png"
+  ],
+  "errors": [
+    "Error: SyntaxError: missing ) after argument list\n    at Object.evaluate (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/package34-electron.mjs:8:1854)\n    at async until (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/package34-electron.mjs:6:132)\n    at async travelTo (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/package34-electron.mjs:32:3)\n    at async file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/package34-electron.mjs:36:2"
+  ],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200118204",
+  "packagedResources": true,
+  "dataDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt-package34-9Y12aV\\ADM\\school-data",
+  "initialSeason": {
+    "id": "86e96de2-ffa3-453f-91ef-9b2dd159304a",
+    "name": "Temporada inicial",
+    "started": 1793200119279,
+    "planned_end": 1801062519279,
+    "state": "active",
+    "cleaned_at": null
+  },
+  "fingerprint": "B0A26FAD60EA5D94908C45070D6DEBCCA79B12AA80794BD750E8C9E74FE4295E",
+  "ok": false,
+  "failureStates": [
+    {
+      "label": "ADM",
+      "state": {
+        "text": "O MUNDO DA SUA ESCOLA\n\nDungeon Teacher ADM\nServidor online\n\nOperação concluída.\n\nSERVIDOR ESCOLAR\n\nA aventura está acontecendo\n\n26.201.1.160:50043 · 192.168.56.1:50043 · 192.168.3.11:50043\n\nIdentidade segura do servidor\nPorta \nIniciar servidor\nEncerrar servidor\nBloquear painel\n1 / 32\nJogadores online\n4\nContas de alunos\n0h 0min\nTempo em funcionamento\nÍntegro\nEstado do banco\nAventureiros conectados\n1 de 32 vagas\n\nO painel de hospedagem não ocupa vaga. Professores jogando usam uma das 32 vagas.\n\nPersonagem\tClasse\tBase / Job\tTempo\tEstado\tAção\nAventureiro 1\n5f434599-0fcb-4e10-934e-357c5bd4f64c\n\tNovato\t1 / 1\t0h 0min\tConectado\tDesconectar\nTemporada escolar\nTemporada inicial\n\nAtiva · Início: 28/10/2026, 12:08:39 · Previsão: 27/01/2027, 12:08:39\n\nA data prevista não apaga contas automaticamente.\n\nEncerrar temporadaConferir e limpar dados\nProteção dos dados\n\nVerificação: 28/10/2026, 12:10:00 · Último ciclo: 2.8 ms.\n\nCriar backup consistenteVerificar integridade\n28/10/2026, 12:09:59 · 4 personagensRestaurar\nPolítica de retenção da escola\nFerramentas do professor\nAtividade do servidor\n\n28/10/2026, 12:10:06 — Acesso ao ADM\n\n28/10/2026, 12:10:02 — Entrada de jogador\n\n28/10/2026, 12:10:02 — login\n\n28/10/2026, 12:10:00 — Servidor iniciado.\n\n28/10/2026, 12:10:00 — Servidor encerrado com gravações concluídas.\n\n28/10/2026, 12:10:00 — Saída de jogador\n\n28/10/2026, 12:10:00 — Saída de jogador\n\n28/10/2026, 12:10:00 — Saída de jogador\n\n28/10/2026, 12:09:59 — Backup consistente criado.\n\n28/10/2026, 12:09:56 — Entrada de jogador\n\n28/10/2026, 12:09:56 — login\n\n28/10/2026, 12:09:53 — Um jogador foi desconectado pelo administrador.\n\n28/10/2026, 12:09:53 — Desconexão administrativa\n\n28/10/2026, 12:09:53 — Saída de jogador\n\n28/10/2026, 12:09:48 — Entrada de jogador\n\n28/10/2026, 12:09:48 — login\n\n28/10/2026, 12:09:46 — Desconexão administrativa\n\n28/10/2026, 12:09:46 — logout\n\n28/10/2026, 12:09:46 — Saída de jogador\n\n28/10/2026, 12:09:42 — Entrada de jogador\n\n28/10/2026, 12:09:41 — login\n\n28/10/2026, 12:09:40 — Desconexão administrativa\n\n28/10/2026, 12:09:40 — logout\n\n28/10/2026, 12:09:40 — Saída de jogador\n\n28/10/2026, 12:09:36 — Desconexão administrativa\n\n28/10/2026, 12:09:36 — logout\n\n28/10/2026, 12:09:36 — Saída de jogador\n\n28/10/2026, 12:09:27 — Entrada de jogador\n\n28/10/2026, 12:09:26 — character:create\n\n28/10/2026, 12:09:26 — login\n\n28/10/2026, 12:09:24 — account:create\n\n28/10/2026, 12:09:09 — Entrada de jogador\n\n28/10/2026, 12:09:08 — character:create\n\n28/10/2026, 12:09:08 — login\n\n28/10/2026, 12:09:07 — account:create\n\n28/10/2026, 12:08:57 — Entrada de jogador\n\n28/10/2026, 12:08:57 — character:create\n\n28/10/2026, 12:08:57 — login\n\n28/10/2026, 12:08:56 — account:create\n\n28/10/2026, 12:08:48 — Entrada de jogador\n\n28/10/2026, 12:08:48 — character:create\n\n28/10/2026, 12:08:48 — login\n\n28/10/2026, 12:08:47 — account:create\n\n28/10/2026, 12:08:41 — Servidor iniciado.\n\n28/10/2026, 12:08:41 — Acesso ao ADM\n\nArmazenamento oficial: C:\\Users\\theuz\\AppData\\Local\\Temp\\dt-package34-9"
+      }
+    },
+    {
+      "label": "Cliente-0",
+      "state": {
+        "text": "Cidade do Limiar\n◆\nAventureiro 1 · Novato\nNível 1\nHP\n160 / 160\nMP\n80 / 80\nXP\n0 / 100\nOuro 0\nBase 1 · Job 1/20 · Job XP 0/50 · Peso 1.80/60.00 kg\nREFÚGIO\n45.0°\nVocê\nPortal\n☰ Menus\n1\n·\n2\n·\n3\n·\n4\n·\n5\n·\n6\n·\n7\n·\n8\n·\nÁrvore do Destino · Tab\nAventureiro 1\nChat",
+        "map": "shared-city",
+        "own": {
+          "id": "eb6f47de-46f0-47f1-b5ef-9715a8cab4ab",
+          "name": "Aventureiro 1",
+          "y": 0,
+          "surface": "ground",
+          "x": -0.08620463468335404,
+          "z": 5.665679852647911,
+          "heading": 3.141592653589793,
+          "moving": false,
+          "level": 1,
+          "className": "Novato",
+          "classId": "novice",
+          "appearance": {
+            "version": 1,
+            "hairStyle": "short",
+            "hairColor": "#39261d",
+            "expression": "calm",
+            "primary": "#356c9c",
+            "secondary": "#b39451"
+          },
+          "classEffects": {},
+          "hand": 0,
+          "equipmentVisual": {
+            "weapon": {
+              "instanceId": "item-1",
+              "definitionId": "trainingSword",
+              "quantity": 1
+            },
+            "offhand": null,
+            "head": null,
+            "chest": null,
+            "legs": null,
+            "boots": null,
+            "ring": null,
+            "necklace": null,
+            "talisman": null,
+            "backpack": null,
+            "cart": null
+          },
+          "hp": 160,
+          "maxHP": 160,
+          "mp": 80,
+          "maxMP": 80,
+          "cart": false,
+          "weaponType": "sword",
+          "phase": "idle",
+          "visualCombatRemaining": 0,
+          "seq": 1,
+          "target": null
+        }
+      }
+    },
+    {
+      "label": "Cliente-1",
+      "state": {
+        "text": "A TORRE ESPERA POR VOCÊ\n\nDungeon Teacher\n\nConhecimento abre caminhos. A aventura começa aqui.\n\nServidor indisponível\n\nEntre na aventura\n\nUse sua conta para continuar de qualquer computador.\n\nUsuário\nSenha\nEntrar\nVerificar servidorConfiguraçõesCriar contaConfigurar conexãoSair"
+      }
+    },
+    {
+      "label": "Cliente-2",
+      "state": {
+        "text": "A TORRE ESPERA POR VOCÊ\n\nDungeon Teacher\n\nConhecimento abre caminhos. A aventura começa aqui.\n\nServidor indisponível\n\nSessão encerrada\n\nO servidor foi encerrado pelo administrador. Seu progresso foi salvo.\n\nVoltar ao início",
+        "map": "shared-city"
+      }
+    },
+    {
+      "label": "Cliente-3",
+      "state": {
+        "text": "A TORRE ESPERA POR VOCÊ\n\nDungeon Teacher\n\nConhecimento abre caminhos. A aventura começa aqui.\n\nServidor indisponível\n\nSessão encerrada\n\nO servidor foi encerrado pelo administrador. Seu progresso foi salvo.\n\nVoltar ao início",
+        "map": "shared-city"
+      }
+    }
+  ]
+}

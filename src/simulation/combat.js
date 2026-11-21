@@ -1,3 +1,5 @@
+import {acceptImpact,abilityInterruptible,impactLocked,impactState,enemyImpactKind,cycleImpactProtection} from '../domain/combat/impact.js';
+import {ITEMS} from '../domain/items/inventory.js';
 import {sameLevel} from '../world/surfaces.js';
 import {Projectiles} from '../domain/abilities/effects.js';
 import {ABILITY_CONFIG} from '../domain/abilities/definitions.js';
@@ -16,15 +18,17 @@ export class Combat {
     this.enemies=enemies??[new Enemy()];this.currentTarget=null;this.state=S.IDLE;this.playerCycle=new AttackCycle();
     this.projectiles=new Projectiles();this.enemyCycles=new Map();this.retaliation=true;this.events=[];this.lastResult='—';this.deathTime=0;this.attackRange=COMBAT.playerRange;this.pursuitRepath=0;this.pursuitPoint=null;
   }
+  get impact(){return impactState(this,this.game.elapsed,this.character.isAlive);}
+  receiveImpact(target,damage){const player=target===this,cycle=player?this.playerCycle:this.enemyCycles.get(target.id),ability=player?this.abilities:null,unwavering=player&&ability?.active&&Object.values(this.character.data.equipment??{}).some(i=>ITEMS[i?.definitionId]?.unwavering);const result=acceptImpact(target,{time:this.game.elapsed,damage,maxHP:player?this.character.stats.maxHP:target.stats.maxHP,alive:player?this.character.isAlive:target.alive,eligible:cycle?.phase==='windup'||abilityInterruptible(ability),kind:player?'player':enemyImpactKind(target),rules:target.impactRules,minimumProtection:cycleImpactProtection(cycle,player?this.character.stats.attackSpeed:target.stats.attackSpeed),protectedAction:!!unwavering&&cycle?.phase!=='windup'},()=>{if(cycle?.phase==='windup')cycle.cancel();if(abilityInterruptible(ability))ability.interrupt('impact');if(player)this.game.cancel();else target.path=[];});if(result)this.emit({type:'recoil',target:player?this.character.data.id:target.id,serial:result.serial});return result;}
   get canAttack(){return !this.game.activity?.busy&&!!equippedDefinition(this.character.data);}
   get target(){return this.enemies.find(e=>e.id===this.currentTarget&&e.alive&&e.state!=='returning')??null;}
   distance(enemy){return Math.hypot(enemy.x-this.game.player.x,enemy.z-this.game.player.z);}
   inRange(enemy,range=this.attackRange){return enemy.alive&&this.distance(enemy)<=range&&clearSegment(this.game.world,this.game.player,enemy,0.05);}
   emit(event){this.events.push({...event,time:this.game.elapsed});if(this.events.length>30)this.events.shift();this.lastResult=event.text;}
   cancel(clear=false){this.abilities?.interrupt();this.playerCycle.cancel();this.game.cancel();if(clear)this.currentTarget=null;if(this.state!==S.DEAD)this.state=S.IDLE;}
-  select(id){if(this.game.activity?.busy)return false;if(!this.character.isAlive||this.state===S.DEAD)return false;if(!this.canAttack){this.abilities?.feedback('Equipe uma arma em I para atacar.');return false;}const target=this.enemies.find(e=>e.id===id&&e.alive&&e.state!=='returning');if(!target)return false;this.cancel();this.currentTarget=id;this.state=S.CHASING;this.pursuitPoint=null;this.pursuitRepath=0;return true;}
-  moveTo(point){if(this.game.activity?.busy)return false;if(this.state===S.DEAD||!this.character.isAlive)return false;this.cancel();const success=this.game.moveTo(point);this.state=success?S.MOVING:S.IDLE;return success;}
-  interact(){if(this.state===S.DEAD)return;this.cancel();this.state=S.INTERACTING;}
+  select(id){if(impactLocked(this,this.game.elapsed))return false;if(this.game.activity?.busy)return false;if(!this.character.isAlive||this.state===S.DEAD)return false;if(!this.canAttack){this.abilities?.feedback('Equipe uma arma em I para atacar.');return false;}const target=this.enemies.find(e=>e.id===id&&e.alive&&e.state!=='returning');if(!target)return false;this.cancel();this.currentTarget=id;this.state=S.CHASING;this.pursuitPoint=null;this.pursuitRepath=0;return true;}
+  moveTo(point){if(impactLocked(this,this.game.elapsed))return false;if(this.game.activity?.busy)return false;if(this.state===S.DEAD||!this.character.isAlive)return false;this.cancel();const success=this.game.moveTo(point);this.state=success?S.MOVING:S.IDLE;return success;}
+  interact(){if(impactLocked(this,this.game.elapsed))return;if(this.state===S.DEAD)return;this.cancel();this.state=S.INTERACTING;}
   approach(target,range=this.attackRange){
     const game=this.game,r=range-COMBAT.approachMargin;
     const angle=Math.atan2(game.player.x-target.x,game.player.z-target.z);let best=null,bestLength=Infinity;
@@ -49,13 +53,14 @@ export class Combat {
   basicImpact(profile,stats,target,source){
     const enemy=source==='player',defender=enemy?target.stats:this.character.stats,magic=profile.damageType==='magic';
     this.strike({...stats,physicalAttack:(magic?stats.magicAttack:stats.physicalAttack)*(profile.power??1)},{...defender,physicalDefense:magic?(defender.magicDefense??0):defender.physicalDefense},damage=>{
-      if(enemy){target.damage(damage);if(damage>0&&target.alive)this.ai?.onDamaged(target,this.character.data.id);}else this.character.damage(damage);
+      if(enemy){const before=target.hp;target.damage(damage);this.receiveImpact(target,before-target.hp);if(damage>0&&target.alive)this.ai?.onDamaged(target,this.character.data.id);}else {const before=this.character.data.hp;this.character.damage(damage);this.receiveImpact(this,before-this.character.data.hp);}
     },target,source);
     const event=this.events.at(-1);if(event){event.impact=profile.impact;event.damageType=profile.damageType;}
     if(enemy&&!target.alive){this.emit({x:target.x,z:target.z,text:target.name+' derrotado',death:true});if(this.currentTarget===target.id)this.cancel(true);}
     if(!enemy){if(event?.hit)this.onHostileImpact?.();this.onResourceChange();if(!this.character.isAlive)this.die();}
   }
   basicAttack(profile,stats,target,source,owner){
+    if(source==='player')this.basicConfirmedAt=this.game.elapsed;
     if(profile.delivery==='projectile')this.projectiles.launch({x:owner.x,z:owner.z,target:{id:source==='player'?target.id:this.character.data.id,generation:target.generation??0},owner:source==='enemy'?{id:owner.id,generation:owner.generation??0}:null,speed:profile.projectileSpeed,lifetime:ABILITY_CONFIG.projectileLifetime,effect:{...profile,power:profile.power??1},stats:{...stats},source});
     else this.basicImpact(profile,stats,target,source);
   }
@@ -66,14 +71,16 @@ export class Combat {
     if(!this.ai)this.enemies.forEach(e=>e.update(dt));
     this.pursuitRepath=Math.max(0,this.pursuitRepath-dt);
     if(!c.isAlive)this.die();
+    if(impactLocked(this,g.elapsed)){axis={x:0,z:0};g.cancel();}
+    if(this.abilities)this.abilities.impactBlocked=()=>impactLocked(this,g.elapsed);
     if(axis.x||axis.z)this.cancel();
     this.projectiles.update(dt,(ref,p)=>this.projectileTarget(ref,p),(a,b)=>clearSegment(g.world,a,b,.05),(p,target)=>{if(p.ability)this.abilities?.damage(p.effect,target,p.stats,p.ability);else this.basicImpact(p.effect,p.stats,target,p.source);});
     this.abilities?.update(dt);
     if(this.state===S.DEAD){g.previous={...g.player};g.elapsed+=dt;this.deathTime+=dt;g.inCombat=false;this.ai?.update(dt);
-      if(this.deathTime>=COMBAT.playerReturnDelay){Object.assign(g.player,g.world.spawn,{heading:Math.PI,moving:false});g.previous={...g.player};c.restoreHP();c.restoreMP();this.state=S.IDLE;this.onResourceChange();this.onPlayerReturn?.();}return;}
+      if(this.deathTime>=COMBAT.playerReturnDelay){Object.assign(g.player,g.world.spawn,{heading:Math.PI,moving:false});g.previous={...g.player};c.restoreHP();c.restoreMP();this.state=S.IDLE;this.impactState=null;this.basicConfirmedAt=null;this.onResourceChange();this.onPlayerReturn?.();}return;}
     if(this.currentTarget&&(!this.target||!this.canAttack))this.cancel(true);
     const target=this.target;
-    if(!this.abilities?.busy&&(this.state===S.CHASING||this.state===S.ATTACKING)&&target){
+    if(!impactLocked(this,g.elapsed)&&!this.abilities?.busy&&(this.state===S.CHASING||this.state===S.ATTACKING)&&target){
       if(this.inRange(target)){g.cancel();this.state=S.ATTACKING;}
       else {this.playerCycle.cancel();this.state=S.CHASING;if((!g.path.length||(this.ai&&this.pursuitRepath<=0&&this.pursuitPoint&&Math.hypot(target.x-this.pursuitPoint.x,target.z-this.pursuitPoint.z)>AI_CONFIG.targetMoveThreshold))&&!this.approach(target)){this.cancel();this.emit({x:target.x,z:target.z,text:'Sem caminho livre'});}}
     }
@@ -81,13 +88,13 @@ export class Combat {
     if(this.ai){resolvePlayerBodies(g,this.enemies);this.ai.update(dt);if(this.currentTarget&&!this.target)this.cancel(true); }
     if(!this.abilities?.busy&&this.state===S.CHASING&&target&&this.inRange(target)){g.cancel();this.state=S.ATTACKING;}
     if(this.state===S.ATTACKING&&target)g.player.heading=Math.atan2(target.x-g.player.x,target.z-g.player.z);
-    this.playerCycle.advance(dt,c.stats.attackSpeed,()=>this.canAttack&&this.state===S.ATTACKING&&!!this.target&&this.inRange(this.target),()=>{
+    this.playerCycle.advance(dt,c.stats.attackSpeed,()=>!impactLocked(this,g.elapsed)&&this.canAttack&&this.state===S.ATTACKING&&!!this.target&&this.inRange(this.target),()=>{
       const e=this.target;this.basicAttack(equippedDefinition(c.data).basicAttack,c.stats,e,'player',g.player);
     },()=>!this.abilities?.busy);
     for(const enemy of this.enemies){
       if(!this.enemyCycles.has(enemy.id))this.enemyCycles.set(enemy.id,new AttackCycle());
-      const cycle=this.enemyCycles.get(enemy.id),valid=()=>this.retaliation&&enemy.alive&&c.isAlive&&(!this.ai||(enemy.state==='attacking'&&enemy.targetId===c.data.id))&&this.inRange(enemy,enemy.stats.attackRange);
-      if(!this.ai)enemy.state=enemy.alive?(valid()?'attacking':'idle'):enemy.state;
+      const cycle=this.enemyCycles.get(enemy.id),valid=()=>!impactLocked(enemy,g.elapsed)&&this.retaliation&&enemy.alive&&c.isAlive&&(!this.ai||(enemy.state==='attacking'&&enemy.targetId===c.data.id))&&this.inRange(enemy,enemy.stats.attackRange);
+      if(!this.ai)enemy.state=enemy.alive?(impactLocked(enemy,g.elapsed)?impactState(enemy,g.elapsed).phase:valid()?'attacking':'idle'):enemy.state;
       if(valid())enemy.heading=Math.atan2(g.player.x-enemy.x,g.player.z-enemy.z);
       cycle.advance(dt,enemy.stats.attackSpeed,valid,()=>{this.basicAttack(enemy.basicAttack??{delivery:'melee',damageType:'physical'},enemy.stats,g.player,'enemy',enemy);});
     }

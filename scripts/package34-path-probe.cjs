@@ -1,0 +1,1 @@
+const {app}=require('electron');app.setPath('userData',process.env.DT_TEST_PROFILE);console.log(JSON.stringify({appData:app.getPath('appData'),expected:process.env.APPDATA}));app.quit();

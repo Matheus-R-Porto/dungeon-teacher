@@ -1,3 +1,4 @@
+import {WorldDropView} from './adapters/rendering/world-drops.js';
 import './ui/inventory-view.css';
 import {createNpcDialog} from './ui/npc-dialog.js';
 import {conversation} from './domain/dialogue-state.js';
@@ -66,6 +67,11 @@ async function bootstrap() {
 try {
   await initializeGraphics();
   const params=new URLSearchParams(location.search);
+  const mode=window.desktopMode?await window.desktopMode.load():{development:import.meta.env.DEV,serverUrl:multiplayerConfig.serverUrl};
+  if(mode.development){window.__appearanceLab=await import('./adapters/rendering/sheet-preview.js');window.__modularLab=await import('./adapters/rendering/actor-preview.js');}
+  const development=mode.development&&params.get('school')!=='1';
+  if(mode.schoolOnly&&!mode.serverUrl){const {lanSetup}=await import('./ui/lan-setup.js');await lanSetup();return;}
+  if(!development){const {schoolLobby}=await import('./ui/school-lobby.js');await schoolLobby({serverUrl:mode.serverUrl,schoolOnly:!!mode.schoolOnly,diagnostic:mode.development&&params.get('diagnostic')==='1'});return;}
   if(params.get('shared')==='1'){const {startWorldMode}=await import('./multiplayer/world-mode.js');startWorldMode(params);return;}
   const testProfile=params.get('test')==='1';
   const saves=new CharacterSave(testProfile?'iteration03-test':'current');
@@ -87,7 +93,7 @@ try {
     open:()=>{if(!isBlocked()){characterPanel.render();openDialog('character-dialog');}},
     onChange:async()=>{try{session.quest.sync(session);await saves.save(character.snapshot());dirty=false;saveFailed=false;characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador');}catch(error){saveFailed=true;characterPanel.status(error.message);throw error;}}
   });
-  const flush=()=>{if(!desktopClosing&&!destiny?.busy&&dirty&&!saveFailed&&!session.fishing.pending&&!session.mining.pending&&!food.busy&&!smithing.busy){dirty=false;saves.save(character.snapshot()).then(()=>characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador')).catch(error=>{saveFailed=true;characterPanel.status(error.message);});}};
+  const flush=()=>{if(!desktopClosing&&!panels?.busy&&!destiny?.busy&&!rewardPanel.busy&&dirty&&!saveFailed&&!session.fishing.pending&&!session.mining.pending&&!food.busy&&!smithing.busy){dirty=false;saves.save(character.snapshot()).then(()=>characterPanel.status(testProfile?'Perfil de teste · Salvo':'Salvo neste navegador')).catch(error=>{saveFailed=true;characterPanel.status(error.message);});}};
   const sharedButton=document.createElement('button');sharedButton.textContent='Mapa compartilhado · teste';sharedButton.className='shared-entry';document.querySelector('#pause-dialog').append(sharedButton);
   sharedButton.onclick=async()=>{if($('pause-dialog').open)$('pause-dialog').close();if(isBlocked()||!session.area.safe||session.fishing.busy||session.mining.busy||food.busy||smithing.busy)return;try{await characterPanel.onChange();const next=new URL(location.href);next.searchParams.set('shared','1');next.searchParams.set('tower','1');if(window.onlineIdentity)next.searchParams.set('online','1');next.searchParams.set('server',params.get('server')||multiplayerConfig.serverUrl);location.href=next.href;}catch(error){hud.toast(error.message);}};
   session.onFloorCleared=()=>{characterPanel.onChange().catch(()=>{});};
@@ -96,7 +102,8 @@ try {
   const kitchen=new KitchenPanel(food,session,{open:id=>openDialog(id),notify});
   const smithing=new SmithingService(character,{save:snapshot=>saves.save(snapshot),context:()=>({safe:session.area.safe,blocked:equipmentBlocked(combat)||session.collecting}),onChange:()=>{characterPanel.render();}});
   const forgePanel=new ForgePanel(smithing,session,{open:id=>openDialog(id),notify});
-  const panels=new RpgPanels(character,combat,{food,open:id=>openDialog(id),isBlocked:()=>isBlocked()||session.fishing.busy||session.mining.busy,save:()=>characterPanel.onChange(),onChest:id=>{validateChest(character,id,session.area.safe);panels.dialogs.inventory.close();rewardPanel.show(id);},onEquipment:()=>{combat.attackRange=combat.abilities.autoRange;characterPanel.render();}});
+  const panels=new RpgPanels(character,combat,{food,transportSave:snapshot=>saves.save(snapshot),transportContext:()=>({world:game.world,player:game.player,mapId:game.world.id}),open:id=>openDialog(id),isBlocked:()=>isBlocked()||session.fishing.busy||session.mining.busy,save:()=>characterPanel.onChange(),onChest:id=>{validateChest(character,id,session.area.safe);panels.dialogs.inventory.close();rewardPanel.show(id);},onEquipment:()=>{combat.attackRange=combat.abilities.autoRange;characterPanel.render();}});
+  let dropView;
   let multiplayerPanel,identityStore,identityError;
   try{identityStore=loadIdentity(localStorage,()=>crypto.randomUUID(),testProfile?'dungeon-multiplayer.test.v1':'dungeon-multiplayer.identity.v1');}catch(error){identityError='Não foi possível salvar a identidade multiplayer. O modo individual continua disponível.';}
   const multiplayer=new HubClient({url:params.get('server')||multiplayerConfig.serverUrl,identity:identityStore?.identity??{id:'',name:'Viajante'},getPlayer:()=>game.player,isPaused:()=>game.paused,onChange:()=>multiplayerPanel?.update()});
@@ -110,7 +117,7 @@ try {
   const dialogs = [...document.querySelectorAll('dialog')];
   const safety=shell.safety;
   safety.register(npcDialogue.dialog,{isOpen:()=>npcDialogue.isOpen,close:()=>npcDialogue.close()});
-  for(const id of ['character-dialog','inventory-dialog','skills-dialog','interaction-dialog','biome-playtest-dialog','multiplayer-dialog'])safety.registerDialog($(id));
+  for(const id of ['character-dialog','inventory-dialog','skills-dialog','interaction-dialog','biome-playtest-dialog','multiplayer-dialog','reward-dialog'])safety.registerDialog($(id));
   const hostileImpact=combat.onHostileImpact;combat.onHostileImpact=()=>{hostileImpact?.();safety.hit({hit:true});};
   const shouldPause=()=>desktopClosing||session.collecting||!!session.fishing.pending||!!session.mining.pending||!$('fatal').hidden||[...document.querySelectorAll('dialog[open]')].some(d=>!d.classList.contains('destiny-tree')&&!d.classList.contains('navigation-map')&&(session.area.safe||!safety.has(d)));
   const isBlocked = () => transition.busy || !!destiny?.busy || !!session.fishing.pending || !!session.mining.pending || session.collecting || !!document.querySelector('dialog[open]') || !$('fatal').hidden;
@@ -128,13 +135,13 @@ try {
     try {
       await saveBeforeClose({
         pause:()=>{game.paused=true;input?.clear();},
-        cancel:()=>{multiplayer.disconnect();session.fishing.cancel();session.mining.cancel();food.cancel();smithing.cancel();if(rewardPanel.busy)rewardPanel.stop();},
+        cancel:()=>{multiplayer.disconnect();session.fishing.cancel();session.mining.cancel();food.cancel();smithing.cancel();if(rewardPanel.busy&&!rewardPanel.committing)rewardPanel.dialog.close();},
         isBusy:()=>food.busy||smithing.busy||panels.busy||destiny.busy||characterPanel.busy||rewardPanel.busy||session.collecting||!!session.fishing.pending||!!session.mining.pending,
         save:async()=>{await saves.save(character.snapshot());dirty=false;saveFailed=false;}
       });
     } catch(error) {desktopClosing=false;game.paused=shouldPause();throw error;}
   });
-  if(params.get('diagnostic')==='1')window.__dmInspection={session,character,panels,get view(){return view;}};
+  if(params.get('diagnostic')==='1')window.__dmInspection={session,character,panels,rewardPanel,get view(){return view;}};
   destiny=localDestiny(character,()=>saves.save(character.snapshot()),{blocked:()=>panels.busy||characterPanel.busy});
   const treeOptions={canOpen:()=>!isBlocked()&&!session.fishing.busy&&!session.mining.busy,beforeOpen:()=>{input?.clear();game.cancel();game.paused=false;},focus:()=>{input?.clear();focusWorld();}};
   const exploration=new Exploration(character,()=>{dirty=true;});
@@ -220,6 +227,7 @@ try {
         }else game.interactionTarget=null;
       }
       if(transition.busy){frameId=requestAnimationFrame(animate);return;}
+      if(dropView?.view!==view){dropView?.dispose();dropView=new WorldDropView(view,id=>panels.transport.execute({operation:'pickup',id}).then(ok=>{if(!ok)hud.toast(panels.transport.lastError??'Não foi possível recolher.');}));}dropView.update((character.data.worldDrops??[]).filter(d=>d.mapId===game.world.id&&(d.layout??null)===(game.world.seed??null)),game.player);
       view.update(game, game.paused ? 1 : accumulator / CONFIG.tick, dt, reducedMotion.matches);
       if(!food.busy)dirty=character.updateFoodTime()||dirty;
       biomePanel.update();kitchen.update(view);forgePanel.update(dt,view);panels.updateFoodUI();combatHud.update();abilityHud.update();fishingHud.update(view);miningHud.update(view);session.quest.observe(game,view.orbit);

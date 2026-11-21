@@ -1,0 +1,482 @@
+[
+  {
+    "direction": 0,
+    "frame": 1,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 1,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      }
+    ]
+  },
+  {
+    "direction": 0,
+    "frame": 2,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 3,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 0,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 0,
+    "frame": 3,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 1,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      }
+    ]
+  },
+  {
+    "direction": 0,
+    "frame": 9,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 3,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 0,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 1,
+    "frame": 1,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 1,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      }
+    ]
+  },
+  {
+    "direction": 1,
+    "frame": 2,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 3,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 0,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 1,
+    "frame": 3,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 1,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      }
+    ]
+  },
+  {
+    "direction": 1,
+    "frame": 9,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 0,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 3,
+        "phase": 2,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 0,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 2,
+    "frame": 1,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 1,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      }
+    ]
+  },
+  {
+    "direction": 2,
+    "frame": 2,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 3,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 0,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 2,
+    "frame": 3,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 1,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      }
+    ]
+  },
+  {
+    "direction": 2,
+    "frame": 9,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 3,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 0,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 3,
+    "frame": 1,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 1,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      }
+    ]
+  },
+  {
+    "direction": 3,
+    "frame": 2,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 3,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 0,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "direction": 3,
+    "frame": 3,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 3,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      },
+      {
+        "limb": 0,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 1,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      }
+    ]
+  },
+  {
+    "direction": 3,
+    "frame": 9,
+    "limbs": [
+      {
+        "limb": 2,
+        "phase": 0,
+        "lifted": false,
+        "angle": 18
+      },
+      {
+        "limb": 3,
+        "phase": 2,
+        "lifted": false,
+        "angle": -18
+      },
+      {
+        "limb": 0,
+        "phase": 3,
+        "lifted": false,
+        "angle": 0
+      },
+      {
+        "limb": 1,
+        "phase": 1,
+        "lifted": true,
+        "angle": 0
+      }
+    ]
+  }
+]

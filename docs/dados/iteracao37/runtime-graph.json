@@ -1,0 +1,13 @@
+{
+  "productionModules": 179,
+  "retiredAbsent": [
+    "modular-actor.js",
+    "appearance-compositor.js",
+    "modular-pose.js",
+    "anatomy.js",
+    "equipment-pose.js",
+    "carry-pose.js"
+  ],
+  "unexpected": [],
+  "ok": true
+}

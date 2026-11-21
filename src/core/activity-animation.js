@@ -1,6 +1,10 @@
+import {professionPose} from './profession-presentation.js';
 // Reads activity outcomes; never advances a minigame or grants a reward.
 export class ActivityAnimation {
   update(activity,time){
+    const old=this.legacy(activity,time);if(!old)return null;const m=activity?.mining,f=activity?.fishing;const p=old.type==='fishing'?{type:'fishing',phase:time-this.reelAt<1.35&&!f?.active?'reel':f?.state,elapsed:time-this.reelAt<1.35&&!f?.active?time-this.reelAt:(f?.time??0)-(f?.started??0),target:f?.spot?.bobber,caught:!!f?.visualCatch&&f.visualReelRevision===this.reelRevision}:{type:'mining',phase:time-this.impactAt<.95?'strike':m?.state==='prepare'?'prepare':'ready',elapsed:time-this.impactAt<.95?time-this.impactAt:(m?.time??0)-(m?.started??0),target:m?.vein?{x:m.vein.x,y:(m.vein.y??0)+1,z:m.vein.z}:null};return {...old,...professionPose(p)};
+  }
+  legacy(activity,time){
     const m=activity?.mining,f=activity?.fishing;
     if(m&&this.mining===m){
       if((m.visualStrikeRevision??0)!==this.strikeRevision)this.impactAt=time;

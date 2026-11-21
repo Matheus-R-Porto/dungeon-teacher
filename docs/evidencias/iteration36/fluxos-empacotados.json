@@ -1,0 +1,132 @@
+{
+  "packagedResources": true,
+  "temporaryDataDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt36-flows-IXwmuW\\adm",
+  "server": "AdminService real, mesmo serviço do aplicativo ADM, iniciado no processo de ensaio; UI ADM testada separadamente",
+  "fixtures": [
+    "Perfis preparados perfil preparado da 34 / Job 25, XP a um ponto do próximo nível, sem ouro; três minérios de teste para a forja.",
+    "Reposicionamentos pelo servidor de ensaio entre cenários; nenhum controle de debug no cliente.",
+    "Morte final do MVP, entrada em furia, recuperacao de HP dos participantes e avanco de relogio somente no servidor de ensaio."
+  ],
+  "rewardGold": 74,
+  "fishingCasts": 12,
+  "ai": [
+    {
+      "floor": 1,
+      "entities": 48,
+      "maximumClientDrift": 0,
+      "ticks": [
+        1843,
+        1843
+      ]
+    },
+    {
+      "floor": 2,
+      "entities": 59,
+      "maximumClientDrift": 0.10999999999999943,
+      "ticks": [
+        302,
+        304
+      ]
+    },
+    {
+      "floor": 3,
+      "entities": 70,
+      "maximumClientDrift": 0,
+      "ticks": [
+        352,
+        352
+      ]
+    }
+  ],
+  "mvpFrenzyFixture": true,
+  "kind": "Consolidacao de fluxos completos validados em execucoes distintas; nao e uma nova execucao unica",
+  "ok": true,
+  "errors": [],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-verified",
+  "checks": [
+    "C: corpo e cabelo sincronizados em dois clientes reais. Criação pela UI é coberta no ensaio dos pacotes.",
+    "Mineração: F em veio real, indicador do servidor, clique no golpe, minério/XP e esgotamento persistidos. Andar preparado fora do cliente.",
+    "A: ouro obtido pela pesca e venda válida a Lina, compra de adagas em Brasa pela UI, I/equipar/atacar e persistência. B: nível por combate, atributo pela UI, aprendizado/hotbar/uso pelo comando normal e reconexão. Forja: três cliques reais e resultado persistido.",
+    "D: dois clientes nos andares 1–3, exploração observada em sequências, posições coerentes e ausência de duplicação. Transições preparadas pelo servidor de ensaio.",
+    "E: MVP em combate, efeitos, morte controlada, lápide na posição real e reaparecimento com relógio de ensaio avançado 15 minutos."
+  ],
+  "runs": [
+    {
+      "scope": "A-D, pesca/venda, forja e mineracao, com reconexao",
+      "report": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\report.json",
+      "scopePassed": true
+    },
+    {
+      "scope": "E, MVP completo incluindo reaparecimento protegido",
+      "report": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\report.json",
+      "scopePassed": true
+    }
+  ],
+  "earlierFailure": {
+    "report": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\report.json",
+    "error": "Error: MVP não reapareceu\n    at assert (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration36/flows.mjs:13:42)\n    at file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration36/flows.mjs:43:1322",
+    "reason": "O roteiro exigia respawn em um passo. O servidor preserva a verificacao de espaco livre. O reteste avanca a simulacao ate liberar o ponto, sem alterar o produto."
+  },
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\01-personalizacao-e-outro-jogador.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\02-combate-xp-e-minerio.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\03-inventario-e-atributos.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\03b-pesca-ouro-legitimo.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\04-brasa-compras-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\05-adagas-compradas-e-equipadas.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\06-forja-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\07-resultado-forja.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\07b-mineracao-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\08-ataque-com-arma-comprada.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\09-habilidade-aprendida-em-uso.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-1-quadro-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-1-quadro-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-1-quadro-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-2-quadro-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-2-quadro-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-2-quadro-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-3-quadro-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-3-quadro-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\10-ia-andar-3-quadro-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-3.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-4.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-5.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-6.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-7.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-8.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-9.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-10.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-11.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-12.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11-mvp-quadro-13.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11b-mvp-carga-preparacao.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\11c-mvp-carga-movimento.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\12-mvp-lapide.png"
+  ],
+  "grave": {
+    "state": "waiting",
+    "generation": 0,
+    "diedAt": 1793317948568,
+    "position": {
+      "x": -67.13470660527729,
+      "y": -5,
+      "z": 14.837418865159917,
+      "surface": "white-wolf-cave"
+    },
+    "respawnAt": 1793318848568,
+    "killer": "Sequência 0"
+  },
+  "mvpPhases": [
+    "howl:windup",
+    "bite:windup",
+    "bite:recovery",
+    "charge:recovery",
+    "charge:charge"
+  ],
+  "respawnRetrySimulatedSeconds": 0.05,
+  "separateMvpRun": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-mvp-1793317878803\\report.json",
+  "fullRun": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-flows-1793316872971\\report.json"
+}

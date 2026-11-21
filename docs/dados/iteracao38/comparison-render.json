@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "variants": [
+    "before",
+    "final",
+    "original-96",
+    "original-128",
+    "original-192",
+    "original-256",
+    "original-320",
+    "original-192-linear"
+  ],
+  "note": "Identical camera, 256px viewport, world scale, directions and timeline indices; original-source sequences have known pose differences and were not adopted."
+}

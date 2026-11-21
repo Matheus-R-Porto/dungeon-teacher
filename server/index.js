@@ -1,6 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
 import {startHub} from './hub.js';
-const population=process.env.TOWER_POPULATION??'high';
-if(!['high','reduced'].includes(population))throw Error('TOWER_POPULATION: high or reduced');
-const hub=await startHub({worldOptions:{population},compression:process.env.SNAPSHOT_COMPRESSION!=='0'});
-let closing=false;
-for(const signal of ['SIGINT','SIGTERM'])process.on(signal,async()=>{if(closing)return;closing=true;await hub.close();process.exit(0);});
+import {serverIdentity} from './tls.js';
+const education=JSON.parse(fs.readFileSync(process.env.EDUCATION_CONFIG??new URL('../config/education.json',import.meta.url),'utf8'));
+const development=process.env.DEVELOPMENT_ACCESS==='1',root=path.resolve(process.env.DT_DATA_DIR??path.join(process.env.APPDATA??os.homedir(),'Dungeon Teacher ADM','school-data'));
+const identity=development?null:await serverIdentity(path.join(root,'identity'));
+const hub=await startHub({educationActivities:education.activities,school:!development,singleWorld:!development,...(!development?{tls:{key:identity.key,cert:identity.cert},worldDataDir:path.join(root,'maps'),characterDataDir:path.join(root,'characters')}:{})});
+let closing=false;for(const signal of ['SIGINT','SIGTERM'])process.on(signal,async()=>{if(closing)return;closing=true;await hub.close();process.exit(0);});

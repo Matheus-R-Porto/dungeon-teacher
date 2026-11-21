@@ -6,24 +6,24 @@ import {SpriteActor} from '../src/adapters/rendering/sprite-actor.js';
 import {ActivityAnimation} from '../src/core/activity-animation.js';
 import {VisualCombat,VISUAL_COMBAT} from '../src/core/visual-combat.js';
 
-test('each family renders complete stored and held five-frame walks in all directions',()=>{
+test('each family renders complete stored and held four-phase walks in all directions',async()=>{
  for(const type of ['sword','bow','dagger','staff'])for(let direction=0;direction<4;direction++){
   const scene=new THREE.Scene(),actor=new SpriteActor(scene),input={x:0,z:0,heading:-direction*Math.PI/2,moving:true,hp:100,weaponType:type,phase:'idle'};
-  actor.update(input,0,0);const stored=new Set(),held=new Set();
-  for(let i=1;i<=24;i++){input.x+=VISUAL_COMBAT.strideLength/24;actor.update(input,0,i*.02);stored.add(actor.texture.userData.frame.column);assert.equal(actor.texture.userData.frame.row,direction);}
+  actor.update(input,0,0);await actor.sheet.ready();const stored=new Set(),held=new Set();
+  for(let i=1;i<=24;i++){input.x+=VISUAL_COMBAT.strideLength/24;actor.update(input,0,i*.02);stored.add(actor.sheet.frame);assert.equal(actor.sheet.direction,direction);}
   input.visualCombatRemaining=5;for(let i=25;i<50;i++){input.x+=VISUAL_COMBAT.strideLength/24;actor.update(input,0,i*.02);}
-  for(let i=50;i<=74;i++){input.x+=VISUAL_COMBAT.strideLength/24;actor.update(input,0,i*.02);held.add(actor.texture.userData.frame.column);assert.equal(actor.texture.userData.frame.row,direction+4);}
-  assert.deepEqual([...stored].sort(),[1,2,3,4,5]);assert.deepEqual([...held].sort(),[1,2,3,4,5]);
+  for(let i=50;i<=74;i++){input.x+=VISUAL_COMBAT.strideLength/24;actor.update(input,0,i*.02);held.add(actor.sheet.frame);assert.equal(actor.sheet.direction,direction);}
+  assert.deepEqual([...stored].sort((a,b)=>a-b),[2,4,6,8]);assert.deepEqual([...held].sort((a,b)=>a-b),[10,12,14,16]);
   assert.equal(scene.children.length,2,'only complete body and ground shadow');actor.dispose();assert.equal(scene.children.length,0);
  }
 });
 
-test('starting and stopping movement changes transition variant without resetting equipment progress',()=>{
+test('starting and stopping movement changes transition variant without resetting equipment progress',async()=>{
  for(const weaponType of ['sword','bow','dagger','staff']){
-  const a=new SpriteActor(new THREE.Scene()),input={x:0,z:0,hp:100,heading:0,weaponType,moving:false,phase:'idle'};a.update(input,0,0);
+  const a=new SpriteActor(new THREE.Scene()),input={x:0,z:0,hp:100,heading:0,weaponType,moving:false,phase:'idle'};a.update(input,0,0);await a.sheet.ready();
   input.visualCombatRemaining=5;a.update(input,0,.04);const before=a.visual.blend;
-  input.moving=true;input.x=.05;a.update(input,0,.08);assert.ok(a.visual.blend>before);const atlas=a.texture.userData.atlas,frame=a.texture.userData.frame;assert.ok(atlas.columns===3?frame.row===4:frame.column>=3);
-  input.moving=false;a.update(input,0,.12);assert.ok(a.visual.blend>.45);assert.equal(a.texture.userData.frame.row,0);assert.ok(a.texture.userData.frame.column<3);a.dispose();
+  input.moving=true;input.x=.05;a.update(input,0,.08);assert.ok(a.visual.blend>before);assert.ok(a.sheet.frame>=33&&a.sheet.frame<=35);
+  input.moving=false;a.update(input,0,.12);assert.ok(a.visual.blend>.45);assert.equal(a.sheet.direction,0);assert.ok(a.sheet.frame>=33&&a.sheet.frame<=35);a.dispose();
  }
 });
 
@@ -37,7 +37,7 @@ test('mining presents a strike only for a real strike event, never for timeout',
  const a=new ActivityAnimation(),m={state:'prepare',active:true,time:0,started:0},activity={mining:m};assert.equal(a.update(activity,0).frame,0);
  m.state='strike';m.time=.6;assert.equal(a.update(activity,.6).frame,1);
  m.state='idle';m.active=false;m.resultId=1;assert.equal(a.update(activity,1),null,'timeout is not a swing');
- m.visualStrikeRevision=1;assert.deepEqual(a.update(activity,2),{type:'mining',frame:3,impact:false});assert.equal(a.update(activity,2.2).frame,2);assert.equal(a.update(activity,2.7).frame,4);assert.equal(a.update(activity,3),null);
+ m.visualStrikeRevision=1;assert.partialDeepStrictEqual(a.update(activity,2),{type:'mining',frame:3,impact:false,phase:'strike',poseFrame:11});assert.equal(a.update(activity,2.2).frame,2);assert.equal(a.update(activity,2.7).frame,4);assert.equal(a.update(activity,3),null);
 });
 
 test('fishing follows real cast, wait, bite and reel events without changing them',()=>{
@@ -51,3 +51,4 @@ test('current PNGs match integer manifests with complete silhouettes inside safe
   for(const f of m.frames){assert.ok(f.bounds[0]>=8&&f.bounds[1]>=8&&f.bounds[2]<m.cell-8&&f.bounds[3]<m.cell-8,name+' clipped frame');}
  }
 });
+

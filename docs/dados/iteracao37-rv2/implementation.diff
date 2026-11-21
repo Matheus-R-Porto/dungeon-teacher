@@ -1,0 +1,568 @@
+--- before/src/core/activity-animation.js
++++ after/src/core/activity-animation.js
+@@ -1,6 +1,10 @@
++import {professionPose} from './profession-presentation.js';
+ // Reads activity outcomes; never advances a minigame or grants a reward.
+ export class ActivityAnimation {
+   update(activity,time){
++    const old=this.legacy(activity,time);if(!old)return null;const m=activity?.mining,f=activity?.fishing;const p=old.type==='fishing'?{type:'fishing',phase:time-this.reelAt<1.35&&!f?.active?'reel':f?.state,elapsed:time-this.reelAt<1.35&&!f?.active?time-this.reelAt:(f?.time??0)-(f?.started??0),target:f?.spot?.bobber,caught:!!f?.visualCatch&&f.visualReelRevision===this.reelRevision}:{type:'mining',phase:time-this.impactAt<.95?'strike':m?.state==='prepare'?'prepare':'ready',elapsed:time-this.impactAt<.95?time-this.impactAt:(m?.time??0)-(m?.started??0),target:m?.vein?{x:m.vein.x,y:(m.vein.y??0)+1,z:m.vein.z}:null};return {...old,...professionPose(p)};
++  }
++  legacy(activity,time){
+     const m=activity?.mining,f=activity?.fishing;
+     if(m&&this.mining===m){
+       if((m.visualStrikeRevision??0)!==this.strikeRevision)this.impactAt=time;
+--- before/src/multiplayer/remote-state.js
++++ after/src/multiplayer/remote-state.js
+@@ -7,6 +7,6 @@
+     const a=this.samples[0],b=this.samples[1]??a;
+     const t=a===b?1:Math.max(0,Math.min(1,(time-a.at)/Math.max(1,b.at-a.at)));
+     const delta=Math.atan2(Math.sin(b.heading-a.heading),Math.cos(b.heading-a.heading));
+-    return {...Object.fromEntries(['classId','appearance','equipmentVisual','classEffects','hand','casting','impact','action','basicReleaseRemaining'].filter(key=>b[key]!==undefined).map(key=>[key,b[key]])),cart:!!b.cart,...(b.visualCombatRemaining!==undefined?{visualCombatRemaining:Math.max(0,b.visualCombatRemaining-Math.max(0,time-b.at)/1000)}:{}),...(b.weaponType!==undefined?{weaponType:b.weaponType}:{}),...(b.hp!==undefined?{hp:b.hp}:{}),...(b.phase!==undefined?{phase:b.phase}:{}),y:(a.y??0)+((b.y??0)-(a.y??0))*t,surface:b.surface??'ground',x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t,heading:a.heading+delta*t,moving:time<=this.samples.at(-1).at+250&&(t<1?a.moving:b.moving)};
++    return {profession:b.profession?{...b.profession,elapsed:b.profession.elapsed+Math.max(0,Math.min(.25,(time-b.at)/1000))}:null,...Object.fromEntries(['classId','appearance','equipmentVisual','classEffects','hand','casting','impact','action','basicReleaseRemaining'].filter(key=>b[key]!==undefined).map(key=>[key,b[key]])),cart:!!b.cart,...(b.visualCombatRemaining!==undefined?{visualCombatRemaining:Math.max(0,b.visualCombatRemaining-Math.max(0,time-b.at)/1000)}:{}),...(b.weaponType!==undefined?{weaponType:b.weaponType}:{}),...(b.hp!==undefined?{hp:b.hp}:{}),...(b.phase!==undefined?{phase:b.phase}:{}),y:(a.y??0)+((b.y??0)-(a.y??0))*t,surface:b.surface??'ground',x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t,heading:a.heading+delta*t,moving:time<=this.samples.at(-1).at+250&&(t<1?a.moving:b.moving)};
+   }
+ }
+--- before/src/ui/ability-icons.js
++++ after/src/ui/ability-icons.js
+@@ -1,6 +1,11 @@
+ import {classIcon} from './class-icons.js';
+ // Small code-native pixel silhouettes; no emoji/font-dependent artwork or GPU textures.
+ const paths={
++ physicalTraining:'M3 15h5V8h5v7h3V5h5v10h5v11H8v-5H3z M4 28h22v3H4z',
++ attackSpeed:'M5 3h8v14h12v10H3v-8h2z M20 1h9l-5 8h6L17 22l4-11h-5z',
++ hpRecovery:'M3 8h3V5h6v3h6V5h6v3h3v10h-3v3h-3v3h-3v3h-6v-3H9v-3H6v-3H3z M13 9h4v5h5v4h-5v5h-4v-5H8v-4h5z',
++ mpRecovery:'M13 2h5v5h3v5h4v5h3v8h-5v4H8v-4H3v-8h4v-5h3V7h3z M12 17h3v-4h4v4h4v4h-4v4h-4v-4h-3z',
++ magicTraining:'M3 3h11l2 3 2-3h11v23H18l-2 3-2-3H3z M6 7h5v3H6z M6 13h5v3H6z M21 6h5l-4 8h5l-9 10 3-9h-4z',
+  powerStrike:'M23 3h6v6h-3v3h-3v3h-3v3h-3v3h-3l-3 3-3-3 3-3v-3h3v-3h3v-3h3V6h3z M5 23h4v4H5z',
+  doubleAttack:'M5 3h4v13l4 4-3 3-5-5z M19 3h4v13l4 4-3 3-5-5z M4 24h5v5H4z M18 24h5v5h-5z',
+  doubleShot:'M3 8h19V4l7 6-7 6v-4H3z M3 22h19v-4l7 6-7 6v-4H3z',
+--- before/src/ui/ranked-tree.css
++++ after/src/ui/ranked-tree.css
+@@ -5,3 +5,14 @@
+ .hud-condition{display:inline-flex;align-items:center;gap:4px}.hud-condition i{display:block;width:24px;height:24px}.hud-condition img,.hud-condition svg{width:24px;height:24px;object-fit:contain}.hud-condition b{font-weight:500}.ranked-futures{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.ranked-future-pair{display:flex;gap:5px;justify-content:center;border-bottom:2px solid #9b7d48;padding-bottom:15px;position:relative}.ranked-future-pair:after{content:"";position:absolute;height:26px;left:50%;bottom:-28px;border-left:2px solid #9b7d48}.ranked-future-pair span{border:1px dashed #a99460;border-radius:50%;padding:14px 5px;font-size:11px;flex:1}.ranked-class:before{content:"";display:block;border-left:2px solid #9b7d48;height:22px;margin:-38px auto 14px;width:0}@media(max-width:900px){.ranked-futures{gap:5px}.ranked-future-pair{flex-direction:column}}
+ 
+ .class-tree{position:relative;padding:16px 12px 48px;margin-bottom:32px;background:#182e25}.class-tree>h3{text-align:center}.class-paths,.class-hybrids{display:grid;grid-template-columns:repeat(3,minmax(190px,1fr));gap:30px}.class-path>h4{text-align:center;background:#203b30;padding:12px}.class-path .ranked-node{margin-bottom:32px;min-height:270px}.class-hybrids{margin-top:22px}.class-final{display:flex;justify-content:center;margin-top:40px}.class-final>.ranked-node{max-width:360px}.class-tree .ranked-node{z-index:1}.class-tree .ranked-node:before{display:none}.skill-links{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;z-index:0}.skill-links path{fill:none;stroke:#d6b776;stroke-width:3}.skill-links path.locked{stroke:#859082;stroke-dasharray:5 5}.ranked-node[data-state=locked]{border-top-color:#777e78}.ranked-node[data-state=max]{border-top-color:#e2c76f;background:#394731}.skill-block-reason{color:#ffc28c!important}.promotion-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.promotion-cards button{text-align:left}.promotion-cards button[aria-pressed=true]{outline:3px solid #e7c97d}.promotion-cards p{font-size:13px}.promotion-cards small{display:block}#teleport-consent{position:absolute;right:20px;top:160px;max-width:360px;background:#172d28e8;color:#f4e5bf;z-index:24}#teleport-consent:empty{display:none}#teleport-consent div{padding:12px}#teleport-consent button{margin:6px;padding:8px}@media(max-width:850px){.class-paths,.class-hybrids{gap:14px;grid-template-columns:repeat(3,minmax(190px,1fr))}.class-tree{min-width:630px}}
++
++/* Illustrated progression: only visible while the existing modal is open. */
++.living-tree{padding:0;width:min(1200px,96vw);height:92vh;max-height:92vh;background:#101f20;border:2px solid #9a8051;border-radius:10px;color:#f2e6c9;overflow:hidden;box-shadow:0 20px 80px #0009}
++.living-tree header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:#172b2b;border-bottom:1px solid #526047}.living-tree header h2{font:600 25px Georgia,serif;margin:3px 0}.living-tree header small{font-size:10px;letter-spacing:.16em;color:#c9ab70}.living-tree [data-class]{color:#c7cfa9;font-size:12px}
++.living-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 16px;background:#1d3030;border-bottom:1px solid #56614b;flex-shrink:0}.living-toolbar label{display:flex;align-items:center;gap:6px;font-size:12px}.living-toolbar [data-budget]{font-size:13px;color:#f3d78d;margin-right:auto}.living-tree button:focus-visible,.living-tree select:focus-visible{outline:3px solid #ffe9a9;outline-offset:3px}.living-tree .living-body{display:grid;grid-template-columns:minmax(0,1fr) 285px;min-height:0;flex:1}.living-scroll{overflow:auto;overscroll-behavior:contain;scrollbar-color:#9a8051 #142223;background:radial-gradient(ellipse at 50% 35%,#29443b 0,#152a28 55%,#101e21 100%);position:relative;padding:20px 14px;min-height:0;scroll-behavior:smooth}.living-space{position:relative;margin:0 auto}.living-art{position:relative;transform-origin:top left}.living-art img{image-rendering:pixelated;pointer-events:none;position:absolute;left:0;width:720px;user-select:none}.living-tree-image{top:0;height:1080px;object-fit:fill}.living-tree[data-class=novice] .living-tree-image{height:520px}.living-roots-image{height:520px}.living-links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}.living-links path{fill:none;stroke:#e2bc72;stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 2px 1px #151912)}.living-links path.unmet{stroke:#777c62;stroke-dasharray:4 7;opacity:.7}.living-tree .living-node{position:absolute;transform:translate(-50%,-28px);display:flex;flex-direction:column;align-items:center;gap:3px;width:126px;min-height:102px;padding:0;background:transparent;border:0;border-radius:0;line-height:1.12;z-index:2;opacity:1}.living-node .living-icon{display:grid;place-items:center;width:56px;height:56px;box-sizing:border-box;border:4px solid #9f7743;outline:2px solid #34291e;box-shadow:inset 0 0 0 2px #e0b970,0 3px 0 2px #151c18;background:#182729;border-radius:50%;transition:box-shadow .15s}.living-icon svg{width:36px;height:36px;image-rendering:pixelated;color:#e4ba71}.living-name{max-width:124px;padding:2px 5px;background:#102321e8;border-radius:3px;font-size:11px;font-weight:600;text-shadow:0 1px #000}.living-rank{font-size:11px;background:#162c28;border:1px solid #76683f;padding:1px 5px;color:#dfd7b5}.living-node[data-state=locked] .living-icon{filter:grayscale(.8);opacity:.72;border-style:dashed}.living-node[data-state=no-points] .living-icon{border-color:#897d69}.living-node[data-state=available] .living-icon{box-shadow:0 0 0 3px #bca76c80,inset 0 0 0 2px #f1d18c,0 3px 0 2px #151c18}.living-node[data-learned=true] .living-icon{border-color:#bdad65}.living-node[data-state=max] .living-icon{border-color:#eed58c;box-shadow:0 0 12px #e2bf5c66}.living-node[aria-pressed=true] .living-icon{outline:3px solid #c3f2ec;box-shadow:0 0 0 6px #254c48}.living-node:hover .living-name,.living-node:focus-visible .living-name{background:#304a3a}.living-region-label,.living-path-label{position:absolute;text-align:center;pointer-events:none;font:italic 15px Georgia,serif;color:#f0d9a3;text-shadow:0 2px 3px #000;background:#172923bb;padding:5px 7px;border-radius:8px}.living-region-label{left:260px;width:200px}.living-path-label{width:130px;font-size:13px}.living-detail{padding:20px 16px;background:#172929;border-left:1px solid #68704f;overflow:auto;min-height:0}.living-detail h3{font:600 22px Georgia,serif;margin:7px 0 10px;color:#f6dfa4}.living-detail h4{font-size:12px;margin:18px 0 4px;color:#dac38c}.living-detail p{font-size:12px;line-height:1.65;color:#d6ded1;margin:9px 0}.living-detail small{font-size:10px;line-height:1.6;color:#b2c0ae;display:block}.living-detail strong{font-size:12px}.living-detail .living-reason{color:#f4c390}.living-detail button{display:block;width:100%;margin:10px 0}.living-detail .living-invest{background:#52633b;border-color:#c2ad70;font-weight:600}.living-tree footer{padding:8px 16px;background:#172b2b;border-top:1px solid #526047;gap:8px;flex-shrink:0;min-height:36px}.living-tree [data-message]{font-size:12px;color:#edd394}.living-hotbar summary{font-size:12px;cursor:pointer}.living-hotbar label{font-size:12px;margin-right:6px}.tree-grown .living-tree-image{animation:tree-unfold .65s ease-out}@keyframes tree-unfold{from{opacity:.25;clip-path:inset(100% 0 0)}to{opacity:1;clip-path:inset(0)}}
++@media(max-width:800px){.living-tree .living-body{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(180px,1fr) minmax(120px,30%)}.living-detail{border-left:0;border-top:1px solid #68704f;padding:10px 16px}.living-detail h3{font-size:18px}.living-toolbar{gap:7px;padding:8px}.living-toolbar button{font-size:11px}.living-tree header{padding:10px 14px}.living-tree header h2{font-size:21px}.living-tree footer{padding:5px 12px}.living-tree [data-message]{min-width:150px}}
++@media(prefers-reduced-motion:reduce){.living-scroll{scroll-behavior:auto}.tree-grown .living-tree-image{animation:none}.living-icon{transition:none}}
++
++.living-tree:not([data-class=novice]) .living-tree-image{height:1480px}.living-roots-image{visibility:hidden}
++
++.living-tree:not([data-class=novice]) .living-tree-image{height:1480px}.living-roots-image{visibility:hidden}
+--- before/src/ui/ranked-tree.js
++++ after/src/ui/ranked-tree.js
+@@ -1,39 +1,61 @@
+ import {RANKED_SKILLS} from '../domain/abilities/ranked-skills.js';
+-import {CLASS_PATHS,CLASS_DESCRIPTIONS,prerequisiteReason} from '../domain/abilities/class-skills.js';
+-import {PROFESSIONS,lineage} from '../domain/character/professions.js';
+-import {effectiveRanks,activeOrigins,available,confirmBuild,normalizeDependencies} from '../domain/character/job-progress.js';
++import {CLASS_PATHS} from '../domain/abilities/class-skills.js';
++import {PROFESSIONS} from '../domain/character/professions.js';
++import {activeOrigins,available,effectiveRanks} from '../domain/character/job-progress.js';
++import {WEAPONS} from '../domain/abilities/definitions.js';
+ import {ITEMS} from '../domain/items/inventory.js';
+ import {effectText,requirementsText} from './skill-presentation.js';
+ import {abilityIcon} from './ability-icons.js';
++import {treeLayout} from './skill-tree-layout.js';
++import {skillNodeModel,skillInvestment} from './skill-tree-model.js';
+ import './ranked-tree.css';
+-const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text)n.textContent=text;if(cls)n.className=cls;return n;};
++const element=(tag,text,cls)=>{const n=document.createElement(tag);if(text)n.textContent=text;if(cls)n.className=cls;return n;};
++const stateNames={locked:'Bloqueada','no-points':'Sem pontos',available:'Disponível',learned:'Aprendida',max:'Concluída'};
++const shortNames={physicalTraining:'Dano físico',attackSpeed:'Agilidade',hpRecovery:'Fôlego vital',mpRecovery:'Fôlego mágico',magicTraining:'Dano mágico'};
+ export class RankedTree {
+- constructor(bar,{beforeOpen=()=>{},canOpen=()=>true,focus=()=>{}}={}){Object.assign(this,{bar,beforeOpen,canOpen,focus});this.abort=new AbortController();this.root=node('dialog',null,'destiny-tree ranked-tree');this.root.id='destiny-tree';this.root.setAttribute('aria-label','Árvore do Destino');this.root.innerHTML='<header><div><small>RAÍZES, TRONCO E COPA</small><h2>Árvore do Destino</h2></div><button data-close>Fechar · Tab</button></header><div class="ranked-toolbar"><label>Origem dos pontos <select data-origin></select></label><strong data-budget></strong><button data-undo>Desfazer preparação</button><button data-confirm>Confirmar investimentos</button></div><div class="ranked-scroll"><section class="ranked-canopy"><h3>Copa · Segunda classe</h3><p>Marco futuro: andar 36. Especializações ainda aguardam definição.</p></section><section class="ranked-trunk"><h3>Primeira classe · Base 10 e Job de Novato 20</h3><div data-classes></div></section><section class="class-tree" data-tree></section><h3 class="ranked-root-title">Raízes · Novato</h3><div class="ranked-nodes" data-roots></div></div><footer><span data-message role="status"></span><label>Posição <select data-slot></select></label><label>Atalho <select data-entry></select></label><button data-assign>Salvar atalho</button></footer>';
+-  document.querySelector('#app').append(this.root);for(let i=0;i<8;i++){const o=node('option',String(i+1));o.value=i;this.root.querySelector('[data-slot]').append(o);}
+-  this.root.querySelector('[data-close]').onclick=()=>this.close();this.root.querySelector('[data-origin]').onchange=e=>{this.origin=e.target.value;this.render(true);};this.root.querySelector('[data-undo]').onclick=()=>{this.prepare();this.render(true);};
+-  this.root.querySelector('[data-confirm]').onclick=async()=>{try{const data={revision:this.draft.jobs.revision,investments:Object.fromEntries(activeOrigins(this.draft.jobs).map(id=>[id,this.draft.jobs.origins[id].spent]))};if(this.draft.jobs.elements)data.elements=this.draft.jobs.elements;await this.bar.perform({kind:'build',data});this.prepare();this.message('Investimentos confirmados no servidor.');}catch(e){this.message(e.message);}this.render(true);};
+-  this.root.querySelector('[data-assign]').onclick=async()=>{try{await this.bar.perform({kind:'hotbar',data:{slot:Number(this.root.querySelector('[data-slot]').value),id:this.root.querySelector('[data-entry]').value||null}});this.message('Atalho salvo.');}catch(e){this.message(e.message);}};
+-  this.root.addEventListener('cancel',e=>{e.preventDefault();this.close();});window.addEventListener('keydown',e=>{if(e.repeat||e.ctrlKey||e.altKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='Tab'&&!e.shiftKey&&(this.openNow||this.canOpen())){e.preventDefault();this.openNow?this.close():this.open();}},{signal:this.abort.signal});this.resize=new ResizeObserver(()=>this.drawConnections());this.resize.observe(this.root);
++ constructor(bar,{beforeOpen=()=>{},canOpen=()=>true,focus=()=>{}}={}){
++  Object.assign(this,{bar,beforeOpen,canOpen,focus});this.abort=new AbortController();this.zoom=1;this.root=element('dialog',null,'destiny-tree ranked-tree living-tree');this.root.id='destiny-tree';this.root.setAttribute('aria-label','Árvore do Destino');
++  this.root.innerHTML='<header><div><small>AS RAÍZES DA SUA JORNADA</small><h2>Árvore do Destino</h2><span data-class></span></div><button data-close>Fechar · Esc</button></header><nav class="living-toolbar" aria-label="Navegação da árvore"><button data-roots>Raízes do Novato</button><button data-crown>Copa da classe</button><label>Pontos de <select data-origin aria-label="Origem dos pontos"></select></label><strong data-budget></strong><label>Zoom <select data-zoom aria-label="Zoom da árvore"><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option></select></label></nav><div class="living-body"><div class="living-scroll" tabindex="0" aria-label="Árvore ilustrada, role para explorar"><div class="living-space"><div class="living-art" data-tree></div></div></div><aside class="living-detail" aria-label="Detalhes da habilidade"><p>Selecione um medalhão para conhecer a habilidade.</p></aside></div><footer><span data-message role="status" aria-live="polite"></span><details class="living-hotbar"><summary>Atalhos de habilidades</summary><label>Posição <select data-slot></select></label><label>Habilidade ou item <select data-entry></select></label><button data-assign>Salvar atalho</button></details></footer>';
++  document.querySelector('#app').append(this.root);for(let i=0;i<8;i++){const o=new Option(String(i+1),String(i));this.root.querySelector('[data-slot]').append(o);}
++  this.root.querySelector('[data-close]').onclick=()=>this.close();this.root.querySelector('[data-origin]').onchange=e=>{this.origin=e.target.value;this.render(true);};this.root.querySelector('[data-zoom]').onchange=e=>{this.zoom=Number(e.target.value);this.resizeArt();};
++  this.root.querySelector('[data-roots]').onclick=()=>this.navigate(true);this.root.querySelector('[data-crown]').onclick=()=>this.navigate(false);
++  this.root.querySelector('[data-assign]').onclick=async()=>{if(this.pending||this.bar.busy)return;try{await this.bar.perform({kind:'hotbar',data:{slot:Number(this.root.querySelector('[data-slot]').value),id:this.root.querySelector('[data-entry]').value||null}});this.message('Atalho salvo.');}catch(e){this.message(e.message);}};
++  this.root.addEventListener('cancel',e=>{e.preventDefault();this.close();});
++  window.addEventListener('keydown',e=>{if(e.repeat||e.ctrlKey||e.altKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='Tab'&&!e.shiftKey&&!this.openNow&&this.canOpen()){e.preventDefault();this.open();}},{signal:this.abort.signal});
++  this.root.addEventListener('keydown',e=>{if(e.key==='Escape'&&this.selected){e.preventDefault();this.selected=null;this.renderDetail(null);}const button=e.target.closest('[data-skill]');if(!button||!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const a=this.layout.nodes.find(n=>n.id===button.dataset.skill);let nodes=this.layout.nodes.filter(n=>n.id!==a.id);const dx=e.key==='ArrowLeft'?-1:e.key==='ArrowRight'?1:0,dy=e.key==='ArrowUp'?-1:e.key==='ArrowDown'?1:0;if(dx||dy)nodes=nodes.filter(n=>(n.x-a.x)*dx+(n.y-a.y)*dy>0).sort((b,c)=>Math.hypot(b.x-a.x,b.y-a.y)-Math.hypot(c.x-a.x,c.y-a.y));else nodes.sort((a,b)=>e.key==='Home'?b.y-a.y:a.y-b.y);this.root.querySelector('[data-skill="'+nodes[0]?.id+'"]')?.focus();});
++  this.resize=new ResizeObserver(()=>this.resizeArt());this.resize.observe(this.root);
+  }
+  get openNow(){return this.root.open;}
+- prepare(){this.draft=structuredClone(this.bar.runtime.character.data);this.original=structuredClone(this.draft);this.origin=activeOrigins(this.draft.jobs).includes(this.origin)?this.origin:this.draft.jobs.active;}
+- open(){if(this.openNow||!this.canOpen()||!this.bar.runtime.character.data.jobs)return;this.beforeOpen();this.prepare();this.root.showModal();this.render(true);this.root.querySelector(this.draft.jobs.active==='novice'?'.ranked-root-title':'[data-tree]').scrollIntoView({block:'start'});}
+- close(){if(this.bar.busy)return;this.root.close();this.draft=null;this.focus();}
++ prepare(){this.draft=structuredClone(this.bar.runtime.character.data);this.original=this.draft;this.origin=activeOrigins(this.draft.jobs).includes(this.origin)?this.origin:this.draft.jobs.active;}
++ open(){if(this.openNow||!this.canOpen()||!this.bar.runtime.character.data.jobs)return;this.beforeOpen();this.prepare();this.root.showModal();this.render(true);this.root.querySelector('.living-scroll').scrollTop=this.layout.classId==='novice'?0:580*this.zoom;this.root.querySelector('[data-roots]').focus({preventScroll:true});}
++ close(){if(this.pending||this.bar.busy)return;clearTimeout(this.hoverTimer);this.root.close();this.draft=null;this.focus();}
+  message(text){this.root.querySelector('[data-message]').textContent=text;}
+  selectSlot(slot){this.root.querySelector('[data-slot]').value=slot;}
+- render(force=false){if(!this.openNow||!this.draft)return;if(!force&&this.lastRevision===this.bar.runtime.character.data.jobs.revision)return;this.lastRevision=this.bar.runtime.character.data.jobs.revision;const j=this.draft.jobs,real=this.bar.runtime.character.data.jobs,ranks=effectiveRanks(j),old=effectiveRanks(this.original.jobs),originSelect=this.root.querySelector('[data-origin]');originSelect.replaceChildren();for(const id of activeOrigins(j)){const o=node('option',`${PROFESSIONS[id].name} · ${available(j,id)} pontos livres`);o.value=id;originSelect.append(o);}originSelect.value=this.origin;
+-  const pending=activeOrigins(j).reduce((n,id)=>n+available(this.original.jobs,id)-available(j,id),0),elementsChanged=JSON.stringify(j.elements)!==JSON.stringify(this.original.jobs.elements);this.root.querySelector('[data-budget]').textContent=`${pending} pontos preparados · ${available(j,this.origin)} restantes`;this.root.querySelector('[data-confirm]').disabled=this.bar.busy||pending===0&&!elementsChanged||real.revision!==j.revision;if(real.revision!==j.revision)this.message('A progressão mudou. Desfaça a preparação para atualizar seus pontos.');
+-  const classes=this.root.querySelector('[data-classes]');classes.replaceChildren();for(const p of Object.values(PROFESSIONS).filter(p=>p.parent)){const n=node('div',p.name+(j.active===p.id?' · Ativa':j.firstClass===p.id?' · Escolhida':' · Bloqueada'),'ranked-class');n.append(node('small',CLASS_DESCRIPTIONS[p.id]?.[1]));classes.append(n);}
+-  const tree=this.root.querySelector('[data-tree]'),roots=this.root.querySelector('[data-roots]');tree.replaceChildren();roots.replaceChildren();let paths=[],hybrids,final;if(j.active!=='novice'){tree.append(node('h3',PROFESSIONS[j.active].name+' · 49 pontos de Job · escolhas de especialização'));const branches=node('div',null,'class-paths');paths=CLASS_PATHS[j.active].map(name=>{const p=node('section',null,'class-path');p.append(node('h4',name));branches.append(p);return p;});tree.append(branches);hybrids=node('div',null,'class-hybrids');final=node('div',null,'class-final');tree.append(hybrids,final);}else tree.append(node('p','Alcance Base 10 e Job de Novato 20 e converse com Serafina para revelar seu tronco.'));
+-  for(const skill of Object.values(RANKED_SKILLS).filter(s=>lineage(j.active).includes(s.classId))){const rank=ranks[skill.id]??0,next=Math.min(rank+1,skill.ranks.length),reason=prerequisiteReason(skill,next,j,ranks,RANKED_SKILLS),max=rank===skill.ranks.length,card=node('article',null,'ranked-node');card.dataset.skill=skill.id;card.dataset.state=max?'max':rank?'learned':reason?'locked':'available';const title=node('h4'),icon=node('span');icon.innerHTML=abilityIcon(skill.id);title.append(icon,document.createTextNode(skill.name));const state=max?'Máximo':rank?'Aprendida':reason?'Bloqueada':'Disponível';card.append(title,node('strong',`${state} · ${old[skill.id]??0} → ${rank} / ${skill.ranks.length}`),node('p',skill.description??''),node('p','Atual: '+effectText(skill,old[skill.id]??0)),node('p','Próximo: '+(max?'Nível máximo':effectText(skill,next))),node('small','Requisitos: '+requirementsText(skill,next)));if(reason)card.append(node('p',reason,'skill-block-reason'));
+-   const plus=node('button','Preparar +1'),minus=node('button','Desfazer −1');plus.disabled=this.bar.busy||available(j,this.origin)<1||max||!!reason||!lineage(this.origin).includes(skill.classId);minus.disabled=this.bar.busy||(j.origins[this.origin].spent[skill.id]??0)<=(this.original.jobs.origins[this.origin].spent[skill.id]??0);
+-   plus.onclick=()=>{const next=structuredClone(this.draft),spent=next.jobs.origins[this.origin].spent;spent[skill.id]=(spent[skill.id]??0)+1;try{const validate=structuredClone(this.original);confirmBuild(validate,{revision:j.revision,investments:Object.fromEntries(activeOrigins(next.jobs).map(id=>[id,next.jobs.origins[id].spent]))});this.draft=next;this.render(true);}catch(e){this.message(e.message);}};
+-   minus.onclick=()=>{j.origins[this.origin].spent[skill.id]--;normalizeDependencies(j);if(j.elements&&Object.values(j.elements).reduce((a,b)=>a+b,0)>(effectiveRanks(j).elementalMastery??0))j.elements={...(this.original.jobs.elements??{fire:0,ice:0,lightning:0})};this.render(true);};card.append(plus,minus);
+-   if(skill.id==='elementalMastery'&&rank){const current=j.elements??{fire:0,ice:0,lightning:0};for(const [key,label]of [['fire','Fogo'],['ice','Gelo'],['lightning','Eletricidade']]){const b=node('button',`${label}: ${current[key]} · +1`);b.disabled=Object.values(current).reduce((a,b)=>a+b,0)>=rank;b.onclick=()=>{j.elements={...current,[key]:current[key]+1};this.render(true);};card.append(b);}}
+-   if(skill.classId==='novice')roots.append(card);else if(typeof skill.path==='number')paths[skill.path].append(card);else (skill.ranks.length===1?final:hybrids).append(card);
+-  }
+-  const entry=this.root.querySelector('[data-entry]'),chosen=entry.value;entry.replaceChildren(node('option','Vazio'));entry.firstElementChild.value='';for(const id of this.bar.runtime.character.data.knownAbilities??[]){const o=node('option',RANKED_SKILLS[id].name);o.value=id;entry.append(o);}const seen=new Set();for(const item of this.bar.runtime.character.data.inventory?.slots??[]){if(!item||!ITEMS[item.definitionId]?.consume||seen.has(item.definitionId))continue;seen.add(item.definitionId);const o=node('option',ITEMS[item.definitionId].name);o.value='item:'+item.definitionId;entry.append(o);}entry.value=chosen;requestAnimationFrame(()=>this.drawConnections());
++ navigate(roots){const scroll=this.root.querySelector('.living-scroll');scroll.scrollTo({top:roots?Math.max(0,(this.layout.rootOffset-20)*this.zoom):0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
++ resizeArt(){if(!this.layout||!this.openNow)return;const a=this.root.querySelector('[data-tree]'),space=a.parentElement;a.style.transform=`scale(${this.zoom})`;space.style.width=this.layout.width*this.zoom+'px';space.style.height=this.layout.height*this.zoom+'px';}
++ render(force=false){
++  if(!this.openNow)return;const live=this.bar.runtime.character.data,key=JSON.stringify([live.jobs.revision,live.jobs.active,live.knownAbilities,live.inventory?.slots,this.bar.busy]);if(!force&&this.lastKey===key)return;this.lastKey=key;this.prepare();const j=this.draft.jobs,previous=this.layout?.classId;this.layout=treeLayout(j);this.root.dataset.class=this.layout.classId;
++  this.root.querySelector('[data-class]').textContent=PROFESSIONS[this.layout.classId].name;const select=this.root.querySelector('[data-origin]');select.replaceChildren(...activeOrigins(j).map(id=>new Option(PROFESSIONS[id].name, id)));select.value=this.origin;this.root.querySelector('[data-budget]').textContent=available(j,this.origin)+' livres';this.root.querySelector('[data-crown]').disabled=this.layout.classId==='novice';
++  const art=this.root.querySelector('[data-tree]');art.replaceChildren();art.style.width=this.layout.width+'px';art.style.height=this.layout.height+'px';const tree=element('img',null,'living-tree-image');tree.src=this.layout.art;tree.alt='';tree.draggable=false;art.append(tree);
++  if(this.layout.classId!=='novice'){const roots=element('img',null,'living-roots-image');roots.src='/assets/skill-tree-v37-rv2/novice.png';roots.alt='';roots.style.top=this.layout.rootOffset+'px';roots.draggable=false;art.append(roots);}
++  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('living-links');svg.setAttribute('viewBox',`0 0 ${this.layout.width} ${this.layout.height}`);svg.setAttribute('aria-hidden','true');const ranks=effectiveRanks(j);
++  for(const edge of this.layout.links){const a=this.layout.nodes.find(n=>n.id===edge.from),b=this.layout.nodes.find(n=>n.id===edge.to);if(!a||!b)continue;const line=document.createElementNS(svg.namespaceURI,'path');line.setAttribute('d',`M${a.x} ${a.y} C${a.x} ${a.y-70},${b.x} ${b.y+70},${b.x} ${b.y}`);line.setAttribute('class',(ranks[edge.from]??0)>=edge.rank?'met':'unmet');svg.append(line);}art.append(svg);
++  for(const n of [...this.layout.nodes].sort((a,b)=>b.y-a.y||a.x-b.x)){const m=skillNodeModel(this.draft,n.id,this.origin),b=element('button',null,'living-node');b.type='button';b.dataset.skill=n.id;b.dataset.state=m.state;b.dataset.learned=m.learned;b.setAttribute('aria-label',m.skill.name+', '+m.rank+' de '+m.skill.ranks.length+', '+stateNames[m.state]);b.setAttribute('aria-pressed',String(this.selected===n.id));b.style.left=n.x+'px';b.style.top=n.y+'px';const icon=element('span',null,'living-icon');icon.innerHTML=abilityIcon(n.id);const name=element('span',shortNames[n.id]??m.skill.name,'living-name'),rank=element('span',(m.max?'✓ ':m.state==='locked'?'⌑ ':m.state==='no-points'?'− ':'')+m.rank+'/'+m.skill.ranks.length,'living-rank');b.append(icon,name,rank);b.onpointerenter=()=>{clearTimeout(this.hoverTimer);this.renderDetail(n.id);};b.onpointerleave=()=>{this.hoverTimer=setTimeout(()=>this.renderDetail(this.selected),160);};b.onfocus=()=>this.renderDetail(n.id);b.onclick=()=>{this.selected=n.id;for(const other of art.querySelectorAll('[data-skill]'))other.setAttribute('aria-pressed',String(other===b));this.renderDetail(n.id);};art.append(b);}
++  const title=element('span','Raízes · Novato','living-region-label');title.style.top=(this.layout.rootOffset+280)+'px';art.append(title);
++  if(CLASS_PATHS[this.layout.classId])CLASS_PATHS[this.layout.classId].forEach((name,i)=>{const label=element('span',name,'living-path-label');label.style.left=([155,360,565][i]-65)+'px';label.style.top='875px';art.append(label);});
++  const entry=this.root.querySelector('[data-entry]'),chosen=entry.value;entry.replaceChildren(new Option('Vazio',''));for(const id of live.knownAbilities??[])entry.add(new Option(RANKED_SKILLS[id]?.name??id,id));const seen=new Set();for(const item of live.inventory?.slots??[]){if(!item||!ITEMS[item.definitionId]?.consume||seen.has(item.definitionId))continue;seen.add(item.definitionId);entry.add(new Option(ITEMS[item.definitionId].name,'item:'+item.definitionId));}entry.value=chosen;
++  this.resizeArt();this.renderDetail(this.selected);if(previous&&previous!==this.layout.classId){this.root.classList.remove('tree-grown');void this.root.offsetWidth;this.root.classList.add('tree-grown');this.navigate(false);}
+  }
+- drawConnections(){const root=this.root.querySelector('[data-tree]');if(!root||!this.openNow)return;root.querySelector('svg.skill-links')?.remove();const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('skill-links');svg.setAttribute('width',root.clientWidth);svg.setAttribute('height',root.scrollHeight);svg.setAttribute('aria-hidden','true');const box=root.getBoundingClientRect();for(const card of root.querySelectorAll('[data-skill]'))for(const r of RANKED_SKILLS[card.dataset.skill].requires){const from=root.querySelector('[data-skill="'+r.id+'"]');if(!from)continue;const a=from.getBoundingClientRect(),b=card.getBoundingClientRect(),line=document.createElementNS(svg.namespaceURI,'path'),x=a.left+a.width/2-box.left,y=a.bottom-box.top,tx=b.left+b.width/2-box.left,ty=b.top-box.top;line.setAttribute('d',`M${x},${y} C${x},${y+20} ${tx},${ty-20} ${tx},${ty}`);line.setAttribute('class',card.dataset.state==='locked'?'locked':'unlocked');svg.append(line);}root.prepend(svg);}
+- dispose(){this.resize.disconnect();this.abort.abort();this.root.remove();}
++ renderDetail(id){
++  const box=this.root.querySelector('.living-detail');box.replaceChildren();if(!id){box.append(element('p','Selecione um medalhão para conhecer a habilidade.'));return;}const m=skillNodeModel(this.draft,id,this.origin),s=m.skill,current=s.ranks[m.rank-1],next=s.ranks[m.next-1];box.dataset.skill=id;box.append(element('small',(s.type==='passive'?'PASSIVA':'ATIVA')+' · '+PROFESSIONS[s.classId].name),element('h3',s.name),element('strong',m.rank+' / '+s.ranks.length+' · '+stateNames[m.state]));if(s.description)box.append(element('p',s.description));box.append(element('h4','Efeito atual'),element('p',effectText(s,m.rank)),element('h4','Próximo nível'),element('p',m.max?'Nível máximo alcançado.':effectText(s,m.next)),element('small','Requisitos: '+requirementsText(s,m.next)));
++  if(s.type==='active'&&next.weaponRequirements?.length)box.append(element('p','Arma: '+next.weaponRequirements.map(w=>WEAPONS[w]?.name??w).join(', ')));if(next.shield)box.append(element('p','Requer escudo.'));if(next.ammo)box.append(element('p',next.ammo+' flecha(s) por uso.'));
++  if(m.reason)box.append(element('p',m.reason,'living-reason'));const invest=element('button',this.pending?'Confirmando…':'Investir 1 ponto','living-invest');invest.dataset.invest=id;invest.disabled=!!m.reason||this.pending||this.bar.busy;invest.onclick=()=>this.invest(id);box.append(invest);
++  if(id==='elementalMastery'&&m.rank){const values=this.draft.jobs.elements??{fire:0,ice:0,lightning:0};for(const [key,name]of [['fire','Fogo'],['ice','Gelo'],['lightning','Eletricidade']]){const b=element('button',name+' '+values[key]+' · +1');b.disabled=this.pending||this.bar.busy||Object.values(values).reduce((a,b)=>a+b,0)>=m.rank;b.onclick=()=>this.assignElement(key);box.append(b);}}
++  box.onpointerenter=()=>clearTimeout(this.hoverTimer);box.onpointerleave=()=>{if(!this.selected)this.hoverTimer=setTimeout(()=>this.renderDetail(null),180);};
++ }
++ async commit(payload,id){if(this.pending||this.bar.busy)return;this.pending=true;this.selected=id;this.renderDetail(id);try{await this.bar.perform({kind:'build',data:payload});this.message('Investimento confirmado.');}catch(e){this.message(e.message);}finally{this.pending=false;this.render(true);}}
++ invest(id){try{this.commit(skillInvestment(this.bar.runtime.character.data,id,this.origin),id);}catch(e){this.message(e.message);}}
++ assignElement(key){const d=this.bar.runtime.character.data,j=d.jobs,elements={...(j.elements??{fire:0,ice:0,lightning:0})};elements[key]++;this.commit({revision:j.revision,investments:Object.fromEntries(activeOrigins(j).map(id=>[id,{...j.origins[id].spent}])),elements},'elementalMastery');}
++ drawConnections(){} // Kept for callers; paths are declarative and change only with data.
++ dispose(){clearTimeout(this.hoverTimer);this.resize.disconnect();this.abort.abort();this.root.remove();}
+ }
+--- before/src/ui/skill-presentation.js
++++ after/src/ui/skill-presentation.js
+@@ -1,5 +1,5 @@
+ import {CLASS_SKILLS,CLASS_PATHS} from '../domain/abilities/class-skills.js';
+ const percent=new Set('penetration attack defense reduction slow lifeSteal holyVulnerability healPercent hotPercent backBonus poisonBonus stealthBonus moveSpeed attackSpeed holyWeapon meleeAttack hpPercent stationaryReduction combatSpeed costReduction lowHPReduction threshold consecutiveDamage criticalDamage ammoSave luckScaling cap slowBonus moveAfterHit stealthDamage threatReduction openingCrit openingPenetration hitSpeed conditionDamage poisonDamage poisonTime holyRadius holyDamage healBonus elementBonus castReduction mpPercent magicDamage costIncrease barrierCast'.split(' '));
+ const labels={backward:'Recuo na direção oposta',power:'Multiplicador de dano',penetration:'Defesa ignorada',duration:'Duração (s)',radius:'Raio (m)',distance:'Distância (m)',speed:'Velocidade do projétil',attack:'Bônus de dano',defense:'Defesa',reduction:'Redução de dano',barrier:'Absorção',scaling:'Escala por poder mágico',heal:'Cura base',hot:'HP por pulso',healPercent:'Cura do HP máximo',hotPercent:'HP máximo por pulso',interval:'Intervalo (s)',upkeep:'MP por segundo',mpPerFloor:'MP por andar',element:'Elemento',hits:'Golpes',ticks:'Salvas',pierce:'Alvos perfurados',slow:'Lentidão',burn:'Queimadura por pulso',jumps:'Saltos',jumpRange:'Alcance dos saltos',decay:'Potência a cada salto',lifeSteal:'Dano convertido em HP',holyVulnerability:'Vulnerabilidade sagrada',severity:'Gravidade removida',threat:'Ameaça',stealth:'Ocultação',block:'Bloqueios',counterPower:'Dano de contra-ataque',poisonPower:'Veneno por pulso',poisonDuration:'Duração do veneno (s)',backBonus:'Bônus pelas costas',poisonBonus:'Bônus contra veneno',stealthBonus:'Bônus da emboscada',knockback:'Afastamento (m)',moveSpeed:'Movimento',attackSpeed:'Velocidade de ataque',accuracy:'Precisão',criticalChance:'Crítico (p.p.)',holyWeapon:'Componente sagrado da arma',meleeAttack:'Dano físico próximo',hpPercent:'HP máximo',stationaryReduction:'Redução imóvel',combatSpeed:'Velocidade por acúmulo',combatMP:'MP/s em combate',costReduction:'Redução do custo',lowHPReduction:'Proteção com pouco HP',threshold:'Limite de HP',consecutiveDamage:'Dano por acúmulo',maxStacks:'Máximo de acúmulos',stackInterval:'Intervalo entre acúmulos (s)',criticalDamage:'Multiplicador crítico adicional',bowRange:'Alcance adicional (m)',ammoSave:'Chance de preservar flecha',luckScaling:'Chance adicional por LUK',cap:'Limite',slowBonus:'Dano contra lentidão',moveAfterHit:'Movimento após acerto',stealthDamage:'Dano saindo da ocultação',threatReduction:'Redução de ameaça',openingCrit:'Chance crítica da abertura',openingPenetration:'Penetração da abertura',hitSpeed:'Velocidade por acerto',conditionDamage:'Dano contra condições',poisonDamage:'Potência do veneno',poisonTime:'Duração adicional do veneno',holyRadius:'Raio sagrado adicional',holyDamage:'Dano sagrado adicional',convictionMP:'MP por conjuração sagrada',healBonus:'Cura adicional',cooldown:'Recarga interna (s)',elementPoints:'Pontos elementais',elementBonus:'Bônus por ponto elemental',castReduction:'Redução da conjuração',mpPercent:'MP máximo adicional',meditationMP:'MP/s em meditação',wait:'Espera imóvel (s)',magicDamage:'Dano mágico adicional',costIncrease:'Custo adicional',flowMP:'MP por alternância',barrierCast:'Redução de conjuração com barreira',window:'Janela elemental (s)',physicalDefense:'Defesa física',evasion:'Evasão',physicalAttack:'Ataque físico',magicAttack:'Ataque mágico',hpRegen:'HP/s',mpRegen:'MP/s',maxHP:'HP máximo',maxMP:'MP máximo'};
+-export function effectText(skill,rank){const r=skill.ranks[rank-1];if(!r)return 'Não aprendido';if(skill.type==='active'&&!r.parameters)return `${r.manaCost} MP · recarga ${r.cooldown}s · alcance ${r.range}m · `+r.effects.map(e=>e.type==='periodic'?`${e.power} + ${e.scaling} × poder mágico por ${e.duration}s`:`${e.power} × ataque ${e.damageType==='magic'?'mágico':'físico'}`).join(' / ');const values=r.parameters??r.stats??r,parts=[];if(skill.type==='active')parts.push(`${r.manaCost} MP · ${r.cooldown}s de recarga · ${r.castTime}s de conjuração · alcance ${r.range}m`);for(const [key,value]of Object.entries(values)){if(typeof value==='object')continue;if(typeof value==='boolean'){if(value)parts.push(labels[key]??key);continue;}parts.push(`${labels[key]??key}: ${typeof value==='number'?(percent.has(key)?Number((value*100).toFixed(2))+'%':Number(value.toFixed(3))):({fire:'fogo',ice:'gelo',lightning:'eletricidade',holy:'sagrado',neutral:'neutro'})[value]??value}`);}return parts.join(' · ');}
++export function effectText(skill,rank){const r=skill.ranks[rank-1];if(!r)return 'Não aprendido';if(skill.type==='active'&&!r.parameters)return `${r.manaCost} MP · recarga ${r.cooldown}s · alcance ${r.range}m · `+r.effects.map(e=>e.type==='periodic'?`${e.power} + ${e.scaling} × poder mágico por ${e.duration}s`:`${e.power} × ataque ${e.damageType==='magic'?'mágico':'físico'}`).join(' / ');const values=r.parameters??r.stats??r,parts=[];if(skill.type==='active')parts.push(`${r.manaCost} MP · ${r.cooldown}s de recarga · ${r.castTime}s de conjuração · alcance ${r.range}m`);for(const [key,value]of Object.entries(values)){if(typeof value==='object')continue;if(typeof value==='boolean'){if(value)parts.push(labels[key]??key);continue;}parts.push(`${key==='attackSpeed'&&skill.classId==='novice'?'Velocidade de ataque (ataques/s)':labels[key]??key}: ${typeof value==='number'?(percent.has(key)&&!(key==='attackSpeed'&&skill.classId==='novice')?Number((value*100).toFixed(2))+'%':Number(value.toFixed(3))):({fire:'fogo',ice:'gelo',lightning:'eletricidade',holy:'sagrado',neutral:'neutro'})[value]??value}`);}return parts.join(' · ');}
+ export function requirementsText(skill,rank){return [`Job ${skill.rankJobLevels?.[rank-1]??skill.jobLevel}`,...skill.requires.map(r=>`${CLASS_SKILLS[r.id]?.name??r.id} ${r.level}`),...(skill.pathRequires??[]).map(r=>`${r.points} pontos em ${CLASS_PATHS[skill.classId][r.path]}`)].join(' + ');}
+--- before/src/adapters/rendering/fishing-visual.js
++++ after/src/adapters/rendering/fishing-visual.js
+@@ -1,48 +1,29 @@
+-import {fishingArc,castProgress} from '../../core/fishing-trajectory.js';
++import {fishingArc} from '../../core/fishing-trajectory.js';
+ import * as THREE from 'three';
+-// Hand-authored rod tips in the 512px full-body atlas, S/W/N/E.
+-const FISHING_TIPS=[[[300,264],[382,264],[367,325],[368,264],[340,332]],[[210,264],[81,264],[138,307],[144,264],[162,307]],[[220,264],[399,264],[367,312],[153,264],[351,315]],[[302,264],[431,264],[374,307],[368,264],[350,307]]];
+-const REEL_TIPS=[[407,282],[76,282],[400,282],[428,282]];
++// One lightweight effect per visible participant. Character/tool poses are baked.
+ export class FishingVisual {
+-  constructor(view){
+-    this.view=view;this.tip=new THREE.Vector3();this.right=new THREE.Vector3();this.up=new THREE.Vector3();this.castOrigin=new THREE.Vector3();this.endpoint=new THREE.Vector3();this.destination=new THREE.Vector3();this.group=new THREE.Group();view.scene.add(this.group);
+-    const mat=new THREE.MeshBasicMaterial({color:0xffdf88});
+-    this.bobber=view.mesh(new THREE.SphereGeometry(.13,8,6),mat,this.group,0,.15,0);
+-    this.splash=view.mesh(new THREE.RingGeometry(.27,.33,24),new THREE.MeshBasicMaterial({color:0xc4f8ef,transparent:true,opacity:.8,side:THREE.DoubleSide}),this.group,0,.09,0);this.splash.rotation.x=-Math.PI/2;
+-    this.line=new THREE.Line(new THREE.BufferGeometry().setAttribute('position',new THREE.BufferAttribute(new Float32Array(51),3)),new THREE.LineBasicMaterial({color:0xf4e7c2}));this.line.frustumCulled=false;this.group.add(this.line);this.group.visible=false;
+-    this.fish=new THREE.Group();this.group.add(this.fish);const fishMat=new THREE.MeshStandardMaterial({color:0x9fd9d0,roughness:.45});const body=view.mesh(new THREE.SphereGeometry(.16,10,6),fishMat,this.fish);body.scale.set(1,.6,1.8);const tail=view.mesh(new THREE.ConeGeometry(.15,.22,3),fishMat,this.fish,0,0,-.32);tail.rotation.x=-Math.PI/2;view.mesh(new THREE.SphereGeometry(.025,6,4),new THREE.MeshBasicMaterial({color:0x172b38}),this.fish,.12,.04,.14);this.fish.visible=false;
+-    this.miningImpact=view.mesh(new THREE.OctahedronGeometry(.22),new THREE.MeshBasicMaterial({color:0xffd485}),view.scene);this.miningImpact.visible=false;
+-  }
+-  update(game){
+-    const m=game.activity?.mining,actor=this.view.actor,p=game.player,now=game.elapsed;
+-    this.miningImpact.visible=!!actor.currentActivity?.impact&&m?.area===game.world;
+-    if(this.miningImpact.visible){this.miningImpact.position.set(m.vein.x,1.1,m.vein.z);this.miningImpact.rotation.y=now*8;}
+-    const f=game.activity?.fishing;
+-    if(f!==this.runtime){this.runtime=f;this.reelRevision=f?.visualReelRevision;this.catchRevision=f?.visualCatchRevision;this.cancelRevision=f?.visualCancelRevision;this.reelUntil=0;this.catchUntil=0;}
+-    if(f?.visualReelRevision!==this.reelRevision){this.reelRevision=f?.visualReelRevision;this.reelUntil=now+1.35;}
+-    if(f?.visualCatchRevision!==this.catchRevision){this.catchRevision=f?.visualCatchRevision;this.catchUntil=this.reelUntil;}
+-    if(f?.visualCancelRevision!==this.cancelRevision){this.cancelRevision=f?.visualCancelRevision;this.reelUntil=0;this.catchUntil=0;}
+-    const valid=f?.area===game.world&&!p.moving&&f.character.damageRevision===f.damageRevision&&f.character.isAlive;
+-    const presenting=valid&&now<(this.reelUntil??0);
+-    this.group.visible=valid&&(!!f?.active||presenting);this.fish.visible=presenting&&now<(this.catchUntil??0);
+-    if(!this.group.visible)return;
+-    this.tip.set(p.x,(p.y??0)+1,p.z);
+-    const frame=actor.texture.userData.frame;
+-    let anchor;
+-    if(actor.texture===actor.textures.get('fishing-v043'))anchor=FISHING_TIPS[frame.row][frame.column];
+-    if(actor.texture===actor.textures.get('fishing-reel-v064'))anchor=REEL_TIPS[frame.row*2+frame.column];
+-    if(anchor){this.right.setFromMatrixColumn(this.view.camera.matrixWorld,0);this.up.setFromMatrixColumn(this.view.camera.matrixWorld,1);this.tip.copy(actor.sprite.position).addScaledVector(this.right,(anchor[0]/512-.5)*actor.sprite.scale.x).addScaledVector(this.up,(.9-anchor[1]/512)*actor.sprite.scale.y);}
+-    if(this.attempt!==f.attempts||this.castStarted!==f.started){this.attempt=f.attempts;this.castStarted=f.started;this.castOrigin.copy(this.tip);}
+-    const b=f.spot.bobber,t=f.time-f.started,bite=f.state==='bite',cast=castProgress(t,f.config.castSeconds),reel=presenting?Math.min(1,(now-(this.reelUntil-1.35))/.85):0;
+-    this.destination.set(b.x,b.y??.05,b.z);
+-    if(presenting)fishingArc(this.endpoint,this.destination,this.tip,reel,1.25);
+-    else fishingArc(this.endpoint,this.castOrigin,this.destination,cast,1.65);
+-    if(!presenting&&cast===1)this.endpoint.y+=Math.sin(t*(bite?30:4))*(bite?.06:.015);
+-    this.bobber.position.copy(this.endpoint);this.splash.visible=!presenting&&cast===1;this.splash.position.set(b.x,(b.y??.05)+.015,b.z);this.splash.scale.setScalar(bite?1+Math.sin(t*15)*.3:.7+Math.sin(t*3)*.1);
+-    this.bobber.material.color.setHex(bite?0xff8168:0xffdf88);
+-    const points=this.line.geometry.attributes.position;
+-    for(let i=0;i<points.count;i++){const u=i/(points.count-1);points.setXYZ(i,this.tip.x+(this.endpoint.x-this.tip.x)*u,this.tip.y+(this.endpoint.y-this.tip.y)*u-.22*4*u*(1-u),this.tip.z+(this.endpoint.z-this.tip.z)*u);}
+-    points.needsUpdate=true;
+-    this.fish.position.copy(this.endpoint);this.fish.position.y-=.23;this.fish.rotation.z=Math.sin(now*12)*.2;this.bobber.visible=!this.fish.visible;
+-  }
++ constructor(view){this.view=view;this.tip=new THREE.Vector3();this.right=new THREE.Vector3();this.up=new THREE.Vector3();this.endpoint=new THREE.Vector3();this.destination=new THREE.Vector3();this.group=new THREE.Group();view.scene.add(this.group);this.group.visible=false;}
++ prepare(){if(this.line)return;const v=this.view;
++  this.bobber=v.mesh(new THREE.SphereGeometry(.13,8,6),new THREE.MeshBasicMaterial({color:0xffdf88}),this.group);
++  this.line=new THREE.Line(new THREE.BufferGeometry().setAttribute('position',new THREE.BufferAttribute(new Float32Array(51),3)),new THREE.LineBasicMaterial({color:0xf4e7c2}));this.line.frustumCulled=false;this.group.add(this.line);
++  this.splash=v.mesh(new THREE.RingGeometry(.27,.33,20),new THREE.MeshBasicMaterial({color:0xc4f8ef,transparent:true,opacity:.7,side:THREE.DoubleSide}),this.group);this.splash.rotation.x=-Math.PI/2;
++  this.fish=v.mesh(new THREE.SphereGeometry(.16,8,6),new THREE.MeshBasicMaterial({color:0x9fd9d0}),this.group);this.fish.scale.set(1,.6,1.8);
++  this.miningImpact=v.mesh(new THREE.OctahedronGeometry(.2),new THREE.MeshBasicMaterial({color:0xffd485}),this.group);
++ }
++ update(game,actor=this.view.actor,player=game.player){
++  const pose=actor.currentActivity,target=pose?.target;this.group.visible=!!target&&player.hp!==0;
++  if(!this.group.visible)return;this.prepare();const now=game.elapsed??0;this.line.visible=this.bobber.visible=this.splash.visible=this.fish.visible=false;this.miningImpact.visible=!!pose.impact;
++  if(pose.type==='mining'){if(this.miningImpact.visible){this.miningImpact.position.set(target.x,target.y??1,target.z);this.miningImpact.rotation.y=now*8;}return;}
++  if(!actor.sheet.professionTip||!actor.sheet.professionPose){this.group.visible=false;return;}
++  const anchor=actor.sheet.professionTip,body=actor.sprite;this.view.camera.updateMatrixWorld();this.right.setFromMatrixColumn(this.view.camera.matrixWorld,0);this.up.setFromMatrixColumn(this.view.camera.matrixWorld,1);
++  this.tip.copy(body.position).addScaledVector(this.right,(anchor[0]/128-.5)*body.scale.x).addScaledVector(this.up,(104-anchor[1])/128*body.scale.y);
++  this.destination.set(target.x,target.y??.05,target.z);const reel=pose.phase==='reel',cast=pose.phase==='cast'?Math.max(0,Math.min(1,((pose.elapsed??0)-.14)/.21)):1;
++  if(reel)fishingArc(this.endpoint,this.destination,this.tip,Math.min(1,(pose.elapsed??0)/.85),1.25);
++  else fishingArc(this.endpoint,this.tip,this.destination,cast,1.5);
++  if(!reel&&cast===1)this.endpoint.y+=Math.sin(now*(pose.phase==='bite'?30:4))*(pose.phase==='bite'?.06:.015);
++  this.line.visible=true;this.bobber.visible=!reel||!pose.caught;this.bobber.position.copy(this.endpoint);this.bobber.material.color.setHex(pose.phase==='bite'?0xff8168:0xffdf88);this.splash.visible=!reel&&cast===1;this.splash.position.set(target.x,(target.y??.05)+.015,target.z);this.splash.scale.setScalar(pose.phase==='bite'?1+Math.sin(now*15)*.3:.8);
++  this.fish.visible=reel&&!!pose.caught;this.fish.position.copy(this.endpoint);this.fish.position.y-=.23;this.fish.rotation.z=Math.sin(now*12)*.2;
++  const points=this.line.geometry.attributes.position;for(let i=0;i<points.count;i++){const u=i/(points.count-1);points.setXYZ(i,this.tip.x+(this.endpoint.x-this.tip.x)*u,this.tip.y+(this.endpoint.y-this.tip.y)*u-.22*4*u*(1-u),this.tip.z+(this.endpoint.z-this.tip.z)*u);}points.needsUpdate=true;
++ }
++ dispose(){this.group.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.group.removeFromParent();}
+ }
+--- before/src/adapters/rendering/remote-players.js
++++ after/src/adapters/rendering/remote-players.js
+@@ -1,18 +1,19 @@
++import {FishingVisual} from './fishing-visual.js';
+ import {belowGround,regionLayer} from './cave-visibility.js';
+ import {SpriteActor} from './sprite-actor.js';
+ import {NET} from '../../../shared/multiplayer.js';
+ 
+ export class RemotePlayers {
+   constructor(view,client){this.view=view;this.client=client;this.actors=new Map();}
+-  remove(id){const item=this.actors.get(id);if(!item)return;item.actor.dispose();item.actor.sprite.material.dispose();item.actor.shadow.geometry.dispose();item.actor.shadow.material.dispose();this.view.scene.remove(item.actor.sprite,item.actor.shadow);item.label.remove();this.actors.delete(id);}
++  remove(id){const item=this.actors.get(id);if(!item)return;item.effects.dispose();item.actor.dispose();item.actor.sprite.material.dispose();item.actor.shadow.geometry.dispose();item.actor.shadow.material.dispose();this.view.scene.remove(item.actor.sprite,item.actor.shadow);item.label.remove();this.actors.delete(id);}
+   update(reducedMotion=false){
+     for(const id of this.actors.keys())if(!this.client.remotes.has(id))this.remove(id);
+     const now=performance.now();
+     for(const [id,remote] of this.client.remotes){
+       let item=this.actors.get(id);
+-      if(!item){const label=document.createElement('span');label.className='remote-name';label.textContent=remote.name;document.querySelector('#app').append(label);item={actor:new SpriteActor(this.view.scene),label};item.actor.sprite.material.color.setHex(0xb7e9ff);this.actors.set(id,item);}
++      if(!item){const label=document.createElement('span');label.className='remote-name';label.textContent=remote.name;document.querySelector('#app').append(label);item={actor:new SpriteActor(this.view.scene),effects:new FishingVisual(this.view),label};item.actor.sprite.material.color.setHex(0xb7e9ff);this.actors.set(id,item);}
+       const state=remote.sample(now,NET.interpolationMs);
+-      item.actor.update(state,this.view.azimuth,now/1000,reducedMotion,this.view.camera);
++      item.actor.update(state,this.view.azimuth,now/1000,reducedMotion,this.view.camera);item.effects.update({elapsed:now/1000,player:state},item.actor,state);
+       if(this.view.world.awakening?.cave){regionLayer(item.actor.sprite,belowGround(state));regionLayer(item.actor.shadow,belowGround(state));}
+       const point=this.view.screenPoint(state.x,(state.y??0)+2.5,state.z);item.label.hidden=!point.visible||!item.actor.sprite.layers.test(this.view.camera.layers);item.label.style.left=point.x+'px';item.label.style.top=point.y+'px';
+     }
+--- before/src/adapters/rendering/sheet-actor.js
++++ after/src/adapters/rendering/sheet-actor.js
+@@ -1,3 +1,4 @@
++import {PROFESSION_SHEET,PROFESSION_TIPS} from '../../core/profession-presentation.js';
+ import {ITEMS} from '../../domain/items/inventory.js';
+ import {defaultAppearance} from '../../domain/appearance.js';
+ import {SHEET,sheetFrame,sheetCell} from '../../core/sheet-animation.js';
+@@ -12,23 +13,23 @@
+  prepare(input){
+   this.backpack.prepare(input);const a=input.appearance??defaultAppearance(),family=ITEMS[input.equipmentVisual?.weapon?.definitionId]?.weaponType??input.weaponType;
+   this.family=families.has(family)?family:'none';
+-  const key=[classes.has(input.classId)?input.classId:'novice',a.bodyType==='feminine'?'feminine':'masculine',this.family].join('-');
++  const identity=[classes.has(input.classId)?input.classId:'novice',a.bodyType==='feminine'?'feminine':'masculine'].join('-'),profession=!!input.professionPose,key=profession?'profession:'+identity:identity+'-'+this.family,layout=profession?PROFESSION_SHEET:SHEET;
+   if(a.primary!==this.primary){this.primary=a.primary;this.palette.primary.value.set(a.primary);}
+   if(a.secondary!==this.secondary){this.secondary=a.secondary;this.palette.secondary.value.set(a.secondary);}
+   if(key===this.key)return;
+   this.key=key;const generation=++this.generation,entry=acquireSheet(key);
+-  this.pending=entry.ready.then(resource=>{if(this.disposed||generation!==this.generation){releaseSheet(entry);return;}this.bodyTexture?.dispose();releaseSheet(this.resource);this.resource=resource;const t=new THREE.Texture();t.needsUpdate=true;t.source=resource.texture.source;t.colorSpace=resource.texture.colorSpace;t.magFilter=t.minFilter=THREE.NearestFilter;t.generateMipmaps=false;this.bodyTexture=t;this.bodyTexture.repeat.set(1/SHEET.columns,1/SHEET.rows);this.bodyTexture.userData.atlas={columns:SHEET.columns,rows:SHEET.rows};this.palette.mask.value=resource.mask;this.error=null;}).catch(error=>{releaseSheet(entry);if(generation===this.generation){this.error=error.message;console.error(error);}});
++  this.pending=entry.ready.then(resource=>{if(this.disposed||generation!==this.generation){releaseSheet(entry);return;}this.bodyTexture?.dispose();releaseSheet(this.resource);this.resource=resource;const t=new THREE.Texture();t.needsUpdate=true;t.source=resource.texture.source;t.colorSpace=resource.texture.colorSpace;t.magFilter=t.minFilter=THREE.NearestFilter;t.generateMipmaps=false;this.bodyTexture=t;this.layout=layout;this.bodyTexture.repeat.set(1/layout.columns,1/layout.rows);this.bodyTexture.userData.atlas={columns:layout.columns,rows:layout.rows};this.palette.mask.value=resource.mask;this.error=null;}).catch(error=>{releaseSheet(entry);if(generation===this.generation){this.error=error.message;console.error(error);}});
+  }
+  update(input,direction,visual,azimuth,time,width,height,camera){
+-  this.prepare(input);if(!this.bodyTexture)return false;
++  this.prepare(input);if(!this.bodyTexture||this.resource?.key!==this.key)return false;
+   if(input.hp===0&&this.lastHP>0)this.deathAt=time;if(input.hp!==0)this.deathAt=null;this.lastHP=input.hp;
+-  const frame=input.previewFrame??sheetFrame({...input,deathElapsed:this.deathAt==null?Infinity:time-this.deathAt},visual,time),cell=sheetCell(frame,direction),body=this.body;
++  const frame=input.professionPose?.poseFrame??input.previewFrame??sheetFrame({...input,deathElapsed:this.deathAt==null?Infinity:time-this.deathAt},visual,time),layout=this.layout??SHEET,index=direction*16+frame,cell=input.professionPose?{column:index%8,row:Math.floor(index/8)}:sheetCell(frame,direction),body=this.body;this.professionPose=input.professionPose??null;this.professionTip=this.professionPose?PROFESSION_TIPS[direction][frame]:null;
+   this.frame=frame;this.direction=direction;this.palette.enabled.value=1;
+-  this.bodyTexture.offset.set(cell.column/SHEET.columns,1-(cell.row+1)/SHEET.rows);this.bodyTexture.userData.frame=cell;
+-  body.material.map=this.bodyTexture;body.position.set(input.x,(input.y??0)+.055,input.z);body.center.set(.5,8/SHEET.cell);body.scale.set(width*1.18,height*1.18,1);body.material.rotation=0;
++  this.bodyTexture.offset.set(cell.column/layout.columns,1-(cell.row+1)/layout.rows);this.bodyTexture.userData.frame=cell;
++  body.material.map=this.bodyTexture;body.position.set(input.x,(input.y??0)+.055,input.z);body.center.set(.5,input.professionPose?24/128:8/SHEET.cell);const factor=input.professionPose?128/96:1;body.scale.set(width*1.18*factor,height*1.18*factor,1);body.material.rotation=0;
+   body.material.opacity=input.classEffects?.concealment?.remaining>0?.4:1;
+   body.material.color.setHex(visual.state==='hurt'?0xffb7a0:0xffffff);
+-  this.backpack.update(input,direction,frame,body,camera);this.shield.update(input,direction,frame,body,camera);
++  if(input.professionPose){const sx=body.scale.x,sy=body.scale.y;body.scale.x*=.75;body.scale.y*=.75;this.backpack.update(input,direction,input.professionPose.impact?19:0,body,camera);body.scale.x=sx;body.scale.y=sy;this.shield.hide();}else{this.backpack.update(input,direction,frame,body,camera);this.shield.update(input,direction,frame,body,camera);}
+   return true;
+  }
+  get diagnostics(){return sheetCacheStats();}
+--- before/src/adapters/rendering/sheet-resources.js
++++ after/src/adapters/rendering/sheet-resources.js
+@@ -7,7 +7,7 @@
+ function trim(){const idle=[...entries.values()].filter(e=>e.refs===0&&e.loaded).sort((a,b)=>a.used-b.used);while(idle.length>idleLimit){const e=idle.shift();entries.delete(e.key);e.texture.dispose();e.mask.dispose();sheetMetrics.evictions++;}}
+ export function acquireSheet(key){
+  let e=entries.get(key);
+- if(!e){e={key,refs:0,used:performance.now(),loaded:false};entries.set(key,e);const start=performance.now();e.ready=Promise.allSettled([load('/assets/characters-v37-rv1/'+key+'.png',true),load('/assets/characters-v37-rv1/'+key+'-mask.png')]).then(results=>{if(results.some(r=>r.status==='rejected')){for(const r of results)if(r.status==='fulfilled')r.value.dispose();entries.delete(key);throw Error('Não foi possível carregar a aparência '+key);}e.texture=results[0].value;e.mask=results[1].value;e.loaded=true;sheetMetrics.loads++;sheetMetrics.preparationMs+=performance.now()-start;trim();return e;});}
++ if(!e){e={key,refs:0,used:performance.now(),loaded:false};entries.set(key,e);const start=performance.now(),url=key.startsWith('profession:')?'/assets/professions-v37-rv2/'+key.slice(11):'/assets/characters-v37-rv1/'+key;e.ready=Promise.allSettled([load(url+'.png',true),load(url+'-mask.png')]).then(results=>{if(results.some(r=>r.status==='rejected')){for(const r of results)if(r.status==='fulfilled')r.value.dispose();entries.delete(key);throw Error('Não foi possível carregar a aparência '+key);}e.texture=results[0].value;e.mask=results[1].value;e.loaded=true;sheetMetrics.loads++;sheetMetrics.preparationMs+=performance.now()-start;trim();return e;});}
+  e.refs++;e.used=performance.now();return e;
+ }
+ export function releaseSheet(e){if(!e)return;e.refs=Math.max(0,e.refs-1);e.used=performance.now();trim();}
+--- before/src/adapters/rendering/sprite-actor.js
++++ after/src/adapters/rendering/sprite-actor.js
+@@ -1,3 +1,4 @@
++import {professionPose} from '../../core/profession-presentation.js';
+ import {SheetActor} from './sheet-actor.js';
+ import {ActorAccessories} from './actor-accessories.js';
+ import * as THREE from 'three';
+@@ -19,22 +20,16 @@
+  }
+  update(input,azimuth,time,reducedMotion,camera){
+   const {x,z,y=0,heading,phase,hp}=input,v=this.visual.update(input,time);
+-  this.facing=resolveFacing(heading,azimuth,this.facing?.direction);this.facing.animationState=v.state;
++  this.facing=resolveFacing(input.profession?.heading??heading,azimuth,this.facing?.direction);this.facing.animationState=v.state;
+   const direction=Math.round(this.facing.direction/2)%4;this.shadow.position.set(x,y+.035,z);
+   if(phase!==this.lastPhase){this.phaseAt=time;this.lastPhase=phase;}
+-  const activity=this.activity.update(input.activity,time);this.currentActivity=activity;
++  const activity=input.profession?professionPose(input.profession):this.activity.update(input.activity,time);this.currentActivity=hp===0||['recoil','impactRecovery'].includes(input.impact?.phase)?null:activity;
+   if(!activity||hp===0||['recoil','impactRecovery'].includes(input.impact?.phase)){
+    if(this.sheet.update(input,direction,v,azimuth,time,this.width,this.height,camera)){this.texture=this.sheet.bodyTexture;this.accessories.update({...input,walkDistance:v.walkDistance},direction,this.sprite,camera);return;}
+    this.sprite.position.set(x,y+.055,z);return;
+   }
+-  // Fishing/mining retain their complete authored tool poses and real event timing.
+-  this.sheet.hide();let texture=this.atlas(activity.type,5,4),frame=activity.frame,row=direction;
+-  if(activity.type==='fishing'&&frame===5){texture=this.atlas('fishing-reel',2,2,'v064');frame=direction%2;row=Math.floor(direction/2);}
+-  if(typeof document!=='undefined'&&!texture.image?.width)return;
+-  this.texture=texture;this.sprite.material.map=texture;selectAtlasFrame(texture,frame,row);
+-  this.sprite.material.color.setHex(v.state==='hurt'?0xffb7a0:0xffffff);this.sprite.material.rotation=0;this.sprite.material.opacity=1;
+-  const scale=texture.userData.cell/320;this.sprite.scale.set(this.width*scale,this.height*scale,1);this.sprite.center.set(.5,.1);this.sprite.position.set(x,y+.055,z);
+-  this.sheet.backpack.update(input,direction,0,this.sprite,camera);this.accessories.update(input,direction,this.sprite,camera);
++  if(this.sheet.update({...input,professionPose:activity},direction,v,azimuth,time,this.width,this.height,camera)){this.texture=this.sheet.bodyTexture;this.accessories.update({...input,cart:false},direction,this.sprite,camera);}
++
+  }
+  dispose(){this.sheet.dispose();this.accessories.dispose();this.baseTexture.dispose();for(const t of this.textures.values())t.dispose();this.textures.clear();this.sprite.removeFromParent();this.sprite.material.dispose();this.shadow.removeFromParent();this.shadow.geometry.dispose();this.shadow.material.dispose();}
+ }
+--- before/server/online-craft.js
++++ after/server/online-craft.js
+@@ -1,3 +1,4 @@
++import {recordProfessionVisual} from './profession-visual.js';
+ import {Character} from '../src/domain/character/character.js';
+ import {Inventory} from '../src/domain/items/inventory.js';
+ import {MINING,PICKAXE,RAW_ORE,indicatorAt,strikeResult} from '../src/domain/mining.js';
+@@ -43,7 +44,7 @@
+   if(p.character.data.progressionReceipts?.includes(a.request))return result(true);
+   advanceCraft(tower,p);const now=tower.now(),d=a.data;
+   if(a.operation==='mine'){
+-   if(d.action==='cancel'){p.mining=null;return result(true,'Mineração cancelada.');}
++   if(d.action==='cancel'){p.professionVisual=null;p.mining=null;return result(true,'Mineração cancelada.');}
+    if(d.action==='start'){
+     if(p.mining||p.forge||p.fishing||p.cook||tower.inCombat(p.id)||p.instanceId)throw Error('Encerre o combate ou a atividade atual.');
+     const vein=veinFor(tower,p,d.id),bag=new Inventory(p.character),m={veinId:d.id,mapId:p.mapId,hp:p.character.data.hp,started:now,strikeAt:now+MINING.prepareSeconds*1000,endsAt:now+(MINING.prepareSeconds+MINING.timeoutSeconds)*1000,center:MINING.zoneMin+randomInt(0,1000000)/1000000*(MINING.zoneMax-MINING.zoneMin)};
+@@ -52,12 +53,12 @@
+     if(!bag.owns(PICKAXE))throw Error('Você precisa de uma picareta.');
+     const error=bag.acquisitionError(RAW_ORE);if(error)throw Error(error);
+     if((p.mineRetry??0)>now)throw Error('Recupere o fôlego antes de tentar novamente.');
+-    p.axis={x:0,z:0};p.target=null;p.game.cancel();p.cycle.cancel();p.mining=m;return result(true,'Prepare o golpe.');
++    p.axis={x:0,z:0};p.target=null;p.game.cancel();p.cycle.cancel();p.professionVisual=null;p.mining=m;return result(true,'Prepare o golpe.');
+    }
+    if(d.action!=='strike'||!p.mining)throw Error('Nenhuma mineração em andamento.');
+    const m=p.mining;if(now<m.strikeAt)throw Error('Prepare o golpe; aguarde o indicador.');
+    if(!miningValid(tower,p,m))throw Error('Mineração interrompida.');
+-   const quality=strikeResult(indicatorAt((now-m.strikeAt)/1000),m.center);p.mining=null;p.mineRetry=now+MINING.retrySeconds*1000;
++   const vein=veinFor(tower,p,m.veinId);recordProfessionVisual(tower,p,'mining','strike',{x:vein.x,y:(vein.y??0)+1,z:vein.z});const quality=strikeResult(indicatorAt((now-m.strikeAt)/1000),m.center);p.mining=null;p.mineRetry=now+MINING.retrySeconds*1000;
+    if(quality==='MISS')return result(false,'Golpe errado. Tente novamente.');
+    const c=new Character(p.character.snapshot()),bag=new Inventory(c);if(!bag.owns(PICKAXE))throw Error('Você precisa de uma picareta.');
+    bag.acquire(RAW_ORE);gainLifeXP(c.data,'mining',MINING.xp[quality]);c.data.minedVeins??={};c.data.minedVeins[p.mapId]=[...(c.data.minedVeins[p.mapId]??[]),m.veinId];
+--- before/server/online-life.js
++++ after/server/online-life.js
+@@ -1,3 +1,4 @@
++import {recordProfessionVisual} from './profession-visual.js';
+ import {randomInt} from 'node:crypto';
+ import {Character} from '../src/domain/character/character.js';
+ import {canTalk} from '../src/domain/dialogue.js';
+@@ -48,7 +49,7 @@
+ }
+ function fish(tower,p,a,d,result){
+  settle(tower,p);
+- if(d.action==='cancel'){end(tower,p,'Pesca cancelada.');return result(true);}
++ if(d.action==='cancel'){p.professionVisual=null;end(tower,p,'Pesca cancelada.');return result(true);}
+  const now=tower.now();
+  if(d.action==='start'){
+   if(p.fishing)throw Error('Você já está pescando.');
+@@ -61,18 +62,18 @@
+   if((p.fishCooldowns?.get(spot.waterFeatureId)??0)>now)throw Error('Aguarde a água se acalmar.');
+   const wait=FISHING.waitMin+random()*(FISHING.waitMax-FISHING.waitMin),castAt=now+FISHING.castSeconds*1000,biteAt=castAt+wait*1000;
+   p.axis={x:0,z:0};p.target=null;p.game.cancel();p.cycle.cancel();
+-  p.fishing={spot,mapId:p.mapId,origin:{x:p.game.player.x,z:p.game.player.z},hp:p.character.data.hp,castAt,biteAt,endsAt:biteAt+FISHING.reactionSeconds*1000,fish:selectFish(level,random)};
++  p.professionVisual=null;p.fishing={spot,mapId:p.mapId,origin:{x:p.game.player.x,z:p.game.player.z},hp:p.character.data.hp,castAt,biteAt,endsAt:biteAt+FISHING.reactionSeconds*1000,fish:selectFish(level,random)};
+   return result(true,'Lançando…');
+  }
+  if(d.action==='pull'){
+   const f=p.fishing;if(!f)throw Error('Você não está pescando.');
+-  if(now<f.biteAt){end(tower,p,'Muito cedo!');return result(false,'Muito cedo!');}
++  if(now<f.biteAt){recordProfessionVisual(tower,p,'fishing','reel',f.spot.bobber);end(tower,p,'Muito cedo!');return result(false,'Muito cedo!');}
+   if(p.character.data.progressionReceipts?.includes(a.request))return result(true);
+   const c=new Character(p.character.snapshot()),bag=new Inventory(c);
+   if(!bag.canAcquire(f.fish.itemDefinition)){end(tower,p);throw Error('Sua mochila está cheia para este peixe. Nenhuma recompensa concedida.');}
+   bag.acquire(f.fish.itemDefinition);const levels=gainLifeXP(c.data,'fishing',f.fish.xp);
+   c.recalculate(now);c.data.progressionReceipts=[...(c.data.progressionReceipts??[]).slice(-63),a.request];
+-  tower.db.save(p.id,tower.state(p,c));p.character=c;p.saved=JSON.stringify(tower.state(p));end(tower,p);
++  tower.db.save(p.id,tower.state(p,c));p.character=c;p.saved=JSON.stringify(tower.state(p));recordProfessionVisual(tower,p,'fishing','reel',f.spot.bobber,{caught:true});end(tower,p);
+   return result(true,'PESCADO! '+f.fish.name+' · Pesca XP +'+f.fish.xp+(levels?' · PESCA NÍVEL '+c.data.lifeSkills.fishing.level+'!':''));
+  }
+  throw Error('Operação inválida.');
+--- before/server/online-tower.js
++++ after/server/online-tower.js
+@@ -1,3 +1,4 @@
++import {professionView} from './profession-visual.js';
+ import {impactLocked} from './impact.js';
+ import {craftCommand,craftView,advanceCraft,installMiningInteractions} from './online-craft.js';
+ import {bindFirstClass} from '../src/domain/character/job-progress.js';
+@@ -102,7 +103,7 @@
+  if(a.kind==='allocate'){const w=this.world(p.mapId);if(distance(p.game.player,w.map.spawn)>2.6||this.inCombat(p.id)||!p.character.isAlive)throw Error('Distribua pontos na entrada do andar, fora de combate.');const c=new Character(p.character.snapshot());c.allocate({[a.attribute]:1},{safeHub:true,inCombat:false});this.db.save(p.id,this.state(p,c));p.character=c;p.saved=JSON.stringify(this.state(p));}
+  return null;
+  }catch(error){return {v:4,type:'world:notice',message:error.message};}}
+- snapshot(p,shared){const s=super.snapshot(p,shared);return {...s,v:4,teleports:teleportView(this,p),abilityProjectiles:[...this.people.values()].filter(q=>q.mapId===p.mapId&&q.instanceId===p.instanceId).flatMap(q=>[...(q.abilities?.projectiles.items??[]),...(q.abilities?.classEngine?.snapshot().shots??[])].map(shot=>({id:q.id+':'+shot.id,x:shot.x,z:shot.z,y:q.game.player.y??0,target:shot.target,dx:shot.dx,dz:shot.dz,ability:shot.ability,effect:{damageType:shot.effect.damageType}}))),arena:this.arenas.view(p),profile:{abilities:p.character.data.jobs?{time:p.abilities?.time??0,cooldowns:Object.fromEntries(p.abilities?.cooldowns??[]),active:p.abilities?.active?{id:p.abilities.active.ability.id,started:p.abilities.active.started}:null,classEffects:p.abilities?.classEngine?.snapshot().buffs??{},periodic:p.abilities?.periodic.items??[]}:null,jobs:p.character.data.jobs??null,lifeSkills:p.character.data.lifeSkills,fishing:fishingView(this,p),cook:cookView(this,p),craft:craftView(this,p),smithingMastery:p.character.data.smithingMastery,appearance:p.character.data.appearance??null,foodBuff:p.character.data.foodBuff,consumableCooldowns:p.character.data.consumableCooldowns,serverNow:this.now(),transport:true,equipment:p.character.data.equipment,cartStorage:p.character.data.cartStorage,carry:p.character.carry,destiny:true,hotbarStored:Array.isArray(p.character.data.hotbar),classId:p.character.data.classId,skillSpaces:p.character.data.skillSpaces,hotbar:normalizeHotbar(p.character.data.hotbar,p.character.data.knownAbilities),knownAbilities:p.character.data.knownAbilities,name:p.name,level:p.character.data.level,xp:p.character.data.xp,nextXP:p.character.nextLevelXP,attributePoints:p.character.data.attributePoints,attributes:p.character.data.attributes,inventory:p.character.data.inventory,gold:p.character.data.gold,reached:p.reached,notice:p.notice??''},social:{...this.parties.view(p.id),players:[...this.people.values()].filter(q=>q.ws).map(q=>({id:q.id,name:q.name,level:q.character.data.level}))},drops:this.db.drops(p.id,this.now()).filter(d=>d.mapId===p.mapId)};}
++ snapshot(p,shared){const s=super.snapshot(p,shared);return {...s,players:s.players.map(q=>({...q,profession:professionView(this,this.people.get(q.id))})),v:4,teleports:teleportView(this,p),abilityProjectiles:[...this.people.values()].filter(q=>q.mapId===p.mapId&&q.instanceId===p.instanceId).flatMap(q=>[...(q.abilities?.projectiles.items??[]),...(q.abilities?.classEngine?.snapshot().shots??[])].map(shot=>({id:q.id+':'+shot.id,x:shot.x,z:shot.z,y:q.game.player.y??0,target:shot.target,dx:shot.dx,dz:shot.dz,ability:shot.ability,effect:{damageType:shot.effect.damageType}}))),arena:this.arenas.view(p),profile:{abilities:p.character.data.jobs?{time:p.abilities?.time??0,cooldowns:Object.fromEntries(p.abilities?.cooldowns??[]),active:p.abilities?.active?{id:p.abilities.active.ability.id,started:p.abilities.active.started}:null,classEffects:p.abilities?.classEngine?.snapshot().buffs??{},periodic:p.abilities?.periodic.items??[]}:null,jobs:p.character.data.jobs??null,lifeSkills:p.character.data.lifeSkills,fishing:fishingView(this,p),cook:cookView(this,p),craft:craftView(this,p),smithingMastery:p.character.data.smithingMastery,appearance:p.character.data.appearance??null,foodBuff:p.character.data.foodBuff,consumableCooldowns:p.character.data.consumableCooldowns,serverNow:this.now(),transport:true,equipment:p.character.data.equipment,cartStorage:p.character.data.cartStorage,carry:p.character.carry,destiny:true,hotbarStored:Array.isArray(p.character.data.hotbar),classId:p.character.data.classId,skillSpaces:p.character.data.skillSpaces,hotbar:normalizeHotbar(p.character.data.hotbar,p.character.data.knownAbilities),knownAbilities:p.character.data.knownAbilities,name:p.name,level:p.character.data.level,xp:p.character.data.xp,nextXP:p.character.nextLevelXP,attributePoints:p.character.data.attributePoints,attributes:p.character.data.attributes,inventory:p.character.data.inventory,gold:p.character.data.gold,reached:p.reached,notice:p.notice??''},social:{...this.parties.view(p.id),players:[...this.people.values()].filter(q=>q.ws).map(q=>({id:q.id,name:q.name,level:q.character.data.level}))},drops:this.db.drops(p.id,this.now()).filter(d=>d.mapId===p.mapId)};}
+  step(){if(this.failed)return;try{super.step();this.arenas.step();for(const p of this.people.values())advanceCraft(this,p);this.db.transaction(()=>{for(const p of this.people.values())if(p.ws)this.save(p);});for(const [key]of this.hits){const e=[...this.worlds.values()].flatMap(w=>w.enemies).find(e=>key===this.boot+':'+e.id+':'+e.generation);if(!e||e.state==='returning')this.hits.delete(key);}this.parties.expire();if(this.now()-(this.lastCleanup??0)>60000){this.db.db.prepare("DELETE FROM drops WHERE json_extract(data,'$.expires')<=?").run(this.now());this.lastCleanup=this.now();}}catch{this.failed=true;for(const p of this.people.values())p.ws?.close(4011,'Persistência indisponível. Reinicie após verificar o armazenamento.');}}
+  close(){try{for(const p of this.people.values())if(p.ws){this.checkpoint(p);this.save(p);}}finally{this.db.close();}}
+ }
+--- before/tests/iteration212.test.js
++++ after/tests/iteration212.test.js
+@@ -37,7 +37,7 @@
+  const a=new ActivityAnimation(),m={state:'prepare',active:true,time:0,started:0},activity={mining:m};assert.equal(a.update(activity,0).frame,0);
+  m.state='strike';m.time=.6;assert.equal(a.update(activity,.6).frame,1);
+  m.state='idle';m.active=false;m.resultId=1;assert.equal(a.update(activity,1),null,'timeout is not a swing');
+- m.visualStrikeRevision=1;assert.deepEqual(a.update(activity,2),{type:'mining',frame:3,impact:false});assert.equal(a.update(activity,2.2).frame,2);assert.equal(a.update(activity,2.7).frame,4);assert.equal(a.update(activity,3),null);
++ m.visualStrikeRevision=1;assert.partialDeepStrictEqual(a.update(activity,2),{type:'mining',frame:3,impact:false,phase:'strike',poseFrame:11});assert.equal(a.update(activity,2.2).frame,2);assert.equal(a.update(activity,2.7).frame,4);assert.equal(a.update(activity,3),null);
+ });
+ 
+ test('fishing follows real cast, wait, bite and reel events without changing them',()=>{
+@@ -51,3 +51,4 @@
+   for(const f of m.frames){assert.ok(f.bounds[0]>=8&&f.bounds[1]>=8&&f.bounds[2]<m.cell-8&&f.bounds[3]<m.cell-8,name+' clipped frame');}
+  }
+ });
++
+--- before/tests/iteration242c.test.js
++++ after/tests/iteration242c.test.js
+@@ -60,16 +60,18 @@
+  f.active=false;f.visualReelRevision=1;a.update({fishing:f},1);assert.equal(a.update({fishing:f},1.3).frame,5);f.visualCancelRevision++;assert.equal(a.update({fishing:f},1.31),null);
+  const png=fs.readFileSync(new URL('../public/assets/characters/fishing-reel-v064.png',import.meta.url));assert.equal(png.readUInt32BE(16),1024);assert.equal(png.readUInt32BE(20),1024);
+ });
+-test('fishing buffers survive repeated casts and all orientations; damage and map changes hide them',()=>{
+- const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera();camera.updateMatrixWorld();const texture=new THREE.Texture();texture.userData.frame={column:1,row:0};
+- const actor={texture,textures:new Map([['fishing-v043',texture]]),sprite:new THREE.Sprite()};actor.sprite.scale.set(4.8,4.8,1);
+- const view={scene,camera,actor,mesh(g,m,parent,x=0,y=0,z=0){const o=new THREE.Mesh(g,m);o.position.set(x,y,z);parent.add(o);return o;}};
+- const visual=new FishingVisual(view),geometry=visual.line.geometry,buffer=geometry.attributes.position.array,world={};
+- const f={active:true,area:world,character:{damageRevision:0,isAlive:true},damageRevision:0,config:{castSeconds:.35},spot:{bobber:{x:3,y:.05,z:0}},time:0,started:0,attempts:1};
+- const game={world,player:{x:0,z:0,y:0,moving:false},elapsed:0,activity:{fishing:f}};
+- for(let i=0;i<120;i++){texture.userData.frame.row=i%4;f.time=i/100;game.elapsed=i/100;visual.update(game);assert.equal(visual.line.geometry,geometry);assert.equal(geometry.attributes.position.array,buffer);assert.ok(buffer.every(Number.isFinite));}
+- f.character.damageRevision++;visual.update(game);assert.equal(visual.group.visible,false);f.character.damageRevision=0;game.world={};visual.update(game);assert.equal(visual.group.visible,false);
+- scene.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});texture.dispose();
++test('fishing buffers survive repeated casts and all orientations; confirmed cancellation and death hide them',async()=>{
++ const {SpriteActor}=await import('../src/adapters/rendering/sprite-actor.js');
++ const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera();camera.updateMatrixWorld();const actor=new SpriteActor(scene);
++ const view={scene,camera,actor,mesh(g,m,parent){const o=new THREE.Mesh(g,m);parent.add(o);return o;}},visual=new FishingVisual(view);
++ assert.equal(visual.line,undefined,'idle actors allocate no effect geometry');
++ const player={x:0,z:0,hp:100,heading:0,profession:{type:'fishing',phase:'waiting',elapsed:1,target:{x:3,y:.05,z:0},heading:0}},game={player,elapsed:1};
++ actor.update(player,0,1,false,camera);await actor.sheet.ready();actor.update(player,0,1,false,camera);visual.update(game);
++ const geometry=visual.line.geometry,buffer=geometry.attributes.position.array;
++ for(let i=0;i<120;i++){player.profession.heading=-(i%4)*Math.PI/2;actor.facing=null;actor.update(player,0,1+i/100,false,camera);visual.update(game);assert.equal(visual.line.geometry,geometry);assert.equal(geometry.attributes.position.array,buffer);assert.ok(buffer.every(Number.isFinite));assert.ok(Math.abs(buffer[0]-visual.tip.x)<1e-6);assert.ok(Math.abs(buffer[1]-visual.tip.y)<1e-6);}
++ player.hp=0;actor.update(player,0,3,false,camera);visual.update(game);assert.equal(visual.group.visible,false);
++ player.hp=100;player.profession=null;actor.update(player,0,4,false,camera);visual.update(game);assert.equal(visual.group.visible,false);
++ visual.dispose();actor.dispose();
+ });
+ 
+ 
+--- before/tests/iteration37-visual.test.js
++++ after/tests/iteration37-visual.test.js
+@@ -28,7 +28,7 @@
+  const a=new SheetActor(new THREE.Scene(),new THREE.Sprite(new THREE.SpriteMaterial()));for(const classId of ['mage','warrior','priest','rogue','archer','novice'])a.prepare({classId,appearance:defaultAppearance()});a.dispose();await a.ready();await Promise.resolve();assert.equal(sheetCacheStats().active,0);assert.ok(sheetCacheStats().idle<=8);
+ });
+ test('37 visual: inactive activities do not hide class art; real mining retains event pose',async()=>{
+- const a=new SpriteActor(new THREE.Scene()),s={x:0,z:0,heading:0,hp:100,impact:{phase:'idle'},activity:{mining:{active:false},fishing:{active:false}}};a.update(s,0,0);await a.sheet.ready();a.update(s,0,.1);assert.equal(a.sheet.palette.enabled.value,1);s.activity.mining={active:true,state:'prepare',time:0,started:0};a.update(s,0,.2);assert.equal(a.currentActivity.type,'mining');assert.equal(a.sheet.palette.enabled.value,0);a.update({...s,impact:{phase:'recoil'}},0,.3);assert.equal(a.sheet.frame,30);a.dispose();
++ const a=new SpriteActor(new THREE.Scene()),s={x:0,z:0,heading:0,hp:100,impact:{phase:'idle'},activity:{mining:{active:false},fishing:{active:false}}};a.update(s,0,0);await a.sheet.ready();a.update(s,0,.1);assert.equal(a.sheet.palette.enabled.value,1);s.activity.mining={active:true,state:'prepare',time:0,started:0};a.update(s,0,.2);assert.equal(a.currentActivity.type,'mining');await a.sheet.ready();a.update(s,0,.21);assert.equal(a.sheet.palette.enabled.value,1);assert.ok(a.sheet.key.startsWith('profession:'));a.update({...s,impact:{phase:'recoil'}},0,.3);await a.sheet.ready();a.update({...s,impact:{phase:'recoil'}},0,.31);assert.equal(a.sheet.frame,30);a.dispose();
+ });
+ test('37 visual: remote interpolation retains authorized action and impact without inventing it',()=>{
+  const state={x:0,z:0,heading:0,hp:100,moving:false,impact:{phase:'recoil',serial:4},action:{id:'fireball',phase:'preparation'},basicReleaseRemaining:.1};const r=new RemoteState({id:'other',name:'Other',state},0),q=r.sample(100);assert.deepEqual(q.impact,state.impact);assert.deepEqual(q.action,state.action);assert.equal(q.basicReleaseRemaining,.1);
+--- before/config/multiplayer.json
++++ after/config/multiplayer.json
+@@ -1,5 +1,5 @@
+ {
+   "serverUrl": "wss://dungeon-master-hub-u40z.onrender.com/hub",
+-  "build": "Beta 0.6.12",
++  "build": "Beta 0.6.13",
+   "profileDirectory": "Dungeon Master Playtest 0.5.0"
+ }
+--- before/package.json
++++ after/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "dungeon-teacher-beta",
+-  "version": "0.6.12",
++  "version": "0.6.13",
+   "private": true,
+   "type": "module",
+   "engines": {
+--- before/package-lock.json
++++ after/package-lock.json
+@@ -1,12 +1,12 @@
+ {
+   "name": "dungeon-teacher-beta",
+-  "version": "0.6.12",
++  "version": "0.6.13",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+       "name": "dungeon-teacher-beta",
+-      "version": "0.6.12",
++      "version": "0.6.13",
+       "dependencies": {
+         "three": "0.186.1"
+       },
+--- before/electron-builder.adm.yml
++++ after/electron-builder.adm.yml
+@@ -8,7 +8,7 @@
+     - target: portable
+       arch: [x64]
+ nsis:
+-  artifactName: ${productName}-Iteracao37-RV1-${version}-Setup.${ext}
++  artifactName: ${productName}-Iteracao37-RV2-${version}-Setup.${ext}
+   oneClick: false
+   perMachine: false
+   allowElevation: false
+@@ -16,11 +16,11 @@
+   deleteAppDataOnUninstall: false
+   createDesktopShortcut: true
+ portable:
+-  artifactName: ${productName}-Iteracao37-RV1-${version}-Portable.${ext}
++  artifactName: ${productName}-Iteracao37-RV2-${version}-Portable.${ext}
+ appId: br.dungeonteacher.adm
+ productName: Dungeon Teacher ADM
+ directories:
+-  output: release/iteration37-rv1/adm
++  output: release/iteration37-rv2/adm
+ extraMetadata:
+   main: desktop/adm-main.cjs
+ files:
+--- before/electron-builder.student.yml
++++ after/electron-builder.student.yml
+@@ -8,7 +8,7 @@
+     - target: portable
+       arch: [x64]
+ nsis:
+-  artifactName: ${productName}-Iteracao37-RV1-${version}-Setup.${ext}
++  artifactName: ${productName}-Iteracao37-RV2-${version}-Setup.${ext}
+   oneClick: false
+   perMachine: false
+   allowElevation: false
+@@ -16,11 +16,11 @@
+   deleteAppDataOnUninstall: false
+   createDesktopShortcut: true
+ portable:
+-  artifactName: ${productName}-Iteracao37-RV1-${version}-Portable.${ext}
++  artifactName: ${productName}-Iteracao37-RV2-${version}-Portable.${ext}
+ appId: br.dungeonteacher.student
+ productName: Dungeon Teacher
+ directories:
+-  output: release/iteration37-rv1/student
++  output: release/iteration37-rv2/student
+ extraMetadata:
+   main: desktop/student-main.cjs
+ files:

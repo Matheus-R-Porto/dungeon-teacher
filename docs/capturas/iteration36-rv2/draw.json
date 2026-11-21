@@ -1,0 +1,682 @@
+{
+  "frames": 343,
+  "seen": [
+    "0:0:0:0:idle",
+    "1:0:0:0:idle",
+    "0:0:1:0:idle",
+    "1:0:1:0:idle",
+    "0:0:2:0:idle",
+    "1:0:2:0:idle",
+    "0:0:3:0:idle",
+    "1:0:3:0:idle"
+  ],
+  "snapshots": [
+    {
+      "at": 0.06990000000037253,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-00.png"
+    },
+    {
+      "at": 0.46680000000074506,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-01.png"
+    },
+    {
+      "at": 0.6857000000011176,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.18570000000111764,
+      "walkFrame": 0,
+      "file": "saque-02.png"
+    },
+    {
+      "at": 0.9039000000003725,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.4039000000003725,
+      "walkFrame": 0,
+      "file": "saque-03.png"
+    },
+    {
+      "at": 1.13560000000149,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.6356000000014901,
+      "walkFrame": 0,
+      "file": "saque-04.png"
+    },
+    {
+      "at": 1.3325,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.8325,
+      "walkFrame": 0,
+      "file": "saque-05.png"
+    },
+    {
+      "at": 1.555800000000745,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-06.png"
+    },
+    {
+      "at": 1.7769000000003725,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-07.png"
+    },
+    {
+      "at": 1.9697000000011176,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-08.png"
+    },
+    {
+      "at": 2.1872000000011176,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-09.png"
+    },
+    {
+      "at": 2.410300000000745,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.7896999999992551,
+      "walkFrame": 0,
+      "file": "saque-10.png"
+    },
+    {
+      "at": 2.6364000000003727,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.5635999999996275,
+      "walkFrame": 0,
+      "file": "saque-11.png"
+    },
+    {
+      "at": 2.8335,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.36650000000000027,
+      "walkFrame": 0,
+      "file": "saque-12.png"
+    },
+    {
+      "at": 3.0334000000003725,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0.1665999999996277,
+      "walkFrame": 0,
+      "file": "saque-13.png"
+    },
+    {
+      "at": 3.2332000000011174,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-14.png"
+    },
+    {
+      "at": 3.426300000000745,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-15.png"
+    },
+    {
+      "at": 3.645800000000745,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-16.png"
+    },
+    {
+      "at": 3.866800000000745,
+      "family": 0,
+      "direction": 0,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-17.png"
+    },
+    {
+      "at": 4.071400000000373,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-18.png"
+    },
+    {
+      "at": 4.262400000000373,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-19.png"
+    },
+    {
+      "at": 4.4782000000011175,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-20.png"
+    },
+    {
+      "at": 4.696400000000373,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.19640000000037272,
+      "walkFrame": 0,
+      "file": "saque-21.png"
+    },
+    {
+      "at": 4.92610000000149,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.4261000000014903,
+      "walkFrame": 0,
+      "file": "saque-22.png"
+    },
+    {
+      "at": 5.157,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.657,
+      "walkFrame": 0,
+      "file": "saque-23.png"
+    },
+    {
+      "at": 5.3805,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.8804999999999996,
+      "walkFrame": 0,
+      "file": "saque-24.png"
+    },
+    {
+      "at": 5.59910000000149,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-25.png"
+    },
+    {
+      "at": 5.793400000000372,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-26.png"
+    },
+    {
+      "at": 6.024,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-27.png"
+    },
+    {
+      "at": 6.234300000000745,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.9656999999992548,
+      "walkFrame": 0,
+      "file": "saque-28.png"
+    },
+    {
+      "at": 6.429200000001118,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.7707999999988822,
+      "walkFrame": 0,
+      "file": "saque-29.png"
+    },
+    {
+      "at": 6.661700000001118,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.5382999999988822,
+      "walkFrame": 0,
+      "file": "saque-30.png"
+    },
+    {
+      "at": 6.880800000000745,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.3191999999992552,
+      "walkFrame": 0,
+      "file": "saque-31.png"
+    },
+    {
+      "at": 7.099,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0.10099999999999998,
+      "walkFrame": 0,
+      "file": "saque-32.png"
+    },
+    {
+      "at": 7.326900000000372,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-33.png"
+    },
+    {
+      "at": 7.54860000000149,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-34.png"
+    },
+    {
+      "at": 7.771700000001117,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-35.png"
+    },
+    {
+      "at": 7.9875,
+      "family": 0,
+      "direction": 1,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-36.png"
+    },
+    {
+      "at": 8.1865,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-37.png"
+    },
+    {
+      "at": 8.407300000000745,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-38.png"
+    },
+    {
+      "at": 8.63360000000149,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.13360000000148986,
+      "walkFrame": 0,
+      "file": "saque-39.png"
+    },
+    {
+      "at": 8.824300000000745,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.3243000000007452,
+      "walkFrame": 0,
+      "file": "saque-40.png"
+    },
+    {
+      "at": 9.042200000001118,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.5422000000011185,
+      "walkFrame": 0,
+      "file": "saque-41.png"
+    },
+    {
+      "at": 9.258,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.7579999999999991,
+      "walkFrame": 0,
+      "file": "saque-42.png"
+    },
+    {
+      "at": 9.483,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.9830000000000005,
+      "walkFrame": 0,
+      "file": "saque-43.png"
+    },
+    {
+      "at": 9.707700000001118,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-44.png"
+    },
+    {
+      "at": 9.913700000001118,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-45.png"
+    },
+    {
+      "at": 10.133200000001118,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-46.png"
+    },
+    {
+      "at": 10.34610000000149,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.85389999999851,
+      "walkFrame": 0,
+      "file": "saque-47.png"
+    },
+    {
+      "at": 10.576700000001118,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.6232999999988822,
+      "walkFrame": 0,
+      "file": "saque-48.png"
+    },
+    {
+      "at": 10.790900000000372,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.4090999999996283,
+      "walkFrame": 0,
+      "file": "saque-49.png"
+    },
+    {
+      "at": 11.00460000000149,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0.19539999999850988,
+      "walkFrame": 0,
+      "file": "saque-50.png"
+    },
+    {
+      "at": 11.234200000001117,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-51.png"
+    },
+    {
+      "at": 11.444200000001118,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-52.png"
+    },
+    {
+      "at": 11.670300000000745,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-53.png"
+    },
+    {
+      "at": 11.886800000000745,
+      "family": 0,
+      "direction": 2,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-54.png"
+    },
+    {
+      "at": 12.079200000001117,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-55.png"
+    },
+    {
+      "at": 12.274400000000373,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-56.png"
+    },
+    {
+      "at": 12.4665,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-57.png"
+    },
+    {
+      "at": 12.666300000000746,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.16630000000074574,
+      "walkFrame": 0,
+      "file": "saque-58.png"
+    },
+    {
+      "at": 12.88360000000149,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.38360000000148986,
+      "walkFrame": 0,
+      "file": "saque-59.png"
+    },
+    {
+      "at": 13.079200000001117,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.5792000000011175,
+      "walkFrame": 0,
+      "file": "saque-60.png"
+    },
+    {
+      "at": 13.300300000000744,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.8003000000007443,
+      "walkFrame": 0,
+      "file": "saque-61.png"
+    },
+    {
+      "at": 13.524200000001118,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-62.png"
+    },
+    {
+      "at": 13.721400000000372,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-63.png"
+    },
+    {
+      "at": 13.940700000001117,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-64.png"
+    },
+    {
+      "at": 14.133300000000744,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 1,
+      "walkFrame": 0,
+      "file": "saque-65.png"
+    },
+    {
+      "at": 14.332700000001118,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.867299999998882,
+      "walkFrame": 0,
+      "file": "saque-66.png"
+    },
+    {
+      "at": 14.558800000000746,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.6411999999992544,
+      "walkFrame": 0,
+      "file": "saque-67.png"
+    },
+    {
+      "at": 14.772700000001118,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.42729999999888246,
+      "walkFrame": 0,
+      "file": "saque-68.png"
+    },
+    {
+      "at": 14.99910000000149,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.2008999999985095,
+      "walkFrame": 0,
+      "file": "saque-69.png"
+    },
+    {
+      "at": 15.192900000000373,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0.007099999999627293,
+      "walkFrame": 0,
+      "file": "saque-70.png"
+    },
+    {
+      "at": 15.41710000000149,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-71.png"
+    },
+    {
+      "at": 15.633800000000745,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-72.png"
+    },
+    {
+      "at": 15.864400000000373,
+      "family": 0,
+      "direction": 3,
+      "phase": "idle",
+      "draw": 0,
+      "walkFrame": 0,
+      "file": "saque-73.png"
+    }
+  ],
+  "seconds": 16.14260000000149
+}

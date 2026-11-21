@@ -1,0 +1,45 @@
+{
+  "checks": [
+    "ADM real inicia servidor em processo separado e mostra zero vagas ocupadas",
+    "Descoberta UDP local, identidade do ADM e ausência da ponte administrativa no aluno",
+    "Quatro processos Electron, quatro perfis, um servidor e um banco: cadastro, login, personagens e sincronização",
+    "Segundo login rejeitado sem derrubar o cliente original",
+    "Troca A → B → A entre perfis Electron separados conserva personagem e duas alterações reais de equipamento",
+    "Kick pela interface confirma conta correta, mostra mensagem exata e permite novo login",
+    "Backup pelo ADM, parada e reinício do mesmo banco preservam equipamento e progresso",
+    "Recarregar a interface ADM não interrompe o processo servidor nem a sessão do aluno",
+    "Movimentação, entrada real na Torre e dano de combate confirmados pelo servidor do pacote",
+    "Restauração do backup temporário preserva quatro contas, temporada, identidade TLS e personagem; sem criar ou limpar temporada",
+    "ADM encerra normalmente com código zero após gravar e parar o serviço"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\01-adm-primeiro-acesso.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\02-adm-servidor-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\03-conexao-manual-e-identidade.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\04-adm-quatro-aventureiros.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\05-jogo-quatro-clientes.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\06-sessao-duplicada-rejeitada.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\07-retorno-ao-primeiro-cliente.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\08-confirmacao-desconexao.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\09-desconexao-administrativa.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\10-backup-e-monitoramento.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\11-servidor-encerrado.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\12-pacote-andar-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\13-combate-empacotado.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527\\14-backup-restaurado.png"
+  ],
+  "errors": [],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\package34-electron-1793200374527",
+  "packagedResources": true,
+  "dataDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt-package34-3KXVwP\\ADM\\school-data",
+  "initialSeason": {
+    "id": "fdccbce5-6349-49de-969a-a70f55138701",
+    "name": "Temporada inicial",
+    "started": 1793200376049,
+    "planned_end": 1801062776049,
+    "state": "active",
+    "cleaned_at": null
+  },
+  "fingerprint": "C5230FF196A795F000F2EF2681459C5C7DDC91729494A2EF84D60854FA063C28",
+  "ok": true
+}

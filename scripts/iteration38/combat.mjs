@@ -1,0 +1,113 @@
+import {Inventory} from '../../src/domain/items/inventory.js';import {canStand,clearSegment} from '../../src/world/collision.js';
+import fs from 'node:fs';import path from 'node:path';import os from 'node:os';import net from 'node:net';import {spawn,execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
+
+import WebSocket from '../../server/node_modules/ws/wrapper.mjs';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),output=path.join(root,'.logs','iteration38-combat-'+(process.env.DT_LABEL??'run')+'-'+Date.now());fs.mkdirSync(output,{recursive:true});
+
+const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dt37-electron-')),children=[],sessions=[],report={checks:[],screenshots:[],errors:[],output,packagedResources:!!process.env.DT_USE_PACKAGES,gpuTimersEnabled:false};
+
+const wait=ms=>new Promise(r=>setTimeout(r,ms));async function until(fn,ms=30000){const end=Date.now()+ms;while(Date.now()<end){if(await fn())return;await wait(80);}throw Error('Tempo limite Electron');}
+
+async function port(){const s=net.createServer();await new Promise(r=>s.listen(0,'127.0.0.1',r));const p=s.address().port;await new Promise(r=>s.close(r));return p;}
+
+async function launch(label,entry){const debug=await port(),profile=path.join(temp,label),child=spawn(path.join(root,'node_modules/electron/dist/electron.exe'),[process.env.DT_USE_PACKAGES?path.join(root,process.env.DT_PACKAGE_ROOT??'release/iteration33',entry.startsWith('adm')?'adm':'student','win-unpacked/resources/app.asar/desktop',entry):path.join(root,'desktop',entry),'--remote-debugging-address=127.0.0.1','--remote-debugging-port='+debug,'--disable-backgrounding-occluded-windows','--disable-features=CalculateNativeWinOcclusion'],{cwd:root,env:{...process.env,DT_TEST_PROFILE:profile},windowsHide:true,stdio:['ignore','pipe','pipe']});children.push(child);let stderr='';child.stdout.on('data',()=>{});child.stderr.on('data',d=>{stderr+=d;});let target;await until(async()=>{try{target=(await(await fetch(`http://127.0.0.1:${debug}/json/list`)).json()).find(t=>t.type==='page'&&(t.url.startsWith('dungeon:')||t.url.includes('/adm/index.html')));return target;}catch{return false;}});const ws=new WebSocket(target.webSocketDebuggerUrl);await new Promise((r,j)=>{ws.once('open',r);ws.once('error',j);});let seq=0;const pending=new Map();ws.on('message',raw=>{const m=JSON.parse(raw);if(m.id){const p=pending.get(m.id);if(p){clearTimeout(p.timer);pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}}if(m.method==='Runtime.exceptionThrown')report.errors.push(m.params.exceptionDetails.exception?.description??m.params.exceptionDetails.text);});const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++seq,timer=setTimeout(()=>{pending.delete(id);reject(Error('CDP '+method));},60000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params}));});const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result.value;};await send('Runtime.enable');const s={label,profile,child,ws,send,evaluate,stderr:()=>stderr};sessions.push(s);return s;}
+
+async function capture(s,name){await s.send('Page.bringToFront');await s.evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');const r=await s.send('Page.captureScreenshot',{format:'png'}),file=path.join(output,name+'.png');fs.writeFileSync(file,Buffer.from(r.data,'base64'));report.screenshots.push(file);}
+
+const click=async(s,text)=>{await until(()=>s.evaluate(`!![...document.querySelectorAll('button')].find(b=>b.textContent===${JSON.stringify(text)}&&!b.disabled&&b.getClientRects().length)`));await s.evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent===${JSON.stringify(text)}&&!b.disabled&&b.getClientRects().length).click()`);};
+
+import {startHub} from '../../server/hub.js';import {serverIdentity} from '../../server/tls.js';import {defaultAppearance} from '../../src/domain/appearance.js';import {Game} from '../../src/simulation/game.js';import {profile,actionFor} from '../iteration34/profiles.mjs';
+
+const secret='electron-test-34-password',clientCount=Number(process.env.DT_CLIENTS??4);let hub,bot;const clients=[],classes=['warrior','priest','mage','archer'];report.clientCount=clientCount;report.build=process.env.DT_PACKAGE_ROOT??'source37';report.environment={node:process.version,cpu:os.cpus()[0].model,os:os.version()};
+
+function memorySnapshot(){const ids=clients.map(s=>s.child.pid).join(',');const command=`$roots=@(${ids});$all=Get-CimInstance Win32_Process;$results=@();foreach($rootId in $roots){$rootProcess=$all|Where-Object ProcessId -eq $rootId;$tree=@($rootId);$frontier=@($rootProcess);do{$next=@(foreach($parentProcess in $frontier){$all|Where-Object {$_.ParentProcessId -eq $parentProcess.ProcessId -and $_.CreationDate -ge $parentProcess.CreationDate -and $tree -notcontains $_.ProcessId}});$tree+=@($next|ForEach-Object {$_.ProcessId});$frontier=$next}while($next.Count -gt 0);$processes=@(Get-Process -Id $tree -ErrorAction SilentlyContinue);$results+=@{pid=$rootId;processes=$processes.Count;workingSetBytes=($processes|Measure-Object WorkingSet64 -Sum).Sum;privateBytes=($processes|Measure-Object PrivateMemorySize64 -Sum).Sum;cpuSeconds=($processes|Measure-Object CPU -Sum).Sum}};$results|ConvertTo-Json -Compress`;try{return JSON.parse(execFileSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',command],{encoding:'utf8',windowsHide:true}));}catch(e){return {unavailable:e.message};}}
+
+const stat=a=>{const v=a.slice().sort((a,b)=>a-b);return {n:v.length,mean:v.reduce((s,n)=>s+n,0)/(v.length||1),p95:v[Math.floor(v.length*.95)]??0,max:v.at(-1)??0};};
+
+async function impactEvidence(w){
+
+ if(!process.env.DT_IMPACT_VISUAL)return;
+
+ const people=[...hub.online.people.values()],p=people[0],e=w.bossEncounter.e;
+
+ for(const [i,q]of people.entries()){q.target=null;q.axis={x:0,z:0};q.game.cancel();q.abilities?.interrupt('travel');q.conditions={};q.character.restoreHP();Object.assign(q.game.player,e.spawnPosition,{x:e.x+(i?4:2),z:e.z+i,moving:false});q.game.previous={...q.game.player};}
+
+ // Isolated evidence fixture after timing. Longer presentation windows allow
+
+ // screenshots; production balance parameters and official data stay untouched.
+
+ e.hp=e.stats.maxHP;e.deathTime=0;e.state='attacking';w.bossEncounter.phase='windup';w.bossEncounter.skill='bite';w.bossEncounter.until=w.time+3;e.impactState=null;e.impactRules={recoil:3,recovery:.5,protection:6};
+
+ w.impact(p.id,e.id,{physicalAttack:e.stats.maxHP*.2,accuracy:100,criticalChance:0},{physicalDefense:0,evasion:0},damage=>e.damage(damage));
+
+ for(const other of w.enemies)if(other!==e&&other.alive)other.damage(other.hp);
+
+ p.impactState=null;p.impactRules={recoil:3,recovery:.5,protection:4};p.cycle.phase='windup';p.cycle.remaining=1;p.cycle.recovery=.5;
+
+ w.impact(e.id,p.id,{physicalAttack:p.character.stats.maxHP*.2,accuracy:100,criticalChance:0},{physicalDefense:0,evasion:0},damage=>p.character.damage(damage));
+
+ report.impactFixture={player:p.impactState,boss:e.impactState,playerHP:p.character.data.hp,bossHP:e.hp,clearedBuffs:true,ordinaryEnemiesRemoved:true};
+
+ if(!p.impactState||!e.impactState)throw Error('Fixture damage did not produce an authoritative impact: '+JSON.stringify(report.impactFixture));
+
+ await until(()=>clients[0].evaluate(`window.__dm.client.snapshot.players.find(p=>p.id===${JSON.stringify(p.id)})?.impact.phase==='recoil'&&window.__dm.view.actor.sheet?.frame===30`));
+
+ const samples=await Promise.all(clients.map(s=>s.evaluate(`(()=>{const d=window.__dm,a=d.client.id===${JSON.stringify(p.id)}?d.view.actor:d.view.remotePlayers.actors.get(${JSON.stringify(p.id)})?.actor;return {player:d.client.snapshot.players.find(p=>p.id===${JSON.stringify(p.id)})?.impact,boss:d.client.snapshot.monsters.find(e=>e.id===${JSON.stringify(e.id)})?.impact,frame:a?.sheet.frame,bossFrame:d.view.combatVisual.models.get(${JSON.stringify(e.id)})?.body.material.map.userData.frame};})()`)));
+
+ if(samples.some(q=>q.player?.phase!=='recoil'||q.boss?.phase!=='recoil'||q.frame!==30||q.bossFrame?.column!==6))throw Error('Recoil not rendered consistently');
+
+ report.impactEvidence={fixture:'Server-only effective damage; 3-second screenshot window after performance measurement',samples};await capture(clients[0],'04-impacto-autoritativo-jogador-e-mvp');await capture(clients[1],'05-impacto-observador');report.checks.push('Recoil autoritativo: jogador, observador e MVP com quadros exclusivos após dano efetivo; fixture isolada de captura, fora da medição');
+
+  await wait(3500);
+
+  for(const s of clients)await s.evaluate(`window.deathFrames=[];window.deathTimer=setInterval(()=>{const d=window.__dm,a=d.client.id===${JSON.stringify(p.id)}?d.view.actor:d.view.remotePlayers.actors.get(${JSON.stringify(p.id)})?.actor;window.deathFrames.push(a?.sheet.frame);},20);`);
+
+  p.character.damage(p.character.data.hp);await wait(900);
+
+  const deathFrames=await Promise.all(clients.map(s=>s.evaluate('clearInterval(window.deathTimer);[...new Set(window.deathFrames)]')));
+
+  if(deathFrames.some(frames=>![13,15,32].every(f=>frames.includes(f))))throw Error('Death stages missing: '+JSON.stringify(deathFrames));
+
+  report.deathEvidence={fixture:'Server-only HP depletion after timed measurement',deathFrames};await capture(clients[0],'06-morte-tres-etapas');report.checks.push('Morte em três etapas 13/15/32 observada no jogador e nos dois clientes remotos');
+
+ delete p.impactRules;delete e.impactRules;
+
+}
+
+try{
+
+ const identity=await serverIdentity(path.join(temp,'identity'));hub=await startHub({host:'127.0.0.1',port:0,school:true,singleWorld:true,tls:identity,characterDataDir:path.join(temp,'characters'),worldDataDir:path.join(temp,'maps'),log(){}});
+
+ for(let i=0;i<clientCount;i++){await hub.school.createAccount({username:'aluno'+i,password:secret});const l=await hub.school.login('aluno'+i,secret,'fixture');hub.school.createCharacter(l.token,'Aventureiro '+(i+1),defaultAppearance());const a=hub.school.enter(l.token),c=profile(classes[i]);c.data.id=a.character_id;c.data.name='Aventureiro '+(i+1);if(i===0){const bag=new Inventory(c);for(const [item,slot]of [['woodenCart','cart'],['travelerBackpack','backpack']]){bag.acquire(item);bag.equip(c.data.inventory.slots.findIndex(v=>v?.definitionId===item),slot);}}hub.online.db.save(a.character_id,{character:c.snapshot(),floor:1,reached:3,area:'shared-city'});hub.school.revoke(l.token);}
+
+ for(let i=0;i<clientCount;i++){const s=await launch('Cliente-'+i,'student-main.cjs');clients.push(s);await s.send('Page.bringToFront');await until(()=>s.evaluate("!!document.querySelector('[name=address]')"));await s.evaluate(`document.querySelector('[name=address]').value='127.0.0.1:${hub.port}';document.querySelector('.school-lobby form').requestSubmit()`);await until(()=>s.evaluate("!!document.querySelector('[name=confirmIdentity]')"));await s.evaluate("const checkbox=document.querySelector('[name=confirmIdentity]');checkbox.checked=true;checkbox.dispatchEvent(new Event('change'))");await click(s,'Confiar e continuar');await until(()=>s.evaluate("!!document.querySelector('[name=username]')"));await s.evaluate(`document.querySelector('[name=username]').value='aluno${i}';document.querySelector('[name=password]').value=${JSON.stringify(secret)};document.querySelector('.school-lobby form').requestSubmit()`);await click(s,'Continuar');await until(()=>s.evaluate("!!window.__dm&&window.__dm.client.snapshot?.profile&&document.querySelector('.scene-transition')?.hidden===true"),120000);await s.send('Performance.enable');}
+
+ report.measurements=[];
+
+ async function measure(phase,seconds){for(const s of clients)await s.evaluate('window.__dm.reset()');const initial=await Promise.all(clients.map(s=>s.send('Performance.getMetrics'))),at=performance.now();await wait(seconds*1000);const elapsed=(performance.now()-at)/1000;for(const [i,s]of clients.entries()){const metrics=await s.send('Performance.getMetrics'),values=Object.fromEntries(metrics.metrics.map(v=>[v.name,v.value])),before=Object.fromEntries(initial[i].metrics.map(v=>[v.name,v.value]));const clientElapsed=values.Timestamp-before.Timestamp;if(!(clientElapsed>0))throw Error('Intervalo CDP indisponível');const d=await s.evaluate('window.__dm.stop();({frames:window.__dm.frames,samples:window.__dm.samples,activity:window.__dm.activity,inventory:window.__dm.inventory(),visibility:window.__dm.visibility,preparation:window.__dm.view.transitionReport,sheets:window.__dm.view.actor.sheet?.diagnostics??null})');await s.evaluate('window.__dm.disableGpuTiming?.()');report.measurements.push({phase,client:i,elapsed:clientElapsed,requestedWindow:elapsed,taskDuration:values.TaskDuration-before.TaskDuration,metricTimestamps:[before.Timestamp,values.Timestamp],rendererTaskCPUPercent:100*(values.TaskDuration-before.TaskDuration)/clientElapsed,jsHeap:values.JSHeapUsedSize,frame:stat(d.frames),fps:d.frames.length/(d.frames.reduce((s,n)=>s+n,0)/1000),samples:Object.fromEntries(Object.entries(d.samples).map(([k,v])=>[k,stat(v)])),activity:d.activity,inventory:d.inventory,visibility:d.visibility,preparation:d.preparation,sheets:d.sheets});}report.processMemory??=[];report.processMemory.push({phase,measurements:memorySnapshot()});await capture(clients[0],phase);}
+
+
+ const iteration38Cart=[...hub.online.people.values()][0],cartId=iteration38Cart.id,city=hub.online.world(iteration38Cart.mapId),origin={...iteration38Cart.game.player};
+ await until(()=>clients[1].evaluate(`window.__dm.view.remotePlayers.actors.get(${JSON.stringify(cartId)})?.actor.accessories.cart?.visible===true`));
+ const point=Array.from({length:16},(_,i)=>({x:origin.x+Math.cos(i*Math.PI/8)*3,z:origin.z+Math.sin(i*Math.PI/8)*3})).find(q=>canStand(city.map,q.x,q.z,.32)&&clearSegment(city.map,origin,q,.32));if(!point)throw Error('Cart fixture has no clear movement');
+ for(const s of clients)await s.evaluate(`window.cartFrames=[];window.cartTimer=setInterval(()=>{const d=window.__dm,a=d.client.id===${JSON.stringify(cartId)}?d.view.actor:d.view.remotePlayers.actors.get(${JSON.stringify(cartId)})?.actor;cartFrames.push({frame:a?.sheet.frame,cart:a?.accessories.cart?.visible,backpack:a?.sheet.backpack.sprite?.visible});},25)`);
+ await clients[0].evaluate(`window.__dm.client.command(${JSON.stringify({kind:'destination',...point})})`);await wait(1700);
+ const carts=await Promise.all(clients.map(s=>s.evaluate('clearInterval(cartTimer);cartFrames')));if(carts.some(a=>!a.some(v=>[3,5,7,9].includes(v.frame)&&v.cart&&v.backpack)))throw Error('Cart walk/backpack missing locally or remotely');
+ report.cartEvidence=carts;await capture(clients[0],'00-carrinho-mochila-local');await capture(clients[1],'00-carrinho-mochila-observador');await clients[0].evaluate("window.__dm.client.transport({operation:'unequip',slot:'cart'})");await until(()=>clients[1].evaluate(`!window.__dm.view.remotePlayers.actors.get(${JSON.stringify(cartId)})?.actor.accessories.cart?.visible`));report.checks.push('Caminhada com carrinho e mochila vista localmente e por dois observadores; remoção autorizada sincronizada.');
+ await measure('01-cidade-clientes-reais',12);
+
+ const w=hub.online.world('shared-floor-2');for(const [i,p]of [...hub.online.people.values()].entries()){hub.online.arenas.move(p,w,new Game(w.map));p.game.previous={...p.game.player};hub.online.send(p.ws,hub.online.welcome(p));}
+
+ for(const s of clients)await until(()=>s.evaluate("window.__dm?.view.world.id==='shared-floor-2'&&document.querySelector('.scene-transition')?.hidden===true"),120000);
+
+ for(const [i,p]of [...hub.online.people.values()].entries()){Object.assign(p.game.player,{...w.bossEncounter.e.spawnPosition,x:w.bossEncounter.e.x+(i===0?2:5),z:w.bossEncounter.e.z+i});p.game.previous={...p.game.player};}
+
+ const busy=new Set();bot=setInterval(()=>{if(report.errors.length)return;for(const [i,p]of [...hub.online.people.values()].entries()){if(!p.ws||busy.has(i))continue;const action=actionFor(p,w,w.bossEncounter.e);if(action){busy.add(i);void clients[i].evaluate(`window.__dm.client.command(${JSON.stringify(action)});true`).catch(e=>report.errors.push(e.message)).finally(()=>busy.delete(i));}}},200);
+
+ await wait(2500);await capture(clients[0],'02-inicio-do-combate');await measure('02-combate-lobo-branco',20);clearInterval(bot);bot=null;await impactEvidence(w);const final=[...hub.online.people.values()][0],boss=w.bossEncounter.e;if(boss.alive){boss.damage(boss.hp);hub.online.contribution(w,boss,final.id,boss.stats.maxHP);}const grave=w.bossEncounter.data.position;for(const [i,p]of [...hub.online.people.values()].entries()){p.character.restoreHP();Object.assign(p.game.player,{...grave,x:grave.x+(i?4:1.5),z:grave.z+(i?i*2:0)});p.game.previous={...p.game.player};p.target=null;p.axis={x:0,z:0};p.game.cancel();}await until(()=>clients[0].evaluate("window.__dm?.view.grave?.visible&&document.querySelector('#interaction-label')?.textContent.includes('lápide')"));await clients[0].evaluate("document.getElementById('interact-button').click()");await wait(1500);await capture(clients[0],'03-lapide-compartilhada');const graves=await Promise.all(clients.map(s=>s.evaluate('window.__dm.client.snapshot.encounter')));if(graves.some(g=>g.diedAt!==graves[0].diedAt||JSON.stringify(g.position)!==JSON.stringify(graves[0].position)))throw Error('Lápide divergente');report.grave=graves[0];report.checks.push('Lápide visual: morte provocada somente como fixture de teste no servidor, posição real, data e golpe final iguais em todos os clientes conectados');report.checks.push(`${clientCount} processos Electron com TLS, login real, perfis válidos, renderização e comandos de combate`);report.ok=report.errors.length===0;
+
+}catch(e){report.ok=false;report.errors.push(e.stack);report.failureStates=[];for(const s of sessions)try{await s.evaluate("(()=>{const c=document.querySelector('[data-panel]');if(c){c.checked=true;c.dispatchEvent(new Event('change'));document.querySelector('.frame-diagnostic details').open=true;}})()");await wait(1100);report.failureStates.push({client:s.label,state:await s.evaluate("({graphics:document.querySelector('.frame-diagnostic pre')?.textContent,text:document.body.innerText.slice(0,8000),diagnostic:!!window.__dm,status:window.__dm?.client.status,map:window.__dm?.view.world.id,transition:document.querySelector('.scene-transition')?.outerHTML})")});await capture(s,'falha-'+s.label);}catch{}}
+
+finally{clearInterval(bot);for(const s of sessions){s.ws.close();fs.writeFileSync(path.join(output,s.label+'-stderr.txt'),s.stderr());}for(const c of children)if(c.exitCode===null)c.kill();await hub?.close();fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));process.exitCode=report.ok?0:1;}
+

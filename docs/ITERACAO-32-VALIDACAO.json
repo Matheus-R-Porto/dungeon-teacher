@@ -1,0 +1,450 @@
+{
+  "iteration": 32,
+  "tests": {
+    "total": 872,
+    "pass": 872,
+    "fail": 0,
+    "newTests": 61
+  },
+  "focused": 69,
+  "build": "approved",
+  "electron": {
+    "checks": [
+      "Promoção real pela UI: cinco cartões, confirmação, Base/Job, escolha permanente e cobrança única",
+      "Segundo cliente recebe classe e aparência do jogador promovido",
+      "warrior: 16 nós, híbridas conectadas, sprite e efeito ativo recebido pelo segundo cliente",
+      "archer: 16 nós, híbridas conectadas, sprite e efeito ativo recebido pelo segundo cliente",
+      "rogue: 16 nós, híbridas conectadas, sprite e efeito ativo recebido pelo segundo cliente",
+      "priest: 16 nós, híbridas conectadas, sprite e efeito ativo recebido pelo segundo cliente",
+      "mage: 16 nós, híbridas conectadas, sprite e efeito ativo recebido pelo segundo cliente",
+      "Projétil Mágico usado por atalho e clique de mira: dano confirmado no servidor",
+      "Campo de Gelo: mira no chão, zona autoritativa e cristais animados no cenário",
+      "Classe, níveis, maestria e equipamentos sobrevivem à leitura validada do SQLite",
+      "Reconexão real do WebSocket preserva classe escolhida, aparência e níveis investidos"
+    ],
+    "screenshots": [
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\01-escolha-das-cinco-classes.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\02-confirmacao-permanente.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\03-arvore-warrior.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\04-hibridas-warrior.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\05-personagem-warrior.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\06-efeito-warrior.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\07-observador-warrior.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\03-arvore-archer.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\04-hibridas-archer.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\05-personagem-archer.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\06-efeito-archer.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\07-observador-archer.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\03-arvore-rogue.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\04-hibridas-rogue.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\05-personagem-rogue.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\06-efeito-rogue.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\07-observador-rogue.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\03-arvore-priest.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\04-hibridas-priest.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\05-personagem-priest.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\06-efeito-priest.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\07-observador-priest.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\03-arvore-mage.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\04-hibridas-mage.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\05-personagem-mage.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\06-efeito-mage.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\07-observador-mage.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\08-arvore-1024.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\09-hud-1024.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\11-icones-warrior.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\11-icones-archer.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\11-icones-rogue.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\11-icones-priest.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\11-icones-mage.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\10-mira-manual-impacto.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\12-campo-de-gelo.png",
+      "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration32-1793185956161\\13-reconexao.png"
+    ],
+    "errors": [],
+    "effectRender": {
+      "warrior": {
+        "visible": true,
+        "position": [
+          -2,
+          0,
+          7
+        ],
+        "children": [
+          {
+            "type": "Mesh",
+            "visible": true,
+            "opacity": 0.4499360404562258,
+            "layers": 1,
+            "position": [
+              0,
+              0.22,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.7600000000000006,
+            "layers": 1,
+            "position": [
+              1.3,
+              2.7009765181769474,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              0.28799999999999953,
+              0.4919999999999993,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999997,
+              0.7586666666666659,
+              0.24941531628991795
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999999,
+              1.0253333333333325,
+              -0.24941531628991784
+            ]
+          }
+        ],
+        "parent": true,
+        "cameraLayers": 1,
+        "rootLayers": 1,
+        "point": {
+          "x": 640.9999999999999,
+          "y": 354.5922768322846,
+          "visible": true
+        }
+      },
+      "archer": {
+        "visible": true,
+        "position": [
+          -2,
+          0,
+          7
+        ],
+        "children": [
+          {
+            "type": "Mesh",
+            "visible": true,
+            "opacity": 0.4499360404562258,
+            "layers": 1,
+            "position": [
+              0,
+              0.22,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.7600000000000006,
+            "layers": 1,
+            "position": [
+              1.3,
+              2.7009765181769474,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              0.28799999999999953,
+              0.4919999999999993,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999997,
+              0.7586666666666659,
+              0.24941531628991795
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999999,
+              1.0253333333333325,
+              -0.24941531628991784
+            ]
+          }
+        ],
+        "parent": true,
+        "cameraLayers": 1,
+        "rootLayers": 1,
+        "point": {
+          "x": 640.9999999999999,
+          "y": 354.5922768322846,
+          "visible": true
+        }
+      },
+      "rogue": {
+        "visible": true,
+        "position": [
+          -2,
+          0,
+          7
+        ],
+        "children": [
+          {
+            "type": "Mesh",
+            "visible": true,
+            "opacity": 0.4499360404562258,
+            "layers": 1,
+            "position": [
+              0,
+              0.22,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.7600000000000006,
+            "layers": 1,
+            "position": [
+              1.3,
+              2.7009765181769474,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              0.28799999999999953,
+              0.4919999999999993,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999997,
+              0.7586666666666659,
+              0.24941531628991795
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999999,
+              1.0253333333333325,
+              -0.24941531628991784
+            ]
+          }
+        ],
+        "parent": true,
+        "cameraLayers": 1,
+        "rootLayers": 1,
+        "point": {
+          "x": 640.9999999999999,
+          "y": 354.5922768322846,
+          "visible": true
+        }
+      },
+      "priest": {
+        "visible": true,
+        "position": [
+          -2,
+          0,
+          7
+        ],
+        "children": [
+          {
+            "type": "Mesh",
+            "visible": true,
+            "opacity": 0.4499360404562258,
+            "layers": 1,
+            "position": [
+              0,
+              0.22,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.7600000000000006,
+            "layers": 1,
+            "position": [
+              1.3,
+              2.7009765181769474,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              0.28799999999999953,
+              0.4919999999999993,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999997,
+              0.7586666666666659,
+              0.24941531628991795
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6800000000000006,
+            "layers": 1,
+            "position": [
+              -0.1439999999999999,
+              1.0253333333333325,
+              -0.24941531628991784
+            ]
+          }
+        ],
+        "parent": true,
+        "cameraLayers": 1,
+        "rootLayers": 1,
+        "point": {
+          "x": 640.9999999999999,
+          "y": 354.5922768322846,
+          "visible": true
+        }
+      },
+      "mage": {
+        "visible": true,
+        "position": [
+          -2,
+          0,
+          7
+        ],
+        "children": [
+          {
+            "type": "Mesh",
+            "visible": true,
+            "opacity": 0.4499360404562257,
+            "layers": 1,
+            "position": [
+              0,
+              0.22,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.759999999999998,
+            "layers": 1,
+            "position": [
+              1.3,
+              2.7009765181769487,
+              0
+            ]
+          },
+          {
+            "type": "Mesh",
+            "visible": true,
+            "opacity": 0.22,
+            "layers": 1,
+            "position": [
+              0,
+              1.4,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6799999999999976,
+            "layers": 1,
+            "position": [
+              0.28800000000000187,
+              0.4920000000000027,
+              0
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6799999999999976,
+            "layers": 1,
+            "position": [
+              -0.14400000000000088,
+              0.7586666666666694,
+              0.24941531628991997
+            ]
+          },
+          {
+            "type": "Sprite",
+            "visible": true,
+            "opacity": 0.6799999999999976,
+            "layers": 1,
+            "position": [
+              -0.14400000000000107,
+              1.025333333333336,
+              -0.24941531628991986
+            ]
+          }
+        ],
+        "parent": true,
+        "cameraLayers": 1,
+        "rootLayers": 1,
+        "point": {
+          "x": 640.9999999999999,
+          "y": 354.5922768322846,
+          "visible": true
+        }
+      }
+    },
+    "ok": true
+  },
+  "limits": [
+    "Balanceamento ainda não validado com alunos.",
+    "Sem novo instalador ou publicação online.",
+    "Revisão visual cobre fluxos principais e amostras de efeitos; não é aprovação artística humana das 80 habilidades."
+  ]
+}

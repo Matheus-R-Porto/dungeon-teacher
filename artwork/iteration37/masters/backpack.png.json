@@ -1,0 +1,76 @@
+{
+  "source": "C:\\Users\\theuz\\.codex\\generated_images\\01a178a4-8b04-70f1-9fca-efebfc6cb7e1\\exec-704e374f-b69d-4929-bfa9-bc5a7b423bfd.png",
+  "width": 2172,
+  "height": 724,
+  "columns": 4,
+  "rows": 1,
+  "cell": 96,
+  "padding": 8,
+  "scale": 0.17467248908296942,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "sourceBounds": [
+        105,
+        124,
+        530,
+        577
+      ],
+      "bounds": [
+        11,
+        9,
+        84,
+        87
+      ]
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "sourceBounds": [
+        647,
+        127,
+        1031,
+        577
+      ],
+      "bounds": [
+        11,
+        9,
+        77,
+        87
+      ]
+    },
+    {
+      "column": 2,
+      "row": 0,
+      "sourceBounds": [
+        1131,
+        120,
+        1585,
+        577
+      ],
+      "bounds": [
+        8,
+        8,
+        86,
+        87
+      ]
+    },
+    {
+      "column": 3,
+      "row": 0,
+      "sourceBounds": [
+        1682,
+        127,
+        2067,
+        577
+      ],
+      "bounds": [
+        17,
+        9,
+        83,
+        87
+      ]
+    }
+  ]
+}

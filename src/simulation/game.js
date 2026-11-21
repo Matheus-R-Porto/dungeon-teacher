@@ -1,3 +1,4 @@
+import {cartCarry} from '../domain/items/carry.js';
 import {layerWorld,surfaceId} from '../world/surfaces.js';
 import { CONFIG } from '../core/config.js';
 import { canStand, moveWithCollision } from '../world/collision.js';
@@ -33,7 +34,7 @@ export class Game {
     this.previous = { ...this.player };
     if (this.paused) return;
     this.elapsed += dt;
-    let direction = { x: 0, z: 0 }, step = CONFIG.playerSpeed * this.movementMultiplier * (this.character?.carry?.movementMultiplier??1) * dt;
+    let direction = { x: 0, z: 0 }, step = CONFIG.playerSpeed * this.movementMultiplier * (this.character?.carry?.movementMultiplier??1) * (this.character?cartCarry(this.character.data).movementMultiplier:1) * dt;
     if (axis.x || axis.z) { this.path = []; direction = cameraDirection(axis.x, axis.z, azimuth); }
     else if (this.path.length) {
       const target = this.path[0], dx = target.x - this.player.x, dz = target.z - this.player.z, distance = Math.hypot(dx, dz);

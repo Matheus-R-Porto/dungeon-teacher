@@ -1,0 +1,43 @@
+asar: true
+electronDist: node_modules/electron/dist
+publish: null
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+nsis:
+  artifactName: ${productName}-Iteracao38-${version}-Setup.${ext}
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: true
+portable:
+  artifactName: ${productName}-Iteracao38-${version}-Portable.${ext}
+appId: br.dungeonteacher.adm
+productName: Dungeon Teacher ADM
+directories:
+  output: release/iteration38/adm
+extraMetadata:
+  main: desktop/adm-main.cjs
+files:
+  - desktop/adm-main.cjs
+  - desktop/adm-preload.cjs
+  - desktop/adm-worker.cjs
+  - desktop/discovery.cjs
+  - desktop/adm/**/*
+  - server/**/*.js
+  - server/package.json
+  - server/node_modules/**/*
+  - src/domain/**/*
+  - src/simulation/**/*
+  - src/world/**/*
+  - src/core/**/*
+  - src/data/**/*
+  - shared/**/*
+  - config/education.json
+  - package.json
+  - '!node_modules/**/*'

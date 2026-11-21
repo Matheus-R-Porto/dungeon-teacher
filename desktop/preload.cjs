@@ -12,4 +12,5 @@ contextBridge.exposeInMainWorld('desktopLifecycle',Object.freeze({
   }
 }));
 
+contextBridge.exposeInMainWorld('desktopMode',Object.freeze({load:()=>ipcRenderer.invoke('desktop:mode')}));
 contextBridge.exposeInMainWorld('onlineIdentity',Object.freeze({load:()=>ipcRenderer.invoke('online:credential')}));

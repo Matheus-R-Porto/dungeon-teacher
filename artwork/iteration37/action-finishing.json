@@ -1,0 +1,62 @@
+[
+  {
+    "id": "novice-masculine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": false
+  },
+  {
+    "id": "novice-feminine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": false
+  },
+  {
+    "id": "warrior-masculine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": true
+  },
+  {
+    "id": "warrior-feminine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": true
+  },
+  {
+    "id": "archer-masculine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": false
+  },
+  {
+    "id": "archer-feminine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": false
+  },
+  {
+    "id": "rogue-masculine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": true
+  },
+  {
+    "id": "rogue-feminine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": true
+  },
+  {
+    "id": "priest-masculine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": true
+  },
+  {
+    "id": "priest-feminine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": true
+  },
+  {
+    "id": "mage-masculine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": false
+  },
+  {
+    "id": "mage-feminine-actions",
+    "releaseCleanup": true,
+    "manualDirectionCorrection": false
+  }
+]

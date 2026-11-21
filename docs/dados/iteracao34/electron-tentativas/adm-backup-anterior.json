@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "ADM real inicia servidor em processo separado e mostra zero vagas ocupadas",
+    "Quatro processos Electron, quatro perfis, um servidor e um banco: cadastro, login, personagens e sincronização",
+    "Segundo login rejeitado sem derrubar o cliente original",
+    "Troca A → B → A entre perfis Electron separados conserva personagem e duas alterações reais de equipamento",
+    "Kick pela interface confirma conta correta, mostra mensagem exata e permite novo login",
+    "ADM encerra normalmente com código zero após gravar e parar o serviço"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\01-adm-primeiro-acesso.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\02-adm-servidor-online.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\03-conexao-manual-e-identidade.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\04-adm-quatro-aventureiros.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\05-jogo-quatro-clientes.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\06-sessao-duplicada-rejeitada.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\07-retorno-ao-primeiro-cliente.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\08-confirmacao-desconexao.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\09-desconexao-administrativa.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\falha-ADM.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\falha-Cliente-0.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\falha-Cliente-1.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\falha-Cliente-2.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338\\falha-Cliente-3.png"
+  ],
+  "errors": [
+    "Error: Tempo limite Electron\n    at until (file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration33-electron.mjs:5:172)\n    at async file:///C:/Users/theuz/.codex/.chatgpt-projects/g-p-6ab572bee00c8191a99fc6be7aeb7536/scripts/iteration33-electron.mjs:22:66"
+  ],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration33-electron-1793196910338",
+  "packagedResources": false,
+  "ok": false
+}

@@ -6,6 +6,14 @@ import {metrics} from '../scripts/iteration233-scenario.mjs';
 import * as THREE from 'three';
 import {compileScene} from '../src/adapters/rendering/scene-compilation.js';
 import {prepareActorAtlases} from '../src/adapters/rendering/actor-preparation.js';
+test('ready prepared bodies skip unused legacy GPU uploads but activities retain them',async t=>{
+ const raf=globalThis.requestAnimationFrame,caf=globalThis.cancelAnimationFrame;globalThis.requestAnimationFrame=fn=>setTimeout(fn,0);globalThis.cancelAnimationFrame=clearTimeout;t.after(()=>{globalThis.requestAnimationFrame=raf;globalThis.cancelAnimationFrame=caf;});
+ const texture=()=>({source:{},userData:{}}),body=texture(),weapon=texture(),legacy=texture(),action=texture(),uploads=[];
+ const actor={sheet:{ready:async()=>{},bodyTexture:body,palette:{mask:{value:weapon}}},baseTexture:legacy,textures:new Map([['action',action]])};
+ const view={actor,renderer:{initTexture:v=>uploads.push(v)}};
+ await prepareActorAtlases(view,new AbortController().signal,()=>{});assert.deepEqual(uploads,[body,weapon]);assert.equal(actor.textures.get('action'),action);
+ uploads.length=0;actor.currentActivity={type:'mining'};await prepareActorAtlases(view,new AbortController().signal,()=>{});assert.deepEqual(uploads,[body,weapon,legacy,action]);
+});
 function harness(enabled=true){let now=0,callback;const listeners=new Map(),view={world:{id:'shared-floor-1'},transitionReport:{controlAt:100,firstSubmittedAt:90},update(){},renderer:{info:{memory:{},render:{}},render(){}}},d={view,client:{mapId:'shared-floor-1',onSnapshot(){}},graphics:{loading:false,quality:{active:'high'},toggle(){}},combat:{enemies:[]}};const w={__dm:d,addEventListener(k,f){listeners.set(k,f);},removeEventListener(k){listeners.delete(k);}};const context=vm.createContext({window:w,document:{visibilityState:'visible',hasFocus:()=>true},performance:{now:()=>now},requestAnimationFrame:f=>callback=f});vm.runInContext(`(${installCapture.toString()})({enabled:${enabled}})`,context);return {w,d,listeners,frame(t){now=t;callback(t);},stop:()=>w.__stutter.stop()};}
 test('stutter categories use fixed windows and interval-start attribution',()=>{const h=harness();h.frame(100);h.frame(110);h.frame(2101);h.frame(2110);h.frame(5101);h.frame(5110);const r=h.stop();assert.deepEqual(Array.from(r.frames,f=>f.category),['post-transition','post-transition','resumed','resumed','stable']);assert.equal(h.listeners.size,0);});
 test('capture marks first render crossing and preserves mutually exclusive frame totals',()=>{const h=harness();h.frame(50);h.frame(100);h.frame(120);const r=h.stop();assert.equal(r.frames[0].category,'first-frame');const count=Object.values(Object.groupBy(r.frames,f=>f.category)).reduce((n,a)=>n+a.length,0);assert.equal(count,r.frames.length);assert.equal(metrics(r.frames).seconds,.07);});

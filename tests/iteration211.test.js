@@ -51,10 +51,10 @@ test('reconnect preserves server-reported combat posture and ignores absent lega
  const v=new VisualCombat();v.update({x:0,z:0,hp:100,weaponType:'bow',phase:'idle',visualCombatRemaining:3},10);assert.equal(v.state,'drawing');
  const legacy=new VisualCombat();legacy.update({x:0,z:0,moving:false},0);assert.equal(legacy.state,'exploration');
 });
-test('all weapons select their own atlas without duplicate sheathed props, direction remains stable',()=>{
+test('all weapons select their own atlas without duplicate sheathed props, direction remains stable',async()=>{
  for(const weaponType of ['sword','bow','dagger','staff']){const a=new SpriteActor(new THREE.Scene()),s={x:0,z:0,hp:100,weaponType,heading:Math.PI,moving:false,phase:'idle'};
-  a.update(s,0,0);assert.equal(a.texture.userData.atlas.rows,8);assert.equal(a.weaponRoot,undefined);a.update({...s,phase:'windup'},0,.02);assert.equal(a.texture.userData.frame.row,2);assert.equal(a.texture.userData.frame.column,0);assert.equal(a.weaponRoot,undefined);
-  for(let t=.04;t<.5;t+=.02)a.update({...s,phase:'windup'},0,t);assert.equal(a.visual.state,'attacking');assert.equal(a.texture.userData.frame.column,0);a.dispose();
+  a.update(s,0,0);await a.sheet.ready();a.update(s,0,.001);assert.equal(a.texture.userData.atlas.rows,16);assert.equal(a.weaponRoot,undefined);a.update({...s,phase:'windup'},0,.02);assert.equal(a.sheet.direction,2);assert.equal(a.sheet.frame,18);assert.equal(a.weaponRoot,undefined);
+  for(let t=.04;t<.5;t+=.02)a.update({...s,phase:'windup'},0,t);assert.equal(a.visual.state,'attacking');assert.equal(a.sheet.frame,18);a.dispose();
  }
 });
 test('exterior uses spatially bounded instances and keeps the terrain continuous',()=>{

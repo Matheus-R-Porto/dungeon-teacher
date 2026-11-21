@@ -1,0 +1,75 @@
+{
+  "iteration": 36,
+  "version": "0.6.9",
+  "generated": "2026-10-30T00:04:20.956Z",
+  "packages": {
+    "adm": {
+      "files": 1076,
+      "compared": 136,
+      "asarSha256": "18dd3983682f7f4a2ddff9cd0d32df0adb621903378e4d0bc89e1f9286f5a6f1",
+      "executableSha256": "f24dd5c7e5b4b654a633a39a48509ea9f190cf47f7eb9ca0f5cf9d2b3f50fda2",
+      "architecture": "x64",
+      "isolationVerified": true
+    },
+    "student": {
+      "files": 498,
+      "compared": 476,
+      "asarSha256": "c1ecdd794cb762e65ecdc0b8398513ed85a2ae2ca67b42594618e504b3c368f9",
+      "executableSha256": "1b57b3bd403eb7bca262faccdd318768b0a720af1b64fedf719076812a8240db",
+      "architecture": "x64",
+      "isolationVerified": true
+    }
+  },
+  "artifacts": [
+    {
+      "name": "Dungeon Teacher ADM-Iteracao36-0.6.9-Portable.exe",
+      "relativePath": "release/iteration36/adm/Dungeon Teacher ADM-Iteracao36-0.6.9-Portable.exe",
+      "version": "0.6.9",
+      "type": "portable",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111695241,
+      "sha256": "bdf85ac1fc59315a40b27a11a7c9445b34e14aae535f8af11ac03d8cae53ee91",
+      "generatedAt": "2026-10-29T23:09:14.470Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher ADM-Iteracao36-0.6.9-Setup.exe",
+      "relativePath": "release/iteration36/adm/Dungeon Teacher ADM-Iteracao36-0.6.9-Setup.exe",
+      "version": "0.6.9",
+      "type": "installer",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111925354,
+      "sha256": "df3fbd18aaed16888f224cf7ee4a957f76ebb1c2bfbb8f544ebf2279a3e32756",
+      "generatedAt": "2026-10-29T23:09:08.015Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao36-0.6.9-Portable.exe",
+      "relativePath": "release/iteration36/student/Dungeon Teacher-Iteracao36-0.6.9-Portable.exe",
+      "version": "0.6.9",
+      "type": "portable",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 243257345,
+      "sha256": "ccd993ec0598848866bfdeb348f1407c489dbd75326cddd49be8336445300425",
+      "generatedAt": "2026-10-30T00:04:20.577Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao36-0.6.9-Setup.exe",
+      "relativePath": "release/iteration36/student/Dungeon Teacher-Iteracao36-0.6.9-Setup.exe",
+      "version": "0.6.9",
+      "type": "installer",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 243487434,
+      "sha256": "e8aa95e7251ea399abc8680e5f3f0719c6521f36e382707b028f5ff81a072129",
+      "generatedAt": "2026-10-30T00:04:09.940Z",
+      "payloadVerified": true
+    }
+  ],
+  "ok": true,
+  "auditTemporaryDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt36-package-audit-36qmrY"
+}

@@ -1,0 +1,205 @@
+{
+  "iteration": 31,
+  "tests": {
+    "total": 811,
+    "passed": 811,
+    "failed": 0,
+    "seconds": 132.4188997
+  },
+  "build": true,
+  "runs": {
+    "escolar": {
+      "checks": [
+        "Turma fechada bloqueia login no cliente real",
+        "HUD e oito atalhos dentro da tela em 1024×768 e 1366×768",
+        "Prévia isolada e confirmação autoritativa da Árvore",
+        "Contagem visível e cancelamento real",
+        "Painel real com aluno conectado e turma correta",
+        "Bloqueio retorna o aluno à entrada",
+        "Compositor WebGL real: quatro armas × quatro direções × guardada/transição/empunhada; derrota sem armas",
+        "Prévias reais: seis classes × quatro direções, nove identidades, ambas as botas e equipamentos",
+        "Encerramento real de 60 segundos: 60108 ms; ouro preservado em SQLite",
+        "Servidor offline impede autenticação e entrada, sem alternativa offline"
+      ],
+      "screenshots": [
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\01-inicio.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\02-turma-fechada.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\03-criacao.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\04-mundo-hud.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\04-hud-1024.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\04-hud-1366.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\05-arvore.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\06-investimento-confirmado.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\07-encerramento.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\08-professor.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\09-bloqueio.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\10-bases-novice.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\10-bases-rogue.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\11-botas-warrior.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\11-botas-mage.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\12-identidade.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\13-equipamentos.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\17-arma-trainingSword.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\17-arma-trainingDagger.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\17-arma-trainingBow.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\17-arma-trainingStaff.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\18-derrota.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\14-contagem-turma-b.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\15-aula-encerrada.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-1793040999335\\16-servidor-offline.png"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "arte": {
+      "checks": [
+        "Compositor WebGL real: quatro armas × quatro direções × guardada/transição/empunhada; derrota sem armas",
+        "Prévias reais: seis classes × quatro direções, nove identidades, ambas as botas e equipamentos"
+      ],
+      "screenshots": [
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\10-bases-novice.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\10-bases-rogue.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\11-botas-warrior.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\11-botas-mage.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\12-identidade.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\13-equipamentos.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\17-arma-trainingSword.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\17-arma-trainingDagger.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\17-arma-trainingBow.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\17-arma-trainingStaff.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-art-1793041271014\\18-derrota.png"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "servicos": {
+      "checks": [
+        "Turma fechada bloqueia login no cliente real",
+        "HUD e oito atalhos dentro da tela em 1024×768 e 1366×768",
+        "Prévia isolada e confirmação autoritativa da Árvore",
+        "Serafina pela interação real: prévia sem cobrança, aparência, promoção com fixture autorizada, regressão, retorno e ambos resets; saldo e identidade preservados",
+        "Alimento real na hotbar produz buff e consome uma unidade"
+      ],
+      "screenshots": [
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\01-inicio.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\02-turma-fechada.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\03-criacao.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\04-mundo-hud.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\04-hud-1024.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\04-hud-1366.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\05-arvore.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\06-investimento-confirmado.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\19-serafina.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\20-previa-aparencia.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\21-mago-no-mundo.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\22-arvore-classes.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration31-services-1793042100430\\23-buff-alimentar.png"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "capacidade": {
+      "ok": true,
+      "checks": [
+        "60 contas, 30 por turma; 120 conexões transitórias de entrada no mesmo endereço IP",
+        "Fechar entrada da turma A preserva 60 jogadores conectados",
+        "Bloqueio individual remove somente o aluno selecionado; turma B continua"
+      ],
+      "errors": [],
+      "admissionMs": 360,
+      "maxPlayers": 60
+    },
+    "regressao-baus": {
+      "checks": [
+        "Real reward PNGs loaded",
+        "Exact offline gold and quantity",
+        "Offline item matches seed",
+        "Repeated skip cannot duplicate rewards",
+        "Result remains until acknowledged",
+        "Escape preserves chest and clears busy",
+        "Repeated opening, re-entry guard and keyboard skip",
+        "Fits 800×600",
+        "Fits 480×720",
+        "Fits 640×480",
+        "Offline save reload preserves all items, gold and seeds",
+        "Safety transition cancels only presentation, keeping chest",
+        "Save in progress blocks Escape",
+        "Save failure restores chest, seed, items and gold",
+        "Reduced motion skips cosmetic movement and grants once",
+        "Full inventory refuses without starting animation",
+        "Online presentation uses actual server result; replay rejected",
+        "Online result persisted in SQLite",
+        "Online reconnect retains reward without replay",
+        "Online save rejection preserves chest and reports failure",
+        "Lost online confirmation recovers saved reward on reconnect, without resending"
+      ],
+      "screenshots": [
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\01-inventory.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\02-closed.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\03-anticipation.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\04-crack.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\05-half.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\06-open.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\07-transition.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\08-reel.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\09-slowing.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\10-approaching.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\10-selected-saving.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\11-result.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\12-repeat-result.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\13-window-800x600.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\13-window-480x720.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\13-window-640x480.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\14-save-failure.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\15-reduced-motion.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\16-full-inventory.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\17-online-result.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\18-online-failure.png",
+        "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793041992609\\19-online-interrupted.png"
+      ],
+      "errors": [],
+      "reloadChangedFields": [
+        "exploration"
+      ],
+      "ok": true
+    }
+  },
+  "screenshots": [
+    "01-inicio.png",
+    "02-turma-fechada.png",
+    "03-criacao.png",
+    "04-hud-1024.png",
+    "04-hud-1366.png",
+    "04-mundo-hud.png",
+    "05-arvore.png",
+    "06-investimento-confirmado.png",
+    "07-encerramento.png",
+    "08-professor.png",
+    "09-bloqueio.png",
+    "10-bases-novice.png",
+    "10-bases-rogue.png",
+    "11-botas-mage.png",
+    "11-botas-warrior.png",
+    "12-identidade.png",
+    "13-equipamentos.png",
+    "14-contagem-turma-b.png",
+    "15-aula-encerrada.png",
+    "16-servidor-offline.png",
+    "17-arma-trainingBow.png",
+    "17-arma-trainingDagger.png",
+    "17-arma-trainingStaff.png",
+    "17-arma-trainingSword.png",
+    "18-derrota.png",
+    "19-serafina.png",
+    "20-previa-aparencia.png",
+    "21-mago-no-mundo.png",
+    "22-arvore-classes.png",
+    "23-buff-alimentar.png"
+  ],
+  "limitations": [
+    "No production deploy or accounts",
+    "No school hardware/FPS or 90-minute classroom soak",
+    "Capacity run used preauthenticated accounts",
+    "Future class content and individual forged-weapon art pending"
+  ]
+}

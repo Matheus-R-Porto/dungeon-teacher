@@ -1,0 +1,28 @@
+✔ configurable hotbar accepts only learned skills, swaps, clears and survives save (9.759ms)
+✔ local city shares geography and keeps reachable local services and safe entry (596.4384ms)
+✔ sprite walk keeps direction, phases do not reset on equal snapshots and weapon follows equipment (5.3637ms)
+✔ static batching retains world geometry, material, shadow flags and dynamic objects (17.4012ms)
+✔ 37 RV1: cart grip uses four walking phases and a separate stable rest pose (4.0301ms)
+✔ 37 RV1: death progresses through collapse and fall while keeping highest priority (0.7168ms)
+✔ 37 RV1: confirmed attack has follow-through and support has readable stages (0.5815ms)
+✔ 37 RV1: reconnecting to a corpse does not invent a second death; live transition animates (5.5915ms)
+✔ 37 RV1: contact remains in camera coordinates, without heading-based cart drift (4.7533ms)
+✔ 37 RV1: atlas dimensions stay bounded; new enemy and cart frames have complete grids (274.9156ms)
+✔ 37 visual: every skill has a semantic motion; passives do not invent actions (1.5839ms)
+✔ 37 visual: death, confirmed recoil and recovery override all attack inputs (0.2971ms)
+✔ 37 visual: arrow rain draws a bow; sacred strikes and magic areas cast (0.3418ms)
+✔ 37 visual: four distinct stride phases loop by distance in stored and held states (0.5542ms)
+✔ 37 visual: same family shares sheet despite armor, item rarity, colors and stored hair (3.6332ms)
+✔ 37 visual: rapid class changes and disposal release pending sheet references (0.7845ms)
+✔ 37 visual: inactive activities do not hide class art; real mining retains event pose (4.1934ms)
+✔ 37 visual: remote interpolation retains authorized action and impact without inventing it (1.2208ms)
+✔ 37 visual: all sixty family sheets and masks have the documented grid (201.8327ms)
+✔ 37 visual: cart wheels retain phase and contact while moving in four views (8.4855ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1109.4199

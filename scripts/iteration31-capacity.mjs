@@ -1,0 +1,18 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
+import WebSocket from '../server/node_modules/ws/wrapper.mjs';
+import {startHub} from '../server/hub.js';import {defaultAppearance} from '../src/domain/appearance.js';
+const directory=path.resolve('.logs/iteration31-capacity-'+Date.now());fs.mkdirSync(directory,{recursive:true});
+const sockets=[],report={ok:false,checks:[],errors:[]};let hub;
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function until(fn,timeout=10000){const start=Date.now();while(!fn()){if(Date.now()-start>timeout)throw Error('Capacity timeout');await wait(25);}}
+try{
+ hub=await startHub({school:true,port:0,worldDataDir:path.join(directory,'maps'),characterDataDir:path.join(directory,'characters'),log(){}});
+ const password='isolated-capacity-password-31';await hub.school.createAccount({username:'teacher',password,role:'teacher'});const teacher=await hub.school.login('teacher',password,'fixture');hub.school.admin(teacher.token,'open','A');hub.school.admin(teacher.token,'open','B');
+ const students=[];for(let i=0;i<60;i++){const username='student_'+i,account=await hub.school.createAccount({username,password,cohort:i<30?'A':'B'}),login=await hub.school.login(username,password,'fixture');hub.school.createCharacter(login.token,'Aprendiz '+i,defaultAppearance());students.push({account,token:login.token});}
+ const connect=(payload,type)=>new Promise((resolve,reject)=>{const ws=new WebSocket(`ws://127.0.0.1:${hub.port}/hub`,{origin:'dungeon://game'});sockets.push(ws);const timer=setTimeout(()=>reject(Error('Handshake timeout: '+type)),30000);ws.on('error',reject);ws.once('close',(code,reason)=>{clearTimeout(timer);reject(Error('Connection closed during '+type+': '+code+' '+reason));});ws.on('open',()=>ws.send(JSON.stringify(payload)));ws.on('message',raw=>{const m=JSON.parse(raw);if(m.type==='server:error')reject(Error(m.message));if(m.type==='world:snapshot')report.maxPlayers=Math.max(report.maxPlayers??0,m.players.length);if(m.type===type||type==='school'&&m.school){clearTimeout(timer);resolve(ws);}});});
+ const started=Date.now();const controls=await Promise.all(students.map((s,i)=>connect({school:1,id:'status-'+i,action:'status'},'school')));
+ const worlds=await Promise.all(students.map(s=>connect({v:4,type:'world:hello',name:'Aluno teste',credential:s.token},'world:welcome')));report.admissionMs=Date.now()-started;for(const ws of controls)ws.close();
+ await until(()=>report.maxPlayers===60);assert.equal([...hub.online.people.values()].filter(p=>p.ws).length,60);assert.equal(hub.online.failed,false);report.checks.push('60 contas, 30 por turma; 120 conexões transitórias de entrada no mesmo endereço IP');
+ hub.school.admin(teacher.token,'close','A');await wait(1200);assert.equal([...hub.online.people.values()].filter(p=>p.ws).length,60);report.checks.push('Fechar entrada da turma A preserva 60 jogadores conectados');
+ hub.school.admin(teacher.token,'block',students[0].account.id);await until(()=>worlds[0].readyState===WebSocket.CLOSED);await wait(500);assert.equal([...hub.online.people.values()].filter(p=>p.ws).length,59);assert.equal(worlds[30].readyState,WebSocket.OPEN);assert.equal(hub.online.failed,false);report.checks.push('Bloqueio individual remove somente o aluno selecionado; turma B continua');report.ok=true;
+}catch(error){report.errors.push(error.stack);}finally{for(const ws of sockets)ws.terminate();await hub?.close();fs.writeFileSync(path.join(directory,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({...report,directory}));process.exitCode=report.ok?0:1;}

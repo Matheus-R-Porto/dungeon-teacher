@@ -1,0 +1,58 @@
+[
+  {
+    "path": "electron-builder.adm.yml",
+    "sha256": "059265d4fbcd8aa566e21c82e6678ca9030082d15c3d6f45200e6963edb911ca"
+  },
+  {
+    "path": "electron-builder.student.yml",
+    "sha256": "2ab7eb3eeee55a5b7b9d9612ca81b4f0acd3cb3760c655bae06f53aa6a70ee26"
+  },
+  {
+    "path": "scripts/iteration33-electron.mjs",
+    "sha256": "cc5ed914d4b370a1cf44d2d86e39212a9fbc4d7f99f2d8f79e6289e650a9a43f"
+  },
+  {
+    "path": "scripts/iteration34/electron.mjs",
+    "sha256": "beecc8b91adc3c66aedf23db678bb503fd23ae35c807ab895e2a759cce5c848a"
+  },
+  {
+    "path": "scripts/package34-electron.mjs",
+    "sha256": "0ac3c33a924b5c2210fd6f6972e69b530686244a86a77cdebbb6363babde65fb"
+  },
+  {
+    "path": "scripts/verify-iteration34-packages.cjs",
+    "sha256": "d21852e3f21dae87324eb7af6769115f9b7cfe41d72856ab88e9ae1a4be5dd14"
+  },
+  {
+    "path": "README.md",
+    "sha256": "3b51f04826fbe89c187bc4d18620f9fa286c81655968df0de5eba0b1526b3a8d"
+  },
+  {
+    "path": "RELATORIOS.md",
+    "sha256": "97786f118cddba0fe805d4d6138cb03b7c065d490779043002ffeb52a0725c8a"
+  },
+  {
+    "path": "docs/ITERACAO-34-EMPACOTAMENTO.md",
+    "sha256": "8f3c28a07ee8dff366051dea11a1747c82efde2ed300f094beb2c6ab69dff55b"
+  },
+  {
+    "path": "docs/ITERACAO-34-DISTRIBUICAO.md",
+    "sha256": "d00d829996e4cd0a750a8ee0cd1ed394ceb8e56cbff0074cbf77d17cbb0b6857"
+  },
+  {
+    "path": "docs/ITERACAO-34-EMPACOTAMENTO-CAPTURAS.html",
+    "sha256": "0c189de34552eb57066a9040978289bd3b3f0ffe99dfe317a4c94defce111da3"
+  },
+  {
+    "path": "docs/ITERACAO-34-TESTE-LAN.md",
+    "sha256": "4f2fb224ccedf2ba60f0471a92212b82ea034d50cad1523254cdd4be1fd18d9c"
+  },
+  {
+    "path": "release/iteration34/manifest.json",
+    "sha256": "fe5bcc199f51925cd2fb61fc8c1cfe80fae4f5a02c17e33bd7eb3fafd4d8692f"
+  },
+  {
+    "path": "release/iteration34/SHA256SUMS.txt",
+    "sha256": "ed6ac0597475bdf24eb462e983c7fa063ea2c515dd345dc6b52407e29077619d"
+  }
+]

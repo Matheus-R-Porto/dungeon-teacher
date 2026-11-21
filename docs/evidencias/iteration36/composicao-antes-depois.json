@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "version": "before",
+      "cls": "novice",
+      "coldMs": 656.5,
+      "warmMs": 0.10000000149011612,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "before",
+      "cls": "warrior",
+      "coldMs": 350.19999999925494,
+      "warmMs": 0.10000000149011612,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "before",
+      "cls": "archer",
+      "coldMs": 353.19999999925494,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "before",
+      "cls": "rogue",
+      "coldMs": 320.8999999985099,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "before",
+      "cls": "priest",
+      "coldMs": 323.19999999925494,
+      "warmMs": 0.10000000149011612,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "before",
+      "cls": "mage",
+      "coldMs": 289.4000000022352,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "after",
+      "cls": "novice",
+      "coldMs": 472.80000000074506,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "after",
+      "cls": "warrior",
+      "coldMs": 373.0999999977648,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "after",
+      "cls": "archer",
+      "coldMs": 378.8999999985099,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "after",
+      "cls": "rogue",
+      "coldMs": 356,
+      "warmMs": 0.10000000149011612,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "after",
+      "cls": "priest",
+      "coldMs": 366.5,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    },
+    {
+      "version": "after",
+      "cls": "mage",
+      "coldMs": 390.6000000014901,
+      "warmMs": 0,
+      "atlasBytes": 6291456
+    }
+  ]
+}

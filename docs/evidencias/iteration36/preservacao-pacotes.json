@@ -1,0 +1,42 @@
+[
+  {
+    "path": "release/iteration33/adm/Dungeon Teacher ADM-Iteracao33-0.6.9-Portable.exe",
+    "sha256": "9cd283d62fa363c4eb8d58b9510fc9c4c804077a9d0ff92f0f19e81ff849b5bc",
+    "verified": true
+  },
+  {
+    "path": "release/iteration33/adm/Dungeon Teacher ADM-Iteracao33-0.6.9-Setup.exe",
+    "sha256": "2bad790c8282be7c884b85aaf13749f4df0f589468526d1eb804bdd292ccd093",
+    "verified": true
+  },
+  {
+    "path": "release/iteration33/student/Dungeon Teacher-Iteracao33-0.6.9-Portable.exe",
+    "sha256": "8636f850b5ae996d5b1b3bcc93f9c9d212c15bac05d2e2538605fef0608c77e1",
+    "verified": true
+  },
+  {
+    "path": "release/iteration33/student/Dungeon Teacher-Iteracao33-0.6.9-Setup.exe",
+    "sha256": "5c5aab6e40891cd78555e49ac12f1110c811a0cd5899f0210864be99b2fa527f",
+    "verified": true
+  },
+  {
+    "path": "release/iteration34/adm/Dungeon Teacher ADM-Iteracao34-0.6.9-Portable.exe",
+    "sha256": "fd234d9d1faf4d47100f53062fef36d30e65e9485cefbdbba44b398b94d326a7",
+    "verified": true
+  },
+  {
+    "path": "release/iteration34/adm/Dungeon Teacher ADM-Iteracao34-0.6.9-Setup.exe",
+    "sha256": "a4a2acac69e47f8983311ad431af26834e98ea00e511e144b5fe0b84bfe2f292",
+    "verified": true
+  },
+  {
+    "path": "release/iteration34/student/Dungeon Teacher-Iteracao34-0.6.9-Portable.exe",
+    "sha256": "a2ccec013bd75a33418ab189c000f689acc75c469d446d8f16f84bcee83a5d93",
+    "verified": true
+  },
+  {
+    "path": "release/iteration34/student/Dungeon Teacher-Iteracao34-0.6.9-Setup.exe",
+    "sha256": "fbd63a1d204dab47c15638fdb3c4d8d75619c78846049cdcad3ad94567e10bbd",
+    "verified": true
+  }
+]

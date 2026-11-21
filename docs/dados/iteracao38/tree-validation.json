@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "checks": [
+    "Novato tem dez habilidades",
+    "Fundo azul claro",
+    "Arte subordinada aos ícones",
+    "Hover informa bônus real sem gastar",
+    "Aguarda confirmação antes de mostrar aprendido",
+    "Clique investe um ponto confirmado",
+    "Rejeição conserva pontos",
+    "Setas navegam pelos medalhões",
+    "warrior conserva dez raízes e dezesseis nós da classe",
+    "warrior investe pontos da classe no Novato",
+    "archer conserva dez raízes e dezesseis nós da classe",
+    "archer investe pontos da classe no Novato",
+    "rogue conserva dez raízes e dezesseis nós da classe",
+    "rogue investe pontos da classe no Novato",
+    "priest conserva dez raízes e dezesseis nós da classe",
+    "priest investe pontos da classe no Novato",
+    "mage conserva dez raízes e dezesseis nós da classe",
+    "mage investe pontos da classe no Novato",
+    "Zoom mantém arte e áreas interativas juntas",
+    "Janela pequena mantém navegação e detalhes",
+    "Promoção real produz copa e preserva raízes",
+    "Painel contido na janela maximizada",
+    "Modal fecha"
+  ],
+  "errors": []
+}

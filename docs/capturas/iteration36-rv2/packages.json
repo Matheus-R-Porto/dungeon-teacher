@@ -1,0 +1,76 @@
+{
+  "iteration": 36,
+  "revision": "Revisão Visual 2",
+  "version": "0.6.10",
+  "generated": "2026-10-31T23:34:09.936Z",
+  "packages": {
+    "adm": {
+      "files": 1079,
+      "compared": 139,
+      "asarSha256": "1d6676bbc7d562bbfa0c05d396cbbb14adc483a5ef8d14b8b44d12b2a281a0a5",
+      "executableSha256": "f66aa29888400e32f390eba6c6349c9e14f569125911de99936b1ce6d28f1610",
+      "architecture": "x64",
+      "isolationVerified": true
+    },
+    "student": {
+      "files": 498,
+      "compared": 476,
+      "asarSha256": "46ad819f2768dbdac369248d52ee5e7f30eb7279a623b1bf6c7ff312936e95ef",
+      "executableSha256": "de930393f828bdab53388a9ee5bad88e0f0c6765bcf3ecf85400a2c775527e87",
+      "architecture": "x64",
+      "isolationVerified": true
+    }
+  },
+  "artifacts": [
+    {
+      "name": "Dungeon Teacher ADM-Iteracao36-RevisaoVisual2-0.6.10-Portable.exe",
+      "relativePath": "release/iteration36-rv2/adm/Dungeon Teacher ADM-Iteracao36-RevisaoVisual2-0.6.10-Portable.exe",
+      "version": "0.6.10",
+      "type": "portable",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111698208,
+      "sha256": "4e1c35fb6e1f812c326372ada2d5804c70217c3450c803f79c0c2d8b38f2e623",
+      "generatedAt": "2026-10-31T23:34:09.516Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher ADM-Iteracao36-RevisaoVisual2-0.6.10-Setup.exe",
+      "relativePath": "release/iteration36-rv2/adm/Dungeon Teacher ADM-Iteracao36-RevisaoVisual2-0.6.10-Setup.exe",
+      "version": "0.6.10",
+      "type": "installer",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111928214,
+      "sha256": "785b546a1ad88964bdc94ef6410fa67ab308f02b92a070035473bb27273ac69c",
+      "generatedAt": "2026-10-31T23:34:01.672Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao36-RevisaoVisual2-0.6.10-Portable.exe",
+      "relativePath": "release/iteration36-rv2/student/Dungeon Teacher-Iteracao36-RevisaoVisual2-0.6.10-Portable.exe",
+      "version": "0.6.10",
+      "type": "portable",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 243260862,
+      "sha256": "bfc30c0bcd7c7f1722dc948838b946da9cc2f1245ee0708a889d78dd2125e473",
+      "generatedAt": "2026-10-31T23:32:45.100Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao36-RevisaoVisual2-0.6.10-Setup.exe",
+      "relativePath": "release/iteration36-rv2/student/Dungeon Teacher-Iteracao36-RevisaoVisual2-0.6.10-Setup.exe",
+      "version": "0.6.10",
+      "type": "installer",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 243490846,
+      "sha256": "a5f6c8c8f759a1b5954acc094f184985150e0fcfd39afeac3ebe241d20fa1159",
+      "generatedAt": "2026-10-31T23:32:27.436Z",
+      "payloadVerified": true
+    }
+  ],
+  "ok": true,
+  "auditTemporaryDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt36-package-audit-h8N0Js"
+}

@@ -33,7 +33,7 @@ test('D/E: portal validation, independent populations, up/down and area epoch pr
  travel(tower,a,'abandon-run');assert.equal(p.mapId,FLOOR_IDS[0]);assert.notEqual(p.epoch,old.epoch);assert.equal(input(tower,a,{kind:'move',x:1,z:0},old),null);assert.equal(p.axis.x,0);assert.equal(w1.players.size,2);assert.equal(w2.players.size,0);
 });
 test('F/G: enemies lose transferred targets; reconnect has exactly one owning area',t=>{
- const tower=new SharedTower({directory:directory(t)}),a=join(tower),p=a.worldPlayer,w=tower.world(p.mapId),e=w.enemies[0];e.targetId=p.id;e.state='chasing';p.target={id:e.id,generation:0};travel(tower,a);assert.equal(e.targetId,null);assert.equal(e.state,'returning');assert.equal(p.target,null);
+ const tower=new SharedTower({directory:directory(t)}),a=join(tower),p=a.worldPlayer,w=tower.world(p.mapId),e=w.enemies[0];e.targetId=p.id;e.state='chasing';p.target={id:e.id,generation:0};travel(tower,a);assert.equal(e.targetId,null);assert.equal(e.state,'idle');assert.equal(e.path.length,0);assert.equal(p.target,null); // Iteration 36: lost targets resume exploration.
  tower.leave(a);const replacement={close(){}};tower.join(replacement,'Viajante',p.token);assert.equal(replacement.worldPlayer,p);assert.equal(p.mapId,FLOOR_IDS[1]);tower.leave(a);assert.equal([...tower.worlds.values()].reduce((n,w)=>n+w.players.size,0),1);assert.throws(()=>input(tower,a,{kind:'stop'}),/inativa/);
 });
 test('transition failure never publishes membership in an invalid destination',t=>{

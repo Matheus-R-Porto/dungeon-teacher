@@ -25,11 +25,11 @@ test('local city shares geography and keeps reachable local services and safe en
  for(const id of ['weaponsmith','cook','cooking-station','forge','tower-portal']){const target=local.interactables.find(i=>i.id===id),point={x:target.x,z:target.z+1.2};assert.ok(findPath(local,local.spawn,point,.32)?.length,'reachable '+id);}
  assert.equal(local.interactables.find(i=>i.id==='tower-portal').content.areaId,'tower-floor-1');assert.equal(city.interactables[0].content.areaId,'shared-floor-1');
 });
-test('sprite walk keeps direction, phases do not reset on equal snapshots and weapon follows equipment',()=>{
+test('sprite walk keeps direction, phases do not reset on equal snapshots and weapon follows equipment',async()=>{
  const a=new SpriteActor(new THREE.Scene());const state={x:0,z:0,heading:Math.PI,moving:true,hp:100,weaponType:'bow',phase:'idle'};
- a.update(state,0,1,false);const row=a.texture.offset.y;a.update(state,0,1.3,false);assert.equal(a.texture.offset.y,row);assert.equal(a.texture.userData.atlas.columns,6);
+ a.update(state,0,1,false);await a.sheet.ready();a.update(state,0,1,false);const row=a.texture.offset.y;a.update(state,0,1.3,false);assert.equal(a.texture.offset.y,row);assert.equal(a.texture.userData.atlas.columns,9);
  a.update({...state,phase:'windup'},0,2,false);a.update({...state,phase:'windup'},0,2.1,false);assert.equal(a.phaseAt,2);assert.equal(a.visual.state,'drawing');assert.equal(a.weaponRoot,undefined);
- a.update({...state,hp:0},0,3,false);assert.equal(a.texture.userData.frame.column,7);assert.equal(a.weaponRoot,undefined);a.dispose();
+ a.update({...state,hp:0},0,3,false);assert.equal(a.sheet.frame,13);a.update({...state,hp:0},0,3.2,false);assert.equal(a.sheet.frame,15);a.update({...state,hp:0},0,3.4,false);assert.equal(a.sheet.frame,32);assert.equal(a.weaponRoot,undefined);a.dispose();
 });
 test('static batching retains world geometry, material, shadow flags and dynamic objects',async()=>{
  const {batchStatic}=await import('../src/adapters/rendering/static-batch.js');const scene=new THREE.Group();scene.position.set(4,0,2);const mat=new THREE.MeshStandardMaterial(),nodes=[];

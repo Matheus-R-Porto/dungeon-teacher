@@ -1,0 +1,4 @@
+{
+  "frontPhaseOffset": 2,
+  "reason": "Keep anatomical left/right phase stable when facing changes; screen-left is character-right in front view."
+}

@@ -1,10 +1,12 @@
+import {classValue} from '../abilities/class-skills.js';
+import {jobBonuses} from './job-progress.js';
 import {foodStats} from '../food.js';
 import {equipmentStats} from '../items/inventory.js';
 import { ATTRIBUTES, BALANCE, CLASS_DEFINITIONS } from './balance.js';
 export const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
 export function calculateStats(data, sources = {}, now=Date.now()) {
   const a={...data.attributes}, bonuses={};
-  const layers=[equipmentStats(data),foodStats(data,now),CLASS_DEFINITIONS[data.classId]?.modifiers??{},sources.equipment??{},sources.buffs??{},sources.other??{}];
+  const layers=[jobBonuses(data),equipmentStats(data),foodStats(data,now),CLASS_DEFINITIONS[data.classId]?.modifiers??{},sources.equipment??{},sources.buffs??{},sources.other??{}];
   for(const layer of layers){
     for(const [key,value] of Object.entries(layer.attributes??{})){if(!(Object.hasOwn(ATTRIBUTES,key))||!Number.isFinite(value))throw Error('Modificador de atributo inválido.');a[key]+=value;}
     for(const [key,value] of Object.entries(layer.stats??{})){if(!(Object.hasOwn(BALANCE.base,key))||!Number.isFinite(value))throw Error('Modificador de estatística inválido.');bonuses[key]=(bonuses[key]??0)+value;}
@@ -18,6 +20,7 @@ export function calculateStats(data, sources = {}, now=Date.now()) {
     criticalChance:b.criticalChance+a.luk*c.criticalLuk,carryCapacity:b.carryCapacity+a.str*c.carryStr,
     hpRegen:b.hpRegen+a.vit*c.regenVit,mpRegen:b.mpRegen+a.int*c.regenInt};
   for(const key of Object.keys(stats)){stats[key]=Math.max(0,stats[key]+(bonuses[key]??0));if(BALANCE.limits[key])stats[key]=clamp(stats[key],...BALANCE.limits[key]);}
+  stats.maxHP*=1+(classValue(data,'ironVitality').hpPercent??0);stats.maxMP*=1+(classValue(data,'arcaneReserve').mpPercent??0);
   stats.maxHP=Math.max(1,Math.floor(stats.maxHP));stats.maxMP=Math.floor(stats.maxMP);stats.carryCapacity=Math.floor(stats.carryCapacity);
   return stats;
 }

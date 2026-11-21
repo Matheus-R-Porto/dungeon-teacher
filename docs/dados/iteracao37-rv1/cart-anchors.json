@@ -1,0 +1,42 @@
+{
+  "cell": 128,
+  "scale": 0.66,
+  "hand": [
+    [
+      33,
+      70
+    ],
+    [
+      59,
+      71
+    ],
+    [
+      63,
+      70
+    ],
+    [
+      35,
+      71
+    ]
+  ],
+  "shaft": [
+    [
+      53,
+      69
+    ],
+    [
+      15,
+      55
+    ],
+    [
+      78,
+      49
+    ],
+    [
+      113,
+      55
+    ]
+  ],
+  "ground": "same scale as 0.6.11; front behind body, back/side foreground",
+  "assembly": "reused cart box and wheels; separately redrawn shafts/grips, no gameplay offset"
+}

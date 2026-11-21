@@ -13,7 +13,7 @@ export class InterfaceSafety {
     eventTarget.addEventListener('blur',e=>{if(e.target===eventTarget){this.held.clear();this.suppressed.clear();}},options);
   }
   register(id,entry){this.entries.set(id,entry);return ()=>{if(this.entries.get(id)===entry)this.entries.delete(id);};}
-  registerDialog(dialog){if(!dialog)return ()=>{};dialog.dataset.explorationInterface='';return this.register(dialog,{isOpen:()=>dialog.open,close:()=>dialog.close()});}
+  registerDialog(dialog){if(!dialog)return ()=>{};dialog.dataset.explorationInterface='';return this.register(dialog,{isOpen:()=>dialog.open,close:reason=>dialog.closeForSafety?dialog.closeForSafety(reason):dialog.close()});}
   has(dialog){return this.entries.has(dialog);}
   hit(event){return event?.hit===true&&this.isDangerous()?this.close('hit'):0;}
   close(reason='critical'){

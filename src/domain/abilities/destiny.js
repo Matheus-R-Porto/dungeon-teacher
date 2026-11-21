@@ -10,6 +10,7 @@ export function destinyNodes(data){
 }
 export function editDestiny(data,action){
  if(action.kind==='restore'){if(data.hotbar===undefined)data.hotbar=normalizeHotbar(action.slots,data.knownAbilities);return;}
+ if(action.kind==='learn'&&data.jobs)throw Error('Prepare e confirme os investimentos na nova Árvore do Destino.');
  if(action.kind==='learn'){const slots=normalizeHotbar(data.hotbar,data.knownAbilities);if(learnAbility({data},action.id))data.hotbar=slots;return;}
  if(action.kind==='assign'){assignHotbar(data,action.slot,action.id);return;}
  if(action.kind==='replace'){

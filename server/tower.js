@@ -29,9 +29,9 @@ export class SharedTower {
   let spawn=dest.map.spawn;
   if(dest.map.floorId<old.map.floorId){const near={x:dest.map.portal.x,z:dest.map.portal.z+2};if(canStand(dest.map,near.x,near.z,.32))spawn=near;}
   const game=new Game({...dest.map,spawn});game.world=dest.map;
-  old.leave(ws);old.tokens.delete(p.token);p.game=game;p.cycle=new AttackCycle();p.deathAt=null;p.mapId=dest.map.id;p.epoch=randomUUID();p.seq=0;p.target=null;p.axis={x:0,z:0};p.ws=ws;p.expires=Infinity;p.inputAt=dest.time;
+  old.leave(ws);old.tokens.delete(p.token);p.game=game;p.cycle=new AttackCycle();p.deathAt=null;p.impactState=null;p.basicConfirmedAt=null;p.mapId=dest.map.id;p.epoch=randomUUID();p.seq=0;p.target=null;p.axis={x:0,z:0};p.ws=ws;p.expires=Infinity;p.inputAt=dest.time;
   dest.players.set(p.id,p);dest.tokens.set(p.token,p);return this.welcome(p);
  }
  step(){for(const w of this.worlds.values()){if(w.players.size||w.tokens.size)w.step();}}
- snapshot(p){return {...this.worlds.get(p.mapId).snapshot(),v:3,epoch:p.epoch};}
+ snapshot(p,shared){return {...(shared??this.worlds.get(p.mapId).snapshot()),v:3,epoch:p.epoch};}
 }

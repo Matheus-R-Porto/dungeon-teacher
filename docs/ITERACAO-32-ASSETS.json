@@ -1,0 +1,532 @@
+{
+  "iteration": 32,
+  "date": "2026-10-28",
+  "createdSkillIcons": 80,
+  "createdSupplyIcons": 4,
+  "existingClassBodiesReused": [
+    "novice",
+    "warrior",
+    "archer",
+    "rogue",
+    "priest",
+    "mage"
+  ],
+  "files": [
+    {
+      "path": "public/assets/items/class-v32/arrows.svg",
+      "sha256": "5662bf510d7c09e4aba1971b0f910ac4d5c800afac330c9f740b94ada5936c83"
+    },
+    {
+      "path": "public/assets/items/class-v32/pairedDaggers.svg",
+      "sha256": "f4d6a19e78d8027feb294b170ffd9311aac84dec79015fff902a1777db76d877"
+    },
+    {
+      "path": "public/assets/items/class-v32/unwaveringCharm.svg",
+      "sha256": "d06a3099ac01be40442661ec89055e2344df1d9a266b38b827afa15d9abb4dce"
+    },
+    {
+      "path": "public/assets/items/class-v32/woodenShield.svg",
+      "sha256": "d854b340c199bd6dc81cfd9e29de3c63d9c9ac8bedfdb21878b2ce620465322f"
+    },
+    {
+      "path": "public/assets/skills-v32/acceleratedCasting.svg",
+      "sha256": "47435b724d1348b07b9ff1b7dd72d4f3c667bb5942da84adfa1ddbe62e66764e"
+    },
+    {
+      "path": "public/assets/skills-v32/acceleratedRhythm.svg",
+      "sha256": "17d1c3d1e375595a23f4b3d360d88f7dee9ef7aa8c59a395e76b315435cecc3d"
+    },
+    {
+      "path": "public/assets/skills-v32/aggressiveStance.svg",
+      "sha256": "a1e7f0deaa349bc3c5c34ef33426f5e28b64d1f46842656c5b03662c9715511a"
+    },
+    {
+      "path": "public/assets/skills-v32/agileShot.svg",
+      "sha256": "4d11bab7d1eeff85958be332cb22192c4e6d4cd80df5fc8ff5b9fb933b9b6c92"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneBarrier.svg",
+      "sha256": "65f20c8fad874095d5f1b0209469e04f53492965dfa03822349c18c9dcfdd4b1"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneFlow.svg",
+      "sha256": "5c08c18f3a641cdb3b9e475b640476e58b9f837c03305d51919a3c415b77442d"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneMeditation.svg",
+      "sha256": "9c23f8959d3d88231913f3826b5e2850c45fbd2b4c5835a271c86257aa756637"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneOverload.svg",
+      "sha256": "7c390c174e4774fde130092b63e7580d559aac33e66a043956c7c7912e660e27"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneReserve.svg",
+      "sha256": "bcfc2a9a0d40b05c2d116f03c42ece3d961cceed67aad4951c4471eafc7e3be5"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneStep.svg",
+      "sha256": "aa0030b6b67fe44f6ad48d8b461c297e4d5ea2e311cd624ee514feb0ca93f57b"
+    },
+    {
+      "path": "public/assets/skills-v32/arcaneTrinity.svg",
+      "sha256": "40471ed0e0765605c13830571aaf53152383c4eaf74ca33f7155747ee03b6b1a"
+    },
+    {
+      "path": "public/assets/skills-v32/arrowConservation.svg",
+      "sha256": "6d59dd4a9c82194f9006dd79d9c7daa5cf53f3448268490a79011749629cc9e0"
+    },
+    {
+      "path": "public/assets/skills-v32/arrowRain.svg",
+      "sha256": "5662bf510d7c09e4aba1971b0f910ac4d5c800afac330c9f740b94ada5936c83"
+    },
+    {
+      "path": "public/assets/skills-v32/battleRhythm.svg",
+      "sha256": "7aaf0f43427c1063a46e10aaf6646ccfdebbf2d38d32c3f3e7f09c591972f7d9"
+    },
+    {
+      "path": "public/assets/skills-v32/bladeDance.svg",
+      "sha256": "4137c2d568a2f40f88e5a1da725cc04e34fca67dad20b7192c4b8611583c4f59"
+    },
+    {
+      "path": "public/assets/skills-v32/breakingStrike.svg",
+      "sha256": "654fd4ad86195fdc0a4691c992efd2bd83a2855498c00437b7f0ae59082d4445"
+    },
+    {
+      "path": "public/assets/skills-v32/chainLightning.svg",
+      "sha256": "b78fa2fb0128b4185c219153af9bd886c6487000e68e61ce8636cfd024810603"
+    },
+    {
+      "path": "public/assets/skills-v32/combatBreath.svg",
+      "sha256": "48f6bea019533806a84eb2b17e06d94abc1ad6fbbf282c572a16c093774e6c0a"
+    },
+    {
+      "path": "public/assets/skills-v32/concealment.svg",
+      "sha256": "a18170b6d95d3e886a62bf105d910049f90dccab5393d724be7b747edf822854"
+    },
+    {
+      "path": "public/assets/skills-v32/condemnationSeal.svg",
+      "sha256": "9c8af4d98631b46f8627c9d4909db136ffae872663be0884f233a85e8ffa4771"
+    },
+    {
+      "path": "public/assets/skills-v32/consecratedWeapon.svg",
+      "sha256": "a834bbcc282538bda3665cd84183262f1cfe097a5a09fd1bfdbbf42498af3327"
+    },
+    {
+      "path": "public/assets/skills-v32/conviction.svg",
+      "sha256": "c8b28dbbf9e8bc70a7a23fe609a3e7e64c63fd52e9b7ecd75a9b86a04ffc6e6e"
+    },
+    {
+      "path": "public/assets/skills-v32/counterAttack.svg",
+      "sha256": "d854b340c199bd6dc81cfd9e29de3c63d9c9ac8bedfdb21878b2ce620465322f"
+    },
+    {
+      "path": "public/assets/skills-v32/courageBlessing.svg",
+      "sha256": "9e8d6fbb838ea86c36d2264675802c9a118a78d8e184095bc537d0fedbb3fcad"
+    },
+    {
+      "path": "public/assets/skills-v32/daggerSequence.svg",
+      "sha256": "f4d6a19e78d8027feb294b170ffd9311aac84dec79015fff902a1777db76d877"
+    },
+    {
+      "path": "public/assets/skills-v32/defensiveConcentration.svg",
+      "sha256": "d06a3099ac01be40442661ec89055e2344df1d9a266b38b827afa15d9abb4dce"
+    },
+    {
+      "path": "public/assets/skills-v32/discreetPresence.svg",
+      "sha256": "f10dbda7b89a518e2c28f191e562218e5e48390bc94c1dda22d0d6ef1146bfc3"
+    },
+    {
+      "path": "public/assets/skills-v32/distanceMastery.svg",
+      "sha256": "e64f8c6cf1c58ade413304027a88a11f9110ede430c78b347cab38714ad2c5c4"
+    },
+    {
+      "path": "public/assets/skills-v32/divineProtection.svg",
+      "sha256": "0ac38e11befb8a50a1610f03c2c56ecfaa6169b1be638503db43e470a3618255"
+    },
+    {
+      "path": "public/assets/skills-v32/eagleEyes.svg",
+      "sha256": "be04cd8b5dddbca4499cba6751b1600022a4dcbafa3a92407ab90f1451bb8446"
+    },
+    {
+      "path": "public/assets/skills-v32/elementalMastery.svg",
+      "sha256": "37cd63adb06cd32a3a2133fdcb181ba819c14863cf0280786a2ac781f1e8a3c3"
+    },
+    {
+      "path": "public/assets/skills-v32/enduringResistance.svg",
+      "sha256": "ba0e9676111abf0e7966f9f3acee349682511e6d52c450dc10e67c28f8f595b4"
+    },
+    {
+      "path": "public/assets/skills-v32/faithMiracle.svg",
+      "sha256": "873b9230e3acb6e39f5e2da39c0e4026bd190fc96bfc595104825031898d6bb5"
+    },
+    {
+      "path": "public/assets/skills-v32/finalDetermination.svg",
+      "sha256": "8693e73c22b4b1f8c8352613916637fe627ba4fa0c8c3ec5ddfc96e5640226de"
+    },
+    {
+      "path": "public/assets/skills-v32/fireball.svg",
+      "sha256": "d47e295186226a6fbd7aaca76841364aea91fb1b72e8361bddfb23215ec9e288"
+    },
+    {
+      "path": "public/assets/skills-v32/focusedShot.svg",
+      "sha256": "30b3f37eb498775bd674f99c071a4c10f0f422f83da4d7d4c698eb6d0da4eafb"
+    },
+    {
+      "path": "public/assets/skills-v32/glacialExplosion.svg",
+      "sha256": "33810a03ca303a8b1e0cfa0cbe8a148c0f71a3d85485d003293cfdfb18e743eb"
+    },
+    {
+      "path": "public/assets/skills-v32/growingMomentum.svg",
+      "sha256": "1170b7e607415ece627c68d5133b63e5a138bbea6803c84849cd2192f8b7237a"
+    },
+    {
+      "path": "public/assets/skills-v32/heal.svg",
+      "sha256": "cd22e7adc722f3104a9d0d9cca09e928720b6eb7bc0f7cd43b21763b8a382906"
+    },
+    {
+      "path": "public/assets/skills-v32/hopeAura.svg",
+      "sha256": "aa036b0882539f48e08fcf23421b8348b519664f4c4f9c2887fe36acd41e93b9"
+    },
+    {
+      "path": "public/assets/skills-v32/hunterReflexes.svg",
+      "sha256": "df0c7964a191f71080e536e461e840480a4c81eab86b8edbcd632a22c5e0fc0a"
+    },
+    {
+      "path": "public/assets/skills-v32/iceField.svg",
+      "sha256": "5c60664353b7be3047ae036f25f6ee833b6c03d9f9a3716ed308e2a89dfa21d7"
+    },
+    {
+      "path": "public/assets/skills-v32/iceLance.svg",
+      "sha256": "a5725ad7d295d7f58b6b628a603eaadcca1a502739ccb332780b446f65c05ef6"
+    },
+    {
+      "path": "public/assets/skills-v32/invisiblePredator.svg",
+      "sha256": "54b37db245464b026be23cd61367b13f86161387cfada385928d819ae11b2065"
+    },
+    {
+      "path": "public/assets/skills-v32/ironSkin.svg",
+      "sha256": "93d0dbba10b7f5ebb9da3929ba0a4fca71a65509faf10b05f3f62675b94ba440"
+    },
+    {
+      "path": "public/assets/skills-v32/ironVitality.svg",
+      "sha256": "9a4ed49d751ea94ae2fe5a2a00d0eaa233fdadb01a170cbfa317f7e615e8c56d"
+    },
+    {
+      "path": "public/assets/skills-v32/keenReflexes.svg",
+      "sha256": "b80dae7745949e8e9267307cdf4b29d23c3257c386a7e714b004e9c86fdf55b6"
+    },
+    {
+      "path": "public/assets/skills-v32/lethalPrecision.svg",
+      "sha256": "adc94b07abeb7cf113275a29c3b9f7bfc35753f28aa924026741be5afff7a0a8"
+    },
+    {
+      "path": "public/assets/skills-v32/lethalPreparation.svg",
+      "sha256": "0c7ccfd2d1946178a50835267c7752b96ec469961f7a98ad88435be2e3f61fe7"
+    },
+    {
+      "path": "public/assets/skills-v32/lightSteps.svg",
+      "sha256": "2e133606f27a2e9f8431fe9b526d37b9f7291c1636dd0d84208cc26fa773c6e4"
+    },
+    {
+      "path": "public/assets/skills-v32/magicProjectile.svg",
+      "sha256": "a5d76bad83dd4a7ca8825f00e4a7758de85bf26c42d92ad8617adb2573621bcc"
+    },
+    {
+      "path": "public/assets/skills-v32/persistentToxins.svg",
+      "sha256": "2e29b2b823b9c865e61fb69f632c47ba7c60c0ec8bf64770fa3e2906772ae95a"
+    },
+    {
+      "path": "public/assets/skills-v32/piercingShot.svg",
+      "sha256": "2ce393f8f8d2577788ec755ea0f90bf26f839bfda9f223fff89c3e7bd99c6045"
+    },
+    {
+      "path": "public/assets/skills-v32/poisonBlade.svg",
+      "sha256": "0426fa9d280245a9f53c3947cfaab527a41afd38d314fb075faee9d3062dca88"
+    },
+    {
+      "path": "public/assets/skills-v32/predatorInstinct.svg",
+      "sha256": "1a7563e7b65154f75a4abfb6f9bf96cbfea699f4d129c711a92f9fd07d71654a"
+    },
+    {
+      "path": "public/assets/skills-v32/punishingLight.svg",
+      "sha256": "506f7706f1606ec05a1d5041bb2d212ab82aba3ea0b4a8560f348f792f096735"
+    },
+    {
+      "path": "public/assets/skills-v32/purifyingTouch.svg",
+      "sha256": "378ad3781f7792cc59921921eaf13c3ba7273d7ae95fd0ba7a77f941027fc933"
+    },
+    {
+      "path": "public/assets/skills-v32/quickLunge.svg",
+      "sha256": "15c9905e37ba5ad01b8f0d3ed5a6729ed221d1704be205ac3f1bec9c2a64f992"
+    },
+    {
+      "path": "public/assets/skills-v32/redemptionLight.svg",
+      "sha256": "5e863947a06b5c8b9c2e3871a6e29b09e8043d88d25af6347bb56f409b783485"
+    },
+    {
+      "path": "public/assets/skills-v32/relentlessHunt.svg",
+      "sha256": "71d6573f322fd30c5498219228e5615c9f29b9e983be88578e4e97d5a543d168"
+    },
+    {
+      "path": "public/assets/skills-v32/renewal.svg",
+      "sha256": "23bb2e21d368cfb696ad1c17625c3e1c1180ad3b4ffdf187eef8ee2824a85888"
+    },
+    {
+      "path": "public/assets/skills-v32/retreatingShot.svg",
+      "sha256": "5a45c293a5ee818e045da23139f76c13ded47ca9bb0744f5ab804123ec5059df"
+    },
+    {
+      "path": "public/assets/skills-v32/sacredExpansion.svg",
+      "sha256": "48f770506b9fddc73720beab9e16d26f1c6db11f9c0c0857eb60546eb9e735a9"
+    },
+    {
+      "path": "public/assets/skills-v32/sacredKnowledge.svg",
+      "sha256": "9d1cfd5b0fa11d3b4d4d3707084b99581afc410df44db63a65e17457d5cf973f"
+    },
+    {
+      "path": "public/assets/skills-v32/sanctuary.svg",
+      "sha256": "77b76bc2343d06bf5e1485da6f352ad6eacb065da0304197fb8314cdf1d1da6b"
+    },
+    {
+      "path": "public/assets/skills-v32/secondWind.svg",
+      "sha256": "1d5db72de69756f52aa0800672edd2d6c66516b720bfa619e572370b37247be5"
+    },
+    {
+      "path": "public/assets/skills-v32/shadowStep.svg",
+      "sha256": "8e1b0323ea7fcd2935a33f8d4f4dba50c14366b6420f67c4e2b374008410d11f"
+    },
+    {
+      "path": "public/assets/skills-v32/slowingArrow.svg",
+      "sha256": "b3e079f41115368629a396de85dd9b72b79ff4c015d287923864ddf53dfdf266"
+    },
+    {
+      "path": "public/assets/skills-v32/surpriseAttack.svg",
+      "sha256": "ae1bcf7c996847eb438eaf0208a69d2fc64cae48fc99975854e4bab7f3419b68"
+    },
+    {
+      "path": "public/assets/skills-v32/tacticalRetreat.svg",
+      "sha256": "ef5c2440e07ef56862453efd688a0155fd8792dcbc7d87dab22b80c9aded0a67"
+    },
+    {
+      "path": "public/assets/skills-v32/taunt.svg",
+      "sha256": "d44e42a36269915ca2353d3e98fde4d4849a4fc6579b43acd5b2ad68f822156c"
+    },
+    {
+      "path": "public/assets/skills-v32/teleport.svg",
+      "sha256": "41cd1a419f727f167bcd2b94dc186f9a1542b8924f4704f27ac98583b8cd6874"
+    },
+    {
+      "path": "public/assets/skills-v32/toxicAmbush.svg",
+      "sha256": "4ce5c9a48ce6c9fe513a899a9467a921cff9199b578bbb30758ebac4f41d304f"
+    },
+    {
+      "path": "public/assets/skills-v32/transfixingArrow.svg",
+      "sha256": "cd4ae53216c6536c75270932a5dc83ab2b2b305ab476ca29ccc2bf13ae5ea332"
+    },
+    {
+      "path": "public/assets/skills-v32/treacherousBlow.svg",
+      "sha256": "dee5ed021e18b3fa0f263e8013fe78fe851f849b1e5d8ce449ed061c6b3ae6a6"
+    },
+    {
+      "path": "public/assets/skills-v32/unbreakableSpirit.svg",
+      "sha256": "98f828a8c577408a9b3495ecccbd97ff19bf27009a15afe479feeaf80e5fdfb9"
+    },
+    {
+      "path": "public/assets/skills-v32/unshakableStance.svg",
+      "sha256": "065b9312c22595c466f51b80335c86c8ff3e7ce627b3d1d0c5e9b77d93864c70"
+    },
+    {
+      "path": "public/assets/skills-v32/weakPointKnowledge.svg",
+      "sha256": "955c702b47203bdb22135a819f5c9fe6b1281a40de41dc2d120aed4dba3533ec"
+    },
+    {
+      "path": "public/assets/skills-v32/weaknessKnowledge.svg",
+      "sha256": "0f181aa927eb2795bbdf729ff8cd078a6623f2f50248ced4623d16547dba5012"
+    },
+    {
+      "path": "public/assets/skills-v32/weaponMastery.svg",
+      "sha256": "df06125b42ee53fa3c4e83dda34505734cd5265e88060892290bab64d4ae831f"
+    },
+    {
+      "path": "scripts/iteration32-art-resources.mjs",
+      "sha256": "eb9a56400cfc2133e1180d976a01a27073b7034c87432445bf4eb49810bd5e0a"
+    },
+    {
+      "path": "scripts/iteration32-doc-data.mjs",
+      "sha256": "56f70ecff6ff212118585fa9d8128b4e851fbea18331555b83627de4755dd787"
+    },
+    {
+      "path": "scripts/iteration32-electron.mjs",
+      "sha256": "5fc7c40d20081840dbfa353beac2a59401cd95e32a2e15c04763ff202624e718"
+    },
+    {
+      "path": "scripts/iteration32-vfx-probe.mjs",
+      "sha256": "1d2868982c432c7134a5fb7a7aac8718d9fd25d6cd3bd665c55e35f2e9b485bc"
+    },
+    {
+      "path": "server/class-combat.js",
+      "sha256": "340ec47aabfd0892e37aa1211924b7bce2bfac3787f3ff784a7c80c67573f8f6"
+    },
+    {
+      "path": "server/class-teleport.js",
+      "sha256": "d81cd444e9df37c7213ca5e5c96f9886d6c1ec138936780603a4ee3c21d02d12"
+    },
+    {
+      "path": "server/online-abilities.js",
+      "sha256": "345c77e671fb4b31c1d8452b4bb964d293e769121569970531352c6eeeca1369"
+    },
+    {
+      "path": "server/online-progression.js",
+      "sha256": "f52b5ea6fbb36a879ed7bd2b7936a7c15c0605ba41f666f024f9d3c57a4b8d5e"
+    },
+    {
+      "path": "server/online-tower.js",
+      "sha256": "0b7bcd0ba394eeb4dc3c8a8f8e0d45f74a51c337dbd4e91954afe6db34f5c022"
+    },
+    {
+      "path": "server/school-access.js",
+      "sha256": "f33ea3ebf50ddf1bbd6e3f2644e62500f09bec8a2aa2ff45b02e8fe98b6ac697"
+    },
+    {
+      "path": "server/world.js",
+      "sha256": "6d6ea1026d1cfe6fe1fc78f519d18901de8e580636f2f79f00459505b861fc6f"
+    },
+    {
+      "path": "shared/online.js",
+      "sha256": "e0c2d1e18bbba90f27b33871f6ddda876088335a7805d30eec2f264033f554fa"
+    },
+    {
+      "path": "src/adapters/rendering/class-vfx.js",
+      "sha256": "249ff8ffc4cbc3a3d5b60e890a9b2badb0f34841e26ad3a4bebbd80e5888bab4"
+    },
+    {
+      "path": "src/adapters/rendering/combat-visual.js",
+      "sha256": "745de4ec6e8483d4667dbaa9814545556a2f073695d9a67f0338a0bd03502653"
+    },
+    {
+      "path": "src/adapters/rendering/modular-actor.js",
+      "sha256": "3afb0ebdd6cde0593aa8b6ec0a264936283a9c8ebb680bcfbb7ad803c816af5a"
+    },
+    {
+      "path": "src/domain/abilities/class-rules.js",
+      "sha256": "d4e085fb1bd14ffbbe38f5f1b71dc8bd3d3ef90c3df98a29fc2314faacf4335a"
+    },
+    {
+      "path": "src/domain/abilities/class-skills.js",
+      "sha256": "4f0e24fba8a595f6ba789b3502c5975fc0030974609cdaec9dce627429ec6ab3"
+    },
+    {
+      "path": "src/domain/abilities/definitions.js",
+      "sha256": "ab02ab08b5f3dd4ce3f1d4ebee2d2b424db4f27a82fcf4887c88919fc753633f"
+    },
+    {
+      "path": "src/domain/abilities/ranked-skills.js",
+      "sha256": "c9b6a2be07928803bb3cdd454c405c615d99fd5e8c33f14c4012c30e43ae1ab6"
+    },
+    {
+      "path": "src/domain/abilities/skill-tree.js",
+      "sha256": "39d26bc42a78b331b0859bf581acd520c2f3146c0640d04ff7832f46fd7500ff"
+    },
+    {
+      "path": "src/domain/character/job-progress.js",
+      "sha256": "6bc54e76dc06f01f20bc13bc14a3e53764842924adec754d39108608e4716ef8"
+    },
+    {
+      "path": "src/domain/character/job-validation.js",
+      "sha256": "891827af1ac681356ef5e50b37a1d76f2a9739219cac091554e156fd555e2ff0"
+    },
+    {
+      "path": "src/domain/character/professions.js",
+      "sha256": "9e2dcd165b42ad8633023d9bb9712a6edd945b1a42e17b7899d22fafda233431"
+    },
+    {
+      "path": "src/domain/character/stats.js",
+      "sha256": "8e29a1aa7c5bec0f62ecc6b723fd596c6c32cad4e61650eec320f2192d2950d7"
+    },
+    {
+      "path": "src/domain/combat/attack.js",
+      "sha256": "55e539b4316da268f9c3797aa5c27b8bff78efafcad28cef6361e97b71bcbaa3"
+    },
+    {
+      "path": "src/domain/items/carry-config.js",
+      "sha256": "92ebeefa8adbc06c60b8edd77a8c4471d99d8a8673d7a8b562fd08bd430ffb30"
+    },
+    {
+      "path": "src/domain/items/inventory.js",
+      "sha256": "0b8f91fec227da1d56556a9f75237598c86f60421d04fb9180bdba274f27c810"
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "e7cb3abdb3dbc317b5432b018b9049d90dd75710feb9f24ca97e7629dae45488"
+    },
+    {
+      "path": "src/multiplayer/online-ui.js",
+      "sha256": "82356a9d8759ede2af8abd4cc0e3d366ceb9db86003f0c689b3b57574a236f7d"
+    },
+    {
+      "path": "src/multiplayer/remote-state.js",
+      "sha256": "e034e9cae5c177bda9d58de396dc361611b8e6192c5f2aff2b498014883bbc20"
+    },
+    {
+      "path": "src/multiplayer/world-mode.js",
+      "sha256": "1bb5e622f9353dbabc5e2dee5cf55d2ca460bcbd5d4f00f3ca773775519a67bf"
+    },
+    {
+      "path": "src/simulation/abilities.js",
+      "sha256": "c8f9fe7d4fca35d7e277cdea631600ec1613915d5c9f3634c2060a6df74b41d4"
+    },
+    {
+      "path": "src/ui/ability-icons.js",
+      "sha256": "4cf79be2fbd607ea34f4493f061c6925d574ba7633aaf30a1fc4648e9d4bd55e"
+    },
+    {
+      "path": "src/ui/class-icons.js",
+      "sha256": "7e38ee15ca20fa5c4f58bb0bbe87700f158d5287f7697b327ec766f3686be4ce"
+    },
+    {
+      "path": "src/ui/inventory-presentation.js",
+      "sha256": "6977a929e1c31b781171e9aac9917c9cdf4c43bd921bced1dabf66f1337f0c6b"
+    },
+    {
+      "path": "src/ui/ranked-tree.css",
+      "sha256": "dd16b8044f45c4fdcca271455b8c4a863fffa5915321a0afd6fbd4b09b32c15a"
+    },
+    {
+      "path": "src/ui/ranked-tree.js",
+      "sha256": "b22ed35526b0950280ed914fc36a871b3495fe402a0aefff521c792a4f6a9266"
+    },
+    {
+      "path": "src/ui/school-lobby.js",
+      "sha256": "e110d0a0c3c2b40278362a4c6e8fcdd77800be77723043364f1b2e0bfb789958"
+    },
+    {
+      "path": "src/ui/serafina-panel.js",
+      "sha256": "803cbb05af84ce39c702ca04f94b80d495b7e4e07ed7360916ad729f3e916a03"
+    },
+    {
+      "path": "src/ui/skill-presentation.js",
+      "sha256": "5d9254c477f5edcf6ca389487ccdecfd015bf4141ec50c990f5950e6f4783184"
+    },
+    {
+      "path": "tests/iteration06-rpg.test.js",
+      "sha256": "f9c6d11341136297a5bc8feff0dad6de011fef5140c93253551337938945237f"
+    },
+    {
+      "path": "tests/iteration28.test.js",
+      "sha256": "7fdf73e168bba5a12680fd455c9d7b74b7a9ecf81ed3e4ce5c10e6a9a7ea8210"
+    },
+    {
+      "path": "tests/iteration32.test.js",
+      "sha256": "4c2ae121f5d624087cee89b677e530c3db4d3aebe12a1bd6c6dea367251db6cc"
+    },
+    {
+      "path": "tests/job-progress.test.js",
+      "sha256": "d304f9b0cebf7fec4d33bf37db3ea1fd89a57fee725adf5c986719f989044820"
+    },
+    {
+      "path": "tests/online-skills.test.js",
+      "sha256": "81c4186f58d863a705208b232cb382a7e6989725e94b2c02382b876264200af6"
+    }
+  ]
+}

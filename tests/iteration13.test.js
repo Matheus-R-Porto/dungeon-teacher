@@ -41,7 +41,7 @@ test('Picareta Simples and Minério Bruto exist in the catalog with the required
   assert.ok(p.name&&p.description&&p.icon);
   assert.equal(o.type,'resource');assert.equal(o.stackable,true);assert.equal(o.maxStack,99);assert.ok(o.name&&o.icon);
   assert.match(o.description,/forja/);assert.equal(o.baseSellValue,undefined);assert.ok(!o.tradeable);
-  assert.deepEqual(ARMORER_STOCK,[PICKAXE]);
+  assert.deepEqual(ARMORER_STOCK,[PICKAXE,'travelerBackpack','woodenCart']);
 });
 test('purchase spends gold once, stores the pickaxe and cannot be repeated',()=>{
   const c=new Character();c.data.gold=100;const def=purchaseItem(c,PICKAXE);

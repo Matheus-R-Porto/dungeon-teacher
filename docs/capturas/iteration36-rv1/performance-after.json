@@ -1,0 +1,683 @@
+{
+  "checks": [
+    "Lápide visual: morte provocada somente como fixture de teste no servidor, posição real, data e golpe final iguais em todos os clientes conectados",
+    "3 processos Electron com TLS, login real, perfis válidos, renderização e comandos de combate"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-rv1-performance-after-1793324344174\\01-cidade-clientes-reais.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-rv1-performance-after-1793324344174\\02-inicio-do-combate.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-rv1-performance-after-1793324344174\\02-combate-lobo-branco.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-rv1-performance-after-1793324344174\\03-lapide-compartilhada.png"
+  ],
+  "errors": [],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration36-rv1-performance-after-1793324344174",
+  "packagedResources": true,
+  "gpuTimersEnabled": false,
+  "clientCount": 3,
+  "build": "release/iteration36-rv1",
+  "environment": {
+    "node": "v24.19.0",
+    "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+    "os": "Windows 11 Home Single Language"
+  },
+  "measurements": [
+    {
+      "phase": "01-cidade-clientes-reais",
+      "client": 0,
+      "elapsed": 12.04680499999813,
+      "requestedWindow": 12.003834499999996,
+      "taskDuration": 9.225225000000002,
+      "metricTimestamps": [
+        42057.954295,
+        42070.0011
+      ],
+      "rendererTaskCPUPercent": 76.57818815861495,
+      "jsHeap": 20247352,
+      "frame": {
+        "n": 423,
+        "mean": 28.657446808514162,
+        "p95": 45.29999999701977,
+        "max": 216.5
+      },
+      "fps": 34.89494394535171,
+      "samples": {
+        "interpolation": {
+          "n": 1272,
+          "mean": 0.04764150930041412,
+          "p95": 0.19999999552965164,
+          "max": 1.7000000029802322
+        },
+        "sprites": {
+          "n": 1272,
+          "mean": 0.16627358491737512,
+          "p95": 0.4000000059604645,
+          "max": 2.5999999940395355
+        },
+        "effects": {
+          "n": 424,
+          "mean": 0.005188679182023372,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000149011612
+        },
+        "combatVisualInclusive": {
+          "n": 424,
+          "mean": 0.08042452848112246,
+          "p95": 0.20000000298023224,
+          "max": 1.5
+        },
+        "remoteInclusive": {
+          "n": 424,
+          "mean": 0.3615566034854021,
+          "p95": 0.7999999970197678,
+          "max": 4
+        },
+        "renderSubmit": {
+          "n": 424,
+          "mean": 13.63679245284776,
+          "p95": 19.799999997019768,
+          "max": 41.70000000298023
+        },
+        "sceneInclusive": {
+          "n": 424,
+          "mean": 15.473820754643178,
+          "p95": 23,
+          "max": 53.899999998509884
+        },
+        "snapshotCallback": {
+          "n": 122,
+          "mean": 2.8090163935891916,
+          "p95": 5,
+          "max": 7.5
+        },
+        "snapshotProcessing": {
+          "n": 134,
+          "mean": 2.994029850935313,
+          "p95": 5.600000001490116,
+          "max": 8.899999998509884
+        }
+      },
+      "activity": {
+        "combatFrames": 0,
+        "effectFrames": 0
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 719,
+        "visible": 706,
+        "materials": 180,
+        "textures": 26,
+        "textureSources": 18,
+        "geometries": 351,
+        "transparentObjects": 170,
+        "drawCalls": 418,
+        "triangles": 40114,
+        "gpuTextures": 21,
+        "gpuGeometries": 247,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 39177.80000000447,
+          "state": "visible"
+        }
+      ]
+    },
+    {
+      "phase": "01-cidade-clientes-reais",
+      "client": 1,
+      "elapsed": 12.179357000000891,
+      "requestedWindow": 12.003834499999996,
+      "taskDuration": 9.363648999999999,
+      "metricTimestamps": [
+        42057.954126,
+        42070.133483
+      ],
+      "rendererTaskCPUPercent": 76.88130826610399,
+      "jsHeap": 16054432,
+      "frame": {
+        "n": 426,
+        "mean": 28.66713615022425,
+        "p95": 47.600000001490116,
+        "max": 206.30000000447035
+      },
+      "fps": 34.883149637260765,
+      "samples": {
+        "snapshotCallback": {
+          "n": 123,
+          "mean": 2.9796747967479673,
+          "p95": 5,
+          "max": 9.100000001490116
+        },
+        "snapshotProcessing": {
+          "n": 135,
+          "mean": 3.164444444687278,
+          "p95": 5.799999997019768,
+          "max": 9.700000002980232
+        },
+        "interpolation": {
+          "n": 1281,
+          "mean": 0.05386416862989942,
+          "p95": 0.20000000298023224,
+          "max": 2.100000001490116
+        },
+        "sprites": {
+          "n": 1281,
+          "mean": 0.15956284156378872,
+          "p95": 0.3999999985098839,
+          "max": 2.7999999970197678
+        },
+        "effects": {
+          "n": 427,
+          "mean": 0.00585480088442215,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000149011612
+        },
+        "combatVisualInclusive": {
+          "n": 427,
+          "mean": 0.07962529263535484,
+          "p95": 0.20000000298023224,
+          "max": 1.8999999985098839
+        },
+        "remoteInclusive": {
+          "n": 427,
+          "mean": 0.35667447288644955,
+          "p95": 0.7000000029802322,
+          "max": 2.6999999955296516
+        },
+        "renderSubmit": {
+          "n": 427,
+          "mean": 13.713348946261462,
+          "p95": 19.400000005960464,
+          "max": 36.30000000447035
+        },
+        "sceneInclusive": {
+          "n": 427,
+          "mean": 15.532786885298247,
+          "p95": 21.700000002980232,
+          "max": 39.600000001490116
+        }
+      },
+      "activity": {
+        "combatFrames": 0,
+        "effectFrames": 0
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 719,
+        "visible": 706,
+        "materials": 180,
+        "textures": 26,
+        "textureSources": 18,
+        "geometries": 351,
+        "transparentObjects": 170,
+        "drawCalls": 420,
+        "triangles": 41132,
+        "gpuTextures": 19,
+        "gpuGeometries": 246,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 29406.30000000447,
+          "state": "visible"
+        }
+      ]
+    },
+    {
+      "phase": "01-cidade-clientes-reais",
+      "client": 2,
+      "elapsed": 12.265180000002147,
+      "requestedWindow": 12.003834499999996,
+      "taskDuration": 10.774167,
+      "metricTimestamps": [
+        42057.953635,
+        42070.218815
+      ],
+      "rendererTaskCPUPercent": 87.84352940599416,
+      "jsHeap": 12277200,
+      "frame": {
+        "n": 497,
+        "mean": 24.665794768623662,
+        "p95": 37.399999998509884,
+        "max": 214.20000000298023
+      },
+      "fps": 40.541973586517415,
+      "samples": {
+        "interpolation": {
+          "n": 1494,
+          "mean": 0.061445783100613306,
+          "p95": 0.20000000298023224,
+          "max": 1.3999999985098839
+        },
+        "sprites": {
+          "n": 1494,
+          "mean": 0.17402945108302786,
+          "p95": 0.4000000059604645,
+          "max": 2.100000001490116
+        },
+        "effects": {
+          "n": 498,
+          "mean": 0.004819277075519523,
+          "p95": 0,
+          "max": 0.19999999552965164
+        },
+        "combatVisualInclusive": {
+          "n": 498,
+          "mean": 0.10301204799229362,
+          "p95": 0.20000000298023224,
+          "max": 1.7000000029802322
+        },
+        "remoteInclusive": {
+          "n": 498,
+          "mean": 0.41746987948515807,
+          "p95": 0.9000000059604645,
+          "max": 2.7000000029802322
+        },
+        "renderSubmit": {
+          "n": 498,
+          "mean": 13.709839357429718,
+          "p95": 19.80000000447035,
+          "max": 30
+        },
+        "sceneInclusive": {
+          "n": 498,
+          "mean": 15.581124497839365,
+          "p95": 22.200000002980232,
+          "max": 31.30000000447035
+        },
+        "snapshotCallback": {
+          "n": 123,
+          "mean": 3.0195121951704103,
+          "p95": 4.600000001490116,
+          "max": 8.100000001490116
+        },
+        "snapshotProcessing": {
+          "n": 135,
+          "mean": 3.145925926334328,
+          "p95": 5.100000001490116,
+          "max": 8.399999998509884
+        }
+      },
+      "activity": {
+        "combatFrames": 0,
+        "effectFrames": 0
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 719,
+        "visible": 706,
+        "materials": 180,
+        "textures": 26,
+        "textureSources": 18,
+        "geometries": 351,
+        "transparentObjects": 170,
+        "drawCalls": 421,
+        "triangles": 41292,
+        "gpuTextures": 18,
+        "gpuGeometries": 246,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 14308.29999999702,
+          "state": "visible"
+        }
+      ]
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "client": 0,
+      "elapsed": 20.071952000005695,
+      "requestedWindow": 20.050435899999997,
+      "taskDuration": 19.670730999999996,
+      "metricTimestamps": [
+        42080.211952,
+        42100.283904
+      ],
+      "rendererTaskCPUPercent": 98.00108629192823,
+      "jsHeap": 19387780,
+      "frame": {
+        "n": 1240,
+        "mean": 16.249354838706072,
+        "p95": 23.600000001490116,
+        "max": 152.70000000298023
+      },
+      "fps": 61.54090484983399,
+      "samples": {
+        "interpolation": {
+          "n": 3723,
+          "mean": 0.05323663716943169,
+          "p95": 0.19999999552965164,
+          "max": 3.600000001490116
+        },
+        "sprites": {
+          "n": 3723,
+          "mean": 0.19489658881692262,
+          "p95": 0.5,
+          "max": 9.600000001490116
+        },
+        "effects": {
+          "n": 1241,
+          "mean": 0.029170024146436203,
+          "p95": 0.19999999552965164,
+          "max": 0.8000000044703484
+        },
+        "combatVisualInclusive": {
+          "n": 1241,
+          "mean": 1.1440773570338245,
+          "p95": 2.2000000029802322,
+          "max": 16.200000002980232
+        },
+        "remoteInclusive": {
+          "n": 1241,
+          "mean": 0.468654311040685,
+          "p95": 1,
+          "max": 14.599999994039536
+        },
+        "renderSubmit": {
+          "n": 1241,
+          "mean": 6.448751007239008,
+          "p95": 9.899999998509884,
+          "max": 29
+        },
+        "sceneInclusive": {
+          "n": 1241,
+          "mean": 9.36623690570318,
+          "p95": 14.899999998509884,
+          "max": 38.79999999701977
+        },
+        "snapshotCallback": {
+          "n": 152,
+          "mean": 3.829605263657868,
+          "p95": 5.600000001490116,
+          "max": 22.600000001490116
+        },
+        "snapshotProcessing": {
+          "n": 162,
+          "mean": 4.4456790126400225,
+          "p95": 7.200000002980232,
+          "max": 32.400000005960464
+        }
+      },
+      "activity": {
+        "combatFrames": 1241,
+        "effectFrames": 825
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 906,
+        "visible": 457,
+        "materials": 375,
+        "textures": 204,
+        "textureSources": 24,
+        "geometries": 195,
+        "transparentObjects": 675,
+        "drawCalls": 90,
+        "triangles": 4882,
+        "gpuTextures": 29,
+        "gpuGeometries": 63,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 61480.10000000149,
+          "state": "visible"
+        }
+      ]
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "client": 1,
+      "elapsed": 20.34166600000026,
+      "requestedWindow": 20.050435899999997,
+      "taskDuration": 20.164709000000002,
+      "metricTimestamps": [
+        42080.212438,
+        42100.554104
+      ],
+      "rendererTaskCPUPercent": 99.13007616976773,
+      "jsHeap": 39545864,
+      "frame": {
+        "n": 1266,
+        "mean": 16.101105845181674,
+        "p95": 23.100000001490116,
+        "max": 68.19999999552965
+      },
+      "fps": 62.10753532182103,
+      "samples": {
+        "interpolation": {
+          "n": 3801,
+          "mean": 0.05480136806613299,
+          "p95": 0.19999999552965164,
+          "max": 3
+        },
+        "sprites": {
+          "n": 3801,
+          "mean": 0.17892659827772803,
+          "p95": 0.4000000059604645,
+          "max": 10.299999997019768
+        },
+        "effects": {
+          "n": 1267,
+          "mean": 0.032123125472121476,
+          "p95": 0.19999999552965164,
+          "max": 1.3999999985098839
+        },
+        "combatVisualInclusive": {
+          "n": 1267,
+          "mean": 1.227150749688602,
+          "p95": 2.399999998509884,
+          "max": 41
+        },
+        "remoteInclusive": {
+          "n": 1267,
+          "mean": 0.46669297551864136,
+          "p95": 1,
+          "max": 11
+        },
+        "renderSubmit": {
+          "n": 1267,
+          "mean": 6.8257300711068565,
+          "p95": 10.300000004470348,
+          "max": 24.5
+        },
+        "sceneInclusive": {
+          "n": 1267,
+          "mean": 9.77892659840945,
+          "p95": 14.600000001490116,
+          "max": 51.899999998509884
+        },
+        "snapshotCallback": {
+          "n": 153,
+          "mean": 3.386928104253766,
+          "p95": 5.5,
+          "max": 8.600000001490116
+        },
+        "snapshotProcessing": {
+          "n": 165,
+          "mean": 3.873333332935969,
+          "p95": 6.5999999940395355,
+          "max": 9.300000004470348
+        }
+      },
+      "activity": {
+        "combatFrames": 1267,
+        "effectFrames": 882
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 903,
+        "visible": 454,
+        "materials": 373,
+        "textures": 205,
+        "textureSources": 22,
+        "geometries": 194,
+        "transparentObjects": 673,
+        "drawCalls": 90,
+        "triangles": 4900,
+        "gpuTextures": 29,
+        "gpuGeometries": 62,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 51678.30000000447,
+          "state": "visible"
+        }
+      ]
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "client": 2,
+      "elapsed": 20.44830599999841,
+      "requestedWindow": 20.050435899999997,
+      "taskDuration": 20.197978000000003,
+      "metricTimestamps": [
+        42080.216391,
+        42100.664697
+      ],
+      "rendererTaskCPUPercent": 98.77580079250366,
+      "jsHeap": 42671108,
+      "frame": {
+        "n": 1335,
+        "mean": 15.338426966289903,
+        "p95": 22.30000000447035,
+        "max": 62.900000005960464
+      },
+      "fps": 65.19573370840142,
+      "samples": {
+        "interpolation": {
+          "n": 4008,
+          "mean": 0.052894211584282015,
+          "p95": 0.19999999552965164,
+          "max": 3
+        },
+        "sprites": {
+          "n": 4008,
+          "mean": 0.19191616767284994,
+          "p95": 0.5,
+          "max": 7.700000002980232
+        },
+        "effects": {
+          "n": 1336,
+          "mean": 0.034955089833743555,
+          "p95": 0.10000000149011612,
+          "max": 2
+        },
+        "combatVisualInclusive": {
+          "n": 1336,
+          "mean": 1.1619011975858293,
+          "p95": 2.2999999970197678,
+          "max": 8.600000001490116
+        },
+        "remoteInclusive": {
+          "n": 1336,
+          "mean": 0.4697604791378368,
+          "p95": 1,
+          "max": 9.700000002980232
+        },
+        "renderSubmit": {
+          "n": 1336,
+          "mean": 6.200449101721678,
+          "p95": 9.5,
+          "max": 34.80000000447035
+        },
+        "sceneInclusive": {
+          "n": 1336,
+          "mean": 9.01474550896196,
+          "p95": 13.700000002980232,
+          "max": 39
+        },
+        "snapshotCallback": {
+          "n": 156,
+          "mean": 3.306410256295632,
+          "p95": 5.700000002980232,
+          "max": 8.900000005960464
+        },
+        "snapshotProcessing": {
+          "n": 167,
+          "mean": 3.8676646710066738,
+          "p95": 6.5,
+          "max": 9.899999998509884
+        }
+      },
+      "activity": {
+        "combatFrames": 1336,
+        "effectFrames": 902
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 903,
+        "visible": 445,
+        "materials": 373,
+        "textures": 205,
+        "textureSources": 22,
+        "geometries": 194,
+        "transparentObjects": 673,
+        "drawCalls": 90,
+        "triangles": 4900,
+        "gpuTextures": 29,
+        "gpuGeometries": 61,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 36550.59999999404,
+          "state": "visible"
+        }
+      ]
+    }
+  ],
+  "grave": {
+    "state": "waiting",
+    "generation": 0,
+    "diedAt": 1793324435320,
+    "position": {
+      "x": -63.21728128742248,
+      "y": -5,
+      "z": 15.498538089137055,
+      "surface": "white-wolf-cave"
+    },
+    "respawnAt": 1793325335320,
+    "killer": "Aventureiro 1",
+    "phase": "dead",
+    "frenzy": false
+  },
+  "ok": true
+}

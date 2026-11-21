@@ -1,0 +1,687 @@
+{
+  "skills": [
+    {
+      "id": "breakingStrike",
+      "name": "Golpe Rompedor",
+      "classId": "warrior",
+      "type": "active",
+      "ranks": 5,
+      "motion": "physical"
+    },
+    {
+      "id": "weaponMastery",
+      "name": "Domínio das Armas",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "aggressiveStance",
+      "name": "Postura Agressiva",
+      "classId": "warrior",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "lethalPrecision",
+      "name": "Precisão Letal",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "ironSkin",
+      "name": "Pele de Ferro",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "ironVitality",
+      "name": "Vitalidade de Ferro",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "unshakableStance",
+      "name": "Postura Inabalável",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "taunt",
+      "name": "Provocação",
+      "classId": "warrior",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "battleRhythm",
+      "name": "Ritmo de Batalha",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "combatBreath",
+      "name": "Fôlego de Combate",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "secondWind",
+      "name": "Segundo Fôlego",
+      "classId": "warrior",
+      "type": "active",
+      "ranks": 5,
+      "motion": "heal"
+    },
+    {
+      "id": "enduringResistance",
+      "name": "Resistência Prolongada",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "counterAttack",
+      "name": "Contra-ataque",
+      "classId": "warrior",
+      "type": "active",
+      "ranks": 3,
+      "motion": "support"
+    },
+    {
+      "id": "finalDetermination",
+      "name": "Determinação Final",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 3,
+      "motion": "passive"
+    },
+    {
+      "id": "growingMomentum",
+      "name": "Ímpeto Crescente",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 3,
+      "motion": "passive"
+    },
+    {
+      "id": "unbreakableSpirit",
+      "name": "Espírito Inquebrável",
+      "classId": "warrior",
+      "type": "passive",
+      "ranks": 1,
+      "motion": "passive"
+    },
+    {
+      "id": "piercingShot",
+      "name": "Disparo Perfurante",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 5,
+      "motion": "ranged"
+    },
+    {
+      "id": "eagleEyes",
+      "name": "Olhos de Águia",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "focusedShot",
+      "name": "Disparo Concentrado",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 5,
+      "motion": "ranged"
+    },
+    {
+      "id": "weakPointKnowledge",
+      "name": "Conhecimento de Pontos Fracos",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "lightSteps",
+      "name": "Passos Leves",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "tacticalRetreat",
+      "name": "Recuo Tático",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 5,
+      "motion": "movement"
+    },
+    {
+      "id": "hunterReflexes",
+      "name": "Reflexos de Caçador",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "agileShot",
+      "name": "Disparo Ágil",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 5,
+      "motion": "ranged"
+    },
+    {
+      "id": "slowingArrow",
+      "name": "Flecha Retardante",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 5,
+      "motion": "ranged"
+    },
+    {
+      "id": "distanceMastery",
+      "name": "Domínio de Distância",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "arrowRain",
+      "name": "Chuva de Flechas",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 5,
+      "motion": "area"
+    },
+    {
+      "id": "arrowConservation",
+      "name": "Conservação de Flechas",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "retreatingShot",
+      "name": "Disparo em Retirada",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 3,
+      "motion": "ranged"
+    },
+    {
+      "id": "transfixingArrow",
+      "name": "Flecha Transpassante",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 3,
+      "motion": "ranged"
+    },
+    {
+      "id": "relentlessHunt",
+      "name": "Caçada Implacável",
+      "classId": "archer",
+      "type": "passive",
+      "ranks": 3,
+      "motion": "passive"
+    },
+    {
+      "id": "predatorInstinct",
+      "name": "Instinto do Predador",
+      "classId": "archer",
+      "type": "active",
+      "ranks": 1,
+      "motion": "support"
+    },
+    {
+      "id": "concealment",
+      "name": "Ocultação",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "surpriseAttack",
+      "name": "Ataque Surpresa",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "discreetPresence",
+      "name": "Presença Discreta",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "lethalPreparation",
+      "name": "Preparação Letal",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "quickLunge",
+      "name": "Investida Rápida",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 5,
+      "motion": "physical"
+    },
+    {
+      "id": "keenReflexes",
+      "name": "Reflexos Aguçados",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "daggerSequence",
+      "name": "Sequência de Adagas",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 5,
+      "motion": "physical"
+    },
+    {
+      "id": "acceleratedRhythm",
+      "name": "Ritmo Acelerado",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "poisonBlade",
+      "name": "Lâmina Envenenada",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "weaknessKnowledge",
+      "name": "Conhecimento de Fraquezas",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "treacherousBlow",
+      "name": "Golpe Traiçoeiro",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 5,
+      "motion": "physical"
+    },
+    {
+      "id": "persistentToxins",
+      "name": "Toxinas Persistentes",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "shadowStep",
+      "name": "Passo das Sombras",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 3,
+      "motion": "movement"
+    },
+    {
+      "id": "toxicAmbush",
+      "name": "Emboscada Tóxica",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 3,
+      "motion": "physical"
+    },
+    {
+      "id": "bladeDance",
+      "name": "Dança das Lâminas",
+      "classId": "rogue",
+      "type": "active",
+      "ranks": 3,
+      "motion": "area"
+    },
+    {
+      "id": "invisiblePredator",
+      "name": "Predador Invisível",
+      "classId": "rogue",
+      "type": "passive",
+      "ranks": 1,
+      "motion": "passive"
+    },
+    {
+      "id": "heal",
+      "name": "Cura",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "heal"
+    },
+    {
+      "id": "purifyingTouch",
+      "name": "Toque Purificador",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "sacredExpansion",
+      "name": "Expansão Sagrada",
+      "classId": "priest",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "renewal",
+      "name": "Renovação",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "heal"
+    },
+    {
+      "id": "courageBlessing",
+      "name": "Bênção da Coragem",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "divineProtection",
+      "name": "Proteção Divina",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "teleport",
+      "name": "Teleporte",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "movement"
+    },
+    {
+      "id": "hopeAura",
+      "name": "Aura de Esperança",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "punishingLight",
+      "name": "Luz Punitiva",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "sacredKnowledge",
+      "name": "Conhecimento Sagrado",
+      "classId": "priest",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "condemnationSeal",
+      "name": "Selo da Condenação",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 5,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "conviction",
+      "name": "Convicção",
+      "classId": "priest",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "sanctuary",
+      "name": "Santuário",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 3,
+      "motion": "area"
+    },
+    {
+      "id": "redemptionLight",
+      "name": "Luz da Redenção",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 3,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "consecratedWeapon",
+      "name": "Arma Consagrada",
+      "classId": "priest",
+      "type": "active",
+      "ranks": 3,
+      "motion": "support"
+    },
+    {
+      "id": "faithMiracle",
+      "name": "Milagre da Fé",
+      "classId": "priest",
+      "type": "passive",
+      "ranks": 1,
+      "motion": "passive"
+    },
+    {
+      "id": "magicProjectile",
+      "name": "Projétil Mágico",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "elementalMastery",
+      "name": "Maestria Elemental",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "fireball",
+      "name": "Bola de Fogo",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "chainLightning",
+      "name": "Corrente Elétrica",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "iceLance",
+      "name": "Lança de Gelo",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "iceField",
+      "name": "Campo de Gelo",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "area"
+    },
+    {
+      "id": "arcaneBarrier",
+      "name": "Barreira Arcana",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "arcaneStep",
+      "name": "Passo Arcano",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "movement"
+    },
+    {
+      "id": "acceleratedCasting",
+      "name": "Conjuração Acelerada",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "arcaneReserve",
+      "name": "Reserva Arcana",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "arcaneMeditation",
+      "name": "Meditação Arcana",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 5,
+      "motion": "passive"
+    },
+    {
+      "id": "arcaneOverload",
+      "name": "Sobrecarga Arcana",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 5,
+      "motion": "support"
+    },
+    {
+      "id": "glacialExplosion",
+      "name": "Explosão Glacial",
+      "classId": "mage",
+      "type": "active",
+      "ranks": 3,
+      "motion": "area"
+    },
+    {
+      "id": "arcaneFlow",
+      "name": "Fluxo Arcano",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 3,
+      "motion": "passive"
+    },
+    {
+      "id": "defensiveConcentration",
+      "name": "Concentração Defensiva",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 3,
+      "motion": "passive"
+    },
+    {
+      "id": "arcaneTrinity",
+      "name": "Trindade Arcana",
+      "classId": "mage",
+      "type": "passive",
+      "ranks": 1,
+      "motion": "passive"
+    },
+    {
+      "id": "powerStrike",
+      "name": "Golpe Poderoso",
+      "classId": "legacy",
+      "type": "active",
+      "ranks": 1,
+      "motion": "physical"
+    },
+    {
+      "id": "doubleAttack",
+      "name": "Ataque Duplo",
+      "classId": "legacy",
+      "type": "active",
+      "ranks": 1,
+      "motion": "physical"
+    },
+    {
+      "id": "doubleShot",
+      "name": "Tiro Duplo",
+      "classId": "legacy",
+      "type": "active",
+      "ranks": 1,
+      "motion": "ranged"
+    },
+    {
+      "id": "energyBall",
+      "name": "Bola de Energia",
+      "classId": "legacy",
+      "type": "active",
+      "ranks": 1,
+      "motion": "offensiveCast"
+    },
+    {
+      "id": "regeneration",
+      "name": "Regeneração",
+      "classId": "legacy",
+      "type": "active",
+      "ranks": 1,
+      "motion": "heal"
+    }
+  ],
+  "classSkills": 80,
+  "classRanks": 350,
+  "legacy": 5
+}

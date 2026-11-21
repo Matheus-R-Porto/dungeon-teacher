@@ -1,0 +1,1291 @@
+{
+  "ok": true,
+  "preserved": [
+    {
+      "path": "release/iteration33/adm/Dungeon Teacher ADM-Iteracao33-0.6.9-Portable.exe",
+      "sha256": "9cd283d62fa363c4eb8d58b9510fc9c4c804077a9d0ff92f0f19e81ff849b5bc"
+    },
+    {
+      "path": "release/iteration33/adm/Dungeon Teacher ADM-Iteracao33-0.6.9-Setup.exe",
+      "sha256": "2bad790c8282be7c884b85aaf13749f4df0f589468526d1eb804bdd292ccd093"
+    },
+    {
+      "path": "release/iteration33/student/Dungeon Teacher-Iteracao33-0.6.9-Portable.exe",
+      "sha256": "8636f850b5ae996d5b1b3bcc93f9c9d212c15bac05d2e2538605fef0608c77e1"
+    },
+    {
+      "path": "release/iteration33/student/Dungeon Teacher-Iteracao33-0.6.9-Setup.exe",
+      "sha256": "5c5aab6e40891cd78555e49ac12f1110c811a0cd5899f0210864be99b2fa527f"
+    },
+    {
+      "path": "release/iteration34/adm/Dungeon Teacher ADM-Iteracao34-0.6.9-Portable.exe",
+      "sha256": "fd234d9d1faf4d47100f53062fef36d30e65e9485cefbdbba44b398b94d326a7"
+    },
+    {
+      "path": "release/iteration34/adm/Dungeon Teacher ADM-Iteracao34-0.6.9-Setup.exe",
+      "sha256": "a4a2acac69e47f8983311ad431af26834e98ea00e511e144b5fe0b84bfe2f292"
+    },
+    {
+      "path": "release/iteration34/student/Dungeon Teacher-Iteracao34-0.6.9-Portable.exe",
+      "sha256": "a2ccec013bd75a33418ab189c000f689acc75c469d446d8f16f84bcee83a5d93"
+    },
+    {
+      "path": "release/iteration34/student/Dungeon Teacher-Iteracao34-0.6.9-Setup.exe",
+      "sha256": "fbd63a1d204dab47c15638fdb3c4d8d75619c78846049cdcad3ad94567e10bbd"
+    },
+    {
+      "path": "release/iteration36/adm/Dungeon Teacher ADM-Iteracao36-0.6.9-Portable.exe",
+      "sha256": "bdf85ac1fc59315a40b27a11a7c9445b34e14aae535f8af11ac03d8cae53ee91"
+    },
+    {
+      "path": "release/iteration36/adm/Dungeon Teacher ADM-Iteracao36-0.6.9-Setup.exe",
+      "sha256": "df3fbd18aaed16888f224cf7ee4a957f76ebb1c2bfbb8f544ebf2279a3e32756"
+    },
+    {
+      "path": "release/iteration36/student/Dungeon Teacher-Iteracao36-0.6.9-Portable.exe",
+      "sha256": "ccd993ec0598848866bfdeb348f1407c489dbd75326cddd49be8336445300425"
+    },
+    {
+      "path": "release/iteration36/student/Dungeon Teacher-Iteracao36-0.6.9-Setup.exe",
+      "sha256": "e8aa95e7251ea399abc8680e5f3f0719c6521f36e382707b028f5ff81a072129"
+    },
+    {
+      "name": "Dungeon Teacher ADM-Iteracao36-RevisaoVisual1-0.6.9-Portable.exe",
+      "relativePath": "release/iteration36-rv1/adm/Dungeon Teacher ADM-Iteracao36-RevisaoVisual1-0.6.9-Portable.exe",
+      "version": "0.6.9",
+      "type": "portable",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111696379,
+      "sha256": "c8917f89c29c0bd824b9e669bec56eb23f213d7e3637f559bab39cad2013afe3",
+      "generatedAt": "2026-10-30T01:17:38.972Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher ADM-Iteracao36-RevisaoVisual1-0.6.9-Setup.exe",
+      "relativePath": "release/iteration36-rv1/adm/Dungeon Teacher ADM-Iteracao36-RevisaoVisual1-0.6.9-Setup.exe",
+      "version": "0.6.9",
+      "type": "installer",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111926386,
+      "sha256": "d6a983636b731d21c83d7693fcda4aaab26c2e1a8068093581b073740dbd2645",
+      "generatedAt": "2026-10-30T01:17:28.853Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao36-RevisaoVisual1-0.6.9-Portable.exe",
+      "relativePath": "release/iteration36-rv1/student/Dungeon Teacher-Iteracao36-RevisaoVisual1-0.6.9-Portable.exe",
+      "version": "0.6.9",
+      "type": "portable",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 243258779,
+      "sha256": "aa45c561c59c905dcff6229a5b2925a2aec16e83b9baa54f33458f375fe5c6fd",
+      "generatedAt": "2026-10-30T01:19:11.792Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao36-RevisaoVisual1-0.6.9-Setup.exe",
+      "relativePath": "release/iteration36-rv1/student/Dungeon Teacher-Iteracao36-RevisaoVisual1-0.6.9-Setup.exe",
+      "version": "0.6.9",
+      "type": "installer",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 243488872,
+      "sha256": "f05427c6e540791fd9e50e6892c7a1c9e30d0f871ea115af58d8b3835a53eb22",
+      "generatedAt": "2026-10-30T01:19:01.015Z",
+      "payloadVerified": true
+    }
+  ],
+  "art": [
+    {
+      "path": "public/assets/characters-v31/agileBoots.png",
+      "sha256": "b4eba19d8cc2e236ba52c38e6334e42c212166b96070f8b8f50707989d4023ab"
+    },
+    {
+      "path": "public/assets/characters-v31/archer.png",
+      "sha256": "823d98ddc444600d798576aac74559fa9eaf1886b75b1867e7e14aa6b1ebb2b3"
+    },
+    {
+      "path": "public/assets/characters-v31/gear.png",
+      "sha256": "e3c7db1e6291866897fe8b0f4fd3f890d99d9dd50350e7856bee86f5ac867b0d"
+    },
+    {
+      "path": "public/assets/characters-v31/heads.png",
+      "sha256": "fb877c72b3ad40e584a0dcf4625fe90289d777b0ff943e372faadc0f96b22583"
+    },
+    {
+      "path": "public/assets/characters-v31/mage.png",
+      "sha256": "7c67290b257380a35bfca271217505e3f384cbba78389fd34ed066a89d2f7a68"
+    },
+    {
+      "path": "public/assets/characters-v31/novice.png",
+      "sha256": "e3f7d90b8df627595ef47e89133c6e5a1b99ff1a3fd996fbd50e4a02d8107ea1"
+    },
+    {
+      "path": "public/assets/characters-v31/priest.png",
+      "sha256": "3779526e7ffe0e0dfceb60d4c060f016fa7f2ccb13cd5ed1d525cf084ea875b7"
+    },
+    {
+      "path": "public/assets/characters-v31/rogue.png",
+      "sha256": "e611f1c07f553db84622f2b41545a9e344587dd184cbed18e1b2d6fb54d622f3"
+    },
+    {
+      "path": "public/assets/characters-v31/travelerBoots.png",
+      "sha256": "3f51822e0981dbda839b3ea4590191c51497009d017f76dcd51623fccce3e21e"
+    },
+    {
+      "path": "public/assets/characters-v31/warrior.png",
+      "sha256": "6785009f818ddca240c2148dcfbc3071285f36cb354f746f8a35ec03941f039e"
+    },
+    {
+      "path": "public/assets/characters-v31/weapons.png",
+      "sha256": "9690077c67db7a57cc007546dfabe14a573919fbf5283cdfa246193e176a4d6d"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra-reference.png",
+      "sha256": "a2f15c067610131d4b4d4dd0810748252eb22092a39e8cdcb2409d8bd6c9cd94"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra-row0.png",
+      "sha256": "d392b70a70fa73ba30fb375ed33e92106b200403983c58932f10f515c1be5e3e"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra-row1.png",
+      "sha256": "87586d1745a7b6b38da8f4184fbef34313db0481104c126b4b7729c7a7739c6c"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra-row2.png",
+      "sha256": "6f4391da02ad6353a9e9be149a15af85b815de64f4cbf8fe676f5daf19160bd2"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra-row3.png",
+      "sha256": "85c8bb6020af42a8e88e7702d798e9d8d9946826ccd7b0fbff11afe6d7a39fe2"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra-source.png",
+      "sha256": "a4f266d9990b069151ad280b2d32aef1135da140fa64cace2f3ed9aecde5aa7c"
+    },
+    {
+      "path": "public/assets/characters-v36/heads-extra.png",
+      "sha256": "366083ec65c6fb10aedeeb428fb73efccfcffe2b37d4d8dc7735b85fc639a09a"
+    },
+    {
+      "path": "public/assets/characters/adventurer-death-v042.png",
+      "sha256": "3cccdccc8caa5d8f73a16c44a1ae239094a5d05c89fcd0bf1033773adddd0087"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v041.png",
+      "sha256": "f57f7ecabebf335cabc82efb8826bbb2a434c5c90eb4ce886ce6acf45b3e4e2d"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042-poses.png",
+      "sha256": "6bf3ebcc0d4f53a472dc3603dd426f3cb5501211596a7f5a3982c98bfecdae1b"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042-reference.png",
+      "sha256": "6dd62c0298f51837241003e2c0ff10b84142e8452ec33dde025b7ed5c4bda846"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042-row0.png",
+      "sha256": "4bbe61579f0ccfa52924e81e1498392450ebdf57f8fccb1fb9ea4572c972fdaa"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042-row1.png",
+      "sha256": "8fe4bf446464948c67afaa83d40ccb0835b788ab1465ed5966cd5526c5d52ef1"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042-row2.png",
+      "sha256": "3fb4f5f922a6513b2a5241421efaa304e6a0b109375707b069171943e9f38706"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042-row3.png",
+      "sha256": "2f47a67062779c2626fb2694a0d210dcf5a7e20af2555076e2484ef6d88db527"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v042.png",
+      "sha256": "4197b2fd13a8124814ceea4179ad2cac7cfa21c539e2fbee7bb8b12b0d052bc8"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v043-reference.png",
+      "sha256": "c6ac88e3b7bc26214e5dfc41ed73287962a6288402b80923183af64ad9d294b7"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v043-row0.png",
+      "sha256": "1aa8dd19e2b3f4d621277156cad5699d7629dfe0f9ec7714dfff201625fcb61f"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v043-row1.png",
+      "sha256": "b35dc7e1c533c77caf3c30300d5000a42ae727c2127470584920905b1c93ba90"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v043-row2.png",
+      "sha256": "bc59786ede8c007d6949802c96b59c91b61054e6eb17017603e8026792675d79"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v043-row3.png",
+      "sha256": "42dbb24b487ed6446b58357d4537577a9aa2b90c27aeae2a853697ac5cb027a0"
+    },
+    {
+      "path": "public/assets/characters/adventurer-v043.png",
+      "sha256": "b9b76f33664106eacc1c581bb94d03e02165d643670560503c268c98fc28e7e3"
+    },
+    {
+      "path": "public/assets/characters/adventurer.png",
+      "sha256": "661e049af4fc3a4f6a725b58eb6f29df97674bc472d659381bbfc3027871a8c3"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043-reference.png",
+      "sha256": "0658215b6b05b52c119def999a1fd075ecb7bc89633424d0323542853e6f21bc"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043-row0.png",
+      "sha256": "0cfc45b106b6a65be93c1c3e93c4f9657bacc1393c51aca238a8f21c344488eb"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043-row1.png",
+      "sha256": "6ffe7d073a2fee337fe1fd6443cb75f9bd7d6450e10a60ef22835145439c2446"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043-row2.png",
+      "sha256": "576d6f19cbba1704fe93bf524d70fadc2e6e10a15af6961dc97cbf93d32a54d8"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043-row3.png",
+      "sha256": "513a5c61c92afd7c560387ffd7b777357936ffc8859ffb47372df56343b11347"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043-unadjusted.png",
+      "sha256": "c79bcb2039084a15489ef3d9aaf22cccb2b525eb87b396e658702a6af55839fa"
+    },
+    {
+      "path": "public/assets/characters/bow-action-v043.png",
+      "sha256": "7e12631c08d3fddab0f4ccbff0356c6400fd3c08dff3a090794609e071fba60c"
+    },
+    {
+      "path": "public/assets/characters/bow-stored-v043-reference.png",
+      "sha256": "a830aaa44670860848fa55cfb4631a648413fe16d769364f0f1841407fbeb4e8"
+    },
+    {
+      "path": "public/assets/characters/bow-stored-v043-row0.png",
+      "sha256": "67f962f9f5d40d41bf393ff781b0179dafddc3447e1833e1e0a387477edbb483"
+    },
+    {
+      "path": "public/assets/characters/bow-stored-v043-row1.png",
+      "sha256": "a6214df0e07b0182a9172544532f0dd1fbb424bb8d88629a9e967e352abf92bc"
+    },
+    {
+      "path": "public/assets/characters/bow-stored-v043-row2.png",
+      "sha256": "eed099e04127c92bcc926a9f412aa2a91668224080443ac6912bd6985b5a3aa1"
+    },
+    {
+      "path": "public/assets/characters/bow-stored-v043-row3.png",
+      "sha256": "5b17ffb6ac52497ee4595223a94353a636037fab36e215606f2777e948eee60a"
+    },
+    {
+      "path": "public/assets/characters/bow-stored-v043.png",
+      "sha256": "233fd3e2e3c2c4903f9b2b88c195d467009cb272c1b5cd3f5b6af77ba99a0245"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-reference.png",
+      "sha256": "e8dbe02348a9a601ab70d3d75393020ac6eafd6c6103a4e777126fc5097545e3"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row0.png",
+      "sha256": "fefdfbcea235ba1d69a6d43291a29f97112fc6fd4f035d801d9ad23a6a8f3c25"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row1.png",
+      "sha256": "6d6c74be36e7a1cdbe744cb1ef14a10d8da183e8ad1ef2464f74e3acd67f2e83"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row2.png",
+      "sha256": "e8342b75b4eef5c7ad9475bf12a7f195058c5da9b7212539717fa3e2b0e44bad"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row3.png",
+      "sha256": "0b7cfaea78d904980b43dbbe453c83d1f783b9c00ea191f1bbbc460e29cf8a93"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row4.png",
+      "sha256": "3a3f527116f5c4d2580f0ffde6020b6affad4816b7365b4ef9f4d5bea4cc0e5c"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row5.png",
+      "sha256": "652b302123c8ff5283d8e61712b9dd7ff6de39c45cee0ae1a896abfcc4208e8d"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row6.png",
+      "sha256": "5262c0fb33b20a3ce7fbdce2fbad61bbac2e61896d1831d41863f65f4a3146e6"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043-row7.png",
+      "sha256": "897d10001a128bd37283c4c88ddfa450d856d3b67aff79f1149477df10cf3b3d"
+    },
+    {
+      "path": "public/assets/characters/bow-transition-v043.png",
+      "sha256": "4fc33986c37dc393c8dab85228d545656c767518423545232f7cbe5a3fcde543"
+    },
+    {
+      "path": "public/assets/characters/bow-v042-poses.png",
+      "sha256": "0361dc5269a18b5bd53c8c48932d6e6f8ca1d28a6e4d34db38f7f8c6fdf388b5"
+    },
+    {
+      "path": "public/assets/characters/bow-v042-reference.png",
+      "sha256": "0b9986914c64ea087c32854b572fa418bc60b735430601df7e4c8bfb2da84ce2"
+    },
+    {
+      "path": "public/assets/characters/bow-v042-row0.png",
+      "sha256": "786b9b049d098a94afddd98fdae9f8686669b2301f63b1b061fd26a6d07243e6"
+    },
+    {
+      "path": "public/assets/characters/bow-v042-row1.png",
+      "sha256": "21c1a3f8535b396c4db5689a05f03b08ef9d5daf9168a8657d26b388cc4cdf4c"
+    },
+    {
+      "path": "public/assets/characters/bow-v042-row2.png",
+      "sha256": "2b47293f395d8ce63a968582b238175d9947b5cb57773c6966b90295e0ba1f83"
+    },
+    {
+      "path": "public/assets/characters/bow-v042-row3.png",
+      "sha256": "0a5fd7cb0f532c5f6713f90e18d62b88094001b048fb06dd572f7fd39c88717c"
+    },
+    {
+      "path": "public/assets/characters/bow-v042.png",
+      "sha256": "288627b96a0a72acbc4b9f6ad75c3e3f29d044d78486aba7e2648c2f78b2995c"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-reference.png",
+      "sha256": "592b1373008e9934d88bae0d35e684183f65e0eb1b2e3c64e532954eab3583f7"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row0.png",
+      "sha256": "7f80f3bd6e1e0b99450b1f07de0189b48efdb30417700d17784129566b1ec5eb"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row1.png",
+      "sha256": "fa9482dafe23d6fb735f81b9710b7a1c96a887979b6080f26e865d48a14e3fe7"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row2.png",
+      "sha256": "892b350c8ada1627ee8ed458b6fdf9d66df5efb4b1e6ba0da77c009003d82c97"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row3.png",
+      "sha256": "43205c5153257c5388c2f8e6090311450f78fdba4c5da38f7151a63561001cff"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row4.png",
+      "sha256": "0b806616d55224f3e2b7d48bb46f6631d4ac63cdb9d7ac7273d413d25d2af8e7"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row5.png",
+      "sha256": "8dc198e82010601051e9917f8627e897eda82eea584a55af026534ef852e1a45"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row6.png",
+      "sha256": "582a81d6a9110a53835c976085c1aa9fbfc773b2d2c26523b9a87cc467898b34"
+    },
+    {
+      "path": "public/assets/characters/bow-v043-row7.png",
+      "sha256": "cd970fb6276e3791756fb8934417ae9a1e7dc543e613de73313ef72a3765324c"
+    },
+    {
+      "path": "public/assets/characters/bow-v043.png",
+      "sha256": "cd59b1d2a6713ce6fbc437caaad65b117271214d9b054ffcb020160c3f08e120"
+    },
+    {
+      "path": "public/assets/characters/dagger-action-v043-reference.png",
+      "sha256": "19b140151b2b223111439087ebf9c668cc8ae35dfe91b296d5283a010a34938d"
+    },
+    {
+      "path": "public/assets/characters/dagger-action-v043-row0.png",
+      "sha256": "1f2bedacd52771ffd1d01da03af58fa5a6554523d20521f1cbacf1d3a86e35d3"
+    },
+    {
+      "path": "public/assets/characters/dagger-action-v043-row1.png",
+      "sha256": "fd661db5390f85551b69339097aca2e64981bba8b54aeebe99d52fa3a4bc37d7"
+    },
+    {
+      "path": "public/assets/characters/dagger-action-v043-row2.png",
+      "sha256": "c5b5c46c50cbc0811a93c677c372e81bfcd1036ae85037490e6aa7203f730fa0"
+    },
+    {
+      "path": "public/assets/characters/dagger-action-v043-row3.png",
+      "sha256": "ef2df4b01d5b9caa39e7860b23c0a15a0d37c91a3ac5a1f5a63c3f0e06eb406d"
+    },
+    {
+      "path": "public/assets/characters/dagger-action-v043.png",
+      "sha256": "a50dd3df91b0749b39549e48df37442ff579f4bc811533f4664a5605c4694d0d"
+    },
+    {
+      "path": "public/assets/characters/dagger-transition-v043-reference.png",
+      "sha256": "5d4bf8303de106a03f48b277ea6d09804dfcafe913edea51c7668d473f5183b2"
+    },
+    {
+      "path": "public/assets/characters/dagger-transition-v043-row0.png",
+      "sha256": "83f2036304341be2b806b51d8a788480eb91c6a5e2f0890fe5d08e02038a0ee6"
+    },
+    {
+      "path": "public/assets/characters/dagger-transition-v043-row1.png",
+      "sha256": "efa25a449bcf356167fe6693fe932f2a61fad19b3d433884070a071b0df3a9cf"
+    },
+    {
+      "path": "public/assets/characters/dagger-transition-v043-row2.png",
+      "sha256": "d6aad6c47f6ddc5aa1df77dc8cfffa2794b767235cddcab91a0835a48596138d"
+    },
+    {
+      "path": "public/assets/characters/dagger-transition-v043-row3.png",
+      "sha256": "d7fc45d525f6fe6e6291e7383dbc183e0905f3a25191ce78d2e4e3bf33910540"
+    },
+    {
+      "path": "public/assets/characters/dagger-transition-v043.png",
+      "sha256": "c06ba1dd074b475e217f3302338b9eb0367401ded919d85e8c85f40cd59ac3d2"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042-poses.png",
+      "sha256": "74c1bee816ce586848895079d9ee618f8bde6c02f08c72125d953ff119411e4d"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042-reference.png",
+      "sha256": "fe9a0b71604205b4f547918d0b5d6762369f1563c4476ae18fd72e0fe330646f"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042-row0.png",
+      "sha256": "79f6e5d0b6f27e7e7d42cd6d2bfac4eba5cf819b77029f73c718d0e2f4947e1a"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042-row1.png",
+      "sha256": "d812a0a53e15752e9986f2f15106b7b61a5df3b8c9ba68d0b8b076db475b2afd"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042-row2.png",
+      "sha256": "f9e9416802dc692aab4a48935e99474232a0209aff0e2167efcd25343a8b9be2"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042-row3.png",
+      "sha256": "e1444ff668c90241c3663e68660a5916776a02431b99a1493595354b7cc9b6cd"
+    },
+    {
+      "path": "public/assets/characters/dagger-v042.png",
+      "sha256": "705790a1c9c7f97d8b86fe7f4a2d71bb2a4f848c737f469b2bada7f0384fa82f"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-reference.png",
+      "sha256": "89c281a6b327bc6270aa3b8957feeaecafcb103992113847f85843571890fecf"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row0.png",
+      "sha256": "56bab48d4c2632ac1beba274665094aeb312b7a9a10dbebfde2dc77c05354f8e"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row1.png",
+      "sha256": "fc6d5639e27fc92434a53319d126dc107ce2b6830562cb770e574426b3d5874e"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row2.png",
+      "sha256": "cb0c8d045398891f97626f5019da1ceaa0b26d98304fbaf41dee7da6b09b12c6"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row3.png",
+      "sha256": "84e197bcb49879270210a30c3072b42fde7bd17685252e65ddaebabe3dadc895"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row4.png",
+      "sha256": "407951268b8b71c82da4207e9c12290d2ec723e9428061b333eb9fd957a6f6ac"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row5.png",
+      "sha256": "7a7bd193589ad5c4d7dfe0742187a0d387d532426a012a23e0ad3d999cf47321"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row6.png",
+      "sha256": "be3b7ca0a5642d404589bb2de3358a7fdec106bec97e74df1abd9e5cb788cef8"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043-row7.png",
+      "sha256": "2adffc1a5d77c6d57be14faee2eca98bc316516f47bc1c4e7aa3c662c1fd792b"
+    },
+    {
+      "path": "public/assets/characters/dagger-v043.png",
+      "sha256": "7b110eee7db3b02d794515acc345ed99bafbcc4b2d8236a10f147797cf2ff8bc"
+    },
+    {
+      "path": "public/assets/characters/fishing-reel-v064-reference.png",
+      "sha256": "08fdc7f56a0f52dd268995c2855165dc23d4eb6246c2e6868468874118265b7c"
+    },
+    {
+      "path": "public/assets/characters/fishing-reel-v064-row0.png",
+      "sha256": "8d81e0270270a0b25ce5cea484e4962994a2ad12e210cab7fe637301817df9d7"
+    },
+    {
+      "path": "public/assets/characters/fishing-reel-v064-row1.png",
+      "sha256": "2b9761fd403d3cdaf46a9dbafa69986b0e48fc016b8dd5af231cf7e68c0cdc9c"
+    },
+    {
+      "path": "public/assets/characters/fishing-reel-v064-source.png",
+      "sha256": "05311551afde767277364551b269b7c09d7b8d95053cd8c7a048ced3ed64729e"
+    },
+    {
+      "path": "public/assets/characters/fishing-reel-v064.png",
+      "sha256": "f70e0bec0b1b7b39019dcda9423a084edac448592760850dd65f5efbb1ec0919"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043-reference.png",
+      "sha256": "d54513b589f91ee7e79df7a2c6add1f3096935a9925ebc96335f4e785d546751"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043-row0.png",
+      "sha256": "a754aa0184bf9077e46f5f757ca6c66344fefea86021254aea6d495f5707c136"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043-row1.png",
+      "sha256": "be44c9c227c975ae26fc93a65f6028ba78d4156d87d48dfe53e386514f1feeda"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043-row2.png",
+      "sha256": "cd37ae4da2a21049bb547ac5f76bd5b1dad58261e167e777b8903a02f59df1d0"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043-row3.png",
+      "sha256": "b6f7bacebab347230c04758d3d83e0f728b15f8d80ff32a491e47adb66148712"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043-unadjusted.png",
+      "sha256": "b15092a30e99473ba63e31cbdf6cd650a6306d89a1e40f38f75ba9dd45ad142e"
+    },
+    {
+      "path": "public/assets/characters/fishing-v043.png",
+      "sha256": "a4190fcfa218695498f2d22caa1c187e65507446df12e608ac8ba9100082d8db"
+    },
+    {
+      "path": "public/assets/characters/mining-v043-reference.png",
+      "sha256": "217a0c9605aa84cf48d4cd0c62a48e01750b6ecc614d636a4f3215506f216cbf"
+    },
+    {
+      "path": "public/assets/characters/mining-v043-row0.png",
+      "sha256": "ae0c9c1fa68553552f6162aa70f5f28638514be1c5cd7e83ef37632f6c517bde"
+    },
+    {
+      "path": "public/assets/characters/mining-v043-row1.png",
+      "sha256": "53f71fbf207351f6c5da02f03e968f1f9aa612765246fdc79a50acf9aa423af7"
+    },
+    {
+      "path": "public/assets/characters/mining-v043-row2.png",
+      "sha256": "7097960cdaba5aae6155680d57173357f0385e57263f120c20451c3e620c36f9"
+    },
+    {
+      "path": "public/assets/characters/mining-v043-row3.png",
+      "sha256": "759b7136b1df2f7f1144e957cb43e9b3e91356dfadaa064e695a55f27cd3cb9f"
+    },
+    {
+      "path": "public/assets/characters/mining-v043.png",
+      "sha256": "06f0931bc7d783126b5c74dd38fddf13f07de25bf32712a495641e611d87c756"
+    },
+    {
+      "path": "public/assets/characters/staff-action-v043-reference.png",
+      "sha256": "924bbd86bde40bdaf8f572eaf4c06175b813ffe97a5a96e2ff83716c964c33ec"
+    },
+    {
+      "path": "public/assets/characters/staff-action-v043-row0.png",
+      "sha256": "51bc27bef8bb6afa17438564cd295483d552ed0565d5bc65a3100d64b81e5586"
+    },
+    {
+      "path": "public/assets/characters/staff-action-v043-row1.png",
+      "sha256": "2c8ef157690f397bdd3aa00919009621be6ef2c752595693aa03c014991bcb32"
+    },
+    {
+      "path": "public/assets/characters/staff-action-v043-row2.png",
+      "sha256": "827e16d11ac776cccc3e511a9332224a39db3e329e41e692fa5b325be6595879"
+    },
+    {
+      "path": "public/assets/characters/staff-action-v043-row3.png",
+      "sha256": "15a806439a396cfd2dd46856b8713940d407f5d1e203d12f08622e24cf83335b"
+    },
+    {
+      "path": "public/assets/characters/staff-action-v043.png",
+      "sha256": "01590c2244d3ce78b53ce936da3ac05bd66c2e1182bd76cd6a61778dc95bbe53"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-reference.png",
+      "sha256": "8b3bd576d6ebf403fe7963e25f35e5ad27accde0cd6cd7acf9c6919a62f89cc2"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row0.png",
+      "sha256": "a47946261ff89c49641c3189a5d56455db4f50c7a074bb0db0351bb4601d9cb9"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row1.png",
+      "sha256": "6eaa11cef548ec9a2f67cf7fdc4b388364eb6cf3bef0350e96b35f58afee7492"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row2.png",
+      "sha256": "55e08bc8daeaa2cac7d487ef0dc352879f3133de400c0b5c8dc18bf92f5f2c6c"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row3.png",
+      "sha256": "2e1ea0f4918fd1ec0abec7f77bb2fbca615a9cc15c189d0a60bf71bdf8bd9063"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row4.png",
+      "sha256": "4448866e7a4bb5e423adef8cd476f77ceaf343802d1d1aebf414613d26a6fcd5"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row5.png",
+      "sha256": "fee3913403e68f4bb6e25087c28f411bdcd69e300eede631a3a603c2b6cfbf85"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row6.png",
+      "sha256": "be651a346bc48b6e9df78e1f4aafafe31bca79da0eb656cf81103065f9d4f7a1"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-row7.png",
+      "sha256": "cfa9dcc30ce721b95053ada86a9a95aef7668ca7dfce84387dfabb27be9619a6"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043-unadjusted.png",
+      "sha256": "bb7c5534b52afcc494eaa8b8c77a063684f08569b8f7d8fec73ed6586f34c99b"
+    },
+    {
+      "path": "public/assets/characters/staff-transition-v043.png",
+      "sha256": "593a0f8b5d8d19af437e003084a735d91747728ca0f1e9dd28d8b06d3847a3aa"
+    },
+    {
+      "path": "public/assets/characters/staff-v042-poses.png",
+      "sha256": "67d5728849d5fe500de4a8bbc0c2d648c3bce167dac29cac18af99b562b78d47"
+    },
+    {
+      "path": "public/assets/characters/staff-v042-reference.png",
+      "sha256": "64196fc2adbd14e5cf111238995b3b085a307004cc55542c8cda4fa89b9e44ea"
+    },
+    {
+      "path": "public/assets/characters/staff-v042-row0.png",
+      "sha256": "fcc3ace3c1fcc93b792dcee2d6854748e30157cf02c81662c12b06b1d52165e3"
+    },
+    {
+      "path": "public/assets/characters/staff-v042-row1.png",
+      "sha256": "e1fc923efc30ee809b8d0b1c57d4c8de4b5efbfa0f0a3348183b96ce6f8aa7fa"
+    },
+    {
+      "path": "public/assets/characters/staff-v042-row2.png",
+      "sha256": "550c2387c69eb19b06c6493fc8077426f212da35d97f08523170f31851a8ec2d"
+    },
+    {
+      "path": "public/assets/characters/staff-v042-row3.png",
+      "sha256": "8602211ce3f14f453a1b68fcef3fdab0e1aea5ef9f9956dec81c5b5bc031d2b0"
+    },
+    {
+      "path": "public/assets/characters/staff-v042.png",
+      "sha256": "270f4eeda73a4bb5e9089e01ce54d5dfd3aa08eceb16463e8a1c10a5c4c6f52e"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-reference.png",
+      "sha256": "e240e6a2fb6bd725b5599a497d989540fe832e33a256fed99346f79c179c7f6a"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row0.png",
+      "sha256": "c5b7e2ddb0d638e387f913f474b89fead157f591f3cd90ecb609e7e7b6a11c6b"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row1.png",
+      "sha256": "fd112c7f6d146f0d1c5e5c65384f78880f1cd18e55bc523afd65a982984f5738"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row2.png",
+      "sha256": "be23615a0e04ec68f09854505afa1e4167328239e30b043d846a3523988bc8ca"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row3.png",
+      "sha256": "d20bca09d379c158311ce2f6b77fa16107220f733a01d9d06907126757908ab3"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row4.png",
+      "sha256": "80bfe54d1308d293a7cb495f633af521e6ad6d416d3d44b51ef286dd418331d2"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row5.png",
+      "sha256": "43e77c6ec43ad86c102c2f72afb8aaf32aef90355a9aaaadfa934353fd16474a"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row6.png",
+      "sha256": "b42665179de1d237ea87df88a3163533d0424b126e31dc4ccce2d756e0cca488"
+    },
+    {
+      "path": "public/assets/characters/staff-v043-row7.png",
+      "sha256": "31643f249bcb2442379d987f8a939f594f24be6e2e42ca9bd1f0118e4cb3b3c0"
+    },
+    {
+      "path": "public/assets/characters/staff-v043.png",
+      "sha256": "9bc44151cf76089957fb098482e6412e7223f9fd4a1ec3db7f7e16459df302c1"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043-reference.png",
+      "sha256": "1107f312b344848d802f2d43446bb5714efa39b7b614d83d1becef6a91ae1c32"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043-row0.png",
+      "sha256": "7151bb98dedffb8c6e1d8c087b0f1209a2165f95cd728b7966a9ce4520ff3844"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043-row1.png",
+      "sha256": "80dd7fff42807221cccbe02c1e0647ac3839838836db7c6b4a010e526b450726"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043-row2.png",
+      "sha256": "1d311334bffae6d3b13c85bef56321eebf73f6495f9d1fc2a00473bb90e03abb"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043-row3.png",
+      "sha256": "0c1f6fbfe7628bc97494bbea9b56557475ed82764663406d760a63a3276bbb9d"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043-unadjusted.png",
+      "sha256": "91b55495433d942a417183bb6e02ef93c77ce123501b99e4abadb84236e95d28"
+    },
+    {
+      "path": "public/assets/characters/sword-action-v043.png",
+      "sha256": "cf6ae9a93c92f78967f8c5471699f8b12f8e0d5308e74efdc0cd15795b6d3975"
+    },
+    {
+      "path": "public/assets/characters/sword-transition-v043-reference.png",
+      "sha256": "d2d5628fb887e5e6d7aa70e5276428113f710bdbe5198f82f6ed78ef7f87cd82"
+    },
+    {
+      "path": "public/assets/characters/sword-transition-v043-row0.png",
+      "sha256": "e376eddf95992a95c7c8d2133edb1f945db8bceeed5477b2c7889ccd6730d71b"
+    },
+    {
+      "path": "public/assets/characters/sword-transition-v043-row1.png",
+      "sha256": "c41398390d13517f9879ab25c878373d89e5437ae098336ad2d1de7eb332de32"
+    },
+    {
+      "path": "public/assets/characters/sword-transition-v043-row2.png",
+      "sha256": "e23e50c7260df37ab84bfb4330aefd6c562e5cb0c1d7cd3d3f645ae24a4d32b9"
+    },
+    {
+      "path": "public/assets/characters/sword-transition-v043-row3.png",
+      "sha256": "d7fe789d212cd043265ee37cc294c24d113291d5aa1fe9bd0a506fb609ff9c71"
+    },
+    {
+      "path": "public/assets/characters/sword-transition-v043.png",
+      "sha256": "b916ed266c2057e359cfa7f2fc9ffb3e878f31d26018b6ccb9b4e05f4bd55bea"
+    },
+    {
+      "path": "public/assets/characters/sword-v042-poses.png",
+      "sha256": "027f590a13b19ff86f1fd47715e200c20012e786a11968e9926d9aff34be6068"
+    },
+    {
+      "path": "public/assets/characters/sword-v042-reference.png",
+      "sha256": "0f0662897725d16fb0618ba9e274e66b7013800725f67c7ae7b1ad7a334d6bd5"
+    },
+    {
+      "path": "public/assets/characters/sword-v042-row0.png",
+      "sha256": "2fe5434ae02cf4b59864ad0e7fd33cc89c11391c7dd01a7fbebdc5548fd3784f"
+    },
+    {
+      "path": "public/assets/characters/sword-v042-row1.png",
+      "sha256": "5d83ec1539628fc326add38555d461979cd4013b8d12d254b8b02666525fa7ca"
+    },
+    {
+      "path": "public/assets/characters/sword-v042-row2.png",
+      "sha256": "39f042b39cfe3156c1a69cc417a038eebccf99819875fd743a8028233b5412b0"
+    },
+    {
+      "path": "public/assets/characters/sword-v042-row3.png",
+      "sha256": "ce7264ead9feea6d3cb2bad2afa5d02de68d0288dee6ac3fe03c9882456dd432"
+    },
+    {
+      "path": "public/assets/characters/sword-v042.png",
+      "sha256": "35ac701de5803590071682a323d8449228c2ae48062cf3ff477f15d053ccefaa"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-reference.png",
+      "sha256": "6e5baa149a3d2fb580143572b94a320da7cd9c148dd84ccac39e4ffa93d83312"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row0.png",
+      "sha256": "adfe84895d4f3470f1e246fa727dfd87adf0fea77265ae36c0c8916978fbf5d2"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row1.png",
+      "sha256": "603ded5ecca27306d198dad304c64b0ab2c174e14db15e526cc6663cddc3e114"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row2.png",
+      "sha256": "bffb0212bcc35d35dfefd0a7dd5879dc55d94181a3eb1595aa37dfe86ff5b2bf"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row3.png",
+      "sha256": "89bc784ccf13d63868f8daa4ad828fca81bb15aa976e756c4db856db7e772ae0"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row4.png",
+      "sha256": "aeff0031e34facda7845768f25d516e4b29ce2cf2b0276f39b953fb76ce454b4"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row5.png",
+      "sha256": "1789a2dffd7e8b76e0593daa3261a6e11daacc0397efa50cb9ece77df6d9b347"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row6.png",
+      "sha256": "1586b9ef7d095279fda73e062d07f8a4e223727933aa4d17de15033662a0b16d"
+    },
+    {
+      "path": "public/assets/characters/sword-v043-row7.png",
+      "sha256": "bb6ee4382e2e0dcb364b4660702f2d5639f859f7c98a11bfb35dc5529b79f37a"
+    },
+    {
+      "path": "public/assets/characters/sword-v043.png",
+      "sha256": "96e327c0eabd44e271e44eb8d407a519324c423e4c9235bc0700163a9496d17b"
+    },
+    {
+      "path": "public/assets/characters/walk-east-v042-reference.png",
+      "sha256": "7d47a3802307ef4adf1c6de98a9ba41f90d8e8594abd5e5eba62d0652f84cacf"
+    },
+    {
+      "path": "public/assets/characters/walk-east-v042-row0.png",
+      "sha256": "352c03fe730155464e29980445cb19e29bab889efe47dfd9980695e7b4dc3a9a"
+    },
+    {
+      "path": "public/assets/characters/walk-east-v042.png",
+      "sha256": "352c03fe730155464e29980445cb19e29bab889efe47dfd9980695e7b4dc3a9a"
+    },
+    {
+      "path": "public/assets/characters/walk-v042-reference.png",
+      "sha256": "adeee98377ecdcc6315fcf82316019dddb197179f5344c6d15b43fc4e0373ccf"
+    },
+    {
+      "path": "public/assets/characters/walk-v042-row0.png",
+      "sha256": "77dbcc09cd68173648428f101817425deebd2c144d7b68e674abc882ace5cba3"
+    },
+    {
+      "path": "public/assets/characters/walk-v042-row1.png",
+      "sha256": "ead294cae14981bc61a1d82dd1453247b0b529e3b358e8ae1489ac0f2d522ff7"
+    },
+    {
+      "path": "public/assets/characters/walk-v042-row2.png",
+      "sha256": "ca1b337acaac35a06f35e8f925d3e1afab1135f92f99cc893c7dbc3f1b8f6079"
+    },
+    {
+      "path": "public/assets/characters/walk-v042-row3.png",
+      "sha256": "352c03fe730155464e29980445cb19e29bab889efe47dfd9980695e7b4dc3a9a"
+    },
+    {
+      "path": "public/assets/characters/walk-v042.png",
+      "sha256": "20601c087d65b31c0f1d994d54696d99182811f3ab6772740fbc303709d8dad4"
+    },
+    {
+      "path": "public/assets/characters/walk-west-v042-reference.png",
+      "sha256": "6044be29000962115f76f1f5cc0b3039d2f8905aa4d3b26a084aed75fa73738e"
+    },
+    {
+      "path": "public/assets/characters/walk-west-v042-row0.png",
+      "sha256": "ead294cae14981bc61a1d82dd1453247b0b529e3b358e8ae1489ac0f2d522ff7"
+    },
+    {
+      "path": "public/assets/characters/walk-west-v042.png",
+      "sha256": "ead294cae14981bc61a1d82dd1453247b0b529e3b358e8ae1489ac0f2d522ff7"
+    },
+    {
+      "path": "public/assets/characters/west-attacks-v042-reference.png",
+      "sha256": "b5edef74e3cb030fd2c2e8f17f9cee62140dd2e265373452d5b2bfbf4c13ee5d"
+    },
+    {
+      "path": "public/assets/characters/west-attacks-v042-row0.png",
+      "sha256": "eca363d8a3b280e458cdac8a7af1b1789680b48f88b21a14d531e625897bd73f"
+    },
+    {
+      "path": "public/assets/characters/west-attacks-v042-row1.png",
+      "sha256": "63482ffdfe938ba056ffd1b3cad79495a28190144b2eaa67c8f8d2d963aaddb1"
+    },
+    {
+      "path": "public/assets/characters/west-attacks-v042.png",
+      "sha256": "a631ad912d84c2d1c6b9ef723a87ccdb11259ef8cdc5e1b87da7fdf6de23b3ec"
+    },
+    {
+      "path": "public/assets/effects/combat-v043.png",
+      "sha256": "34b4dbb2c000c88abbaec48e36c92dceebd7e8f355e81ecd14cc1bdb52b0a910"
+    },
+    {
+      "path": "public/assets/environment/forest-ground-v050.png",
+      "sha256": "3177282d899efe001659b73600b2776bc41ddfa15dc52a210825535988a809fd"
+    },
+    {
+      "path": "public/assets/environment/living-v050-reference.png",
+      "sha256": "9680e817e141943372f02d0731d32fe2f68483434f12dced9c5a137475170326"
+    },
+    {
+      "path": "public/assets/environment/living-v050-row0.png",
+      "sha256": "5fcfbbfc4841388cbaba502892b803624a0a8a9ae3b8feb1f4f6989770aafe98"
+    },
+    {
+      "path": "public/assets/environment/living-v050-row1.png",
+      "sha256": "b07fcece533997268e77631aaefcbeb1437f9a4286e0f4167e08ba02117d7d22"
+    },
+    {
+      "path": "public/assets/environment/living-v050.png",
+      "sha256": "015688fff6ef5cbdb300d41a52222cff6b160959d6f5d192ef7546afef3337c6"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/agileBoots.png",
+      "sha256": "2c17cf86b30f68995c2cc89a0fb67ff35c340385df087400d25662fbe9672fe4"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/apprenticeHood.png",
+      "sha256": "4eaa0c2cb7b592412972c219f46d30b5fc7e058561cf134047f25aba4079ea60"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/expeditionChest.png",
+      "sha256": "3f338f9536ccbc6b32654e5ef0f892f8efde9592f78989151515c9eb6f0e196d"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/fireflyCarp.png",
+      "sha256": "f456f72e6e7502466f2381b33663564b55d6dc584a8df70a1dede9cd210eb23f"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/fishingRod.png",
+      "sha256": "0cdb23b80674bd5b24a4421d4f9433adfb7773aa1f4b670be48e4f97c7a44cbd"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/flour.png",
+      "sha256": "5943065f0fbf8761b80899cd4e9c00e02aae27f270027cc5aa7d52c6d8e0b73e"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/focusRing.png",
+      "sha256": "20bcfad2611b7a409f92c01a4d667c7a5e97582bdb78b4b306e9d1cde8abb69a"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedBowFailure.png",
+      "sha256": "40e9eaebcc20a49d5d746c28826f638bde0efea9038b43fd4def8952200c55e4"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedBowGood.png",
+      "sha256": "81448e92621f7267dc67a6cc674bb563027b4dbfc5de15358cc4238b68dcdea8"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedBowPerfect.png",
+      "sha256": "3cd2c32ca7d67ba57643838821f6f5346ce6825ee1ee1fb6a011e2fdd1bff252"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedDaggerFailure.png",
+      "sha256": "ac75eee075de7f4b40feb33be9702bbc1ddb4f5b861cb3d5afd57094db3c6958"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedDaggerGood.png",
+      "sha256": "be96a573c99b7eb24553a5dd135cacc5535f8033946c05d3d419b3daff776553"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedDaggerPerfect.png",
+      "sha256": "6d9bcc79cf2f89b6c4d2c8d1a053dc0790857018e556cc6f71a9319c58488a41"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedStaffFailure.png",
+      "sha256": "37493ddd0433be5ad93a511e4c1d9ffb6dfb9bc58d842bd06d6e55f4401018be"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedStaffGood.png",
+      "sha256": "bddf86ca01300d23c07d38aad342ec5d363d2cbabfb3528681895da06a052d4c"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedStaffPerfect.png",
+      "sha256": "bdd18601b890cda70164d93eb6f27801c1dcb7516cebc00073bf2251b213e3ce"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedSwordFailure.png",
+      "sha256": "a4c349ad1ae9549e522798b7f1935aad293b2245f0637fcd80f441f22afe4599"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedSwordGood.png",
+      "sha256": "7358919c7156af828fa59758fc14f8fbe5dc57f668b20fcc5eb0d4a48bebb8db"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/forgedSwordPerfect.png",
+      "sha256": "b0caec3b5bd24d0adee7aea5e9287005cebe98e054c33249cfa0821de1fb16d1"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/goldenCarp.png",
+      "sha256": "baffb3b80a16f6b70b568703b0ed12b9015db8554f500e58e8124fd1e90ec8da"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/herbCatfish.png",
+      "sha256": "bdc15b4bf1ef9ab8f5bf02789a8e613df3c22beedcf7d58f78895c1f9946a208"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/herbs.png",
+      "sha256": "61f2cd1a401d8a4f9330a0a855cd9cda1831a7949a0f640a14d5ed4bd7afcfd4"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/lightVest.png",
+      "sha256": "cc880fca07f352b444754d9723ab3a0f4ef9f7f96db071848e2ad8a7f6d8cb62"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/limiarMinnow.png",
+      "sha256": "44e8e8ded2cd875bb649c706c3f98a3d625dd3330076e1b50846a0b90a6efd70"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/limiarStew.png",
+      "sha256": "33793bc9dd4f849c0865f6d4d6ecb638e03e872f815ee476a01e21b3eb3545f9"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/lunarSoup.png",
+      "sha256": "70e6d5b008e194ac6ab3f95bb07eb81e5dfb9bc4b40aa6cbcf360ab68d185ed2"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/moonFish.png",
+      "sha256": "dc2a232ea4bfcadbe1d0e571d29008ae1508157e9d506da2a6d6969ef0e56f5e"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/mossCatfish.png",
+      "sha256": "2dffb16ef8c6c58822bebc18137a0accccc6072da706d47a7af82d95cb260cb8"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/oil.png",
+      "sha256": "e30850a248e8d6daf876ef7f2bf5edea0916215918f5d7a1b831b3f6456ba6ff"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/rawOre.png",
+      "sha256": "5c91a9ef96ab4a9f0ae80345c9adeb6f929bba6fd22c6de5a8b572a7dad44aa8"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/roastMinnow.png",
+      "sha256": "90b80ce73b0af848765c15903e9fd4cf2d779d7290566faa57745ae3ddf67904"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/runeFish.png",
+      "sha256": "042ad953ad9034fd832696f39d98c6651f3b442d3f71ade4b88ef2a1ef3e7dc3"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/runicDish.png",
+      "sha256": "0ffffce5d1ba475f32c8f6e2183b40f0c019111ff6c839aff1b3320d00379f28"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/salt.png",
+      "sha256": "596f369e5e038efd39c9b6f61c7a26be6d513a9870d3b86f62c4d45cb18f6efa"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/simplePickaxe.png",
+      "sha256": "2debf3009da43950d2f8fc8280cfc444157f3bfe05d6a89307c2aea548351b15"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/strengthRing.png",
+      "sha256": "6fef5d7dc0accbce925cf41a8f0f133e93a44d4a63f5f1a4aec63a2e985449d7"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/trainingBow.png",
+      "sha256": "6dde86758a2f6b735053914215527525309ec4f52f0868388b00523f60afd1ea"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/trainingDagger.png",
+      "sha256": "36bafc72f420c9ca9f3d0887263568fa9d1db3b42a199e27bb664ebe4937291e"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/trainingStaff.png",
+      "sha256": "aa6a3cc7f44f03805d8980b2f77ed0c696620e94cc5daed39e8007eb7a5bff47"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/trainingSword.png",
+      "sha256": "1f54e87b08f22192b465cb942460e50171f58b33ae9b90dffd8b24a481c47571"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/travelerBoots.png",
+      "sha256": "c56d45ddc672a348cec32584da82925f88a3493af938d51f204e1cfdf8bcff87"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/travelerCap.png",
+      "sha256": "42944cfccd6e62a4c0abbb8a18758ba9aab2542a32c2b0fc6ea85f5e6cfd0e53"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/travelerVest.png",
+      "sha256": "7c0a6c38053482a43640b00bc270cd3d1c675dea5d29497913fce5834b62da92"
+    },
+    {
+      "path": "public/assets/items/inventory-v281/water.png",
+      "sha256": "812594b433352c9319f76a9200c65d5848d43e81914ee314ea515b5284279134"
+    },
+    {
+      "path": "public/assets/items/sample-v281/limiarMinnow.png",
+      "sha256": "8608461204e88c0d57ed51ce755cf1a2712768a7336acc94e657ea0ed7835b3f"
+    },
+    {
+      "path": "public/assets/items/sample-v281/oil.png",
+      "sha256": "1f1a15f959a2d82ddcf8bd6e9c065cc73c5d3ea40b7032290843388f814341bd"
+    },
+    {
+      "path": "public/assets/items/sample-v281/trainingBow.png",
+      "sha256": "75a3d6a5a47e2b7eb59fea311f7bde716158886dd223c899a314faab63884556"
+    },
+    {
+      "path": "public/assets/items/sample-v281/trainingDagger.png",
+      "sha256": "b7b480272ec31fb264c83597bbe5453d3ad546e3b6f9b9f58e18cc84901985a7"
+    },
+    {
+      "path": "public/assets/items/sample-v281/trainingStaff.png",
+      "sha256": "d30bb4cdd931779c6db0601c47eefc39455cd8c4c8672acd2bb90bb56f7f70a7"
+    },
+    {
+      "path": "public/assets/items/sample-v281/trainingSword.png",
+      "sha256": "e9c493b18c44a9fd3d3fa7f86a1a197117309de492bb77fa18526a6ddbfe8c51"
+    },
+    {
+      "path": "public/assets/items/sample-v281/travelerVest.png",
+      "sha256": "514da778ec54aff297400739cc61f30cb50555801ea2d361a38c0b6ad80c2db2"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf-reference.png",
+      "sha256": "510afee8e1231bcb411c8f7cbbcd52c6cd9615358c27ee9d491670f6ab28c88b"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf-row0.png",
+      "sha256": "d2c2abb35a639e776d77a277e338c6968480f4f79b86e89e7ecf562d56039daa"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf-row1.png",
+      "sha256": "d4cfb1bd0cc75adadd7ce5b6260199831d262c263e74f0d4343a953b7da2e026"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf-row2.png",
+      "sha256": "c9b1c07e60a5bb5818984e20dd202b67d6b56a2f6377545dd2871ad90dc65463"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf-row3.png",
+      "sha256": "ec5cda967db38ab7e6669952cf71c9e35ad551b40ec9f05167aa2eb6883d31d7"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf-source.png",
+      "sha256": "6094a63c1ab1d1a954e5b6ef9e415ed4de13ee191e05bf373f0c974e05d9401c"
+    },
+    {
+      "path": "public/assets/monsters-v36/white-wolf.png",
+      "sha256": "a8ca89694c6932e984b9835f741caeae508494e116375264945eca3657497bec"
+    },
+    {
+      "path": "public/assets/monsters/slimes-v042.png",
+      "sha256": "f8aba6776385174d63aac53c3735ed467fa2207f6e9af8ba892e729fbc0fb703"
+    },
+    {
+      "path": "public/assets/monsters/slimes.png",
+      "sha256": "9aacecdc8aaca2005573aa27723e18b3eb217f9bccb3ffc7376c2dd8b179a31d"
+    },
+    {
+      "path": "public/assets/monsters/wolf-v050-reference.png",
+      "sha256": "11975c4fc7c2010c07f974a1eb98540cd32929ce287a391ed96401164966ba92"
+    },
+    {
+      "path": "public/assets/monsters/wolf-v050-row0.png",
+      "sha256": "45d63777077edc7a19507360a932c8d68c47c53d6ad06845cd983286a8b21fed"
+    },
+    {
+      "path": "public/assets/monsters/wolf-v050-row1.png",
+      "sha256": "79c441deaf48d295aa4967af2228248e2452c70891a67d5fd0ff5d32724481de"
+    },
+    {
+      "path": "public/assets/monsters/wolf-v050-row2.png",
+      "sha256": "39188dd1d0d83a383b62e228b7bba0361dd72e03e5f2f6470bf32b821e043e87"
+    },
+    {
+      "path": "public/assets/monsters/wolf-v050-row3.png",
+      "sha256": "320b85a8ff83730cccfc6c4ec69aebb4ccc795f4f07c5ebaae5427118ffc0453"
+    },
+    {
+      "path": "public/assets/monsters/wolf-v050.png",
+      "sha256": "1c6f87982e6fc95dad2350cbf2b2dec3c462af8a41f9e8fced8662d78b9f205c"
+    },
+    {
+      "path": "public/assets/npcs/blacksmith-v051.png",
+      "sha256": "2928883451012bcbd075d2c448ccc562798489effde972628dedeb20b0abb608"
+    },
+    {
+      "path": "public/assets/npcs/townsfolk-v042.png",
+      "sha256": "6000871836d3fca934fc8792d6595ab903fab2a25dc717e23d16e73dfcd916a6"
+    },
+    {
+      "path": "public/assets/npcs/townsfolk-v043-reference.png",
+      "sha256": "99d271ba6728daff577f8954741e3e01b2b9feeaaadcd5a7854c146f3b2819e8"
+    },
+    {
+      "path": "public/assets/npcs/townsfolk-v043-row0.png",
+      "sha256": "29c4b1898dfcb93ef72c1596372fa7088d266b274c59e188c46eb01503e63aae"
+    },
+    {
+      "path": "public/assets/npcs/townsfolk-v043-row1.png",
+      "sha256": "26337f0b494b16e7795cb5c3bb1ade0d834b2fb2931ae4073edeba9dc9954e0f"
+    },
+    {
+      "path": "public/assets/npcs/townsfolk-v043.png",
+      "sha256": "0ebdbe613e89b841b499b0ff7173b743ebc3c2d73a99a4394980a80647b86020"
+    },
+    {
+      "path": "public/assets/npcs/townsfolk.png",
+      "sha256": "f06ef41298d9e0c70e127a84623b926ab935c875ab9aebf0f0e638d3dee9b200"
+    },
+    {
+      "path": "public/assets/portraits/brasa-full-v271.png",
+      "sha256": "0da641aeeb4fa5f938bdc88638d2e9e231ba2d0ca46ce2b0422313901e698f47"
+    },
+    {
+      "path": "public/assets/portraits/caio-full-v271.png",
+      "sha256": "70782362d14c86bd600728ef43ceda427995299f254e66ff342caa65935ce755"
+    },
+    {
+      "path": "public/assets/portraits/lina-full-v271.png",
+      "sha256": "a0d1a5f06e8bc3cb82dd1b569eb2267da652729655317112467152e768969ad3"
+    },
+    {
+      "path": "public/assets/portraits/marta-full-v271.png",
+      "sha256": "d61d1675131cc18d46fe7a5e3488e90b13fe670eced7137d6c82ba9f664af2d9"
+    },
+    {
+      "path": "public/assets/portraits/orin-full-v271.png",
+      "sha256": "2d9005e405860488e6cc645fc20753a074b36a6d1734d3771859815e568fc556"
+    },
+    {
+      "path": "public/assets/portraits/serafina-full-v271.png",
+      "sha256": "ccd4fca625450959dbcc00b70225132ef1d7a2ff69e6ca884bd821a491330bbe"
+    },
+    {
+      "path": "public/assets/portraits/townsfolk-transparent-v27.png",
+      "sha256": "28c95ed9b1c72bf05450829463d954d0288951dbbe0a4b06d3f5ab505a3be6e5"
+    },
+    {
+      "path": "public/assets/portraits/townsfolk.png",
+      "sha256": "34569f9e2a26e85e5e0d33cf7ba51f5fbb8585ce0c871b98408e7d8cbcebd8be"
+    },
+    {
+      "path": "public/assets/rewards-v30/chest-opening.png",
+      "sha256": "f1f75bac38b497895f9f4c5fc782bfb3da5c7104a3e2886877e846a74047992b"
+    },
+    {
+      "path": "public/assets/title-v31.png",
+      "sha256": "75ea561c39dba5f26479f2e6f99d174b6d2d1d0dbf87f5299c32fdc655333e5a"
+    },
+    {
+      "path": "public/assets/transport-v291/cart-0.png",
+      "sha256": "bd7270ba75b1f1b4da4d4a659c484190ed07868d6124619a12276be86f290733"
+    },
+    {
+      "path": "public/assets/transport-v291/cart-1.png",
+      "sha256": "ef8a12b512a1cbd400cf55cc332a37b8be0231aed37636a9904727b31eb51a8e"
+    },
+    {
+      "path": "public/assets/transport-v291/cart-2.png",
+      "sha256": "e755f029896ea98a759c01f1df873c4d799bf8a36562c4be6c31016127255a23"
+    },
+    {
+      "path": "public/assets/transport-v291/cart-3.png",
+      "sha256": "a7d03526c343da2593a4bf2975a4e02aa5ffe27e4727aab85af4ed05d10881eb"
+    },
+    {
+      "path": "public/assets/transport-v291/cart-atlas.png",
+      "sha256": "c7ce0d4ed387493b5a8e9b845c436a3347281eaaeb4b0768cc29ce4db675cab9"
+    },
+    {
+      "path": "public/assets/transport-v291/travelerBackpack.png",
+      "sha256": "842078ba2de5ee2315c9b3ed9cf4244b7d3e0040925ea436c0a9cdb04d964392"
+    },
+    {
+      "path": "public/assets/transport-v291/woodenCart.png",
+      "sha256": "bccfc70ee18a4e93d11d9b0a9bf1a2a8b5fd04ea04df203483c31d221eba1000"
+    }
+  ]
+}

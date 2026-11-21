@@ -1,0 +1,44 @@
+[
+  {
+    "id": "young",
+    "file": "C:/Users/theuz/.codex/generated_images/01a178a4-8b04-70f1-9fca-efebfc6cb7e1/exec-8fe1adfc-75a5-4724-9eea-84b51f3a4792.png",
+    "prompt": "Use case: stylized-concept. Production game asset for Dungeon Teacher: a young living skill tree, isolated on a truly transparent background, no text, no UI boxes, no icons or labels. A literal beautiful small oak sapling with visible spreading roots, a short warm brown trunk, a few organic branches and restrained green-gold foliage. Front elevation, symmetrical overall but organically drawn, earthy dark outlines and controlled warm gold/teal forest palette suitable for chibi fantasy pixel-art RPG. Crisp hand-pixelled look with deliberate chunky pixel clusters, not a smooth painting, no gradients, no blur. Composition on a landscape 720 by 520 layout: central trunk around x360, crown in upper 45%, roots and low branches spreading across bottom 55%, clear negative space between roots, entire silhouette visible with margins. Design root tips near x96,228,360,492,624 at y330 and y450: ten organically attached small rounded wooden branch knots will later hold ability medallions, but leave their centers undecorated. Visible wood grain and leaf clusters, elegant limited detail readable at a native 360 by 260 logical pixel size enlarged exactly 2x. Do not draw a diagram; the branching silhouette itself is the illustration.",
+    "tool": "built-in image_gen",
+    "status": "Integrated after palette reduction, layout and manual trunk/branch finishing; production asset in public/assets/skill-tree-v37-rv2."
+  },
+  {
+    "id": "warrior",
+    "file": "C:/Users/theuz/.codex/generated_images/01a178a4-8b04-70f1-9fca-efebfc6cb7e1/exec-f98c7b9e-bb2b-4671-8121-40bcacf35b5b.png",
+    "prompt": "Use case: stylized-concept. Production pixel-art game asset, adult WARRIOR skill tree for Dungeon Teacher, isolated on transparent background. Literal majestic oak tree viewed straight on, a very tall thick warm brown trunk, strong organic branches climbing vertically, restrained dark olive and gold leaf clusters, a few iron collars and tiny shield/sword carvings in bark, natural living tree not machine. No text, letters, numbers, UI, icons, boxes or circles. Tall portrait canvas, width to height 1:2.3. Entire tree visible, margins, roots taper to a central bottom foot that will join an existing young tree root asset. Three main upward boughs at x roughly 22%, 50%, 78%; along each bough four broad readable junctions around y 78%,62%,46%,30%; upper branches join naturally near y15%, central crown at y6%. Branch structure must remain visible, foliage gathered beside branches not a solid canopy obscuring them. Deliberate crisp square pixel clusters at a logical resolution about 360x650 enlarged in exact steps, controlled 32-color earthy fantasy RPG palette, 2-tone bark highlights, deep teal shadow outlines, no airbrush or smooth gradients. Rich professional pixel-art wood and leaves while maintaining negative space for ability medallions to be overlaid at branch junctions. Same warm gold/teal forest family as a young oak; sturdy warrior identity.",
+    "tool": "built-in image_gen",
+    "status": "Integrated after palette reduction, layout and manual trunk/branch finishing; production asset in public/assets/skill-tree-v37-rv2."
+  },
+  {
+    "id": "archer",
+    "file": "C:/Users/theuz/.codex/generated_images/01a178a4-8b04-70f1-9fca-efebfc6cb7e1/exec-9e75b8ec-fc24-4d44-a2fe-2f9288e10956.png",
+    "prompt": "Use case: style-transfer. Edit the provided game tree into a distinct class-specific mature skill-tree asset for Dungeon Teacher. ARCHER: light golden-brown wood, graceful elongated boughs reminiscent of a bow, fine fresh green leaves, tiny feather and arrow carvings. Slender silhouette, natural precision; remove every warrior shield, sword and iron band. Preserve the original crisp pixel-art rendering, controlled palette, readable organic bark/foliage, front view, transparent background and vertical overall proportions. Three main boughs must remain readable, with multiple clear junctions at successive heights for later ability medallions. Change the silhouette and branch gestures enough to embody this class, not just a color swap. Entire tree visible including roots; no text, letters, numbers, UI, floating icons or background scene. Transparent pixels remain transparent. Native-looking pixel clusters, no blur, gradients or photographic rendering.",
+    "tool": "built-in image_gen",
+    "status": "Integrated after palette reduction, layout and manual trunk/branch finishing; production asset in public/assets/skill-tree-v37-rv2."
+  },
+  {
+    "id": "rogue",
+    "file": "C:/Users/theuz/.codex/generated_images/01a178a4-8b04-70f1-9fca-efebfc6cb7e1/exec-abb9e789-5e0c-491e-b58f-b886f649d832.png",
+    "prompt": "Use case: style-transfer. Edit the provided game tree into a distinct class-specific mature skill-tree asset for Dungeon Teacher. ROGUE: sinuous asymmetrical twisting branches, dark walnut wood, sparse deep plum and teal leaves, subtle dagger and crescent carvings. Clearly organic tree with deliberate shadow/light contrast; remove warrior sword/shield/iron motifs. Preserve the original crisp pixel-art rendering, controlled palette, readable organic bark/foliage, front view, transparent background and vertical overall proportions. Three main boughs must remain readable, with multiple clear junctions at successive heights for later ability medallions. Change the silhouette and branch gestures enough to embody this class, not just a color swap. Entire tree visible including roots; no text, letters, numbers, UI, floating icons or background scene. Transparent pixels remain transparent. Native-looking pixel clusters, no blur, gradients or photographic rendering.",
+    "tool": "built-in image_gen",
+    "status": "Integrated after palette reduction, layout and manual trunk/branch finishing; production asset in public/assets/skill-tree-v37-rv2."
+  },
+  {
+    "id": "priest",
+    "file": "C:/Users/theuz/.codex/generated_images/01a178a4-8b04-70f1-9fca-efebfc6cb7e1/exec-31b93318-a268-4b73-ba29-a399ee88d165.png",
+    "prompt": "Use case: style-transfer. Edit the provided game tree into a distinct class-specific mature skill-tree asset for Dungeon Teacher. PRIEST: pale warm wood, harmonious welcoming branches, luminous gold and cream leaves, tiny sacred sun and healing-cross carvings, restrained golden highlights. Organic living tree, not a cathedral; remove warrior sword/shield/iron motifs. Preserve the original crisp pixel-art rendering, controlled palette, readable organic bark/foliage, front view, transparent background and vertical overall proportions. Three main boughs must remain readable, with multiple clear junctions at successive heights for later ability medallions. Change the silhouette and branch gestures enough to embody this class, not just a color swap. Entire tree visible including roots; no text, letters, numbers, UI, floating icons or background scene. Transparent pixels remain transparent. Native-looking pixel clusters, no blur, gradients or photographic rendering.",
+    "tool": "built-in image_gen",
+    "status": "Integrated after palette reduction, layout and manual trunk/branch finishing; production asset in public/assets/skill-tree-v37-rv2."
+  },
+  {
+    "id": "mage",
+    "file": "C:/Users/theuz/.codex/generated_images/01a178a4-8b04-70f1-9fca-efebfc6cb7e1/exec-b6632d44-33f7-4b95-887d-b5af178223f3.png",
+    "prompt": "Use case: style-transfer. Edit the provided game tree into a distinct class-specific mature skill-tree asset for Dungeon Teacher. MAGE: twisting mystical trunk, peculiar branching silhouette, blue-violet leaves, small carved arcane runes and cyan crystals nestled into bark, restrained cold highlights. Organic living tree; remove warrior sword/shield/iron motifs. Preserve the original crisp pixel-art rendering, controlled palette, readable organic bark/foliage, front view, transparent background and vertical overall proportions. Three main boughs must remain readable, with multiple clear junctions at successive heights for later ability medallions. Change the silhouette and branch gestures enough to embody this class, not just a color swap. Entire tree visible including roots; no text, letters, numbers, UI, floating icons or background scene. Transparent pixels remain transparent. Native-looking pixel clusters, no blur, gradients or photographic rendering.",
+    "tool": "built-in image_gen",
+    "status": "Integrated after palette reduction, layout and manual trunk/branch finishing; production asset in public/assets/skill-tree-v37-rv2."
+  }
+]

@@ -1,0 +1,23 @@
+✔ each family renders complete stored and held four-phase walks in all directions (25.8764ms)
+✔ starting and stopping movement changes transition variant without resetting equipment progress (2.0193ms)
+✔ damage reaction pauses equip transition and preserves gameplay inputs (0.4926ms)
+✔ mining presents a strike only for a real strike event, never for timeout (0.7462ms)
+✔ fishing follows real cast, wait, bite and reel events without changing them (0.3516ms)
+✔ current PNGs match integer manifests with complete silhouettes inside safe margins (36.8924ms)
+✔ water blocks manual motion, click destinations, diagonal segments and enemy routes (11.3612ms)
+✔ visible contour, casting and collision share vertices; layers isolate water (1.2291ms)
+✔ natural shores respect reach, water endpoint and solid obstacles (0.6589ms)
+✔ living lakes block shared navigation; source and population remain intact (235.67ms)
+✔ campaign fishes in a previously unsupported pool with unchanged grant (627.1959ms)
+✔ arcs preserve endpoints and height independently of frame rate (0.8033ms)
+✔ new reel pose is distinct and cancellation clears presentation (0.9283ms)
+✔ fishing buffers survive repeated casts and all orientations; confirmed cancellation and death hide them (39.6812ms)
+✔ initial position uses its declared elevated layer above blocked water (0.4884ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1238.4228

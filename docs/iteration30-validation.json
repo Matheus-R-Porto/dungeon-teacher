@@ -1,0 +1,62 @@
+{
+  "checks": [
+    "Real reward PNGs loaded",
+    "Exact offline gold and quantity",
+    "Offline item matches seed",
+    "Repeated skip cannot duplicate rewards",
+    "Result remains until acknowledged",
+    "Escape preserves chest and clears busy",
+    "Repeated opening, re-entry guard and keyboard skip",
+    "Fits 800×600",
+    "Fits 480×720",
+    "Fits 640×480",
+    "Offline save reload preserves all items, gold and seeds",
+    "Safety transition cancels only presentation, keeping chest",
+    "Save in progress blocks Escape",
+    "Save failure restores chest, seed, items and gold",
+    "Reduced motion skips cosmetic movement and grants once",
+    "Full inventory refuses without starting animation",
+    "Online presentation uses actual server result; replay rejected",
+    "Online result persisted in SQLite",
+    "Online reconnect retains reward without replay",
+    "Online save rejection preserves chest and reports failure",
+    "Lost online confirmation recovers saved reward on reconnect, without resending"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\01-inventory.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\02-closed.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\03-anticipation.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\04-crack.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\05-half.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\06-open.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\07-transition.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\08-reel.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\09-slowing.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\10-approaching.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\10-selected-saving.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\11-result.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\12-repeat-result.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\13-window-800x600.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\13-window-480x720.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\13-window-640x480.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\14-save-failure.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\15-reduced-motion.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\16-full-inventory.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\17-online-result.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\18-online-failure.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration30-1793027330345\\19-online-interrupted.png"
+  ],
+  "errors": [],
+  "reloadChangedFields": [
+    "exploration"
+  ],
+  "ok": true,
+  "fullSuite": {
+    "tests": 788,
+    "pass": 788,
+    "fail": 0,
+    "seconds": 192.37919250000002
+  },
+  "build": "passed",
+  "captures": 24
+}

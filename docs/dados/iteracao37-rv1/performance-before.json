@@ -1,0 +1,7661 @@
+{
+  "checks": [
+    "Lápide visual: morte provocada somente como fixture de teste no servidor, posição real, data e golpe final iguais em todos os clientes conectados",
+    "3 processos Electron com TLS, login real, perfis válidos, renderização e comandos de combate"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv1-performance-before-0611-1793503660396\\01-cidade-clientes-reais.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv1-performance-before-0611-1793503660396\\02-inicio-do-combate.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv1-performance-before-0611-1793503660396\\02-combate-lobo-branco.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv1-performance-before-0611-1793503660396\\03-lapide-compartilhada.png"
+  ],
+  "errors": [],
+  "output": "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration37-rv1-performance-before-0611-1793503660396",
+  "packagedResources": true,
+  "gpuTimersEnabled": false,
+  "clientCount": 3,
+  "build": "release/iteration37",
+  "environment": {
+    "node": "v24.19.0",
+    "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+    "os": "Windows 11 Home Single Language"
+  },
+  "measurements": [
+    {
+      "phase": "01-cidade-clientes-reais",
+      "client": 0,
+      "elapsed": 12.127857999999833,
+      "requestedWindow": 12.094065200000005,
+      "taskDuration": 10.252949000000001,
+      "metricTimestamps": [
+        23857.12826,
+        23869.256118
+      ],
+      "rendererTaskCPUPercent": 84.54047697458317,
+      "jsHeap": 12202700,
+      "frame": {
+        "n": 403,
+        "mean": 31.122084367243808,
+        "p95": 54,
+        "max": 90.19999999925494
+      },
+      "fps": 32.1315239750621,
+      "samples": {
+        "interpolation": {
+          "n": 1212,
+          "mean": 0.0766501650029775,
+          "p95": 0.19999999925494194,
+          "max": 12.699999999254942
+        },
+        "sprites": {
+          "n": 1212,
+          "mean": 0.08778877891046871,
+          "p95": 0.20000000298023224,
+          "max": 3.7999999970197678
+        },
+        "effects": {
+          "n": 404,
+          "mean": 0.008168316842748387,
+          "p95": 0.09999999776482582,
+          "max": 0.20000000298023224
+        },
+        "combatVisualInclusive": {
+          "n": 404,
+          "mean": 0.10321782178033402,
+          "p95": 0.20000000298023224,
+          "max": 3.800000000745058
+        },
+        "remoteInclusive": {
+          "n": 404,
+          "mean": 0.31138613869869475,
+          "p95": 0.6000000014901161,
+          "max": 12.600000001490116
+        },
+        "renderSubmit": {
+          "n": 404,
+          "mean": 16.748762376154634,
+          "p95": 26,
+          "max": 55.399999998509884
+        },
+        "sceneInclusive": {
+          "n": 404,
+          "mean": 18.712376237551837,
+          "p95": 30,
+          "max": 56.19999999925494
+        },
+        "snapshotCallback": {
+          "n": 125,
+          "mean": 3.448000000089407,
+          "p95": 6.400000002235174,
+          "max": 9.300000000745058
+        },
+        "snapshotProcessing": {
+          "n": 137,
+          "mean": 3.7978102192826513,
+          "p95": 7.100000001490116,
+          "max": 16
+        }
+      },
+      "activity": {
+        "combatFrames": 0,
+        "effectFrames": 0
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 711,
+        "visible": 704,
+        "materials": 172,
+        "textures": 20,
+        "textureSources": 16,
+        "geometries": 351,
+        "transparentObjects": 162,
+        "drawCalls": 416,
+        "triangles": 40308,
+        "gpuTextures": 21,
+        "gpuGeometries": 247,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 28478.10000000149,
+          "state": "visible"
+        }
+      ],
+      "preparation": {
+        "map": "shared-city",
+        "started": 822.1999999992549,
+        "stages": [
+          {
+            "name": "structure",
+            "ms": 18.800000000745058
+          },
+          {
+            "name": "city",
+            "ms": 128.30000000074506
+          },
+          {
+            "name": "castle",
+            "ms": 0.5
+          },
+          {
+            "name": "guardian",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "portal",
+            "ms": 5.199999999254942
+          },
+          {
+            "name": "npcs",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "player-animation",
+            "ms": 0.5
+          },
+          {
+            "name": "particles",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "camera",
+            "ms": 8
+          },
+          {
+            "name": "finish",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "entities",
+            "ms": 10
+          },
+          {
+            "name": "entities-ready",
+            "ms": 11.5
+          },
+          {
+            "name": "textures",
+            "ms": 75.69999999925494
+          },
+          {
+            "name": "actor-upload",
+            "ms": 25.800000000745058
+          },
+          {
+            "name": "actor-upload",
+            "ms": 19.099999997764826
+          },
+          {
+            "name": "actor-atlases",
+            "ms": 51.69999999925494
+          },
+          {
+            "name": "prepared-pose",
+            "ms": 5.199999999254942
+          },
+          {
+            "name": "shader-submit:0",
+            "ms": 3.899999998509884
+          },
+          {
+            "name": "shader-submit:16",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:32",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:48",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:64",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:80",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:96",
+            "ms": 4
+          },
+          {
+            "name": "shader-submit:112",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "shader-submit:128",
+            "ms": 4.300000000745058
+          },
+          {
+            "name": "shader-submit:144",
+            "ms": 1.5
+          },
+          {
+            "name": "shader-submit:160",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "shader-submit:176",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:192",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:208",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:224",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "shader-submit:240",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:256",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:272",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:288",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:304",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:320",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:336",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:352",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:368",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:384",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:400",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:416",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:432",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:448",
+            "ms": 12.899999998509884
+          },
+          {
+            "name": "shader-submit:464",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "shader-submit:480",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:496",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:512",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "shader-submit:528",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:544",
+            "ms": 6.899999998509884
+          },
+          {
+            "name": "shader-submit:560",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:576",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:592",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "shader-submit:608",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "shader-submit:624",
+            "ms": 1.7000000029802322
+          },
+          {
+            "name": "shader-submit:640",
+            "ms": 12.300000000745058
+          },
+          {
+            "name": "shader-submit:656",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "shaders",
+            "ms": 282.5999999977648
+          },
+          {
+            "name": "gpu-shader-submit:0",
+            "ms": 5
+          },
+          {
+            "name": "gpu-shader-submit:16",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:32",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:48",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:64",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:80",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:96",
+            "ms": 2.400000002235174
+          },
+          {
+            "name": "gpu-shader-submit:112",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:128",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-shader-submit:144",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-shader-submit:160",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-shader-submit:176",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:192",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:208",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:224",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-shader-submit:240",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "gpu-shader-submit:256",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "gpu-shader-submit:272",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "gpu-shader-submit:288",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:304",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-shader-submit:320",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:336",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:352",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:368",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:384",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:400",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:416",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:432",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:448",
+            "ms": 12.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:464",
+            "ms": 2.900000002235174
+          },
+          {
+            "name": "gpu-shader-submit:480",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:496",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:512",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:528",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:544",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-shader-submit:560",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "gpu-shader-submit:576",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-shader-submit:592",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:608",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:624",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:640",
+            "ms": 6.699999999254942
+          },
+          {
+            "name": "gpu-shader-submit:656",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shaders",
+            "ms": 219.40000000223517
+          },
+          {
+            "name": "gpu-batch:0:Mesh",
+            "ms": 9.199999999254942
+          },
+          {
+            "name": "gpu-batch:1:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:2:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:3:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:4:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:5:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:6:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:7:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:8:Mesh",
+            "ms": 6.900000002235174
+          },
+          {
+            "name": "gpu-batch:9:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:10:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:11:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:12:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:13:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:14:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:15:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:16:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:17:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:18:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:19:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:20:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:21:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:22:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:23:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:24:Mesh",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-batch:25:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:26:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:27:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:28:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:29:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:30:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:31:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:32:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:33:Mesh",
+            "ms": 5.800000000745058
+          },
+          {
+            "name": "gpu-batch:34:Mesh",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-batch:35:Mesh",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-batch:36:Mesh",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-batch:37:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:38:Mesh",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-batch:39:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:40:Mesh",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-batch:41:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:42:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:43:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:44:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:45:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:46:Mesh",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "gpu-batch:47:Mesh",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-batch:48:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:49:Mesh",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-batch:50:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:51:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:52:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:53:Mesh",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "gpu-batch:54:Mesh",
+            "ms": 1.2000000029802322
+          },
+          {
+            "name": "gpu-batch:55:Mesh",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-batch:56:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:57:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:58:Mesh",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-batch:59:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:60:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:61:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:62:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:63:Mesh",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-batch:64:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:65:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:66:Mesh",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-batch:67:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:68:Mesh",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-batch:69:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:70:Mesh",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-batch:71:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:72:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:73:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:74:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:75:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:76:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:77:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:78:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:79:Mesh",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "gpu-batch:80:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:81:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:82:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:83:Mesh",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-batch:84:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:85:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:86:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:87:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:88:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:89:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:90:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:91:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:92:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:93:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:94:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:95:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:96:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:97:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:98:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:99:Mesh",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-batch:100:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:101:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:102:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:103:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:104:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:105:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:106:Mesh",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-batch:107:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:108:Mesh",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "gpu-batch:109:Mesh",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "gpu-batch:110:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:111:Mesh",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-batch:112:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:113:Mesh",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-batch:114:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:115:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:116:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:117:Mesh",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-batch:118:Mesh",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-batch:119:Mesh",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-batch:120:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:121:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:122:Mesh",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-batch:123:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:124:Mesh",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-batch:125:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:126:Mesh",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:127:Sprite",
+            "ms": 10.899999998509884
+          },
+          {
+            "name": "gpu-batch:128:Sprite",
+            "ms": 23.100000001490116
+          },
+          {
+            "name": "gpu-batch:129:Mesh",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "gpu-batch:130:Mesh",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-batch:131:Mesh",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-batch:132:Mesh",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "gpu-batch:133:Mesh",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "gpu-batch:134:Mesh",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-batch:135:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:136:Mesh",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "gpu-batch:137:Sprite",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:138:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:139:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:140:Points",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:141:Sprite",
+            "ms": 1
+          },
+          {
+            "name": "gpu-preparation",
+            "ms": 560.6999999992549
+          },
+          {
+            "name": "camera",
+            "ms": 0
+          }
+        ],
+        "heapBefore": 8742214,
+        "ready": 2075.60000000149,
+        "total": 1253.4000000022352,
+        "maxUnit": 128.30000000074506,
+        "heapAfter": 16655356,
+        "disposalMs": 0,
+        "firstRender": 122.09999999776483,
+        "firstSubmittedAt": 2253.699999999255,
+        "requestToWelcome": null,
+        "presentationProxy": 13.699999999254942,
+        "controlAt": 2476.800000000745,
+        "controlLatency": 1654.6000000014901
+      },
+      "sheets": {
+        "entries": 3,
+        "active": 3,
+        "idle": 0,
+        "loads": 3,
+        "evictions": 0,
+        "preparationMs": 367.4999999962747
+      }
+    },
+    {
+      "phase": "01-cidade-clientes-reais",
+      "client": 1,
+      "elapsed": 13.217596000002231,
+      "requestedWindow": 12.094065200000005,
+      "taskDuration": 12.255443999999999,
+      "metricTimestamps": [
+        23857.127126,
+        23870.344722
+      ],
+      "rendererTaskCPUPercent": 92.72067326008398,
+      "jsHeap": 29619028,
+      "frame": {
+        "n": 475,
+        "mean": 28.11178947368735,
+        "p95": 44,
+        "max": 97.80000000074506
+      },
+      "fps": 35.57226411844044,
+      "samples": {
+        "interpolation": {
+          "n": 1428,
+          "mean": 0.07906162461751148,
+          "p95": 0.20000000298023224,
+          "max": 3.5
+        },
+        "sprites": {
+          "n": 1428,
+          "mean": 0.08767507001444572,
+          "p95": 0.20000000298023224,
+          "max": 1.5
+        },
+        "effects": {
+          "n": 476,
+          "mean": 0.006722689074065004,
+          "p95": 0.09999999776482582,
+          "max": 0.20000000298023224
+        },
+        "combatVisualInclusive": {
+          "n": 476,
+          "mean": 0.09516806726758721,
+          "p95": 0.20000000298023224,
+          "max": 2.399999998509884
+        },
+        "remoteInclusive": {
+          "n": 476,
+          "mean": 0.3550420168067227,
+          "p95": 0.8000000007450581,
+          "max": 4
+        },
+        "renderSubmit": {
+          "n": 476,
+          "mean": 16.595378151273025,
+          "p95": 25.600000001490116,
+          "max": 53.30000000074506
+        },
+        "sceneInclusive": {
+          "n": 476,
+          "mean": 18.457563025156865,
+          "p95": 27.799999997019768,
+          "max": 58.100000001490116
+        },
+        "snapshotCallback": {
+          "n": 133,
+          "mean": 3.715037593940147,
+          "p95": 7.300000000745058,
+          "max": 11.800000000745058
+        },
+        "snapshotProcessing": {
+          "n": 146,
+          "mean": 3.8904109589041096,
+          "p95": 7.599999997764826,
+          "max": 12.5
+        }
+      },
+      "activity": {
+        "combatFrames": 0,
+        "effectFrames": 0
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 711,
+        "visible": 703,
+        "materials": 172,
+        "textures": 20,
+        "textureSources": 16,
+        "geometries": 351,
+        "transparentObjects": 162,
+        "drawCalls": 417,
+        "triangles": 41126,
+        "gpuTextures": 20,
+        "gpuGeometries": 246,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 20789.60000000149,
+          "state": "visible"
+        }
+      ],
+      "preparation": {
+        "map": "shared-city",
+        "started": 1428.5,
+        "stages": [
+          {
+            "name": "structure",
+            "ms": 81.89999999850988
+          },
+          {
+            "name": "city",
+            "ms": 234.5
+          },
+          {
+            "name": "castle",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "guardian",
+            "ms": 0.5
+          },
+          {
+            "name": "portal",
+            "ms": 8
+          },
+          {
+            "name": "npcs",
+            "ms": 6.5
+          },
+          {
+            "name": "player-animation",
+            "ms": 4.800000000745058
+          },
+          {
+            "name": "particles",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "camera",
+            "ms": 66.60000000149012
+          },
+          {
+            "name": "finish",
+            "ms": 0
+          },
+          {
+            "name": "entities",
+            "ms": 18
+          },
+          {
+            "name": "entities-ready",
+            "ms": 19.899999998509884
+          },
+          {
+            "name": "textures",
+            "ms": 115.19999999925494
+          },
+          {
+            "name": "actor-upload",
+            "ms": 79.10000000149012
+          },
+          {
+            "name": "actor-upload",
+            "ms": 44.80000000074506
+          },
+          {
+            "name": "actor-upload",
+            "ms": 51.599999997764826
+          },
+          {
+            "name": "actor-upload",
+            "ms": 51.30000000074506
+          },
+          {
+            "name": "actor-atlases",
+            "ms": 251.59999999776483
+          },
+          {
+            "name": "prepared-pose",
+            "ms": 8
+          },
+          {
+            "name": "shader-submit:0",
+            "ms": 16.399999998509884
+          },
+          {
+            "name": "shader-submit:16",
+            "ms": 4.799999997019768
+          },
+          {
+            "name": "shader-submit:32",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:48",
+            "ms": 1.2000000029802322
+          },
+          {
+            "name": "shader-submit:64",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "shader-submit:80",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:96",
+            "ms": 9
+          },
+          {
+            "name": "shader-submit:112",
+            "ms": 2.900000002235174
+          },
+          {
+            "name": "shader-submit:128",
+            "ms": 13.299999997019768
+          },
+          {
+            "name": "shader-submit:144",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "shader-submit:160",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:176",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "shader-submit:192",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:208",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:224",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:240",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "shader-submit:256",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "shader-submit:272",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:288",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:304",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "shader-submit:320",
+            "ms": 34
+          },
+          {
+            "name": "shader-submit:336",
+            "ms": 1.5
+          },
+          {
+            "name": "shader-submit:352",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "shader-submit:368",
+            "ms": 13.100000001490116
+          },
+          {
+            "name": "shader-submit:384",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "shader-submit:400",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:416",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:432",
+            "ms": 8.199999999254942
+          },
+          {
+            "name": "shader-submit:448",
+            "ms": 48.900000002235174
+          },
+          {
+            "name": "shader-submit:464",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "shader-submit:480",
+            "ms": 1.7000000029802322
+          },
+          {
+            "name": "shader-submit:496",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "shader-submit:512",
+            "ms": 3
+          },
+          {
+            "name": "shader-submit:528",
+            "ms": 3.800000000745058
+          },
+          {
+            "name": "shader-submit:544",
+            "ms": 5.200000002980232
+          },
+          {
+            "name": "shader-submit:560",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:576",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "shader-submit:592",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:608",
+            "ms": 3.5
+          },
+          {
+            "name": "shader-submit:624",
+            "ms": 2.5
+          },
+          {
+            "name": "shader-submit:640",
+            "ms": 18.899999998509884
+          },
+          {
+            "name": "shader-submit:656",
+            "ms": 6
+          },
+          {
+            "name": "shaders",
+            "ms": 562.6999999992549
+          },
+          {
+            "name": "gpu-shader-submit:0",
+            "ms": 10.5
+          },
+          {
+            "name": "gpu-shader-submit:16",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:32",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:48",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:64",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:80",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:96",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "gpu-shader-submit:112",
+            "ms": 1.7000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:128",
+            "ms": 4.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:144",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:160",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:176",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:192",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:208",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "gpu-shader-submit:224",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:240",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:256",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-shader-submit:272",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:288",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:304",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "gpu-shader-submit:320",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:336",
+            "ms": 5.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:352",
+            "ms": 5.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:368",
+            "ms": 4.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:384",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:400",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:416",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:432",
+            "ms": 2
+          },
+          {
+            "name": "gpu-shader-submit:448",
+            "ms": 41.30000000074506
+          },
+          {
+            "name": "gpu-shader-submit:464",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-shader-submit:480",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:496",
+            "ms": 2.2999999970197678
+          },
+          {
+            "name": "gpu-shader-submit:512",
+            "ms": 12.700000002980232
+          },
+          {
+            "name": "gpu-shader-submit:528",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-shader-submit:544",
+            "ms": 9.699999999254942
+          },
+          {
+            "name": "gpu-shader-submit:560",
+            "ms": 6.600000001490116
+          },
+          {
+            "name": "gpu-shader-submit:576",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:592",
+            "ms": 18
+          },
+          {
+            "name": "gpu-shader-submit:608",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-shader-submit:624",
+            "ms": 7.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:640",
+            "ms": 10.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:656",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shaders",
+            "ms": 394.30000000074506
+          },
+          {
+            "name": "gpu-batch:0:Mesh",
+            "ms": 9.899999998509884
+          },
+          {
+            "name": "gpu-batch:1:Mesh",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "gpu-batch:2:Mesh",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "gpu-batch:3:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:4:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:5:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:6:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:7:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:8:Mesh",
+            "ms": 17.5
+          },
+          {
+            "name": "gpu-batch:9:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:10:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:11:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:12:Mesh",
+            "ms": 1.7999999970197678
+          },
+          {
+            "name": "gpu-batch:13:Mesh",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "gpu-batch:14:Mesh",
+            "ms": 4.399999998509884
+          },
+          {
+            "name": "gpu-batch:15:Mesh",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "gpu-batch:16:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:17:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:18:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:19:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:20:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:21:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:22:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:23:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:24:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:25:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:26:Mesh",
+            "ms": 9.699999999254942
+          },
+          {
+            "name": "gpu-batch:27:Mesh",
+            "ms": 4.800000000745058
+          },
+          {
+            "name": "gpu-batch:28:Mesh",
+            "ms": 7.599999997764826
+          },
+          {
+            "name": "gpu-batch:29:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:30:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:31:Mesh",
+            "ms": 7.199999999254942
+          },
+          {
+            "name": "gpu-batch:32:Mesh",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "gpu-batch:33:Mesh",
+            "ms": 8.900000002235174
+          },
+          {
+            "name": "gpu-batch:34:Mesh",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "gpu-batch:35:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:36:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:37:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:38:Mesh",
+            "ms": 3.2999999970197678
+          },
+          {
+            "name": "gpu-batch:39:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:40:Mesh",
+            "ms": 2.7000000029802322
+          },
+          {
+            "name": "gpu-batch:41:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:42:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:43:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:44:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:45:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:46:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:47:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:48:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:49:Mesh",
+            "ms": 2.2000000029802322
+          },
+          {
+            "name": "gpu-batch:50:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:51:Mesh",
+            "ms": 4.699999999254942
+          },
+          {
+            "name": "gpu-batch:52:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:53:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:54:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:55:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:56:Mesh",
+            "ms": 5.600000001490116
+          },
+          {
+            "name": "gpu-batch:57:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:58:Mesh",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "gpu-batch:59:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:60:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:61:Mesh",
+            "ms": 2.400000002235174
+          },
+          {
+            "name": "gpu-batch:62:Mesh",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:63:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:64:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:65:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:66:Mesh",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-batch:67:Mesh",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "gpu-batch:68:Mesh",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "gpu-batch:69:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:70:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:71:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:72:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:73:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:74:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:75:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:76:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:77:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:78:Mesh",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "gpu-batch:79:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:80:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:81:Mesh",
+            "ms": 5.800000000745058
+          },
+          {
+            "name": "gpu-batch:82:Mesh",
+            "ms": 4.800000000745058
+          },
+          {
+            "name": "gpu-batch:83:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:84:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:85:Mesh",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "gpu-batch:86:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:87:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:88:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:89:Mesh",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "gpu-batch:90:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:91:Mesh",
+            "ms": 4.200000002980232
+          },
+          {
+            "name": "gpu-batch:92:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:93:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:94:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:95:Mesh",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-batch:96:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:97:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:98:Mesh",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "gpu-batch:99:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:100:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:101:Mesh",
+            "ms": 3.2999999970197678
+          },
+          {
+            "name": "gpu-batch:102:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:103:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:104:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:105:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:106:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:107:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:108:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:109:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:110:Mesh",
+            "ms": 2.7000000029802322
+          },
+          {
+            "name": "gpu-batch:111:Mesh",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:112:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:113:Mesh",
+            "ms": 5.800000000745058
+          },
+          {
+            "name": "gpu-batch:114:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:115:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:116:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:117:Mesh",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "gpu-batch:118:Mesh",
+            "ms": 4
+          },
+          {
+            "name": "gpu-batch:119:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:120:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:121:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:122:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:123:Mesh",
+            "ms": 4.900000002235174
+          },
+          {
+            "name": "gpu-batch:124:Mesh",
+            "ms": 4.899999998509884
+          },
+          {
+            "name": "gpu-batch:125:Sprite",
+            "ms": 38.69999999925494
+          },
+          {
+            "name": "gpu-batch:126:Sprite",
+            "ms": 48.899999998509884
+          },
+          {
+            "name": "gpu-batch:127:Mesh",
+            "ms": 2.7000000029802322
+          },
+          {
+            "name": "gpu-batch:128:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:129:Mesh",
+            "ms": 4.599999997764826
+          },
+          {
+            "name": "gpu-batch:130:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:131:Mesh",
+            "ms": 3.800000000745058
+          },
+          {
+            "name": "gpu-batch:132:Mesh",
+            "ms": 3.599999997764826
+          },
+          {
+            "name": "gpu-batch:133:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:134:Sprite",
+            "ms": 6.5
+          },
+          {
+            "name": "gpu-batch:135:Mesh",
+            "ms": 4.199999999254942
+          },
+          {
+            "name": "gpu-batch:136:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:137:Points",
+            "ms": 4.300000000745058
+          },
+          {
+            "name": "gpu-batch:138:Sprite",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "gpu-batch:139:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:140:Sprite",
+            "ms": 5.100000001490116
+          },
+          {
+            "name": "gpu-preparation",
+            "ms": 1301.0999999977648
+          },
+          {
+            "name": "camera",
+            "ms": 0.5
+          }
+        ],
+        "heapBefore": 8501436,
+        "ready": 4287,
+        "total": 2858.5,
+        "maxUnit": 234.5,
+        "heapAfter": 17634430,
+        "disposalMs": 0,
+        "firstRender": 223.90000000223517,
+        "firstSubmittedAt": 4593.400000002235,
+        "requestToWelcome": null,
+        "presentationProxy": 48.599999997764826,
+        "controlAt": 4887.10000000149,
+        "controlLatency": 3458.800000000745
+      },
+      "sheets": {
+        "entries": 3,
+        "active": 3,
+        "idle": 0,
+        "loads": 3,
+        "evictions": 0,
+        "preparationMs": 336.6000000014901
+      }
+    },
+    {
+      "phase": "01-cidade-clientes-reais",
+      "client": 2,
+      "elapsed": 13.468876999999338,
+      "requestedWindow": 12.094065200000005,
+      "taskDuration": 12.233379,
+      "metricTimestamps": [
+        23857.126847,
+        23870.595724
+      ],
+      "rendererTaskCPUPercent": 90.82701549654512,
+      "jsHeap": 28528292,
+      "frame": {
+        "n": 481,
+        "mean": 28.087525987521342,
+        "p95": 44.399999998509884,
+        "max": 100.80000000074506
+      },
+      "fps": 35.60299331611754,
+      "samples": {
+        "interpolation": {
+          "n": 1446,
+          "mean": 0.07690179806310854,
+          "p95": 0.19999999925494194,
+          "max": 12.800000000745058
+        },
+        "sprites": {
+          "n": 1446,
+          "mean": 0.09944674965988633,
+          "p95": 0.29999999701976776,
+          "max": 6.800000000745058
+        },
+        "effects": {
+          "n": 482,
+          "mean": 0.014522821615407576,
+          "p95": 0.10000000149011612,
+          "max": 2.899999998509884
+        },
+        "combatVisualInclusive": {
+          "n": 482,
+          "mean": 0.11970954354373252,
+          "p95": 0.30000000074505806,
+          "max": 3.100000001490116
+        },
+        "remoteInclusive": {
+          "n": 482,
+          "mean": 0.3377593361629614,
+          "p95": 0.7000000029802322,
+          "max": 13.300000000745058
+        },
+        "renderSubmit": {
+          "n": 482,
+          "mean": 16.315767634868685,
+          "p95": 23.800000000745058,
+          "max": 50.899999998509884
+        },
+        "sceneInclusive": {
+          "n": 482,
+          "mean": 18.295850622316983,
+          "p95": 26.899999998509884,
+          "max": 51.899999998509884
+        },
+        "snapshotCallback": {
+          "n": 135,
+          "mean": 3.6185185186564923,
+          "p95": 7.100000001490116,
+          "max": 11.099999997764826
+        },
+        "snapshotProcessing": {
+          "n": 149,
+          "mean": 3.742281879004616,
+          "p95": 7.400000002235174,
+          "max": 11.599999997764826
+        }
+      },
+      "activity": {
+        "combatFrames": 0,
+        "effectFrames": 0
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 711,
+        "visible": 703,
+        "materials": 172,
+        "textures": 20,
+        "textureSources": 16,
+        "geometries": 351,
+        "transparentObjects": 162,
+        "drawCalls": 418,
+        "triangles": 41286,
+        "gpuTextures": 19,
+        "gpuGeometries": 246,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 8408.699999999255,
+          "state": "visible"
+        }
+      ],
+      "preparation": {
+        "map": "shared-city",
+        "started": 3356.5,
+        "stages": [
+          {
+            "name": "structure",
+            "ms": 86.69999999925494
+          },
+          {
+            "name": "city",
+            "ms": 387.9000000022352
+          },
+          {
+            "name": "castle",
+            "ms": 2.5
+          },
+          {
+            "name": "guardian",
+            "ms": 1.5
+          },
+          {
+            "name": "portal",
+            "ms": 8.800000000745058
+          },
+          {
+            "name": "npcs",
+            "ms": 8.099999997764826
+          },
+          {
+            "name": "player-animation",
+            "ms": 3.800000000745058
+          },
+          {
+            "name": "particles",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "camera",
+            "ms": 25.800000000745058
+          },
+          {
+            "name": "finish",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "entities",
+            "ms": 87.09999999776483
+          },
+          {
+            "name": "entities-ready",
+            "ms": 91.5
+          },
+          {
+            "name": "textures",
+            "ms": 138.69999999925494
+          },
+          {
+            "name": "actor-upload",
+            "ms": 62.30000000074506
+          },
+          {
+            "name": "actor-upload",
+            "ms": 49
+          },
+          {
+            "name": "actor-upload",
+            "ms": 50.100000001490116
+          },
+          {
+            "name": "actor-upload",
+            "ms": 49.80000000074506
+          },
+          {
+            "name": "actor-upload",
+            "ms": 99.19999999925494
+          },
+          {
+            "name": "actor-upload",
+            "ms": 45.30000000074506
+          },
+          {
+            "name": "actor-atlases",
+            "ms": 378.30000000074506
+          },
+          {
+            "name": "prepared-pose",
+            "ms": 8
+          },
+          {
+            "name": "shader-submit:0",
+            "ms": 12.899999998509884
+          },
+          {
+            "name": "shader-submit:16",
+            "ms": 2
+          },
+          {
+            "name": "shader-submit:32",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "shader-submit:48",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "shader-submit:64",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:80",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:96",
+            "ms": 14.300000000745058
+          },
+          {
+            "name": "shader-submit:112",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "shader-submit:128",
+            "ms": 8.300000000745058
+          },
+          {
+            "name": "shader-submit:144",
+            "ms": 4.699999999254942
+          },
+          {
+            "name": "shader-submit:160",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:176",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "shader-submit:192",
+            "ms": 2.7000000029802322
+          },
+          {
+            "name": "shader-submit:208",
+            "ms": 22.699999999254942
+          },
+          {
+            "name": "shader-submit:224",
+            "ms": 1.7999999970197678
+          },
+          {
+            "name": "shader-submit:240",
+            "ms": 6.600000001490116
+          },
+          {
+            "name": "shader-submit:256",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:272",
+            "ms": 1.7000000029802322
+          },
+          {
+            "name": "shader-submit:288",
+            "ms": 3.900000002235174
+          },
+          {
+            "name": "shader-submit:304",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:320",
+            "ms": 5.899999998509884
+          },
+          {
+            "name": "shader-submit:336",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "shader-submit:352",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:368",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "shader-submit:384",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:400",
+            "ms": 6.100000001490116
+          },
+          {
+            "name": "shader-submit:416",
+            "ms": 6.799999997019768
+          },
+          {
+            "name": "shader-submit:432",
+            "ms": 9.399999998509884
+          },
+          {
+            "name": "shader-submit:448",
+            "ms": 35.30000000074506
+          },
+          {
+            "name": "shader-submit:464",
+            "ms": 2.5
+          },
+          {
+            "name": "shader-submit:480",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "shader-submit:496",
+            "ms": 13
+          },
+          {
+            "name": "shader-submit:512",
+            "ms": 8.800000000745058
+          },
+          {
+            "name": "shader-submit:528",
+            "ms": 2
+          },
+          {
+            "name": "shader-submit:544",
+            "ms": 23.300000000745058
+          },
+          {
+            "name": "shader-submit:560",
+            "ms": 1.2000000029802322
+          },
+          {
+            "name": "shader-submit:576",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:592",
+            "ms": 6
+          },
+          {
+            "name": "shader-submit:608",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "shader-submit:624",
+            "ms": 5.199999999254942
+          },
+          {
+            "name": "shader-submit:640",
+            "ms": 76
+          },
+          {
+            "name": "shader-submit:656",
+            "ms": 11.299999997019768
+          },
+          {
+            "name": "shaders",
+            "ms": 642.5
+          },
+          {
+            "name": "gpu-shader-submit:0",
+            "ms": 16.200000002980232
+          },
+          {
+            "name": "gpu-shader-submit:16",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:32",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:48",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:64",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:80",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:96",
+            "ms": 8.900000002235174
+          },
+          {
+            "name": "gpu-shader-submit:112",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:128",
+            "ms": 20.400000002235174
+          },
+          {
+            "name": "gpu-shader-submit:144",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:160",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:176",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:192",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:208",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:224",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:240",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:256",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:272",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:288",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:304",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:320",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:336",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:352",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:368",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:384",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:400",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:416",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:432",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:448",
+            "ms": 56.599999997764826
+          },
+          {
+            "name": "gpu-shader-submit:464",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-shader-submit:480",
+            "ms": 15.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:496",
+            "ms": 32.79999999701977
+          },
+          {
+            "name": "gpu-shader-submit:512",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "gpu-shader-submit:528",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-shader-submit:544",
+            "ms": 11.099999997764826
+          },
+          {
+            "name": "gpu-shader-submit:560",
+            "ms": 4.900000002235174
+          },
+          {
+            "name": "gpu-shader-submit:576",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:592",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:608",
+            "ms": 2
+          },
+          {
+            "name": "gpu-shader-submit:624",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:640",
+            "ms": 6.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:656",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shaders",
+            "ms": 430.19999999925494
+          },
+          {
+            "name": "gpu-batch:0:Mesh",
+            "ms": 22.800000000745058
+          },
+          {
+            "name": "gpu-batch:1:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:2:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:3:Mesh",
+            "ms": 2.400000002235174
+          },
+          {
+            "name": "gpu-batch:4:Mesh",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-batch:5:Mesh",
+            "ms": 5.300000000745058
+          },
+          {
+            "name": "gpu-batch:6:Mesh",
+            "ms": 9.699999999254942
+          },
+          {
+            "name": "gpu-batch:7:Mesh",
+            "ms": 8
+          },
+          {
+            "name": "gpu-batch:8:Mesh",
+            "ms": 29.900000002235174
+          },
+          {
+            "name": "gpu-batch:9:Mesh",
+            "ms": 8.199999999254942
+          },
+          {
+            "name": "gpu-batch:10:Mesh",
+            "ms": 6.800000000745058
+          },
+          {
+            "name": "gpu-batch:11:Mesh",
+            "ms": 6.399999998509884
+          },
+          {
+            "name": "gpu-batch:12:Mesh",
+            "ms": 5.700000002980232
+          },
+          {
+            "name": "gpu-batch:13:Mesh",
+            "ms": 6.199999999254942
+          },
+          {
+            "name": "gpu-batch:14:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:15:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:16:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:17:Mesh",
+            "ms": 1.7000000029802322
+          },
+          {
+            "name": "gpu-batch:18:Mesh",
+            "ms": 1.2999999970197678
+          },
+          {
+            "name": "gpu-batch:19:Mesh",
+            "ms": 10.600000001490116
+          },
+          {
+            "name": "gpu-batch:20:Mesh",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "gpu-batch:21:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:22:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:23:Mesh",
+            "ms": 7.899999998509884
+          },
+          {
+            "name": "gpu-batch:24:Mesh",
+            "ms": 6.899999998509884
+          },
+          {
+            "name": "gpu-batch:25:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:26:Mesh",
+            "ms": 10.399999998509884
+          },
+          {
+            "name": "gpu-batch:27:Mesh",
+            "ms": 10.300000000745058
+          },
+          {
+            "name": "gpu-batch:28:Mesh",
+            "ms": 19.399999998509884
+          },
+          {
+            "name": "gpu-batch:29:Mesh",
+            "ms": 8.5
+          },
+          {
+            "name": "gpu-batch:30:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:31:Mesh",
+            "ms": 5.699999999254942
+          },
+          {
+            "name": "gpu-batch:32:Mesh",
+            "ms": 3.7000000029802322
+          },
+          {
+            "name": "gpu-batch:33:Mesh",
+            "ms": 7
+          },
+          {
+            "name": "gpu-batch:34:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:35:Mesh",
+            "ms": 3.099999997764826
+          },
+          {
+            "name": "gpu-batch:36:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:37:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:38:Mesh",
+            "ms": 5.600000001490116
+          },
+          {
+            "name": "gpu-batch:39:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:40:Mesh",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-batch:41:Mesh",
+            "ms": 4.5
+          },
+          {
+            "name": "gpu-batch:42:Mesh",
+            "ms": 4.800000000745058
+          },
+          {
+            "name": "gpu-batch:43:Mesh",
+            "ms": 6.5
+          },
+          {
+            "name": "gpu-batch:44:Mesh",
+            "ms": 9
+          },
+          {
+            "name": "gpu-batch:45:Mesh",
+            "ms": 7
+          },
+          {
+            "name": "gpu-batch:46:Mesh",
+            "ms": 4.5
+          },
+          {
+            "name": "gpu-batch:47:Mesh",
+            "ms": 4.699999999254942
+          },
+          {
+            "name": "gpu-batch:48:Mesh",
+            "ms": 5
+          },
+          {
+            "name": "gpu-batch:49:Mesh",
+            "ms": 6.100000001490116
+          },
+          {
+            "name": "gpu-batch:50:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:51:Mesh",
+            "ms": 3.899999998509884
+          },
+          {
+            "name": "gpu-batch:52:Mesh",
+            "ms": 3.899999998509884
+          },
+          {
+            "name": "gpu-batch:53:Mesh",
+            "ms": 5.099999997764826
+          },
+          {
+            "name": "gpu-batch:54:Mesh",
+            "ms": 3.2000000029802322
+          },
+          {
+            "name": "gpu-batch:55:Mesh",
+            "ms": 4.299999997019768
+          },
+          {
+            "name": "gpu-batch:56:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:57:Mesh",
+            "ms": 7.899999998509884
+          },
+          {
+            "name": "gpu-batch:58:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:59:Mesh",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "gpu-batch:60:Mesh",
+            "ms": 2.2999999970197678
+          },
+          {
+            "name": "gpu-batch:61:Mesh",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-batch:62:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:63:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:64:Mesh",
+            "ms": 6.5
+          },
+          {
+            "name": "gpu-batch:65:Mesh",
+            "ms": 14.399999998509884
+          },
+          {
+            "name": "gpu-batch:66:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:67:Mesh",
+            "ms": 5.399999998509884
+          },
+          {
+            "name": "gpu-batch:68:Mesh",
+            "ms": 5
+          },
+          {
+            "name": "gpu-batch:69:Mesh",
+            "ms": 7.300000000745058
+          },
+          {
+            "name": "gpu-batch:70:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:71:Mesh",
+            "ms": 2.7999999970197678
+          },
+          {
+            "name": "gpu-batch:72:Mesh",
+            "ms": 3.099999997764826
+          },
+          {
+            "name": "gpu-batch:73:Mesh",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "gpu-batch:74:Mesh",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-batch:75:Mesh",
+            "ms": 4.700000002980232
+          },
+          {
+            "name": "gpu-batch:76:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:77:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:78:Mesh",
+            "ms": 3.400000002235174
+          },
+          {
+            "name": "gpu-batch:79:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:80:Mesh",
+            "ms": 4.600000001490116
+          },
+          {
+            "name": "gpu-batch:81:Mesh",
+            "ms": 3.599999997764826
+          },
+          {
+            "name": "gpu-batch:82:Mesh",
+            "ms": 4
+          },
+          {
+            "name": "gpu-batch:83:Mesh",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-batch:84:Mesh",
+            "ms": 13.600000001490116
+          },
+          {
+            "name": "gpu-batch:85:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:86:Mesh",
+            "ms": 6.699999999254942
+          },
+          {
+            "name": "gpu-batch:87:Mesh",
+            "ms": 3.900000002235174
+          },
+          {
+            "name": "gpu-batch:88:Mesh",
+            "ms": 11.900000002235174
+          },
+          {
+            "name": "gpu-batch:89:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:90:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:91:Mesh",
+            "ms": 5
+          },
+          {
+            "name": "gpu-batch:92:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:93:Mesh",
+            "ms": 4.600000001490116
+          },
+          {
+            "name": "gpu-batch:94:Mesh",
+            "ms": 2.900000002235174
+          },
+          {
+            "name": "gpu-batch:95:Mesh",
+            "ms": 4.799999997019768
+          },
+          {
+            "name": "gpu-batch:96:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:97:Mesh",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "gpu-batch:98:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:99:Mesh",
+            "ms": 6.400000002235174
+          },
+          {
+            "name": "gpu-batch:100:Mesh",
+            "ms": 3.7999999970197678
+          },
+          {
+            "name": "gpu-batch:101:Mesh",
+            "ms": 2.900000002235174
+          },
+          {
+            "name": "gpu-batch:102:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:103:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:104:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:105:Mesh",
+            "ms": 3.599999997764826
+          },
+          {
+            "name": "gpu-batch:106:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:107:Mesh",
+            "ms": 12.5
+          },
+          {
+            "name": "gpu-batch:108:Mesh",
+            "ms": 3.2999999970197678
+          },
+          {
+            "name": "gpu-batch:109:Mesh",
+            "ms": 6.100000001490116
+          },
+          {
+            "name": "gpu-batch:110:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:111:Mesh",
+            "ms": 7
+          },
+          {
+            "name": "gpu-batch:112:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:113:Mesh",
+            "ms": 3.099999997764826
+          },
+          {
+            "name": "gpu-batch:114:Mesh",
+            "ms": 4.300000000745058
+          },
+          {
+            "name": "gpu-batch:115:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:116:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:117:Mesh",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-batch:118:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:119:Mesh",
+            "ms": 4.699999999254942
+          },
+          {
+            "name": "gpu-batch:120:Mesh",
+            "ms": 4.800000000745058
+          },
+          {
+            "name": "gpu-batch:121:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:122:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:123:Mesh",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "gpu-batch:124:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:125:Mesh",
+            "ms": 6
+          },
+          {
+            "name": "gpu-batch:126:Mesh",
+            "ms": 9.699999999254942
+          },
+          {
+            "name": "gpu-batch:127:Sprite",
+            "ms": 51.400000002235174
+          },
+          {
+            "name": "gpu-batch:128:Sprite",
+            "ms": 125.19999999925494
+          },
+          {
+            "name": "gpu-batch:129:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:130:Mesh",
+            "ms": 3.7000000029802322
+          },
+          {
+            "name": "gpu-batch:131:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:132:Mesh",
+            "ms": 5.600000001490116
+          },
+          {
+            "name": "gpu-batch:133:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:134:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:135:Mesh",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "gpu-batch:136:Mesh",
+            "ms": 5.899999998509884
+          },
+          {
+            "name": "gpu-batch:137:Sprite",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "gpu-batch:138:Mesh",
+            "ms": 5
+          },
+          {
+            "name": "gpu-batch:139:Mesh",
+            "ms": 10.5
+          },
+          {
+            "name": "gpu-batch:140:Points",
+            "ms": 11.399999998509884
+          },
+          {
+            "name": "gpu-batch:141:Sprite",
+            "ms": 5.5
+          },
+          {
+            "name": "gpu-batch:142:Mesh",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-batch:143:Sprite",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:144:Mesh",
+            "ms": 3.400000002235174
+          },
+          {
+            "name": "gpu-batch:145:Sprite",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "gpu-preparation",
+            "ms": 1767.1000000014901
+          },
+          {
+            "name": "camera",
+            "ms": 0.4000000022351742
+          }
+        ],
+        "heapBefore": 8071100,
+        "ready": 7144.5,
+        "total": 3788,
+        "maxUnit": 387.9000000022352,
+        "heapAfter": 19122920,
+        "disposalMs": 0,
+        "firstRender": 332.5,
+        "firstSubmittedAt": 7725.599999997765,
+        "requestToWelcome": null,
+        "presentationProxy": 14.900000002235174,
+        "controlAt": 7917.39999999851,
+        "controlLatency": 4561
+      },
+      "sheets": {
+        "entries": 3,
+        "active": 3,
+        "idle": 0,
+        "loads": 3,
+        "evictions": 0,
+        "preparationMs": 300.20000000298023
+      }
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "client": 0,
+      "elapsed": 21.980703000001085,
+      "requestedWindow": 20.877048800000004,
+      "taskDuration": 20.723817999999994,
+      "metricTimestamps": [
+        23942.825607,
+        23964.80631
+      ],
+      "rendererTaskCPUPercent": 94.28187078456484,
+      "jsHeap": 44166052,
+      "frame": {
+        "n": 1269,
+        "mean": 23.071000788023238,
+        "p95": 41.19999999925494,
+        "max": 81.30000000074506
+      },
+      "fps": 43.34445693049979,
+      "samples": {
+        "interpolation": {
+          "n": 3810,
+          "mean": 0.07104986873883118,
+          "p95": 0.19999999925494194,
+          "max": 6.800000000745058
+        },
+        "sprites": {
+          "n": 3810,
+          "mean": 0.10338582684948376,
+          "p95": 0.30000000074505806,
+          "max": 7.200000002980232
+        },
+        "effects": {
+          "n": 1270,
+          "mean": 0.017086614172641686,
+          "p95": 0.10000000149011612,
+          "max": 6.399999998509884
+        },
+        "combatVisualInclusive": {
+          "n": 1270,
+          "mean": 1.6196062992847575,
+          "p95": 3.599999997764826,
+          "max": 16.100000001490116
+        },
+        "remoteInclusive": {
+          "n": 1270,
+          "mean": 0.36968503935834557,
+          "p95": 0.9000000022351742,
+          "max": 4.800000000745058
+        },
+        "renderSubmit": {
+          "n": 1270,
+          "mean": 10.12669291331132,
+          "p95": 19.199999999254942,
+          "max": 55.399999998509884
+        },
+        "sceneInclusive": {
+          "n": 1270,
+          "mean": 14.402440944815597,
+          "p95": 26.300000000745058,
+          "max": 63.80000000074506
+        },
+        "snapshotCallback": {
+          "n": 28,
+          "mean": 5.246428571508399,
+          "p95": 9.5,
+          "max": 15.599999997764826
+        },
+        "snapshotProcessing": {
+          "n": 34,
+          "mean": 5.276470588410602,
+          "p95": 10.800000000745058,
+          "max": 18.899999998509884
+        }
+      },
+      "activity": {
+        "combatFrames": 404,
+        "effectFrames": 60
+      },
+      "inventory": {
+        "visiblePlayers": 2,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 865,
+        "visible": 489,
+        "materials": 338,
+        "textures": 193,
+        "textureSources": 17,
+        "geometries": 191,
+        "transparentObjects": 638,
+        "drawCalls": 101,
+        "triangles": 14388,
+        "gpuTextures": 30,
+        "gpuGeometries": 57,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 108551.10000000149,
+          "state": "visible"
+        }
+      ],
+      "preparation": {
+        "map": "shared-floor-2",
+        "started": 82488.69999999925,
+        "stages": [
+          {
+            "name": "structure",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "forest-surfaces",
+            "ms": 16.5
+          },
+          {
+            "name": "forest-instances",
+            "ms": 30.699999999254942
+          },
+          {
+            "name": "forest-points",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "forest-decoration",
+            "ms": 0.5
+          },
+          {
+            "name": "living-prop",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "living-prop",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.5
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "water",
+            "ms": 11.300000000745058
+          },
+          {
+            "name": "water",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "water",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "water",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "water",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "living-forest",
+            "ms": 0.5
+          },
+          {
+            "name": "awakened-structures",
+            "ms": 38.899999998509884
+          },
+          {
+            "name": "castle",
+            "ms": 0
+          },
+          {
+            "name": "guardian",
+            "ms": 0
+          },
+          {
+            "name": "portal",
+            "ms": 3
+          },
+          {
+            "name": "npcs",
+            "ms": 0
+          },
+          {
+            "name": "player-animation",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "particles",
+            "ms": 0.29999999701976776
+          },
+          {
+            "name": "camera",
+            "ms": 11.600000001490116
+          },
+          {
+            "name": "finish",
+            "ms": 0
+          },
+          {
+            "name": "entities",
+            "ms": 27.5
+          },
+          {
+            "name": "entities-ready",
+            "ms": 117
+          },
+          {
+            "name": "textures",
+            "ms": 171.70000000298023
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-atlases",
+            "ms": 49
+          },
+          {
+            "name": "prepared-pose",
+            "ms": 3.800000000745058
+          },
+          {
+            "name": "shader-submit:0",
+            "ms": 3
+          },
+          {
+            "name": "shader-submit:16",
+            "ms": 5.599999997764826
+          },
+          {
+            "name": "shader-submit:32",
+            "ms": 4.599999997764826
+          },
+          {
+            "name": "shader-submit:48",
+            "ms": 3.300000000745058
+          },
+          {
+            "name": "shader-submit:64",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:80",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:96",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:112",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:128",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:144",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "shader-submit:160",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:176",
+            "ms": 2.5
+          },
+          {
+            "name": "shader-submit:192",
+            "ms": 2.5
+          },
+          {
+            "name": "shader-submit:208",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:224",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:240",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "shader-submit:256",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:272",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "shader-submit:288",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:304",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:320",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "shader-submit:336",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "shader-submit:352",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "shader-submit:368",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:384",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:400",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:416",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "shader-submit:432",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "shader-submit:448",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "shader-submit:464",
+            "ms": 4.900000002235174
+          },
+          {
+            "name": "shader-submit:480",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:496",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "shader-submit:512",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:528",
+            "ms": 1.5
+          },
+          {
+            "name": "shader-submit:544",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:560",
+            "ms": 11
+          },
+          {
+            "name": "shader-submit:576",
+            "ms": 6.199999999254942
+          },
+          {
+            "name": "shader-submit:592",
+            "ms": 22.399999998509884
+          },
+          {
+            "name": "shader-submit:608",
+            "ms": 6.700000002980232
+          },
+          {
+            "name": "shader-submit:624",
+            "ms": 2.2999999970197678
+          },
+          {
+            "name": "shader-submit:640",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:656",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:672",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:688",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:704",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "shader-submit:720",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:736",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:752",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shaders",
+            "ms": 381
+          },
+          {
+            "name": "gpu-shader-submit:0",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:16",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-shader-submit:32",
+            "ms": 9.5
+          },
+          {
+            "name": "gpu-shader-submit:48",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:64",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-shader-submit:80",
+            "ms": 2
+          },
+          {
+            "name": "gpu-shader-submit:96",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:112",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:128",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:144",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:160",
+            "ms": 5.600000001490116
+          },
+          {
+            "name": "gpu-shader-submit:176",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-shader-submit:192",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:208",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "gpu-shader-submit:224",
+            "ms": 7.200000002980232
+          },
+          {
+            "name": "gpu-shader-submit:240",
+            "ms": 3.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:256",
+            "ms": 5.599999997764826
+          },
+          {
+            "name": "gpu-shader-submit:272",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:288",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:304",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:320",
+            "ms": 2.2000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:336",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:352",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:368",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:384",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-shader-submit:400",
+            "ms": 11.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:416",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-shader-submit:432",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:448",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:464",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:480",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:496",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-shader-submit:512",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:528",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-shader-submit:544",
+            "ms": 6.599999997764826
+          },
+          {
+            "name": "gpu-shader-submit:560",
+            "ms": 153.19999999925494
+          },
+          {
+            "name": "gpu-shader-submit:576",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:592",
+            "ms": 2.900000002235174
+          },
+          {
+            "name": "gpu-shader-submit:608",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:624",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:640",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:656",
+            "ms": 2
+          },
+          {
+            "name": "gpu-shader-submit:672",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:688",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:704",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:720",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:736",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:752",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shaders",
+            "ms": 589.3000000007451
+          },
+          {
+            "name": "gpu-batch:0:Mesh",
+            "ms": 12.300000000745058
+          },
+          {
+            "name": "gpu-batch:1:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:2:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:3:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:4:Mesh",
+            "ms": 9
+          },
+          {
+            "name": "gpu-batch:5:Mesh",
+            "ms": 5.199999999254942
+          },
+          {
+            "name": "gpu-batch:6:Mesh",
+            "ms": 5.199999999254942
+          },
+          {
+            "name": "gpu-batch:7:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:8:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:9:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:10:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:11:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:12:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:13:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:14:Mesh",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:15:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:16:Mesh",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "gpu-batch:17:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:18:Mesh",
+            "ms": 71.69999999925494
+          },
+          {
+            "name": "gpu-batch:19:Mesh",
+            "ms": 45.899999998509884
+          },
+          {
+            "name": "gpu-batch:20:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:21:Mesh",
+            "ms": 5.900000002235174
+          },
+          {
+            "name": "gpu-batch:22:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:23:Mesh",
+            "ms": 2.2999999970197678
+          },
+          {
+            "name": "gpu-batch:24:Mesh",
+            "ms": 9
+          },
+          {
+            "name": "gpu-batch:25:Mesh",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-batch:26:Sprite",
+            "ms": 34
+          },
+          {
+            "name": "gpu-batch:27:Mesh",
+            "ms": 1.7000000029802322
+          },
+          {
+            "name": "gpu-batch:28:Mesh",
+            "ms": 23.699999999254942
+          },
+          {
+            "name": "gpu-batch:29:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:30:Mesh",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-batch:31:Mesh",
+            "ms": 1.2000000029802322
+          },
+          {
+            "name": "gpu-batch:32:Mesh",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-batch:33:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:34:Mesh",
+            "ms": 26.399999998509884
+          },
+          {
+            "name": "gpu-batch:35:Mesh",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-batch:36:Mesh",
+            "ms": 8.399999998509884
+          },
+          {
+            "name": "gpu-batch:37:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:38:Mesh",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "gpu-batch:39:Mesh",
+            "ms": 2.2000000029802322
+          },
+          {
+            "name": "gpu-batch:40:Mesh",
+            "ms": 2.7000000029802322
+          },
+          {
+            "name": "gpu-batch:41:Mesh",
+            "ms": 1.7999999970197678
+          },
+          {
+            "name": "gpu-batch:42:Mesh",
+            "ms": 1.2000000029802322
+          },
+          {
+            "name": "gpu-batch:43:Mesh",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "gpu-batch:44:Sprite",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:45:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:46:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:47:Points",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:48:Sprite",
+            "ms": 26.100000001490116
+          },
+          {
+            "name": "gpu-batch:49:Sprite",
+            "ms": 1.7999999970197678
+          },
+          {
+            "name": "gpu-batch:50:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:51:Sprite",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-batch:52:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:53:Sprite",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-preparation",
+            "ms": 1054.199999999255
+          },
+          {
+            "name": "camera",
+            "ms": 0
+          }
+        ],
+        "heapBefore": 37591251,
+        "ready": 84468.69999999925,
+        "total": 1980,
+        "maxUnit": 153.19999999925494,
+        "heapAfter": 25638976,
+        "disposalMs": 21.600000001490116,
+        "firstRender": 61.100000001490116,
+        "firstSubmittedAt": 84599.40000000224,
+        "requestToWelcome": null,
+        "presentationProxy": 22,
+        "controlAt": 84751,
+        "controlLatency": 2262.300000000745
+      },
+      "sheets": {
+        "entries": 3,
+        "active": 3,
+        "idle": 0,
+        "loads": 3,
+        "evictions": 0,
+        "preparationMs": 367.4999999962747
+      }
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "client": 1,
+      "elapsed": 28.79886599999736,
+      "requestedWindow": 20.877048800000004,
+      "taskDuration": 27.841212999999996,
+      "metricTimestamps": [
+        23942.826881,
+        23971.625747
+      ],
+      "rendererTaskCPUPercent": 96.67468503795445,
+      "jsHeap": 35013916,
+      "frame": {
+        "n": 1753,
+        "mean": 20.48419851682872,
+        "p95": 35.5,
+        "max": 225.59999999776483
+      },
+      "fps": 48.818117007529175,
+      "samples": {
+        "interpolation": {
+          "n": 5262,
+          "mean": 0.07774610413115929,
+          "p95": 0.19999999925494194,
+          "max": 7
+        },
+        "sprites": {
+          "n": 5262,
+          "mean": 0.09709236032819055,
+          "p95": 0.20000000298023224,
+          "max": 13.799999997019768
+        },
+        "effects": {
+          "n": 1754,
+          "mean": 0.017844925881995308,
+          "p95": 0.10000000149011612,
+          "max": 2.5
+        },
+        "combatVisualInclusive": {
+          "n": 1754,
+          "mean": 1.5529076396535442,
+          "p95": 3.399999998509884,
+          "max": 26.699999999254942
+        },
+        "remoteInclusive": {
+          "n": 1754,
+          "mean": 0.4253135690000439,
+          "p95": 1,
+          "max": 12.600000001490116
+        },
+        "renderSubmit": {
+          "n": 1754,
+          "mean": 9.60490307868793,
+          "p95": 16.600000001490116,
+          "max": 125.80000000074506
+        },
+        "sceneInclusive": {
+          "n": 1754,
+          "mean": 13.031527936146377,
+          "p95": 21.699999999254942,
+          "max": 166.19999999925494
+        },
+        "snapshotCallback": {
+          "n": 38,
+          "mean": 4.594736842144477,
+          "p95": 12.599999997764826,
+          "max": 12.600000001490116
+        },
+        "snapshotProcessing": {
+          "n": 51,
+          "mean": 4.360784313769317,
+          "p95": 7.899999998509884,
+          "max": 13.600000001490116
+        }
+      },
+      "activity": {
+        "combatFrames": 713,
+        "effectFrames": 136
+      },
+      "inventory": {
+        "visiblePlayers": 3,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 853,
+        "visible": 456,
+        "materials": 328,
+        "textures": 191,
+        "textureSources": 15,
+        "geometries": 189,
+        "transparentObjects": 628,
+        "drawCalls": 97,
+        "triangles": 14560,
+        "gpuTextures": 30,
+        "gpuGeometries": 58,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 102291,
+          "state": "visible"
+        }
+      ],
+      "preparation": {
+        "map": "shared-floor-2",
+        "started": 74686.69999999925,
+        "stages": [
+          {
+            "name": "structure",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "forest-surfaces",
+            "ms": 15.800000000745058
+          },
+          {
+            "name": "forest-instances",
+            "ms": 5.5
+          },
+          {
+            "name": "forest-points",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "forest-decoration",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "living-prop",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.5
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.5
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "living-prop",
+            "ms": 11.800000000745058
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "water",
+            "ms": 5.300000000745058
+          },
+          {
+            "name": "water",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "water",
+            "ms": 0.30000000074505806
+          },
+          {
+            "name": "water",
+            "ms": 0.5
+          },
+          {
+            "name": "water",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "living-forest",
+            "ms": 0.5
+          },
+          {
+            "name": "awakened-structures",
+            "ms": 63.69999999925494
+          },
+          {
+            "name": "castle",
+            "ms": 0
+          },
+          {
+            "name": "guardian",
+            "ms": 0
+          },
+          {
+            "name": "portal",
+            "ms": 5.5
+          },
+          {
+            "name": "npcs",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "player-animation",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "particles",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "camera",
+            "ms": 5.699999999254942
+          },
+          {
+            "name": "finish",
+            "ms": 0
+          },
+          {
+            "name": "entities",
+            "ms": 18.5
+          },
+          {
+            "name": "entities-ready",
+            "ms": 128
+          },
+          {
+            "name": "textures",
+            "ms": 140.80000000074506
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0
+          },
+          {
+            "name": "actor-atlases",
+            "ms": 47.80000000074506
+          },
+          {
+            "name": "prepared-pose",
+            "ms": 4.300000000745058
+          },
+          {
+            "name": "shader-submit:0",
+            "ms": 2.5
+          },
+          {
+            "name": "shader-submit:16",
+            "ms": 8.699999999254942
+          },
+          {
+            "name": "shader-submit:32",
+            "ms": 7
+          },
+          {
+            "name": "shader-submit:48",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "shader-submit:64",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:80",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:96",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "shader-submit:112",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "shader-submit:128",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "shader-submit:144",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "shader-submit:160",
+            "ms": 5.899999998509884
+          },
+          {
+            "name": "shader-submit:176",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:192",
+            "ms": 21.599999997764826
+          },
+          {
+            "name": "shader-submit:208",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:224",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:240",
+            "ms": 4
+          },
+          {
+            "name": "shader-submit:256",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:272",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:288",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:304",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:320",
+            "ms": 4
+          },
+          {
+            "name": "shader-submit:336",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:352",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "shader-submit:368",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:384",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:400",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:416",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:432",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:448",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:464",
+            "ms": 16.700000002980232
+          },
+          {
+            "name": "shader-submit:480",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:496",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:512",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:528",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "shader-submit:544",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:560",
+            "ms": 65.10000000149012
+          },
+          {
+            "name": "shader-submit:576",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "shader-submit:592",
+            "ms": 5.300000000745058
+          },
+          {
+            "name": "shader-submit:608",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "shader-submit:624",
+            "ms": 4.200000002980232
+          },
+          {
+            "name": "shader-submit:640",
+            "ms": 52.30000000074506
+          },
+          {
+            "name": "shader-submit:656",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "shader-submit:672",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:688",
+            "ms": 1.5
+          },
+          {
+            "name": "shader-submit:704",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:720",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:736",
+            "ms": 20.700000002980232
+          },
+          {
+            "name": "shader-submit:752",
+            "ms": 1
+          },
+          {
+            "name": "shaders",
+            "ms": 494
+          },
+          {
+            "name": "gpu-shader-submit:0",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:16",
+            "ms": 10.200000002980232
+          },
+          {
+            "name": "gpu-shader-submit:32",
+            "ms": 13.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:48",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:64",
+            "ms": 5.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:80",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:96",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:112",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:128",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:144",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:160",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:176",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:192",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:208",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:224",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:240",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:256",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:272",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:288",
+            "ms": 12.899999998509884
+          },
+          {
+            "name": "gpu-shader-submit:304",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:320",
+            "ms": 3.5
+          },
+          {
+            "name": "gpu-shader-submit:336",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:352",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:368",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:384",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:400",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:416",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:432",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:448",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:464",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:480",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:496",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "gpu-shader-submit:512",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:528",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-shader-submit:544",
+            "ms": 1.2000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:560",
+            "ms": 41.600000001490116
+          },
+          {
+            "name": "gpu-shader-submit:576",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:592",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:608",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:624",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:640",
+            "ms": 2
+          },
+          {
+            "name": "gpu-shader-submit:656",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:672",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:688",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:704",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:720",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:736",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "gpu-shader-submit:752",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shaders",
+            "ms": 455
+          },
+          {
+            "name": "gpu-batch:0:Mesh",
+            "ms": 3.599999997764826
+          },
+          {
+            "name": "gpu-batch:1:Mesh",
+            "ms": 6.600000001490116
+          },
+          {
+            "name": "gpu-batch:2:Mesh",
+            "ms": 12.699999999254942
+          },
+          {
+            "name": "gpu-batch:3:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:4:Mesh",
+            "ms": 14.100000001490116
+          },
+          {
+            "name": "gpu-batch:5:Mesh",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:6:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:7:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:8:Mesh",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-batch:9:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:10:Mesh",
+            "ms": 18.600000001490116
+          },
+          {
+            "name": "gpu-batch:11:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:12:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:13:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:14:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:15:Mesh",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-batch:16:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:17:Mesh",
+            "ms": 3.599999997764826
+          },
+          {
+            "name": "gpu-batch:18:Mesh",
+            "ms": 73.30000000074506
+          },
+          {
+            "name": "gpu-batch:19:Mesh",
+            "ms": 35.600000001490116
+          },
+          {
+            "name": "gpu-batch:20:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:21:Mesh",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-batch:22:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:23:Mesh",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "gpu-batch:24:Mesh",
+            "ms": 12.399999998509884
+          },
+          {
+            "name": "gpu-batch:25:Mesh",
+            "ms": 4.400000002235174
+          },
+          {
+            "name": "gpu-batch:26:Sprite",
+            "ms": 46.80000000074506
+          },
+          {
+            "name": "gpu-batch:27:Mesh",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:28:Mesh",
+            "ms": 8.800000000745058
+          },
+          {
+            "name": "gpu-batch:29:Mesh",
+            "ms": 6.700000002980232
+          },
+          {
+            "name": "gpu-batch:30:Mesh",
+            "ms": 4.399999998509884
+          },
+          {
+            "name": "gpu-batch:31:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:32:Mesh",
+            "ms": 3.400000002235174
+          },
+          {
+            "name": "gpu-batch:33:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:34:Mesh",
+            "ms": 41
+          },
+          {
+            "name": "gpu-batch:35:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:36:Mesh",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-batch:37:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:38:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:39:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:40:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:41:Mesh",
+            "ms": 6.300000000745058
+          },
+          {
+            "name": "gpu-batch:42:Mesh",
+            "ms": 4.100000001490116
+          },
+          {
+            "name": "gpu-batch:43:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:44:Sprite",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:45:Mesh",
+            "ms": 2.400000002235174
+          },
+          {
+            "name": "gpu-batch:46:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:47:Points",
+            "ms": 2.2000000029802322
+          },
+          {
+            "name": "gpu-batch:48:Sprite",
+            "ms": 32
+          },
+          {
+            "name": "gpu-batch:49:Sprite",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "gpu-batch:50:Mesh",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-batch:51:Sprite",
+            "ms": 1
+          },
+          {
+            "name": "gpu-batch:52:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:53:Sprite",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-preparation",
+            "ms": 988
+          },
+          {
+            "name": "camera",
+            "ms": 0
+          }
+        ],
+        "heapBefore": 25810900,
+        "ready": 76699.40000000224,
+        "total": 2012.7000000029802,
+        "maxUnit": 73.30000000074506,
+        "heapAfter": 33773963,
+        "disposalMs": 19.400000002235174,
+        "firstRender": 50.5,
+        "firstSubmittedAt": 76807.60000000149,
+        "requestToWelcome": null,
+        "presentationProxy": 19,
+        "controlAt": 76965.40000000224,
+        "controlLatency": 2278.900000002235
+      },
+      "sheets": {
+        "entries": 3,
+        "active": 3,
+        "idle": 0,
+        "loads": 3,
+        "evictions": 0,
+        "preparationMs": 336.6000000014901
+      }
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "client": 2,
+      "elapsed": 39.260237999998935,
+      "requestedWindow": 20.877048800000004,
+      "taskDuration": 38.184668,
+      "metricTimestamps": [
+        23942.825388,
+        23982.085626
+      ],
+      "rendererTaskCPUPercent": 97.26040886456428,
+      "jsHeap": 15490948,
+      "frame": {
+        "n": 2300,
+        "mean": 18.55943478260837,
+        "p95": 31.600000001490116,
+        "max": 155.89999999850988
+      },
+      "fps": 53.88095120962829,
+      "samples": {
+        "interpolation": {
+          "n": 6903,
+          "mean": 0.07250470808389721,
+          "p95": 0.19999999925494194,
+          "max": 9.900000002235174
+        },
+        "sprites": {
+          "n": 6903,
+          "mean": 0.10256410257273717,
+          "p95": 0.20000000298023224,
+          "max": 12.5
+        },
+        "effects": {
+          "n": 2301,
+          "mean": 0.01607996522926963,
+          "p95": 0.10000000149011612,
+          "max": 2.300000000745058
+        },
+        "combatVisualInclusive": {
+          "n": 2301,
+          "mean": 1.4600608431414799,
+          "p95": 3.300000000745058,
+          "max": 25.299999997019768
+        },
+        "remoteInclusive": {
+          "n": 2301,
+          "mean": 0.4432420686700069,
+          "p95": 1.1000000014901161,
+          "max": 33.899999998509884
+        },
+        "renderSubmit": {
+          "n": 2301,
+          "mean": 7.983181225543098,
+          "p95": 15,
+          "max": 62.30000000074506
+        },
+        "sceneInclusive": {
+          "n": 2301,
+          "mean": 11.096088657046351,
+          "p95": 21.300000000745058,
+          "max": 63.69999999925494
+        },
+        "snapshotCallback": {
+          "n": 51,
+          "mean": 3.8882352939131213,
+          "p95": 7.800000000745058,
+          "max": 8.700000002980232
+        },
+        "snapshotProcessing": {
+          "n": 60,
+          "mean": 4.22333333324641,
+          "p95": 9.300000000745058,
+          "max": 11.5
+        }
+      },
+      "activity": {
+        "combatFrames": 1241,
+        "effectFrames": 69
+      },
+      "inventory": {
+        "visiblePlayers": 1,
+        "gpuRenderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x00001681) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "objects": 859,
+        "visible": 410,
+        "materials": 333,
+        "textures": 193,
+        "textureSources": 16,
+        "geometries": 189,
+        "transparentObjects": 633,
+        "drawCalls": 48,
+        "triangles": 3868,
+        "gpuTextures": 29,
+        "gpuGeometries": 57,
+        "shadow": true,
+        "width": 1266,
+        "height": 763,
+        "dpr": 1.25,
+        "visibility": "visible",
+        "gpuTimerAvailable": true
+      },
+      "visibility": [
+        {
+          "at": 91854.19999999925,
+          "state": "visible"
+        }
+      ],
+      "preparation": {
+        "map": "shared-floor-2",
+        "started": 62358.599999997765,
+        "stages": [
+          {
+            "name": "structure",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "forest-surfaces",
+            "ms": 11.099999997764826
+          },
+          {
+            "name": "forest-instances",
+            "ms": 7.700000002980232
+          },
+          {
+            "name": "forest-points",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "forest-decoration",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "living-prop",
+            "ms": 2.2999999970197678
+          },
+          {
+            "name": "living-prop",
+            "ms": 1
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.20000000298023224
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 1
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.09999999776482582
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0
+          },
+          {
+            "name": "living-prop",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "water",
+            "ms": 4.5
+          },
+          {
+            "name": "water",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "water",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "water",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "water",
+            "ms": 0.3999999985098839
+          },
+          {
+            "name": "living-forest",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "awakened-structures",
+            "ms": 33.900000002235174
+          },
+          {
+            "name": "castle",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "guardian",
+            "ms": 0
+          },
+          {
+            "name": "portal",
+            "ms": 5.699999999254942
+          },
+          {
+            "name": "npcs",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "player-animation",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "particles",
+            "ms": 0.19999999925494194
+          },
+          {
+            "name": "camera",
+            "ms": 5.800000000745058
+          },
+          {
+            "name": "finish",
+            "ms": 0
+          },
+          {
+            "name": "entities",
+            "ms": 21.100000001490116
+          },
+          {
+            "name": "entities-ready",
+            "ms": 105.5
+          },
+          {
+            "name": "textures",
+            "ms": 142.39999999850988
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.4000000022351742
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0.10000000149011612
+          },
+          {
+            "name": "actor-upload",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "actor-upload",
+            "ms": 0
+          },
+          {
+            "name": "actor-atlases",
+            "ms": 58.599999997764826
+          },
+          {
+            "name": "prepared-pose",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "shader-submit:0",
+            "ms": 10
+          },
+          {
+            "name": "shader-submit:16",
+            "ms": 8.5
+          },
+          {
+            "name": "shader-submit:32",
+            "ms": 4.399999998509884
+          },
+          {
+            "name": "shader-submit:48",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "shader-submit:64",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "shader-submit:80",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "shader-submit:96",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "shader-submit:112",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "shader-submit:128",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:144",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "shader-submit:160",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "shader-submit:176",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:192",
+            "ms": 3.2999999970197678
+          },
+          {
+            "name": "shader-submit:208",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:224",
+            "ms": 2.099999997764826
+          },
+          {
+            "name": "shader-submit:240",
+            "ms": 37.30000000074506
+          },
+          {
+            "name": "shader-submit:256",
+            "ms": 3.2000000029802322
+          },
+          {
+            "name": "shader-submit:272",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "shader-submit:288",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "shader-submit:304",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:320",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "shader-submit:336",
+            "ms": 4.200000002980232
+          },
+          {
+            "name": "shader-submit:352",
+            "ms": 67.70000000298023
+          },
+          {
+            "name": "shader-submit:368",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:384",
+            "ms": 4.5
+          },
+          {
+            "name": "shader-submit:400",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "shader-submit:416",
+            "ms": 4.799999997019768
+          },
+          {
+            "name": "shader-submit:432",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:448",
+            "ms": 2.599999997764826
+          },
+          {
+            "name": "shader-submit:464",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "shader-submit:480",
+            "ms": 2
+          },
+          {
+            "name": "shader-submit:496",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "shader-submit:512",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:528",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:544",
+            "ms": 0.5
+          },
+          {
+            "name": "shader-submit:560",
+            "ms": 16.100000001490116
+          },
+          {
+            "name": "shader-submit:576",
+            "ms": 3.2000000029802322
+          },
+          {
+            "name": "shader-submit:592",
+            "ms": 2.400000002235174
+          },
+          {
+            "name": "shader-submit:608",
+            "ms": 4.900000002235174
+          },
+          {
+            "name": "shader-submit:624",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "shader-submit:640",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:656",
+            "ms": 1.0999999977648258
+          },
+          {
+            "name": "shader-submit:672",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "shader-submit:688",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "shader-submit:704",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "shader-submit:720",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "shader-submit:736",
+            "ms": 1
+          },
+          {
+            "name": "shader-submit:752",
+            "ms": 1.199999999254942
+          },
+          {
+            "name": "shaders",
+            "ms": 701.5
+          },
+          {
+            "name": "gpu-shader-submit:0",
+            "ms": 6.400000002235174
+          },
+          {
+            "name": "gpu-shader-submit:16",
+            "ms": 4.599999997764826
+          },
+          {
+            "name": "gpu-shader-submit:32",
+            "ms": 7.699999999254942
+          },
+          {
+            "name": "gpu-shader-submit:48",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:64",
+            "ms": 2.399999998509884
+          },
+          {
+            "name": "gpu-shader-submit:80",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:96",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:112",
+            "ms": 0.7999999970197678
+          },
+          {
+            "name": "gpu-shader-submit:128",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:144",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:160",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:176",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:192",
+            "ms": 3
+          },
+          {
+            "name": "gpu-shader-submit:208",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:224",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:240",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:256",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:272",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:288",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:304",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:320",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:336",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:352",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:368",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:384",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:400",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:416",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:432",
+            "ms": 2.199999999254942
+          },
+          {
+            "name": "gpu-shader-submit:448",
+            "ms": 0.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:464",
+            "ms": 0.5
+          },
+          {
+            "name": "gpu-shader-submit:480",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-shader-submit:496",
+            "ms": 0.8000000007450581
+          },
+          {
+            "name": "gpu-shader-submit:512",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:528",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-shader-submit:544",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:560",
+            "ms": 19
+          },
+          {
+            "name": "gpu-shader-submit:576",
+            "ms": 11.5
+          },
+          {
+            "name": "gpu-shader-submit:592",
+            "ms": 1.4000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:608",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "gpu-shader-submit:624",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-shader-submit:640",
+            "ms": 0.5999999977648258
+          },
+          {
+            "name": "gpu-shader-submit:656",
+            "ms": 0.9000000022351742
+          },
+          {
+            "name": "gpu-shader-submit:672",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:688",
+            "ms": 0.7000000029802322
+          },
+          {
+            "name": "gpu-shader-submit:704",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-shader-submit:720",
+            "ms": 1
+          },
+          {
+            "name": "gpu-shader-submit:736",
+            "ms": 0.6999999992549419
+          },
+          {
+            "name": "gpu-shader-submit:752",
+            "ms": 0.8999999985098839
+          },
+          {
+            "name": "gpu-shaders",
+            "ms": 339
+          },
+          {
+            "name": "gpu-batch:0:Mesh",
+            "ms": 4.199999999254942
+          },
+          {
+            "name": "gpu-batch:1:Mesh",
+            "ms": 3.600000001490116
+          },
+          {
+            "name": "gpu-batch:2:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:3:Mesh",
+            "ms": 15.5
+          },
+          {
+            "name": "gpu-batch:4:Mesh",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "gpu-batch:5:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:6:Mesh",
+            "ms": 5.600000001490116
+          },
+          {
+            "name": "gpu-batch:7:Mesh",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:8:Mesh",
+            "ms": 5.099999997764826
+          },
+          {
+            "name": "gpu-batch:9:Mesh",
+            "ms": 1.9000000022351742
+          },
+          {
+            "name": "gpu-batch:10:Mesh",
+            "ms": 5.399999998509884
+          },
+          {
+            "name": "gpu-batch:11:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:12:Mesh",
+            "ms": 2.300000000745058
+          },
+          {
+            "name": "gpu-batch:13:Mesh",
+            "ms": 2.699999999254942
+          },
+          {
+            "name": "gpu-batch:14:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:15:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:16:Mesh",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "gpu-batch:17:Mesh",
+            "ms": 2.5
+          },
+          {
+            "name": "gpu-batch:18:Mesh",
+            "ms": 70.60000000149012
+          },
+          {
+            "name": "gpu-batch:19:Mesh",
+            "ms": 30.400000002235174
+          },
+          {
+            "name": "gpu-batch:20:Mesh",
+            "ms": 3.399999998509884
+          },
+          {
+            "name": "gpu-batch:21:Mesh",
+            "ms": 4.5
+          },
+          {
+            "name": "gpu-batch:22:Mesh",
+            "ms": 14.199999999254942
+          },
+          {
+            "name": "gpu-batch:23:Mesh",
+            "ms": 1.8999999985098839
+          },
+          {
+            "name": "gpu-batch:24:Mesh",
+            "ms": 3.2000000029802322
+          },
+          {
+            "name": "gpu-batch:25:Mesh",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-batch:26:Sprite",
+            "ms": 28.299999997019768
+          },
+          {
+            "name": "gpu-batch:27:Mesh",
+            "ms": 3
+          },
+          {
+            "name": "gpu-batch:28:Mesh",
+            "ms": 15.800000000745058
+          },
+          {
+            "name": "gpu-batch:29:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:30:Mesh",
+            "ms": 2.100000001490116
+          },
+          {
+            "name": "gpu-batch:31:Mesh",
+            "ms": 2.800000000745058
+          },
+          {
+            "name": "gpu-batch:32:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:33:Mesh",
+            "ms": 4.099999997764826
+          },
+          {
+            "name": "gpu-batch:34:Mesh",
+            "ms": 29.299999997019768
+          },
+          {
+            "name": "gpu-batch:35:Mesh",
+            "ms": 4.899999998509884
+          },
+          {
+            "name": "gpu-batch:36:Mesh",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:37:Mesh",
+            "ms": 3.699999999254942
+          },
+          {
+            "name": "gpu-batch:38:Mesh",
+            "ms": 1.800000000745058
+          },
+          {
+            "name": "gpu-batch:39:Mesh",
+            "ms": 1.1000000014901161
+          },
+          {
+            "name": "gpu-batch:40:Mesh",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:41:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:42:Mesh",
+            "ms": 1.300000000745058
+          },
+          {
+            "name": "gpu-batch:43:Mesh",
+            "ms": 1.3999999985098839
+          },
+          {
+            "name": "gpu-batch:44:Sprite",
+            "ms": 2.899999998509884
+          },
+          {
+            "name": "gpu-batch:45:Mesh",
+            "ms": 4.900000002235174
+          },
+          {
+            "name": "gpu-batch:46:Mesh",
+            "ms": 1.699999999254942
+          },
+          {
+            "name": "gpu-batch:47:Points",
+            "ms": 2.600000001490116
+          },
+          {
+            "name": "gpu-batch:48:Sprite",
+            "ms": 28.5
+          },
+          {
+            "name": "gpu-batch:49:Sprite",
+            "ms": 1.6000000014901161
+          },
+          {
+            "name": "gpu-batch:50:Mesh",
+            "ms": 1.5999999977648258
+          },
+          {
+            "name": "gpu-batch:51:Sprite",
+            "ms": 2
+          },
+          {
+            "name": "gpu-batch:52:Mesh",
+            "ms": 1.5
+          },
+          {
+            "name": "gpu-batch:53:Sprite",
+            "ms": 3.100000001490116
+          },
+          {
+            "name": "gpu-preparation",
+            "ms": 801.1999999992549
+          },
+          {
+            "name": "camera",
+            "ms": 2.199999999254942
+          }
+        ],
+        "heapBefore": 21783401,
+        "ready": 64389.099999997765,
+        "total": 2030.5,
+        "maxUnit": 70.60000000149012,
+        "heapAfter": 21908353,
+        "disposalMs": 49.899999998509884,
+        "firstRender": 74.89999999850988,
+        "firstSubmittedAt": 64557.300000000745,
+        "requestToWelcome": null,
+        "presentationProxy": 16.799999997019768,
+        "controlAt": 64744,
+        "controlLatency": 2385.400000002235
+      },
+      "sheets": {
+        "entries": 3,
+        "active": 3,
+        "idle": 0,
+        "loads": 3,
+        "evictions": 0,
+        "preparationMs": 300.20000000298023
+      }
+    }
+  ],
+  "processMemory": [
+    {
+      "phase": "01-cidade-clientes-reais",
+      "measurements": [
+        {
+          "cpuSeconds": 104.03125,
+          "workingSetBytes": 262701056,
+          "pid": 23644,
+          "processes": 4,
+          "privateBytes": 576663552
+        },
+        {
+          "cpuSeconds": 93.828125,
+          "workingSetBytes": 348082176,
+          "pid": 14540,
+          "processes": 4,
+          "privateBytes": 532004864
+        },
+        {
+          "cpuSeconds": 70.109375,
+          "workingSetBytes": 395943936,
+          "pid": 10716,
+          "processes": 4,
+          "privateBytes": 519061504
+        }
+      ]
+    },
+    {
+      "phase": "02-combate-lobo-branco",
+      "measurements": [
+        {
+          "cpuSeconds": 264.5625,
+          "workingSetBytes": 202211328,
+          "pid": 23644,
+          "processes": 4,
+          "privateBytes": 713379840
+        },
+        {
+          "cpuSeconds": 255.71875,
+          "workingSetBytes": 194895872,
+          "pid": 14540,
+          "processes": 4,
+          "privateBytes": 618754048
+        },
+        {
+          "cpuSeconds": 230.328125,
+          "workingSetBytes": 242802688,
+          "pid": 10716,
+          "processes": 4,
+          "privateBytes": 621154304
+        }
+      ]
+    }
+  ],
+  "grave": {
+    "state": "waiting",
+    "generation": 0,
+    "diedAt": 1793503859998,
+    "position": {
+      "x": -69.18494039017008,
+      "y": -5,
+      "z": 8.282933539070049,
+      "surface": "white-wolf-cave"
+    },
+    "respawnAt": 1793504759998,
+    "killer": "Aventureiro 1",
+    "phase": "dead",
+    "frenzy": false
+  },
+  "ok": true
+}

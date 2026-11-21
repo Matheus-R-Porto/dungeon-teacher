@@ -1,0 +1,1799 @@
+[
+  {
+    "boss": "wolf",
+    "kind": "exceptional",
+    "seed": 11,
+    "dodge": true,
+    "classes": [
+      "mage"
+    ],
+    "profiles": [
+      {
+        "exploration": {
+          "version": 1,
+          "maps": {}
+        },
+        "smithingMastery": {},
+        "tower": {
+          "highestClearedFloor": 0,
+          "claimedRewards": []
+        },
+        "foodBuff": {
+          "id": "hearty",
+          "expiresAt": 1800000300000
+        },
+        "consumableCooldowns": {
+          "food": 1800000008000
+        },
+        "lifeSkills": {
+          "fishing": {
+            "level": 1,
+            "xp": 0
+          },
+          "cooking": {
+            "level": 1,
+            "xp": 0
+          },
+          "mining": {
+            "level": 1,
+            "xp": 0
+          },
+          "smithing": {
+            "level": 1,
+            "xp": 0
+          }
+        },
+        "id": "1e5394a9-df71-4cd5-bea6-af8bf19c96eb",
+        "name": "Sim 0",
+        "classId": "mage",
+        "progressionVersion": 4,
+        "skillSpaces": 19,
+        "gold": 0,
+        "upgrades": {
+          "str": 0,
+          "agi": 0,
+          "vit": 0,
+          "int": 0,
+          "dex": 0,
+          "luk": 0
+        },
+        "equippedWeaponType": "staff",
+        "inventory": {
+          "version": 1,
+          "capacity": 32,
+          "nextId": 8,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "cartStorage": {
+          "version": 1,
+          "capacity": 16,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "worldDrops": [],
+        "equipment": {
+          "weapon": {
+            "instanceId": "item-1",
+            "definitionId": "trainingStaff",
+            "quantity": 1
+          },
+          "offhand": null,
+          "head": {
+            "instanceId": "item-4",
+            "definitionId": "apprenticeHood",
+            "quantity": 1
+          },
+          "chest": {
+            "instanceId": "item-2",
+            "definitionId": "travelerVest",
+            "quantity": 1
+          },
+          "legs": null,
+          "boots": {
+            "instanceId": "item-3",
+            "definitionId": "travelerBoots",
+            "quantity": 1
+          },
+          "ring": {
+            "instanceId": "item-5",
+            "definitionId": "focusRing",
+            "quantity": 1
+          },
+          "necklace": null,
+          "talisman": {
+            "instanceId": "item-6",
+            "definitionId": "unwaveringCharm",
+            "quantity": 1
+          },
+          "backpack": null,
+          "cart": null
+        },
+        "knownAbilities": [
+          "magicProjectile",
+          "iceLance",
+          "iceField",
+          "fireball",
+          "arcaneBarrier",
+          "glacialExplosion",
+          "arcaneOverload",
+          "chainLightning",
+          "arcaneStep"
+        ],
+        "firstSteps": {
+          "movement": false,
+          "camera": false,
+          "smith": false,
+          "acquired": false,
+          "equipped": false,
+          "entered": false,
+          "cleared": false,
+          "returned": false,
+          "learned": false
+        },
+        "level": 71,
+        "xp": 900,
+        "attributePoints": 0,
+        "attributes": {
+          "str": 5,
+          "agi": 5,
+          "vit": 110,
+          "int": 215,
+          "dex": 40,
+          "luk": 5
+        },
+        "hp": 2035,
+        "mp": 2483,
+        "jobs": {
+          "version": 1,
+          "revision": 118,
+          "active": "mage",
+          "unlocked": [
+            "novice",
+            "mage"
+          ],
+          "origins": {
+            "novice": {
+              "level": 20,
+              "xp": 0,
+              "earned": 19,
+              "spent": {}
+            },
+            "mage": {
+              "level": 50,
+              "xp": 0,
+              "earned": 49,
+              "spent": {
+                "magicProjectile": 5,
+                "iceLance": 5,
+                "acceleratedCasting": 5,
+                "elementalMastery": 4,
+                "iceField": 4,
+                "arcaneReserve": 4,
+                "fireball": 3,
+                "arcaneBarrier": 3,
+                "arcaneMeditation": 3,
+                "glacialExplosion": 2,
+                "arcaneFlow": 2,
+                "defensiveConcentration": 2,
+                "arcaneOverload": 2,
+                "chainLightning": 2,
+                "arcaneStep": 2,
+                "arcaneTrinity": 1
+              }
+            }
+          },
+          "promotionUnlocks": [],
+          "education": {},
+          "migration": {
+            "redistribute": false,
+            "legacyPoints": 0
+          },
+          "firstClass": "mage",
+          "elements": {
+            "fire": 2,
+            "ice": 2,
+            "lightning": 0
+          }
+        },
+        "hotbar": [
+          "arcaneBarrier",
+          "iceField",
+          "fireball",
+          "chainLightning",
+          "iceLance",
+          "magicProjectile",
+          null,
+          null
+        ],
+        "appearance": {
+          "version": 1,
+          "hairStyle": "short",
+          "hairColor": "#39261d",
+          "expression": "calm",
+          "primary": "#356c9c",
+          "secondary": "#b39451"
+        }
+      }
+    ],
+    "config": {
+      "hp": 48000,
+      "attack": 850,
+      "defense": 8
+    },
+    "finalMaxHP": 48000,
+    "result": "victory",
+    "seconds": 73.9,
+    "bossHP": 0,
+    "metrics": [
+      {
+        "classId": "mage",
+        "base": 71,
+        "job": 50,
+        "damage": 53115,
+        "bossDamage": 48000,
+        "received": 0,
+        "healed": 0,
+        "mpSpent": 461,
+        "deaths": 0,
+        "skills": {
+          "arcaneBarrier": 4,
+          "iceField": 6,
+          "fireball": 9,
+          "chainLightning": 8,
+          "iceLance": 10,
+          "magicProjectile": 19
+        },
+        "areaReceived": 0,
+        "foodUsed": 1,
+        "arrowsBefore": 0,
+        "hpRemaining": 2035,
+        "mpRemaining": 2483,
+        "arrowsUsed": 0
+      }
+    ],
+    "areaHits": 0,
+    "resets": 0,
+    "scaling": null
+  },
+  {
+    "boss": "wolf",
+    "kind": "exceptional",
+    "seed": 29,
+    "dodge": true,
+    "classes": [
+      "mage"
+    ],
+    "profiles": [
+      {
+        "exploration": {
+          "version": 1,
+          "maps": {}
+        },
+        "smithingMastery": {},
+        "tower": {
+          "highestClearedFloor": 0,
+          "claimedRewards": []
+        },
+        "foodBuff": {
+          "id": "hearty",
+          "expiresAt": 1800000300000
+        },
+        "consumableCooldowns": {
+          "food": 1800000008000
+        },
+        "lifeSkills": {
+          "fishing": {
+            "level": 1,
+            "xp": 0
+          },
+          "cooking": {
+            "level": 1,
+            "xp": 0
+          },
+          "mining": {
+            "level": 1,
+            "xp": 0
+          },
+          "smithing": {
+            "level": 1,
+            "xp": 0
+          }
+        },
+        "id": "25201b9e-c361-4880-8bae-747b2ca88313",
+        "name": "Sim 0",
+        "classId": "mage",
+        "progressionVersion": 4,
+        "skillSpaces": 19,
+        "gold": 0,
+        "upgrades": {
+          "str": 0,
+          "agi": 0,
+          "vit": 0,
+          "int": 0,
+          "dex": 0,
+          "luk": 0
+        },
+        "equippedWeaponType": "staff",
+        "inventory": {
+          "version": 1,
+          "capacity": 32,
+          "nextId": 8,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "cartStorage": {
+          "version": 1,
+          "capacity": 16,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "worldDrops": [],
+        "equipment": {
+          "weapon": {
+            "instanceId": "item-1",
+            "definitionId": "trainingStaff",
+            "quantity": 1
+          },
+          "offhand": null,
+          "head": {
+            "instanceId": "item-4",
+            "definitionId": "apprenticeHood",
+            "quantity": 1
+          },
+          "chest": {
+            "instanceId": "item-2",
+            "definitionId": "travelerVest",
+            "quantity": 1
+          },
+          "legs": null,
+          "boots": {
+            "instanceId": "item-3",
+            "definitionId": "travelerBoots",
+            "quantity": 1
+          },
+          "ring": {
+            "instanceId": "item-5",
+            "definitionId": "focusRing",
+            "quantity": 1
+          },
+          "necklace": null,
+          "talisman": {
+            "instanceId": "item-6",
+            "definitionId": "unwaveringCharm",
+            "quantity": 1
+          },
+          "backpack": null,
+          "cart": null
+        },
+        "knownAbilities": [
+          "magicProjectile",
+          "iceLance",
+          "iceField",
+          "fireball",
+          "arcaneBarrier",
+          "glacialExplosion",
+          "arcaneOverload",
+          "chainLightning",
+          "arcaneStep"
+        ],
+        "firstSteps": {
+          "movement": false,
+          "camera": false,
+          "smith": false,
+          "acquired": false,
+          "equipped": false,
+          "entered": false,
+          "cleared": false,
+          "returned": false,
+          "learned": false
+        },
+        "level": 71,
+        "xp": 900,
+        "attributePoints": 0,
+        "attributes": {
+          "str": 5,
+          "agi": 5,
+          "vit": 110,
+          "int": 215,
+          "dex": 40,
+          "luk": 5
+        },
+        "hp": 2035,
+        "mp": 2483,
+        "jobs": {
+          "version": 1,
+          "revision": 118,
+          "active": "mage",
+          "unlocked": [
+            "novice",
+            "mage"
+          ],
+          "origins": {
+            "novice": {
+              "level": 20,
+              "xp": 0,
+              "earned": 19,
+              "spent": {}
+            },
+            "mage": {
+              "level": 50,
+              "xp": 0,
+              "earned": 49,
+              "spent": {
+                "magicProjectile": 5,
+                "iceLance": 5,
+                "acceleratedCasting": 5,
+                "elementalMastery": 4,
+                "iceField": 4,
+                "arcaneReserve": 4,
+                "fireball": 3,
+                "arcaneBarrier": 3,
+                "arcaneMeditation": 3,
+                "glacialExplosion": 2,
+                "arcaneFlow": 2,
+                "defensiveConcentration": 2,
+                "arcaneOverload": 2,
+                "chainLightning": 2,
+                "arcaneStep": 2,
+                "arcaneTrinity": 1
+              }
+            }
+          },
+          "promotionUnlocks": [],
+          "education": {},
+          "migration": {
+            "redistribute": false,
+            "legacyPoints": 0
+          },
+          "firstClass": "mage",
+          "elements": {
+            "fire": 2,
+            "ice": 2,
+            "lightning": 0
+          }
+        },
+        "hotbar": [
+          "arcaneBarrier",
+          "iceField",
+          "fireball",
+          "chainLightning",
+          "iceLance",
+          "magicProjectile",
+          null,
+          null
+        ],
+        "appearance": {
+          "version": 1,
+          "hairStyle": "short",
+          "hairColor": "#39261d",
+          "expression": "calm",
+          "primary": "#356c9c",
+          "secondary": "#b39451"
+        }
+      }
+    ],
+    "config": {
+      "hp": 48000,
+      "attack": 850,
+      "defense": 8
+    },
+    "finalMaxHP": 48000,
+    "result": "victory",
+    "seconds": 83.55,
+    "bossHP": 0,
+    "metrics": [
+      {
+        "classId": "mage",
+        "base": 71,
+        "job": 50,
+        "damage": 53517,
+        "bossDamage": 48000,
+        "received": 0,
+        "healed": 0,
+        "mpSpent": 517,
+        "deaths": 0,
+        "skills": {
+          "arcaneBarrier": 5,
+          "iceField": 7,
+          "fireball": 10,
+          "chainLightning": 8,
+          "iceLance": 12,
+          "magicProjectile": 21
+        },
+        "areaReceived": 0,
+        "foodUsed": 1,
+        "arrowsBefore": 0,
+        "hpRemaining": 2035,
+        "mpRemaining": 2483,
+        "arrowsUsed": 0
+      }
+    ],
+    "areaHits": 0,
+    "resets": 0,
+    "scaling": null
+  },
+  {
+    "boss": "wolf",
+    "kind": "exceptional",
+    "seed": 47,
+    "dodge": true,
+    "classes": [
+      "mage"
+    ],
+    "profiles": [
+      {
+        "exploration": {
+          "version": 1,
+          "maps": {}
+        },
+        "smithingMastery": {},
+        "tower": {
+          "highestClearedFloor": 0,
+          "claimedRewards": []
+        },
+        "foodBuff": {
+          "id": "hearty",
+          "expiresAt": 1800000300000
+        },
+        "consumableCooldowns": {
+          "food": 1800000008000
+        },
+        "lifeSkills": {
+          "fishing": {
+            "level": 1,
+            "xp": 0
+          },
+          "cooking": {
+            "level": 1,
+            "xp": 0
+          },
+          "mining": {
+            "level": 1,
+            "xp": 0
+          },
+          "smithing": {
+            "level": 1,
+            "xp": 0
+          }
+        },
+        "id": "0ba43780-42fb-496a-b14d-7dcf35836512",
+        "name": "Sim 0",
+        "classId": "mage",
+        "progressionVersion": 4,
+        "skillSpaces": 19,
+        "gold": 0,
+        "upgrades": {
+          "str": 0,
+          "agi": 0,
+          "vit": 0,
+          "int": 0,
+          "dex": 0,
+          "luk": 0
+        },
+        "equippedWeaponType": "staff",
+        "inventory": {
+          "version": 1,
+          "capacity": 32,
+          "nextId": 8,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "cartStorage": {
+          "version": 1,
+          "capacity": 16,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "worldDrops": [],
+        "equipment": {
+          "weapon": {
+            "instanceId": "item-1",
+            "definitionId": "trainingStaff",
+            "quantity": 1
+          },
+          "offhand": null,
+          "head": {
+            "instanceId": "item-4",
+            "definitionId": "apprenticeHood",
+            "quantity": 1
+          },
+          "chest": {
+            "instanceId": "item-2",
+            "definitionId": "travelerVest",
+            "quantity": 1
+          },
+          "legs": null,
+          "boots": {
+            "instanceId": "item-3",
+            "definitionId": "travelerBoots",
+            "quantity": 1
+          },
+          "ring": {
+            "instanceId": "item-5",
+            "definitionId": "focusRing",
+            "quantity": 1
+          },
+          "necklace": null,
+          "talisman": {
+            "instanceId": "item-6",
+            "definitionId": "unwaveringCharm",
+            "quantity": 1
+          },
+          "backpack": null,
+          "cart": null
+        },
+        "knownAbilities": [
+          "magicProjectile",
+          "iceLance",
+          "iceField",
+          "fireball",
+          "arcaneBarrier",
+          "glacialExplosion",
+          "arcaneOverload",
+          "chainLightning",
+          "arcaneStep"
+        ],
+        "firstSteps": {
+          "movement": false,
+          "camera": false,
+          "smith": false,
+          "acquired": false,
+          "equipped": false,
+          "entered": false,
+          "cleared": false,
+          "returned": false,
+          "learned": false
+        },
+        "level": 71,
+        "xp": 900,
+        "attributePoints": 0,
+        "attributes": {
+          "str": 5,
+          "agi": 5,
+          "vit": 110,
+          "int": 215,
+          "dex": 40,
+          "luk": 5
+        },
+        "hp": 2035,
+        "mp": 2483,
+        "jobs": {
+          "version": 1,
+          "revision": 118,
+          "active": "mage",
+          "unlocked": [
+            "novice",
+            "mage"
+          ],
+          "origins": {
+            "novice": {
+              "level": 20,
+              "xp": 0,
+              "earned": 19,
+              "spent": {}
+            },
+            "mage": {
+              "level": 50,
+              "xp": 0,
+              "earned": 49,
+              "spent": {
+                "magicProjectile": 5,
+                "iceLance": 5,
+                "acceleratedCasting": 5,
+                "elementalMastery": 4,
+                "iceField": 4,
+                "arcaneReserve": 4,
+                "fireball": 3,
+                "arcaneBarrier": 3,
+                "arcaneMeditation": 3,
+                "glacialExplosion": 2,
+                "arcaneFlow": 2,
+                "defensiveConcentration": 2,
+                "arcaneOverload": 2,
+                "chainLightning": 2,
+                "arcaneStep": 2,
+                "arcaneTrinity": 1
+              }
+            }
+          },
+          "promotionUnlocks": [],
+          "education": {},
+          "migration": {
+            "redistribute": false,
+            "legacyPoints": 0
+          },
+          "firstClass": "mage",
+          "elements": {
+            "fire": 2,
+            "ice": 2,
+            "lightning": 0
+          }
+        },
+        "hotbar": [
+          "arcaneBarrier",
+          "iceField",
+          "fireball",
+          "chainLightning",
+          "iceLance",
+          "magicProjectile",
+          null,
+          null
+        ],
+        "appearance": {
+          "version": 1,
+          "hairStyle": "short",
+          "hairColor": "#39261d",
+          "expression": "calm",
+          "primary": "#356c9c",
+          "secondary": "#b39451"
+        }
+      }
+    ],
+    "config": {
+      "hp": 48000,
+      "attack": 850,
+      "defense": 8
+    },
+    "finalMaxHP": 48000,
+    "result": "victory",
+    "seconds": 80.95,
+    "bossHP": 0,
+    "metrics": [
+      {
+        "classId": "mage",
+        "base": 71,
+        "job": 50,
+        "damage": 54225,
+        "bossDamage": 48000,
+        "received": 0,
+        "healed": 0,
+        "mpSpent": 507,
+        "deaths": 0,
+        "skills": {
+          "arcaneBarrier": 5,
+          "iceField": 7,
+          "fireball": 10,
+          "chainLightning": 8,
+          "iceLance": 11,
+          "magicProjectile": 20
+        },
+        "areaReceived": 0,
+        "foodUsed": 1,
+        "arrowsBefore": 0,
+        "hpRemaining": 2035,
+        "mpRemaining": 2483,
+        "arrowsUsed": 0
+      }
+    ],
+    "areaHits": 0,
+    "resets": 0,
+    "scaling": null
+  },
+  {
+    "boss": "wolf",
+    "kind": "exceptional",
+    "seed": 11,
+    "dodge": true,
+    "classes": [
+      "rogue"
+    ],
+    "profiles": [
+      {
+        "exploration": {
+          "version": 1,
+          "maps": {}
+        },
+        "smithingMastery": {},
+        "tower": {
+          "highestClearedFloor": 0,
+          "claimedRewards": []
+        },
+        "foodBuff": {
+          "id": "hearty",
+          "expiresAt": 1800000300000
+        },
+        "consumableCooldowns": {
+          "food": 1800000008000
+        },
+        "lifeSkills": {
+          "fishing": {
+            "level": 1,
+            "xp": 0
+          },
+          "cooking": {
+            "level": 1,
+            "xp": 0
+          },
+          "mining": {
+            "level": 1,
+            "xp": 0
+          },
+          "smithing": {
+            "level": 1,
+            "xp": 0
+          }
+        },
+        "id": "e1f8419d-2f83-4470-a041-1f578ea5870a",
+        "name": "Sim 0",
+        "classId": "rogue",
+        "progressionVersion": 4,
+        "skillSpaces": 19,
+        "gold": 0,
+        "upgrades": {
+          "str": 0,
+          "agi": 0,
+          "vit": 0,
+          "int": 0,
+          "dex": 0,
+          "luk": 0
+        },
+        "equippedWeaponType": "dagger",
+        "inventory": {
+          "version": 1,
+          "capacity": 32,
+          "nextId": 7,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "cartStorage": {
+          "version": 1,
+          "capacity": 16,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "worldDrops": [],
+        "equipment": {
+          "weapon": {
+            "instanceId": "item-1",
+            "definitionId": "pairedDaggers",
+            "quantity": 1
+          },
+          "offhand": null,
+          "head": {
+            "instanceId": "item-4",
+            "definitionId": "travelerCap",
+            "quantity": 1
+          },
+          "chest": {
+            "instanceId": "item-2",
+            "definitionId": "travelerVest",
+            "quantity": 1
+          },
+          "legs": null,
+          "boots": {
+            "instanceId": "item-3",
+            "definitionId": "travelerBoots",
+            "quantity": 1
+          },
+          "ring": {
+            "instanceId": "item-5",
+            "definitionId": "strengthRing",
+            "quantity": 1
+          },
+          "necklace": null,
+          "talisman": null,
+          "backpack": null,
+          "cart": null
+        },
+        "knownAbilities": [
+          "concealment",
+          "quickLunge",
+          "poisonBlade",
+          "daggerSequence",
+          "treacherousBlow",
+          "shadowStep",
+          "toxicAmbush",
+          "bladeDance"
+        ],
+        "firstSteps": {
+          "movement": false,
+          "camera": false,
+          "smith": false,
+          "acquired": false,
+          "equipped": false,
+          "entered": false,
+          "cleared": false,
+          "returned": false,
+          "learned": false
+        },
+        "level": 71,
+        "xp": 900,
+        "attributePoints": 0,
+        "attributes": {
+          "str": 145,
+          "agi": 110,
+          "vit": 75,
+          "int": 5,
+          "dex": 40,
+          "luk": 5
+        },
+        "hp": 1615,
+        "mp": 290,
+        "jobs": {
+          "version": 1,
+          "revision": 118,
+          "active": "rogue",
+          "unlocked": [
+            "novice",
+            "rogue"
+          ],
+          "origins": {
+            "novice": {
+              "level": 20,
+              "xp": 0,
+              "earned": 19,
+              "spent": {}
+            },
+            "rogue": {
+              "level": 50,
+              "xp": 0,
+              "earned": 49,
+              "spent": {
+                "concealment": 5,
+                "quickLunge": 5,
+                "poisonBlade": 5,
+                "surpriseAttack": 4,
+                "keenReflexes": 4,
+                "weaknessKnowledge": 4,
+                "daggerSequence": 3,
+                "treacherousBlow": 3,
+                "discreetPresence": 3,
+                "shadowStep": 2,
+                "toxicAmbush": 2,
+                "bladeDance": 2,
+                "lethalPreparation": 2,
+                "acceleratedRhythm": 2,
+                "persistentToxins": 2,
+                "invisiblePredator": 1
+              }
+            }
+          },
+          "promotionUnlocks": [],
+          "education": {},
+          "migration": {
+            "redistribute": false,
+            "legacyPoints": 0
+          },
+          "firstClass": "rogue"
+        },
+        "hotbar": [
+          "poisonBlade",
+          "daggerSequence",
+          "treacherousBlow",
+          "quickLunge",
+          "bladeDance",
+          null,
+          null,
+          null
+        ],
+        "appearance": {
+          "version": 1,
+          "hairStyle": "short",
+          "hairColor": "#39261d",
+          "expression": "calm",
+          "primary": "#356c9c",
+          "secondary": "#b39451"
+        }
+      }
+    ],
+    "config": {
+      "hp": 48000,
+      "attack": 850,
+      "defense": 8
+    },
+    "finalMaxHP": 48000,
+    "result": "defeat",
+    "seconds": 65.8,
+    "bossHP": 48000,
+    "metrics": [
+      {
+        "classId": "rogue",
+        "base": 71,
+        "job": 50,
+        "damage": 25124,
+        "bossDamage": 22661,
+        "received": 2246,
+        "healed": 0,
+        "mpSpent": 287,
+        "deaths": 1,
+        "skills": {
+          "poisonBlade": 2,
+          "daggerSequence": 7,
+          "treacherousBlow": 7,
+          "quickLunge": 8,
+          "bladeDance": 5
+        },
+        "areaReceived": 0,
+        "foodUsed": 1,
+        "arrowsBefore": 0,
+        "hpRemaining": 0,
+        "mpRemaining": 68.75000000000884,
+        "arrowsUsed": 0
+      }
+    ],
+    "areaHits": 0,
+    "resets": 1,
+    "scaling": null
+  },
+  {
+    "boss": "wolf",
+    "kind": "exceptional",
+    "seed": 29,
+    "dodge": true,
+    "classes": [
+      "rogue"
+    ],
+    "profiles": [
+      {
+        "exploration": {
+          "version": 1,
+          "maps": {}
+        },
+        "smithingMastery": {},
+        "tower": {
+          "highestClearedFloor": 0,
+          "claimedRewards": []
+        },
+        "foodBuff": {
+          "id": "hearty",
+          "expiresAt": 1800000300000
+        },
+        "consumableCooldowns": {
+          "food": 1800000008000
+        },
+        "lifeSkills": {
+          "fishing": {
+            "level": 1,
+            "xp": 0
+          },
+          "cooking": {
+            "level": 1,
+            "xp": 0
+          },
+          "mining": {
+            "level": 1,
+            "xp": 0
+          },
+          "smithing": {
+            "level": 1,
+            "xp": 0
+          }
+        },
+        "id": "f14bf39c-3f23-42ed-aeb2-858216520127",
+        "name": "Sim 0",
+        "classId": "rogue",
+        "progressionVersion": 4,
+        "skillSpaces": 19,
+        "gold": 0,
+        "upgrades": {
+          "str": 0,
+          "agi": 0,
+          "vit": 0,
+          "int": 0,
+          "dex": 0,
+          "luk": 0
+        },
+        "equippedWeaponType": "dagger",
+        "inventory": {
+          "version": 1,
+          "capacity": 32,
+          "nextId": 7,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "cartStorage": {
+          "version": 1,
+          "capacity": 16,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "worldDrops": [],
+        "equipment": {
+          "weapon": {
+            "instanceId": "item-1",
+            "definitionId": "pairedDaggers",
+            "quantity": 1
+          },
+          "offhand": null,
+          "head": {
+            "instanceId": "item-4",
+            "definitionId": "travelerCap",
+            "quantity": 1
+          },
+          "chest": {
+            "instanceId": "item-2",
+            "definitionId": "travelerVest",
+            "quantity": 1
+          },
+          "legs": null,
+          "boots": {
+            "instanceId": "item-3",
+            "definitionId": "travelerBoots",
+            "quantity": 1
+          },
+          "ring": {
+            "instanceId": "item-5",
+            "definitionId": "strengthRing",
+            "quantity": 1
+          },
+          "necklace": null,
+          "talisman": null,
+          "backpack": null,
+          "cart": null
+        },
+        "knownAbilities": [
+          "concealment",
+          "quickLunge",
+          "poisonBlade",
+          "daggerSequence",
+          "treacherousBlow",
+          "shadowStep",
+          "toxicAmbush",
+          "bladeDance"
+        ],
+        "firstSteps": {
+          "movement": false,
+          "camera": false,
+          "smith": false,
+          "acquired": false,
+          "equipped": false,
+          "entered": false,
+          "cleared": false,
+          "returned": false,
+          "learned": false
+        },
+        "level": 71,
+        "xp": 900,
+        "attributePoints": 0,
+        "attributes": {
+          "str": 145,
+          "agi": 110,
+          "vit": 75,
+          "int": 5,
+          "dex": 40,
+          "luk": 5
+        },
+        "hp": 1615,
+        "mp": 290,
+        "jobs": {
+          "version": 1,
+          "revision": 118,
+          "active": "rogue",
+          "unlocked": [
+            "novice",
+            "rogue"
+          ],
+          "origins": {
+            "novice": {
+              "level": 20,
+              "xp": 0,
+              "earned": 19,
+              "spent": {}
+            },
+            "rogue": {
+              "level": 50,
+              "xp": 0,
+              "earned": 49,
+              "spent": {
+                "concealment": 5,
+                "quickLunge": 5,
+                "poisonBlade": 5,
+                "surpriseAttack": 4,
+                "keenReflexes": 4,
+                "weaknessKnowledge": 4,
+                "daggerSequence": 3,
+                "treacherousBlow": 3,
+                "discreetPresence": 3,
+                "shadowStep": 2,
+                "toxicAmbush": 2,
+                "bladeDance": 2,
+                "lethalPreparation": 2,
+                "acceleratedRhythm": 2,
+                "persistentToxins": 2,
+                "invisiblePredator": 1
+              }
+            }
+          },
+          "promotionUnlocks": [],
+          "education": {},
+          "migration": {
+            "redistribute": false,
+            "legacyPoints": 0
+          },
+          "firstClass": "rogue"
+        },
+        "hotbar": [
+          "poisonBlade",
+          "daggerSequence",
+          "treacherousBlow",
+          "quickLunge",
+          "bladeDance",
+          null,
+          null,
+          null
+        ],
+        "appearance": {
+          "version": 1,
+          "hairStyle": "short",
+          "hairColor": "#39261d",
+          "expression": "calm",
+          "primary": "#356c9c",
+          "secondary": "#b39451"
+        }
+      }
+    ],
+    "config": {
+      "hp": 48000,
+      "attack": 850,
+      "defense": 8
+    },
+    "finalMaxHP": 48000,
+    "result": "victory",
+    "seconds": 142.9,
+    "bossHP": 0,
+    "metrics": [
+      {
+        "classId": "rogue",
+        "base": 71,
+        "job": 50,
+        "damage": 52648,
+        "bossDamage": 48000,
+        "received": 2176,
+        "healed": 0,
+        "mpSpent": 429,
+        "deaths": 0,
+        "skills": {
+          "poisonBlade": 5,
+          "daggerSequence": 10,
+          "treacherousBlow": 7,
+          "quickLunge": 15,
+          "bladeDance": 5
+        },
+        "areaReceived": 0,
+        "foodUsed": 1,
+        "arrowsBefore": 0,
+        "hpRemaining": 520.200000000076,
+        "mpRemaining": 3.9000000000083284,
+        "arrowsUsed": 0
+      }
+    ],
+    "areaHits": 0,
+    "resets": 0,
+    "scaling": null
+  },
+  {
+    "boss": "wolf",
+    "kind": "exceptional",
+    "seed": 47,
+    "dodge": true,
+    "classes": [
+      "rogue"
+    ],
+    "profiles": [
+      {
+        "exploration": {
+          "version": 1,
+          "maps": {}
+        },
+        "smithingMastery": {},
+        "tower": {
+          "highestClearedFloor": 0,
+          "claimedRewards": []
+        },
+        "foodBuff": {
+          "id": "hearty",
+          "expiresAt": 1800000300000
+        },
+        "consumableCooldowns": {
+          "food": 1800000008000
+        },
+        "lifeSkills": {
+          "fishing": {
+            "level": 1,
+            "xp": 0
+          },
+          "cooking": {
+            "level": 1,
+            "xp": 0
+          },
+          "mining": {
+            "level": 1,
+            "xp": 0
+          },
+          "smithing": {
+            "level": 1,
+            "xp": 0
+          }
+        },
+        "id": "e78ba53e-d2e8-435e-aa63-f7879cd1e4f1",
+        "name": "Sim 0",
+        "classId": "rogue",
+        "progressionVersion": 4,
+        "skillSpaces": 19,
+        "gold": 0,
+        "upgrades": {
+          "str": 0,
+          "agi": 0,
+          "vit": 0,
+          "int": 0,
+          "dex": 0,
+          "luk": 0
+        },
+        "equippedWeaponType": "dagger",
+        "inventory": {
+          "version": 1,
+          "capacity": 32,
+          "nextId": 7,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "cartStorage": {
+          "version": 1,
+          "capacity": 16,
+          "slots": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "worldDrops": [],
+        "equipment": {
+          "weapon": {
+            "instanceId": "item-1",
+            "definitionId": "pairedDaggers",
+            "quantity": 1
+          },
+          "offhand": null,
+          "head": {
+            "instanceId": "item-4",
+            "definitionId": "travelerCap",
+            "quantity": 1
+          },
+          "chest": {
+            "instanceId": "item-2",
+            "definitionId": "travelerVest",
+            "quantity": 1
+          },
+          "legs": null,
+          "boots": {
+            "instanceId": "item-3",
+            "definitionId": "travelerBoots",
+            "quantity": 1
+          },
+          "ring": {
+            "instanceId": "item-5",
+            "definitionId": "strengthRing",
+            "quantity": 1
+          },
+          "necklace": null,
+          "talisman": null,
+          "backpack": null,
+          "cart": null
+        },
+        "knownAbilities": [
+          "concealment",
+          "quickLunge",
+          "poisonBlade",
+          "daggerSequence",
+          "treacherousBlow",
+          "shadowStep",
+          "toxicAmbush",
+          "bladeDance"
+        ],
+        "firstSteps": {
+          "movement": false,
+          "camera": false,
+          "smith": false,
+          "acquired": false,
+          "equipped": false,
+          "entered": false,
+          "cleared": false,
+          "returned": false,
+          "learned": false
+        },
+        "level": 71,
+        "xp": 900,
+        "attributePoints": 0,
+        "attributes": {
+          "str": 145,
+          "agi": 110,
+          "vit": 75,
+          "int": 5,
+          "dex": 40,
+          "luk": 5
+        },
+        "hp": 1615,
+        "mp": 290,
+        "jobs": {
+          "version": 1,
+          "revision": 118,
+          "active": "rogue",
+          "unlocked": [
+            "novice",
+            "rogue"
+          ],
+          "origins": {
+            "novice": {
+              "level": 20,
+              "xp": 0,
+              "earned": 19,
+              "spent": {}
+            },
+            "rogue": {
+              "level": 50,
+              "xp": 0,
+              "earned": 49,
+              "spent": {
+                "concealment": 5,
+                "quickLunge": 5,
+                "poisonBlade": 5,
+                "surpriseAttack": 4,
+                "keenReflexes": 4,
+                "weaknessKnowledge": 4,
+                "daggerSequence": 3,
+                "treacherousBlow": 3,
+                "discreetPresence": 3,
+                "shadowStep": 2,
+                "toxicAmbush": 2,
+                "bladeDance": 2,
+                "lethalPreparation": 2,
+                "acceleratedRhythm": 2,
+                "persistentToxins": 2,
+                "invisiblePredator": 1
+              }
+            }
+          },
+          "promotionUnlocks": [],
+          "education": {},
+          "migration": {
+            "redistribute": false,
+            "legacyPoints": 0
+          },
+          "firstClass": "rogue"
+        },
+        "hotbar": [
+          "poisonBlade",
+          "daggerSequence",
+          "treacherousBlow",
+          "quickLunge",
+          "bladeDance",
+          null,
+          null,
+          null
+        ],
+        "appearance": {
+          "version": 1,
+          "hairStyle": "short",
+          "hairColor": "#39261d",
+          "expression": "calm",
+          "primary": "#356c9c",
+          "secondary": "#b39451"
+        }
+      }
+    ],
+    "config": {
+      "hp": 48000,
+      "attack": 850,
+      "defense": 8
+    },
+    "finalMaxHP": 48000,
+    "result": "victory",
+    "seconds": 136.05,
+    "bossHP": 0,
+    "metrics": [
+      {
+        "classId": "rogue",
+        "base": 71,
+        "job": 50,
+        "damage": 51153,
+        "bossDamage": 48000,
+        "received": 1140,
+        "healed": 0,
+        "mpSpent": 425,
+        "deaths": 0,
+        "skills": {
+          "poisonBlade": 5,
+          "daggerSequence": 9,
+          "treacherousBlow": 8,
+          "quickLunge": 14,
+          "bladeDance": 5
+        },
+        "areaReceived": 0,
+        "foodUsed": 1,
+        "arrowsBefore": 0,
+        "hpRemaining": 1277.4000000000335,
+        "mpRemaining": 1.0500000000085967,
+        "arrowsUsed": 0
+      }
+    ],
+    "areaHits": 0,
+    "resets": 0,
+    "scaling": null
+  }
+]

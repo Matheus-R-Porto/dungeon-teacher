@@ -1,0 +1,75 @@
+{
+  "iteration": 38,
+  "version": "0.6.14",
+  "generated": "2026-11-01T05:46:41.623Z",
+  "packages": {
+    "adm": {
+      "files": 1084,
+      "compared": 144,
+      "asarSha256": "d282ed9013fb071dd54234e88381ee7b27b30fdd32598f06d16620e5f413ae3d",
+      "executableSha256": "3ff6f455e2783f37caef803cd64baa09ded60110a3ab1186f52f43def67b74a0",
+      "architecture": "x64",
+      "isolationVerified": true
+    },
+    "student": {
+      "files": 931,
+      "compared": 902,
+      "asarSha256": "d39c02a6c950959c3784b706b37f6c4b2cc3218fc72318399d4fb54e92b26ea1",
+      "executableSha256": "eba856aab84f69be66055dc4044f23ecd6df85cfc5a69973882f985d3b80c2dc",
+      "architecture": "x64",
+      "isolationVerified": true
+    }
+  },
+  "artifacts": [
+    {
+      "name": "Dungeon Teacher ADM-Iteracao38-0.6.14-Portable.exe",
+      "relativePath": "release/iteration38/adm/Dungeon Teacher ADM-Iteracao38-0.6.14-Portable.exe",
+      "version": "0.6.14",
+      "type": "portable",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111703158,
+      "sha256": "9aee9f1b2e69b19557bdc4bca3d6e58e9c88e40dbb9f7905da4a22e97c2aa7f3",
+      "generatedAt": "2026-11-01T05:29:53.043Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher ADM-Iteracao38-0.6.14-Setup.exe",
+      "relativePath": "release/iteration38/adm/Dungeon Teacher ADM-Iteracao38-0.6.14-Setup.exe",
+      "version": "0.6.14",
+      "type": "installer",
+      "product": "adm",
+      "architecture": "x64",
+      "bytes": 111933255,
+      "sha256": "5fcee5c1c8dfd2a1368ff94928ecda8e895c6ee46f1392094bf638a1d57932f1",
+      "generatedAt": "2026-11-01T05:29:45.664Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao38-0.6.14-Portable.exe",
+      "relativePath": "release/iteration38/student/Dungeon Teacher-Iteracao38-0.6.14-Portable.exe",
+      "version": "0.6.14",
+      "type": "portable",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 304701756,
+      "sha256": "5bdb824cd7479898ada293b21041e969bd14a22d4f0b2588e71e80c9a0ef8a89",
+      "generatedAt": "2026-11-01T05:32:34.547Z",
+      "payloadVerified": true
+    },
+    {
+      "name": "Dungeon Teacher-Iteracao38-0.6.14-Setup.exe",
+      "relativePath": "release/iteration38/student/Dungeon Teacher-Iteracao38-0.6.14-Setup.exe",
+      "version": "0.6.14",
+      "type": "installer",
+      "product": "student",
+      "architecture": "x64",
+      "bytes": 304931735,
+      "sha256": "5bfdefad74d5fa77a040ef45cbab57d0a1f880c9024f558b919190557829273b",
+      "generatedAt": "2026-11-01T05:32:15.875Z",
+      "payloadVerified": true
+    }
+  ],
+  "ok": true,
+  "auditTemporaryDirectory": "C:\\Users\\theuz\\AppData\\Local\\Temp\\dt37-package-audit-onhRU3"
+}

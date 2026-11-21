@@ -1,0 +1,32 @@
+✔ backpack applies once, owns mass, migrates and safely unequips into overload (53.8754ms)
+✔ cart transfer conserves quantities; weight separate and removal refuses contents (11.6245ms)
+✔ destination slot and weight failures are atomic, quantities cannot be fractional or excessive (9.8792ms)
+✔ cart to personal capacity and global IDs/unique items validated on migration (4.2087ms)
+✔ manual drops use valid compact ground, no expiry, persist and grant entire stacks once (13.8255ms)
+✔ duplicate pending requests cannot overdraw; blocked placement and malformed drops preserve inventory (4.6861ms)
+✔ drops on stairs use the surface height at their own position rather than floating at player height (2.1723ms)
+✔ pickup overweight, full inventory, wrong map and distance preserve the physical drop (6.4314ms)
+✔ protected facts are unique/chest/transport; forge quality is not invented rarity (0.5155ms)
+✔ regenerated layout cannot expose old drops; refuge recovery preserves IDs and quantities (2.6869ms)
+✔ chest seeds preserved through cart and physical drop; anchors follow immediately in four directions (5.2397ms)
+✔ cart movement multiplies unchanged personal curve for keyboard and paths (6.2114ms)
+✔ server simulation supports an unarmed transport character without terminating the world (9.2364ms)
+✔ server validates protocol, owns drop position, persists manual drops and ignores replay/concurrent pickup (407.3363ms)
+✔ 37 visual: every skill has a semantic motion; passives do not invent actions (5.4027ms)
+✔ 37 visual: death, confirmed recoil and recovery override all attack inputs (0.8465ms)
+✔ 37 visual: arrow rain draws a bow; sacred strikes and magic areas cast (1.1193ms)
+✔ 37 visual: four distinct stride phases loop by distance in stored and held states (0.7649ms)
+✔ 37 visual: same family shares sheet despite armor, item rarity, colors and stored hair (18.454ms)
+✔ 37 visual: rapid class changes and disposal release pending sheet references (2.9239ms)
+✔ 37 visual: inactive activities do not hide class art; real mining retains event pose (11.7656ms)
+✔ 37 visual: remote interpolation retains authorized action and impact without inventing it (1.9976ms)
+✔ 37 visual: all sixty family sheets and masks have the documented grid (719.1572ms)
+✔ 37 visual: cart wheels and stable trailing offset follow real movement in four directions (5.3568ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1547.5886

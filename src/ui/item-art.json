@@ -262,5 +262,41 @@
     "worldSprite": null,
     "classification": "B",
     "note": "Sprite PNG 128 × 128; direção da Fase A aprovada, catálogo completo aguardando revisão artística humana."
+  },
+  "travelerBackpack": {
+    "inventoryIcon": "/assets/transport-v291/travelerBackpack.png",
+    "worldSprite": "/assets/transport-v291/travelerBackpack.png",
+    "classification": "B",
+    "note": "Original imagegen, Iteração 29.1; transporte funcional."
+  },
+  "woodenCart": {
+    "inventoryIcon": "/assets/transport-v291/woodenCart.png",
+    "worldSprite": "/assets/transport-v291/woodenCart.png",
+    "classification": "B",
+    "note": "Original imagegen, Iteração 29.1; transporte funcional."
+  },
+  "woodenShield": {
+    "inventoryIcon": "/assets/items/class-v32/woodenShield.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Pixel art vetorial da iteração 32; recurso próprio sobre o sistema SVG existente."
+  },
+  "pairedDaggers": {
+    "inventoryIcon": "/assets/items/class-v32/pairedDaggers.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Pixel art vetorial da iteração 32; recurso próprio sobre o sistema SVG existente."
+  },
+  "arrows": {
+    "inventoryIcon": "/assets/items/class-v32/arrows.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Pixel art vetorial da iteração 32; recurso próprio sobre o sistema SVG existente."
+  },
+  "unwaveringCharm": {
+    "inventoryIcon": "/assets/items/class-v32/unwaveringCharm.svg",
+    "worldSprite": null,
+    "classification": "B",
+    "note": "Pixel art vetorial da iteração 32; recurso próprio sobre o sistema SVG existente."
   }
 }

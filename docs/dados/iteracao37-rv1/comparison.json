@@ -1,0 +1,20 @@
+[
+  {
+    "phase": "01-cidade-clientes-reais",
+    "beforeFPS": 34.43559380320669,
+    "afterFPS": 41.74236680223579,
+    "beforeCPU": 89.36272191040409,
+    "afterCPU": 98.28655873889684,
+    "beforeHeapMiB": 22.36366907755534,
+    "afterHeapMiB": 14.732222239176432
+  },
+  {
+    "phase": "02-combate-lobo-branco",
+    "beforeFPS": 48.681175049219085,
+    "afterFPS": 63.75429527422975,
+    "beforeCPU": 96.0723215623612,
+    "afterCPU": 99.02032977146843,
+    "beforeHeapMiB": 30.095073699951172,
+    "afterHeapMiB": 27.60570017496745
+  }
+]

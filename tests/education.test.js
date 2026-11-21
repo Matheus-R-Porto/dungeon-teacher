@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
+import {OnlineTower} from '../server/online-tower.js';
+import {SchoolAccess} from '../server/school-access.js';
+import {grantEducation} from '../server/education.js';
+import {defaultAppearance} from '../src/domain/appearance.js';
+const password='isolated-education-test-31';
+test('education: teacher authority, fixed awards, duplicate receipt, repetition reduction, offline persistence and rollback',async t=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dt-education-'));
+ const online=new OnlineTower({directory:path.join(dir,'maps'),characterDirectory:path.join(dir,'chars'),send(){}}),access=new SchoolAccess(online.db);
+ t.after(()=>{online.close();fs.rmSync(dir,{recursive:true,force:true});});
+ await access.createAccount({username:'teacher',password,role:'teacher'});const student=await access.createAccount({username:'student',password,cohort:'A'});
+ const teacher=await access.login('teacher',password,'fixture');access.admin(teacher.token,'open','A');const login=await access.login('student',password,'fixture');access.createCharacter(login.token,'Aprendiz',defaultAppearance());const id=access.enter(login.token).character_id;
+ const activities={test:{baseXP:100,jobXP:100,unlockClass:'mage'}},data=request=>({accountId:student.id,activityId:'test',request});
+ assert.throws(()=>grantEducation(access,online,login.token,data('denied'),activities),/professor/);
+ const first=grantEducation(access,online,teacher.token,data('first'),activities);assert.equal(first.jobXP,100);const saved=online.db.read(id);assert.equal(saved.character.jobs.origins.novice.level,2);assert.deepEqual(saved.character.jobs.promotionUnlocks,['mage']);
+ assert.equal(grantEducation(access,online,teacher.token,data('first'),activities).repeated,true);assert.deepEqual(online.db.read(id),saved);
+ assert.equal(grantEducation(access,online,teacher.token,data('second'),activities).jobXP,20);
+ const before=online.db.read(id),save=online.db.save;online.db.save=()=>{throw Error('Simulated disk failure');};assert.throws(()=>grantEducation(access,online,teacher.token,data('failure'),activities),/disk/);online.db.save=save;
+ assert.deepEqual(online.db.read(id),before);assert.equal(access.db.prepare('SELECT request FROM school_activity_receipts WHERE request=?').get('failure'),undefined);
+ assert.equal(grantEducation(access,online,teacher.token,data('third'),activities).jobXP,0);
+ assert.throws(()=>grantEducation(access,online,teacher.token,{...data('invalid'),activityId:'unconfigured'},activities),/não configurada/);
+});

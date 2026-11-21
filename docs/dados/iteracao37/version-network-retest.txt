@@ -1,0 +1,35 @@
+✔ multiplayer protocol round-trips minimal presence without character or camera (6.3212ms)
+✔ multiplayer rejects version, unknown types, invalid JSON and excessive payload (2.8746ms)
+✔ multiplayer validates identity and bounded safe names (1.5579ms)
+✔ multiplayer rejects out-of-bounds/non-finite state and extra private data (0.6268ms)
+✔ server snapshots and server-only messages validate separately (2.7419ms)
+✔ desktop allowlist accepts only exact configured WebSocket endpoint (1.4167ms)
+✔ desktop endpoint forbids credentials, unsafe remote ws and CSP injection (0.3851ms)
+✔ identity persists independently without touching character save (0.4711ms)
+✔ remote interpolation smooths positions, follows shortest heading arc and does not extrapolate (0.7889ms)
+✔ remote facing is derived from each viewer camera without changing world orientation (0.4223ms)
+✔ two real WebSocket peers exchange initial snapshot, join, bidirectional movement, leave and reconnect (164.4527ms)
+✔ server refuses state before hello and removes invalid established session (61.1676ms)
+✔ server rejects incompatible protocol with understandable error (29.5864ms)
+✔ server enforces duplicate identity and capacity without evicting existing peers (77.5962ms)
+✔ heartbeat removes a dead connection and notifies its peer (139.6474ms)
+✔ server bounds message frequency and oversized payloads (58.5181ms)
+✔ server rejects unlisted origins and expires idle handshakes (92.2586ms)
+✔ client connects, measures ping, leaves for Tower and rejoins with a fresh snapshot (173.0001ms)
+✔ client reconnects after server restart and clears stale remote players (96.7563ms)
+✔ missing endpoint never opens a socket or blocks offline character state (0.3807ms)
+✔ client rate caps state independently of rendered frames and serializes no camera (0.7138ms)
+✔ maximum room snapshot fits bounded protocol payload (0.3956ms)
+✔ server limits simultaneous connections per socket address (9.3408ms)
+✔ desktop CSP permits configured endpoint only and rejects host directive injection (19.0654ms)
+✔ Multiplayer01.1 production configuration allows its exact public WSS and rejects other destinations (5.1553ms)
+✔ Render cold start retains connection attempt beyond the online timeout (0.9711ms)
+✔ cold start grace does not prolong detection of an already-online dead connection (0.4597ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1477.6454

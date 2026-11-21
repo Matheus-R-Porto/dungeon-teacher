@@ -1,0 +1,15 @@
+import {prerequisiteReason} from '../abilities/class-skills.js';
+import {PROFESSIONS,jobRequired,lineage} from './professions.js';
+import {RANKED_SKILLS} from '../abilities/ranked-skills.js';
+import {effectiveRanks} from './job-progress.js';
+const object=v=>v&&typeof v==='object'&&!Array.isArray(v),integer=(v,max)=>Number.isSafeInteger(v)&&v>=0&&v<=max;
+export function validateJobs(data){const j=data.jobs;if(j===undefined)return;
+ if(!object(j)||j.version!==1||!integer(j.revision,Number.MAX_SAFE_INTEGER)||!Object.hasOwn(PROFESSIONS,j.active)||data.classId!==j.active||!Array.isArray(j.unlocked)||new Set(j.unlocked).size!==j.unlocked.length||!j.unlocked.includes(j.active)||!j.unlocked.includes('novice')||!object(j.origins)||!object(j.education)||!object(j.migration)||!Array.isArray(j.promotionUnlocks))throw Error('Progressão profissional inválida; dados preservados.');
+ for(const id of j.unlocked){const p=j.origins[id],definition=PROFESSIONS[id];if(!definition||!object(p)||!integer(p.level,definition.maxJob)||p.level<1||!integer(p.xp,jobRequired(p.level)-1)||p.level===definition.maxJob&&p.xp!==0||!integer(p.earned,100000)||p.earned<p.level-1||!object(p.spent)||lineage(id).some(parent=>!j.unlocked.includes(parent)))throw Error('Etapa profissional inválida; dados preservados.');let total=0;for(const [skill,n]of Object.entries(p.spent)){if(!Object.hasOwn(RANKED_SKILLS,skill)||!integer(n,RANKED_SKILLS[skill].ranks.length)||!lineage(id).includes(RANKED_SKILLS[skill].classId))throw Error('Investimento inválido; dados preservados.');total+=n;}if(total>p.earned)throw Error('Orçamento inválido; dados preservados.');}
+ if(Object.keys(j.origins).some(id=>!j.unlocked.includes(id))||j.promotionUnlocks.some(id=>!Object.hasOwn(PROFESSIONS,id)||id==='novice')||Object.entries(j.education).some(([key,n])=>! /^[a-zA-Z0-9_-]{1,64}$/.test(key)||!integer(n,Number.MAX_SAFE_INTEGER)))throw Error('Registro profissional inválido; dados preservados.');
+ const ranks=effectiveRanks(j);for(const [id,n]of Object.entries(ranks)){const skill=RANKED_SKILLS[id];if(n>skill.ranks.length||prerequisiteReason(skill,n,j,ranks,RANKED_SKILLS))throw Error('Pré-requisitos inválidos; dados preservados.');}
+ if(j.visitedFloors!==undefined&&(!Array.isArray(j.visitedFloors)||new Set(j.visitedFloors).size!==j.visitedFloors.length||j.visitedFloors.some(n=>!Number.isInteger(n)||n<1||n>12)))throw Error('Histórico de andares inválido; dados preservados.');
+ if(j.elements!==undefined&&(!object(j.elements)||Object.keys(j.elements).sort().join(',')!=='fire,ice,lightning'||Object.values(j.elements).some(n=>!integer(n,5))||Object.values(j.elements).reduce((a,b)=>a+b,0)>(j.origins.mage?.spent.elementalMastery??0)))throw Error('Maestria elemental inválida; dados preservados.');
+ if(j.firstClass!==undefined&&(!j.unlocked.includes(j.firstClass)||PROFESSIONS[j.firstClass]?.parent!=='novice'||j.active!=='novice'&&!lineage(j.active).includes(j.firstClass)))throw Error('Escolha de classe inválida; dados preservados.');
+ return j;
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "file": "screens/packagedOnline-01-equipado-proprio.png",
+    "title": "Pacotes finais · 01 equipado proprio"
+  },
+  {
+    "file": "screens/packagedOnline-02-equipado-observador.png",
+    "title": "Pacotes finais · 02 equipado observador"
+  },
+  {
+    "file": "screens/packagedOnline-03-adm-dois-alunos.png",
+    "title": "Pacotes finais · 03 adm dois alunos"
+  },
+  {
+    "file": "screens/packagedOnline-04-combate-proprio.png",
+    "title": "Pacotes finais · 04 combate proprio"
+  },
+  {
+    "file": "screens/packagedOnline-05-combate-observador.png",
+    "title": "Pacotes finais · 05 combate observador"
+  },
+  {
+    "file": "screens/packagedOnline-06-cliente-reiniciado.png",
+    "title": "Pacotes finais · 06 cliente reiniciado"
+  },
+  {
+    "file": "screens/packagedOnline-caminhada-observador.png",
+    "title": "Pacotes finais · caminhada observador"
+  },
+  {
+    "file": "screens/packagedOnline-caminhada-proprio.png",
+    "title": "Pacotes finais · caminhada proprio"
+  },
+  {
+    "file": "screens/packagedOnline-troca-pairedDaggers.png",
+    "title": "Pacotes finais · troca pairedDaggers"
+  },
+  {
+    "file": "screens/packagedOnline-troca-trainingBow.png",
+    "title": "Pacotes finais · troca trainingBow"
+  },
+  {
+    "file": "screens/packagedOnline-troca-trainingStaff.png",
+    "title": "Pacotes finais · troca trainingStaff"
+  },
+  {
+    "file": "screens/packagedOnline-troca-trainingSword.png",
+    "title": "Pacotes finais · troca trainingSword"
+  },
+  {
+    "file": "screens/performanceAfter-01-cidade-clientes-reais.png",
+    "title": "Três alunos · 01 cidade clientes reais"
+  },
+  {
+    "file": "screens/performanceAfter-02-combate-lobo-branco.png",
+    "title": "Três alunos · 02 combate lobo branco"
+  },
+  {
+    "file": "screens/performanceAfter-02-inicio-do-combate.png",
+    "title": "Três alunos · 02 inicio do combate"
+  },
+  {
+    "file": "screens/performanceAfter-03-lapide-compartilhada.png",
+    "title": "Três alunos · 03 lapide compartilhada"
+  },
+  {
+    "file": "screens/performanceAfter-04-impacto-autoritativo-jogador-e-mvp.png",
+    "title": "Três alunos · 04 impacto autoritativo jogador e mvp (janela alongada somente para captura)"
+  },
+  {
+    "file": "screens/performanceAfter-05-impacto-observador.png",
+    "title": "Três alunos · 05 impacto observador (janela alongada somente para captura)"
+  }
+]

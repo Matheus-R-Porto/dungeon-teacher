@@ -1,0 +1,4 @@
+// Technical packing of complete authored poses. No anatomical reconstruction.
+const {app,BrowserWindow}=require('electron');
+const fs=require('node:fs'),path=require('node:path');
+app.whenReady().then(async()=>{const win=new BrowserWindow({show:false,webPreferences:{nodeIntegration:true,contextIsolation:false,sandbox:false}});win.webContents.on('console-message',(_event,details)=>console.log(details.message));await win.loadFile(path.join(__dirname,'packer.html'));await win.webContents.executeJavaScript('window.taskRoot='+JSON.stringify(__dirname));const result=await win.webContents.executeJavaScript(fs.readFileSync(path.join(__dirname,'assemble-renderer.js'),'utf8'));fs.writeFileSync(path.join(__dirname,'assembly.json'),JSON.stringify(result,null,2));console.log(JSON.stringify({atlases:result.length,allWalk:result.every(r=>r.walk)}));win.destroy();app.quit();}).catch(e=>{console.error(e.stack??e.message??String(e));app.exit(1);});

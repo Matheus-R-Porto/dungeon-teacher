@@ -36,7 +36,7 @@ test('loading expanded tower never writes back base geography or invokes migrati
 test('wolf perception, grounded pursuit, cooldown, leash and player-safe bounded respawn',()=>{
  const w=new SharedWorld({map:expanded(2),random:()=>.5}),e=w.enemies.find(e=>e.enemyType==='wolf'),ws={close(){}},p=w.join(ws,'Test');ws.worldPlayer=p;
  Object.assign(p.game.player,{x:e.x,z:e.z+3});const hp=p.character.data.hp;for(let i=0;i<60;i++)w.step();assert.equal(e.targetId,p.id);assert.ok(p.character.data.hp<hp);assert.ok(canStand(w.map,e.x,e.z,e.radius));
- Object.assign(p.game.player,w.map.spawn);for(let i=0;i<200;i++)w.step();assert.equal(e.targetId,null);assert.equal(e.state,'idle');assert.ok(Math.hypot(e.x-e.spawnPosition.x,e.z-e.spawnPosition.z)<.2);
+ Object.assign(p.game.player,w.map.spawn);for(let i=0;i<200;i++)w.step();assert.equal(e.targetId,null);assert.equal(e.state,'idle');assert.ok(Math.hypot(e.x-e.spawnPosition.x,e.z-e.spawnPosition.z)<=e.leashRange);assert.ok(canStand(w.map,e.x,e.z,e.radius)); // Iteration 36 resumes exploration within territory instead of homing.
  e.damage(10000);e.deadAt=w.time;Object.assign(p.game.player,e.spawnPosition);const count=w.enemies.length;
  for(let i=0;i<660;i++)w.step();assert.equal(e.hp,0,'respawn waits while a player is nearby');
  Object.assign(p.game.player,w.map.spawn);w.step();assert.equal(e.generation,1);assert.equal(e.hp,e.stats.maxHP);assert.equal(w.enemies.length,count);assert.equal(new Set(w.snapshot().monsters.map(m=>m.id)).size,count);

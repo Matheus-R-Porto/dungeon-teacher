@@ -1,0 +1,174 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "f72181281f75d5cbf00a6761ca3734847f9726e9deef3b497eaeb3469feccab7"
+  },
+  {
+    "path": "RELATORIOS.md",
+    "sha256": "b4130c911c705a437736d3e9981f90919673adae51a1c867d4231aa9f10108b0"
+  },
+  {
+    "path": "docs/ITERACAO-34-AUDITORIA.md",
+    "sha256": "6d39cf9d028521c8a01bdbed2ba620e1b14a358c0fe99e75915520486625ea5f"
+  },
+  {
+    "path": "docs/ITERACAO-34-BALANCEAMENTO.md",
+    "sha256": "3f2015f80acb552d866aa64b15d90f620ec45c121dabbfc793b762e3a3158f50"
+  },
+  {
+    "path": "docs/ITERACAO-34-CAPTURAS.html",
+    "sha256": "104210ea486297115f6d87319aecc4113b62bbd95a6a0f741180a2f3f2a1834e"
+  },
+  {
+    "path": "docs/ITERACAO-34-COMBATES.md",
+    "sha256": "8e57ffb74eb901857fecfc9bda4b8c5eb6f0559423e2e8c89085e83e7b83424f"
+  },
+  {
+    "path": "docs/ITERACAO-34-DESEMPENHO.md",
+    "sha256": "e755ddd5e93b68cddc9f2353176a5b2b41c1188fda329a8f11903bea352a2c6b"
+  },
+  {
+    "path": "docs/ITERACAO-34-ELECTRON.md",
+    "sha256": "1448b8f7d6cf70ea4eed65b1437b5b2a4c17d78419b43a356afd5cd9327fa753"
+  },
+  {
+    "path": "docs/ITERACAO-34-GRAFICOS.md",
+    "sha256": "f7226201840e18a6849f1a542daf917756e875267995fade0177a065d4497611"
+  },
+  {
+    "path": "docs/ITERACAO-34-LAPIDE.md",
+    "sha256": "182928f500236d633cd619a05adc5a5932550c1b6b8db4dbcec898d9e18cab99"
+  },
+  {
+    "path": "docs/ITERACAO-34-METODOLOGIA.md",
+    "sha256": "06c8babfeb59c0416b78b651b744070bccc22298548c155bd92bd433796a8026"
+  },
+  {
+    "path": "docs/ITERACAO-34-RELATORIO.md",
+    "sha256": "6d65a1a33dfb911bebb8398a6a9d0c0d315804b2b2313a12a7a0dcdd31177c55"
+  },
+  {
+    "path": "docs/ITERACAO-34-TESTE-LAN.md",
+    "sha256": "22d1e2e4b0d5aa040d797f3bff38c0176388923101b83c6726be0abc672c7203"
+  },
+  {
+    "path": "scripts/iteration34/atlas-probe.cjs",
+    "sha256": "bfb5c6c1c8ee51f6cdb176a01a39a21204e57e5d91caf5bdb7e426cf7d00de89"
+  },
+  {
+    "path": "scripts/iteration34/combat.mjs",
+    "sha256": "95284e769d9a1f03b79fb0ad4bb42b6ae94091a3136599683e29a01d6bd6c78c"
+  },
+  {
+    "path": "scripts/iteration34/composition-probe.cjs",
+    "sha256": "52ef5c22f26f9d7ee6fc6141191a5283b10478035cd8591b5f4f8124ccfa18cc"
+  },
+  {
+    "path": "scripts/iteration34/electron.mjs",
+    "sha256": "f92610320b8f48a33fa31294313a9c2ba675716a509eeee8030255cf1dde7082"
+  },
+  {
+    "path": "scripts/iteration34/load-worker.mjs",
+    "sha256": "4c18488f9e4ddccf962290ebad6a7370c359f5cba09d8885de23c731fead9bcc"
+  },
+  {
+    "path": "scripts/iteration34/load.mjs",
+    "sha256": "d8c3816eea49ed3707830f3106665356461f30578def7e889c231446aa786a58"
+  },
+  {
+    "path": "scripts/iteration34/profiles.mjs",
+    "sha256": "262e33dec8a3ac7fe9f51e463bdfb0ef2b3ca4d60fe989f8b1413001f2eedb98"
+  },
+  {
+    "path": "scripts/iteration34/tune-compositions.mjs",
+    "sha256": "0e52d54708b6dff7799ac0de2df4d6a380d78f0bbcb7f40a86566298e3e3055f"
+  },
+  {
+    "path": "scripts/iteration34/tune.mjs",
+    "sha256": "d8667cb3a4884babb4bf4994dda4192268f8f4991b4ef80fbc9579e901ea498d"
+  },
+  {
+    "path": "scripts/iteration34/visual-run.mjs",
+    "sha256": "dbb15dc121e3da6ba52fd028da95a0421ade785824e0c5c864a5e4cb3f34ae83"
+  },
+  {
+    "path": "scripts/iteration34/visual-verify.cjs",
+    "sha256": "b534967a8e73d402ea83cf05d97f8ab2e6319b5b761a734fbff1607e151d4855"
+  },
+  {
+    "path": "server/arenas.js",
+    "sha256": "e173542fa473ba0bac7276290cd563ac5664a623141a9c714e9807251af7f682"
+  },
+  {
+    "path": "server/backups.js",
+    "sha256": "5ccd12d352e4c6bcfe1eae81aff8c55c1cccd9e98774d96f1f8a8268501dcee6"
+  },
+  {
+    "path": "server/class-combat.js",
+    "sha256": "8879bb48125f12b8f2ae42b5e7c1b74f6b64e7e2ba533070e69bcfe058b04d18"
+  },
+  {
+    "path": "server/config.js",
+    "sha256": "691d5c76c11eed583b59cdf99c7cf83dfea07b78e58cc5f274fd7e7d0440755b"
+  },
+  {
+    "path": "server/hub.js",
+    "sha256": "8a2175b57b6936cc073dbf2743a9b2216847fe5337d2faada2c2cb32dafc015d"
+  },
+  {
+    "path": "server/online-tower.js",
+    "sha256": "4b07683468aa67cf4395a3f28ac5a899097f2da07ee97362ee1f6b2f1c168131"
+  },
+  {
+    "path": "server/tower.js",
+    "sha256": "9baaa9746d3500f859d67c83ff765299b94998b0cf86ba6fc77db9eb5b0a30b8"
+  },
+  {
+    "path": "server/white-wolf.js",
+    "sha256": "eb0800e556112be53a326b5d93fbbbe273d9f7f8e92d1fbe6ecdafccb47bedf8"
+  },
+  {
+    "path": "server/world.js",
+    "sha256": "4eaccff805e65df85020e5814c52ef39b8c381c624bf214f5837a76578667aba"
+  },
+  {
+    "path": "shared/guardian.js",
+    "sha256": "13f09d8d42bc30899688d74e972cf17bb5f6b364f5d2fb1ae05965b48a995ed4"
+  },
+  {
+    "path": "src/adapters/rendering/appearance-compositor.js",
+    "sha256": "2096d55c3d1d9c0f02f61b6d712cae6d920751601e18bddfc3cb8d4f1df10df5"
+  },
+  {
+    "path": "src/adapters/rendering/wolf-cave.js",
+    "sha256": "bdacc2c7372ba9b97ea5ad8b6cf0ac8b35acba3cd34e78150b3e9dabbcb209ee"
+  },
+  {
+    "path": "src/domain/tower-awakening.js",
+    "sha256": "ed65bc8b222dc229a11030d5fe2f82b737045e4c05adb277bf26611e3f541db3"
+  },
+  {
+    "path": "src/multiplayer/world-mode.js",
+    "sha256": "6be58005e48e064a46622f5f6d123b1b373fd01a02bea3230eab851dcd6e3902"
+  },
+  {
+    "path": "src/simulation/encounter-participation.js",
+    "sha256": "5e3611e4579c159fc97d5dd7d24fdfdacb92f3eabece0e90f3d10f38b5dc7440"
+  },
+  {
+    "path": "src/simulation/oath-knight.js",
+    "sha256": "4a5a8d2ab084385ebb2e542ac70d8060aaad0b5d1310d947e7d306e8af5f753a"
+  },
+  {
+    "path": "tests/iteration222.test.js",
+    "sha256": "2b5bc168b880a583f2d26916a482322e1d62ec4b36b32ba356b0b3074b23d626"
+  },
+  {
+    "path": "tests/iteration23.test.js",
+    "sha256": "cc600552cc86a1bdf21a7555aa1b86cb187ae4f563f6fc353538db1e2f781ce9"
+  },
+  {
+    "path": "tests/iteration34.test.js",
+    "sha256": "e4d79d1b24b2e9345c4624bd2880c87128b4332fc71b169408e4377e37732321"
+  }
+]

@@ -1,6 +1,6 @@
 {
   "name": "dungeon-teacher-beta",
-  "version": "0.6.9",
+  "version": "0.6.14",
   "private": true,
   "type": "module",
   "engines": {
@@ -31,7 +31,16 @@
     "desktop:test:temporary": "electron . --test-profile=Temporary --temporary-tower",
     "test:school": "node --test tests/school-multiplayer.test.js",
     "test:school:soak": "node scripts/school-soak.mjs",
-    "test:school:electron": "node scripts/world-electron-probe.mjs --school"
+    "test:school:electron": "node scripts/world-electron-probe.mjs --school",
+    "school:teacher": "node scripts/school-teacher.mjs",
+    "desktop:test:school": "npm run desktop:build && electron . --test-profile=SchoolReview --school",
+    "test:school:access": "node --test tests/school-access.test.js tests/job-progress.test.js tests/online-skills.test.js tests/education.test.js tests/remote-appearance.test.js",
+    "adm:dev": "electron desktop/adm-main.cjs",
+    "student:dev": "npm run build && electron desktop/student-main.cjs",
+    "package:adm": "electron-builder --config electron-builder.adm.yml --win --x64 --publish never",
+    "package:student": "node scripts/build-student.cjs && electron-builder --config electron-builder.student.yml --win --x64 --publish never",
+    "test:iteration33": "node --test tests/iteration33.test.js",
+    "test:iteration33:electron": "node scripts/iteration33-electron.mjs"
   },
   "dependencies": {
     "three": "0.186.1"
@@ -41,7 +50,7 @@
     "electron-builder": "26.15.3",
     "vite": "8.3.1"
   },
-  "description": "Dungeon Master — Beta para playtest Windows e Refúgio compartilhado",
+  "description": "Dungeon Teacher â€” RPG escolar multiplayer",
   "author": "Dungeon Master",
   "main": "desktop/main.cjs"
 }

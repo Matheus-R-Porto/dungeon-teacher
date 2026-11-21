@@ -1,0 +1,235 @@
+{
+  "at": "2026-10-26T13:15:59.158Z",
+  "checks": [
+    "Five load states show accurate grams, bar, penalty and 32 slots",
+    "128px PNGs preserved",
+    "Actual Game movement matches load curve",
+    "Rejected acquisition preserves state and displays feedback",
+    "Responsive 800x600 and 480x720",
+    "Real consume action refreshes weight",
+    "Weight derived correctly after save reload",
+    "Online includes equipped mass in server-owned carry summary"
+  ],
+  "screenshots": [
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-empty.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-light.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-medium.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-heavy.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-maximum.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-refused.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-800.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-480.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-after-consume.png",
+    "C:\\Users\\theuz\\.codex\\.chatgpt-projects\\g-p-6ab572bee00c8191a99fc6be7aeb7536\\.logs\\iteration242-carry29-final-1793020559157\\carry-online.png"
+  ],
+  "errors": [],
+  "loads": [
+    {
+      "name": "empty",
+      "load": {
+        "baseGrams": 60000,
+        "bonusGrams": 0,
+        "effectiveGrams": 60000,
+        "totalGrams": 0,
+        "ratio": 0,
+        "movementMultiplier": 1,
+        "state": "light",
+        "label": "Carga leve",
+        "overloaded": false
+      },
+      "text": "Peso: 0,00 / 60,00 kgMovimento: normalCapacidade base: 60,00 kg · Carga leve",
+      "bar": "0",
+      "slots": 32,
+      "images": []
+    },
+    {
+      "name": "light",
+      "load": {
+        "baseGrams": 60000,
+        "bonusGrams": 0,
+        "effectiveGrams": 60000,
+        "totalGrams": 12000,
+        "ratio": 0.2,
+        "movementMultiplier": 1,
+        "state": "light",
+        "label": "Carga leve",
+        "overloaded": false
+      },
+      "text": "Peso: 12,00 / 60,00 kgMovimento: normalCapacidade base: 60,00 kg · Carga leve",
+      "bar": "20",
+      "slots": 32,
+      "images": [
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        }
+      ]
+    },
+    {
+      "name": "medium",
+      "load": {
+        "baseGrams": 60000,
+        "bonusGrams": 0,
+        "effectiveGrams": 60000,
+        "totalGrams": 30000,
+        "ratio": 0.5,
+        "movementMultiplier": 0.96,
+        "state": "medium",
+        "label": "Carga intermediária",
+        "overloaded": false
+      },
+      "text": "Peso: 30,00 / 60,00 kgMovimento: -4%Capacidade base: 60,00 kg · Carga intermediária",
+      "bar": "50",
+      "slots": 32,
+      "images": [
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        }
+      ]
+    },
+    {
+      "name": "heavy",
+      "load": {
+        "baseGrams": 60000,
+        "bonusGrams": 0,
+        "effectiveGrams": 60000,
+        "totalGrams": 48000,
+        "ratio": 0.8,
+        "movementMultiplier": 0.7124999999999999,
+        "state": "heavy",
+        "label": "Carga elevada",
+        "overloaded": false
+      },
+      "text": "Peso: 48,00 / 60,00 kgMovimento: -29%Capacidade base: 60,00 kg · Carga elevada",
+      "bar": "80",
+      "slots": 32,
+      "images": [
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        }
+      ]
+    },
+    {
+      "name": "maximum",
+      "load": {
+        "baseGrams": 60000,
+        "bonusGrams": 0,
+        "effectiveGrams": 60000,
+        "totalGrams": 60000,
+        "ratio": 1,
+        "movementMultiplier": 0.35,
+        "state": "full",
+        "label": "Carga máxima",
+        "overloaded": false
+      },
+      "text": "Peso: 60,00 / 60,00 kgMovimento: -65%Capacidade base: 60,00 kg · Carga máxima",
+      "bar": "100",
+      "slots": 32,
+      "images": [
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        },
+        {
+          "loaded": true,
+          "native": 128
+        }
+      ]
+    }
+  ],
+  "movement": [
+    {
+      "name": "empty",
+      "grams": 0,
+      "distance": 3.6000000000000028,
+      "multiplier": 1
+    },
+    {
+      "name": "light",
+      "grams": 12000,
+      "distance": 3.6000000000000028,
+      "multiplier": 1
+    },
+    {
+      "name": "medium",
+      "grams": 30000,
+      "distance": 3.455999999999998,
+      "multiplier": 0.96
+    },
+    {
+      "name": "heavy",
+      "grams": 48000,
+      "distance": 2.564999999999999,
+      "multiplier": 0.7124999999999999
+    },
+    {
+      "name": "maximum",
+      "grams": 60000,
+      "distance": 1.2599999999999993,
+      "multiplier": 0.35
+    }
+  ],
+  "ok": true
+}

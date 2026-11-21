@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "checks": [
+    "All initial gallery images decode",
+    "Six classes load before and after tree images",
+    "24 comparison states load baseline, prototype and final",
+    "Pause retains animation frame",
+    "Direction and animation select correct atlas cell",
+    "12 characters, 84 animated sequences and 60 atlas backgrounds load",
+    "Actual multiplayer screenshots present",
+    "Narrow gallery fits viewport"
+  ],
+  "errors": []
+}

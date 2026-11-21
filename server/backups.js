@@ -1,0 +1,42 @@
+import fs from 'node:fs';
+import {OnlineStore} from './online-store.js';
+import path from 'node:path';
+import {DatabaseSync,backup} from 'node:sqlite';
+import {randomUUID,createHash} from 'node:crypto';
+const hash=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+function inside(root,target){const base=path.resolve(root),p=path.resolve(target),rel=path.relative(base,p);if(!rel||rel.startsWith('..')||path.isAbsolute(rel))throw Error('Caminho de dados inválido.');return p;}
+// The async backup worker must not share the live handle with simulation queries.
+// A dedicated read connection includes committed WAL data and closes on every exit.
+async function copyConsistentDatabase(live,file){
+ const source=live.prepare('PRAGMA database_list').all().find(row=>row.name==='main')?.file;
+ const reader=source?new DatabaseSync(source,{readOnly:true}):live;
+ try{
+  // Keep one WAL read snapshot while the live connection continues writing.
+  // Without it, writes from another handle restart each incremental copy step.
+  if(reader!==live){reader.exec('BEGIN');reader.prepare('SELECT name FROM sqlite_master LIMIT 1').get();}
+  await backup(reader,file);
+ }finally{if(reader!==live)reader.close();}
+}
+export class Backups {
+ constructor(root){this.root=path.resolve(root);this.directory=path.join(this.root,'backups');fs.mkdirSync(this.directory,{recursive:true});}
+ location(id){if(!/^[a-f0-9-]{36}$/.test(id))throw Error('Backup inválido.');return inside(this.directory,path.join(this.directory,id));}
+ list(){return fs.readdirSync(this.directory,{withFileTypes:true}).filter(e=>e.isDirectory()&&/^[a-f0-9-]{36}$/.test(e.name)).flatMap(e=>{try{return [JSON.parse(fs.readFileSync(path.join(this.location(e.name),'manifest.json'),'utf8'))];}catch{return [];}}).sort((a,b)=>b.created-a.created);}
+ async create(store,season){const id=randomUUID(),dir=this.location(id);fs.mkdirSync(dir);try{const file=path.join(dir,'characters.sqlite');await copyConsistentDatabase(store.db,file);const sourceMaps=path.join(this.root,'maps');if(fs.existsSync(sourceMaps))fs.cpSync(sourceMaps,path.join(dir,'maps'),{recursive:true,filter:source=>!fs.lstatSync(source).isSymbolicLink()});const verification=this.verifyDatabase(file),manifest={id,created:Date.now(),seasonId:season?.id??null,sha256:hash(file),accounts:verification.accounts,characters:verification.characters,format:1,maps:this.mapHashes(path.join(dir,'maps'))};fs.writeFileSync(path.join(dir,'manifest.json'),JSON.stringify(manifest));return manifest;}catch(e){fs.rmSync(inside(this.directory,dir),{recursive:true,force:true});throw e;}}
+ verifyDatabase(file){const db=new DatabaseSync(file,{readOnly:true});try{if(db.prepare('PRAGMA integrity_check').get().integrity_check!=='ok'||db.prepare('PRAGMA foreign_key_check').all().length)throw Error('Backup inconsistente.');const tables=new Set(db.prepare("SELECT name FROM sqlite_master WHERE type='table'").all().map(r=>r.name));if(!tables.has('characters')||!tables.has('school_accounts'))throw Error('Este arquivo não é um banco escolar.');if(![0,1].includes(db.prepare('PRAGMA user_version').get().user_version))throw Error('Versão de banco incompatível.');for(const row of db.prepare('SELECT * FROM characters').all())OnlineStore.prototype.decode(row);return {accounts:db.prepare('SELECT count(*) n FROM school_accounts').get().n,characters:db.prepare('SELECT count(*) n FROM characters').get().n};}finally{db.close();}}
+ validate(id){const dir=this.location(id),manifest=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8')),file=path.join(dir,'characters.sqlite');if(manifest.id!==id||manifest.format!==1||hash(file)!==manifest.sha256)throw Error('Backup alterado ou incompleto.');this.verifyDatabase(file);if(JSON.stringify(manifest.maps??{})!==JSON.stringify(this.mapHashes(path.join(dir,'maps'))))throw Error('Mapas do backup alterados.');return {dir,file,manifest};}
+ remove(id){const dir=this.location(id);if(fs.existsSync(dir))fs.rmSync(dir,{recursive:true,force:true});}
+ removeSeason(id){for(const b of this.list())if(b.seasonId===id)this.remove(b.id);}
+ expired(policy,now=Date.now()){if(!policy?.days)return [];return this.list().filter(b=>b.created+policy.days*86400000<=now);}
+ mapHashes(directory){const result={};if(!fs.existsSync(directory))return result;const visit=dir=>{for(const e of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const file=path.join(dir,e.name);if(e.isSymbolicLink())throw Error('Link não permitido no backup.');if(e.isDirectory())visit(file);else result[path.relative(directory,file).replaceAll('\\','/')]=hash(file);}};visit(directory);return result;}
+ async importFile(file,season,mapDirectory){this.verifyDatabase(file);if(mapDirectory){const {FloorStore}=await import('./floor-store.js');const floors=new FloorStore(mapDirectory);for(const name of fs.readdirSync(mapDirectory)){const m=/^floor-(\d+)\.json$/.exec(name);if(m)floors.read(path.join(mapDirectory,name),Number(m[1]));else throw Error('Selecione somente a pasta de geografia compartilhada (floor-N.json).');}}const db=new DatabaseSync(file,{readOnly:true});try{const manifest=await this.create({db},season);if(mapDirectory){const dir=this.location(manifest.id);fs.cpSync(mapDirectory,path.join(dir,'maps'),{recursive:true,filter:p=>!fs.lstatSync(p).isSymbolicLink()});manifest.maps=this.mapHashes(path.join(dir,'maps'));fs.writeFileSync(path.join(dir,'manifest.json'),JSON.stringify(manifest));}return manifest;}finally{db.close();}}
+ // An intent journal permits repeating the complete validated restore after interruption.
+ // The current database has a separate consistent backup made by AdminService first.
+ restore(id){const {manifest}=this.validate(id);const journal=path.join(this.root,'restore-journal.json');fs.writeFileSync(journal,JSON.stringify({id}));this.completeRestore(id);return manifest;}
+ completeRestore(id){const {dir,file}=this.validate(id),characters=path.join(this.root,'characters');fs.mkdirSync(characters,{recursive:true});const target=inside(this.root,path.join(characters,'characters.sqlite')),incoming=target+'.incoming';fs.copyFileSync(file,incoming);this.verifyDatabase(incoming);
+  for(const suffix of ['-wal','-shm']){const side=inside(this.root,target+suffix);if(fs.existsSync(side))fs.rmSync(side);}
+  fs.renameSync(incoming,target);
+  const maps=inside(this.root,path.join(this.root,'maps')),savedMaps=path.join(dir,'maps');if(fs.existsSync(maps))fs.rmSync(maps,{recursive:true,force:true});if(fs.existsSync(savedMaps))fs.cpSync(savedMaps,maps,{recursive:true});
+  fs.rmSync(path.join(this.root,'restore-journal.json'));
+ }
+ recoverRestore(){const journal=path.join(this.root,'restore-journal.json');if(!fs.existsSync(journal))return;const j=JSON.parse(fs.readFileSync(journal,'utf8'));this.completeRestore(j.id);}
+}

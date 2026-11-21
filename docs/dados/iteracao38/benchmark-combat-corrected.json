@@ -1,0 +1,604 @@
+{
+  "label": "combat-corrected",
+  "environment": {
+    "node": "v24.21.0",
+    "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         ",
+    "os": "Windows 11 Home Single Language",
+    "viewport": [
+      1280,
+      800
+    ]
+  },
+  "samples": [
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.00331510028178,
+      "minFPS": 59.52380952380566,
+      "frames": {
+        "n": 181,
+        "mean": 16.665745856353592,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000109
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.0712707181414847,
+        "p95": 1.6000000014901161,
+        "p99": 2.100000001490116,
+        "max": 2.7999999970197678
+      },
+      "longFrames50ms": 0,
+      "heap": 24044037,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 10616832,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 40.399999998509884
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 412784,
+      "privateKiB": 327544,
+      "rendererTaskCPUPercent": 8.969873869255245,
+      "variant": {
+        "id": "baseline"
+      },
+      "repeat": 0,
+      "prepareMs": 60.599999997764826
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.00132599615464,
+      "minFPS": 59.52380952380566,
+      "frames": {
+        "n": 181,
+        "mean": 16.666298342541428,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000109
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.1823204419889504,
+        "p95": 1.800000000745058,
+        "p99": 3.300000000745058,
+        "max": 3.300000000745058
+      },
+      "longFrames50ms": 0,
+      "heap": 23789130,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 10616832,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 40.399999998509884
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 445960,
+      "privateKiB": 442744,
+      "rendererTaskCPUPercent": 9.50600884278665,
+      "variant": {
+        "id": "baseline"
+      },
+      "repeat": 1,
+      "prepareMs": 60.599999997764826
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.00200006666897,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 180,
+        "mean": 16.66611111111109,
+        "p95": 16.799999999999727,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 180,
+        "mean": 1.1494444446017344,
+        "p95": 1.800000000745058,
+        "p99": 2.5,
+        "max": 3.399999998509884
+      },
+      "longFrames50ms": 0,
+      "heap": 24051910,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 10616832,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 7
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 591180,
+      "privateKiB": 628840,
+      "rendererTaskCPUPercent": 12.532250844812479,
+      "variant": {
+        "id": "original-96",
+        "cell": 96
+      },
+      "repeat": 0,
+      "prepareMs": 56.399999998509884
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.001325996154605,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 181,
+        "mean": 16.666298342541438,
+        "p95": 16.700000000000728,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.244198895105835,
+        "p95": 1.8999999985098839,
+        "p99": 2.300000000745058,
+        "max": 3.5
+      },
+      "longFrames50ms": 0,
+      "heap": 24230015,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 10616832,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 7
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 481472,
+      "privateKiB": 616400,
+      "rendererTaskCPUPercent": 9.979365175294687,
+      "variant": {
+        "id": "original-96",
+        "cell": 96
+      },
+      "repeat": 1,
+      "prepareMs": 56.399999998509884
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.002637478570584,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 182,
+        "mean": 16.66593406593404,
+        "p95": 16.700000000000273,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 182,
+        "mean": 1.3280219780588216,
+        "p95": 1.9000000022351742,
+        "p99": 2.300000000745058,
+        "max": 2.300000000745058
+      },
+      "longFrames50ms": 0,
+      "heap": 24167124,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 18874368,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 9.5
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 386608,
+      "privateKiB": 428664,
+      "rendererTaskCPUPercent": 11.077062314565632,
+      "variant": {
+        "id": "original-128",
+        "cell": 128
+      },
+      "repeat": 0,
+      "prepareMs": 53.100000001490116
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.001325996154605,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 181,
+        "mean": 16.666298342541438,
+        "p95": 16.700000000000728,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.3690607735465246,
+        "p95": 2.099999997764826,
+        "p99": 2.899999998509884,
+        "max": 4.699999999254942
+      },
+      "longFrames50ms": 0,
+      "heap": 24257293,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 18874368,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 9.5
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 604160,
+      "privateKiB": 687332,
+      "rendererTaskCPUPercent": 11.141846381902626,
+      "variant": {
+        "id": "original-128",
+        "cell": 128
+      },
+      "repeat": 1,
+      "prepareMs": 53.100000001490116
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.00132599615464,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 181,
+        "mean": 16.666298342541428,
+        "p95": 16.799999999999727,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.1453038675309215,
+        "p95": 1.699999999254942,
+        "p99": 2.100000001490116,
+        "max": 4.5
+      },
+      "longFrames50ms": 0,
+      "heap": 24528792,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 42467328,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 16.699999999254942
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 772208,
+      "privateKiB": 934344,
+      "rendererTaskCPUPercent": 9.701438386214043,
+      "variant": {
+        "id": "original-192",
+        "cell": 192
+      },
+      "repeat": 0,
+      "prepareMs": 121.09999999776483
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 59.33832791884903,
+      "minFPS": 20,
+      "frames": {
+        "n": 179,
+        "mean": 16.852513966480448,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 50
+      },
+      "renderSubmissionCPUms": {
+        "n": 179,
+        "mean": 1.354189944417117,
+        "p95": 2.199999999254942,
+        "p99": 2.600000001490116,
+        "max": 5.400000002235174
+      },
+      "longFrames50ms": 0,
+      "heap": 23358808,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 42467328,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 16.699999999254942
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 724188,
+      "privateKiB": 996644,
+      "rendererTaskCPUPercent": 14.972340426244306,
+      "variant": {
+        "id": "original-192",
+        "cell": 192
+      },
+      "repeat": 1,
+      "prepareMs": 121.09999999776483
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 59.688363910530285,
+      "minFPS": 29.940119760478552,
+      "frames": {
+        "n": 190,
+        "mean": 16.753684210526316,
+        "p95": 16.700000000000728,
+        "p99": 16.800000000000182,
+        "max": 33.400000000000546
+      },
+      "renderSubmissionCPUms": {
+        "n": 190,
+        "mean": 1.4215789473370501,
+        "p95": 2.199999999254942,
+        "p99": 3.5,
+        "max": 3.600000001490116
+      },
+      "longFrames50ms": 0,
+      "heap": 23912688,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 75497472,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 20.100000001490116
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 379016,
+      "privateKiB": 1123084,
+      "rendererTaskCPUPercent": 21.026665176007633,
+      "variant": {
+        "id": "original-256",
+        "cell": 256
+      },
+      "repeat": 0,
+      "prepareMs": 196.80000000074506
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.001967277615634,
+      "minFPS": 59.52380952380566,
+      "frames": {
+        "n": 183,
+        "mean": 16.66612021857924,
+        "p95": 16.700000000000728,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000109
+      },
+      "renderSubmissionCPUms": {
+        "n": 183,
+        "mean": 1.5852459017492708,
+        "p95": 3.100000001490116,
+        "p99": 5.5,
+        "max": 6.900000002235174
+      },
+      "longFrames50ms": 0,
+      "heap": 24053696,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 75497472,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 20.100000001490116
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 527720,
+      "privateKiB": 926412,
+      "rendererTaskCPUPercent": 15.529845647547358,
+      "variant": {
+        "id": "original-256",
+        "cell": 256
+      },
+      "repeat": 1,
+      "prepareMs": 196.80000000074506
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.00132599615462,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 181,
+        "mean": 16.666298342541435,
+        "p95": 16.799999999999727,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.2740331489736862,
+        "p95": 1.8999999985098839,
+        "p99": 2.400000002235174,
+        "max": 2.599999997764826
+      },
+      "longFrames50ms": 0,
+      "heap": 23876544,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 117964800,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 16.199999999254942
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 704424,
+      "privateKiB": 874636,
+      "rendererTaskCPUPercent": 11.07199414714057,
+      "variant": {
+        "id": "original-320",
+        "cell": 320
+      },
+      "repeat": 0,
+      "prepareMs": 159.59999999776483
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 59.66982695750183,
+      "minFPS": 30.030030030029867,
+      "frames": {
+        "n": 180,
+        "mean": 16.758888888888887,
+        "p95": 16.800000000000182,
+        "p99": 16.80000000000109,
+        "max": 33.30000000000018
+      },
+      "renderSubmissionCPUms": {
+        "n": 180,
+        "mean": 0.8805555555762516,
+        "p95": 1.3999999985098839,
+        "p99": 1.6000000014901161,
+        "max": 1.800000000745058
+      },
+      "longFrames50ms": 0,
+      "heap": 23976304,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 117964800,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 16.199999999254942
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 996420,
+      "privateKiB": 1574784,
+      "rendererTaskCPUPercent": 9.42725589545713,
+      "variant": {
+        "id": "original-320",
+        "cell": 320
+      },
+      "repeat": 1,
+      "prepareMs": 159.59999999776483
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 60.001325996154605,
+      "minFPS": 59.52380952380888,
+      "frames": {
+        "n": 181,
+        "mean": 16.666298342541438,
+        "p95": 16.700000000000728,
+        "p99": 16.800000000000182,
+        "max": 16.800000000000182
+      },
+      "renderSubmissionCPUms": {
+        "n": 181,
+        "mean": 1.0375690607570154,
+        "p95": 1.7999999970197678,
+        "p99": 3,
+        "max": 3.099999997764826
+      },
+      "longFrames50ms": 0,
+      "heap": 23942313,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 42467328,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 19.899999998509884
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 886352,
+      "privateKiB": 1071296,
+      "rendererTaskCPUPercent": 8.762658297875761,
+      "variant": {
+        "id": "original-192-linear",
+        "cell": 192,
+        "filter": "linear"
+      },
+      "repeat": 0,
+      "prepareMs": 160.80000000074506
+    },
+    {
+      "phase": "combat",
+      "actors": 32,
+      "fps": 59.66982695750183,
+      "minFPS": 29.94011976047937,
+      "frames": {
+        "n": 180,
+        "mean": 16.758888888888887,
+        "p95": 16.700000000000728,
+        "p99": 16.80000000000109,
+        "max": 33.399999999999636
+      },
+      "renderSubmissionCPUms": {
+        "n": 180,
+        "mean": 1.2005555556259222,
+        "p95": 1.7000000029802322,
+        "p99": 2.199999999254942,
+        "max": 2.5
+      },
+      "longFrames50ms": 0,
+      "heap": 24072465,
+      "textures": 2,
+      "estimatedResidentRGBABytes": 42467328,
+      "cache": {
+        "entries": 1,
+        "active": 1,
+        "idle": 0,
+        "loads": 1,
+        "evictions": 0,
+        "preparationMs": 19.899999998509884
+      },
+      "gpuMaxTextureSize": 16384,
+      "workingSetKiB": 806624,
+      "privateKiB": 1951096,
+      "rendererTaskCPUPercent": 12.032536395496244,
+      "variant": {
+        "id": "original-192-linear",
+        "cell": 192,
+        "filter": "linear"
+      },
+      "repeat": 1,
+      "prepareMs": 160.80000000074506
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

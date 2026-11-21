@@ -1,0 +1,16 @@
+[
+  {
+    "id": "origin",
+    "prompt": "Use case: stylized-concept. Asset type: subtle background illustration for Dungeon Teacher skill progression UI. Create ONE natural organic deciduous fantasy tree, isolated on transparent background, full silhouette, portrait 720x1480 composition. Single central trunk predominates, with gentle asymmetric bends, branching into many unequal fine lateral branches and restrained small leaf clusters. A modest airy crown occupies upper third; broad spreading recognizable roots across lower quarter. Natural botanical silhouette, not a progression diagram. No three parallel trunks, no multiple trees, no circles, no knots prepared for icons, no text, no shields or weapon objects, no interface. Monochrome dusty medium blue #6899b5 with a second lighter blue for sparse bark accents, understated elegant pixel-art edges with deliberately clean contours, no black outline, no saturated colors, no gradients or glow. This is a low-contrast backdrop to foreground skill icons; generous empty space between branches, complete mature first-class tree with room for potential future growth. Visible roots share a simple common adventurer origin. Whole silhouette fits with 8% margin.",
+    "tool": "built-in image_gen",
+    "source": "exec-de76954f-8173-4683-9a64-d252e3f4a62a.png",
+    "production": "public/assets/skill-tree-v38/origin.png"
+  },
+  {
+    "id": "novice",
+    "prompt": "Use case: stylized-concept. Transparent-background game UI asset for Dungeon Teacher: ONE small young tree with recognizable broad spreading roots, short single organic central trunk and just a few asymmetric leafy branches. Landscape composition 720x520, full tree visible with margins. Roots spread across lower 45%, short trunk middle, light modest crown upper part. Uniform understated dusty blue #6899b5 with sparse slightly lighter bark accents. Subtle elegant fantasy pixel-art silhouette to sit behind foreground ability icons on light blue, not a detailed centerpiece. No text, icons, circles, UI, diagrams, weapons, multiple trunks, multiple trees, glow or gradients. Natural sapling as the shared roots of an adventurer's progression. True transparent background.",
+    "tool": "built-in image_gen",
+    "source": "exec-5ed4988e-4bfc-4735-8415-3537d245df74.png",
+    "production": "public/assets/skill-tree-v38/novice.png"
+  }
+]

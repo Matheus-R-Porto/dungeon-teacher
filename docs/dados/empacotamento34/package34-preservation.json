@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-28T15:21:30.446099+00:00",
+  "ok": true,
+  "iteration33Artifacts": {
+    "release\\iteration33\\adm\\Dungeon Teacher ADM-Iteracao33-0.6.9-Portable.exe": "9cd283d62fa363c4eb8d58b9510fc9c4c804077a9d0ff92f0f19e81ff849b5bc",
+    "release\\iteration33\\adm\\Dungeon Teacher ADM-Iteracao33-0.6.9-Setup.exe": "2bad790c8282be7c884b85aaf13749f4df0f589468526d1eb804bdd292ccd093",
+    "release\\iteration33\\student\\Dungeon Teacher-Iteracao33-0.6.9-Portable.exe": "8636f850b5ae996d5b1b3bcc93f9c9d212c15bac05d2e2538605fef0608c77e1",
+    "release\\iteration33\\student\\Dungeon Teacher-Iteracao33-0.6.9-Setup.exe": "5c5aab6e40891cd78555e49ac12f1110c811a0cd5899f0210864be99b2fa527f"
+  },
+  "iteration34Code": {
+    "server/arenas.js": "e173542fa473ba0bac7276290cd563ac5664a623141a9c714e9807251af7f682",
+    "server/backups.js": "5ccd12d352e4c6bcfe1eae81aff8c55c1cccd9e98774d96f1f8a8268501dcee6",
+    "server/class-combat.js": "8879bb48125f12b8f2ae42b5e7c1b74f6b64e7e2ba533070e69bcfe058b04d18",
+    "server/config.js": "691d5c76c11eed583b59cdf99c7cf83dfea07b78e58cc5f274fd7e7d0440755b",
+    "server/hub.js": "8a2175b57b6936cc073dbf2743a9b2216847fe5337d2faada2c2cb32dafc015d",
+    "server/online-tower.js": "4b07683468aa67cf4395a3f28ac5a899097f2da07ee97362ee1f6b2f1c168131",
+    "server/tower.js": "9baaa9746d3500f859d67c83ff765299b94998b0cf86ba6fc77db9eb5b0a30b8",
+    "server/white-wolf.js": "eb0800e556112be53a326b5d93fbbbe273d9f7f8e92d1fbe6ecdafccb47bedf8",
+    "server/world.js": "4eaccff805e65df85020e5814c52ef39b8c381c624bf214f5837a76578667aba",
+    "shared/guardian.js": "13f09d8d42bc30899688d74e972cf17bb5f6b364f5d2fb1ae05965b48a995ed4",
+    "src/adapters/rendering/appearance-compositor.js": "2096d55c3d1d9c0f02f61b6d712cae6d920751601e18bddfc3cb8d4f1df10df5",
+    "src/adapters/rendering/wolf-cave.js": "bdacc2c7372ba9b97ea5ad8b6cf0ac8b35acba3cd34e78150b3e9dabbcb209ee",
+    "src/domain/tower-awakening.js": "ed65bc8b222dc229a11030d5fe2f82b737045e4c05adb277bf26611e3f541db3",
+    "src/multiplayer/world-mode.js": "6be58005e48e064a46622f5f6d123b1b373fd01a02bea3230eab851dcd6e3902",
+    "src/simulation/encounter-participation.js": "5e3611e4579c159fc97d5dd7d24fdfdacb92f3eabece0e90f3d10f38b5dc7440",
+    "src/simulation/oath-knight.js": "4a5a8d2ab084385ebb2e542ac70d8060aaad0b5d1310d947e7d306e8af5f753a"
+  },
+  "officialBefore": {},
+  "officialAfter": {},
+  "sourcesBefore": {},
+  "sourcesAfter": {},
+  "note": "Nenhum arquivo encontrado nos caminhos oficiais padrão inspecionados. Nenhum dado oficial foi usado nos ensaios."
+}

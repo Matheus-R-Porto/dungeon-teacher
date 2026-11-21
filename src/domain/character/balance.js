@@ -1,3 +1,4 @@
+import {PROFESSIONS} from './professions.js';
 export const ATTRIBUTES = Object.freeze({
   str: {label:'STR',name:'Força',description:'Aumenta o ataque físico e a capacidade de carga.'},
   agi: {label:'AGI',name:'Agilidade',description:'Aumenta a velocidade de ataque e a esquiva.'},
@@ -14,4 +15,4 @@ export const BALANCE = Object.freeze({
   coefficients:{hpVit:12,hpLevel:8,mpInt:8,mpLevel:3,attackStr:2,attackDex:0.5,magicInt:2.5,defenseVit:0.8,magicDefenseInt:0.7,speedAgi:0.015,accuracyDex:0.5,evasionAgi:0.3,criticalLuk:0.2,carryStr:3,regenVit:0.1,regenInt:0.12},
   limits:{attackSpeed:[0.25,4],accuracy:[5,98],evasion:[0,75],criticalChance:[0,25]},
 });
-export const CLASS_DEFINITIONS = Object.freeze({novice:{id:'novice',name:'Novato',modifiers:{}}});
+export const CLASS_DEFINITIONS = Object.freeze(Object.fromEntries(Object.values(PROFESSIONS).map(p=>[p.id,{id:p.id,name:p.name,modifiers:{}}])));

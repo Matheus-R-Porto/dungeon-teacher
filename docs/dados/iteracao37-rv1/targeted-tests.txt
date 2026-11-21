@@ -1,0 +1,48 @@
+✔ 37 impact: light damage does not interrupt; threshold is proportional to max HP (1.7966ms)
+✔ 37 impact: bosses and MVP require proportionally larger hits (0.3454ms)
+✔ 37 impact: death has priority and recovery is distinct from recoil (0.3326ms)
+✔ 37 impact: duplicate and reentrant impacts cannot restart recoil (0.2496ms)
+✔ 37 impact: boss protection ends on its configured deadline (0.2947ms)
+✔ 37 impact: six attackers cannot lock a boss permanently over 60 seconds (6.2076ms)
+✔ 37 impact: cancels pending basic hit and preserves attack recovery debt (0.5392ms)
+✔ 37 impact: confirmed basic damage is never undone (8.978ms)
+✔ 37 impact: authoritative event and snapshot agree for both observers (2.2471ms)
+✔ 37 impact: client cannot submit recoil or resistance authority (1.2049ms)
+✔ 37 impact: world applies damage during protection without extending its window (2.79ms)
+✔ 37 impact: effective HP damage, not absorbed incoming damage, decides interruption (1.8282ms)
+✔ 37 impact: cancelled cast keeps paid MP and cooldown; no later projectile (4.0376ms)
+✔ 37 impact: released projectile survives later interrupted preparation and still lands once (2.2546ms)
+✔ 37 impact: recovery alone is not an interruptible skill and cannot be replayed (1.7215ms)
+✔ 37 impact: death after recoil clears pending skill and dominates public state (0.9489ms)
+✔ 37 impact: reconnect preserves remaining protection and does not restore cancelled attack (0.4457ms)
+✔ 37 impact: unwavering charm preserves cast; ordinary strong hit cancels it without charm (0.79ms)
+✔ 37 impact: knight only cancels unconfirmed skills and preserves released projectiles (0.4957ms)
+✔ 37 impact: White Wolf preparation cancels, committed charge remains valid (0.995ms)
+✔ 37 impact: invalid balance parameters are rejected (0.2757ms)
+✔ 37 impact: each confirmed dagger sequence hit exposes its own execution window (4.0484ms)
+✔ 37 impact: reentrant cancellation stops remaining sequence hits in a catch-up tick (0.9131ms)
+✔ 37 network: authoritative recoil, boss protection and reconnect cross real sockets (538.461ms)
+✔ 37 RV1: cart grip uses four walking phases and a separate stable rest pose (4.8676ms)
+✔ 37 RV1: death progresses through collapse and fall while keeping highest priority (0.2454ms)
+✔ 37 RV1: confirmed attack has follow-through and support has readable stages (0.2098ms)
+✔ 37 RV1: reconnecting to a corpse does not invent a second death; live transition animates (6.7757ms)
+✔ 37 RV1: contact remains in camera coordinates, without heading-based cart drift (3.9975ms)
+✔ 37 RV1: atlas dimensions stay bounded; new enemy and cart frames have complete grids (238.4369ms)
+✔ 37 visual: every skill has a semantic motion; passives do not invent actions (1.4752ms)
+✔ 37 visual: death, confirmed recoil and recovery override all attack inputs (0.3964ms)
+✔ 37 visual: arrow rain draws a bow; sacred strikes and magic areas cast (0.1795ms)
+✔ 37 visual: four distinct stride phases loop by distance in stored and held states (0.674ms)
+✔ 37 visual: same family shares sheet despite armor, item rarity, colors and stored hair (3.719ms)
+✔ 37 visual: rapid class changes and disposal release pending sheet references (1.1998ms)
+✔ 37 visual: inactive activities do not hide class art; real mining retains event pose (5.7141ms)
+✔ 37 visual: remote interpolation retains authorized action and impact without inventing it (0.7842ms)
+✔ 37 visual: all sixty family sheets and masks have the documented grid (187.2456ms)
+✔ 37 visual: cart wheels retain phase and contact while moving in four views (4.4257ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1169.3083

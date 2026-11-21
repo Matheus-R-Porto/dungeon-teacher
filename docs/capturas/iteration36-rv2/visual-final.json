@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "steps": [
+    "192 matrices and 1056 backpack poses",
+    "motion: 783 frames",
+    "focus: 883 frames",
+    "draw: 343 frames"
+  ]
+}

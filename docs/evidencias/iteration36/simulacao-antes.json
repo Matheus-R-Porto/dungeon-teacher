@@ -1,0 +1,102 @@
+{
+  "label": "before",
+  "environment": {
+    "node": "v24.19.0",
+    "cpu": "AMD Ryzen 5 6600H with Radeon Graphics         "
+  },
+  "kind": "deterministic simulation, not network or physical clients",
+  "rows": [
+    {
+      "count": 4,
+      "phase": "idle",
+      "secondsSimulated": 30,
+      "ticks": {
+        "mean": 1.1519460000000008,
+        "p95": 1.6624000000001615,
+        "max": 6.199500000000171
+      },
+      "snapshots": {
+        "mean": 0.33889500000000833,
+        "p95": 0.5951000000000022,
+        "max": 1.1256999999998243
+      },
+      "bytes": 22206095,
+      "bytesPerSecond": 740203.1666666666,
+      "decisions": 0,
+      "moved": 0,
+      "cpuMs": 952,
+      "elapsedMs": 794.5119,
+      "rss": 69107712,
+      "heap": 16378200
+    },
+    {
+      "count": 4,
+      "phase": "combat",
+      "secondsSimulated": 30,
+      "ticks": {
+        "mean": 1.281967999999997,
+        "p95": 1.9692000000000007,
+        "max": 3.0000999999997475
+      },
+      "snapshots": {
+        "mean": 0.35788299999997586,
+        "p95": 0.6320000000000618,
+        "max": 0.8726999999998952
+      },
+      "bytes": 22807061,
+      "bytesPerSecond": 760235.3666666667,
+      "decisions": 0,
+      "moved": 0,
+      "cpuMs": 1062,
+      "elapsedMs": 878.3702000000003,
+      "rss": 89075712,
+      "heap": 25844288
+    },
+    {
+      "count": 32,
+      "phase": "idle",
+      "secondsSimulated": 30,
+      "ticks": {
+        "mean": 2.6506384999999955,
+        "p95": 4.2391999999999825,
+        "max": 10.816399999999703
+      },
+      "snapshots": {
+        "mean": 0.6547130000000136,
+        "p95": 1.0673999999999069,
+        "max": 3.914099999999962
+      },
+      "bytes": 222306433,
+      "bytesPerSecond": 7410214.433333334,
+      "decisions": 0,
+      "moved": 0,
+      "cpuMs": 1953,
+      "elapsedMs": 1788.7735999999995,
+      "rss": 90611712,
+      "heap": 26576736
+    },
+    {
+      "count": 32,
+      "phase": "combat",
+      "secondsSimulated": 30,
+      "ticks": {
+        "mean": 3.6546021666666624,
+        "p95": 5.76969999999983,
+        "max": 15.394900000000234
+      },
+      "snapshots": {
+        "mean": 0.6340163333333263,
+        "p95": 0.9853999999995722,
+        "max": 1.894999999999527
+      },
+      "bytes": 230123922,
+      "bytesPerSecond": 7670797.4,
+      "decisions": 0,
+      "moved": 104,
+      "cpuMs": 2797,
+      "elapsedMs": 2384.7003000000004,
+      "rss": 91922432,
+      "heap": 23296576
+    }
+  ]
+}

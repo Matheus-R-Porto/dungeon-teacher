@@ -1,0 +1,380 @@
+[
+  {
+    "path": "electron-builder.adm.yml",
+    "status": "Configuração de distribuição",
+    "sha256": "c0a602a25ceafd63ab097feab89f1d28cb82f33fe3af7b40b8674367e7981c90",
+    "bytes": 1064
+  },
+  {
+    "path": "electron-builder.student.yml",
+    "status": "Configuração de distribuição",
+    "sha256": "1c5726d5090b50c10d19857d804a1d8be51ce77e4a18791b5fc66daa833625f5",
+    "bytes": 901
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra-reference.png",
+    "status": "Arte adicional",
+    "sha256": "a2f15c067610131d4b4d4dd0810748252eb22092a39e8cdcb2409d8bd6c9cd94",
+    "bytes": 53831
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra-row0.png",
+    "status": "Arte adicional",
+    "sha256": "d392b70a70fa73ba30fb375ed33e92106b200403983c58932f10f515c1be5e3e",
+    "bytes": 340213
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra-row1.png",
+    "status": "Arte adicional",
+    "sha256": "87586d1745a7b6b38da8f4184fbef34313db0481104c126b4b7729c7a7739c6c",
+    "bytes": 329311
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra-row2.png",
+    "status": "Arte adicional",
+    "sha256": "6f4391da02ad6353a9e9be149a15af85b815de64f4cbf8fe676f5daf19160bd2",
+    "bytes": 295239
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra-row3.png",
+    "status": "Arte adicional",
+    "sha256": "85c8bb6020af42a8e88e7702d798e9d8d9946826ccd7b0fbff11afe6d7a39fe2",
+    "bytes": 331500
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra-source.png",
+    "status": "Arte adicional",
+    "sha256": "a4f266d9990b069151ad280b2d32aef1135da140fa64cace2f3ed9aecde5aa7c",
+    "bytes": 2717471
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra.png",
+    "status": "Arte adicional",
+    "sha256": "366083ec65c6fb10aedeeb428fb73efccfcffe2b37d4d8dc7735b85fc639a09a",
+    "bytes": 1295932
+  },
+  {
+    "path": "public/assets/characters-v36/heads-extra.png.json",
+    "status": "Arte adicional",
+    "sha256": "b415bbbf82ef8d3f6e7199f95f34ddb9136f3e6310ef42242d8e9ec05b9c5cab",
+    "bytes": 5194
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf-reference.png",
+    "status": "Arte adicional",
+    "sha256": "510afee8e1231bcb411c8f7cbbcd52c6cd9615358c27ee9d491670f6ab28c88b",
+    "bytes": 29994
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf-row0.png",
+    "status": "Arte adicional",
+    "sha256": "d2c2abb35a639e776d77a277e338c6968480f4f79b86e89e7ecf562d56039daa",
+    "bytes": 303164
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf-row1.png",
+    "status": "Arte adicional",
+    "sha256": "d4cfb1bd0cc75adadd7ce5b6260199831d262c263e74f0d4343a953b7da2e026",
+    "bytes": 384161
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf-row2.png",
+    "status": "Arte adicional",
+    "sha256": "c9b1c07e60a5bb5818984e20dd202b67d6b56a2f6377545dd2871ad90dc65463",
+    "bytes": 289137
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf-row3.png",
+    "status": "Arte adicional",
+    "sha256": "ec5cda967db38ab7e6669952cf71c9e35ad551b40ec9f05167aa2eb6883d31d7",
+    "bytes": 386358
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf-source.png",
+    "status": "Arte adicional",
+    "sha256": "6094a63c1ab1d1a954e5b6ef9e415ed4de13ee191e05bf373f0c974e05d9401c",
+    "bytes": 1935590
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf.png",
+    "status": "Arte adicional",
+    "sha256": "a8ca89694c6932e984b9835f741caeae508494e116375264945eca3657497bec",
+    "bytes": 1360877
+  },
+  {
+    "path": "public/assets/monsters-v36/white-wolf.png.json",
+    "status": "Arte adicional",
+    "sha256": "c9a68c0dcee25ed68ec2bf8f938def6a580ba44e75742de9fe8374b83377db6a",
+    "bytes": 7694
+  },
+  {
+    "path": "scripts/iteration36/electron.mjs",
+    "status": "Adicionado",
+    "sha256": "34c89e2cd3782ebe7147cd590750b120234beffa81f4fc8789ee6e4ca7a463da",
+    "bytes": 11431
+  },
+  {
+    "path": "scripts/iteration36/flows.mjs",
+    "status": "Adicionado",
+    "sha256": "556a55c2f243492f9df2928ad199559cde5eb3d506088cfd67ea1b2f153e39e0",
+    "bytes": 21959
+  },
+  {
+    "path": "scripts/iteration36/gallery-check.cjs",
+    "status": "Adicionado",
+    "sha256": "dd5550dae11e658dfe88ad98919d508679ff8937828a7aae8ddebc5a38f39928",
+    "bytes": 2248
+  },
+  {
+    "path": "scripts/iteration36/load-worker.mjs",
+    "status": "Adicionado",
+    "sha256": "67ad6fcaf39901130b24708616676316e4f2c2ff5acbb462f4cc2b175cdcee79",
+    "bytes": 6225
+  },
+  {
+    "path": "scripts/iteration36/load.mjs",
+    "status": "Adicionado",
+    "sha256": "46d9d16e8e6e230ff6740e9dbc7c02bd1163c75a564a9adb9aeb47efa4eb5c47",
+    "bytes": 6190
+  },
+  {
+    "path": "scripts/iteration36/mvp.mjs",
+    "status": "Adicionado",
+    "sha256": "54eeac4c8f3bedd86cd8ad05dc5bfcb1cac789642ccb41f97c7a6bbd35477930",
+    "bytes": 11939
+  },
+  {
+    "path": "scripts/iteration36/performance.mjs",
+    "status": "Adicionado",
+    "sha256": "8a71d17d4402681becff68430a28258ef51458bd40be9884072d24c57f4eac85",
+    "bytes": 2202
+  },
+  {
+    "path": "scripts/iteration36/visual-compare.cjs",
+    "status": "Adicionado",
+    "sha256": "15163cd24d89fe687df25ecfd2e5b3ca9cdb2b42fde69ce4b392b5a0f10910da",
+    "bytes": 1900
+  },
+  {
+    "path": "scripts/iteration36/visual-matrix.cjs",
+    "status": "Adicionado",
+    "sha256": "abc68cfe16209f7b090de05ee5fabc39db3ca6884c2aeed9c4be305ae92eba26",
+    "bytes": 3648
+  },
+  {
+    "path": "scripts/iteration36/visual-run.mjs",
+    "status": "Adicionado",
+    "sha256": "9255f7072e29385168fba6937a4622c6d93e4b8ffaad96fedde750cd5e184ef8",
+    "bytes": 829
+  },
+  {
+    "path": "scripts/iteration36/visual.cjs",
+    "status": "Adicionado",
+    "sha256": "95b287199761ee13b0df6c1321cd61856b1090b4b07533d03cff70005c0480bc",
+    "bytes": 1588
+  },
+  {
+    "path": "scripts/package36-electron.mjs",
+    "status": "Adicionado",
+    "sha256": "e4bfb792b819f2484f9e6849af7c221bfc1ed0d7a44b5af80d83bdfc9e2dcdb7",
+    "bytes": 17684
+  },
+  {
+    "path": "scripts/verify-iteration36-packages.cjs",
+    "status": "Adicionado",
+    "sha256": "548a2002e2618049a47510a35a5548a4e0f8fc5a7cac3a37ad39a41080f5f3c3",
+    "bytes": 3920
+  },
+  {
+    "path": "server/online-craft.js",
+    "status": "Adicionado",
+    "sha256": "96da958ce0c20191731b20529747e90a46076b3232ff6ff33003a1d53834c187",
+    "bytes": 7656
+  },
+  {
+    "path": "server/online-life.js",
+    "status": "Alterado",
+    "sha256": "ea8932bbca33547ca002fa14075a56f9487a90c34a3f54c98aeefbfde7ce23b5",
+    "bytes": 6236
+  },
+  {
+    "path": "server/online-progression.js",
+    "status": "Alterado",
+    "sha256": "b44b08f06b4bf57fb1717b93fedbb3a607b1d172adae315d7e3f94eb86ba44cc",
+    "bytes": 3650
+  },
+  {
+    "path": "server/online-tower.js",
+    "status": "Alterado",
+    "sha256": "f567eb6dbbeb77e1157ff04e93e2ce1bc70268be29e1b6af2b54f0e3a630f5e6",
+    "bytes": 22029
+  },
+  {
+    "path": "server/white-wolf.js",
+    "status": "Alterado",
+    "sha256": "37820bf52f72167bd5227c6221f4e9889f4a62ce1d9c6cd26e1e628d88e047fe",
+    "bytes": 5441
+  },
+  {
+    "path": "server/world.js",
+    "status": "Alterado",
+    "sha256": "9aa025bb6b7c1d4076601de58a708cf49b9af4f8d954a6b37b39bc3bc4ffb9ea",
+    "bytes": 14306
+  },
+  {
+    "path": "shared/city.js",
+    "status": "Alterado",
+    "sha256": "f0e27600e21e200b6bdd13d3175e3fc35edfefe6875f8bad386ad72a84d44e34",
+    "bytes": 5896
+  },
+  {
+    "path": "shared/online.js",
+    "status": "Alterado",
+    "sha256": "1698481824c1cb2eecad284b9c51d2144b6bfc78800de4634167bb48dcaf2fd7",
+    "bytes": 4888
+  },
+  {
+    "path": "src/adapters/rendering/actor-preparation.js",
+    "status": "Alterado",
+    "sha256": "732eed18829729153030fd8377e8d12ca5cbba4d6f15a4e371e69e16bedae246",
+    "bytes": 1306
+  },
+  {
+    "path": "src/adapters/rendering/appearance-compositor.js",
+    "status": "Alterado",
+    "sha256": "6b6bc7b9ab65164b5ef1f080ae98a633b49ae2b76f6d87202fa23efba96fa26f",
+    "bytes": 9985
+  },
+  {
+    "path": "src/adapters/rendering/combat-visual.js",
+    "status": "Alterado",
+    "sha256": "67cc7e95cd1a30c11fff023e8848bc3cf498f14758c27643f9c795eda90ba02a",
+    "bytes": 14961
+  },
+  {
+    "path": "src/adapters/rendering/modular-actor.js",
+    "status": "Alterado",
+    "sha256": "54af9eba0b7a6620cec772e02ff2efcf209495d56fe0680f190833d5a6e08bab",
+    "bytes": 7036
+  },
+  {
+    "path": "src/adapters/rendering/pose-compositor.js",
+    "status": "Adicionado",
+    "sha256": "0d94677f6cd2f25fa450341af2f3af90f195ec83bbaa68113a94720b19a8ba70",
+    "bytes": 1435
+  },
+  {
+    "path": "src/adapters/rendering/scene-transition.js",
+    "status": "Alterado",
+    "sha256": "2d39a5eb7458d3ae4afb5a1d30798b6dccd15dd32d22b61ba4a6b43f574fe527",
+    "bytes": 4544
+  },
+  {
+    "path": "src/adapters/rendering/scene.js",
+    "status": "Alterado",
+    "sha256": "54534429a9399446c410da286cb485a1e4ee287f81f6a3835bf3da6c86681234",
+    "bytes": 31644
+  },
+  {
+    "path": "src/core/modular-pose.js",
+    "status": "Adicionado",
+    "sha256": "49b6333f748d928dfc69a173a84397a972a0083f506b02c5ec4b5eb4a1fc5200",
+    "bytes": 1901
+  },
+  {
+    "path": "src/domain/appearance.js",
+    "status": "Alterado",
+    "sha256": "febf0e049e000582613ea0600bcdd7336f4a752ff3fd18c84a73520c66d26e86",
+    "bytes": 1396
+  },
+  {
+    "path": "src/domain/shop.js",
+    "status": "Alterado",
+    "sha256": "618bc752b04fb180bd6150c0bc33385a88ea4f1399006214143af418b2281b8f",
+    "bytes": 1380
+  },
+  {
+    "path": "src/multiplayer/craft-client.js",
+    "status": "Adicionado",
+    "sha256": "a9555446db27cbd9789cf309d23a0af5a3d6e6779df46c31ca4b788bfdd74d7b",
+    "bytes": 5089
+  },
+  {
+    "path": "src/multiplayer/remote-state.js",
+    "status": "Alterado",
+    "sha256": "d35aabaa19faa97e1c397fb451ef475d5c51c108b5d878efbdc5e4d9e959e1f4",
+    "bytes": 1248
+  },
+  {
+    "path": "src/multiplayer/smith-dialog.js",
+    "status": "Alterado",
+    "sha256": "1b0131f4da2b8011587448952b16126c0e071780a1ea72b90900185320ec9c91",
+    "bytes": 1855
+  },
+  {
+    "path": "src/multiplayer/world-mode.js",
+    "status": "Alterado",
+    "sha256": "c857be33dad230a30c0ac2be09306f401d91a0a56309c9f6906eebed0948c528",
+    "bytes": 34704
+  },
+  {
+    "path": "src/simulation/enemy-ai.js",
+    "status": "Alterado",
+    "sha256": "2100fc650e8372377ae1e45ee96de7ffa50c22623574cb08af725d53537256bd",
+    "bytes": 8573
+  },
+  {
+    "path": "src/simulation/roaming.js",
+    "status": "Adicionado",
+    "sha256": "4f8058e433bd3b2d65f9b719b5749c98286ea76e1635c407eefecfc139e46a4c",
+    "bytes": 2292
+  },
+  {
+    "path": "src/ui/school-lobby.js",
+    "status": "Alterado",
+    "sha256": "656e7289f163510f9acf233f29c2292dbba15da533728b57a8565770130b9a43",
+    "bytes": 12549
+  },
+  {
+    "path": "tests/iteration08.test.js",
+    "status": "Alterado",
+    "sha256": "da26a307cf84e5bb68f7dd94891e9f7d8568ab52fdaa23de51ed816b555b2d26",
+    "bytes": 13682
+  },
+  {
+    "path": "tests/iteration22.test.js",
+    "status": "Alterado",
+    "sha256": "65da776aa3def5c3faeec6b41e0fc6f2fddbb12f7d965a2192e2a7a943a6dd35",
+    "bytes": 6397
+  },
+  {
+    "path": "tests/iteration23.test.js",
+    "status": "Alterado",
+    "sha256": "ecd1d3f4821af6fba4b9bfed2740acd06b090300ad73633395f057797b803311",
+    "bytes": 16614
+  },
+  {
+    "path": "tests/iteration233.test.js",
+    "status": "Alterado",
+    "sha256": "4a7fbe05f6020b1c68193e226751d1d01005ae180aec72fa296e7ef6ba9861ad",
+    "bytes": 7607
+  },
+  {
+    "path": "tests/iteration36-craft.test.js",
+    "status": "Adicionado",
+    "sha256": "035a69e984c9a1ad6fb3abcf7e231f094412ea2c315d62e8a3ece225ad33d35c",
+    "bytes": 7277
+  },
+  {
+    "path": "tests/iteration36-presentation-ai.test.js",
+    "status": "Adicionado",
+    "sha256": "4f3f650077d9c29fe0fd7ec73a70a966f4e0e84afb46b0e5a209d6d2b886e576",
+    "bytes": 3256
+  },
+  {
+    "path": "tests/tower-shared.test.js",
+    "status": "Alterado",
+    "sha256": "1305bac2d167eb08f1e761296fb1d19d1de90f1de3d2fc0588569ef927ab3979",
+    "bytes": 5204
+  }
+]

@@ -1,0 +1,36 @@
+✔ scene work preserves dependencies and yields within budget (2.9012ms)
+✔ cancel closes partial builder without publishing remaining units (1.3082ms)
+✔ partial builder failure closes its resource scope (0.2171ms)
+✔ work can be retried after failure (0.2006ms)
+✔ bounded waits reject timeout and cancellation (5.7066ms)
+✔ speculative preparation deduplicates and releases completed resource (0.449ms)
+✔ destination replacement discards late completion exactly once (0.3047ms)
+✔ budget refuses oversized resource without starting work (0.139ms)
+✔ failed preparation releases slot and permits retry (0.2458ms)
+✔ disconnect cancellation aborts loader and rejects late ownership (0.2362ms)
+✔ snapshots continue arriving during preparation; only latest is presented (1.917ms)
+✔ completion from disconnected socket cannot publish stale snapshot (1.3072ms)
+✔ map preparation rejection disconnects cleanly instead of hanging online (1.049ms)
+✔ superseded welcome cannot publish or disconnect the latest destination (0.5082ms)
+✔ UV atlas instances share unchanged pixels without dirtying source again (0.9173ms)
+✔ GPU preparation failure restores visibility, culling, target and full shadows (12.6497ms)
+✔ unchanged canvas size preserves the previous frame during preparation (1.2162ms)
+✔ ready modular bodies skip unused legacy GPU uploads but activities retain them (67.1302ms)
+✔ stutter categories use fixed windows and interval-start attribution (2.8767ms)
+✔ capture marks first render crossing and preserves mutually exclusive frame totals (1.0382ms)
+✔ capture limits events and critical windows under repeated stalls (8.1667ms)
+✔ capture disabled leaves production methods intact (1.3519ms)
+✔ capture preserves diagnostic markers across map replacement and restores methods (0.9843ms)
+✔ stutter metrics normalize rate and withhold unsupported tail estimates (0.2565ms)
+✔ shader batches preserve every material, object parent and lighting scene (2.4243ms)
+✔ shader cancellation cannot submit later batches or retain scene children (0.98ms)
+✔ actor preparation uploads shared sources once and waits for each decoded atlas (10.2979ms)
+✔ cancelled atlas preparation cannot upload or discard actor-owned textures (0.4343ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 323.7347

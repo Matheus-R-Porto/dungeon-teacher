@@ -1,0 +1,35 @@
+asar: true
+electronDist: node_modules/electron/dist
+publish: null
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+nsis:
+  artifactName: ${productName}-Iteracao38-${version}-Setup.${ext}
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: true
+portable:
+  artifactName: ${productName}-Iteracao38-${version}-Portable.${ext}
+appId: br.dungeonteacher.student
+productName: Dungeon Teacher
+directories:
+  output: release/iteration38/student
+extraMetadata:
+  main: desktop/student-main.cjs
+files:
+  - dist/**/*
+  - desktop/student-main.cjs
+  - desktop/student-preload.cjs
+  - desktop/lan-client.cjs
+  - desktop/discovery.cjs
+  - desktop/network.cjs
+  - desktop/protocol.cjs
+  - package.json
+  - '!node_modules/**/*'

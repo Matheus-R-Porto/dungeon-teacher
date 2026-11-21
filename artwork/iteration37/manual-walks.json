@@ -1,0 +1,74 @@
+[
+  {
+    "id": "novice-masculine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "novice-feminine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "warrior-masculine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "warrior-feminine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "archer-masculine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "archer-feminine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "rogue-masculine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "rogue-feminine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "priest-masculine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "priest-feminine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "mage-masculine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  },
+  {
+    "id": "mage-feminine",
+    "frames": 16,
+    "source": "new main poses",
+    "method": "offline fixed pixel contact/passing key poses"
+  }
+]

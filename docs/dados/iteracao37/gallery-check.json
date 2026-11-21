@@ -1,0 +1,210 @@
+{
+  "title": "Dungeon Teacher · Iteração 37",
+  "cells": 48,
+  "images": [
+    {
+      "src": "animations/novice-masculine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/novice-masculine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/novice-feminine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/novice-feminine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/warrior-masculine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/warrior-masculine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/warrior-feminine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/warrior-feminine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/archer-masculine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/archer-masculine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/archer-feminine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/archer-feminine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/rogue-masculine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/rogue-masculine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/rogue-feminine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/rogue-feminine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/priest-masculine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/priest-masculine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/priest-feminine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/priest-feminine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/mage-masculine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/mage-masculine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/mage-feminine-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "animations/mage-feminine-contacts.png",
+      "loaded": true
+    },
+    {
+      "src": "webgl-masculine.png",
+      "loaded": true
+    },
+    {
+      "src": "webgl-feminine.png",
+      "loaded": true
+    },
+    {
+      "src": "webgl-weapons.png",
+      "loaded": true
+    },
+    {
+      "src": "animations/white-wolf-walk.gif",
+      "loaded": true
+    },
+    {
+      "src": "atlases/white-wolf.png",
+      "loaded": true
+    },
+    {
+      "src": "webgl-cart-adjusted.png",
+      "loaded": true
+    },
+    {
+      "src": "atlases/backpack.png",
+      "loaded": true
+    },
+    {
+      "src": "atlases/cart.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-01-equipado-proprio.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-02-equipado-observador.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-03-adm-dois-alunos.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-04-combate-proprio.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-05-combate-observador.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-06-cliente-reiniciado.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-caminhada-observador.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-caminhada-proprio.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-troca-pairedDaggers.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-troca-trainingBow.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-troca-trainingStaff.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/packagedOnline-troca-trainingSword.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/performanceAfter-01-cidade-clientes-reais.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/performanceAfter-02-combate-lobo-branco.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/performanceAfter-02-inicio-do-combate.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/performanceAfter-03-lapide-compartilhada.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/performanceAfter-04-impacto-autoritativo-jogador-e-mvp.png",
+      "loaded": true
+    },
+    {
+      "src": "screens/performanceAfter-05-impacto-observador.png",
+      "loaded": true
+    }
+  ],
+  "stepped": true,
+  "zoom": "-864px -2016px",
+  "errors": [],
+  "ok": true
+}

@@ -1,7 +1,7 @@
 import {Inventory,ITEMS} from './items/inventory.js';
 import {PICKAXE} from './mining.js';
 // Paid stock of the Armorer. Training weapons and the fishing rod stay free through the original path.
-export const ARMORER_STOCK=Object.freeze([PICKAXE]);
+export const ARMORER_STOCK=Object.freeze([PICKAXE,'travelerBackpack','woodenCart']);
 // Validate everything first, then mutate: a refusal never leaves gold or items half-changed.
 export function purchaseItem(character,id){
   const def=Object.hasOwn(ITEMS,id)?ITEMS[id]:null;
@@ -12,4 +12,12 @@ export function purchaseItem(character,id){
   const error=inventory.acquisitionError(id);if(error)throw Error(error);
   inventory.acquire(id);character.data.gold-=def.price;
   return def;
+}
+
+export const SUPPLY_STOCK=Object.freeze(['woodenShield','pairedDaggers','arrows','unwaveringCharm']);
+export function purchaseSupply(character,id){
+ if(!SUPPLY_STOCK.includes(id))throw Error('Suprimento inválido.');
+ const count=id==='arrows'?20:1,cost=ITEMS[id].price*count;
+ if(character.data.gold<cost)throw Error('Ouro insuficiente.');
+ const bag=new Inventory(character);for(let i=0;i<count;i++)bag.acquire(id);character.data.gold-=cost;
 }

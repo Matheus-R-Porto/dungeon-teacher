@@ -1,0 +1,4 @@
+const {contextBridge,ipcRenderer}=require('electron');
+contextBridge.exposeInMainWorld('desktopMode',Object.freeze({load:()=>ipcRenderer.invoke('desktop:mode')}));
+contextBridge.exposeInMainWorld('schoolConnection',Object.freeze({get:()=>ipcRenderer.invoke('school:connection','get'),discover:()=>ipcRenderer.invoke('school:connection','discover'),probe:address=>ipcRenderer.invoke('school:connection','probe',address),trust:data=>ipcRenderer.invoke('school:connection','trust',data)}));
+contextBridge.exposeInMainWorld('desktopLifecycle',Object.freeze({onCloseRequested(handler){const fn=async()=>{try{await handler();ipcRenderer.send('desktop:close-result',{ok:true});}catch(e){ipcRenderer.send('desktop:close-result',{ok:false});}};ipcRenderer.on('desktop:prepare-close',fn);ipcRenderer.send('desktop:ready');return()=>ipcRenderer.removeListener('desktop:prepare-close',fn);}}));

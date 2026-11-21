@@ -60,16 +60,18 @@ test('new reel pose is distinct and cancellation clears presentation',()=>{
  f.active=false;f.visualReelRevision=1;a.update({fishing:f},1);assert.equal(a.update({fishing:f},1.3).frame,5);f.visualCancelRevision++;assert.equal(a.update({fishing:f},1.31),null);
  const png=fs.readFileSync(new URL('../public/assets/characters/fishing-reel-v064.png',import.meta.url));assert.equal(png.readUInt32BE(16),1024);assert.equal(png.readUInt32BE(20),1024);
 });
-test('fishing buffers survive repeated casts and all orientations; damage and map changes hide them',()=>{
- const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera();camera.updateMatrixWorld();const texture=new THREE.Texture();texture.userData.frame={column:1,row:0};
- const actor={texture,textures:new Map([['fishing-v043',texture]]),sprite:new THREE.Sprite()};actor.sprite.scale.set(4.8,4.8,1);
- const view={scene,camera,actor,mesh(g,m,parent,x=0,y=0,z=0){const o=new THREE.Mesh(g,m);o.position.set(x,y,z);parent.add(o);return o;}};
- const visual=new FishingVisual(view),geometry=visual.line.geometry,buffer=geometry.attributes.position.array,world={};
- const f={active:true,area:world,character:{damageRevision:0,isAlive:true},damageRevision:0,config:{castSeconds:.35},spot:{bobber:{x:3,y:.05,z:0}},time:0,started:0,attempts:1};
- const game={world,player:{x:0,z:0,y:0,moving:false},elapsed:0,activity:{fishing:f}};
- for(let i=0;i<120;i++){texture.userData.frame.row=i%4;f.time=i/100;game.elapsed=i/100;visual.update(game);assert.equal(visual.line.geometry,geometry);assert.equal(geometry.attributes.position.array,buffer);assert.ok(buffer.every(Number.isFinite));}
- f.character.damageRevision++;visual.update(game);assert.equal(visual.group.visible,false);f.character.damageRevision=0;game.world={};visual.update(game);assert.equal(visual.group.visible,false);
- scene.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});texture.dispose();
+test('fishing buffers survive repeated casts and all orientations; confirmed cancellation and death hide them',async()=>{
+ const {SpriteActor}=await import('../src/adapters/rendering/sprite-actor.js');
+ const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera();camera.updateMatrixWorld();const actor=new SpriteActor(scene);
+ const view={scene,camera,actor,mesh(g,m,parent){const o=new THREE.Mesh(g,m);parent.add(o);return o;}},visual=new FishingVisual(view);
+ assert.equal(visual.line,undefined,'idle actors allocate no effect geometry');
+ const player={x:0,z:0,hp:100,heading:0,profession:{type:'fishing',phase:'waiting',elapsed:1,target:{x:3,y:.05,z:0},heading:0}},game={player,elapsed:1};
+ actor.update(player,0,1,false,camera);await actor.sheet.ready();actor.update(player,0,1,false,camera);visual.update(game);
+ const geometry=visual.line.geometry,buffer=geometry.attributes.position.array;
+ for(let i=0;i<120;i++){player.profession.heading=-(i%4)*Math.PI/2;actor.facing=null;actor.update(player,0,1+i/100,false,camera);visual.update(game);assert.equal(visual.line.geometry,geometry);assert.equal(geometry.attributes.position.array,buffer);assert.ok(buffer.every(Number.isFinite));assert.ok(Math.abs(buffer[0]-visual.tip.x)<1e-6);assert.ok(Math.abs(buffer[1]-visual.tip.y)<1e-6);}
+ player.hp=0;actor.update(player,0,3,false,camera);visual.update(game);assert.equal(visual.group.visible,false);
+ player.hp=100;player.profession=null;actor.update(player,0,4,false,camera);visual.update(game);assert.equal(visual.group.visible,false);
+ visual.dispose();actor.dispose();
 });
 
 

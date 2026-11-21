@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "markdownLinksChecked": 72,
+  "errors": [],
+  "executablesVerified": 4,
+  "oldExecutablesPreserved": 8,
+  "gallery": {
+    "ok": true,
+    "images": 78,
+    "failures": [],
+    "nonemptyCanvas": true,
+    "phase": "Preparação",
+    "selectedClass": "mage",
+    "selectedBody": "feminine",
+    "caption": "Mago · Feminino · Espada · Frente"
+  }
+}

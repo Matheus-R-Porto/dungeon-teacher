@@ -37,6 +37,7 @@ else {
     window.webContents.on('before-input-event',(event,input)=>{if(input.type==='keyDown'&&input.key==='F11'&&!input.isAutoRepeat){event.preventDefault();window.setFullScreen(!window.isFullScreen());}});
     window.once('ready-to-show',()=>window.show());
     window.webContents.on('did-fail-load',(_event,code,description,_url,isMainFrame)=>{if(isMainFrame&&code!==-3)dialog.showErrorBox('Dungeon Master','Não foi possível abrir o jogo: '+description);});
+    ipcMain.handle('desktop:mode',event=>{if(!trusted(event))throw Error('Origem inválida.');return {development:!app.isPackaged&&!!options.query,serverUrl};});
     ipcMain.handle('online:credential',event=>{
       if(!trusted(event))throw Error('Origem inválida.');
       return require('./online-identity.cjs').loadCredential(profile,serverUrl,safeStorage);

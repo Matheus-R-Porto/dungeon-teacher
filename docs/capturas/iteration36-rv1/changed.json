@@ -1,0 +1,52 @@
+[
+  {
+    "path": "src/core/modular-pose.js",
+    "before": "49b6333f748d928dfc69a173a84397a972a0083f506b02c5ec4b5eb4a1fc5200",
+    "after": "b65fd730725738b0baa61ddb7b7428ed21e758c948fa27c780fa32a9593ae14c"
+  },
+  {
+    "path": "src/adapters/rendering/actor-preview.js",
+    "before": "781fac22d8d734582f4f4fc4a82fda6b58fc3c19c0662d32e85d6e4f79d7678c",
+    "after": "82fccd16e4885697c4bd5446be3388fbc349844df7d75e8d43bbc0b40e5fecdf"
+  },
+  {
+    "path": "src/adapters/rendering/appearance-compositor.js",
+    "before": "6b6bc7b9ab65164b5ef1f080ae98a633b49ae2b76f6d87202fa23efba96fa26f",
+    "after": "620358bfb87c2e29c583c5f51b2fffd09d5c538880c344e446021240227f51e3"
+  },
+  {
+    "path": "src/adapters/rendering/modular-actor.js",
+    "before": "54af9eba0b7a6620cec772e02ff2efcf209495d56fe0680f190833d5a6e08bab",
+    "after": "157b80daa9a260ecbde50fa7329ff0009872b9e3ab4b61cba715bff47ed24e61"
+  },
+  {
+    "path": "src/adapters/rendering/pose-compositor.js",
+    "before": "0d94677f6cd2f25fa450341af2f3af90f195ec83bbaa68113a94720b19a8ba70",
+    "after": "f8d03c1c1ac3329e1339b09790d2e522a3db83c4588ef6a33a1e9eaf18360a81"
+  },
+  {
+    "path": "src/adapters/rendering/sprite-actor.js",
+    "before": "f7a22add12516e3957417696ccf348b9c821e328cca2b4ccddccb1da2bd1eb00",
+    "after": "bce7fd78f8edf1e7315c954a603765a38039457c13a4f6e1d592f30f389cc8c0"
+  },
+  {
+    "path": "src/core/anatomy.js",
+    "after": "f6e756deab2e86dea80689cec60cf00777d5b9ae68cd17cc19866294f34b8a0d"
+  },
+  {
+    "path": "src/core/equipment-pose.js",
+    "after": "2ef28913dbfd3ee8ca0d2a3aa7783df1342e1dd4b259b8088158b5475753579c"
+  },
+  {
+    "path": "tests/iteration36-rv1.test.js",
+    "after": "3f76255170e6a8ed12c719859d2b6eca4215c7f769b999dcb1c5a1dd0787e597"
+  },
+  {
+    "path": "electron-builder.adm.yml",
+    "after": "b4ac6f0731b4adaa22f299b0768aa9854fc35ddd15af2e094871322a12876fd5"
+  },
+  {
+    "path": "electron-builder.student.yml",
+    "after": "ae515d7be4c0684ff8f3291ad9f5083f35a5ce62b97f9d9821b873be10909c15"
+  }
+]

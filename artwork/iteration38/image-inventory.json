@@ -1,0 +1,2858 @@
+[
+  {
+    "path": "artwork/iteration37/originals/archer-feminine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/archer-feminine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/archer-masculine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/archer-masculine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/backpack.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/cart.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/equipment.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/mage-feminine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/mage-feminine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/mage-masculine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/mage-masculine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/novice-feminine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/novice-feminine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/novice-masculine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/novice-masculine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/priest-feminine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/priest-feminine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/priest-masculine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/priest-masculine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/rogue-feminine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/rogue-feminine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/rogue-masculine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/rogue-masculine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/warrior-feminine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/warrior-feminine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/warrior-masculine-actions.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/warrior-masculine-main.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/originals/white-wolf-main.png",
+    "size": [
+      1881,
+      836
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-feminine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/archer-masculine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/backpack-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/backpack-row0.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/backpack.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/cart-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/cart-row0.png",
+    "size": [
+      192,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/cart-row1.png",
+    "size": [
+      192,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/cart-row2.png",
+    "size": [
+      192,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/cart-row3.png",
+    "size": [
+      192,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/cart.png",
+    "size": [
+      192,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/equipment-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/equipment-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/equipment-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/equipment-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/equipment-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/equipment.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-feminine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/mage-masculine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-feminine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/novice-masculine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-feminine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/priest-masculine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-feminine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/rogue-masculine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-feminine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-actions-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-actions-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-actions-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-actions-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-actions-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-actions.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-main-row0.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-main-row1.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-main-row2.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-main-row3.png",
+    "size": [
+      768,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-main.png",
+    "size": [
+      768,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-walk-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-walk-row0.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-walk-row1.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-walk-row2.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-walk-row3.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/warrior-masculine-walk.png",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/white-wolf-main-reference.png",
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/white-wolf-main-row0.png",
+    "size": [
+      864,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/white-wolf-main-row1.png",
+    "size": [
+      864,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/white-wolf-main-row2.png",
+    "size": [
+      864,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/white-wolf-main-row3.png",
+    "size": [
+      864,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "artwork/iteration37/masters/white-wolf-main.png",
+    "size": [
+      864,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-feminine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/archer-masculine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/backpack.png",
+    "size": [
+      384,
+      96
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/cart.png",
+    "size": [
+      256,
+      512
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-feminine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/mage-masculine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-feminine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/novice-masculine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-feminine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/priest-masculine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-feminine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/rogue-masculine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-feminine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-bow-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-bow.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-dagger-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-dagger.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-none-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-none.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-staff-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-staff.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-sword-mask.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/warrior-masculine-sword.png",
+    "size": [
+      864,
+      1536
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/characters-v37-rv1/white-wolf.png",
+    "size": [
+      1152,
+      384
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/archer-feminine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/archer-feminine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/archer-masculine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/archer-masculine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/mage-feminine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/mage-feminine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/mage-masculine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/mage-masculine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/novice-feminine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/novice-feminine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/novice-masculine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/novice-masculine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/priest-feminine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/priest-feminine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/priest-masculine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/priest-masculine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/rogue-feminine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/rogue-feminine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/rogue-masculine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/rogue-masculine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/warrior-feminine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/warrior-feminine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/warrior-masculine-mask.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "public/assets/professions-v37-rv2/warrior-masculine.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA"
+  }
+]

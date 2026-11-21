@@ -1,0 +1,40 @@
+{
+  "tool": "image_gen built-in",
+  "sourceIds": {
+    "novice": "b8c70f5a-c1c9-4db9-898a-7d91fa62ff02",
+    "warrior": "835b4dc9-31f1-420b-9d11-873e7b5177eb",
+    "mage": "6af26094-4ea2-469d-9944-b7bbfe760df8",
+    "archer": "548b21ee-61f4-45d0-b46b-6df4759ed0db",
+    "rogue": "1155dda8-6dc6-4382-910c-d251fa8057e4",
+    "priest": "32a2b948-c2ff-4c3f-aa92-0d395e2e5f88",
+    "heads": "5332c23e-7bed-4894-8899-e5c36235f311",
+    "weapons": "108df85d-8097-4ef1-8223-df220ce03ab3",
+    "travelerBoots": "1b71fb60-0b9a-45ba-82cb-73a471243b37",
+    "agileBoots": "864a7cb8-0f62-4d3c-8c47-9bc54fb2d5fd",
+    "gear": "20af8ef8-d466-443f-8dc6-ddec57217d6a"
+  },
+  "title": "0789e6b4-59c4-4dec-90c7-a54eac0e3456",
+  "originalAssetsPreserved": true,
+  "layout": {
+    "base": [
+      6,
+      4
+    ],
+    "heads": [
+      9,
+      4
+    ],
+    "weapons": [
+      8,
+      4
+    ],
+    "gear": [
+      8,
+      4
+    ],
+    "boots": [
+      6,
+      4
+    ]
+  }
+}

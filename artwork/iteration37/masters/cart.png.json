@@ -1,0 +1,140 @@
+{
+  "source": "C:\\Users\\theuz\\.codex\\generated_images\\01a178a4-8b04-70f1-9fca-efebfc6cb7e1\\exec-59032367-913f-49b8-878a-5fc373fad3c8.png",
+  "width": 1024,
+  "height": 1536,
+  "columns": 2,
+  "rows": 4,
+  "cell": 96,
+  "padding": 8,
+  "scale": 0.17817371937639198,
+  "frames": [
+    {
+      "column": 0,
+      "row": 0,
+      "sourceBounds": [
+        112,
+        52,
+        429,
+        398
+      ],
+      "bounds": [
+        19,
+        26,
+        75,
+        87
+      ]
+    },
+    {
+      "column": 1,
+      "row": 0,
+      "sourceBounds": [
+        598,
+        52,
+        915,
+        398
+      ],
+      "bounds": [
+        19,
+        26,
+        75,
+        87
+      ]
+    },
+    {
+      "column": 0,
+      "row": 1,
+      "sourceBounds": [
+        48,
+        429,
+        486,
+        691
+      ],
+      "bounds": [
+        8,
+        41,
+        85,
+        87
+      ]
+    },
+    {
+      "column": 1,
+      "row": 1,
+      "sourceBounds": [
+        542,
+        427,
+        977,
+        691
+      ],
+      "bounds": [
+        8,
+        41,
+        85,
+        87
+      ]
+    },
+    {
+      "column": 0,
+      "row": 2,
+      "sourceBounds": [
+        99,
+        745,
+        446,
+        1085
+      ],
+      "bounds": [
+        17,
+        27,
+        78,
+        87
+      ]
+    },
+    {
+      "column": 1,
+      "row": 2,
+      "sourceBounds": [
+        581,
+        745,
+        925,
+        1085
+      ],
+      "bounds": [
+        17,
+        27,
+        77,
+        87
+      ]
+    },
+    {
+      "column": 0,
+      "row": 3,
+      "sourceBounds": [
+        44,
+        1142,
+        492,
+        1414
+      ],
+      "bounds": [
+        8,
+        39,
+        87,
+        87
+      ]
+    },
+    {
+      "column": 1,
+      "row": 3,
+      "sourceBounds": [
+        551,
+        1141,
+        992,
+        1414
+      ],
+      "bounds": [
+        9,
+        39,
+        87,
+        87
+      ]
+    }
+  ]
+}

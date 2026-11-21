@@ -1,0 +1,4 @@
+import {spawn} from 'node:child_process';import fs from 'node:fs';
+fs.writeFileSync('.logs/iteration36-atlas.html','<!doctype html><title>Inspeção 36</title>');
+const vite=spawn(process.execPath,['node_modules/vite/bin/vite.js','--host','127.0.0.1','--port','5196','--strictPort'],{stdio:'ignore',windowsHide:true});
+try{for(let i=0;i<100;i++){try{if((await fetch('http://127.0.0.1:5196/.logs/iteration36-atlas.html')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}const c=spawn('node_modules/electron/dist/electron.exe',[process.env.DT_VISUAL_COMPARE?'scripts/iteration36/visual-compare.cjs':process.env.DT_VISUAL_MATRIX?'scripts/iteration36/visual-matrix.cjs':'scripts/iteration36/visual.cjs'],{stdio:'inherit',windowsHide:true});process.exitCode=await new Promise(r=>c.once('exit',r));}finally{vite.kill();}

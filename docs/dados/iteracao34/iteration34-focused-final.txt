@@ -1,0 +1,24 @@
+✔ 34: spectators and zero damage do not scale; late damage adds budget without erasing damage (3.5646ms)
+✔ 34: support counts effective allies, including protection applied before first impact (1.136ms)
+✔ 34: expired protection, absent, dead and disconnected players cannot raise difficulty (0.4895ms)
+✔ 34: death, disconnect and reconnect cannot shrink or multiply participation; cap six (0.4268ms)
+✔ 34: real healing excludes overheal and attributes HOT to its caster (0.5466ms)
+✔ 34: sword hits multiple real players, respects telegraph and spares outside target (145.1093ms)
+✔ 34: arc hits multiple real players, respects telegraph and spares outside target (119.18ms)
+✔ 34: rupture hits multiple real players, respects telegraph and spares outside target (84.3648ms)
+✔ 34: charge hits multiple real players, respects telegraph and spares outside target (82.2292ms)
+✔ 34: knight honors taunt and keeps the existing vulnerable disconnected body (82.0179ms)
+✔ 34: one shared public snapshot preserves each private profile, epoch and loot (64.0759ms)
+✔ 34: pending online ability drains existing basic recovery without starting another basic attack (176.0314ms)
+✔ 34: grave records final hitter, server death time and exact position, shared and durable (206.1271ms)
+✔ 34: elapsed respawn waits for safe space, restores once and removes the grave (138.0332ms)
+✔ 34: wolf charge damages two nearby living players once per charge (124.8845ms)
+✔ 34: online backup under concurrent writes is consistent and keeps the live connection usable (942.8239ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2379.8633
