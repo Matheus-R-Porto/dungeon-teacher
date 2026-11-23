@@ -1,80 +1,26 @@
-## Iteração 38 — Fidelidade Visual e Árvore do Destino
+# Dungeon Teacher — Beta 0.6.15 (School Playtest)
 
-Versão **0.6.14**: árvore azul discreta, habilidades em primeiro plano e conexões reais destacadas; reparos de transparência e continuidade nas seis classes e profissões. Originais testados em 96/128/192/256/320, com comparação de filtragem. Mantida a resolução estável, com os defeitos identificados corrigidos; protótipos preservados separadamente.
+A roguelite-ish tower climber (not a traditional roguelike) built with **Three.js (3D, orthographic camera)**, inspired by Ragnarok Online's dungeon loop and job system. You create a character, pick a weapon at the Refuge, promote into one of five first classes — Warrior, Archer, Rogue, Priest or Mage, each with its own 16-skill tree (80 skills total) — climb a procedurally generated tower fighting for XP and a boss chest, gather resources (fishing, cooking, mining, smithing, with a backpack and cart for extra carry capacity), and return to the Refuge to gear up before going back in stronger.
 
-**982 testes aprovados**, 9.408 células verificadas, 8.640 quadros no WebGL, 96 combinações de profissões, interface Electron e multiplayer com perfis temporários. Carga visual de 32 atores simulados e quatro pacotes Windows auditados. **Avaliação artística final pendente**; não houve teste presencial na escola.
+The game now also runs as a persistent **online school mode**: a teacher (ADM) hosts the server for up to 32 students, who log in with their own account and keep one persistent character, class and progression across sessions. The ADM can create, reset and switch between class "campaigns". This is the current focus of development; the original single-player campaign (with temporary online test modes) still exists side by side.
 
-[Relatório](docs/ITERACAO-38-RELATORIO.md) · [Galeria](docs/capturas/iteration38/index.html) · [Desempenho](docs/ITERACAO-38-DESEMPENHO.md) · [Aplicativos e hashes](docs/ITERACAO-38-DISTRIBUICAO.md) · [Evidências](docs/dados/iteracao38/)
+**Design intent that is not built yet:** the educational layer (opening a chest triggers a question; answering correctly shifts the odds toward better loot) and chest rarities — the teacher side currently just confirms things manually, there's no quiz/question system yet. Today a chest simply grants one equipment piece and some gold. Everything below describes what the code actually does; the final section lists what does not exist.
 
-## Iteração 37 — Revisão Visual 2
-
-Versão **0.6.13**: árvore viva do Novato e cinco classes, raízes investíveis após promoção, ícones e detalhes ligados às regras reais; pesca e mineração com sprites por classe, corpo e direção e apresentação compartilhada no multiplayer. Preservados o visual RV1, mapas, balanceamento e distribuições anteriores.
-
-**979 casos únicos validados sem falhas pendentes**, auditoria de 768 células, 96 combinações no renderizador, interface Electron, ADM + dois Alunos e quatro pacotes Windows x64 verificados. Desempenho comparado com 0.6.12. **Aprovação artística final pendente do usuário**; instalação externa e rede escolar não foram executadas.
-
-[Relatório](docs/ITERACAO-37-RV2-RELATORIO.md) · [Galeria](docs/capturas/iteration37-rv2/index.html) · [Aplicativos e hashes](docs/ITERACAO-37-RV2-DISTRIBUICAO.md) · [Desempenho](docs/ITERACAO-37-RV2-DESEMPENHO.md) · [Evidências](docs/dados/iteracao37-rv2/)
-
-## Iteração 37 — Revisão Visual 1
-
-Versão **0.6.12**: acabamento das seis classes, passadas alternadas, gestos de habilidades, recoil e morte em etapas; Lobo Branco e Cavaleiro revisados; carrinho conectado à mão, rodas por deslocamento e mochila ajustada. Mantidos mapas, regras, fontes e pacotes anteriores.
-
-**967 casos validados sem falhas pendentes** (966 na suíte integral e reteste afetado 20/20). Arte, WebGL, ADM + dois Alunos, três Alunos com impacto/morte, desempenho comparativo e quatro executáveis x64 verificados. **Aprovação artística final, instalação externa e LAN presencial pendentes.**
-
-[Relatório](docs/ITERACAO-37-RV1-RELATORIO.md) · [Galeria](docs/capturas/iteration37-rv1/index.html) · [Aplicativos e hashes](docs/ITERACAO-37-RV1-DISTRIBUICAO.md) · [Arquivos e evidências](docs/ITERACAO-37-RV1-ARQUIVOS.md)
-
-## Iteração 37 — sprites completos e interrupção por impacto
-
-Versão **0.6.11**: seis classes, dois corpos, quatro direções, quatro famílias de armas, cores por máscara, mochila/carrinho e novo Lobo Branco. Quadros preparados substituem a composição anatômica no caminho de produção. Impacto por perda efetiva de HP é confirmado pelo servidor, com proteção temporária de bosses. Mapas, itens e dados preservados.
-
-**961 casos validados, sem falhas pendentes**: 960 aprovações na suíte integral e o único caso de rótulo corrigido dentro de um reteste completo de multiplayer (27/27). ADM e alunos empacotados, reconexão, persistência, renderização e comparação com três clientes validados. Quatro executáveis Windows x64 auditados. **Aprovação artística final, instalação interativa externa e LAN presencial pendentes.**
-
-[Relatório completo](docs/ITERACAO-37-RELATORIO.md) · [Galeria](docs/capturas/iteration37/index.html) · [Aplicativos e hashes](docs/ITERACAO-37-DISTRIBUICAO.md) · [Cobertura de habilidades](docs/ITERACAO-37-HABILIDADES.md) · [Evidências](docs/dados/iteracao37/)
-
-## Iteração 34 — empacotamento final (28/10/2026)
-
-Quatro executáveis Windows x64 0.6.9 gerados com nomes Iteracao34. 894 testes aprovados, recursos empacotados validados com ADM/quatro clientes e três clientes preparados, hashes e conteúdo auditados. Instaladores da 33 preservados. **Instalação e LAN presencial pendentes.** [Distribuição e hashes](docs/ITERACAO-34-DISTRIBUICAO.md) · [Relatório](docs/ITERACAO-34-EMPACOTAMENTO.md) · [18 capturas](docs/ITERACAO-34-EMPACOTAMENTO-CAPTURAS.html).
-
-## Iteração 34 — desempenho e balanceamento
-
-[Relatório completo](docs/ITERACAO-34-RELATORIO.md) · [Medições](docs/ITERACAO-34-DESEMPENHO.md) · [Balanceamento](docs/ITERACAO-34-BALANCEAMENTO.md) · [Capturas](docs/ITERACAO-34-CAPTURAS.html) · [LAN física pendente](docs/ITERACAO-34-TESTE-LAN.md)
-
-Carga de protocolo 4–32, três clientes Electron preparados e quatro básicos, correção de filas e habilidades pendentes, Lobo Branco rebalanceado, Cavaleiro com participação efetiva e lápide persistente. Validação local concluída; instaladores 33 preservados.
-
-# Dungeon Teacher — Beta 0.6.11
-
-## Iteração 33 — servidor escolar e aplicativos separados
-
-ADM com servidor em processo separado, cliente LAN com TLS e identidade confirmada, cadastro sem turma, sessões únicas, limite de 32 jogadores, temporadas e backups. **878 testes aprovados**, dois produtos Windows gerados, quatro clientes Electron contra um banco e recursos empacotados validados. **Validação LAN física pendente; iteração não declarada totalmente concluída.** [Relatório](docs/ITERACAO-33-RELATORIO.md) · [Instaladores](docs/ITERACAO-33-DISTRIBUICAO.md) · [Teste LAN](docs/ITERACAO-33-TESTE-LAN.md) · [Capturas](docs/ITERACAO-33-CAPTURAS.html).
-
-## Iteração 32 — cinco primeiras classes
-
-Guerreiro, Arqueiro, Ladino, Sacerdote e Mago: 80 habilidades, 350 níveis, árvores conectadas, efeitos de combate e persistência. Primeira promoção com Base 10 e Job de Novato 20, escolha permanente e mapas preservados. 872 testes aprovados, build e dois clientes Electron validados. Balanceamento provisório; sem novo instalador/deploy. [Relatório](docs/ITERACAO-32-RELATORIO.md) · [Matrizes](docs/ITERACAO-32-MATRIZES.md) · [Progressões](docs/ITERACAO-32-PROGRESSAO.md) · [Capturas](docs/ITERACAO-32-CAPTURAS.html).
-
-## Iteração 31 — acesso escolar e progressão integrada
-
-Usuário/senha, professor e turmas A/B, personagem único, encerramento autoritativo de 60 segundos, aparência modular, seis bases, equipamentos visíveis, HUD, habilidades/consumíveis online, Base/Job por origem e serviços de Serafina. Mapas preservados, promoções vinculadas a 12/36. **811 testes aprovados**, build aprovado, ensaios Electron e 60 jogadores no servidor local. Conteúdo de classes/missões, variantes artísticas e balanceamento escolar continuam pendentes; sem instalador/deploy. [Relatório](docs/ITERACAO-31-RELATORIO.md) · [Capturas](docs/ITERACAO-31-CAPTURAS.html) · [Revisão local](docs/ITERACAO-31-OPERACAO.md).
-
-O fluxo normal do aluno agora exige servidor escolar. As descrições técnicas abaixo também documentam a campanha de desenvolvimento preservada. O endpoint público anterior ainda não recebeu esta atualização. Para revisar localmente: servidor escolar local, conta de professor e `npm run desktop:test:school`, conforme o guia acima.
-
-
-## Iteração 30 — abertura de baús e recompensas
-
-Apresentação integrada com quatro quadros do baú existente, roleta com sprites reais e resultado persistente. Regras, seed, probabilidades, peso, transporte e concessão preservados. Online apresenta somente a recompensa confirmada pelo servidor, sem alterar o protocolo. 788/788 testes, build aprovado e dois Electron com perfis isolados. Aprovação artística humana pendente; sem novo instalador ou deploy. [Relatório](docs/ITERACAO-30-RELATORIO.md) · [Auditoria](docs/ITERACAO-30-AUDITORIA.md) · [Capturas e sequência](docs/ITERACAO-30-CAPTURAS.html).
-
-
-A roguelite-ish tower climber (not a traditional roguelike) built with **Three.js (3D, orthographic camera)**, inspired by Ragnarok Online's dungeon loop. You pick a weapon at the Refuge, climb a procedurally generated tower fighting for XP and a boss chest, gather resources (fishing, cooking, mining, smithing), and return to the Refuge to level up, learn skills and gear up before going back in stronger.
-
-**Design intent that is not built yet:** the educational layer (opening a chest triggers a question; answering correctly shifts the odds toward better loot) and chest rarities. Today a chest simply grants one equipment piece and some gold. Everything below describes what the code actually does; the final section lists what does not exist.
-
-> **Original integrated art, as of 0.6.9:** player, six townsfolk, six full-body portraits, three Slime types, the White Wolf, the Oath Knight boss, 32 original inventory icons and AI-generated pixel-art icons for all 44 items (pending final art approval), plus a shared city with original environment textures. This is a provisional visual direction. WebGL 2 and graphics acceleration are required; school hardware and mobile have not been validated.
+> **Original integrated art, as of 0.6.15:** player, six townsfolk, six full-body portraits, three Slime types, the White Wolf, the Oath Knight boss, 32 original inventory icons, AI-generated pixel-art icons for all 44 items, and a new native-resolution sprite pipeline (12 class/body identities, full action and profession frame sets) alongside a shared city with original environment textures. This is a provisional visual direction; several recent passes are still awaiting final human art approval. WebGL 2 and graphics acceleration are required; school hardware and mobile have not been validated.
 
 ## Status
 
-**A distribuição atual é Iteração 34, versão interna 0.6.9**, com instalador e portátil x64 para ADM e aluno. Recursos empacotados testados localmente; instalação e LAN presencial pendentes. Consulte a distribuição no início deste documento. A tabela abaixo mantém os marcos históricos de recursos.
+**Beta 0.5.1 is still the last packaged installer meant for the original single-player campaign.** Since 0.6.9, distribution switched to separate ADM/Student Windows packages for the school server (installer + portable x64). 0.6.15 passed 1,008/1,008 tests and a 12-session load test; the project's own verdict is "technically ready for a supervised pilot, with limitations" — it has **not yet had a physical classroom/LAN test** with real school PCs.
 
 | Build | State |
 |---|---|
-| **0.6.9 Inventory & Item Art** (current source) | New inventory UI: icon grid, tooltips, keyboard navigation, separate equipment panel, optional stat comparison. 32 original SVG icons plus AI-generated 128×128 pixel-art icons for all 44 real items, integrated but awaiting final art approval. [Iteration 28 report](docs/ITERACOES-27.2-28-RELATORIO.md) · [28.1B report](docs/ITERACAO-28.1B-RELATORIO.md). |
+| **0.6.15 School Playtest** (current source, it. 41) | Consolidates the native-resolution sprite pipeline (12 class/body identities, full action + profession frame sets, from the experimental it. 39–40 branches) into the live renderer, with a performance pass that cut profession texture cache by ~58%. ADM gains multi-"campaign" management: create/reset (with a typed confirmation phrase)/switch/archive class worlds, each with its own persistent student roster, plus backup/restore and access-recovery diagnostics. 1,008/1,008 tests passed; a 12-session load test ran ~14 minutes with the server averaging 26% CPU. Four Windows installers built (ADM/Student × Setup/Portable). "Technically ready for a supervised pilot" per its own report — a real classroom/LAN test is still pending. [Iteration 41 report](docs/ITERACAO-41-RELATORIO.md). |
+| 0.6.14-experimental (not distributed) Native Art (it. 39–40) | Two experimental side branches, never merged into the official line until 0.6.15 above: it. 39 ("Native D") brought native-resolution art to one identity (Mage) as a proof of concept; it. 40 expanded it to all 12 class/body identities. Both shipped as separate, clearly-marked experimental builds; final art approval was pending throughout. [Iteration 39](docs/ITERACAO-39-RELATORIO.md) · [Iteration 40](docs/ITERACAO-40-RELATORIO.md). |
+| 0.6.14 Iteration 38 | Visual-fidelity pass across originals at multiple resolutions (96–320px) with filtering comparison; Destiny Tree redesigned with a light-blue background and foreground skill icons. 982 tests passed. Final art approval pending; no school in-person test yet. [Iteration 38 report](docs/ITERACAO-38-RELATORIO.md). |
+| 0.6.10–0.6.13 Visual Revisions (Iteration 36 RV2 → 37 RV2) | Multiple equipment-attachment passes: weapon grips measured from the art itself, articulated elbows, carry poses per weapon type, backpack as a torso-locked layer, shield depth/perspective fixes. Six classes, two body types, four directions, four weapon families. Up to 982 tests passed across the range. Final art approval pending throughout. [Iteration 37 report](docs/ITERACAO-37-RELATORIO.md). |
+| 0.6.9 (spans iterations 28–36 base) | The largest stretch under one version label: chest-opening presentation polish (it. 30); **the whole online school mode foundation** — accounts, teacher role, single persistent character, modular appearance, 80 skills across 5 classes with the Destiny Tree, elemental combat, equipment slots, consent-based teleport (it. 31–32); separate ADM/Student server & apps for a real classroom, up to 32 players (it. 33); server stability/performance work and rebalanced bosses for group play (it. 34); mining and smithing brought to online parity with the campaign (it. 36). 898 tests passed by the end of iteration 36. [Iteration 31 report](docs/ITERACAO-31-RELATORIO.md) · [32](docs/ITERACAO-32-RELATORIO.md) · [33](docs/ITERACAO-33-RELATORIO.md) · [34](docs/ITERACAO-34-RELATORIO.md) · [36](docs/ITERACAO-36-RELATORIO.md). |
+| 0.6.9 Carry Capacity (Iteration 29.1) | Backpacks and a towable cart add real carry capacity (progressive overload, drag-to-drop physical items, Refuge recovery for old drops). This superseded the architecture-only proposal from iteration 29. [Iteration 29.1 report](docs/ITERACAO-29.1-RELATORIO.md). |
+| 0.6.9 Inventory & Item Art (Iteration 28/28.1B) | New inventory UI: icon grid, tooltips, keyboard navigation, separate equipment panel, optional stat comparison. 32 original SVG icons plus AI-generated 128×128 pixel-art icons for all 44 real items, integrated but awaiting final art approval. [Iteration 28 report](docs/ITERACOES-27.2-28-RELATORIO.md) · [28.1B report](docs/ITERACAO-28.1B-RELATORIO.md). |
 | 0.6.8 NPC Dialogue & Portraits | Unified dialogue component shared between campaign and online (was two separate UIs); full-body NPC portraits at 55vh with an ornamental frame; four NPCs mirrored for better composition; keyboard navigation and `prefers-reduced-motion` support. Aesthetic approval pending. [Iteration 27.2 report](docs/ITERACAO-27.2-RELATORIO.md). |
 | 0.6.7 Minimap | Permanent compact HUD map plus an expandable fog-of-discovery map (M key), navigable by drag/wheel/arrows; discovery persists per character, tied to the environment's seed. 708/708 tests passed. Human playtest pending. [Iteration 26 report](docs/ITERACAO-26-RELATORIO.md). |
 | 0.6.6 Destiny Tree | Replaces the old TAB skill menu with an organic SVG tree for learning the 5 existing abilities; pan/zoom, keyboard navigation, the 8-slot hotbar moved into the panel for drag-to-learn. Synced with persistent multiplayer v4. 696/696 tests passed. Human playtest pending. [Iteration 25 report](docs/ITERACAO-25-RELATORIO.md). |
@@ -595,13 +541,12 @@ npm run multiplayer:configure -- wss://YOUR-DOMAIN/hub
 
 ## Not implemented / known limits
 
-- **Educational layer** (questions on chests, rarity-weighted rewards) and chest rarities.
-- **Classes** beyond Novato; **a full economy**; a marketplace.
-- **Bosses** other than the floor-3 Guardian; a final boss at floor 50; boss every five floors; checkpoints and floor teleport; persistent floor layouts; party/tower multiplayer; PvP.
+- **Educational layer** (questions on chests, rarity-weighted rewards) and chest rarities. The school mode's "teacher confirms it" flow is not a quiz/question system.
+- **Second and third class promotions** (the design calls for them around weeks 12 and 36 of a 13-week campaign); only the first promotion (5 classes) exists. **A full economy**; a marketplace; a second/third city; floors 13–36 as curated content; the ten planned specializations.
+- **Bosses** other than the floor-3 Guardian and the Oath Knight; a final boss at floor 50; boss every five floors; checkpoints and floor teleport; persistent floor layouts; party/tower multiplayer; PvP.
 - **Life skills:** metals and bars, alloys, modular components, refinement, per-recipe automation by mastery, selling Raw Ore; Mining and Smithing have no level-gated content yet.
-- **Carry capacity** has no effect; the Refuge's reserved zones (trade, storage, training, class orientation) are empty.
-- **Balance beyond floor 3** is provisional and untuned.
-- All art is placeholder; mobile is not validated; the executable's native window and installation flow have only had assisted validation.
+- **Balance beyond floor 3** is provisional and untuned; school-mode boss balance (White Wolf, Oath Knight) has only been validated against simulated clients, not a real classroom.
+- Most art is an evolving, original visual direction rather than final: several recent passes (item icons, portraits, equipment attachment, native-resolution sprites) are explicitly awaiting human approval. Mobile is not validated; the executable's native window and installation flow have only had assisted validation; a physical classroom/LAN test has not happened yet.
 
 ## Documentation
 

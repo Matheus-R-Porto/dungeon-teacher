@@ -1,3 +1,39 @@
+## 0.6.15 — Iteração 41 (consolidação para o playtest escolar)
+
+- Consolida as artes experimentais das iterações 39 (D: NPC-style para o Mago)
+  e 40 (expansão para as 12 identidades) na distribuição oficial — pipeline de
+  sprite em resolução nativa com quadros completos de ação e profissão por
+  classe/corpo, ligado ao renderer real via `SheetActor`.
+- Otimização: profissões agora guardam só a direção atual em vez das quatro,
+  cache de profissões caiu de ~1.087 para ~459 MiB (−57,8%) na sessão medida.
+- `AdminService`: o ADM passa a gerenciar múltiplas "campanhas" (turmas) —
+  criar, reiniciar (com frase de confirmação "REINICIAR MUNDO"), trocar e
+  arquivar mundos, cada um com seu próprio elenco de alunos persistente em
+  SQLite. Backup/restauração consistentes e diagnóstico de problemas comuns
+  de acesso (sessão expirada, senha esquecida, porta ocupada, etc.).
+- `releasePurpose: "school-playtest"` em `config/experiment.json`.
+- **1.008/1.008 testes aprovados.** Teste de carga com 12 sessões reais por
+  ~14min27s (2 clientes Electron + 10 de protocolo); FPS 59–67 em profissões
+  (abaixo do baseline, registrado como regressão conhecida); memória privada
+  até 1,38 GiB por aluno. Quatro instaladores Windows x64 gerados (ADM e
+  Aluno, Setup e Portable). Veredito do próprio relatório: "entrega técnica
+  concluída para piloto acompanhado, com limitações" — ainda não validado em
+  12 PCs físicos numa rede escolar real. [Relatório completo](docs/ITERACAO-41-RELATORIO.md).
+
+## 0.6.14 (experimental, não distribuído) — Iterações 39 e 40
+
+- Trabalho experimental em branches isoladas, nunca substituindo a distribuição
+  oficial 0.6.14 nem sendo versionado neste repositório até a consolidação
+  acima. Mantido aqui como registro histórico.
+- **Iteração 39 ("Native D"):** arte em resolução nativa só para o Mago
+  masculino (combate + 2 profissões, 64 poses), a partir do precedente visual
+  do ferreiro NPC. FPS de profissões caiu 16–30% nos testes. 993+ testes.
+  [Relatório](docs/ITERACAO-39-RELATORIO.md).
+- **Iteração 40 ("Art Expansion"):** mesma abordagem estendida para as 12
+  identidades (6 classes × 2 corpos), todas as 4 direções/armas/profissões.
+  996 testes únicos aprovados. Ainda distribuída como build experimental
+  separada, aprovação artística final pendente. [Relatório](docs/ITERACAO-40-RELATORIO.md).
+
 ## 0.6.14 — Iteração 38
 
 - Árvore do Destino com fundo azul claro, silhueta natural discreta e habilidades em primeiro plano; raízes e regras preservadas, futura copa apenas arquitetural.
